@@ -1,0 +1,14 @@
+extends layout
+block content
+  #post
+    form(action="/neuanlegen", method="post")
+        div
+            input(type='', id='name', name='name',value=session.name)
+        div
+            label(for="typ") SatzPuzzle
+            input(type="radio", name="typ", value="1",checked="true")
+        div
+            label(for="inhalt") Satz
+            textarea(type='text', id='inhalt', name='inhalt')
+        div
+            button(type="submit") Abschicken

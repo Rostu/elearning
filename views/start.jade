@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    script( src='/javascripts/scripts.js')
+    if (session.name)
+        p Hallo #{session.name}!
+        p Punkte in Aufgabenbereich 1:  #{session.points[0]}
+        button(id='raisebutton') raise
+    else
+        p Sie müssen sich anmelden um alle Inhalte nutzen zu können
+
+

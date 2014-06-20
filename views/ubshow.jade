@@ -1,0 +1,13 @@
+extends layout
+block content
+    each ub in ubs
+        #post
+            p Übungs-Typ: #{ub.typ}
+            //p Inhalt: #{ub.inhalt}
+            each wort in ub.inhalt
+                #test
+                    p #{wort}
+            p erstellt von: #{ub.name}
+            #deletebutton
+                a(href='/deleteub/#{ub.id}') löschen
+

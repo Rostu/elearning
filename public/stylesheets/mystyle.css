@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #bfdbf3;
+  position: static;
+  width: 100%;
+  height: 100%;
+  margin: 30px; }
+  body #header {
+    border: 1px;
+    margin: 0 auto;
+    display: table;
+    text-align: center; }
+  body #buttons_box {
+    display: table-row;
+    list-style: none; }
+  body #header_button {
+    display: table-cell;
+    padding: 15px;
+    margin: 2px; }
+    body #header_button a {
+      text-decoration: none;
+      color: #3f649e;
+      font-size: 2.5em; }
+    body #header_button a:hover {
+      color: #fab657; }
+  body #buttons_box li > ul {
+    margin: 10px;
+    padding: 15px;
+    display: table-cell;
+    opacity: 0;
+    visibility: hidden;
+    list-style: none; }
+  body #buttons_box li:hover > ul {
+    margin: 10px;
+    display: table-cell;
+    padding: 15px;
+    opacity: 1;
+    visibility: visible;
+    list-style: none;
+    z-index: 5; }
+  body #post {
+    background: #dde7ef;
+    font: open serif;
+    position: relative;
+    margin: 2% auto;
+    padding: 10px;
+    border: 2px;
+    border-color: darkgrey;
+    height: auto;
+    width: 50%;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 10px grey;
+    -moz-box-shadow: 0px 0px 10px grey;
+    box-shadow: 1px 1px 5px grey; }
+  body #login_box {
+    background-color: #dde7ef;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 2px 5px black;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    width: 250px;
+    margin: 2% auto; }
+    body #login_box #form_table {
+      display: table;
+      position: relative;
+      margin: 10px auto;
+      max-width: 30%; }
+    body #login_box h2 {
+      text-align: center;
+      color: #3f649e;
+      font-size: 3em;
+      margin: 20px; }
+    body #login_box #form_row {
+      display: table-row; }
+    body #login_box #form_cell {
+      display: table-cell; }
+    body #login_box label {
+      color: rgba(98, 137, 213, 0.98);
+      font-size: 1em; }
+    body #login_box input[type="text"], body #login_box input[type="password"] {
+      font: Arial, Helvetica, sans-serif;
+      font-size: 1em;
+      font-style: bold;
+      background-color: rgba(245, 245, 245, 0.94);
+      padding: 3px 6px;
+      border: 1px solid rgba(106, 165, 248, 0.56);
+      border-radius: 5px;
+      color: rgba(98, 137, 213, 0.98);
+      height: 35px;
+      width: 191px; }
+    body #login_box input[type="text"]:focus, body #login_box input[type="password"]:focus {
+      border-color: rgba(98, 137, 213, 0.98);
+      outline-color: rgba(98, 137, 213, 0.98);
+      outline-width: 5px; }
+  body #content {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 80px 70px;
+    text-align: center;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none; }
+  body #cardSlots {
+    margin: 10px auto;
+    background-color: #dde7ef; }
+  body #cardPile {
+    margin: 0 auto;
+    background-color: #dde7ef; }
+  body #cardSlots, body #cardPile {
+    width: auto;
+    display: inline-block;
+    padding: 20px;
+    border: 2px solid #333333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8); }
+  body #cardPile div {
+    float: left;
+    width: auto;
+    height: 60px;
+    padding: 5px;
+    border: 2px solid #333333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin: 5px 5px 5px 5px;
+    background-color: white; }
+  body #cardSlots div {
+    float: left;
+    width: 120px;
+    height: 60px;
+    border: 2px solid #333333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin: 0 0 0 20px;
+    background-color: white; }
+  body #cardSlots div:first-child, body #cardPile div:first-child {
+    margin-left: 0; }
+  body #cardSlots div.hovered {
+    background-color: #aaaaaa; }
+  body #cardSlots div {
+    border-style: dashed; }
+  body #cardPile div {
+    background-color: #666666;
+    color: white;
+    font-size: 50px;
+    text-shadow: 0 0 3px black; }
+  body #cardPile div.ui-draggable-dragging {
+    -moz-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8); }
+  body #card1.correct {
+    background-color: red; }

@@ -1,0 +1,35 @@
+doctype html
+html
+      head
+          title= title
+          meta(charset="utf-8")
+          title= title
+          link(rel='stylesheet', href='/stylesheets/mystyle.css')
+          script( src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js")
+          script( src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js")
+          body
+            #header
+                ul(id="buttons_box")
+                    li(id="header_button")
+                        a(href='/home' ) Home
+                    li(id="header_button")
+                        a(href='/ubung' ) Übungen
+
+                            if (session)
+                                if (session.name)
+                                    ul
+                                        li(id="header_sub_button")
+                                            a(href='/ubshow' ) zeigen
+                                        li(id="header_sub_button")
+                                            a(href='/neuanlegen' ) anlegen
+                    li(id="header_button")
+                        if (session)
+                            if (session.name)
+                                a(href='/logout') Logout
+                            else
+                                a(href='/login') Login
+                        else
+                            a(href='/login') Login
+          block content
+
+
