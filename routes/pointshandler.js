@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/test');
-//mongoose.connect('mongodb://rostu:2balognom112@ds029828.mongolab.com:29828/testico');
 
 var db = mongoose.connection;
 
