@@ -25,3 +25,27 @@ exports.deleteub = function(req, res){
     res.redirect('/ubshow');
 };
 
+exports.get_china = function(req, res){
+    res.render('china');
+};
+exports.get_glueck = function(req, res){
+    res.render('glueck');
+};
+exports.get_handy = function(req, res){
+    res.render('handy');
+};
+exports.get_ersti = function(req, res){
+    res.render('ersti');
+};
+exports.get_veggieday = function(req, res){
+    res.render('veggieday');
+};
+exports.get_wertewandel = function(req, res){
+    res.render('wertewandel');
+};
+exports.get_generationen = function(req, res){
+    res.render('generationen');
+};
+exports.get_zukunft = function(req, res){
+    res.render('zukunft');
+};
