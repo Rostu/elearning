@@ -2,13 +2,13 @@ extends layout
 
 block content
     script( src='/javascripts/scripts.js')
+    img(id="front", src="images/front.jpg")
     if (session.name)
         p Wilkommen #{session.name}!
         p Punkte in Aufgabenbereich 1:  #{session.points[0]}
         button(id='raisebutton') raise
     else
-        p Vorstellung des Projekts...
+        h2 Vorstellung des Projekts...
 
-        p Sie müssen sich anmelden um alle Inhalte nutzen zu können
-
+        h2 Sie müssen sich anmelden um alle Inhalte nutzen zu können
 
