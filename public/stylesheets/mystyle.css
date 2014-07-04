@@ -139,19 +139,32 @@ body {
   display: table-cell;
   width: 2%; }
 
-[draggable] {
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  /* Required to make elements draggable in old WebKit */
-  -khtml-user-drag: element;
-  -webkit-user-drag: element; }
-
 #inline {
   display: inline-block;
-  margin: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
   draggable: true; }
 
 #p1 {
   display: inline-block; }
+
+#draggie.ui-draggable-dragging {
+  color: green;
+  font-size: 2em;
+  padding: 5px;
+  margin: 10px;
+  background: rgba(239, 239, 239, 0.59);
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey; }
+
+#token {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  float: left;
+  background: rgba(239, 239, 239, 0.59);
+  color: green;
+  font: bold;
+  padding: 5px;
+  margin: 10px; }
