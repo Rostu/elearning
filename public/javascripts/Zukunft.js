@@ -2,6 +2,11 @@
 $( init );
 function init() {
     var id=0;
+    var testarray = [true,true,false,true];
+    testarray.forEach(function(entry) {
+        if(entry){
+        console.log(entry);}
+    });
     $("div[class=inline]").each(function() {
         $(this).attr('id',id).draggable({
             containment: '#page',
