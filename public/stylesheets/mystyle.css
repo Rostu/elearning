@@ -158,18 +158,19 @@ body {
   -webkit-box-shadow: 0px 2px 5px darkgrey;
   -moz-box-shadow: 0px 2px 5px darkgrey;
   box-shadow: 0px 2px 5px darkgrey;
-  float: left;
   background: rgba(239, 239, 239, 0.59);
   color: green;
   font: bold;
   padding: 5px;
+  display: inline-flex;
+  flex-direction: column;
   margin: 10px; }
 
-.token:hover {
+.button:hover {
   background-color: #99ff66; }
 
-.token:hover {
-  background-color: #99ff66; }
+.button {
+  color: red; }
 
 #Inhaltbox {
   -webkit-box-shadow: 0px 2px 5px darkgrey;
