@@ -18,10 +18,14 @@ function init() {
     });
 
     function handleDropEvent( event, ui ) {
+        var textinhalt = ui.draggable.context.textContent;
+        textinhalt = textinhalt.replace(',','');
+        textinhalt = textinhalt.replace('.','');
+
         var div = jQuery('<div/>', {
             class: 'token',
             id: ui.draggable.attr('id'),
-            html: "<p>"+ui.draggable.context.textContent+"</p><div id='"+ui.draggable.attr('id') +"' class='hide'><p>Das ist ein kleiner Testtext. An dieser Stelle soll dann eine kurze erläuterung zu dem Wort erscheinen.</p><a target='_blank' href='http://www.duden.de/suchen/dudenonline/"+ui.draggable.context.textContent+"'>INFO-Link</a><p><button id='"+ui.draggable.attr('id')+"'>löschen</button></p></div>"
+            html: "<p>"+textinhalt+"</p><div id='"+ui.draggable.attr('id') +"' class='hide'><p>Das ist ein kleiner Testtext. An dieser Stelle soll dann eine kurze erläuterung zu dem Wort erscheinen.</p><a target='_blank' href='http://www.duden.de/suchen/dudenonline/"+ui.draggable.context.textContent+"'>INFO-Link</a><p><button id='"+ui.draggable.attr('id')+"'>löschen</button></p></div>"
             });
         div.click(enlarge);
         $(div).data('korrekt',testarray[i][0]);
@@ -33,10 +37,13 @@ function init() {
     };
 
     function myHelper( event ) {
+        var textinhalt = $(this).context.innerHTML;
+        textinhalt = textinhalt.replace(',','');
+        textinhalt = textinhalt.replace('.','');
         return jQuery('<div/>', {
             class: 'draggie',
             id: $(this).attr('id'),
-            text: $(this).context.innerHTML
+            text: textinhalt
         });
     };
 
