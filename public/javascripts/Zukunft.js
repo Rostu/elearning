@@ -6,15 +6,17 @@ function init() {
     var testarray = [[false],[true],[false],[true],[true],[false],[false],[false],[true],[false],[false],[false],[false],[false],[true],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[true],[true],[true],[false],[false],[false],[false],[false],[false],[false],[true],[false],[true],[true],[false],[false],[false],[false],[false],[true],[false],[true],[false],[false],[true],[false],[true],[true],[true],[true],[true],[true],[true],[true],[true],[false],[true],[true],[false],[false],[false],[true],[false],[true],[true],[true],[true],[true],[true],[false],[true],[true],[false],[true],[true],[false],[false],[false],[true],[true],[false],[false],[false],[false],[true],[false],[false],[false],[true],[true],[true],[true],[false],[false],[true],[false],[false],[false],[true],[true],[false],[true],[false],[false]];
     var i = 0;
 
-    $("div[class=inline]").each(function() {
+    $(".inline").each(function() {
         $(this).draggable({
             containment: '#page',
             revert: true,
             helper: myHelper});
     });
+
     $('#Antwortbox').droppable( {
         drop: handleDropEvent
     });
+
     function handleDropEvent( event, ui ) {
         var div = jQuery('<div/>', {
             class: 'token',
@@ -27,13 +29,7 @@ function init() {
         $("#Antwortbox").append(div);
         $(":button[id="+ui.draggable.attr('id') +"]").click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
-        console.log($(".inline.ui-draggable[id="+ui.draggable.attr('id') +"]"));
-        //$("div[class=inline],[id="+ui.draggable.attr('id') +"]").each(function(index){
-          //  $(index).draggable.css('color','red');
-           // $(index).draggable.draggable('disable');
-        //});
-        ui.draggable.css('color','red');
-        ui.draggable.draggable('disable');
+        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
     };
 
     function myHelper( event ) {
