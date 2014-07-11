@@ -5,6 +5,7 @@ function init() {
     var id_speicher = [];
     var testarray = [[false],[true],[false],[true],[true],[false],[false],[false],[true],[false],[false],[false],[false],[false],[true],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[true],[true],[true],[false],[false],[false],[false],[false],[false],[false],[true],[false],[true],[true],[false],[false],[false],[false],[false],[true],[false],[true],[false],[false],[true],[false],[true],[true],[true],[true],[true],[true],[true],[true],[true],[false],[true],[true],[false],[false],[false],[true],[false],[true],[true],[true],[true],[true],[true],[false],[true],[true],[false],[true],[true],[false],[false],[false],[true],[true],[false],[false],[false],[false],[true],[false],[false],[false],[true],[true],[true],[true],[false],[false],[true],[false],[false],[false],[true],[true],[false],[true],[false],[false]];
     var i = 0;
+    var testtext = "Wortart:‭ ‬Substantiv,‭ ‬feminin.‭ ‬Wortbedeutung,‭ Das Wort Zukunft beschreibt eine noch bevorstehende und künftige Zeit und gehört somit nicht in das Wortfeld Technik."
 
     $(".inline").each(function() {
         $(this).draggable({
@@ -25,7 +26,7 @@ function init() {
         var div = jQuery('<div/>', {
             class: 'token',
             id: ui.draggable.attr('id'),
-            html: "<p>"+textinhalt+"</p><div id='"+ui.draggable.attr('id') +"' class='hide'><p>Das ist ein kleiner Testtext. An dieser Stelle soll dann eine kurze erläuterung zu dem Wort erscheinen.</p><a target='_blank' href='http://www.duden.de/suchen/dudenonline/"+ui.draggable.context.textContent+"'>INFO-Link</a><p><button id='"+ui.draggable.attr('id')+"'>löschen</button></p></div>"
+            html: "<p>"+textinhalt+"</p><div id='"+ui.draggable.attr('id') +"' class='hide'><p>"+testtext+"</p><a target='_blank' href='http://www.duden.de/suchen/dudenonline/"+ui.draggable.context.textContent+"'>INFO-Link</a><p><button id='"+ui.draggable.attr('id')+"'>löschen</button></p></div>"
             });
         div.click(enlarge);
         $(div).data('korrekt',testarray[i][0]);

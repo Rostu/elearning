@@ -65,6 +65,7 @@ app.get('/ersti', ubung.get_ersti);
 app.get('/veggieday', ubung.get_veggieday);
 app.get('/wertewandel', ubung.get_wertewandel);
 app.get('/generationen', ubung.get_generationen);
+app.get('/generationen2', ubung.get_generationen2);
 app.get('/impressum', impressum.get_imp);
 
 http.createServer(app).listen(app.get('port'), function(){
