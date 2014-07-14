@@ -140,74 +140,6 @@ body
           outline-color: $buttonshadowcolor
           outline-width: 5px
 
-//-----------------------------------Kartenspiel
-      #cardSlots
-        margin: 10px auto
-        background-color: $postcolor
-
-      #cardPile
-        margin: 0 auto
-        background-color: $postcolor
-
-      #cardSlots, #cardPile
-        width: auto
-        //height: 100px
-        display: inline-block
-        padding: 20px
-        border: 2px solid #333
-        -moz-border-radius: 10px
-        -webkit-border-radius: 10px
-        border-radius: 10px
-        -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8)
-        -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8)
-        box-shadow: 0 0 .3em rgba(0, 0, 0, .8)
-
-      #cardPile div
-        float: left
-        width: auto
-        height: 60px
-        padding: 5px
-        border: 2px solid #333
-        -moz-border-radius: 10px
-        -webkit-border-radius: 10px
-        border-radius: 10px
-        margin: 5px 5px 5px 5px
-        background-color: #fff
-
-      #cardSlots div
-        float: left
-        width: 120px
-        height: 60px
-        border: 2px solid #333
-        -moz-border-radius: 10px
-        -webkit-border-radius: 10px
-        border-radius: 10px
-        margin: 0 0 0 20px
-        background-color: #fff
-
-      #cardSlots div:first-child, #cardPile div:first-child
-        margin-left: 0
-
-      #cardSlots div.hovered
-        background-color: #aaa
-
-      #cardSlots div
-        border-style: dashed
-
-      #cardPile div
-        background-color: #666
-        color: #fff
-        font-size: 50px
-        text-shadow: 0 0 3px #000
-
-      #cardPile div.ui-draggable-dragging
-        -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8)
-        -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8)
-        box-shadow: 0 0 .5em rgba(0, 0, 0, .8)
-
-      #card1.correct
-        background-color: red
-//----------------------------------------------------------
 
 //----------------------ZUKUNFT-----------------------------
 #wrapper
@@ -236,11 +168,10 @@ body
   -webkit-box-shadow: 0px 2px 5px darkgrey
   -moz-box-shadow: 0px 2px 5px darkgrey
   box-shadow: 0px 2px 5px darkgrey
+  background-color: rgba(181, 237, 239, 0.29)
   display: table-cell
   padding: 10px
   width: 40%
-
-  background-color: rgba(2, 255, 85, 0.28)
   margin-left: 15px
   font-family: Arial, Helvetica, sans-serif
 
@@ -282,9 +213,6 @@ body
 .button
   color: red
 
-//------------------------------------------------------------
-
-
 //------------------------Veggie-Day--------------------------------
 
 #Inhaltbox
@@ -299,7 +227,6 @@ body
   margin: 10px
   color: #000000
 
-
 #Aufgabebox
   -webkit-box-shadow: 0px 2px 5px darkgrey
   -moz-box-shadow: 0px 2px 5px darkgrey
@@ -311,7 +238,6 @@ body
   background-color: rgba(199, 255, 243, 0.90)
   margin: 10px
   color: #000000
-
 
 #Zeitung
   -webkit-box-shadow: 0px 2px 5px darkgrey
@@ -331,11 +257,10 @@ dfn
   text-decoration: underline
   font-style: normal
 
-
 #Aufgabe
   color: #000000
   text-indent: 0
-  background-color: lightcoral
+  background-color:
   padding: 10px
   position: fixed
   bottom: 0
@@ -362,7 +287,7 @@ img
   -moz-box-shadow: 0px 2px 5px darkgrey
   box-shadow: 0px 2px 5px darkgrey
   display: table-cell
-  background-color: rgba(2, 255, 85, 0.28)
+  background-color: rgba(2, 255, 85, 0.16)
   border-radius: 50%
   width: 400px
   height: 300px

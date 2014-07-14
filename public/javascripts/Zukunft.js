@@ -1,9 +1,10 @@
 
 $( init );
 function init() {
+
     var id=0;
     var id_speicher = [];
-    var testarray = [[false],[true],[false],[true],[true],[false],[false],[false],[true],[false],[false],[false],[false],[false],[true],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[true],[true],[true],[false],[false],[false],[false],[false],[false],[false],[true],[false],[true],[true],[false],[false],[false],[false],[false],[true],[false],[true],[false],[false],[true],[false],[true],[true],[true],[true],[true],[true],[true],[true],[true],[false],[true],[true],[false],[false],[false],[true],[false],[true],[true],[true],[true],[true],[true],[false],[true],[true],[false],[true],[true],[false],[false],[false],[true],[true],[false],[false],[false],[false],[true],[false],[false],[false],[true],[true],[true],[true],[false],[false],[true],[false],[false],[false],[true],[true],[false],[true],[false],[false]];
+    var testarray = ["Physiker","Wissenschaft","Forschung","Physik","Star-Physiker","Handystrahlen","Nanotechnik","Internet","Pfeil und Bogen","Metallherstellung","Atome","Mikroskop", "Wissenschaftler","Maschinen","Roboter","Computer","Rechenkapazität","Computerspielkonsolen","Rechenleistung","Großrechner","Smartphone","Chip","Autos","Lenkrad","Film","GPS-Systeme","Radar"];
     var i = 0;
     var testtext = "Wortart:‭ ‬Substantiv,‭ ‬feminin.‭ ‬Wortbedeutung,‭ Das Wort Zukunft beschreibt eine noch bevorstehende und künftige Zeit und gehört somit nicht in das Wortfeld Technik."
 
@@ -29,8 +30,10 @@ function init() {
             html: "<p>"+textinhalt+"</p><div id='"+ui.draggable.attr('id') +"' class='hide'><p>"+testtext+"</p><a target='_blank' href='http://www.duden.de/suchen/dudenonline/"+ui.draggable.context.textContent+"'>INFO-Link</a><p><button id='"+ui.draggable.attr('id')+"'>löschen</button></p></div>"
             });
         div.click(enlarge);
-        $(div).data('korrekt',testarray[i][0]);
-        i++;
+        if($.inArray(textinhalt, testarray)> -1){
+            $(div).data('korrekt','true');
+            $(div).css('background','rgba(2, 255, 85, 0.16)');
+        }else {$(div).data('korrekt','false');$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');}
         $("#Antwortbox").append(div);
         $(":button[id="+ui.draggable.attr('id') +"]").click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
@@ -57,5 +60,4 @@ function init() {
     function enlarge() {
             $(".hide[id=" +$(this).attr('id')+"]").toggle();
     };
-
 };
