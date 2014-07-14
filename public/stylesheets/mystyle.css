@@ -1,51 +1,296 @@
-/*
-Syntax error: Invalid property: "background-color:" (no value).
-        on line 263 of mystyle.sass
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: cornflowerblue;
+  position: static;
+  height: 100%;
+  padding: 20px; }
+  body #page {
+    margin: auto;
+    display: block;
+    padding: 20px;
+    background-color: white;
+    border: solid;
+    border-color: #555ea9;
+    min-width: 850px;
+    width: 95%;
+    position: static;
+    min-height: 500px; }
+    body #page #header {
+      display: table;
+      width: 100%; }
+    body #page #logo {
+      display: table-cell;
+      position: relative;
+      padding: 10px;
+      float: right; }
+    body #page #trow {
+      display: table-cell; }
+    body #page #front {
+      display: block;
+      position: relative;
+      padding: 15px;
+      float: left; }
+    body #page #nav {
+      display: block;
+      width: 95%;
+      list-style: none;
+      margin-bottom: 10px;
+      float: left;
+      padding: 0px;
+      position: relative;
+      z-index: 5;
+      border-top: solid;
+      border-bottom: solid;
+      margin-bottom: 30px;
+      margin-top: 20px;
+      border-color: gray;
+      border-width: 1px; }
+    body #page #nav li {
+      float: left;
+      margin-right: 10px;
+      position: relative; }
+    body #page #nav a {
+      margin-right: 1em;
+      display: block;
+      padding: 10px;
+      color: black;
+      text-decoration: none; }
+    body #page #nav a:hover {
+      color: white;
+      background: cornflowerblue;
+      text-decoration: none; }
+    body #page #nav ul {
+      list-style: none;
+      position: absolute;
+      display: none; }
+    body #page #nav ul li {
+      padding-top: 2px;
+      float: none;
+      left: -40px; }
+    body #page #nav ul a {
+      white-space: nowrap; }
+    body #page #nav li:hover ul {
+      display: block; }
+    body #page #nav li:hover a {
+      background: cornflowerblue;
+      text-decoration: none; }
+    body #page #nav li:hover ul a {
+      text-decoration: none; }
+    body #page #content {
+      width: 100%;
+      position: relative;
+      float: left; }
+      body #page #content #login_box {
+        background-color: #dde7ef;
+        overflow: hidden;
+        -webkit-box-shadow: 0px 2px 5px black;
+        -moz-box-shadow: 0px 2px 5px darkgrey;
+        box-shadow: 0px 2px 5px darkgrey;
+        width: 250px;
+        margin: 2% auto; }
+        body #page #content #login_box label {
+          color: rgba(98, 137, 213, 0.98);
+          font-size: 1em; }
+        body #page #content #login_box input[type="text"], body #page #content #login_box input[type="password"] {
+          font: Arial, Helvetica, sans-serif;
+          font-size: 1em;
+          font-style: bold;
+          background-color: rgba(245, 245, 245, 0.94);
+          padding: 3px 6px;
+          border: 1px solid rgba(106, 165, 248, 0.56);
+          border-radius: 5px;
+          color: rgba(98, 137, 213, 0.98);
+          height: 35px;
+          width: 191px; }
+        body #page #content #login_box input[type="text"]:focus, body #page #content #login_box input[type="password"]:focus {
+          border-color: rgba(98, 137, 213, 0.98);
+          outline-color: rgba(98, 137, 213, 0.98);
+          outline-width: 5px; }
 
-258:   font-style: normal
-259: 
-260: #Aufgabe
-261:   color: #000000
-262:   text-indent: 0
-263:   background-color:
-264:   padding: 10px
-265:   position: fixed
-266:   bottom: 0
-267:   left: 0
-268:   min-width: 100%
+#wrapper {
+  width: 100%;
+  display: table; }
 
-Backtrace:
-mystyle.sass:263
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:614:in `parse_property'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:597:in `parse_property_or_rule'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:578:in `parse_line'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:471:in `build_tree'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:490:in `block in append_children'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:489:in `each'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:489:in `append_children'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:480:in `block in build_tree'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:473:in `each'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:473:in `build_tree'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:490:in `block in append_children'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:489:in `each'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:489:in `append_children'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:345:in `_to_tree'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:315:in `_render'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/engine.rb:262:in `render'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/plugin/compiler.rb:362:in `update_stylesheet'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/plugin/compiler.rb:201:in `each'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/plugin.rb:81:in `update_stylesheets'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/exec.rb:443:in `watch_or_update'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/exec.rb:326:in `process_result'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/exec.rb:41:in `parse'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/exec.rb:21:in `parse!'
-C:/Rails/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.2.12/bin/sass:9:in `<top (required)>'
-C:/Rails/Ruby1.9.3/bin/sass:23:in `load'
-C:/Rails/Ruby1.9.3/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid property: \"background-color:\" (no value).\A         on line 263 of mystyle.sass\A \A 258:   font-style: normal\A 259: \A 260: #Aufgabe\A 261:   color: #000000\A 262:   text-indent: 0\A 263:   background-color:\A 264:   padding: 10px\A 265:   position: fixed\A 266:   bottom: 0\A 267:   left: 0\A 268:   min-width: 100%"; }
+#Textbox {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  width: 45%;
+  display: table-cell;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(239, 239, 239, 0.59);
+  margin: 10px;
+  color: black; }
+
+.inline {
+  display: inline-block;
+  margin-left: 3px;
+  margin-right: 3px; }
+
+#Antwortbox {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  background-color: rgba(181, 237, 239, 0.29);
+  display: table-cell;
+  padding: 10px;
+  width: 40%;
+  margin-left: 15px;
+  font-family: Arial, Helvetica, sans-serif; }
+
+#Platzhalter {
+  padding: 10px;
+  display: table-cell;
+  width: 2%; }
+
+.draggie.ui-draggable-dragging {
+  color: green;
+  font-size: 2em;
+  padding: 5px;
+  margin: 10px;
+  background: rgba(239, 239, 239, 0.59);
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey; }
+
+.token {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  background: rgba(239, 239, 239, 0.59);
+  color: green;
+  font: bold;
+  padding: 5px;
+  display: inline-flex;
+  flex-direction: column;
+  margin: 10px; }
+
+.button:hover {
+  background-color: #99ff66; }
+
+.button {
+  color: red; }
+
+#Inhaltbox {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  width: 50%;
+  display: table-cell;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(239, 239, 239, 0.59);
+  margin: 10px;
+  color: black; }
+
+#Aufgabebox {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  width: 50%;
+  display: table-cell;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(199, 255, 243, 0.9);
+  margin: 10px;
+  color: black; }
+
+#Zeitung {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  width: 50%;
+  display: table-cell;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(222, 211, 95, 0.94);
+  margin: 10px;
+  color: black; }
+
+dfn {
+  text-decoration: underline;
+  font-style: normal; }
+
+#Aufgabe {
+  color: black;
+  text-indent: 0;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  min-width: 100%; }
+
+img {
+  margin: 5px;
+  border: solid;
+  border-color: gainsboro;
+  border-width: 1px; }
+
+#oben {
+  margin: 20px auto;
+  display: table;
+  max-height: 500px; }
+  #oben p {
+    text-align: center; }
+
+#l {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  display: table-cell;
+  background-color: rgba(2, 255, 85, 0.16);
+  border-radius: 50%;
+  width: 400px;
+  height: 300px; }
+
+#ltext {
+  margin: 10px auto;
+  padding: 15px; }
+
+#rtext {
+  margin: 10px auto;
+  padding: 15px; }
+
+#r {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  display: table-cell;
+  background-color: rgba(2, 255, 85, 0.28);
+  border-radius: 50%;
+  width: 400px;
+  height: 300px; }
+
+#Platz {
+  display: table-cell;
+  width: 85px; }
+
+#Antwort {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  padding: 20px;
+  margin: -10px auto;
+  display: box;
+  width: 50%;
+  border-radius: 50%;
+  background-color: rgba(2, 255, 85, 0.28);
+  min-height: 300px; }
+  #Antwort p {
+    text-align: center; }
+
+.tok {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  background: rgba(239, 239, 239, 0.59);
+  color: green;
+  font: bold;
+  padding: 8px;
+  display: inline-block;
+  margin: 20px;
+  border-radius: 50%; }
+
+.tok:hover {
+  background-color: #99ff66; }
