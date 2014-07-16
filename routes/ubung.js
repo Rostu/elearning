@@ -28,6 +28,13 @@ exports.deleteub = function(req, res){
 exports.get_china = function(req, res){
     res.render('china');
 };
+
+exports.get_china2 = function(req, res){
+    res.render('china2');
+};
+exports.get_china3 = function(req, res){
+    res.render('china3');
+};
 exports.get_glueck = function(req, res){
     res.render('glueck');
 };

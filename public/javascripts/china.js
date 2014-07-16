@@ -24,7 +24,7 @@ function init() {
         });
         div.click(clear);
         $("#Antwortbox").append(div);
-        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
+        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','grey');
     };
 
     function myHelper( event ) {

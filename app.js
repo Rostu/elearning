@@ -58,6 +58,8 @@ app.get('/home', start.start);
 app.get('/ubdata', routes.dbhandler.getubs);
 app.get('/testing', index.get_testing);
 app.get('/china', ubung.get_china);
+app.get('/china2', ubung.get_china2);
+app.get('/china3', ubung.get_china3);
 app.get('/zukunft', ubung.get_zukunft);
 app.get('/glueck', ubung.get_glueck);
 app.get('/handy', ubung.get_handy);
