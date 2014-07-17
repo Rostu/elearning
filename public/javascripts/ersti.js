@@ -3,6 +3,27 @@
  */
 
 $(document).ready(function() {
+    // TASK 2
+    var arr = ['Seminar', 'Übung', 'Vorlesung', 'Tutorium', 'Kolloqium', 'Workshop', 'Konzert', 'Festival',
+        'Konferenz', 'Sportereignis', 'Party', 'Theaterstück', 'Oper', 'Fest', 'Tanzkurs', 'Demonstration',
+        'Dozent', 'Professor', 'Praktikant', 'Lehrer', 'Trainer', 'Ober', 'Hausmeister', 'Sekretärin', 'Prof',
+        'HiWi', 'Chauffeur', 'Zimmermädchen', 'Student', 'Erstsemesterstudent', 'Ersti', 'Kommilitone',
+        'Schüler', 'Lerner', 'Bachelor', 'Master', 'Gymnasiast', 'Abiturient', 'Klassenkamerad', 'Auszubildender',
+        'Absolvent', 'Lehrling', 'Schulabgänger'];
+    var f = $('.fields');
+    var e = [];
+    for (var i = 0; i < arr.length; i++) {
+        e.push(makeDiv(arr[i], i));
+    }
+    e = shuffle(e);
+    for (i = 0; i < e.length; i++) {
+        //w.append(makeDiv(a[i], i));
+        f.append(e[i]);
+    }
+    var slots = $('.slot');
+    slots.on("blur", function() {
+        validate(this);
+    });
 
     // TASK 4
     var a = ['planlos','auf Anhieb','strömen','reibungslos verläuft','flach fällt',
