@@ -38,18 +38,27 @@ exports.get_china3 = function(req, res){
 exports.get_glueck = function(req, res){
     res.render('glueck');
 };
+
+exports.get_glueck_gedicht = function(req, res){
+    res.render('glueck_gedicht');
+};
+
 exports.get_handy = function(req, res){
     res.render('handy');
 };
+
 exports.get_ersti = function(req, res){
     res.render('ersti');
 };
+
 exports.get_veggieday = function(req, res){
     res.render('veggieday');
 };
+
 exports.get_wertewandel = function(req, res){
     res.render('wertewandel');
 };
+
 exports.get_generationen = function(req, res){
     res.render('generationen');
 };

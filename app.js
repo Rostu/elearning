@@ -62,6 +62,7 @@ app.get('/china2', ubung.get_china2);
 app.get('/china3', ubung.get_china3);
 app.get('/zukunft', ubung.get_zukunft);
 app.get('/glueck', ubung.get_glueck);
+app.get('/glueck_gedicht', ubung.get_glueck_gedicht);
 app.get('/handy', ubung.get_handy);
 app.get('/ersti', ubung.get_ersti);
 app.get('/veggieday', ubung.get_veggieday);
