@@ -51,6 +51,18 @@ exports.get_ersti = function(req, res){
     res.render('ersti');
 };
 
+exports.get_ersti_task1 = function(req, res){
+    res.render('ersti_task1');
+};
+exports.get_ersti_task2 = function(req, res){
+    res.render('ersti_task2');
+};
+exports.get_ersti_task3 = function(req, res){
+    res.render('ersti_task3');
+};
+exports.get_ersti_task4 = function(req, res){
+    res.render('ersti_task4');
+};
 exports.get_veggieday = function(req, res){
     res.render('veggieday');
 };
