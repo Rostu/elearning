@@ -1,0 +1,90 @@
+#wrapper {
+    width: 100%;
+    display: table;
+}
+
+.draggie.ui-draggable-dragging {
+    color: darkblue;
+    font-size: 2em;
+    padding: 5px;
+    margin: 10px;
+    background: rgba(239, 239, 239, 0.59);
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+}
+
+ .token {
+     -webkit-box-shadow: 0px 2px 5px darkgrey;
+     -moz-box-shadow: 0px 2px 5px darkgrey;
+     box-shadow: 0px 2px 5px darkgrey;
+     background: rgba(239, 239, 239, 0.59);
+     color: darkblue;
+     font: bold;
+     padding: 5px;
+     display: inline-flex;
+     flex-direction: column;
+     margin: 10px;
+ }
+
+.button:hover {
+    background-color: #99FF66;
+}
+.button {
+    color: red;
+}
+
+
+img {
+      margin: 5px;
+      border: solid;
+      border-color: gainsboro;
+      border-width: 1px;
+  }
+
+
+.inline {
+    display: inline-block;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+#Platzhalter {
+    padding: 10px;
+    display: table-cell;
+    width: 2%;
+}
+
+#Antwortbox {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background-color: #ffffff;
+    display: table-cell;
+    padding: 10px;
+    width: 190px;
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgoldenrodyellow;
+    min-height: 500px;
+    align-items: center;
+}
+
+#Aufgabe{
+    color: #000000;
+    text-indent: 0;
+    background: lightcoral;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+#Link{
+    display: table-cell;
+}
+
+dfn{
+    text-decoration: underline;
+    font-style: normal;
+}
