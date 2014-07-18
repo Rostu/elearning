@@ -1,45 +1,54 @@
 extends layout
 block content
-    link(rel='stylesheet', href='/stylesheets/veggieday.css')
     #Aufgabebox
         h1(style="center") Übung 1: Lernwortschatz
         h2 Aufgabe:
-        p Nachstehend befinden sich fünf Zeitungsartikel zum Thema "Fleischfreier Montag". Lies die Artikel aufmerksam und informiere dich über die Bedeutung der <b>fett</b> gedruckten Wörter auf
-            a(href='www.duden.de')  Duden
-        | Hinweis: Fahre mit dem Mauszeiger über kursiv gekennzeichnete Wörter und du erfährst deren Bedeutung!
         p
-
+        | Nachstehend befinden sich fünf Zeitungsartikel zum Thema "Fleischfreier Montag". Lies die Artikel
+        | aufmerksam und informiere dich über die Bedeutung der <b>fett</b> gedruckten Schlagwörter auf
+        a(href='www.duden.de') Duden
+        p Hinweis: Fahre mit dem Mauszeiger über kursiv gekennzeichnete Wörter und du erfährst deren Bedeutung!
+    p
+    #Inhaltbox
         #Zeitung
-            #Inhaltbox
-                h2 Fleischfreier Montag
-                p
-                |Ein Tag pro Woche
-                a(href='http://www.duden.de/suchen/dudenonline/Vegetarier') Vegetarier
-                |werden: Es gibt gute Gründe, bei dieser Aktion mitzumachen!
+            h2 Fleischfreier Montag
+            p Ein Tag pro Woche <b> Vegetarier </b> werden: Es gibt gute Gründe, bei dieser Aktion mitzumachen!
+        p
+        #Zeitung
+            h3 Meat-free macht fit
+            img(id="front", src="images/moehren.jpg")
             p
-
-            #Inhaltbox
-                h3 Meat-free macht fit
-                img(id="front", src="images/moehren.jpg")
-                p Ab und an auf Wurstbrot und Steak zu erzichten, ist gut für die Gesundheit (mindert z.B. das <b> Herzinfarktrisiko</b>). Die Deutsche Gesellschaft für Ernärhung empfiehlt den Verzehr von 300 bis 600 g Fleisch pro Woche. Gegessen werden im Schnitt aber fast 1,2 Kilo.
-
-            #Inhaltbox
-                h3 Damals..
-                img(id="front", src="images/damals.jpg")
-                p 1968 wurden 23 Prozent der Nahrungsmittelausgaben für Fleisch verwendet. Heute sind es nur 13 Prozent, obwohl mehr Fleisch gegessen wird. <b> Massentierhaltung </b> macht Fleisch billiger und den <span title="Da Fleisch früher relativ teuer war, aß man nur zu besonderen Anlässen (z.B. am Sonntag) große Fleischgerichte wie einen Braten"><i>Sonntagsbraten</i></span> zur Alltagskost.
+            | Ab und an auf Wurstbrot und Steak zu erzichten, ist gut für die Gesundheit
+            | (mindert z.B. das <b> Herzinfarktrisiko</b>). Die Deutsche Gesellschaft für Ernärhung empfiehlt den
+            | Verzehr von 300 bis 600 g Fleisch pro Woche. Gegessen werden im Schnitt aber fast 1,2 Kilo.
+        #Zeitung
+            h3 Damals..
+            img(id="front", src="images/damals.jpg")
             p
-
-            #Inhaltbox
-                h3 Richtig dicke Luft
-                p Würde jeder Deutsche pro Woche einen fleischfreien Tag einlegen, würde das jährlich so viel <b> Treibhausgas </b> sparen wie 75 Milliarden nicht-gefahrene Pkw-Kilometer. Warum die Fleischproduktion zum Himmel stinkt? Zum Beispiel wegen der Rinderpupse (Methan) und der <b> Brandrodung </b> von Weideflächen.
+            | 1968 wurden 23 Prozent der Nahrungsmittelausgaben für Fleisch verwendet. Heute sind es nur 13 Prozent,
+            | obwohl mehr Fleisch gegessen wird. <b> Massentierhaltung </b> macht Fleisch billiger und
+            | den <span title="Da Fleisch früher relativ teuer war, aß man nur zu besonderen Anlässen
+            | (z.B. am Sonntag) große Fleischgerichte wie einen Braten"><i>Sonntagsbraten</i></span> zur Alltagskost.
+        p
+        #Zeitung
+            h3 Richtig dicke Luft
             p
-
-            #Inhaltbox
-                h3 Wer hat's erfunden?
-                img(id="front", src="images/erfunden.jpg")
-                p Ex-Beatle Paul McCartney. Der 70-jährige Vegetarier ruft seit 2009 mit seinen Töchtern Stelle (re.) und Mary zum "Meat Free Monday" auf, um den <b> Fleischkonsum </b> weltweit zu reduzieren und damit zu <b> Klimaschutz </b>  beizutragen. Immer mehr Menschen unterstützen die Aktion - auch Stars wie Gwyneth Paltrow und Oprah Winfrey.
-
-            #Inhaltbox
-                h3 Veggie-Speiseplan
-                img(id="front", src="images/speiseplan.jpg")
-                p Montags nur Möhren? Das "Meat Free Monday"-Kochbuch bringt Abwechslung auf den Tisch - mit 52 fleischfreien Speiseplänen für je einen ganzen Tag.
+            | Würde jeder Deutsche pro Woche einen fleischfreien Tag einlegen, würde das jährlich so viel
+            | <b> Treibhausgas </b> sparen wie 75 Milliarden nicht-gefahrene Pkw-Kilometer. Warum die
+            | Fleischproduktion zum Himmel stinkt? Zum Beispiel wegen der Rinderpupse (Methan) und
+            | der <b> Brandrodung </b> von Weideflächen.
+        p
+        #Zeitung
+            h3 Wer hat's erfunden?
+            img(id="front", src="images/erfunden.jpg")
+            p
+            | Ex-Beatle Paul McCartney. Der 70-jährige Vegetarier ruft seit 2009 mit seinen Töchtern Stelle (re.)
+            | und Mary zum "Meat Free Monday" auf, um den <b> Fleischkonsum </b> weltweit zu reduzieren und damit
+            | zu <b> Klimaschutz </b>  beizutragen. Immer mehr Menschen unterstützen die Aktion - auch Stars wie
+            | Gwyneth Paltrow und Oprah Winfrey.
+        #Zeitung
+            h3 Veggie-Speiseplan
+            img(id="front", src="images/speiseplan.jpg")
+            p
+            | Montags nur Möhren? Das "Meat Free Monday"-Kochbuch bringt Abwechslung auf den Tisch - mit 52
+            | fleischfreien Speiseplänen für je einen ganzen Tag.

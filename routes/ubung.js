@@ -67,6 +67,19 @@ exports.get_veggieday = function(req, res){
     res.render('veggieday');
 };
 
+exports.get_veggieday_met = function(req, res){
+    res.render('veggieday_met');
+};
+
+exports.get_veggieday_multi = function(req, res){
+    res.render('veggieday_multi');
+};
+exports.get_veggieday_u5 = function(req, res){
+    res.render('veggieday_u5');
+};
+exports.get_veggieday_drag = function(req, res){
+    res.render('veggieday_drag');
+};
 exports.get_wertewandel = function(req, res){
     res.render('wertewandel');
 };
