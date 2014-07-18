@@ -1,0 +1,99 @@
+#wrapper {
+  width: 100%;
+  display: table; }
+
+#Textbox {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  width: 45%;
+  display: table-cell;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(239, 239, 239, 0.59);
+  margin: 10px;
+  color: black; }
+
+#Antwortbox {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  background-color: rgba(181, 237, 239, 0.29);
+  display: table-cell;
+  padding: 10px;
+  width: 40%;
+  margin-left: 15px;
+  font-family: Arial, Helvetica, sans-serif; }
+
+#Platzhalter {
+  padding: 10px;
+  display: table-cell;
+  width: 2%; }
+
+#oben {
+  margin: 20px auto;
+  display: table;
+  max-height: 500px; }
+  #oben p {
+    text-align: center; }
+
+#l {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  display: table-cell;
+  background-color: rgba(2, 255, 85, 0.16);
+  border-radius: 50%;
+  width: 400px;
+  height: 300px; }
+
+#ltext {
+  margin: 10px auto;
+  padding: 15px; }
+
+#rtext {
+  margin: 10px auto;
+  padding: 15px; }
+
+#r {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  display: table-cell;
+  background-color: rgba(2, 255, 85, 0.28);
+  border-radius: 50%;
+  width: 400px;
+  height: 300px; }
+
+#Platz {
+  display: table-cell;
+  width: 85px; }
+
+#Antwort {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  padding: 20px;
+  margin: -10px auto;
+  display: box;
+  width: 50%;
+  border-radius: 50%;
+  background-color: rgba(2, 255, 85, 0.28);
+  min-height: 300px; }
+  #Antwort p {
+    text-align: center; }
+
+.tok {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  background: rgba(239, 239, 239, 0.59);
+  color: green;
+  font: bold;
+  padding: 8px;
+  display: inline-block;
+  margin: 20px;
+  border-radius: 50%; }
+
+.tok:hover {
+  background-color: #99ff66; }
