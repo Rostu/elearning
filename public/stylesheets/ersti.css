@@ -48,3 +48,41 @@ body {
  width: 100%;
  display: table;
 }
+
+#Antwortbox {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background-color: #ffffff;
+    display: table-cell;
+    padding: 10px;
+    width: 190px;
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgoldenrodyellow;
+    min-height: 500px;
+    align-items: center;
+}
+
+.inline {
+    display: inline-block;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+#Space {
+    padding: 15px;
+    display: table-cell;
+    width: 3%;
+}
+
+#Field{
+    color: #000000;
+    text-indent: 0;
+    background: lightblue;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
