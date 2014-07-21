@@ -1,50 +1,43 @@
 extends layout
 block content
-    #Aufgabebox
-        h1(style="center") Übung 1: Lernwortschatz
-        h2 Aufgabe:
-        p
-        | Nachstehend befinden sich fünf Zeitungsartikel zum Thema "Fleischfreier Montag". Lies die Artikel
-        | aufmerksam und informiere dich über die Bedeutung der <b>fett</b> gedruckten Schlagwörter auf
-        a(href='www.duden.de') Duden
-        p Hinweis: Fahre mit dem Mauszeiger über kursiv gekennzeichnete Wörter und du erfährst deren Bedeutung!
+    link(rel='stylesheet', href='/stylesheets/veggie.css')
+    h2(style="center") Übung 1: Vegetarismus
     p
     #Inhaltbox
         #Zeitung
             h2 Fleischfreier Montag
-            p Ein Tag pro Woche <b> Vegetarier </b> werden: Es gibt gute Gründe, bei dieser Aktion mitzumachen!
+            p Ein Tag pro Woche <b><font color="#FF0000"> Vegetarier </font></b> werden: Es gibt gute Gründe, bei dieser Aktion mitzumachen!
         p
         #Zeitung
             h3 Meat-free macht fit
             img(id="front", src="images/moehren.jpg")
             p
             | Ab und an auf Wurstbrot und Steak zu erzichten, ist gut für die Gesundheit
-            | (mindert z.B. das <b> Herzinfarktrisiko</b>). Die Deutsche Gesellschaft für Ernärhung empfiehlt den
+            | (mindert z.B. das <b><font color="#FF0000"> Herzinfarktrisiko</font></b>). Die Deutsche Gesellschaft für Ernährung empfiehlt den
             | Verzehr von 300 bis 600 g Fleisch pro Woche. Gegessen werden im Schnitt aber fast 1,2 Kilo.
         #Zeitung
             h3 Damals..
             img(id="front", src="images/damals.jpg")
             p
             | 1968 wurden 23 Prozent der Nahrungsmittelausgaben für Fleisch verwendet. Heute sind es nur 13 Prozent,
-            | obwohl mehr Fleisch gegessen wird. <b> Massentierhaltung </b> macht Fleisch billiger und
-            | den <span title="Da Fleisch früher relativ teuer war, aß man nur zu besonderen Anlässen
-            | (z.B. am Sonntag) große Fleischgerichte wie einen Braten"><i>Sonntagsbraten</i></span> zur Alltagskost.
+            | obwohl mehr Fleisch gegessen wird. <b><font color="#FF0000"> Massentierhaltung </font></b> macht Fleisch billiger und
+            | den <b><font color="#FF0000">Sonntagsbraten</font></b> zur Alltagskost.
         p
         #Zeitung
             h3 Richtig dicke Luft
             p
             | Würde jeder Deutsche pro Woche einen fleischfreien Tag einlegen, würde das jährlich so viel
-            | <b> Treibhausgas </b> sparen wie 75 Milliarden nicht-gefahrene Pkw-Kilometer. Warum die
+            | <b><font color="#FF0000"> Treibhausgas </font></b> sparen wie 75 Milliarden nicht-gefahrene Pkw-Kilometer. Warum die
             | Fleischproduktion zum Himmel stinkt? Zum Beispiel wegen der Rinderpupse (Methan) und
-            | der <b> Brandrodung </b> von Weideflächen.
+            | der <b><font color="#FF0000"> Brandrodung </font></b> von Weideflächen.
         p
         #Zeitung
             h3 Wer hat's erfunden?
             img(id="front", src="images/erfunden.jpg")
             p
             | Ex-Beatle Paul McCartney. Der 70-jährige Vegetarier ruft seit 2009 mit seinen Töchtern Stelle (re.)
-            | und Mary zum "Meat Free Monday" auf, um den <b> Fleischkonsum </b> weltweit zu reduzieren und damit
-            | zu <b> Klimaschutz </b>  beizutragen. Immer mehr Menschen unterstützen die Aktion - auch Stars wie
+            | und Mary zum "Meat Free Monday" auf, um den <b><font color="#FF0000"> Fleischkonsum </font></b> weltweit zu reduzieren und damit
+            | zu <b><font color="#FF0000"> Klimaschutz </font></b>  beizutragen. Immer mehr Menschen unterstützen die Aktion - auch Stars wie
             | Gwyneth Paltrow und Oprah Winfrey.
         #Zeitung
             h3 Veggie-Speiseplan
@@ -52,3 +45,21 @@ block content
             p
             | Montags nur Möhren? Das "Meat Free Monday"-Kochbuch bringt Abwechslung auf den Tisch - mit 52
             | fleischfreien Speiseplänen für je einen ganzen Tag.
+        p
+    p
+    br
+    p
+    p
+    br
+    p
+    #Aufgabe
+        p
+        | <b>Aufgabe:</b> Lies die fünf Zeitungsartikel zum Thema "Fleischfreier Montag" aufmerksam und informiere dich
+        | über die Bedeutung der <b><font color="#FF0000">rot</font></b> gedruckten Schlagwörter auf &nbsp
+        a(href='www.duden.de') Duden
+        | &nbsp und auf dem &nbsp
+        a(href='http://wortschatz.uni-leipzig.de/') Wortschatzportal der Universität Leipzig
+        | . Bei dieser Aufgabe geht es nicht nur darum, die Bedeutung der Wörter kennenzulernen, sondern auch um den
+        | Umgang mit den beiden Portalen zu üben. Diese können dir in Zukunft helfen, unbekannte Wörter besser zu verstehen.
+        p
+

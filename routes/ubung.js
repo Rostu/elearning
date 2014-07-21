@@ -66,10 +66,12 @@ exports.get_ersti_task3 = function(req, res){
 exports.get_ersti_task4 = function(req, res){
     res.render('ersti_task4');
 };
+exports.get_veggieday_inhalt = function(req, res){
+    res.render('veggieday_inhalt');
+};
 exports.get_veggieday = function(req, res){
     res.render('veggieday');
 };
-
 exports.get_veggieday_met = function(req, res){
     res.render('veggieday_met');
 };
@@ -96,4 +98,7 @@ exports.get_generationen2 = function(req, res){
 };
 exports.get_zukunft = function(req, res){
     res.render('zukunft');
+};
+exports.get_zukunft_task1 = function(req, res){
+    res.render('zukunft_task1');
 };

@@ -1,0 +1,113 @@
+#Aufgabe {
+    text-indent: 0;
+    background-color: rgb(239, 150, 145);
+    padding: 10px;
+    position: fixed;
+    min-width: 100%;
+    bottom: 0;
+    left: 0;
+    color: #000000;
+}
+
+.inline {
+    display: inline-block;
+    margin-left: 3px;
+    margin-right: 3px; }
+
+.draggie.ui-draggable-dragging {
+    color: green;
+    font-size: 2em;
+    padding: 5px;
+    margin: 10px;
+    background: rgba(239, 239, 239, 0.59);
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey; }
+
+
+#Platzhalter {
+    padding: 10px;
+    display: table-cell;
+    width: 2%;
+}
+
+#Aufgabebox {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    width: 30%;
+    display: table-cell;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(7, 10, 255, 0.15);
+    margin: 10px;
+    color: #000000;
+}
+
+
+#Inhaltbox {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    width: 50%;
+    display: table-cell;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(24, 97, 239, 0.22);
+    margin: 10px;
+    color: #000000;
+    line-height: 30px;
+}
+
+
+
+
+#Zeitung {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    width: 50%;
+    display: table-cell;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(22, 86, 211, 0.17);
+    margin: 10px;
+    color: #000000;
+}
+
+#Inhalt {
+    box-shadow: 0px 2px 5px darkgrey;
+    width: 20%;
+    display: table-cell;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(247, 255, 228, 0.17);
+    margin: 10px;
+    color: #000000;
+}
+
+#Textbox {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    width: 45%;
+    display: table-cell;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(239, 239, 239, 0.59);
+    margin: 10px;
+    color: black;
+    line-height: 30px;
+}
+
+#Antwortbox1, #Antwortbox2,  #Antwortbox3 {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    display: table-cell;
+    padding: 10px;
+    width: 30%;
+    background-color: rgba(22, 96, 255, 0.16);
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif; }
+

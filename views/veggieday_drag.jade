@@ -1,19 +1,8 @@
 extends layout
 block content
-    link(rel='stylesheet', href='/stylesheets/veggieday.css')
-    script( src='/javascripts/Veggy.js')
-    #Aufgabebox
-        h1(style="center") Übung 3: Meinung der Mediziner
-        h2 Aufgabe:
-        p
-        | Lies den folgenden Text aufmerksam. Hier geht es um die Meinung der Mediziner zum Thema Veganismus. Ziehe
-        | anschließend die aufgelisteten Begriffe ihrer entsprechenden Definition zu.
-        p
-        | Hinweis: Die Bedeutung von <i>kursiv</i>
-        | gedruckten Wörtern erfährst du, wenn du auf ihnen mit dem Mauszeiger verweilst!
-        | Falls du ein Wort nicht kennst, kannst du es im
-        a(href='www.duden.de') Duden
-        | nachschlagen!
+    link(rel='stylesheet', href='/stylesheets/veggie.css')
+    script( src='/javascripts/Veggie_drag.js')
+    h2(style="center") Übung 4: Meinung der Mediziner
     p
     #Textbox
         h2 Mediziner
@@ -47,14 +36,44 @@ block content
         | bezeichnet werden kann.
         p
         p
-        #Aufgabebox
-            #Antwortbox1
-                p Def1 Testtext :-D Hier wird eine Definition stehen. <------------------------> blabla
+        #Antwortbox1
+                p Definition 1:
+                | Jeder Mensch hat sein eigenes Gewicht, je nachdem wie viel man isst. Man kann es auf
+                | einer Waage wiegen kann. Frauen und kleine Menschen wiegen im Schnitt weniger als Männer oder
+                | große Menschen.
+                p Was wird hier definiert?
+        #Platzhalter
+
+        #Antwortbox2
+                p Definition 2:
+                | Das Alter, das ein Mensch voraussichtlich erreichen wird. Einflüsse wie gesunde
+                | Ernährung und sportliche Aktivität wirken dabei positiv ein und können das erwartete Alter
+                | verlängern; Alkohol und Zigaretten bewirken das Gegenteil.
+                p Was wird hier definiert?
+        #Platzhalter
+
+        #Antwortbox3
+                p Definition 3:
+                | Damit ist eine allgemeine Anzahl von Menschen gemeint, die in einen bestimmten Zeitraum
+                | stirbt. Sie kann unterschiedlich ausfallen, je nachdem, wie hoch die Lebensqualität in den
+                | verschiedenen Ländern ist. Meist wird die Zahl in Prozent angegeben.
+                p Was wird hier definiert?
+            p
         p
-        #Aufgabebox
-            #Antwortbox2
-                p  Def2 Testtext :-D Hier wird eine Definition stehen. <------------------------> blabla
+        <form name="dragAndDrop" id="findDefinitions" action="">
+        <input type="button" name="submit" value="Fertig!" onclick="validate ()" >
+        </form>
+    p
+    br
+    p
+    p
+    br
+    p
+
+
+    #Aufgabe <b>Aufgabe:</b> Lies den folgenden Text aufmerksam durch. Hier geht es um die Meinung der Mediziner zum Thema
+        | Veganismus. Ziehe anschließend die enstprechenden Begriffe mit gedrückter Maustaste aus dem Text heraus
+        | ihrer entsprechenden Definition zu. Wenn du das Wort in die Box gezogen hast, erhälst du beim Klick darauf weitere Infos.
         p
-        #Aufgabebox
-            #Antwortbox3
-                p Def3 Testtext :-D Hier wird eine Definition stehen. <------------------------> blabla
+        | Hinweis: Die Bedeutung von <i>kursiv</i> gedruckten Wörtern erfährst du, wenn du auf ihnen mit dem Mauszeiger verweilst!
+        p
