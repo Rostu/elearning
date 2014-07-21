@@ -27,6 +27,16 @@
  text-align: center;
 }
 
+.text {
+    text-align: center;
+}
+
+.h {
+    font-size: 20px;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 5px;
+}
 body {
  font-family: monospace;
 }
