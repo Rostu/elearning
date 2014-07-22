@@ -72,7 +72,6 @@ app.get('/veggieday_drag', ubung.get_veggieday_drag);
 app.get('/veggieday_met', ubung.get_veggieday_met);
 app.get('/veggieday_multi', ubung.get_veggieday_multi);
 app.get('/veggieday_u5', ubung.get_veggieday_u5);
-app.get('/ersti_task1', ubung.get_ersti_task1);
 app.get('/ersti_task2b', ubung.get_ersti_task2b);
 app.get('/ersti_task2', ubung.get_ersti_task2);
 app.get('/ersti_task3', ubung.get_ersti_task3);

@@ -48,12 +48,9 @@ exports.get_handy = function(req, res){
 };
 
 exports.get_ersti = function(req, res){
-    res.render('ersti');
-};
-
-exports.get_ersti_task1 = function(req, res){
     res.render('ersti_task1');
 };
+
 exports.get_ersti_task2 = function(req, res){
     res.render('ersti_task2');
 };
