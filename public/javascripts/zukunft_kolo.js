@@ -4,7 +4,7 @@ function init() {
     $("h1").toggle();
     $("h2").toggle();
     var id=0;
-    var testarray = [["Auto","fahren"],["Banane", "essen"],["Schafe", "hüten"],["Bären", "pflücken"]];
+    var testarray = [["Film","entwickeln"],["Radar", "auf dem ... haben"],["Lenkrad", "hinter dem ... sitzen"],["Verkehr","aus dem ... ziehen"]];
     var linksarray = [];
     var rechtsarray = [];
     var j=0;
@@ -17,7 +17,6 @@ function init() {
         j++;
     });
     linksarray = shuffle(linksarray);
-    rechtsarray = shuffle(rechtsarray);
 
     linksarray.forEach(function(entry) {
         var div = jQuery('<div/>', {
@@ -84,7 +83,7 @@ function init() {
     function check(){
         if($("#Antwortbox .antworttoken").length > 1){
             if( $("#Antwortbox .antworttoken")[0].id == $("#Antwortbox .antworttoken")[1].id){
-                $("#Antwortbox .antworttoken").delay(800).fadeOut( function() { $(this).remove(); });
+                $("#Antwortbox .antworttoken").delay(800).fadeOut( function() { $("#Antwortbox .antworttoken").remove(); });
                 r_length++;
                 update_balken();
                 $("h1").fadeToggle(800,function(){ $("h1").hide();});
