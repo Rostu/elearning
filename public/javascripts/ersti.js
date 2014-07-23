@@ -100,10 +100,12 @@ $(document).ready(function() {
         //w.append(makeDiv(a[i], i));
         f.append(e[i]);
     }
+
     var slots = $('.slot');
     slots.on("blur", function() {
         validate(this);
     });
+
 
 
     // TASK 4
