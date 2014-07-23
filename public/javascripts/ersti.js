@@ -1,10 +1,9 @@
-
 $( init );
 function init() {
 
     var id=0;
     var id_speicher = [];
-    var testarray = ["aufgeregt","Nervosität"];
+    var testarray = ["angenehmer","erleichert","gespannt", "Vorfreude","Neugier"];
     var i = 0;
     var infos = [];
     var r_length=0;
@@ -127,7 +126,7 @@ $(document).ready(function() {
     });
 
     $('#weiter').on("click", function() {
-       alert("Weiter im Programm");
+        alert("Weiter im Programm");
     });
     function makeDiv(a, i) {
         return "<div class='word' id='w"+ (i+1) +"'>" + a + "</div>";

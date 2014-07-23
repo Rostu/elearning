@@ -4,11 +4,9 @@
 extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/ersti.css')
-    script( src='/javascripts/ersti.js')
+    script( src='/javascripts/ersti1.js')
     #wrapper
-        p.unselectable.info
-            | Suche alle Wörter aus dem Text heraus, die sich auf Gefühle beziehen. Gruppiere diese dabei nach positiver und negativer Bedeutung.
-           .unselectable.container(style='clear: left;')
+       #Textbox
                 | Der erste Tag an der Universität. Ein neuer Lebensabschnitt beginnt.
                 p#p2.p
                 | Ich bin
@@ -27,11 +25,16 @@ block content
                 | passieren könnte.
                 p#p3.p
                 | Die Busfahrt verläuft reibungslos.
-                | Doch ich fühle mich jetzt schon merkwürdig zwischen
+                | Doch ich fühle mich jetzt schon
+                .inline(id=2) merkwürdig
+                | zwischen
                 | den anderen Studenten. Passe ich hier tatsächlich rein?!
                 | Allerdings baut es mich etwas auf, dass ich noch
-                | andere Erstsemesterstudenten sichte, die genauso unsicher
-                | wirken wie ich. Auf dem Unigelände komme ich mir dann sehr klein vor.
+                | andere Erstsemesterstudenten sichte, die genauso
+                .inline(id=3) unsicher wirken
+                | wie ich. Auf dem Unigelände komme ich mir dann sehr
+                .inline(id=4) klein
+                | vor.
                 | Während die Studenten alle zielsicher in die Unigebäude strömen, blicke ich
                 | mich
                 | erst einmal um. Zu meiner Verwunderung finde ich jedoch auf Anhieb den
@@ -40,16 +43,25 @@ block content
                 | Bei meinem Gang durch das A-Gebäude fühle
                 | ich mich wieder in die fünfte Klasse zurückversetzt.
                 | Als ich damals von der Grundschule auf die Realschule wechselte,
-                | fühlte ich mich genauso klein und unwissend. Die älteren Schüler waren
+                | fühlte ich mich genauso
+                .inline(id=4) klein
+                | und
+                .inline(id=5) unwissend
+                | . Die älteren Schüler waren
                 | sichtlich
-                | genervt von den kleinen Fünftklässlern, die noch keinen Plan von der
+                .inline(id=6) genervt
+                | von den kleinen Fünftklässlern, die noch keinen Plan von der
                 | Mittelstufe
                 | hatten. An der Uni habe ich das Gefühl, dass die älteren Semester sich
-                | ebenso belästigt von den Erstis fühlen, die nun planlos auf dem Campus
+                | ebenso
+                .inline(id=7) belästigt
+                | von den Erstis fühlen, die nun planlos auf dem Campus
                 | herumgeistern und
                 | mit dämlichen Fragen nerven.
                 p#p5.p
-                | Im Seminarraum angekommen, ist es gleich viel angenehmer. Dort sitzen ganz
+                | Im Seminarraum angekommen, ist es gleich viel
+                .inline(id=8) angenehmer
+                | . Dort sitzen ganz
                 | viele
                 | Erstis, die noch genauso doof sind wie ich. Kaum habe ich mir einen Platz
                 | ausgesucht und mich hingesetzt, komme ich auch schon mit meinen neuen
@@ -63,15 +75,29 @@ block content
                 | Nachfragen, findet man sie. Die meisten Dozenten machen
                 | einen guten Eindruck und die Veranstaltungen scheinen interessant zu werden.
                 p#p7.p
-                | Nachdem der erste Unitag vorbei ist, bin ich erleichtert. So schlimm
+                | Nachdem der erste Unitag vorbei ist, bin ich
+                .inline(id=9) erleichtert
+                | . So schlimm
                 | war es gar nicht. Eigentlich war es sogar richtig toll. Jetzt fühle ich mich
-                | schon fast wie eine echte Studentin. Ich bin gespannt auf die bevorstehende
+                | schon fast wie eine echte Studentin. Ich bin
+                .inline(id=10) gespannt
+                | auf die bevorstehende
                 | Unizeit.
-                | Die Aufregung und die Ängste sind der Neugier und Vorfreude gewichen. Jetzt
+                | Die Aufregung und die sind der
+                .inline(id=11) Neugier
+                | und
+                .inline(id=12) Vorfreude
+                | gewichen. Jetzt
                 | kann es richtig losgehen!
-           #Field
-               a(href="/ersti_task2") Weiter
-        #Antwortbox
-                h3 Positiv:
-        #Antwortbox
-                h3 Negativ:
+
+         #Space
+       #Antwortbox.text
+            h3 Positiv
+       #Antwortbox_two.text
+            h3 Negativ
+     #Field
+        | Suche alle Wörter aus dem Text heraus, die sich auf Gefühle beziehen. Gruppiere diese dabei nach positiver und negativer Bedeutung.
+        a(href="/ersti_task2") Weiter
+        #balken_aussen
+            #balken_innen1
+            #balken_innen2

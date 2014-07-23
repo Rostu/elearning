@@ -1,0 +1,66 @@
+//
+   Created by Mirko on 17.07.2014.
+extends layout
+block content
+    link(rel='stylesheet', href='/stylesheets/ersti.css')
+    script( src='/javascripts/ersti.js')
+    #wrapper
+        p.unselectable.info
+                    | Welche dieser Wörter passen in den Kontext „Universität“
+                    .unselectable.container(style='clear: left;')
+            .h Veranstaltung
+            .text
+                | 01.
+                input#s1.slot(type='te.textxt')
+                | 02.
+                input#s2.slot(type='te.textxt')
+                | 03.
+                input#s3.slot(type='te.textxt')
+                | 04.
+                input#s4.slot(type='te.textxt')
+                | 05.
+                input#s5.slot(type='text')
+            .h Personal
+            .text
+                | 01.
+                input#s1.slot(type='text')
+                | 02.
+                input#s2.slot(type='text')
+                | 03.
+                input#s3.slot(type='text')
+                | 04.
+                input#s4.slot(type='text')
+                | 05.
+                input#s5.slot(type='text')
+                | 06.
+                input#s6.slot(type='text')
+                | 07.
+                input#s7.slot(type='text')
+            .h Lernende
+            .text
+                | 01.
+                input#s1.slot(type='text')
+                | 02.
+                input#s2.slot(type='text')
+                | 03.
+                input#s3.slot(type='text')
+                | 04.
+                input#s4.slot(type='text')
+                | 05.
+                input#s5.slot(type='text')
+                | 06.
+                input#s6.slot(type='text')
+        p.unselectable.info
+            | Welche Begriffe verwenden speziell nur Studenten? Falls du nicht weiter weißt, nimm das Wortschatzportal zu Hilfe um die Abkürzungen aufzulösen.
+        .unselectable.container(style='clear: left;')
+        .text
+            | 01.
+            input#s1.slot(type='text')
+            | 02.
+            input#s2.slot(type='text')
+            | 03.
+            input#s3.slot(type='text')
+
+                #Field
+                    | Ordne die untenstehenden Begriffe in die drei vorgegebenen Themenfelder: Veranstaltung, Personal, Lerner
+                    a(href="/ersti_task3") weiter
