@@ -4,7 +4,20 @@
 extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/ersti.css')
-    script( src='/javascripts/ersti.js')
+    script( src='/javascripts/ersti3.js')
     #wrapper
         p.unselectable.info
-            | Task 3
+            | Ordne die unten stehenden Wörter nach Synonymen und Antonymen. Welche der Wörter drücken das gleiche aus wie „interessant“ („interessante Veranstaltung“) und welche der Wörter bedeuten das Gegenteil?
+        div.unselectable.container
+            div.worddrag
+            br(style='clear:both')
+            div.target#synonym
+                b.title
+                    | Synonyme
+            div.target#antonym
+                b.title
+                    | Antonyme
+            br(style='clear:left')
+            a(href='#' onclick='validate()', class='buttona')
+                | Weiter
+

@@ -1,0 +1,39 @@
+//
+   Created by David on 17.07.2014.
+
+extends layout
+block content
+    link(rel='stylesheet', href='/stylesheets/ersti.css')
+
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/javascripts/jquery-ui.min.js')
+    script(src='/javascripts/ersti3.js')
+    #wrapper
+        p.unselectable.info
+            | Finde im Wortschatzportal Leipzig vier Synonyme, die das Adjektiv „dämlich“ („dämliche Frage“) im Kontext des Textes ersetzen können.
+
+
+        .unselectable.container(style='clear: left;')
+            | An der Uni habe ich das Gefühl, dass die älteren Semester sich ebenso belästigt von der Erstis fühlen, die nun planlos auf dem Campus herumgeistern und mit
+            span.placeholderdots |...___...|
+            |  Fragen nerven.
+            br
+            br
+            label(for='w1')
+                | Wort 1
+            input(type='text' id='w1' class='slot')
+            br
+            label(for='w2')
+                | Wort 2
+            input(type='text' id='w2' class='slot')
+            br
+            label(for='w3')
+                | Wort 3
+            input(type='text' id='w3' class='slot')
+            br
+            label(for='w4')
+                | Wort 4
+            input(type='text' id='w4' class='slot')
+        br
+        a(href="#", style='clear:left', id='weiter', class='buttona')
+            | Weiter
