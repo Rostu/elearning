@@ -4,6 +4,7 @@
     background-color: lightblue;
     height: 20px;
     padding: 5px;
+
 }
 
 .passive {
@@ -51,7 +52,6 @@ body {
     -ms-user-select: none; /* IE 10 */
     -o-user-select: none;
     user-select: none;
-
 }
 
 .hidden {

@@ -64,6 +64,9 @@ exports.get_ersti_task2b = function(req, res){
 exports.get_ersti_task2c = function(req, res){
     res.render('ersti_task2c');
 };
+exports.get_ersti_task2d = function(req, res){
+    res.render('ersti_task2d');
+};
 exports.get_ersti_task3 = function(req, res){
     res.render('ersti_task3');
 };
