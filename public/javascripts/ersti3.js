@@ -52,7 +52,7 @@ $(document).ready(function() {
         a.map(function(e) {c.push(e+"e");c.push(e+"en");});
         a = a.concat(c);
         c = [];
-        var b = ["albern",  "begriffsstutzig",  "beschränkt",  "bieder", "borniert", "doof",  "dösig",  "dumm",  "dusselig",  "einfältig",  "eng",  "flach",  "gottverlassen",  "grün",  "idiotisch",  "kindisch", "hirnlos"];
+        var b = ["albern",  "begriffsstutzig",  "beschränkt",  "bieder", "borniert",  "dösig", "dusselig",  "einfältig",  "eng",  "flach",  "gottverlassen",  "grün", "kindisch"];
         b.map(function(e) {c.push(e+"e");c.push(e+"en")});
         b = b.concat(c);
         c = [];
