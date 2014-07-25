@@ -6,8 +6,7 @@ block content
     link(rel='stylesheet', href='/stylesheets/ersti.css')
     script( src='/javascripts/ersti3.js')
     #wrapper
-        p.unselectable.info
-            | Ordne die unten stehenden Wörter nach Synonymen und Antonymen. Welche der Wörter drücken das gleiche aus wie „interessant“ („interessante Veranstaltung“) und welche der Wörter bedeuten das Gegenteil?
+      #Textbox
         div.unselectable.container
             div.worddrag
             br(style='clear:both')
@@ -18,6 +17,7 @@ block content
                 b.title
                     | Antonyme
             br(style='clear:left')
-            a(href='#' onclick='validate()', class='buttona')
-                | Weiter
 
+     #Field
+            | Ordne die unten stehenden Wörter nach Synonymen und Antonymen. Welche der Wörter drücken das gleiche aus wie „interessant“ („interessante Veranstaltung“) und welche der Wörter bedeuten das Gegenteil?
+            a(href='#' onclick='validate()') weiter

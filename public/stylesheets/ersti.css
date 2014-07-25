@@ -4,6 +4,7 @@
     background-color: lightblue;
     height: 20px;
     padding: 5px;
+
 }
 
 .passive {
@@ -22,6 +23,8 @@
     font-family: monospace;
     height: 20px;
     width: 175px;
+    border-top: hidden;
+    border-bottom-color: black;
 }
 
 .info {
@@ -49,7 +52,6 @@ body {
     -ms-user-select: none; /* IE 10 */
     -o-user-select: none;
     user-select: none;
-
 }
 
 .hidden {
@@ -61,13 +63,53 @@ body {
     display: table;
 }
 
+#Textbox {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    width: 70%;
+    display: table-cell;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(239, 239, 239, 0.59);
+    margin: 10px;
+    color: black;
+}
+
 #Antwortbox {
     -webkit-box-shadow: 0 2px 5px darkgrey;
     -moz-box-shadow: 0 2px 5px darkgrey;
     box-shadow: 0 2px 5px darkgrey;
     display: table-cell;
     padding: 10px;
-    width: 190px;
+    width: 10%;
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgoldenrodyellow;
+    min-height: 500px;
+    align-items: center;
+}
+
+#Antwortbox_two {
+    -webkit-box-shadow: 0 2px 5px darkgrey;
+    -moz-box-shadow: 0 2px 5px darkgrey;
+    box-shadow: 0 2px 5px darkgrey;
+    display: table-cell;
+    padding: 10px;
+    width: 10%;
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgoldenrodyellow;
+    min-height: 500px;
+    align-items: center;
+}
+#Antwortbox_three {
+    -webkit-box-shadow: 0 2px 5px darkgrey;
+    -moz-box-shadow: 0 2px 5px darkgrey;
+    box-shadow: 0 2px 5px darkgrey;
+    display: table-cell;
+    padding: 10px;
+    width: 10%;
     margin-left: 15px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: lightgoldenrodyellow;
@@ -77,8 +119,8 @@ body {
 
 .inline {
     display: inline-block;
-    margin-right: 3px;
-    margin-left: 3px;
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 #Space {
@@ -86,16 +128,26 @@ body {
     display: table-cell;
     width: 3%;
 }
+#Space_two {
+    display: table-cell;
+    padding: 10px;
+    margin-top: 10px;
+}
 
 #Field{
-    color: #000000;
+    color: black;
     text-indent: 0;
-    background: lightblue;
+    background: rgba(159, 255, 177, 0.8);
     padding: 10px;
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
+    min-width: 100%;
+}
+
+#Field a{
+    float: right;
+    margin-right: 20px;
 }
 
 .target {
@@ -141,3 +193,24 @@ body {
     border-bottom: 2px dotted blue;
 }
 
+
+#balken_aussen {
+    display: inline-block;
+    width: 216px;
+    height: 17px;
+    background: white;
+    padding: 1px;
+    margin-right: 30px;
+    float: left; }
+
+#balken_innen1 {
+    background: lawngreen;
+    display: inline-block;
+    width: 0px;
+    height: 15px; }
+
+#balken_innen2 {
+    background: red;
+    display: inline-block;
+    height: 15px;
+    width: 0px; }

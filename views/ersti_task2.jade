@@ -4,12 +4,11 @@
 extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/ersti.css')
-    script( src='/javascripts/ersti.js')
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/javascripts/jquery-ui.min.js')
+    script( src='/javascripts/ersti2.js')
     #wrapper
-        p.unselectable.info
-            | Schreibe alle Wörter, die Du mit dem Wortfeld Universität assoziierst aus dem Text heraus.
-    #top-container
-        .unselectable.container(style='clear: left;')
+        #Textbox.unselectable
             p#p1.p
                 | Der erste Tag an der Universität. Ein neuer Lebensabschnitt beginnt.
             p#p2.p
@@ -67,8 +66,9 @@ block content
                 | Unizeit.
                 | Die Aufregung und die Ängste sind der Neugier und Vorfreude gewichen. Jetzt
                 | kann es richtig losgehen!
-        .unselectable.container(style='clear: left;')
-        .text
+
+         #Space
+        #Antwortbox
             |   01.
             input#s1.slot(type='text')
             |   02.
@@ -85,6 +85,7 @@ block content
             input#s7.slot(type='text')
             |   08.
             input#s8.slot(type='text')
+        #Antwortbox_two
             |   09.
             input#s9.slot(type='text')
             |   10.
@@ -103,6 +104,7 @@ block content
             input#s16.slot(type='text')
             |   17.
             input#s17.slot(type='text')
-        #Field
-            a(href="/ersti_task2b") Weiter
-        input(type='submit', value='Weiter', style='clear:left', id='weiter').hidden
+     #Field
+        | Schreibe alle Wörter, die Du mit dem Wortfeld Universität assoziierst aus dem Text heraus.
+        a(href="/ersti_task2b") Weiter
+

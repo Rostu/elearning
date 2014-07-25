@@ -1,10 +1,6 @@
-/**
- * Created by s2daalft on 23.07.2014.
- */
 $(document).ready(function() {
-    // TASK 4
-    var a = ['planlos','auf Anhieb','strömen','reibungslos verläuft','flach fällt',
-        'herumgeistern','mitteilungsbedürftig','sehr klein vorkommen','bevorstehende'];
+    var a = ['Universität', 'Lageplan', 'A-Gebäude', 'Seminar', 'Studenten', 'Erstsemesterstudenten',
+             'Unigelände', 'Unigebäude', 'Seminarraum', 'Uni', 'Campus', 'Erstis', 'Kommilitone', 'Dozenten', 'Veranstaltung', 'Unizeit', 'Unitag'];
     var w = $('.words');
     var b = [];
     for (var i = 0; i < a.length; i++) {

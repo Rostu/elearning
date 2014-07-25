@@ -1,0 +1,23 @@
+//
+   Created by Mirko on 17.07.2014.
+extends layout
+block content
+    link(rel='stylesheet', href='/stylesheets/ersti.css')
+    script( src="/javascripts/jquery-1.11.1.min.js")
+    script( src="/javascripts/jquery-ui.min.js")
+    script( src='/javascripts/ersti.js')
+    #wrapper
+      #Textbox
+        .unselectable.fields
+    #Antwortbox
+      .h Veranstaltung
+      .text
+    #Antwortbox_two
+      .h Personal
+      .text
+    #Antwortbox_three
+       .h Lernende
+       .text
+    #Field
+        | Welche dieser Wörter passen in den Kontext „Universität“
+        a(href="/ersti_task2d") weiter
