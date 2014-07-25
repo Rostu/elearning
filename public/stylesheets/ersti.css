@@ -150,6 +150,11 @@ body {
     margin-right: 20px;
 }
 
+#Field .outlink {
+    float: none;
+    margin: 0 6px;
+}
+
 .target {
     border: 1px dashed;
     width: 45%;
@@ -206,11 +211,27 @@ body {
 #balken_innen1 {
     background: lawngreen;
     display: inline-block;
-    width: 0px;
+    width: 0;
     height: 15px; }
 
 #balken_innen2 {
     background: red;
     display: inline-block;
     height: 15px;
-    width: 0px; }
+    width: 0; }
+
+.invisible {
+    display: none;
+}
+
+.marktrue {
+    background-color: lightgreen;
+}
+
+.markalmost {
+    background-color: lemonchiffon;
+}
+
+.markfalse {
+    background-color: lightpink;
+}

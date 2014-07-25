@@ -9,31 +9,43 @@ block content
     script(src='/javascripts/jquery-ui.min.js')
     script(src='/javascripts/ersti3.js')
     #wrapper
-        p.unselectable.info
-            | Finde im Wortschatzportal Leipzig vier Synonyme, die das Adjektiv „dämlich“ („dämliche Frage“) im Kontext des Textes ersetzen können.
 
 
-        .unselectable.container(style='clear: left;')
-            | An der Uni habe ich das Gefühl, dass die älteren Semester sich ebenso belästigt von der Erstis fühlen, die nun planlos auf dem Campus herumgeistern und mit
-            span.placeholderdots |...___...|
-            |  Fragen nerven.
-            br
-            br
-            label(for='w1')
-                | Wort 1
-            input(type='text' id='w1' class='slot')
-            br
-            label(for='w2')
-                | Wort 2
-            input(type='text' id='w2' class='slot')
-            br
-            label(for='w3')
-                | Wort 3
-            input(type='text' id='w3' class='slot')
-            br
-            label(for='w4')
-                | Wort 4
-            input(type='text' id='w4' class='slot')
+        #Textbox
+
+            .unselectable.container(style='clear: left;')
+                | An der Uni habe ich das Gefühl, dass die älteren Semester sich ebenso belästigt von der Erstis fühlen, die nun planlos auf dem Campus herumgeistern und mit
+                span.placeholderdots |...___...|
+                |  Fragen nerven.
+                br
+                br
+                label(for='w1')
+                    | Wort 1
+                input(type='text' id='w1' class='slot')
+                p.h1.invisible
+                p.c1.invisible
+                br
+                label(for='w2')
+                    | Wort 2
+                input(type='text' id='w2' class='slot')
+                p.h2.invisible
+                p.c2.invisible
+                br
+                label(for='w3')
+                    | Wort 3
+                input(type='text' id='w3' class='slot')
+                p.h3.invisible
+                p.c3.invisible
+                br
+                label(for='w4')
+                    | Wort 4
+                input(type='text' id='w4' class='slot')
+                p.h4.invisible
+                p.c4.invisible
         br
-        a(href="#", style='clear:left', id='weiter', class='buttona')
-            | Weiter
+    #Field
+        | Finde im
+        a(href='http://wortschatz.uni-leipzig.de/' class='outlink' target='_blank')
+            | Wortschatzportal Leipzig
+        | vier Synonyme, die das Adjektiv „dämlich“ („dämliche Frage“) im Kontext des Textes ersetzen können.
+        a(href="#" id='weiter') weiter
