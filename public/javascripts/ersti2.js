@@ -12,7 +12,7 @@
         $('#weiter').on("click", function(e) {
             if (!checkSituation()) {
                 e.preventDefault(); // Stops the browser from opening the next page, using the href attribute on the <a> element
-                alert("Bitte fülle alle Lücken aus!");
+                alert("Bitte fülle genügend Lücken aus!");
             }
         });
 

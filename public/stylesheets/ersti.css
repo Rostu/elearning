@@ -32,6 +32,12 @@
     text-align: center;
 }
 
+.helper {
+    text-align: right;
+    float: right;
+    margin-right: 5px;
+}
+
 .text {
     text-align: center;
 }
