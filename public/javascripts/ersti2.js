@@ -9,11 +9,10 @@
             validate(this);
         });
 
-        $('#weiter').on("click", function() {
+        $('#weiter').on("click", function(e) {
             if (!checkSituation()) {
+                e.preventDefault(); // Stops the browser from opening the next page, using the href attribute on the <a> element
                 alert("Bitte fülle alle Lücken aus!");
-            } else {
-                document.location.href = "/ersti_e  nd";
             }
         });
 
