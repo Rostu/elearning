@@ -25,8 +25,8 @@
                     $(self).addClass("passive");
                     $(self).animate({borderBottomColor: "#7cfc00", borderTopColor: "#7cfc00", backgroundColor:"#fff"}, "slow");
                     $(self).prop('disabled', true);
+                    $(".inline[id=" + a[i]  + "]").css('color', 'red');
                     a.splice(i,1); // Delete the found word from the list of correct words
-
                     return;
                 }
             }
