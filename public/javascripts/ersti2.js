@@ -41,12 +41,18 @@
         }
 
         function checkSituation () {
-            var s = $('.slot');
-            for (var i = 0; i < s.length; i++) {
+            var allSlots = $('.slot');
+            var disabledSlots = $('.slot:disabled');
+            var requiredCorrectAnswers = allSlots.length - 4;
 
-                if (!$(s[i]).is(":disabled")) return false;
+            if(disabledSlots.length >= requiredCorrectAnswers) // Enough correct answers
+            {
+                return true;
             }
-            return true;
+            else // Not enough answers
+            {
+                return false;
+            }
         }
     });
 })(jQuery);
