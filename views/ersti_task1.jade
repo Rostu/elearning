@@ -4,7 +4,9 @@
 extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/ersti.css')
-    script( src='/javascripts/ersti1.js')
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/javascripts/jquery-ui.min.js')
+    script(src='/javascripts/ersti1.js')
     #wrapper
        #Textbox
                 | Der erste Tag an der Universität. Ein neuer Lebensabschnitt beginnt.
@@ -66,7 +68,9 @@ block content
                 | Erstis, die noch genauso doof sind wie ich. Kaum habe ich mir einen Platz
                 | ausgesucht und mich hingesetzt, komme ich auch schon mit meinen neuen
                 | Kommilitonen ins Gespräch. Ich bin definitiv nicht die Einzige,
-                | die so aufgeregt ist. Die meisten Erstis teilen meine Unsicherheut und
+                | die so
+                .inline(id=0) aufgeregt
+                | ist. Die meisten Erstis teilen meine Unsicherheut und
                 | sind alle sehr mitteilungsbedürftig. Es ist schön zu wissen, dass man nicht
                 | alleine ist.
                 p#p6.p
@@ -83,7 +87,9 @@ block content
                 .inline(id=10) gespannt
                 | auf die bevorstehende
                 | Unizeit.
-                | Die Aufregung und die sind der
+                | Die
+                .inline(id=0) Aufregung
+                | und die sind der
                 .inline(id=11) Neugier
                 | und
                 .inline(id=12) Vorfreude
@@ -98,6 +104,6 @@ block content
      #Field
         | Suche alle Wörter aus dem Text heraus, die sich auf Gefühle beziehen. Gruppiere diese dabei nach positiver und negativer Bedeutung.
         a(href="/ersti_task2") Weiter
-       // #balken_aussen
+        #balken_aussen
             #balken_innen1
             #balken_innen2
