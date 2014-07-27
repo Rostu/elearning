@@ -5,7 +5,7 @@ block content
     h2(style="center") Übung 4: Meinung der Mediziner
     p
     #Textbox
-        h2 Mediziner
+        h3 Mediziner
         p
         | Schon Anfang der achtziger Jahre wurden in Deutschland drei große
         .inline(id=0) Vegetarierstudien
@@ -60,9 +60,12 @@ block content
                 p Was wird hier definiert?
             p
         p
-        <form name="dragAndDrop" id="findDefinitions" action="">
-        <input type="button" name="submit" value="Fertig!" onclick="validate ()" >
-        </form>
+        form#drag(name='dragAndDrop', action='')
+            input(type='BUTTON', name='Aufgabe', value='Fertig!', onclick='validate ()')
+
+        form#weiter(action='/veggieday_u5')
+            input(type='submit', value='Nächste Aufgabe')
+
     p
     br
     p
@@ -73,7 +76,6 @@ block content
 
     #Aufgabe <b>Aufgabe:</b> Lies den folgenden Text aufmerksam durch. Hier geht es um die Meinung der Mediziner zum Thema
         | Veganismus. Ziehe anschließend die enstprechenden Begriffe mit gedrückter Maustaste aus dem Text heraus
-        | ihrer entsprechenden Definition zu. Wenn du das Wort in die Box gezogen hast, erhälst du beim Klick darauf weitere Infos.
+        | ihrer entsprechenden Definition zu.
         p
         | Hinweis: Die Bedeutung von <i>kursiv</i> gedruckten Wörtern erfährst du, wenn du auf ihnen mit dem Mauszeiger verweilst!
-        p

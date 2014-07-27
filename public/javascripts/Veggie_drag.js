@@ -5,21 +5,6 @@ function init()
 {
     var id=0;
 
-    var testarray = [[false],[true],[false],[true],[true],[false],[false],[false],
-        [true],[false],[false],[false],[false],[false],[true],[false],
-        [false],[false],[false],[false],[false],[false],[false],[false],
-        [false],[false],[false],[false],[true],[true],[true],[false],
-        [false],[false],[false],[false],[false],[false],[true],[false],
-        [true],[true],[false],[false],[false],[false],[false],[true],
-        [false],[true],[false],[false],[true],[false],[true],[true],
-        [true],[true],[true],[true],[true],[true],[true],[false],
-        [true],[true],[false],[false],[false],[true],[false],[true],
-        [true],[true],[true],[true],[true],[false],[true],[true],
-        [false],[true],[true],[false],[false],[false],[true],[true],
-        [false],[false],[false],[false],[true],[false],[false],[false],
-        [true],[true],[true],[true],[false],[false],[true],[false],
-        [false],[false],[true],[true],[false],[true],[false],[false]];
-
     var i = 0;
 
     $(".inline").each(function()
@@ -43,16 +28,13 @@ function init()
     function handleDropEvent( event, ui )
     {
         var textinhalt = ui.draggable.context.textContent;
-        textinhalt = textinhalt.replace(',','');
-        textinhalt = textinhalt.replace('.','');
 
         var div = jQuery('<div/>', {
             class: 'token',
             id: ui.draggable.attr('id'),
-            html: "<p>"+textinhalt+"</p><div id='"+ui.draggable.attr('id') +"' class='hide'><a target='_blank' href='http://www.duden.de/suchen/dudenonline/"+ui.draggable.context.textContent+"'>INFO-Link</a><p><button id='"+ui.draggable.attr('id')+"'>löschen</button></p></div>"
-        });
-        div.click(enlarge);
-        $(div).data('korrekt',testarray[i][0]);
+            html: "<p>"+textinhalt+"</p>"
+                     });
+        div.click(clear);
         i++;
         $(this).append(div);
         $(":button[id="+ui.draggable.attr('id') +"]").click(clear);
@@ -63,8 +45,7 @@ function init()
     function myHelper( event )
     {
         var textinhalt = $(this).context.innerHTML;
-        textinhalt = textinhalt.replace(',','');
-        textinhalt = textinhalt.replace('.','');
+
         return jQuery('<div/>', {
             class: 'draggie',
             id: $(this).attr('id'),
@@ -137,7 +118,7 @@ function validate ()
 
     if ( counterCheck && boxKorrekt.indexOf ( false ) == -1 )
     {
-        alert ( 'Alles richtig!' );
+        alert ( 'Glückwunsch! Du hast alles richtig zugeordnet!' );
     }
     else if ( counterCheck )
     {
@@ -145,7 +126,7 @@ function validate ()
     }
     else
     {
-        alert ( 'Nicht fertig! Es wurde nicht zu jeder Definition ein Begriff zugeordnet oder eine Box enthält mehr als einen Begriff!' );
+        alert ( 'Es wurde nicht zu jeder Definition ein Begriff zugeordnet oder eine Box enthält mehr als einen Begriff!' );
     }
 
 

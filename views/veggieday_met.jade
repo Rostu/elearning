@@ -2,19 +2,27 @@ extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/veggie.css')
     script( src='/javascripts/Veggie_luecke.js')
-    h1(style="center") Übung 3: Metaphern
+    h2(style="center") Übung 3: Metaphern
     p
     #Inhaltbox
         p
-        | <form name="metaphor" id="lueckentext" action="">
-        | Am Wochenende fährt Paul, der bekennende Vegetarier, nachhause zu seinen Eltern. Seine Mutter hat schon den
-        | ganzen Tag fleißig gekocht, um ihm einen leckeren <INPUT type="text" name="antwort1" size=20 value="" > zu
-        | servieren. Paul ist schockiert und denkt  sich: „ Die haben  wohl <INPUT type="text" name="antwort2" size=20 value="" >
-        | !“. Die Vorfreude aller wandelt sich schnell und es herrscht
-        | <INPUT type="text" name="antwort3" size=20 value="" >. „Verstehen meine Eltern denn nicht, dass die ganze
-        | Fleischesserei <INPUT type="text" name="antwort4" size=20 value="" >?!“. Entrüstet packt Paul seine Sachen und fährt.
-        p <INPUT TYPE="BUTTON" NAME="Aufgabe" VALUE= "Fertig!" ONCLICK= "validate (this.form)" >
-        | </Form>
+        form#lueckentext(name='metaphor', action='')
+            | Am Wochenende fährt Paul, der bekennende Vegetarier, nachhause zu seinen Eltern. Seine Mutter hat schon den
+            | ganzen Tag fleißig gekocht, um ihm einen leckeren &nbsp
+            input(type='text', name='antwort1', size='20', value='')
+            | &nbsp zu servieren. Paul ist schockiert und denkt  sich: „ Die haben  wohl &nbsp
+            input(type='text', name='antwort2', size='20', value='')
+            | !“. Die Vorfreude aller wandelt sich schnell und es herrscht &nbsp
+            input(type='text', name='antwort3', size='20', value='')
+            | . „Verstehen meine Eltern denn nicht, dass die ganze Fleischesserei &nbsp
+            input(type='text', name='antwort4', size='20', value='')
+            | . Entrüstet packt Paul seine Sachen und fährt.
+            p
+            input(type='BUTTON', name='Aufgabe', value='Fertig!', onclick='validate (this.form)')
+
+        form#weiter(action='/veggieday_drag')
+            input(type='submit', value='Nächste Aufgabe')
+
     #Aufgabe <b>Aufgabe:</b> Ein Sprachmittel der Überschriften in Zeitungsartikeln sind Metaphern. In unseren
         | Zeitungsartikeln befanden sich vier davon, nämlich:
         i  nur Gemüse im Kopf, richtig dicke Luft, zum Himmel stinken, Sonntagsbraten.

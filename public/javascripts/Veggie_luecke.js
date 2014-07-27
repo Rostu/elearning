@@ -1,5 +1,3 @@
-/* Lückentext */
-
 function replaceUmlauts ( text )
 {
     text = text.replace(/ä/g,"ae");
@@ -14,67 +12,53 @@ function replaceUmlauts ( text )
 
 function validate ( sender )
 {
-    var err_msg = new Array ( 'Folgende Felder enthalten Fehler:\n' );
+    var results = [ "Sonntagsbraten",
+        "nur Gemuese im Kopf",
+        "richtig dicke Luft",
+        "zum Himmel stinkt" ];
+
+    var err_msg = new Array ( 'Falsch! Folgende Felder enthalten Fehler:\n' );
     var error = false;
 
-    field = document.forms[sender.name].antwort1;
-    if ( field.value != "Sonntagsbraten" )
+    for ( var j = 0; j < results.length; j++ )
     {
-        error = true;
-        err_msg.push ( 'Frage 1' );
-        field.style.border="1px solid #ff0000";
-    }
-    else
-    {
-        field.style.border="1px solid #00AA00";
-    }
-
-    field = document.forms[sender.name].antwort2;
-    modifiedAnswer = replaceUmlauts ( field.value );
-    if ( modifiedAnswer != "nur Gemuese im Kopf" )
-    {
-        error = true;
-        err_msg.push('Frage 2');
-        field.style.border="1px solid #ff0000";
-    }
-    else
-    {
-        field.style.border="1px solid #00AA00";
-    }
-
-    field = document.forms[sender.name].antwort3;
-    if ( field.value != "richtig dicke Luft" )
-    {
-        error = true;
-        err_msg.push('Frage 3');
-        field.style.border="1px solid #ff0000";
-    }
-    else
-    {
-        field.style.border="1px solid #00AA00";
-    }
-
-    field = document.forms[sender.name].antwort4;
-    if ( field.value != "zum Himmel stinkt" )
-    {
-        error = true;
-        err_msg.push('Frage 4');
-        field.style.border="1px solid #ff0000";
-    }
-    else
-    {
-        field.style.border="1px solid #00AA00";
+        var elemName = "antwort" + ( j+1 );
+        var field = document.forms [ sender.name ].elements [ elemName ];
+        var input = replaceUmlauts ( field.value );
+        if ( input != results [ j ] )
+        {
+            error = true;
+            // leeres Feld
+            if ( ! input )
+            {
+                err_msg.push ( 'Frage ' + ( j+1 ) + ' (nicht ausgefüllt)' );
+            }
+            // richtiges Wort aber Groß-/Kleinschreibung falsch
+            else if ( input.toUpperCase () == results [ j ].toUpperCase () )
+            {
+                err_msg.push ( 'Frage ' + ( j+1 ) + ' (Groß-/Kleinschreibung)' );
+            }
+            // falsches Wort
+            else
+            {
+                err_msg.push ( 'Frage ' + ( j+1 )  + ' (falsches Wort)' );
+            }
+            field.style.border = "1px solid #ff0000";
+        }
+        else
+        {
+            field.style.border = "1px solid #00AA00";
+        }
     }
 
     /* im Fehlerfall werden hier die gesammelten Fehlermeldungen verarbeitet und angezeigt. */
     if ( error )
     {
-        err_msg = err_msg.join ('\n\xB7 ');
-        alert ( 'Dein Lösungsvorschlag ist so nicht richtig! Lies dir die Zeitungsartikel aus Übung 1 noch einmal genau durch! Achte auch auf deine Rechtschreibung!!' );
+        err_msg = err_msg.join ( '\n\xB7 ' );
+        alert ( err_msg );
     }
     else
     {
-        alert ( 'Alles richtig!' );
+        alert ( 'Glückwunsch! Du hast alles richtig zugeordnet!' );
     }
 }
-

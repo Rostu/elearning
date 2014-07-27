@@ -1,25 +1,28 @@
 extends layout
-
 block content
-    #login_box
-        h2 Login
-        form(action="/login", method="POST")
-            #form_table
-                #form_row
+    link(rel='stylesheet', href='/stylesheets/veggie.css')
+
+    #Loginbox
+            h2 Login
+            form(action="/login", method="POST")
+                #form_table
                     #form_row
-                        label(for="login") Email
+                        #form_row
+                            label(for="login") Email
+                        #form_row
+                            input(type="text", id="login", name="login", placeholder="Your email or username")
                     #form_row
-                        input(type="text", id="login", name="login", placeholder="Your email or username")
-                #form_row
+                        #form_row
+                            label(for="password") Passwort
+                        #form_row
+                            input(type="password", id="password", name="password", placeholder="Your password")
+                            if error
+                                p #{error}
+                    p
                     #form_row
-                        label(for="password") Passwort
+                        #form_cell
+                            a(href='/signup') neu anmelden
+                    p
                     #form_row
-                        input(type="password", id="password", name="password", placeholder="Your password")
-                        if error
-                            p #{error}
-                #form_row
-                    #form_cell
-                        a(href='/signup') neu anmelden
-                #form_row
-                    #form_cell
-                        input(type="submit", value="Login")
+                        #form_cell
+                            input(type="submit", value="Login")

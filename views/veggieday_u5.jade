@@ -2,7 +2,7 @@ extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/veggie.css')
     script( src='/javascripts/Veggie_u5.js')
-    h3(style="center") Übung 5: Meinung der Umweltschützer
+    h2(style="center") Übung 5: Meinung der Umweltschützer
     #Inhaltbox
         h3 Umweltschützer
         p
@@ -41,17 +41,18 @@ block content
         | .
     p
     #Antwortbox1
-        p Folgen für die Tiere:
+        p Folgen für die Tiere [2]:
     #Platzhalter
     #Antwortbox2
-        p  Folgen für die Menschen:
+        p  Folgen für die Menschen [2]:
     #Platzhalter
     #Antwortbox3
-        p Folgen für die Umwelt:
+        p Folgen für die Umwelt [5]:
     p
-    <form name="dragAndDrop" id="findDefinitions" action="">
-    <input type="button" name="submit" value="Fertig!" onclick="validate ()" >
-    </form>
+
+    form#drag(name='dragAndDrop', action='')
+        input(type='BUTTON', name='Aufgabe', value='Fertig!', onclick='validate ()')
+
     br
     p
     p
