@@ -9,6 +9,7 @@ block content
     script(src='/javascripts/ersti1.js')
     #wrapper
        #Textbox
+                p#p1.p
                 | Der erste Tag an der Universität. Ein neuer Lebensabschnitt beginnt.
                 p#p2.p
                 | Ich bin
@@ -103,7 +104,6 @@ block content
             h3 Negativ
      #Field
         | Suche alle Wörter aus dem Text heraus, die sich auf Gefühle beziehen. Gruppiere diese dabei nach positiver und negativer Bedeutung.
-        a.buttona(href="/ersti_task2") Weiter
-        #balken_aussen
-            #balken_innen1
-            #balken_innen2
+        a.buttona(href="/ersti_task2", id="weiter") Weiter
+        .helper
+            | (11 korrekte Antworten benötigt)

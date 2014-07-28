@@ -3,7 +3,7 @@ function init() {
 
     var id=0;
     var id_speicher = [];
-    var testarray = ["angenehmer","erleichert","gespannt", "Vorfreude","Neugier"];
+    var testarray = ["angenehmer","erleichtert","gespannt", "Vorfreude","Neugier"];
     var i = 0;
     var infos = [];
     var r_length=0;
@@ -87,7 +87,7 @@ function init_two() {
 
     var id=0;
     var id_speicher = [];
-    var testarray_two = ["aufgeregt","Nervosität","merkwürdig", "unsicher wirken","klein", "unwissend", "genervt", "belästigt"];
+    var testarray_two = ["aufgeregt", "Aufregung","Nervosität","merkwürdig", "unsicher wirken","klein", "unwissend", "genervt", "belästigt"];
     var i = 0;
     var infos = [];
     var r_length=0;
@@ -164,3 +164,30 @@ function init_two() {
         $(".hide[id=" +$(this).attr('id')+"]").toggle();
     };
 };
+
+function update_balken_gesammt(){
+
+}
+
+
+$(document).on("ready",function(){
+    $('#weiter').on("click", function(e) {
+        if (countCorrectAnswers() < 11)
+        {
+            e.preventDefault(); // Stops the browser from opening the next page, using the href attribute on the <a> element
+            alert("Bitte fülle genügend Lücken aus!");
+        }
+    });
+});
+
+function countCorrectAnswers()
+{
+    var correctAnswers = 0;
+    $(".token").each(function(){
+        if($(this).data("korrekt") === true)
+        {
+            correctAnswers++;
+        }
+    });
+    return correctAnswers;
+}
