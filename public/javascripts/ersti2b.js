@@ -239,3 +239,25 @@ function init_three() {
         $(".hide[id=" +$(this).attr('id')+"]").toggle();
     };
 };
+
+$(document).on("ready",function(){
+    $('#weiter').on("click", function(e) {
+        if (countCorrectAnswers() < 34)
+        {
+            e.preventDefault(); // Stops the browser from opening the next page, using the href attribute on the <a> element
+            alert("Bitte fülle genügend Lücken aus!");
+        }
+    });
+});
+
+function countCorrectAnswers()
+{
+    var correctAnswers = 0;
+    $(".token").each(function(){
+        if($(this).data("korrekt") === true)
+        {
+            correctAnswers++;
+        }
+    });
+    return correctAnswers;
+}
