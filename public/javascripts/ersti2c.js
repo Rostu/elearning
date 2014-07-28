@@ -1,12 +1,8 @@
 (function($)
 {
     $(document).ready(function() {
-        var a = ['Seminar', 'Übung', 'Vorlesung', 'Tutorium', 'Kolloqium', 'Workshop', 'Konzert', 'Festival',
-            'Konferenz', 'Sportereignis', 'Party', 'Theaterstück', 'Oper', 'Fest', 'Tanzkurs', 'Demonstration',
-            'Dozent', 'Professor', 'Praktikant', 'Lehrer', 'Trainer', 'Ober', 'Hausmeister', 'Sekretärin', 'Prof',
-            'HiWi', 'Chauffeur', 'Zimmermädchen', 'Student', 'Erstsemesterstudent', 'Ersti', 'Kommilitone',
-            'Schüler', 'Lerner', 'Bachelor', 'Master', 'Gymnasiast', 'Abiturient', 'Klassenkamerad', 'Auszubildender',
-            'Absolvent', 'Lehrling', 'Schulabgänger'];
+        var a = ["Seminar", "Übung", "Vorlesung", "Tutorium", "Kolloqium", "Konferenz", "Workshop", "Student", "Erstsemesterstudent",
+            "Ersti", "Kommilitone", "Lerner", "Bachelor", "Master", "Absolvent", "Dozent", "Professor", "Hausmeister", "Sekretärin", "Prof", "HiWi", "Tutor", "Lehrer"];
 
         var slots = $('.slot');
         slots.on("blur", function() {
@@ -29,7 +25,7 @@
                     $(self).addClass("passive");
                     $(self).animate({borderBottomColor: "#7cfc00", borderTopColor: "#7cfc00", backgroundColor:"#fff"}, "slow");
                     $(self).prop('disabled', true);
-                    $(".inline_big[id=" + a[i]  + "]").css('color', 'orange');
+                    $(".inline_big[id=" + a[i]  + "]").css('color', 'orange'); // marks the correct written word orange in the Text
                     a.splice(i,1); // Delete the found word from the list of correct words
                     return;
                 }
