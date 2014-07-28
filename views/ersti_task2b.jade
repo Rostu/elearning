@@ -3,148 +3,61 @@
 extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/ersti.css')
-    script( src='/javascripts/ersti.js')
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/javascripts/jquery-ui.min.js')
+    script(src='/javascripts/ersti2b.js')
     #wrapper
-        #Textbox
-            .unselectable.fields
-    #Antwortbox
-            .h Veranstaltung
-            .text
-                | 01.
-                input#s1.slot(type='text')
-                br
-                | 02.
-                input#s2.slot(type='text')
-                br
-                | 03.
-                input#s3.slot(type='text')
-                br
-                | 04.
-                input#s4.slot(type='text')
-                br
-                | 05.
-                input#s5.slot(type='text')
-                br
-                | 06.
-                input#s6.slot(type='text')
-                br
-                | 07.
-                input#s7.slot(type='text')
-                br
-                | 08.
-                input#s8.slot(type='text')
-                br
-                | 09.
-                input#s9.slot(type='text')
-                br
-                | 10.
-                input#s10.slot(type='text')
-                br
-                | 11.
-                input#s11.slot(type='text')
-                br
-                | 12.
-                input#s12.slot(type='text')
-                br
-                | 13.
-                input#s13.slot(type='text')
-                br
-                | 14.
-                input#s14.slot(type='text')
-                br
-                | 15.
-                input#s15.slot(type='text')
-                br
-                | 16.
-                input#s16.slot(type='text')
-     #Space
-    #Antwortbox_two
-            .h Personal
-            .text
-                | 01.
-                input#s1.slot(type='text')
-                br
-                | 02.
-                input#s2.slot(type='text')
-                br
-                | 03.
-                input#s3.slot(type='text')
-                br
-                | 04.
-                input#s4.slot(type='text')
-                br
-                | 05.
-                input#s5.slot(type='text')
-                br
-                | 06.
-                input#s6.slot(type='text')
-                br
-                | 07.
-                input#s7.slot(type='text')
-                br
-                | 08.
-                input#s8.slot(type='text')
-                br
-                | 09.
-                input#s9.slot(type='text')
-                br
-                | 10.
-                input#s10.slot(type='text')
-                br
-                | 11.
-                input#s11.slot(type='text')
-                br
-                | 12.
-                input#s12.slot(type='text')
-     #Space
-    #Antwortbox_three
-            .h Lernende
-            .text
-                | 01.
-                input#s1.slot(type='text')
-                br
-                | 02.
-                input#s2.slot(type='text')
-                br
-                | 03.
-                input#s3.slot(type='text')
-                br
-                | 04.
-                input#s4.slot(type='text')
-                br
-                | 05.
-                input#s5.slot(type='text')
-                br
-                | 06.
-                input#s6.slot(type='text')
-                br
-                | 07.
-                input#s7.slot(type='text')
-                br
-                | 08.
-                input#s8.slot(type='text')
-                br
-                | 09.
-                input#s9.slot(type='text')
-                br
-                | 10.
-                input#s10.slot(type='text')
-                br
-                | 11.
-                input#s11.slot(type='text')
-                br
-                | 12.
-                input#s12.slot(type='text')
-                br
-                | 13.
-                input#s13.slot(type='text')
-                br
-                | 14.
-                input#s14.slot(type='text')
-                br
-                | 15.
-                input#s15.slot(type='text')
-
-        #Field
-            | Ordne die obenstehenden Begriffe in die drei vorgegebenen Themenfelder: Veranstaltung, Personal, Lerner
-            a(href="/ersti_task2c") weiter
+        #Textbox_small.unselectable
+            .inline(id=0) Seminar
+            .inline(id=1) Übung
+            .inline(id=2) Vorlesung
+            .inline(id=3) Tutorium
+            .inline(id=4) Kolloqium
+            .inline(id=5) Workshop
+            .inline(id=6) Konzert
+            .inline(id=7) Festival
+            .inline(id=8) Konferenz
+            .inline(id=9) Sportereignis
+            .inline(id=10) Party
+            .inline(id=11) Theaterstück
+            .inline(id=12) Oper
+            .inline(id=13) Fest
+            .inline(id=14) Tanzkurs
+            .inline(id=15) Demonstration
+            .inline(id=16) Dozent
+            .inline(id=17) Professor
+            .inline(id=18) Praktikant
+            .inline(id=19) Lehrer
+            .inline(id=20) Trainer
+            .inline(id=21) Ober
+            .inline(id=22) Hausmeister
+            .inline(id=23) Sekretärin
+            .inline(id=24) Prof
+            .inline(id=25) HiWi
+            .inline(id=26) Chauffeur
+            .inline(id=27) Zimmermädchen
+            .inline(id=28) Student
+            .inline(id=29) Erstsemesterstudent
+            .inline(id=30) Ersti
+            .inline(id=31) Kommilitone
+            .inline(id=32) Schüler
+            .inline(id=33) Lerner
+            .inline(id=34) Bachelor
+            .inline(id=35) Master
+            .inline(id=36) Gymnasiast
+            .inline(id=37) Abiturient
+            .inline(id=38) Klassenkamerad
+            .inline(id=39) Auszubildender
+            .inline(id=40) Absolvent
+            .inline(id=41) Lehrling
+            .inline(id=42) Schulabgänger
+         #Space
+        #Antwortbox.text
+            a.h(target="_blank", href="http://www.duden.de/rechtschreibung/Veranstaltung") Veranstaltung
+        #Antwortbox_two.text
+            a.h(target="_blank", href="http://www.duden.de/rechtschreibung/Personal") Personal
+        #Antwortbox_three.text
+            a.h(target="_blank", href="http://www.duden.de/rechtschreibung/Lerner") Lerner
+     #Field
+        | Ordne die obenstehenden Begriffe in die drei vorgegebenen Themenfelder: Veranstaltung, Personal, Lerner
+        a.buttona(href="/ersti_task2b",id="weiter") Weiter
