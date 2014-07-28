@@ -165,11 +165,6 @@ function init_two() {
     };
 };
 
-function update_balken_gesammt(){
-
-}
-
-
 $(document).on("ready",function(){
     $('#weiter').on("click", function(e) {
         if (countCorrectAnswers() < 11)
