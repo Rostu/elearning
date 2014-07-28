@@ -1,8 +1,10 @@
 (function($)
 {
     $(document).ready(function() {
-        var a = ["Seminar", "Übung", "Vorlesung", "Tutorium", "Kolloqium", "Konferenz", "Workshop", "Student", "Erstsemesterstudent",
-            "Ersti", "Kommilitone", "Lerner", "Bachelor", "Master", "Absolvent", "Dozent", "Professor", "Hausmeister", "Sekretärin", "Prof", "HiWi", "Tutor", "Lehrer"];
+        var a_Veranstaltung = ["Seminar", "Übung", "Vorlesung", "Tutorium", "Kolloqium", "Konferenz", "Workshop"];
+        var a_Personal = ["Dozent", "Professor", "Sekretärin", "Prof", "HiWi", "Tutor", "Lehrer", "Hausmeister"];
+        var a_Lerner = ["Lerner", "Bachelor", "Master", "Absolvent", "Student", "Erstsemesterstudent", "Ersti", "Kommilitone"];
+        var a_shortcut = ["Prof", "HiWi", "Ersti"];
 
         var slots = $('.slot');
         slots.on("blur", function() {
@@ -17,6 +19,24 @@
         });
 
         function validate(self) {
+            // Find out which answers array to use, based on the input field's group css class
+            var a;
+            if($(self).hasClass("Veranstaltung"))
+            {
+                a = a_Veranstaltung;
+            }
+            else if($(self).hasClass("Personal"))
+            {
+                a = a_Personal;
+            }
+            else if($(self).hasClass("Lerner"))
+            {
+                a = a_Lerner;
+            }
+            else if($(self).hasClass("shortcut"))
+            {
+                a = a_shortcut;
+            }
             var t = $(self).val();
             if (t.length == 0) return;
             for (var i = 0; i < a.length; i++) {
