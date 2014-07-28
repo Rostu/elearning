@@ -3,7 +3,7 @@ function init() {
 
     var id=0;
     var id_speicher = [];
-    var testarray = ["angenehmer","erleichtert","gespannt", "Vorfreude","Neugier"];
+    var testarray = ["angenehmer","erleichtert","gespannt", "Vorfreude","Neugier", "zielsicher"];
     var i = 0;
     var infos = [];
     var r_length=0;
@@ -46,7 +46,7 @@ function init() {
         div.mousedown(clear);
         //$(":button[id="+ui.draggable.attr('id') +"]").click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
-        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
+        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','orange');
     };
 
     function myHelper( event ) {
@@ -130,7 +130,7 @@ function init_two() {
         div.mousedown(clear);
         //$(":button[id="+ui.draggable.attr('id') +"]").click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
-        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
+        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','orange');
     };
 
     function myHelper( event ) {

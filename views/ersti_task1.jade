@@ -8,15 +8,15 @@ block content
     script(src='/javascripts/jquery-ui.min.js')
     script(src='/javascripts/ersti1.js')
     #wrapper
-       #Textbox
+       #Textbox.unselectable
                 p#p1.p
                 | Der erste Tag an der Universität. Ein neuer Lebensabschnitt beginnt.
                 p#p2.p
                 | Ich bin
-                .inline(id=0) aufgeregt
-                | . Das Frühstück fällt vor lauter
+                .inline(id=0) aufgeregt.
+                | Das Frühstück fällt vor lauter
                 .inline(id=1) Nervosität
-                |  flach. Ich
+                | flach. Ich
                 | studiere noch einmal den Lageplan,
                 | um mir den Weg zum A-Gebäude, in welchem mein erstes Seminar heute
                 | stattfinden wird, genau einzuprägen.
@@ -38,7 +38,9 @@ block content
                 | wie ich. Auf dem Unigelände komme ich mir dann sehr
                 .inline(id=4) klein
                 | vor.
-                | Während die Studenten alle zielsicher in die Unigebäude strömen, blicke ich
+                | Während die Studenten alle
+                .inline(id=13) zielsicher
+                | in die Unigebäude strömen, blicke ich
                 | mich
                 | erst einmal um. Zu meiner Verwunderung finde ich jedoch auf Anhieb den
                 | richtigen Weg zu meinem Seminarraum.
@@ -49,8 +51,8 @@ block content
                 | fühlte ich mich genauso
                 .inline(id=4) klein
                 | und
-                .inline(id=5) unwissend
-                | . Die älteren Schüler waren
+                .inline(id=5) unwissend.
+                | Die älteren Schüler waren
                 | sichtlich
                 .inline(id=6) genervt
                 | von den kleinen Fünftklässlern, die noch keinen Plan von der
@@ -63,15 +65,15 @@ block content
                 | mit dämlichen Fragen nerven.
                 p#p5.p
                 | Im Seminarraum angekommen, ist es gleich viel
-                .inline(id=8) angenehmer
-                | . Dort sitzen ganz
+                .inline(id=8) angenehmer.
+                | Dort sitzen ganz
                 | viele
                 | Erstis, die noch genauso doof sind wie ich. Kaum habe ich mir einen Platz
                 | ausgesucht und mich hingesetzt, komme ich auch schon mit meinen neuen
                 | Kommilitonen ins Gespräch. Ich bin definitiv nicht die Einzige,
                 | die so
                 .inline(id=0) aufgeregt
-                | ist. Die meisten Erstis teilen meine Unsicherheut und
+                | ist. Die meisten Erstis teilen meine Unsicherheit und
                 | sind alle sehr mitteilungsbedürftig. Es ist schön zu wissen, dass man nicht
                 | alleine ist.
                 p#p6.p
@@ -81,8 +83,8 @@ block content
                 | einen guten Eindruck und die Veranstaltungen scheinen interessant zu werden.
                 p#p7.p
                 | Nachdem der erste Unitag vorbei ist, bin ich
-                .inline(id=9) erleichtert
-                | . So schlimm
+                .inline(id=9) erleichtert.
+                | So schlimm
                 | war es gar nicht. Eigentlich war es sogar richtig toll. Jetzt fühle ich mich
                 | schon fast wie eine echte Studentin. Ich bin
                 .inline(id=10) gespannt
