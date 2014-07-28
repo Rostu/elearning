@@ -40,8 +40,7 @@ function init() {
             $(div).data('korrekt',true);
             $(div).css('background','rgba(2, 255, 85, 0.16)');
             r_length++;
-            update_balken();
-        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++;update_balken();}
+        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');}
         $("#Antwortbox").bind("contextmenu",function(e){return false;});
         $("#Antwortbox").append(div);
         div.mousedown(clear);
@@ -61,18 +60,12 @@ function init() {
         });
     };
 
-    function update_balken(){
-        //console.log($('#balken_innen1'));
-        $('#balken_innen1').css('width',r_length*8);
-        $('#balken_innen2').css('width',w_length*4);
-    }
     function clear(ev) {
         if (ev.which == 3) {
             $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
             if($(this).data('korrekt')==true){
                 r_length--;
             }else{w_length--;}
-            update_balken();
             $(".token[id=" + this.id + "]").remove();
         }
     }
@@ -125,8 +118,7 @@ function init_two() {
             $(div).data('korrekt',true);
             $(div).css('background','rgba(2, 255, 85, 0.16)');
             r_length++;
-            update_balken();
-        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++;update_balken();}
+        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');}
         $("#Antwortbox_two").bind("contextmenu",function(e){return false;});
         $("#Antwortbox_two").append(div);
         div.mousedown(clear);
@@ -157,7 +149,6 @@ function init_two() {
             if($(this).data('korrekt')==true){
                 r_length--;
             }else{w_length--;}
-            update_balken();
             $(".token[id=" + this.id + "]").remove();
         }
     }
@@ -209,8 +200,7 @@ function init_three() {
             $(div).data('korrekt',true);
             $(div).css('background','rgba(2, 255, 85, 0.16)');
             r_length++;
-            update_balken();
-        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++;update_balken();}
+        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++;}
         $("#Antwortbox_three").bind("contextmenu",function(e){return false;});
         $("#Antwortbox_three").append(div);
         div.mousedown(clear);
@@ -241,7 +231,6 @@ function init_three() {
             if($(this).data('korrekt')==true){
                 r_length--;
             }else{w_length--;}
-            update_balken();
             $(".token[id=" + this.id + "]").remove();
         }
     }
