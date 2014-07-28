@@ -8,49 +8,49 @@ block content
     script(src='/javascripts/ersti2b.js')
     #wrapper
         #Textbox_small.unselectable
-            .inline(id=0) Seminar
-            .inline(id=1) Übung
-            .inline(id=2) Vorlesung
-            .inline(id=3) Tutorium
-            .inline(id=4) Kolloqium
-            .inline(id=5) Workshop
-            .inline(id=6) Konzert
-            .inline(id=7) Festival
-            .inline(id=8) Konferenz
-            .inline(id=9) Sportereignis
-            .inline(id=10) Party
-            .inline(id=11) Theaterstück
-            .inline(id=12) Oper
-            .inline(id=13) Fest
-            .inline(id=14) Tanzkurs
-            .inline(id=15) Demonstration
-            .inline(id=16) Dozent
-            .inline(id=17) Professor
-            .inline(id=18) Praktikant
-            .inline(id=19) Lehrer
-            .inline(id=20) Trainer
-            .inline(id=21) Ober
-            .inline(id=22) Hausmeister
-            .inline(id=23) Sekretärin
-            .inline(id=24) Prof
-            .inline(id=25) HiWi
-            .inline(id=26) Chauffeur
-            .inline(id=27) Zimmermädchen
-            .inline(id=28) Student
-            .inline(id=29) Erstsemesterstudent
-            .inline(id=30) Ersti
-            .inline(id=31) Kommilitone
-            .inline(id=32) Schüler
-            .inline(id=33) Lerner
-            .inline(id=34) Bachelor
-            .inline(id=35) Master
-            .inline(id=36) Gymnasiast
-            .inline(id=37) Abiturient
-            .inline(id=38) Klassenkamerad
-            .inline(id=39) Auszubildender
-            .inline(id=40) Absolvent
-            .inline(id=41) Lehrling
-            .inline(id=42) Schulabgänger
+            .inline_big(id=0) Seminar
+            .inline_big(id=1) Übung
+            .inline_big(id=2) Vorlesung
+            .inline_big(id=3) Tutorium
+            .inline_big(id=4) Kolloqium
+            .inline_big(id=5) Workshop
+            .inline_big(id=6) Konzert
+            .inline_big(id=7) Festival
+            .inline_big(id=8) Konferenz
+            .inline_big(id=9) Sportereignis
+            .inline_big(id=10) Party
+            .inline_big(id=11) Theaterstück
+            .inline_big(id=12) Oper
+            .inline_big(id=13) Fest
+            .inline_big(id=14) Tanzkurs
+            .inline_big(id=15) Demonstration
+            .inline_big(id=16) Dozent
+            .inline_big(id=17) Professor
+            .inline_big(id=18) Praktikant
+            .inline_big(id=19) Lehrer
+            .inline_big(id=20) Trainer
+            .inline_big(id=21) Ober
+            .inline_big(id=22) Hausmeister
+            .inline_big(id=23) Sekretärin
+            .inline_big(id=24) Prof
+            .inline_big(id=25) HiWi
+            .inline_big(id=26) Chauffeur
+            .inline_big(id=27) Zimmermädchen
+            .inline_big(id=28) Student
+            .inline_big(id=29) Erstsemesterstudent
+            .inline_big(id=30) Ersti
+            .inline_big(id=31) Kommilitone
+            .inline_big(id=32) Schüler
+            .inline_big(id=33) Lerner
+            .inline_big(id=34) Bachelor
+            .inline_big(id=35) Master
+            .inline_big(id=36) Gymnasiast
+            .inline_big(id=37) Abiturient
+            .inline_big(id=38) Klassenkamerad
+            .inline_big(id=39) Auszubildender
+            .inline_big(id=40) Absolvent
+            .inline_big(id=41) Lehrling
+            .inline_big(id=42) Schulabgänger
          #Space
         #Antwortbox.text
             a.h(target="_blank", href="http://www.duden.de/rechtschreibung/Veranstaltung") Veranstaltung
@@ -58,6 +58,20 @@ block content
             a.h(target="_blank", href="http://www.duden.de/rechtschreibung/Personal") Personal
         #Antwortbox_three.text
             a.h(target="_blank", href="http://www.duden.de/rechtschreibung/Lerner") Lerner
+    #Space
+    #wrapper
+        #Textbox.text_big
+            | Welche Begriffe verwenden speziell nur Studenten?
+            #Antwortbox
+                | 01.
+                input#s1.slot(type='text')
+                | 02.
+                input#s2.slot(type='text')
+                | 03.
+                input#s3.slot(type='text')
+
      #Field
-        | Ordne die obenstehenden Begriffe in die drei vorgegebenen Themenfelder: Veranstaltung, Personal, Lerner
+        | Ordne die obenstehenden Begriffe in die drei vorgegebenen Themenfelder: Veranstaltung, Personal, Lerner. Welche Begriffe verwenden speziell nur Studenten? Hilfe gibts im Wortschatzportal!
         a.buttona(href="/ersti_task2b",id="weiter") Weiter
+        .helper
+            a(target="_blank", href="http://wortschatz.uni-leipzig.de/")  Wortschatz-Portal

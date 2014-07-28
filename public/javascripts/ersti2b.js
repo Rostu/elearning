@@ -9,7 +9,7 @@ function init() {
     var infos =[["Seminar",""], "Übung", "Vorlesung", "Tutorium", "Kolloqium", "Workshop", ["Konzert","(das): Aufführung eines oder meist mehrerer Musikwerke in einer öffentlichen Veranstaltung. Beispiele: ein öffentliches Konzert, ein Konzert besuchen, ein Konzert geben, ins Konzert gehen"], ["Festival","(das): mehrere Tage dauernde] kulturelle Großveranstaltung, Festspiele. Beispiele: ein Festival des Films, des Sports; auf dem Festival spielen bekannte Rockgruppen"], "Konferenz", ["Sportereignis","(das): ein sportliches Großereignis, bei dem es Zuschauer gibt. Beispiel: Fußballweltmeisterschaft"], ["Party","(die): ein zwangloses privates oder öffentliches Fest, mit Musik und Tanz."], ["Oper","(die): eine Aufführung eines musikalischen Bühnenwerks  mit Darstellung einer Handlung durch Gesang und Instrumentalmusik. Beispiel: in die Oper gehen"], ["Fest","(das): gesellschaftliche Veranstaltung (in glanzvollem Rahmen). Beispiel: ein Sportfest, ein Musikfest"],["Tanzkurs","(der): ein Lehrgang, um das Tanzen zu erlernen. Beispiel: einen Tanzkurs besuchen"], ["Demonstration","(die): im politischen Sinne ist eine in der Öffentlichkeit stattfindende Versammlung mehrerer Personen zum Zwecke der Meinungsäußerung. (Kurzwort: Demo)"], "Dozent", "Professor", "Lehrer", "Tutor", ["Trainer","(der): Dieser Begriff kommt aus dem Kontext Sport. Ein Trainer trainiert Sportler und Sportlerinnen. Ein Beispiel ist Pep Guardiola vom FC Bayern München."], ["Ober","(der): Dieser Begriff kommt aus dem Kontext Gastronomie. Es ist ein veralteter Begriff für Kellner. Ein Ober bedient die Gäste in einem Restaurant."], "Hausmeister", "Sekretärin", "Prof", "HiWi", ["Chauffeur","(der): Ein Chauffeur fährt berufsmäßig Auto. Zum Beispiel haben Politiker ihre eigenen Chauffeure."], ["Zimmermädchen","(das): Dies ist eine Angestellte zum Beispiel in einem Hotel, die die Zimmer sauber macht und in Ordnung hält."], "Student", "Erstsemesterstudent", "Ersti", "Kommilitone", ["Schüler","(der): Ein Schüler ist ein Lerner, der eine Schule besucht. Lerner an Universitäten heißen Studenten"], "Lerner", "Bachelor", "Master", ["Gymnasiast","(der): Ein Gymnasiast ist eine Person, die ein Gymnasium, also eine bestimmte Schulform, besucht"], ["Abiturient","(der): Ein Abiturient ist ein Schüler, der das Abitur absolviert oder bereits absolviert hat. Es ist also ein Schüler kurz vor, im und nach dem Abitur."], ["Klassenkamerad","(der): Eine Klasse ist eine Institution der Schule. Ein Klassenkamerad ist ein Schüler, der mit einem anderen Schüler die gleiche Klasse besucht."], ["Auszubildender","(der): Ein Auszubildender ist jemand, der gerade eine Berufsausbildung durchläuft. Eine Berufsausbildung ist eine andere Möglichkeit zur Weiterbildung als das Studium an einer Universität. Ein Auszubildender kann auch Lehrling genannt werden."], "Absolvent", ["Lehrling","(der): Ein Lehrling ist jemand, der gerade eine Berufslehre durchläuft. Eine Berufslehre ist eine andere Möglichkeit zur Weiterbildung als das Studium an einer Universität. Ein Lehrling kann auch Auszubildender genannt werden."],["Schulabgänger","(der): Ein Schulabgänger ist eine Person, die von der Schule abgeht. Ein Schulabgänger kann nach seinem Abschluss die Schule verlassen oder seine Schullaufbahn frühzeitig beenden."]];
     var r_length=0;
     var w_length = 0;
-    $(".inline").each(function() {
+    $(".inline_big").each(function() {
         $(this).draggable({
             containment: '#page',
             revert: true,
@@ -46,7 +46,7 @@ function init() {
         div.mousedown(clear);
         //$(":button[id="+ui.draggable.attr('id') +"]").click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
-        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
+        $(".inline_big.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
     };
 
     function myHelper( event ) {
@@ -62,7 +62,7 @@ function init() {
 
     function clear(ev) {
         if (ev.which == 3) {
-            $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
+            $(".inline_big.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
             if($(this).data('korrekt')==true){
                 r_length--;
             }else{w_length--;}
@@ -87,7 +87,7 @@ function init_two() {
     var infos =[["Seminar",""], "Übung", "Vorlesung", "Tutorium", "Kolloqium", "Workshop", ["Konzert","(das): Aufführung eines oder meist mehrerer Musikwerke in einer öffentlichen Veranstaltung. Beispiele: ein öffentliches Konzert, ein Konzert besuchen, ein Konzert geben, ins Konzert gehen"], ["Festival","(das): mehrere Tage dauernde] kulturelle Großveranstaltung, Festspiele. Beispiele: ein Festival des Films, des Sports; auf dem Festival spielen bekannte Rockgruppen"], "Konferenz", ["Sportereignis","(das): ein sportliches Großereignis, bei dem es Zuschauer gibt. Beispiel: Fußballweltmeisterschaft"], ["Party","(die): ein zwangloses privates oder öffentliches Fest, mit Musik und Tanz."], ["Oper","(die): eine Aufführung eines musikalischen Bühnenwerks  mit Darstellung einer Handlung durch Gesang und Instrumentalmusik. Beispiel: in die Oper gehen"], ["Fest","(das): gesellschaftliche Veranstaltung (in glanzvollem Rahmen). Beispiel: ein Sportfest, ein Musikfest"],["Tanzkurs","(der): ein Lehrgang, um das Tanzen zu erlernen. Beispiel: einen Tanzkurs besuchen"], ["Demonstration","(die): im politischen Sinne ist eine in der Öffentlichkeit stattfindende Versammlung mehrerer Personen zum Zwecke der Meinungsäußerung. (Kurzwort: Demo)"], "Dozent", "Professor", "Lehrer", "Tutor", ["Trainer","(der): Dieser Begriff kommt aus dem Kontext Sport. Ein Trainer trainiert Sportler und Sportlerinnen. Ein Beispiel ist Pep Guardiola vom FC Bayern München."], ["Ober","(der): Dieser Begriff kommt aus dem Kontext Gastronomie. Es ist ein veralteter Begriff für Kellner. Ein Ober bedient die Gäste in einem Restaurant."], "Hausmeister", "Sekretärin", "Prof", "HiWi", ["Chauffeur","(der): Ein Chauffeur fährt berufsmäßig Auto. Zum Beispiel haben Politiker ihre eigenen Chauffeure."], ["Zimmermädchen","(das): Dies ist eine Angestellte zum Beispiel in einem Hotel, die die Zimmer sauber macht und in Ordnung hält."], "Student", "Erstsemesterstudent", "Ersti", "Kommilitone", ["Schüler","(der): Ein Schüler ist ein Lerner, der eine Schule besucht. Lerner an Universitäten heißen Studenten"], "Lerner", "Bachelor", "Master", ["Gymnasiast","(der): Ein Gymnasiast ist eine Person, die ein Gymnasium, also eine bestimmte Schulform, besucht"], ["Abiturient","(der): Ein Abiturient ist ein Schüler, der das Abitur absolviert oder bereits absolviert hat. Es ist also ein Schüler kurz vor, im und nach dem Abitur."], ["Klassenkamerad","(der): Eine Klasse ist eine Institution der Schule. Ein Klassenkamerad ist ein Schüler, der mit einem anderen Schüler die gleiche Klasse besucht."], ["Auszubildender","(der): Ein Auszubildender ist jemand, der gerade eine Berufsausbildung durchläuft. Eine Berufsausbildung ist eine andere Möglichkeit zur Weiterbildung als das Studium an einer Universität. Ein Auszubildender kann auch Lehrling genannt werden."], "Absolvent", ["Lehrling","(der): Ein Lehrling ist jemand, der gerade eine Berufslehre durchläuft. Eine Berufslehre ist eine andere Möglichkeit zur Weiterbildung als das Studium an einer Universität. Ein Lehrling kann auch Auszubildender genannt werden."],["Schulabgänger","(der): Ein Schulabgänger ist eine Person, die von der Schule abgeht. Ein Schulabgänger kann nach seinem Abschluss die Schule verlassen oder seine Schullaufbahn frühzeitig beenden."]];
     var r_length=0;
     var w_length = 0;
-    $(".inline").each(function() {
+    $(".inline_big").each(function() {
         $(this).draggable({
             containment: '#page',
             revert: true,
@@ -124,7 +124,7 @@ function init_two() {
         div.mousedown(clear);
         //$(":button[id="+ui.draggable.attr('id') +"]").click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
-        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
+        $(".inline_big.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
     };
 
     function myHelper( event ) {
@@ -145,7 +145,7 @@ function init_two() {
     }
     function clear(ev) {
         if (ev.which == 3) {
-            $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
+            $(".inline_big.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
             if($(this).data('korrekt')==true){
                 r_length--;
             }else{w_length--;}
@@ -169,7 +169,7 @@ function init_three() {
     var infos =[["Seminar",""], "Übung", "Vorlesung", "Tutorium", "Kolloqium", "Workshop", ["Konzert","(das): Aufführung eines oder meist mehrerer Musikwerke in einer öffentlichen Veranstaltung. Beispiele: ein öffentliches Konzert, ein Konzert besuchen, ein Konzert geben, ins Konzert gehen"], ["Festival","(das): mehrere Tage dauernde] kulturelle Großveranstaltung, Festspiele. Beispiele: ein Festival des Films, des Sports; auf dem Festival spielen bekannte Rockgruppen"], "Konferenz", ["Sportereignis","(das): ein sportliches Großereignis, bei dem es Zuschauer gibt. Beispiel: Fußballweltmeisterschaft"], ["Party","(die): ein zwangloses privates oder öffentliches Fest, mit Musik und Tanz."], ["Oper","(die): eine Aufführung eines musikalischen Bühnenwerks  mit Darstellung einer Handlung durch Gesang und Instrumentalmusik. Beispiel: in die Oper gehen"], ["Fest","(das): gesellschaftliche Veranstaltung (in glanzvollem Rahmen). Beispiel: ein Sportfest, ein Musikfest"],["Tanzkurs","(der): ein Lehrgang, um das Tanzen zu erlernen. Beispiel: einen Tanzkurs besuchen"], ["Demonstration","(die): im politischen Sinne ist eine in der Öffentlichkeit stattfindende Versammlung mehrerer Personen zum Zwecke der Meinungsäußerung. (Kurzwort: Demo)"], "Dozent", "Professor", "Lehrer", "Tutor", ["Trainer","(der): Dieser Begriff kommt aus dem Kontext Sport. Ein Trainer trainiert Sportler und Sportlerinnen. Ein Beispiel ist Pep Guardiola vom FC Bayern München."], ["Ober","(der): Dieser Begriff kommt aus dem Kontext Gastronomie. Es ist ein veralteter Begriff für Kellner. Ein Ober bedient die Gäste in einem Restaurant."], "Hausmeister", "Sekretärin", "Prof", "HiWi", ["Chauffeur","(der): Ein Chauffeur fährt berufsmäßig Auto. Zum Beispiel haben Politiker ihre eigenen Chauffeure."], ["Zimmermädchen","(das): Dies ist eine Angestellte zum Beispiel in einem Hotel, die die Zimmer sauber macht und in Ordnung hält."], "Student", "Erstsemesterstudent", "Ersti", "Kommilitone", ["Schüler","(der): Ein Schüler ist ein Lerner, der eine Schule besucht. Lerner an Universitäten heißen Studenten"], "Lerner", "Bachelor", "Master", ["Gymnasiast","(der): Ein Gymnasiast ist eine Person, die ein Gymnasium, also eine bestimmte Schulform, besucht"], ["Abiturient","(der): Ein Abiturient ist ein Schüler, der das Abitur absolviert oder bereits absolviert hat. Es ist also ein Schüler kurz vor, im und nach dem Abitur."], ["Klassenkamerad","(der): Eine Klasse ist eine Institution der Schule. Ein Klassenkamerad ist ein Schüler, der mit einem anderen Schüler die gleiche Klasse besucht."], ["Auszubildender","(der): Ein Auszubildender ist jemand, der gerade eine Berufsausbildung durchläuft. Eine Berufsausbildung ist eine andere Möglichkeit zur Weiterbildung als das Studium an einer Universität. Ein Auszubildender kann auch Lehrling genannt werden."], "Absolvent", ["Lehrling","(der): Ein Lehrling ist jemand, der gerade eine Berufslehre durchläuft. Eine Berufslehre ist eine andere Möglichkeit zur Weiterbildung als das Studium an einer Universität. Ein Lehrling kann auch Auszubildender genannt werden."],["Schulabgänger","(der): Ein Schulabgänger ist eine Person, die von der Schule abgeht. Ein Schulabgänger kann nach seinem Abschluss die Schule verlassen oder seine Schullaufbahn frühzeitig beenden."]];
     var r_length=0;
     var w_length = 0;
-    $(".inline").each(function() {
+    $(".inline_big").each(function() {
         $(this).draggable({
             containment: '#page',
             revert: true,
@@ -206,7 +206,7 @@ function init_three() {
         div.mousedown(clear);
         //$(":button[id="+ui.draggable.attr('id') +"]").click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
-        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
+        $(".inline_big.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
     };
 
     function myHelper( event ) {
@@ -227,7 +227,7 @@ function init_three() {
     }
     function clear(ev) {
         if (ev.which == 3) {
-            $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
+            $(".inline_big.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
             if($(this).data('korrekt')==true){
                 r_length--;
             }else{w_length--;}
@@ -239,3 +239,40 @@ function init_three() {
         $(".hide[id=" +$(this).attr('id')+"]").toggle();
     };
 };
+
+(function($)
+{
+    $(document).ready(function() {
+        var a = ["Ersti", "Prof", "Hiwi"];
+
+        var slots = $('.slot');
+        slots.on("blur", function() {
+            validate(this);
+        });
+
+        function validate(self) {
+            var t = $(self).val();
+            if (t.length == 0) return;
+            for (var i = 0; i < a.length; i++) {
+
+                if (a[i] === t) { // If word in array matches the word in the input field
+                    $(self).addClass("passive");
+                    $(self).animate({borderBottomColor: "#7cfc00", borderTopColor: "#7cfc00", backgroundColor:"#fff"}, "slow");
+                    $(self).prop('disabled', true);
+                    $(".inline[id=" + a[i]  + "]").css('color', 'orange');
+                    a.splice(i,1); // Delete the found word from the list of correct words
+                    return;
+                }
+            }
+            // if we reach this point, the word didn't match any word
+            $(self).effect("pulsate", "fast");
+
+            $(self).animate({borderBottomColor: "#ff0000", borderTopColor: "#ff0000", backgroundColor: "#ff8484"},2000,"swing",function() {
+                $(this).css({"border-top": "1px solid #c0c0c0",
+                    "border-bottom": "1px solid #c0c0c0", "background-color": "#fff"});
+            });
+
+        }
+
+    });
+})(jQuery);
