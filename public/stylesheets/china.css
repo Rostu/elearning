@@ -73,7 +73,7 @@ img {
 #Aufgabe{
     color: #000000;
     text-indent: 0;
-    background: lightcoral;
+    background: rgba(159, 255, 177, 0.8);
     padding: 10px;
     position: fixed;
     bottom: 0;
