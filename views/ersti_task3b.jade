@@ -18,6 +18,8 @@ block content
                 span.placeholderdots |...___...|
                 |  Fragen nerven.
                 br
+                #message
+                    | Richtig!
                 br
                 label(for='w1')
                     | Wort 1
@@ -42,6 +44,10 @@ block content
                 input(type='text' id='w4' class='slot')
                 p.h4.invisible
                 p.c4.invisible
+                br
+                a.buttona(href='#', id='check')
+                    | Prüfen
+
         br
     #Field
         | Finde im
@@ -49,3 +55,5 @@ block content
             | Wortschatzportal Leipzig
         | vier Synonyme, die das Adjektiv „dämlich“ („dämliche Frage“) im Kontext des Textes ersetzen können.
         a.buttona(href="#" id='weiter') weiter
+        .helper
+            | (3 korrekte Antworten benötigt)

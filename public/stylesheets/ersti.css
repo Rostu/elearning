@@ -11,6 +11,10 @@
     background-color: lightgreen;
 }
 
+.plainw {
+    background-color: lightpink;
+}
+
 .green {
     background-color: lawngreen;
 }
@@ -157,7 +161,7 @@ body {
     height: 14px;
     line-height: normal;
     padding: 4px 8px;
-    margin: -8px 20px 0px 0px;
+    margin: -8px 20px 0 0;
     position: relative;
     bottom: -4px;
 }
@@ -224,4 +228,30 @@ body {
 
 .markfalse {
     background-color: lightpink;
+}
+
+#targa {
+    height: 100px !important;
+    width: 90%;
+}
+
+#conta {
+    border: 1px dashed royalblue;
+    height: auto;
+}
+
+.ui-tooltip {
+    width: 20%;
+    border-radius: 5%;
+    border: 1px solid yellow;
+}
+
+.ui-tooltip-content {
+    background-color: rgba(173, 216, 230, 0.90);
+    padding: 12px;
+    border-radius: 5%;
+}
+
+.ui-helper-hidden-accessible {
+    display: none;
 }

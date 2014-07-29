@@ -1,0 +1,29 @@
+//
+   Created by David on 29.07.2014.
+
+extends layout
+block content
+    link(rel='stylesheet', href='/stylesheets/ersti.css')
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/javascripts/jquery-ui.min.js')
+    script(src='/javascripts/ersti3.js')
+    #wrapper
+        #Textbox
+            | Eine
+            b  dämliche
+            |  Frage
+            br
+            #message.invisible
+                | Richtig!
+            br
+            #expl.invisible Halte die Maus über die rot gefärbten Kästchen für eine kurze Erklärung
+            br
+            br
+            .target#conta
+            .target#targa
+            br(style='clear:both')
+
+            a.buttona(href='#' onclick='reload()') Zurücksetzen
+    #Field
+        | Welche Wörter haben eine gegenteilige Bedeutung zu "dämlich"? Wähle aus dem Kasten vier passende Wörter aus.
+        a.buttona(href='#', onclick='validate()', id="weiter3c") weiter

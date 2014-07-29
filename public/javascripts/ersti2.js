@@ -45,14 +45,7 @@
             var disabledSlots = $('.slot:disabled');
             var requiredCorrectAnswers = allSlots.length - 4;
 
-            if(disabledSlots.length >= requiredCorrectAnswers) // Enough correct answers
-            {
-                return true;
-            }
-            else // Not enough answers
-            {
-                return false;
-            }
+            return disabledSlots.length >= requiredCorrectAnswers;
         }
     });
 })(jQuery);

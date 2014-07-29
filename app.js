@@ -79,6 +79,7 @@ app.get('/ersti_task2c', ubung.get_ersti_task2c);
 app.get('/ersti_task2d', ubung.get_ersti_task2d);
 app.get('/ersti_task3', ubung.get_ersti_task3);
 app.get('/ersti_task3b', ubung.get_ersti_task3b);
+app.get('/ersti_task3c', ubung.get_ersti_task3c);
 app.get('/ersti_task4', ubung.get_ersti_task4);
 app.get('/wertewandel', ubung.get_wertewandel);
 app.get('/generationen', ubung.get_generationen);
