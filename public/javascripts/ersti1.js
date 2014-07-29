@@ -1,4 +1,4 @@
-$( init );
+$( init );  // function for the list of positive "Gefühlswörter"
 function init() {
 
     var id=0;
@@ -39,12 +39,10 @@ function init() {
             $(div).data('korrekt',true);
             $(div).css('background','rgba(2, 255, 85, 0.16)');
             r_length++;
-            update_balken();
-        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++;update_balken();}
+        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++}
         $("#Antwortbox").bind("contextmenu",function(e){return false;});
         $("#Antwortbox").append(div);
         div.mousedown(clear);
-        //$(":button[id="+ui.draggable.attr('id') +"]").click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
         $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','orange');
     };
@@ -59,19 +57,12 @@ function init() {
             text: textinhalt
         });
     };
-
-    function update_balken(){
-        //console.log($('#balken_innen1'));
-        $('#balken_innen1').css('width',r_length*8);
-        $('#balken_innen2').css('width',w_length*4);
-    }
     function clear(ev) {
         if (ev.which == 3) {
             $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
             if($(this).data('korrekt')==true){
                 r_length--;
             }else{w_length--;}
-            update_balken();
             $(".token[id=" + this.id + "]").remove();
         }
     }
@@ -82,7 +73,7 @@ function init() {
 };
 
 
-$( init_two );
+$( init_two ); // function for the list of negative "Gefühlswörter"
 function init_two() {
 
     var id=0;
@@ -123,12 +114,10 @@ function init_two() {
             $(div).data('korrekt',true);
             $(div).css('background','rgba(2, 255, 85, 0.16)');
             r_length++;
-            update_balken();
-        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++;update_balken();}
+        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++}
         $("#Antwortbox_two").bind("contextmenu",function(e){return false;});
         $("#Antwortbox_two").append(div);
         div.mousedown(clear);
-        //$(":button[id="+ui.draggable.attr('id') +"]").click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
         $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','orange');
     };
@@ -143,19 +132,12 @@ function init_two() {
             text: textinhalt
         });
     };
-
-    function update_balken(){
-        //console.log($('#balken_innen1'));
-        $('#balken_innen1').css('width',r_length*8);
-        $('#balken_innen2').css('width',w_length*4);
-    }
     function clear(ev) {
         if (ev.which == 3) {
             $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
             if($(this).data('korrekt')==true){
                 r_length--;
             }else{w_length--;}
-            update_balken();
             $(".token[id=" + this.id + "]").remove();
         }
     }
@@ -165,7 +147,7 @@ function init_two() {
     };
 };
 
-$(document).on("ready",function(){
+$(document).on("ready",function(){      // function that checks if you have enough correct words. Lets you pass to the next Page if you do.
     $('#weiter').on("click", function(e) {
         if (countCorrectAnswers() < 11)
         {
@@ -175,7 +157,7 @@ $(document).on("ready",function(){
     });
 });
 
-function countCorrectAnswers()
+function countCorrectAnswers()  //function checks how many answers are correct
 {
     var correctAnswers = 0;
     $(".token").each(function(){
