@@ -44,7 +44,6 @@ function init() {
         $("#Antwortbox").bind("contextmenu",function(e){return false;});
         $("#Antwortbox").append(div);
         div.mousedown(clear);
-        //$(":button[id="+ui.draggable.attr('id') +"]").click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
         $(".inline_big.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
     };
@@ -122,7 +121,6 @@ function init_two() {
         $("#Antwortbox_two").bind("contextmenu",function(e){return false;});
         $("#Antwortbox_two").append(div);
         div.mousedown(clear);
-        //$(":button[id="+ui.draggable.attr('id') +"]").click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
         $(".inline_big.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
     };
@@ -138,11 +136,6 @@ function init_two() {
         });
     };
 
-    function update_balken(){
-        //console.log($('#balken_innen1'));
-        $('#balken_innen1').css('width',r_length*8);
-        $('#balken_innen2').css('width',w_length*4);
-    }
     function clear(ev) {
         if (ev.which == 3) {
             $(".inline_big.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
@@ -204,7 +197,6 @@ function init_three() {
         $("#Antwortbox_three").bind("contextmenu",function(e){return false;});
         $("#Antwortbox_three").append(div);
         div.mousedown(clear);
-        //$(":button[id="+ui.draggable.attr('id') +"]").click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
         $(".inline_big.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
     };
@@ -219,12 +211,6 @@ function init_three() {
             text: textinhalt
         });
     };
-
-    function update_balken(){
-        //console.log($('#balken_innen1'));
-        $('#balken_innen1').css('width',r_length*8);
-        $('#balken_innen2').css('width',w_length*4);
-    }
     function clear(ev) {
         if (ev.which == 3) {
             $(".inline_big.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
