@@ -41,9 +41,9 @@ html
                                     if (session)
                                         if (session.name)
                                             a(href='/logout') Logout
-                                        else
+                                        //else
                                             a(href='/login') Login
-                                    else
+                                    //else
                                         a(href='/login') Login
                                 li(id="header_button")
                                     a(href='' ) Statistik
@@ -51,8 +51,42 @@ html
                                     a(href='/impressum' ) Impressum
                         a(href="http:/www.uni-trier.de")
                             img(id='logo', src='images/uni-trier.PNG', width='190', height='182', alt='Universität Trier', align='right')
-                    #content
-                    block content
+
+                    if (session)
+                        if (session.name)
+                            block content
+                        else
+                            script( src='/javascripts/scripts.js')
+                            img(id="front", src="images/front.jpg")
+                            h2 Vorstellung des Projekts...
+                            h2 Sie müssen sich anmelden um alle Inhalte nutzen zu können
+                            #withoutcontent
+                                link(rel='stylesheet', href='/stylesheets/index.css')
+                                #Loginbox
+                                    h2 Login
+                                    form(action="/login", method="POST")
+                                        #form_table
+                                            #form_row
+                                                #form_row
+                                                    label(for="login") Email
+                                                #form_row
+                                                    input(type="text", id="login", name="login", placeholder="Your email or username")
+                                            #form_row
+                                                #form_row
+                                                    label(for="password") Passwort
+                                                #form_row
+                                                    input(type="password", id="password", name="password", placeholder="Your password")
+                                                    if error
+                                                        p #{error}
+                                            p
+                                            //#form_row
+                                                #form_cell
+                                                    a(href='/signup') neu anmelden
+                                            p
+                                            #form_row
+                                                #form_cell
+                                                    input(type="submit", value="Login")
+
 
 
 

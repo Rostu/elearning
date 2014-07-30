@@ -9,6 +9,7 @@ var start = require('./routes/start');
 var ubung = require('./routes/ubung');
 var http = require('http');
 var impressum = require('./routes/impressum');
+var signup = require('./routes/signup');
 var path = require('path');
 var app = express();
 var index = require('./routes/index');
@@ -43,10 +44,11 @@ app.use(lockit.router);
 
 // development only
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+    app.use(express.errorHandler());
 }
 app.use('/', index.get_session);
 app.get('/', routes.index);
+app.get('/signup', signup.get_signup);
 app.get('/users', user.list);
 app.get('/start', start.start);
 app.get('/ubung', ubung.ubung);
@@ -87,6 +89,6 @@ app.get('/generationen2', ubung.get_generationen2);
 app.get('/impressum', impressum.get_imp);
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+    console.log('Express server listening on port ' + app.get('port'));
 });
 
