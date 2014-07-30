@@ -36,6 +36,17 @@
             else if($(self).hasClass("shortcut"))
             {
                 a = a_shortcut;
+                var t_a = $(self).val();
+                if (t_a.length == 0) return;
+                for (var i = 0; i < a.length; i++) {
+
+                    if (a[i] === t_a) { // If word in array matches the word in the input field
+                        $(self).prop('disabled', true);
+                        $(".inline_big.hidden[id=" + a[i]  + "]").css("visibility", "visible").css("color", "green"); // marks the correct written word green in the Text and set it to visible
+                        a.splice(i,1); // Delete the found word from the list of correct words
+                        return;
+                    }
+                }
             }
             var t = $(self).val();
             if (t.length == 0) return;
@@ -45,7 +56,7 @@
                     $(self).addClass("passive");
                     $(self).animate({borderBottomColor: "#7cfc00", borderTopColor: "#7cfc00", backgroundColor:"#fff"}, "slow");
                     $(self).prop('disabled', true);
-                    $(".inline_big[id=" + a[i]  + "]").css('color', 'green'); // marks the correct written word orange in the Text
+                    $(".inline_big[id=" + a[i]  + "]").css('color', 'green'); // marks the correct written word green in the Text
                     a.splice(i,1); // Delete the found word from the list of correct words
                     return;
                 }
