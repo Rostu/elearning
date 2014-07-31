@@ -2,7 +2,7 @@
 {
     $(document).ready(function() {
         var a = ['Universität', 'Lageplan', 'A-Gebäude', 'Seminar', 'Studenten', 'Erstsemesterstudenten',
-            'Unigelände', 'Unigebäude', 'Seminarraum', 'Uni', 'Campus', 'Erstis', 'Kommilitone', 'Dozenten', 'Veranstaltung', 'Unizeit', 'Unitag'];
+            'Unigelände', 'Unigebäude', 'Seminarraum', 'Uni', 'Campus', 'Erstis', 'Kommilitonen', 'Dozenten', 'Veranstaltung', 'Unizeit', 'Unitag'];
 
         var slots = $('.slot');
         slots.on("blur", function() {
