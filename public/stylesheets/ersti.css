@@ -56,9 +56,6 @@
     text-decoration: underline;
     margin-top: 5px;
 }
-body {
-    font-family: monospace;
-}
 
 .unselectable {
     -webkit-user-select: none; /* Chrome all / Safari all */
