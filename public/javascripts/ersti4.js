@@ -21,15 +21,24 @@ $(document).ready(function() {
     });
 
     $('#weiter').on("click", function() {
-        if (!checkSituation()) {
-            alert("Bitte fülle alle Lücken aus!");
-        } else {
+        switch(checkSituation()) {
+            case 0:
+                alert("Bitte fülle alle Lücken aus!");
+                return;
+            case 1:
+                alert("Die Lösung ist leider nicht richtig!");
+                return;
+            case 2:
+
+            default: break;
+        }
+
             var right = $('.slot').toArray().filter(function(e){return $(e).is(":disabled")});
             var wrong = $('.slot').toArray().filter(function(e){return !$(e).is(":disabled")});
             var percent = (right/(right+wrong)) * 100;
             setScore("4", percent);
             document.location.href = "/ersti_end";
-        }
+
     });
     function makeDiv(a, i) {
         return "<div class='word' id='w"+ (i+1) +"'>" + a + "</div>";
@@ -72,10 +81,13 @@ $(document).ready(function() {
     function checkSituation () {
         var s = $('.slot');
         for (var i = 0; i < s.length; i++) {
-
-            if (!$(s[i]).is(":disabled")) return false;
+            if (!$(s[i]).is(":disabled") && !$(s[i]).val()) {
+                return 0;
+            } else if (!$(s[i]).is(":disabled")) {
+                return 1;
+            }
         }
-        return true;
+        return 2;
     }
 
     function shuffle(array) {

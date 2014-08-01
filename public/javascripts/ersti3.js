@@ -5,7 +5,7 @@
 
 $(document).ready(function() {
     var whereami = document.location.href;
-    if (/.+?task3$/.test(whereami)) {
+    if (/.+?task3#?$/.test(whereami)) {
         var t3w1 = ["anregend",  "ansprechend",  "einnehmend",  "einträglich",  "entwaffnend",  "erstaunlich",  "ertragreich",  "gewinnbringend",  "informativ",  "lohnend",  "reizvoll",  "unterhaltsam",  "vielsagend",  "wissenswert"];
         var t3w2 = ["alltäglich",  "belanglos",  "einfallslos", "einschläfernd",  "eintönig",  "ermüdend",  "fade",  "langweilig", "monoton",  "öde",  "phantasielos",  "reizlos",  "trist",  "unbedeutend",  "unwichtig"];
         var cont = $('.worddrag');
@@ -40,7 +40,7 @@ $(document).ready(function() {
 
     } else // not 3, therefore 3b or 3c
     {
-        if (/.+?3b$/.test(whereami)) {
+        if (/.+?3b#?$/.test(whereami)) {
             var c = [];
             var a = ["doof", "dumm", "hirnlos", "idiotisch"];
             a.map(function (e) {
@@ -63,10 +63,18 @@ $(document).ready(function() {
                 var w2 = $('#w2');
                 var w3 = $('#w3');
                 var w4 = $('#w4');
+
                 var v1 = w1.val();
                 var v2 = w2.val();
                 var v3 = w3.val();
                 var v4 = w4.val();
+                var wa = [w1,w2,w3,w4];
+                var copy = [v1,v2,v3,v4];
+
+                if (duplicates(copy, wa)) {
+                    return;
+                }
+
                 if ($.inArray(v1, a) > -1) {
                     markTrue(w1);
                 } else {
@@ -132,6 +140,23 @@ $(document).ready(function() {
                 return true;
             }
 
+            function duplicates(a, wa) {
+                var r = [];
+                o:for(var i = 0, n = a.length; i < n; i++)
+                {
+                    for(var x = 0, y = r.length; x < y; x++)
+                    {
+                        if(r[x]==a[i])
+                        {
+                            markFalse(wa[i], 1);
+                            continue o;
+                        }
+                    }
+                    r[r.length] = a[i];
+                }
+                return r.length < a.length;
+            }
+
             function markTrue(elem) {
                 removeAllMarks(elem);
                 hideHints(elem);
@@ -146,11 +171,12 @@ $(document).ready(function() {
                 showHint($("p.h" + elem.attr("id").substring(1)), elem.val(), 1);
             }
 
-            function markFalse(elem) {
+            function markFalse(elem, dup) {
+                dup = dup || 0;
                 removeAllMarks(elem);
                 hideHints(elem);
                 elem.addClass("markfalse");
-                showHint($("p.c" + elem.attr("id").substring(1)), elem.val(), 2);
+                showHint($("p.c" + elem.attr("id").substring(1)), elem.val(), 2+dup);
             }
 
             function removeAllMarks(e) {
@@ -187,6 +213,9 @@ $(document).ready(function() {
                     } else {
                         e.text("Bitte fülle das Feld aus!");
                     }
+                }
+                if (t == 3) {
+                    e.text("Bitte suche unterschiedliche Wörter!");
                 }
 
             }

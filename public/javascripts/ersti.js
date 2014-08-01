@@ -102,7 +102,7 @@ $(document).ready(function() {
         $('#task4').append(getScore("t4"));
 
         $('#test').append(test());
-    } else if (/k4$/.test(document.location.href)) {
+    } else if (/k4#?$/.test(document.location.href)) {
 
         var a = [87,72,69,82,69,73,83,84,72,69,70,73,83,72];
         var i = 0;
