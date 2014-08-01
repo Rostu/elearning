@@ -17,7 +17,8 @@ $(document).ready(function() {
         for (i = 0; i < t3w2.length; i++) {
             t3w.push(makeDiv(t3w2[i], i+t3w1.length));
         }
-        //t3w = shuffle(t3w);
+
+        t3w = shuffle(t3w);
 
         for (i = 0; i < t3w.length; i++) {
             cont.append(t3w[i]);
@@ -146,15 +147,37 @@ $(document).ready(function() {
                 {
                     for(var x = 0, y = r.length; x < y; x++)
                     {
-                        if(r[x]==a[i])
+                        if(r[x]==a[i] || trick(r[x]) == a[i] || r[x] == trick(a[i]) || trick2(r[x]) == a[i] || r[x] == trick2(a[i]) || trick(r[x]) == trick2(a[i]) || trick2(r[x]) == trick(a[i]) || trick2(r[x]) == trick(a[i]) || trick(r[x]) == trick2(a[i]))
                         {
-                            markFalse(wa[i], 1);
-                            continue o;
+                            if (r[x]) {
+                                markFalse(wa[i], 1);
+                                continue o;
+                            }
                         }
                     }
                     r[r.length] = a[i];
                 }
                 return r.length < a.length;
+            }
+
+            function trick(a) {
+                console.log(a.split("").reverse().shift());
+                if (/e$/.test(a)) {
+                    var b = a.split("").reverse();
+                    b.shift();
+                    return b.reverse().join("");
+                }
+                return a;
+            }
+
+            function trick2(a) {
+                if (/en$/.test(a)) {
+                    var b = a.split("").reverse();
+                    b.shift();
+                    b.shift();
+                    return b.reverse().join("");
+                }
+                return a;
             }
 
             function markTrue(elem) {
@@ -167,7 +190,6 @@ $(document).ready(function() {
                 removeAllMarks(elem);
                 hideHints(elem);
                 elem.addClass("markalmost");
-
                 showHint($("p.h" + elem.attr("id").substring(1)), elem.val(), 1);
             }
 
@@ -215,13 +237,17 @@ $(document).ready(function() {
                     }
                 }
                 if (t == 3) {
-                    e.text("Bitte suche unterschiedliche Wörter!");
+                    if(w)
+                        e.text("Bitte suche unterschiedliche Wörter!");
+                    else
+                        e.text("Bitte fülle das Feld aus!");
                 }
-
             }
         } else {
             var ac = ["wesentliche", "zentrale", "grundlegende", "wichtige", "entscheidende"];
             var bc = ["aktuelle", "unangenehme", "umstrittene", "rhetorische", "heikle", "soziale", "strittige", "kritische", "technische"];
+            // TODO:
+            // Erklärungen sollten eventuell überarbeitet werden
             var cc = [
                 "Eine aktuelle Frage ist eine Frage, die sich mit der Aktualität beschäftigt.",
                 "Eine unangenehme Frage ist für den Gefragten unangenehm. Er möchte darauf nicht antworten.",
@@ -235,14 +261,17 @@ $(document).ready(function() {
             ];
             $('#weiter3c').click(function() {
                 if(check3c()) {
+                    document.location.href = "/ersti_task4";
+                }
+            });
+            $('#check3c').click(function() {
+                if(check3c()) {
                     var wrong = $('.plainw').length;
                     var right = $('.passive').length;
                     var percent = (right/(right+wrong)) * 100;
                     setScore("3c", percent);
                     console.log("Score: " + percent + "%");
-                    $('#message').show().effect("puff", 2000, function() {
-                        document.location.href = "/ersti_task4";
-                    });
+                    $('#message').show().effect("puff", 2000);
                 }
             });
             var dc = [];
@@ -318,23 +347,18 @@ $(document).ready(function() {
 function validate () {
     var syn = $('#synonym');
     var ant = $('#antonym');
-    // 10 of 14
-    //var b1 = /anregend/.test(jvalidate($(syn[0])));
-    // 10 of 15
-    //var b2 = /öde/.test(jvalidate($(ant[0])));
 
-    var b3 = (kvalidate($('.worddrag')).length < 10);
+    var b = (kvalidate($('.worddrag')).length < 10);
 
-    if (!b3) {
+    if (!b) {
         showModal("Bitte ordne mehr Wörter zu!");
     }
 
     var c = lvalidate(syn, ant);
-    console.log("c "+ c );
+
     var p1 = fun1(syn);
     var p2 = fun1(ant);
-    console.log(p1);
-    console.log(p2);
+
     function fun1 (a) {
         return !(a.children('.word').toArray().map(function (e) {
             return $(e).hasClass("markfalse") ? 0 : 1;
@@ -343,7 +367,7 @@ function validate () {
         },0) < 10);
     }
 
-    if (b3 && c && p1 && p2) {
+    if (b && c && p1 && p2) {
         $('#message').show().effect("puff", 2000, function() {
             var unassigned = kvalidate($('.worddrag')).length;
             var wrong = $('.markfalse').toArray().length;
@@ -356,10 +380,6 @@ function validate () {
     }
 }
 
-function jvalidate(c) {
-    return c.children('.word').toArray().map(function(e){return $(e).text();}).join("");
-}
-
 function kvalidate(d) {
     return $(d[0]).children().toArray();
 }
@@ -367,28 +387,21 @@ function kvalidate(d) {
 function lvalidate(s,a) {
     var b1 = fun2($(s), 0);
     var b2 = fun2($(a), 1);
-
     function fun2 (a, i) {
-
         return a.children(".word").toArray().map(function(e) {
             if (i !== 0) {
-
                 if(e.id.substring(1) < 14) {
-
                     markFalse($(e));
                     return false;
                 }
                 return true;
             } else {
-
                 if(e.id.substring(1) > 14) {
-
                     markFalse($(e));
                     return false;
                 }
                 return true;
             }
-
         }).reduce(function(a,e) {return a&&e;}, true);
     }
     return b1 && b2;
