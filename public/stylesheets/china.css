@@ -2,6 +2,17 @@
     width: 100%;
     display: table;
 }
+#Textbox {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  width: 45%;
+  display: table-cell;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(239, 239, 239, 0.59);
+  margin: 10px;
+  color: black; }
 
 .draggie.ui-draggable-dragging {
     color: darkblue;
@@ -49,13 +60,7 @@ img {
     margin-left: 3px;
 }
 
-#Platzhalter {
-    padding: 10px;
-    display: table-cell;
-    width: 2%;
-}
-
-#Antwortbox {
+#answers #Antwortbox1, #Antwortbox2, #Antwortbox3, #Antwortbox4 {
     -webkit-box-shadow: 0px 2px 5px darkgrey;
     -moz-box-shadow: 0px 2px 5px darkgrey;
     box-shadow: 0px 2px 5px darkgrey;
@@ -63,12 +68,33 @@ img {
     display: table-cell;
     padding: 10px;
     width: 190px;
-    margin-left: 15px;
+    margin: 0 30px 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: lightgoldenrodyellow;
     min-height: 500px;
     align-items: center;
 }
+
+#Antwortbox {
+  -webkit-box-shadow: 0px 2px 5px darkgrey;
+  -moz-box-shadow: 0px 2px 5px darkgrey;
+  box-shadow: 0px 2px 5px darkgrey;
+  background-color: rgba(181, 237, 239, 0.29);
+  display: table-cell;
+  padding: 10px;
+  width: 40%;
+  margin-left: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#Platzhalter {
+    background-color: #ffffff;
+    display: table-cell;
+
+    padding: 10px;
+    width: 2%;
+}
+
 
 #Aufgabe{
     color: #000000;
@@ -80,6 +106,7 @@ img {
     left: 0;
     width: 100%;
 }
+
 #Link{
     display: table-cell;
 }
@@ -87,4 +114,8 @@ img {
 dfn{
     text-decoration: underline;
     font-style: normal;
+}
+
+#correct {
+    display: inline;
 }
