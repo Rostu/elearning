@@ -62,6 +62,7 @@ app.get('/ersti_task3', ubung.get_ersti_task3);
 app.get('/ersti_task3b', ubung.get_ersti_task3b);
 app.get('/ersti_task3c', ubung.get_ersti_task3c);
 app.get('/ersti_task4', ubung.get_ersti_task4);
+app.get('/ersti_end', ubung.get_ersti_end);
 app.get('/generationen', ubung.get_generationen);
 app.get('/generationen2', ubung.get_generationen2);
 app.get('/glueck', ubung.get_glueck);
