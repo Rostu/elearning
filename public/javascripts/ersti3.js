@@ -114,8 +114,9 @@ $(document).ready(function() {
                 if (validateData()) {
                     var wrong = $('.markalmost').length + $('.markfalse').length;
                     var right = $('.marktrue').length;
-                    var percent = right/(right+wrong);
+                    var percent = (right/(right+wrong))*100;
                     setScore("3b", percent);
+                    console.log("Score: " + percent + "%");
                     $('#message').show().effect("puff", 2000, function() {
                         document.location.href = "/ersti_task3c";
                     });
@@ -207,8 +208,9 @@ $(document).ready(function() {
                 if(check3c()) {
                     var wrong = $('.plainw').length;
                     var right = $('.passive').length;
-                    var percent = right/(right+wrong);
+                    var percent = (right/(right+wrong)) * 100;
                     setScore("3c", percent);
+                    console.log("Score: " + percent + "%");
                     $('#message').show().effect("puff", 2000, function() {
                         document.location.href = "/ersti_task4";
                     });
@@ -317,8 +319,9 @@ function validate () {
             var unassigned = kvalidate($('.worddrag')).length;
             var wrong = $('.markfalse').toArray().length;
             var total = $('.word').toArray().length;
-            var percent = (total-(unassigned+wrong))/total;
+            var percent = ((total-(unassigned+wrong))/total) * 100;
             setScore("3", percent);
+            console.log("Score: " + percent + "%");
             window.location.href = "/ersti_task3b";
         });
     }

@@ -26,7 +26,7 @@ $(document).ready(function() {
         } else {
             var right = $('.slot').toArray().filter(function(e){return $(e).is(":disabled")});
             var wrong = $('.slot').toArray().filter(function(e){return !$(e).is(":disabled")});
-            var percent = right/(right+wrong);
+            var percent = (right/(right+wrong)) * 100;
             setScore("4", percent);
             document.location.href = "/ersti_end";
         }
