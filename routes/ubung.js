@@ -115,3 +115,12 @@ exports.get_zukunft = function(req, res){
 exports.get_zukunft_task1 = function(req, res){
     res.render('zukunft_task1');
 };
+exports.get_zukunft_task2 = function(req, res){
+    res.render('zukunft_task2');
+};
+exports.get_zukunft_task3 = function(req, res){
+    res.render('zukunft_task3');
+};
+exports.get_zukunft_task4 = function(req, res){
+    res.render('zukunft_task4');
+};

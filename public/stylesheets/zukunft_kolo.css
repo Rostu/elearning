@@ -197,3 +197,8 @@ h2 {
         margin: 0px auto;
     }
 }
+
+#Aufgabe a{
+    float: right;
+    margin-right: 20px;
+}
