@@ -25,8 +25,12 @@ block content
             .target#conta
             .target#targa
             br(style='clear:both')
+            a.buttona(href='#', id='check3c') Prüfen
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            a.buttona(href='#' onclick='reload()', style='background-color: darkred;') Zurücksetzen
 
-            a.buttona(href='#' onclick='reload()') Zurücksetzen
     #Field
         | Welche Wörter haben eine gegenteilige Bedeutung zu "dämlich"? Wähle aus dem Kasten vier passende Wörter aus.
-        a.buttona(href='#', onclick='validate()', id="weiter3c") weiter
+
+        a.buttona(href='#', id="weiter3c") weiter
