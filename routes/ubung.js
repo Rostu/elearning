@@ -79,6 +79,9 @@ exports.get_ersti_task3c = function(req, res){
 exports.get_ersti_task4 = function(req, res){
     res.render('ersti_task4');
 };
+exports.get_ersti_end = function(req,res) {
+    res.render('ersti_end');
+};
 exports.get_veggieday_inhalt = function(req, res){
     res.render('veggieday_inhalt');
 };
