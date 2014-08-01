@@ -12,7 +12,6 @@ $(document).ready(function() {
     }
     b = shuffle(b);
     for (i = 0; i < b.length; i++) {
-        //w.append(makeDiv(a[i], i));
         w.append(b[i]);
     }
     var slots = $('.slot');
@@ -53,9 +52,17 @@ $(document).ready(function() {
         for (var i = 0; i < w.length; i++) {
 
             if ($(w[i]).text()===t) {
-                $(w[i]).addClass("passive");
-                checkMark(w[i].id.substring(1), id.substring(1), self);
 
+                if(checkMark(w[i].id.substring(1), id.substring(1), self)) {
+                    $(w[i]).addClass("passive");
+                } else {
+                    $(w[i]).animate({backgroundColor:'red'}, 500, "swing",function() {$(this).css({'background-color':'lightblue'})});
+
+                    $(self).animate({borderBottomColor: "#ff0000", borderTopColor: "#ff0000", backgroundColor: "#ff8484"},500,"swing",function() {
+                        $(this).css({"border-top": "1px solid #c0c0c0",
+                            "border-bottom": "1px solid #c0c0c0", "background-color": "#fff"});
+                    });
+                }
                 return;
             }
         }
@@ -74,8 +81,9 @@ $(document).ready(function() {
         if(!(a-b)) {
             $(m).animate({borderBottomColor: "#7cfc00", borderTopColor: "#7cfc00", backgroundColor:"#fff"}, "slow");
             $(m).prop('disabled', true);
+            return true;
         }
-
+        return false;
     }
 
     function checkSituation () {
