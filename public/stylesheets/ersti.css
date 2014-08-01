@@ -255,3 +255,14 @@ body {
 .ui-helper-hidden-accessible {
     display: none;
 }
+
+#message {
+    font-size: 2.2em;
+    text-align: center;
+    color: green;
+    border: 5px solid darkgreen;
+    border-left: none;
+    border-right: none;
+    width: 200px;
+    margin: auto;
+}
