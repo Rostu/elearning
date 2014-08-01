@@ -91,17 +91,47 @@ function test() {
 }
 
 $(document).ready(function() {
-   if(/end$/.test(document.location.href)) {
-       $('#task1').append(getScore("t1"));
-       $('#task2').append(getScore("t2"));
-       $('#task2b').append(getScore("t2b"));
-       $('#task2c').append(getScore("t2c"));
-       $('#task3').append(getScore("t3"));
-       $('#task3b').append(getScore("t3b"));
-       $('#task3c').append(getScore("t3c"));
-       $('#task4').append(getScore("t4"));
-       console.log(map);
+    if(/end$/.test(document.location.href)) {
+        $('#task1').append(getScore("t1"));
+        $('#task2').append(getScore("t2"));
+        $('#task2b').append(getScore("t2b"));
+        $('#task2c').append(getScore("t2c"));
+        $('#task3').append(getScore("t3"));
+        $('#task3b').append(getScore("t3b"));
+        $('#task3c').append(getScore("t3c"));
+        $('#task4').append(getScore("t4"));
 
-       $('#test').append(test());
-   }
+        $('#test').append(test());
+    } else if (/k4$/.test(document.location.href)) {
+
+        var a = [87,72,69,82,69,73,83,84,72,69,70,73,83,72];
+        var i = 0;
+        var f1 = "<img src='../images/rbfish1.png' class='rbf' id='rbf1'/>";
+        var f2 = "<img src='../images/rbfish2.png' class='rbf' id='rbf2'/>";
+        var p = [[-211, 200],[-111, 300],[0, 200],[100, 300],[214,402],[415,298],[539,426],[720,336],[830,462],[930,345],[1065,450],[1207,378],[1268,442],[1400, 500]];
+        $(this).keydown(function(k) {
+            if (i === a.length) function1();
+            i = (k.which === a[i]) ? i+1 : 0;
+        });
+        function function1 () {
+            var c = $('.container');
+            var b = $('body');
+            b.css({'pointer-events':'none'});
+            c.append($(f1));
+            document.activeElement.blur();
+            $('#rbf1').animate({left:"+=60"}, 5000, "easeInOutCubic", function() {
+                $('#rbf1').animate({left:"-=100px"}, 4000, "easeOutCirc", function() {
+                    $('#rbf1').remove();
+                    c.append($(f2));
+                    $("#rbf2").animate({
+                        crSpline: $.crSpline.buildSequence(p)
+                    }, 20000, function() {
+                        $('#rbf2').remove();
+                        b.css({'pointer-events':'auto'});
+                    });
+                });
+            });
+
+        }
+    }
 });
