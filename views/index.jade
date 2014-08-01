@@ -1,28 +1,6 @@
 extends layout
-block content
-    link(rel='stylesheet', href='/stylesheets/index.css')
 
-    #Loginbox
-            h2 Login
-            form(action="/login", method="POST")
-                #form_table
-                    #form_row
-                        #form_row
-                            label(for="login") Email
-                        #form_row
-                            input(type="text", id="login", name="login", placeholder="Your email or username")
-                    #form_row
-                        #form_row
-                            label(for="password") Passwort
-                        #form_row
-                            input(type="password", id="password", name="password", placeholder="Your password")
-                            if error
-                                p #{error}
-                    p
-                    #form_row
-                        #form_cell
-                            a(href='/signup') neu anmelden
-                    p
-                    #form_row
-                        #form_cell
-                            input(type="submit", value="Login")
+block content
+    script( src='/javascripts/scripts.js')
+    img(id="front", src="images/front.jpg")
+    h2 Vorstellung des Projekts...

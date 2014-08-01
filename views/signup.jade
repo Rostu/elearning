@@ -1,0 +1,44 @@
+doctype html
+html
+    head
+        title= title
+        meta(charset="utf-8")
+        title= title
+        link(rel='stylesheet', href='/stylesheets/mystyle.css')
+        script( src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js")
+        script( src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js")
+        body
+                #page
+                    #header
+                    block content
+                        link(rel='stylesheet', href='/stylesheets/index.css')
+                        #signupbox
+                            h2 Anmelden
+                            form(action="/signup", method="POST")
+                                #form_table
+                                    #form_row
+                                        #form_row
+                                            label(for="name") Name
+                                        #form_row
+                                            input(type="text", id="name", name="name", placeholder="Your username")
+                                    #form_row
+                                        #form_row
+                                            label(for="email") Email
+                                        #form_row
+                                            input(type="email", id="email", name="email", placeholder="Your email")
+                                    #form_row
+                                        #form_row
+                                            label(for="password") Passwort
+                                        #form_row
+                                            input(type="password", id="password", name="password", placeholder="Your password")
+                                            if error
+                                                p #{error}
+                                    #form_row
+                                        #form_row
+                                            input(type="hidden", name="_csrf", value=_csrf)
+                                    p
+                                    #form_row
+                                        #form_cell
+                                            input(type="submit", value="Signup")
+                                        if error
+                                            p #{error}

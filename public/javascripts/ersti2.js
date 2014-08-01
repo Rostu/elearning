@@ -2,7 +2,7 @@
 {
     $(document).ready(function() {
         var a = ['Universität', 'Lageplan', 'A-Gebäude', 'Seminar', 'Studenten', 'Erstsemesterstudenten',
-            'Unigelände', 'Unigebäude', 'Seminarraum', 'Uni', 'Campus', 'Erstis', 'Kommilitone', 'Dozenten', 'Veranstaltung', 'Unizeit', 'Unitag'];
+            'Unigelände', 'Unigebäude', 'Seminarraum', 'Uni', 'Campus', 'Erstis', 'Kommilitonen', 'Dozenten', 'Veranstaltung', 'Unizeit', 'Unitag'];
 
         var slots = $('.slot');
         slots.on("blur", function() {
@@ -25,7 +25,7 @@
                     $(self).addClass("passive");
                     $(self).animate({borderBottomColor: "#7cfc00", borderTopColor: "#7cfc00", backgroundColor:"#fff"}, "slow");
                     $(self).prop('disabled', true);
-                    $(".inline[id=" + a[i]  + "]").css('color', 'orange');
+                    $(".inline[id=" + a[i]  + "]").css('color', 'green');
                     a.splice(i,1); // Delete the found word from the list of correct words
                     return;
                 }

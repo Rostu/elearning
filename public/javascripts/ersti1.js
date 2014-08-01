@@ -39,12 +39,13 @@ function init() {
             $(div).data('korrekt',true);
             $(div).css('background','rgba(2, 255, 85, 0.16)');
             r_length++;
-        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++}
+            $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','green');
+        }else {$(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
+            $(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++}
         $("#Antwortbox").bind("contextmenu",function(e){return false;});
         $("#Antwortbox").append(div);
         div.mousedown(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
-        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','orange');
     };
 
     function myHelper( event ) {
@@ -114,12 +115,13 @@ function init_two() {
             $(div).data('korrekt',true);
             $(div).css('background','rgba(2, 255, 85, 0.16)');
             r_length++;
-        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++}
+            $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','green');
+        }else {$(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
+            $(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++}
         $("#Antwortbox_two").bind("contextmenu",function(e){return false;});
         $("#Antwortbox_two").append(div);
         div.mousedown(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
-        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','orange');
     };
 
     function myHelper( event ) {
