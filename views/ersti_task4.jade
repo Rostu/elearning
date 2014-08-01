@@ -6,9 +6,12 @@ block content
     script(src='/javascripts/jquery-1.11.1.min.js')
     script(src='/javascripts/jquery-ui.min.js')
     script(src='/javascripts/ersti4.js')
+    script( src='/javascripts/ersti.js')
     #wrapper
     #Textbox
             .unselectable.words
+            #message.invisible
+                | Richtig!
             .unselectable.container(style='clear: left;')
                 | „Gerade bin ich auf dem Campus angekommen. Ich bin hier noch nie gewesen und weiß leider nicht, wo ich hingehen muss! Ich bin ziemlich
                 input#s1.slot(type='text')
