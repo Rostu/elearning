@@ -24,7 +24,11 @@ $(document).ready(function() {
         if (!checkSituation()) {
             alert("Bitte fülle alle Lücken aus!");
         } else {
-            document.location.href = "/ersti_e  nd";
+            var right = $('.slot').toArray().filter(function(e){return $(e).is(":disabled")});
+            var wrong = $('.slot').toArray().filter(function(e){return !$(e).is(":disabled")});
+            var percent = right/(right+wrong);
+            setScore("4", percent);
+            document.location.href = "/ersti_end";
         }
     });
     function makeDiv(a, i) {

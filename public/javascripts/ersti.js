@@ -1,192 +1,107 @@
-$( init );
-function init() {
+/*
+ * Written by David
+ */
 
-    var id=0;
-    var id_speicher = [];
-    var testarray = ["angenehmer","erleichert","gespannt", "Vorfreude","Neugier"];
-    var i = 0;
-    var infos = [];
-    var r_length=0;
-    var w_length = 0;
-    $(".inline").each(function() {
-        $(this).draggable({
-            containment: '#page',
-            revert: true,
-            helper: myHelper});
-    });
+// Global map
+var map = [];
 
-    $('#Antwortbox').droppable( {
-        drop: handleDropEvent
-    });
+// Saves the score for a given task
+function setScore(task, score) {
+    map[normalize(task)] = score;
+}
 
-    function handleDropEvent( event, ui ) {
-        var textinhalt = ui.draggable.context.textContent;
-        var textinfos ="";
-        textinhalt = textinhalt.replace(',','');
-        textinhalt = textinhalt.replace('.','');
-        textinhalt = textinhalt.replace('"','');
-        for(i=0;i<infos.length;i++){
-            if(infos[i][0] === textinhalt)
-            {textinfos = infos[i][1]};
-        }
-        var div = jQuery('<div/>', {
-            class: 'token',
-            id: ui.draggable.attr('id'),
-            html: "<p>"+textinhalt+"</p><div id='"+ui.draggable.attr('id') +"' class='hide'>"
-        });
-        div.click(enlarge);
-        if($.inArray(textinhalt, testarray)> -1){
-            $(div).data('korrekt',true);
-            $(div).css('background','rgba(2, 255, 85, 0.16)');
-            r_length++;
-            update_balken();
-        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++;update_balken();}
-        $("#Antwortbox").bind("contextmenu",function(e){return false;});
-        $("#Antwortbox").append(div);
-        div.mousedown(clear);
-        //$(":button[id="+ui.draggable.attr('id') +"]").click(clear);
-        $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
-        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
-    };
+// Returns the score for a given task
+function getScore(task) {
+    return map[normalize(task)];
+}
 
-    function myHelper( event ) {
-        var textinhalt = $(this).context.innerHTML;
-        textinhalt = textinhalt.replace(',','');
-        textinhalt = textinhalt.replace('.','');
-        return jQuery('<div/>', {
-            class: 'draggie',
-            id: $(this).attr('id'),
-            text: textinhalt
-        });
-    };
+/* Normalizes task names
+ * so that each call to the above methods
+ * functions as expected, even if the
+ * task names are indicated in different manners
+ *
+ * The fall-through in the switch cases is intended
+ */
+function normalize(name) {
+    switch(name) {
+        case "1":
+        case "1a":
+        case "t1":
+        case "t1a":
+        case "task1":
+        case "task1a":
+            return "task1";
 
-    function update_balken(){
-        //console.log($('#balken_innen1'));
-        $('#balken_innen1').css('width',r_length*8);
-        $('#balken_innen2').css('width',w_length*4);
+        case "2":
+        case "2a":
+        case "t2":
+        case "t2a":
+        case "task2":
+        case "task2a":
+            return "task2a";
+
+        case "2b":
+        case "t2b":
+        case "task2b":
+            return "task2b";
+
+        case "2c":
+        case "t2c":
+        case "task2c":
+            return "task2c";
+
+        case "3":
+        case "3a":
+        case "t3":
+        case "t3a":
+        case "task3":
+        case "task3a":
+            return "task3a";
+
+        case "3b":
+        case "t3b":
+        case "task3b":
+            return "task3b";
+
+        case "3c":
+        case "t3c":
+        case "task3c":
+            return "task3c";
+
+        case "4":
+        case "4a":
+        case "t4":
+        case "t4a":
+        case "task4":
+        case "task4a":
+            return "task4";
+
+        default: return "unknown";
     }
-    function clear(ev) {
-        if (ev.which == 3) {
-            $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
-            if($(this).data('korrekt')==true){
-                r_length--;
-            }else{w_length--;}
-            update_balken();
-            $(".token[id=" + this.id + "]").remove();
-        }
-    }
+}
 
-    function enlarge() {
-        $(".hide[id=" +$(this).attr('id')+"]").toggle();
-    };
-};
+// Calculates the global score over all tasks
+// in this chapter ('ersti')
+function calculateGlobalScore () {
+    return 0;
+}
+
+function test() {
+    return 42;
+}
 
 $(document).ready(function() {
-    // TASK 2
-    var arr = ['Seminar', 'Übung', 'Vorlesung', 'Tutorium', 'Kolloqium', 'Workshop', 'Konzert', 'Festival',
-        'Konferenz', 'Sportereignis', 'Party', 'Theaterstück', 'Oper', 'Fest', 'Tanzkurs', 'Demonstration',
-        'Dozent', 'Professor', 'Praktikant', 'Lehrer', 'Trainer', 'Ober', 'Hausmeister', 'Sekretärin', 'Prof',
-        'HiWi', 'Chauffeur', 'Zimmermädchen', 'Student', 'Erstsemesterstudent', 'Ersti', 'Kommilitone',
-        'Schüler', 'Lerner', 'Bachelor', 'Master', 'Gymnasiast', 'Abiturient', 'Klassenkamerad', 'Auszubildender',
-        'Absolvent', 'Lehrling', 'Schulabgänger'];
-    var f = $('.fields');
-    var e = [];
-    for (var i = 0; i < arr.length; i++) {
-        e.push(makeDiv(arr[i], i));
-    }
-    e = shuffle(e);
-    for (i = 0; i < e.length; i++) {
-        //w.append(makeDiv(a[i], i));
-        f.append(e[i]);
-    }
+   if(/end$/.test(document.location.href)) {
+       $('#task1').append(getScore("t1"));
+       $('#task2').append(getScore("t2"));
+       $('#task2b').append(getScore("t2b"));
+       $('#task2c').append(getScore("t2c"));
+       $('#task3').append(getScore("t3"));
+       $('#task3b').append(getScore("t3b"));
+       $('#task3c').append(getScore("t3c"));
+       $('#task4').append(getScore("t4"));
+       console.log(map);
 
-    var slots = $('.slot');
-    slots.on("blur", function() {
-        validate(this);
-    });
-
-
-
-    // TASK 4
-    var a = ['planlos','auf Anhieb','strömen','reibungslos verläuft','flach fällt',
-        'herumgeistern','mitteilungsbedürftig','sehr klein vorkommen','bevorstehende'];
-    var w = $('.words');
-    var b = [];
-    for (var i = 0; i < a.length; i++) {
-        b.push(makeDiv(a[i], i));
-    }
-    b = shuffle(b);
-    for (i = 0; i < b.length; i++) {
-        //w.append(makeDiv(a[i], i));
-        w.append(b[i]);
-    }
-    var slots = $('.slot');
-    slots.on("blur", function() {
-        validate(this);
-    });
-
-    $('#weiter').on("click", function() {
-        alert("Weiter im Programm");
-    });
-    function makeDiv(a, i) {
-        return "<div class='word' id='w"+ (i+1) +"'>" + a + "</div>";
-    }
-
-    function validate(self) {
-        var t = $(self).val();
-        if (t.length == 0) return;
-        // try get word div if present
-        var id = self.id;
-        var w = $('.word');
-        for (var i = 0; i < w.length; i++) {
-
-            if ($(w[i]).text()===t) {
-                $(w[i]).addClass("passive");
-                checkMark(w[i].id.substring(1), id.substring(1), self);
-                // check situation for win and go on
-                if(checkSituation()) {
-                    $('#weiter').css({'visibility':'visible'});
-                }
-                return;
-            }
-        }
-        // if we reach this point, the word didn't match any word
-        $(self).effect("pulsate", "fast");
-        $(self).animate({borderBottomColor: "#ff0000", borderTopColor: "#ff0000", backgroundColor: "#ff8484"},2000,"swing",function() {
-            $(this).css({"border-top": "1px solid #c0c0c0",
-                "border-bottom": "1px solid #c0c0c0", "background-color": "#fff"});
-        });
-    }
-
-    function checkMark(a,b,m) {
-
-        if(!(a-b)) {
-            $(m).animate({borderBottomColor: "#7cfc00", borderTopColor: "#7cfc00", backgroundColor:"#fff"}, "slow");
-            $(m).prop('disabled', true);
-        }
-        //$(m).addClass("green");
-
-
-    }
-
-    function checkSituation () {
-        var s = $('.slot');
-        for (var i = 0; i < s.length; i++) {
-
-            if (!$(s[i]).is(":disabled")) return false;
-        }
-        return true;
-    }
-
-    function shuffle(array) {
-        var counter = array.length, temp, index;
-        while (counter > 0) {
-            index = Math.floor(Math.random() * counter);
-            counter--;
-            temp = array[counter];
-            array[counter] = array[index];
-            array[index] = temp;
-        }
-        return array;
-    }
+       $('#test').append(test());
+   }
 });

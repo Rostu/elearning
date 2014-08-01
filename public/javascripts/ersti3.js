@@ -1,5 +1,5 @@
 /**
- * Created by s2daalft on 23.07.2014.
+ * Created by David on 23.07.2014.
  */
 // TASK 3
 
@@ -26,23 +26,21 @@ $(document).ready(function() {
         $('.word').draggable({revert: "invalid"});
 
         $('.target').droppable({drop: function(e,ui) {
-            $(ui.draggable).attr("style","").addClass("revertable").appendTo($(this));
+            $(ui.draggable).attr("style","").addClass("revertable").attr("style","position:relative").appendTo($(this));
 
         }});
         $(document).on("contextmenu",".revertable",function(e){
             var ct = $(e.currentTarget);
+            if (ct.hasClass("markfalse")) ct.removeClass("markfalse");
             var p = $(ct.parent()[0]);
-            ct.removeClass("revertable");
-            var temp = ct.detach();
-            cont.append(temp);
+            cont.append(ct.removeClass("revertable").detach());
             return false;
-            });
+        });
 
 
     } else // not 3, therefore 3b or 3c
     {
         if (/.+?3b$/.test(whereami)) {
-            $('#message').hide();
             var c = [];
             var a = ["doof", "dumm", "hirnlos", "idiotisch"];
             a.map(function (e) {
@@ -114,6 +112,10 @@ $(document).ready(function() {
             $('#weiter').on('click', function () {
                 $('#check').click();
                 if (validateData()) {
+                    var wrong = $('.markalmost').length + $('.markfalse').length;
+                    var right = $('.marktrue').length;
+                    var percent = right/(right+wrong);
+                    setScore("3b", percent);
                     $('#message').show().effect("puff", 2000, function() {
                         document.location.href = "/ersti_task3c";
                     });
@@ -202,11 +204,15 @@ $(document).ready(function() {
                 "Eine technische Frage bezieht sich auf die Technik."
             ];
             $('#weiter3c').click(function() {
-               if(check3c()) {
-                   $('#message').show().effect("puff", 2000, function() {
-                       document.location.href = "/ersti_task4";
-                   });
-               }
+                if(check3c()) {
+                    var wrong = $('.plainw').length;
+                    var right = $('.passive').length;
+                    var percent = right/(right+wrong);
+                    setScore("3c", percent);
+                    $('#message').show().effect("puff", 2000, function() {
+                        document.location.href = "/ersti_task4";
+                    });
+                }
             });
             var dc = [];
             for (var ic = 0; ic < ac.length; ic++) {
@@ -239,11 +245,11 @@ $(document).ready(function() {
             }});
             function check3c() {
                 $('.sol').toArray().map(function(m) {
-                   var t = $(m).text();
+                    var t = $(m).text();
                     if ($.inArray(t, ac) > -1) {
                         $(m).addClass("passive");
                     } else {
-                        $('#expl').removeClass('invisible');
+                        $('#expl').removeClass('invisible').effect("highlight");
                         modify($(m));
                     }
                 });
@@ -281,20 +287,40 @@ $(document).ready(function() {
 function validate () {
     var syn = $('#synonym');
     var ant = $('#antonym');
-    var b1 = /anregend/.test(jvalidate($(syn[0])));
+    // 10 of 14
+    //var b1 = /anregend/.test(jvalidate($(syn[0])));
+    // 10 of 15
+    //var b2 = /öde/.test(jvalidate($(ant[0])));
 
-    var b2 = /öde/.test(jvalidate($(ant[0])));
-
-    var b3 = !(kvalidate($('.worddrag')).length);
+    var b3 = (kvalidate($('.worddrag')).length < 10);
 
     if (!b3) {
-        showModal("Bitte ordne alle Wörter zu!");
+        showModal("Bitte ordne mehr Wörter zu!");
     }
 
     var c = lvalidate(syn, ant);
+    console.log("c "+ c );
+    var p1 = fun1(syn);
+    var p2 = fun1(ant);
+    console.log(p1);
+    console.log(p2);
+    function fun1 (a) {
+        return !(a.children('.word').toArray().map(function (e) {
+            return $(e).hasClass("markfalse") ? 0 : 1;
+        }).reduce(function (a, e) {
+            return a + e;
+        },0) < 10);
+    }
 
-    if (b1 && b2 && b3 && c) {
-        window.location.href = "/ersti_task3b";
+    if (b3 && c && p1 && p2) {
+        $('#message').show().effect("puff", 2000, function() {
+            var unassigned = kvalidate($('.worddrag')).length;
+            var wrong = $('.markfalse').toArray().length;
+            var total = $('.word').toArray().length;
+            var percent = (total-(unassigned+wrong))/total;
+            setScore("3", percent);
+            window.location.href = "/ersti_task3b";
+        });
     }
 }
 
@@ -307,20 +333,32 @@ function kvalidate(d) {
 }
 
 function lvalidate(s,a) {
-    var b1 = $(s).children(".word").toArray().map(function(e) {
-        if(e.id.substring(1) > 14) {
-            markFalse($(e));
-            return false;
-        }
-        return true;
-    }).reduce(function(a,e) {return a&&e;}, true);
-    var b2 = $(a).children(".word").toArray().map(function(e) {
-        if(e.id.substring(1) < 14) {
-            markFalse($(e));
-            return false;
-        }
-        return true;
-    }).reduce(function(a,e) {return a&&e;}, true);
+    var b1 = fun2($(s), 0);
+    var b2 = fun2($(a), 1);
+
+    function fun2 (a, i) {
+
+        return a.children(".word").toArray().map(function(e) {
+            if (i !== 0) {
+
+                if(e.id.substring(1) < 14) {
+
+                    markFalse($(e));
+                    return false;
+                }
+                return true;
+            } else {
+
+                if(e.id.substring(1) > 14) {
+
+                    markFalse($(e));
+                    return false;
+                }
+                return true;
+            }
+
+        }).reduce(function(a,e) {return a&&e;}, true);
+    }
     return b1 && b2;
 }
 
