@@ -41,12 +41,13 @@ body {
       background: linear-gradient(#3399cc 60%, #2288bb); /* Standard syntax */
     }
 
-  form{
+    #loginbox form{
       background:#f0f0f0;
       padding:6% 4%;
-  }
+    }
 
-  input[type="text"],input[type="password"]{
+  #loginbox input[type="text"],
+  #loginbox input[type="password"]{
     width:92%;
     background:#fff;
     margin-bottom:4%;
@@ -57,7 +58,7 @@ body {
     color:#555;
 }
 
-  input[type="submit"]{
+#loginbox input[type="submit"]{
     width:100%;
     background:#3399cc;
     border:0;
@@ -69,7 +70,7 @@ body {
     transition:background .3s;
     -webkit-transition:background .3s;
 }
-  input[type="submit"]:hover{
+#loginbox input[type="submit"]:hover{
     background:#2288bb;
 }
 
