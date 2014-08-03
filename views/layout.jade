@@ -62,30 +62,13 @@ html
                             h2 Sie müssen sich anmelden um alle Inhalte nutzen zu können
                             #withoutcontent
                                 link(rel='stylesheet', href='/stylesheets/index.css')
-                                #Loginbox
-                                    h2 Login
+                                #loginbox
+                                    h1 Login
                                     form(action="/login", method="POST")
-                                        #form_table
-                                            #form_row
-                                                #form_row
-                                                    label(for="login") Email
-                                                #form_row
-                                                    input(type="text", id="login", name="login", placeholder="Your email or username")
-                                            #form_row
-                                                #form_row
-                                                    label(for="password") Passwort
-                                                #form_row
-                                                    input(type="password", id="password", name="password", placeholder="Your password")
-                                                    if error
-                                                        p #{error}
-                                            p
-                                            //#form_row
-                                                #form_cell
-                                                    a(href='/signup') neu anmelden
-                                            p
-                                            #form_row
-                                                #form_cell
-                                                    input(type="submit", value="Login")
+                                        input(type="text", id="login", name="login", placeholder="Benutzername")
+                                        input(type="password", id="password", name="password", placeholder="Passwort")
+                                        input(type="submit", value="Login")
+
 
 
 

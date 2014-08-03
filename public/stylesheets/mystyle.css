@@ -15,6 +15,64 @@ body {
     width: 95%;
     position: static;
     min-height: 500px; }
+
+  #loginbox{
+    width:400px;
+    margin:0 auto;
+    margin-left: 50%;
+    transition:opacity 1s;
+    -webkit-transition:opacity 1s;
+    -webkit-box-shadow: 0px 0px 4px darkgrey;
+    -moz-box-shadow: 0px 0px 4px darkgrey;
+    box-shadow: 0px 0px 4px darkgrey;
+}
+
+  #loginbox h1{
+      background: #3399cc;
+      padding:20px 0;
+      font-size:140%;
+      font-weight:300;
+      text-align:center;
+      color:#fff;
+      margin: 0px;
+      background: -webkit-linear-gradient(#3399cc 60%, #2288bb); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(#3399cc 60%, #2288bb); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(#3399cc 60%, #2288bb); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#3399cc 60%, #2288bb); /* Standard syntax */
+    }
+
+  form{
+      background:#f0f0f0;
+      padding:6% 4%;
+  }
+
+  input[type="text"],input[type="password"]{
+    width:92%;
+    background:#fff;
+    margin-bottom:4%;
+    border:1px solid #ccc;
+    padding:4%;
+    font-family:'Open Sans',sans-serif;
+    font-size:95%;
+    color:#555;
+}
+
+  input[type="submit"]{
+    width:100%;
+    background:#3399cc;
+    border:0;
+    padding:4%;
+    font-family:'Open Sans',sans-serif;
+    font-size:100%;
+    color:#fff;
+    cursor:pointer;
+    transition:background .3s;
+    -webkit-transition:background .3s;
+}
+  input[type="submit"]:hover{
+    background:#2288bb;
+}
+
 #wrapper {
     width: 100%;
     display: table; }
@@ -83,29 +141,3 @@ body {
       width: 100%;
       position: relative;
       float: left; }
-      body #page #content #login_box {
-        background-color: #dde7ef;
-        overflow: hidden;
-        -webkit-box-shadow: 0px 2px 5px black;
-        -moz-box-shadow: 0px 2px 5px darkgrey;
-        box-shadow: 0px 2px 5px darkgrey;
-        width: 250px;
-        margin: 2% auto; }
-        body #page #content #login_box label {
-          color: rgba(98, 137, 213, 0.98);
-          font-size: 1em; }
-        body #page #content #login_box input[type="text"], body #page #content #login_box input[type="password"] {
-          font: Arial, Helvetica, sans-serif;
-          font-size: 1em;
-          font-style: bold;
-          background-color: rgba(245, 245, 245, 0.94);
-          padding: 3px 6px;
-          border: 1px solid rgba(106, 165, 248, 0.56);
-          border-radius: 5px;
-          color: rgba(98, 137, 213, 0.98);
-          height: 35px;
-          width: 191px; }
-        body #page #content #login_box input[type="text"]:focus, body #page #content #login_box input[type="password"]:focus {
-          border-color: rgba(98, 137, 213, 0.98);
-          outline-color: rgba(98, 137, 213, 0.98);
-          outline-width: 5px; }
