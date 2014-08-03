@@ -21,14 +21,11 @@
 
 .slot {
     margin: 2px 5px;
-    border: none;
-    border-top: 1px solid #c0c0c0;
-    border-bottom: 1px solid #c0c0c0;
     font-family: monospace;
     height: 20px;
     width: 175px;
-    border-top: hidden;
-    border-bottom-color: black;
+    border: none;
+    border-bottom: 1px solid black;
 }
 
 .info {
