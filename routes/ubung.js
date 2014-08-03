@@ -112,6 +112,15 @@ exports.get_generationen = function(req, res){
 exports.get_generationen2 = function(req, res){
     res.render('generationen2');
 };
+
+exports.get_generationen3 = function(req, res){
+    res.render('generationen3');
+};
+
+exports.get_generationen4 = function(req, res){
+    res.render('generationen4');
+};
+
 exports.get_zukunft = function(req, res){
     res.render('zukunft');
 };
