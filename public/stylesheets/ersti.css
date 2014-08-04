@@ -26,6 +26,7 @@
     width: 175px;
     border: none;
     border-bottom: 1px solid black;
+    background-color: rgba(239, 239, 239, 0);
 }
 
 .info {
@@ -75,7 +76,6 @@
     -webkit-box-shadow: 0px 2px 5px darkgrey;
     -moz-box-shadow: 0px 2px 5px darkgrey;
     box-shadow: 0px 2px 5px darkgrey;
-    width: 70%;
     display: table-cell;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;

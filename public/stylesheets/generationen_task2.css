@@ -6,7 +6,7 @@
     -webkit-box-shadow: 0px 2px 5px darkgrey;
     -moz-box-shadow: 0px 2px 5px darkgrey;
     box-shadow: 0px 2px 5px darkgrey;
-    background-color: rgba(181, 237, 239, 0.29);
+    background-color: lightgoldenrodyellow;
     display: block;
     padding: 10px;
     width: 40%;
@@ -34,7 +34,7 @@
     -moz-box-shadow: 0px 2px 5px darkgrey;
     box-shadow: 0px 2px 5px darkgrey;
     display: table-cell;
-    background-color: rgba(2, 255, 85, 0.16);
+    background-color: rgba(239, 239, 239, 0.59);
     border-radius: 25px 0;
     width: 400px;
     height: 300px; }
@@ -52,7 +52,7 @@
     -moz-box-shadow: 0px 2px 5px darkgrey;
     box-shadow: 0px 2px 5px darkgrey;
     display: table-cell;
-    background-color: rgba(2, 255, 85, 0.28);
+    background-color: rgba(239, 239, 239, 0.59);
     border-radius: 25px 0;
     width: 400px;
     height: 300px; }
@@ -97,22 +97,6 @@
     display:table-cell;
     height: 70px;
     width: 150px;
-}
-
-#Field{
-    color: black;
-    text-indent: 0;
-    background: rgba(106, 255, 253, 0.80);
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    min-width: 100%;
-}
-
-#Field a{
-    float: right;
-    margin-right: 20px;
 }
 
 .drop2 {
