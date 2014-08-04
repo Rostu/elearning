@@ -1,6 +1,17 @@
 extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/veggie.css')
+    #Aufgabenbox
+        p
+        b Aufgabe:
+        |Lies die fünf Zeitungsartikel zum Thema "Fleischfreier Montag" aufmerksam und informiere dich
+        |über die Bedeutung der <b><font color="#FF0000">rot</font></b> gedruckten Schlagwörter auf &nbsp
+        b Duden
+        |und auf dem
+        b Wortschatzportal der Universität Leipzig
+        |. Bei dieser Aufgabe geht es nicht nur darum, die Bedeutung der Wörter kennenzulernen, sondern auch um den
+        |Umgang mit den beiden Portalen zu üben. Diese können dir in Zukunft helfen, unbekannte Wörter besser zu verstehen.
+        p
     h2(style="center") Übung 1: Vegetarismus
     p
     #Inhaltbox
@@ -46,21 +57,16 @@ block content
             | Montags nur Möhren? Das "Meat Free Monday"-Kochbuch bringt Abwechslung auf den Tisch - mit 52
             | fleischfreien Speiseplänen für je einen ganzen Tag.
         p
+
+    p
+    br
+    p
+    p
+    br
+    p
+
+    #Field
+        a(href='http://duden.de') Duden
+        a(href='http://wortschatz.uni-leipzig.de/') Wortschatzportal
         form#weiter(action='/veggieday_met')
-             input(type='submit', value='Nächste Aufgabe')
-    p
-    br
-    p
-    p
-    br
-    p
-    #Aufgabe
-        p
-        | <b>Aufgabe:</b> Lies die fünf Zeitungsartikel zum Thema "Fleischfreier Montag" aufmerksam und informiere dich
-        | über die Bedeutung der <b><font color="#FF0000">rot</font></b> gedruckten Schlagwörter auf &nbsp
-        a(href='www.duden.de') Duden
-        | &nbsp und auf dem &nbsp
-        a(href='http://wortschatz.uni-leipzig.de/') Wortschatzportal der Universität Leipzig
-        | . Bei dieser Aufgabe geht es nicht nur darum, die Bedeutung der Wörter kennenzulernen, sondern auch um den
-        | Umgang mit den beiden Portalen zu üben. Diese können dir in Zukunft helfen, unbekannte Wörter besser zu verstehen.
-        p
+           input(type='submit', value='Nächste Aufgabe')

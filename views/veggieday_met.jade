@@ -2,6 +2,15 @@ extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/veggie.css')
     script( src='/javascripts/Veggie_luecke.js')
+    #Aufgabenbox
+        p
+        b Aufgabe:
+        |Ein Sprachmittel der Überschriften in Zeitungsartikeln sind Metaphern. In unseren
+        |Zeitungsartikeln befanden sich vier davon, nämlich:
+        b Info:
+        |nur Gemüse im Kopf, richtig dicke Luft, zum Himmel stinken, Sonntagsbraten.
+        |&nbsp Um zu testen, ob du die Metaphern richtig verstanden hast, musst du sie an der richtigen Stelle im
+        |nachstehenden Lückentext einsetzen!
     h2(style="center") Übung 3: Metaphern
     p
     #Inhaltbox
@@ -18,13 +27,9 @@ block content
             input(type='text', name='antwort4', size='20', value='')
             | . Entrüstet packt Paul seine Sachen und fährt.
             p
-            input(type='BUTTON', name='Aufgabe', value='Fertig!', onclick='validate (this.form)')
+
+    #Field
+        input(type='BUTTON', name='Aufgabe', value='Fertig!', onclick='validate (this.form)')
 
         form#weiter(action='/veggieday_drag')
             input(type='submit', value='Nächste Aufgabe')
-
-    #Aufgabe <b>Aufgabe:</b> Ein Sprachmittel der Überschriften in Zeitungsartikeln sind Metaphern. In unseren
-        | Zeitungsartikeln befanden sich vier davon, nämlich:
-        i  nur Gemüse im Kopf, richtig dicke Luft, zum Himmel stinken, Sonntagsbraten.
-        | &nbsp Um zu testen, ob du die Metaphern richtig verstanden hast, musst du sie an der richtigen Stelle im
-        | nachstehenden Lückentext einsetzen!
