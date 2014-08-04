@@ -3,7 +3,7 @@ function init() {
 
     var id=0;
     var id_speicher = [];
-    var testarray = ["angenehmer","erleichtert","gespannt", "Vorfreude","Neugier", "zielsicher"];
+    var testarray_two = ["etwas baut jemanden auf", "verwundert sein", "nicht allein sein", "erleichtert sein", "neugierig sein", "auf etwas freuen"];
     var i = 0;
     var infos = [];
     var r_length=0;
@@ -79,7 +79,7 @@ function init_two() {
 
     var id=0;
     var id_speicher = [];
-    var testarray_two = ["aufgeregt", "Aufregung","Nervosität","merkwürdig", "unsicher wirken","klein", "unwissend", "genervt", "belästigt"];
+    var testarray_two = ["aufgeregt sein", "nervös sein", "unsicher wirken", "sich klein vorkommen", "zurückversetzt fühlen", "klein fühlen", "unwissend fühlen", "genervt sein", "belästigt fühlen", "unsicher sein"];
     var i = 0;
     var infos = [];
     var r_length=0;
