@@ -190,44 +190,8 @@
     height: 15px;
     width: 0px; }
 
-h1 {
-    position: fixed;
-    font-size: 10em;
-    top: 50%;
-    left: 30%;
-    color: green;
-    -webkit-animation: richtig 1s; /* Chrome, Safari, Opera */
-    -moz-animation: richtig 1s;
-    animation: richtig 1s;
-}
-h2 {
-    position: fixed;
-    font-size: 10em;
-    top: 50%;
-    left: 30%;
-    color: red;
-    -webkit-animation: richtig 1s; /* Chrome, Safari, Opera */
-    -moz-animation: richtig 1s;
-    animation: richtig 1s;
-}
 
-@-webkit-keyframes richtig{
-    from {
-        font-size: 1em;
-        position: fixed;
-        font-size: 1em;
-        top: 50%;
-        left: 30%;
-    }
 
-    to {
-        font-size: 10em;
-        position: fixed;
-        top: 50%;
-        left: 30%;
-        margin: 0px auto;
-    }
-}
 
 .word {
     margin: 5px 2px;
