@@ -51,7 +51,7 @@
     display: box;
     width: 50%;
     border-radius: 50%;
-    background-color: rgba(2, 255, 85, 0.28);
+    background-color: lightgoldenrodyellow;
     min-height: 180px; }
 #Antwortbox p {
     text-align: center; }

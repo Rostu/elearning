@@ -1,8 +1,10 @@
 extends layout
 block content
+
     link(rel='stylesheet', href='/stylesheets/veggieday.css')
-    #Aufgabebox
-        h1(style="center") Übung 3: Meinung der Mediziner
+    #Aufgabenbox
+
+        h2(style="center") Übung 3: Meinung der Mediziner
         h2 Aufgabe:
         p
         | Lies den folgenden Text aufmerksam. Hier geht es um die Meinung der Mediziner zum Thema Veganismus.
@@ -11,7 +13,7 @@ block content
         | Hinweis: Die Bedeutung von <i>kursiv</i>
         | gedruckten Wörtern erfährst du, wenn du auf ihnen mit dem Mauszeiger verweilst!
         | Falls du ein Wort nicht kennst, kannst du es im
-        a(href='www.duden.de') Duden
+        b Duden
         | nachschlagen!
     p
     #Textbox
@@ -57,4 +59,7 @@ block content
             p <INPUT type=checkbox name="box" value="1">Körpergewicht<BR>
             p <INPUT type=checkbox name="box" value="1">Herz-Kreislauf-Erkrankung<BR>
             p <INPUT type=checkbox name="box" value="0">Lebenserwartung<BR>
-        p <INPUT TYPE="BUTTON" NAME="Aufgabe" VALUE= "Fertig!" ONCLICK= "boxcheck(this.form)" >
+
+    #Field
+        a(href='www.duden.de') DUDEN
+        INPUT(TYPE="BUTTON" NAME="Aufgabe" VALUE= "Fertig!" ONCLICK= "boxcheck(this.form)")

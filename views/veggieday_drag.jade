@@ -2,6 +2,15 @@ extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/veggie.css')
     script( src='/javascripts/Veggie_drag.js')
+    #Aufgabenbox
+        p
+        b Aufgabe:
+        |Lies den folgenden Text aufmerksam durch. Hier geht es um die Meinung der Mediziner zum Thema
+        |Veganismus. Ziehe anschließend die enstprechenden Begriffe mit gedrückter Maustaste aus dem Text heraus
+        |ihrer entsprechenden Definition zu.
+        b Hinweis:
+        |Die Bedeutung von <i>kursiv</i> gedruckten Wörtern erfährst du, wenn du auf ihnen mit dem Mauszeiger verweilst!
+
     h2(style="center") Übung 4: Meinung der Mediziner
     p
     #Textbox
@@ -60,22 +69,17 @@ block content
                 p Was wird hier definiert?
             p
         p
+
+
+    p
+    br
+    p
+    p
+    br
+    p
+    #Field
         form#drag(name='dragAndDrop', action='')
             input(type='BUTTON', name='Aufgabe', value='Fertig!', onclick='validate ()')
 
         form#weiter(action='/veggieday_u5')
             input(type='submit', value='Nächste Aufgabe')
-
-    p
-    br
-    p
-    p
-    br
-    p
-
-
-    #Aufgabe <b>Aufgabe:</b> Lies den folgenden Text aufmerksam durch. Hier geht es um die Meinung der Mediziner zum Thema
-        | Veganismus. Ziehe anschließend die enstprechenden Begriffe mit gedrückter Maustaste aus dem Text heraus
-        | ihrer entsprechenden Definition zu.
-        p
-        | Hinweis: Die Bedeutung von <i>kursiv</i> gedruckten Wörtern erfährst du, wenn du auf ihnen mit dem Mauszeiger verweilst!
