@@ -89,8 +89,7 @@ function init() {
                 $("h1").fadeToggle(800,function(){ $("h1").hide();});
             }else{
                 $("#Antwortbox .antworttoken").delay(800).fadeOut( function() {
-                    clear2($("#Antwortbox .antworttoken")[1]);
-                    clear2($("#Antwortbox .antworttoken")[0])
+                   clear2(this);
                 });
                 $("h2").fadeToggle(800,function(){ $("h2").hide();});
             }
@@ -104,7 +103,7 @@ function init() {
                 id: this.id,
                 html: this.innerHTML
             });
-            $(div).appendTo('#rechts' ).draggable({
+            $(div).appendTo('#rtext' ).draggable({
                 containment: '#page',
                 revert: true
             });
@@ -115,7 +114,7 @@ function init() {
                 id: this.id,
                 html: this.innerHTML
             });
-            $(div).appendTo('#links' ).draggable({
+            $(div).appendTo('#ltext' ).draggable({
                 containment: '#page',
                 revert: true
             });
@@ -123,33 +122,31 @@ function init() {
         }
     }
 
-    function clear2(todel){
-
-        if($(".token.ui-draggable[id="+todel.id+"]").attr('id') == todel.id){
-            var div = jQuery('<div/>', {
-                class: 'kolo',
-                id: todel.id,
-                html: todel.innerHTML
-            });
-            $(div).appendTo('#rechts' ).draggable({
-                containment: '#page',
-                revert: true
-            });
-            $(todel).remove();
-        }else{
+    function clear2(token){
+        if($(token).parent()[0].id == "a1"){
             var div = jQuery('<div/>', {
                 class: 'token',
-                id: todel.id,
-                html: todel.innerHTML
+                id: token.id,
+                html: token.innerHTML
             });
             $(div).appendTo('#links' ).draggable({
                 containment: '#page',
                 revert: true
             });
-            $(todel).remove();
+            $(token).remove();
+        }else{
+            var div = jQuery('<div/>', {
+                class: 'kolo',
+                id: token.id,
+                html: token.innerHTML
+            });
+            $(div).appendTo('#rechts' ).draggable({
+                containment: '#page',
+                revert: true
+            });
+            $(token).remove();
         }
     }
-
 
     function update_balken(){
         //console.log($('#balken_innen1'));
