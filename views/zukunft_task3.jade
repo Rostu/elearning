@@ -3,11 +3,13 @@ extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/zukunft_luecke.css')
     script( src='/javascripts/zukunft_luecke.js')
+    #Aufgabenbox
+        p Ziehe die vorgegebenen Wörter aus dem rechten Kasten in die passenden Lücken im Text!
+
     #wrapper
         #Textbox
             h1
                 |  Stephen Hawking: Eine kurze Geschichte der Zeit
-
             p
             |Der
             .inline(id=1) Star-Physiker
@@ -61,9 +63,9 @@ block content
 
             #Platzhalter
         #Antwortbox
-        #Aufgabe Aufgabe: Ziehe die vorgegebenen Wörter aus dem rechten Kasten in die passenden Lücken im Text!
-            a.buttona(href="/zukunft_task4")  weiter
-            #balken_aussen
-                #balken_innen1
-                #balken_innen2
 
+    #Field
+        a.buttona(href="/zukunft_task3") weiter
+        #balken_aussen
+            #balken_innen1
+            #balken_innen2

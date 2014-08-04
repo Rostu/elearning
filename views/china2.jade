@@ -2,6 +2,8 @@ extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/china.css')
     script( src='/javascripts/china.js')
+    #Aufgabenbox
+        p Ordne die Begriffe aus dem Text den richtigen Bereichen zu!
     #Textbox
         p
             .inline(id=0) Austauschstudent
@@ -54,8 +56,5 @@ block content
                 #Platzhalter                    
                 #Antwortbox4 Studienformen
                     br                    
-        #Aufgabe
-            #wrapper
-                | Aufgabe 2: Ordne die Begriffe aus dem Text den richtigen Bereichen zu!
-                #Link
-                    a(href="/china3") Weiter
+    #Field
+        a(href="/china3") Weiter
