@@ -80,7 +80,7 @@ function init_two() {
 
     var id=0;
     var id_speicher = [];
-    var testarray_two = ["aufgeregt", "aufgeregt sein", "nervös sein", "unsicher wirken", "sich klein vorkommen", "zurückversetzt fühlen", "klein fühlen", "unwissend fühlen", "genervt sein", "belästigt fühlen", "unsicher sein"];
+    var testarray_two = ["aufgeregt sein", "nervös sein", "unsicher wirken", "sich klein vorkommen", "zurückversetzt fühlen", "klein fühlen", "unwissend fühlen", "genervt sein", "belästigt fühlen", "unsicher sein"];
     var i = 0;
     var infos = [];
     var r_length=0;
@@ -147,10 +147,10 @@ function init_two() {
 
 $(document).on("ready",function(){      // function that checks if you have enough correct words. Lets you pass to the next Page if you do.
     $('#weiter').on("click", function(e) {
-        if (countCorrectAnswers() < 11)
+        if (countCorrectAnswers() < 13)
         {
             e.preventDefault(); // Stops the browser from opening the next page, using the href attribute on the <a> element
-            alert("Bitte fülle genügend Lücken aus!");
+            alert("Bitte fülle genügend Lücken aus! Es werden mindestens 13 richtige Anworten benötigt.");
         }
     });
 });
