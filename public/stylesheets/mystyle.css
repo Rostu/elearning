@@ -5,9 +5,6 @@ body {
   height: 100%;
   padding: 20px; }
 
-
-
-
   body #page {
     margin: auto;
     display: block;
@@ -149,11 +146,9 @@ body {
 
 #Field{
     color: navajowhite;
-    text-decoration: bold;
-    text-indent: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
     background: rgba(101, 70, 229, 0.60);
     /*background: rgba(255, 139, 54, 0.66);*/
-    padding: 10px;
     padding-left: 30px;
     padding-right: 30px;
     position: fixed;
@@ -162,19 +157,17 @@ body {
     width: 100%;
 }
 
-#Field a{
+#Field a.buttona {
+    color: white;
+    text-decoration: none;
     float: right;
-    margin-right: 30px;
+    margin-right: 5%;
+    font-size: 2em;
+    margin-left: 18%;
 }
 
-#Field a.buttona {
-    width: auto;
-    height: 14px;
-    line-height: normal;
-    padding: 4px 8px;
-    margin: -8px 20px 0 0;
-    position: relative;
-    bottom: -4px;
+#Field a.buttona:hover {
+    text-shadow: 0px 0px 10px white;
 }
 
 #Field .outlink {

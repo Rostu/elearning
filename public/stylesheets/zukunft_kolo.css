@@ -128,15 +128,6 @@
     width: 150px;
 }
 
-#Aufgabe {
-    color: black;
-    text-indent: 0;
-    background: rgba(159, 255, 177, 0.8);
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    min-width: 100%; }
 
 #balken_aussen {
     display: inline-block;
@@ -196,9 +187,4 @@ h2 {
         left: 30%;
         margin: 0px auto;
     }
-}
-
-#Aufgabe a{
-    float: right;
-    margin-right: 20px;
 }
