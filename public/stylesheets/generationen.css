@@ -244,6 +244,13 @@
     list-style-type: disc;
 }
 
+#Space {
+    padding: 15px;
+    display: table-cell;
+    width: 3%;
+}
+
+
 .task {
 
 }
