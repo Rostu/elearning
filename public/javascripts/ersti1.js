@@ -3,7 +3,7 @@ function init() {
 
     var id=0;
     var id_speicher = [];
-    var testarray_two = ["etwas baut jemanden auf", "verwundert sein", "nicht allein sein", "erleichtert sein", "neugierig sein", "auf etwas freuen"];
+    var testarray = ["etwas baut jemanden auf", "verwundert sein", "nicht allein sein", "erleichtert sein", "neugierig sein", "auf etwas freuen"];
     var i = 0;
     var infos = [];
     var r_length=0;
@@ -11,6 +11,7 @@ function init() {
     $(".inline").each(function() {
         $(this).draggable({
             containment: '#page',
+            id: this,
             revert: true,
             helper: myHelper});
     });
@@ -32,7 +33,7 @@ function init() {
         var div = jQuery('<div/>', {
             class: 'token',
             id: ui.draggable.attr('id'),
-            html: "<p>"+textinhalt+"</p><div id='"+ui.draggable.attr('id') +"' class='hide'>"
+            html: "<p>"+$(".inline.ui-draggable[id=" + ui.draggable.attr('id') + "]").data("text")+"</p><div id='"+ui.draggable.attr('id') +"' class='hide'>"
         });
         div.click(enlarge);
         if($.inArray(textinhalt, testarray)> -1){
@@ -79,7 +80,7 @@ function init_two() {
 
     var id=0;
     var id_speicher = [];
-    var testarray_two = ["aufgeregt sein", "nervös sein", "unsicher wirken", "sich klein vorkommen", "zurückversetzt fühlen", "klein fühlen", "unwissend fühlen", "genervt sein", "belästigt fühlen", "unsicher sein"];
+    var testarray_two = ["aufgeregt", "aufgeregt sein", "nervös sein", "unsicher wirken", "sich klein vorkommen", "zurückversetzt fühlen", "klein fühlen", "unwissend fühlen", "genervt sein", "belästigt fühlen", "unsicher sein"];
     var i = 0;
     var infos = [];
     var r_length=0;
@@ -101,16 +102,11 @@ function init_two() {
         textinhalt = textinhalt.replace(',','');
         textinhalt = textinhalt.replace('.','');
         textinhalt = textinhalt.replace('"','');
-        for(i=0;i<infos.length;i++){
-            if(infos[i][0] === textinhalt)
-            {textinfos = infos[i][1]};
-        }
         var div = jQuery('<div/>', {
             class: 'token',
             id: ui.draggable.attr('id'),
-            html: "<p>"+textinhalt+"</p><div id='"+ui.draggable.attr('id') +"' class='hide'>"
+            html: "<p>"+$(".inline.ui-draggable[id=" + ui.draggable.attr('id') + "]").data("text")+"</p><div id='"+ui.draggable.attr('id') +"' class='hide'>"
         });
-        div.click(enlarge);
         if($.inArray(textinhalt, testarray_two)> -1){
             $(div).data('korrekt',true);
             $(div).css('background','rgba(2, 255, 85, 0.16)');
