@@ -1,3 +1,8 @@
+function validate2(){
+    document.querySelector('#pruefen').addEventListener('click', validate(document.querySelector('form')),false);
+};
+
+
 function replaceUmlauts ( text )
 {
     text = text.replace(/ä/g,"ae");
@@ -10,8 +15,10 @@ function replaceUmlauts ( text )
     return text;
 }
 
+
 function validate ( sender )
 {
+    console.log(document.querySelector('#pruefen'));
     var results = [ "Sonntagsbraten",
         "nur Gemuese im Kopf",
         "richtig dicke Luft",
@@ -62,3 +69,6 @@ function validate ( sender )
         alert ( 'Glückwunsch! Du hast alles richtig zugeordnet!' );
     }
 }
+
+
+
