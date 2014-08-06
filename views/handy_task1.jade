@@ -1,0 +1,36 @@
+extends layout
+block content
+    link(rel='stylesheet', href='/stylesheets/handy_task1.css')
+    script( src='/javascripts/handy.js')
+    #Aufgabenbox
+        p F�lle den L�ckentext mit Hilfe des Textes und den Definitionen der L�cken aus.
+        |Der Artikel muss bei Substantiven dazugesetzt werden.
+        |Du musst gegebenenfalls deklinieren  und konjugieren.
+    #wrapper
+        #Textbox
+
+            p.
+               Laut einer Studie <input type="text" size="20" maxlength="20"> (suche ein zweiteiliges Pr�dikat) jeder dritte Sieben- bis Neunj&auml;hrige
+               <input verb="mobil" type="text" size="20" maxlength="20">.
+
+               Bei den �lteren Sch�lern sind es sogar 95%: Daher wagen Zehntkl�ssler aus Braunschweig das unm�gliche Experiment, eine Woche lang auf das Handy
+               <input verb="zu verzichten" type="text" size="20" maxlength="20">.
+
+            p.
+               Durch den Abstand zur <input verb="Technik" type="text" size="20" maxlength="20"> (suche ein Synonym zu Technologie) entdecken manche ihre Freizeit neu.
+               Sie sind mit ihren Hausaufgaben viel schneller fertig und haben mehr Zeit f�r ihre Freunde.
+
+            p.
+               Aber es gibt auch einige, die auf ihr
+               <input verb="Smartphone" type="text" size="20" maxlength="20"> nicht verzichten k�nnen: Ein
+               <input verb="leerer" type="text" size="20" maxlength="20"> Akku kann regelrecht Schwei�ausbr�che
+               und Angstzust�nde hervorrufen. Hier kann man dann von <input verb="Handysucht" type="text" size="20" maxlength="20">
+               (finde ein Substantiv, dass die Gefahr des Handys schon im Namen tr�gt)
+               sprechen, obwohl es keine anerkannte Krankheit ist. Gesundheitssch�dlicher als diese ist ohnehin die
+               <input verb="hochfrequente" type="text" size="20" maxlength="20">, <input verb="elektromagnetische" type="text" size="20" maxlength="20">
+               (finde zwei Adjektive, die Kollokationen von Strahlung sind) Strahlung.
+
+    #Field
+        a.buttona(href="/handy_task2") Weiter
+        a#pruefen.buttona(href="", onclick="validate()") Prüfen
+

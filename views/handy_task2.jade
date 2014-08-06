@@ -1,0 +1,24 @@
+extends layout
+block content
+    link(rel='stylesheet', href='/stylesheets/handy.css')
+    script( src='/javascripts/handy.js')
+    #wrapper
+        #Textbox
+            h1 Nenne das Gegenteil!
+            form(name="Frage1")
+                p Eine SMS schicken <-> Eine SMS <input>
+            form(name="Frage2")
+                p Eine Nummer speichern <-> Eine Nummer <input>
+            form(name="Frage3")
+                p Der Akku vom Handy ist leer <-> Den Akku <input>
+            form(name="Frage4")
+                p Einen Termin vereinbaren <-> Einen Termin <input>
+            form(name="Frage5")
+                p Eine E-Mail l�schen <-> Eine E-Mail <input>
+            form(name="Frage6")
+                p Mein Postfach ist leer <-> Mein Postfach ist <input>
+            form(name="Frage7")
+                p Ein Dokument �ffnen <-> Ein Dokument <input>
+
+
+                input(type="button", name="Auswertung", value="Auswertung", onclick="fAuswertung()")
