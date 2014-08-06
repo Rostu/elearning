@@ -291,7 +291,8 @@ $(document).ready(function() {
             $('.word').draggable({revert: 'invalid'});
             $('.target').droppable({drop: function(e,ui) {
                 var id = $(this).attr("id");
-                var dd = ui.draggable;
+                var dd = $(ui.draggable).attr("style","").attr("style","position:relative").detach();
+                $(this).append(dd);
                 if (/^t.{3,4}/.test(id)) {
                     if (dd.hasClass("sol")) return;
                     dd.addClass("sol");
@@ -313,11 +314,12 @@ $(document).ready(function() {
                         modify($(m));
                     }
                 });
-                return ($('.passive').length == 4) && ($('.plainw').length == 0);
+                return ($('.passive').length >= 4) && ($('.plainw').length == 0);
             }
 
             function modify(m) {
                 m.tooltip({ items: ".word" , content: cc[m.attr("id").substring(1)-1]});
+                m.tooltip( "option", "position", { my: "left+15 center", at: "right center" });
                 m.addClass("plainw");
             }
 
@@ -325,6 +327,13 @@ $(document).ready(function() {
                 m.removeClass("plainw");
                 m.tooltip("option", "disabled", true);
             }
+            $(document).on("contextmenu",".sol",function(e){
+                var ct = $(e.currentTarget);
+                if (ct.hasClass("plainw")) ct.removeClass("plainw");
+                if (ct.hasClass("passive")) ct.removeClass("passive");
+                $('#conta').append(ct.removeClass("sol").detach());
+                return false;
+            });
         }
     }
     function makeDiv(a, i) {

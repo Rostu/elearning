@@ -138,9 +138,9 @@
 
 
 .target {
-    border: 1px dashed;
-    width: 45%;
-    float: left;
+
+    width: 90%;
+
     margin: 2px 20px;
 }
 
@@ -184,12 +184,12 @@
 
 #targa {
     height: 100px !important;
-    width: 90%;
+    width: 100%;
 }
 
 #conta {
-    border: 1px dashed royalblue;
-    height: auto;
+
+    height: 100px;
 }
 
 .ui-tooltip {

@@ -8,30 +8,27 @@ block content
     script(src='/javascripts/jquery-ui.min.js')
     script(src='/javascripts/ersti3.js')
     script( src='/javascripts/ersti.js')
+
     #Aufgabenbox
         p Welche Wörter haben eine gegenteilige Bedeutung zu "dämlich"? Wähle aus dem Kasten vier passende Wörter aus.
-
-    #wrapper
-        #Textbox
-            | Eine
+        p Eine
             b  dämliche
             |  Frage
             &ne;
             | Eine _______ Frage
-            br
-            #message.invisible
-                | Richtig!
-            br
-            #expl.invisible Halte die Maus über die rot gefärbten Kästchen für eine kurze Erklärung
-            br
-            br
+    #message.invisible
+        | Richtig!
+    #expl.invisible Halte die Maus über die rot gefärbten Kästchen für eine kurze Erklärung
+    #wrapper
+        #Textbox(style='width:50%')
             .target#conta
+        #Platzhalter
+        #Antwortbox(style='width:50%')
             .target#targa
-            br(style='clear:both')
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
     #Field
-        a.buttona(href='#' id="weiter3c") Weiter
-        a.buttona(href='#' id='check3c') Prüfen
-        a.buttona(href='#' onclick='reload()') Zurücksetzen
+        span#weiter
+            a(href='#' id="weiter3c") WEITER
+        span#check
+            a(href='#' id='check3c') PRÜFEN
+        span#reset
+            a(href='#' onclick='reload()') ZURÜCKSETZEN
