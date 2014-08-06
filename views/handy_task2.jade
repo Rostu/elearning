@@ -1,24 +1,54 @@
 extends layout
 block content
-    link(rel='stylesheet', href='/stylesheets/handy.css')
-    script( src='/javascripts/handy.js')
+    link(rel='stylesheet', href='/stylesheets/handy_task2.css')
+    script( src='/javascripts/handy2.js')
+    #Aufgabenbox
+        | Nenne das Gegenteil!
+    #message.invisible
+        | Richtig!
     #wrapper
         #Textbox
-            h1 Nenne das Gegenteil!
-            form(name="Frage1")
-                p Eine SMS schicken <-> Eine SMS <input>
-            form(name="Frage2")
-                p Eine Nummer speichern <-> Eine Nummer <input>
-            form(name="Frage3")
-                p Der Akku vom Handy ist leer <-> Den Akku <input>
-            form(name="Frage4")
-                p Einen Termin vereinbaren <-> Einen Termin <input>
-            form(name="Frage5")
-                p Eine E-Mail l�schen <-> Eine E-Mail <input>
-            form(name="Frage6")
-                p Mein Postfach ist leer <-> Mein Postfach ist <input>
-            form(name="Frage7")
-                p Ein Dokument �ffnen <-> Ein Dokument <input>
+            table
+                tr
+                    td Eine SMS schicken
+                    td &hArr;
+                    td Eine SMS
+                    td <input id='i1'>
+                tr
+                    td Eine Nummer speichern
+                    td &hArr;
+                    td Eine Nummer
+                    td <input id='i2'>
+                tr
+                    td Der Akku vom Handy ist leer
+                    td &hArr;
+                    td Den Akku
+                    td <input id='i3'>
+                tr
+                    td Einen Termin vereinbaren
+                    td &hArr;
+                    td Einen Termin
+                    td <input id='i4'>
+                tr
+                    td Eine E-Mail löschen
+                    td &hArr;
+                    td Eine E-Mail
+                    td <input id='i5'>
+                tr
+                    td Mein Postfach ist leer
+                    td &hArr;
+                    td Mein Postfach ist
+                    td <input id='i6'>
+                tr
+                    td Ein Dokument öffnen
+                    td &hArr;
+                    td Ein Dokument
+                    td <input id='i7'>
 
-
-                input(type="button", name="Auswertung", value="Auswertung", onclick="fAuswertung()")
+    #Field
+        span#weiter
+            a(href='#') WEITER
+        span#check
+            a(href='#') PRÜFEN
+        span#help
+        span#balken
