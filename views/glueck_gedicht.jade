@@ -1,39 +1,81 @@
 extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/glueck.css')
+    script(src='javascripts/gluck.js')
     #Aufgabenbox
-        p Aufgaben
+        p Hier ist ein Gedicht über Glück. Bitte lies dieses Gedicht und klicke dann auf &nbsp;
+            b weiter
     #wrapper
         h1 Glücksgedicht
-        h2(style="center") Glück
-        p(style="center")
-            |Glück ist gar nicht mal so selten,
-            |Glück wird überall beschert.
-            |Vieles kann als Glück uns gelten,
-            |was das Leben uns so lehrt.
-            |Glück ist jeder neue Morgen,
-            |Glück ist bunte Blumenpracht,
-            |Glück sind Tage ohne Sorgen,
-            |Glück ist, wenn man fröhlich lacht.
-            |Glück ist Regen, wenn es heiß ist,
-            |Glück ist Sonne nach dem Guss.
-            |Glück ist, wenn ein Kind ein Eis isst,
-            |Glück ist auch ein lieber Gruß.
-            |Glück ist Wärme, wenn es kalt ist,
-            |Glück ist weißer Meeresstrand.
-            |Glück ist Ruhe, die im Wald ist,
-            |Glück ist eine Freundeshand.
-            |Glück ist eine stille Stunde,
-            |Glück ist auch ein gutes Buch.
-            |Glück ist eine frohe Runde,
-            |Glück ist freundlicher Besuch.
-            |Glück ist niemals ortsgebunden,
-            |Glück kennt keine Jahreszeit.
-            |Glück hat immer der gefunden,
-            |der sich seines Lebens freut.
-            |Liebe schenken, Freude geben,
-            |dankbar und zufrieden sein,
-            |ist das höchste Gut im Leben
-            |und schließt alles Schöne ein.
-            p(style="right") Autor Unbekannt
+        h2.title Glück
+        div.poem
+            div.text
+                |Glück ist gar nicht mal so selten,
+                br
+                |Glück wird überall beschert.
+                br
+                |Vieles kann als Glück uns gelten,
+                br
+                |was das Leben uns so lehrt.
+                br
+                br
+                |Glück ist jeder neue Morgen,
+                br
+                |Glück ist bunte Blumenpracht,
+                br
+                |Glück sind Tage ohne Sorgen,
+                br
+                |Glück ist, wenn man fröhlich lacht.
+                br
+                br
+                |Glück ist Regen, wenn es heiß ist,
+                br
+                |Glück ist Sonne nach dem Guss.
+                br
+                |Glück ist, wenn ein Kind ein Eis isst,
+                br
+                |Glück ist auch ein lieber Gruß.
+                br
+                br
+                |Glück ist Wärme, wenn es kalt ist,
+                br
+                |Glück ist weißer Meeresstrand.
+                br
+                |Glück ist Ruhe, die im Wald ist,
+                br
+                |Glück ist eine Freundeshand.
+                br
+                br
+                |Glück ist eine stille Stunde,
+                br
+                |Glück ist auch ein gutes Buch.
+                br
+                |Glück ist eine frohe Runde,
+                br
+                |Glück ist freundlicher Besuch.
+                br
+                br
+                |Glück ist niemals ortsgebunden,
+                br
+                |Glück kennt keine Jahreszeit.
+                br
+                |Glück hat immer der gefunden,
+                br
+                |der sich seines Lebens freut.
+                br
+                br
+                |Liebe schenken, Freude geben,
+                br
+                |dankbar und zufrieden sein,
+                br
+                |ist das höchste Gut im Leben
+                br
+                |und schließt alles Schöne ein.
+
+            p.author Autor Unbekannt
+
     #Field
+        span#weiter WEITER
+        span
+        span
+        span

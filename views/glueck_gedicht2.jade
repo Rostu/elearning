@@ -1,0 +1,177 @@
+extends layout
+block content
+    link(rel='stylesheet', href='/stylesheets/glueck.css')
+    script(src='javascripts/jquery-1.11.1.min.js')
+    script(src='javascripts/gluck2.js')
+    script(src='/socket.io/socket.io.js')
+    #Aufgabenbox
+        p Schreibe das Gedicht über &nbsp;
+            b Glück &nbsp;
+            | in ein Gedicht über &nbsp;
+            b Pech &nbsp;
+            | um!
+        p (Es muss sich nicht reimen)
+
+    #wrapper
+        #Textbox
+            h1 Pechgedicht
+            h2.title Pech
+            div.poem
+                div.text
+                    b Pech &nbsp;
+                    | ist gar nicht mal so
+                    input#adv1(value='selten')
+                    | ,
+                    br
+                    b Pech &nbsp;
+                    | wird überall
+                    input#verb1(value='beschert')
+                    | .
+                    br
+                    | Vieles kann als&nbsp;
+                    b Pech &nbsp;
+                    | uns gelten,
+                    br
+                    | was das Leben uns so lehrt.
+                    br
+                    br
+                    b Pech &nbsp;
+                    | ist jeder
+                    input#adj1(value='neue')
+                    input#noun1(value='Morgen')
+                    | ,
+                    br
+                    b Pech &nbsp;
+                    | ist
+                    input#noun2(value='bunte Blumenpracht')
+                    | ,
+                    br
+                    b Pech &nbsp;
+                    | sind Tage ohne
+                    input#noun3(value='Sorgen')
+                    | ,
+                    br
+                    b Pech &nbsp;
+                    | ist, wenn man
+                    input#adv2(value='fröhlich')
+                    input#verb2(value='lacht')
+                    | .
+                    br
+                    br
+                    b Pech &nbsp;
+                    | ist
+                    input#noun4(value='Regen')
+                    | , wenn es
+                    input#adv3(value='heiß')
+                    | ist,
+                    br
+                    b Pech &nbsp;
+                    | ist
+                    input#noun5(value='Sonne')
+                    | nach dem
+                    input#noun6(value='Guss')
+                    | .
+                    br
+                    b Pech &nbsp;
+                    | ist, wenn ein
+                    input#noun7(value='Kind')
+                    | ein
+                    input#noun8(value='Eis')
+                    input#verb3(value='isst')
+                    | ,
+                    br
+                    b Pech &nbsp;
+                    | ist auch ein
+                    input#noun9(value='lieber Gruß')
+                    | .
+                    br
+                    br
+                    b Pech &nbsp;
+                    | ist
+                    input#noun10(value='Wärme')
+                    | , wenn es
+                    input#adv4(value='kalt')
+                    | ist,
+                    br
+                    b Pech &nbsp;
+                    | ist
+                    input#noun11(value='weißer Meeresstrand')
+                    | .
+                    br
+                    b Pech &nbsp;
+                    | ist
+                    input#noun12(value='Ruhe')
+                    | ,
+                    input#clause1(value='die im Wald ist')
+                    | ,
+                    br
+                    b Pech &nbsp;
+                    | ist eine
+                    input#noun13(value='Freundeshand')
+                    | .
+                    br
+                    br
+                    b Pech &nbsp;
+                    | ist eine
+                    input#noun14(value='stille Stunde')
+                    | ,
+                    br
+                    b Pech &nbsp;
+                    | ist auch
+                    input#noun15(value='ein gutes Buch')
+                    | .
+                    br
+                    b Pech &nbsp;
+                    | ist eine
+                    input#noun16(value='frohe Runde')
+                    | ,
+                    br
+                    b Pech &nbsp;
+                    | ist
+                    input#noun17(value='freundlicher Besuch')
+                    | .
+                    br
+                    br
+                    b Pech &nbsp;
+                    | ist niemals
+                    input#adv5(value='ortsgebunden')
+                    | ,
+                    br
+                    b Pech &nbsp;
+                    | kennt keine Jahreszeit.
+                    br
+                    b Pech &nbsp;
+                    | hat immer der gefunden,
+                    br
+                    | der sich
+                    input#clause2(value='seines Lebens freut')
+                    | .
+                    br
+                    br
+                    input#clause3(value='Liebe schenken')
+                    | ,
+                    input#clause4(value='Freude geben')
+                    | ,
+                    br
+                    input#adv6(value='dankbar')
+                    | und
+                    input#adv7(value='zufrieden')
+                    | sein,
+                    br
+                    | ist das
+                    input#adj2(value='höchste')
+                    input#noun18(value='Gut')
+                    | im Leben
+                    br
+                    | und schließt alles
+                    input#noun19(value='Schöne')
+                    | ein.
+                    p.author #{session.name}
+        #Antwortbox
+
+
+    #Field
+        span#weiter WEITER
+        span
+        span#hilfe HILFE
+        span

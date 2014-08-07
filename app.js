@@ -1,7 +1,7 @@
 /**
  * Module dependencies.
  */
-
+var io = require('socket.io');
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
@@ -13,6 +13,7 @@ var signup = require('./routes/signup');
 var path = require('path');
 var app = express();
 var index = require('./routes/index');
+var dml = require('./routes/dml');
 var dbhandler = require('./routes/dbhandler');
 
 
@@ -69,6 +70,7 @@ app.get('/generationen_task3', ubung.get_generationen_task3);
 app.get('/generationen_task4', ubung.get_generationen_task4);
 app.get('/glueck', ubung.get_glueck);
 app.get('/glueck_gedicht', ubung.get_glueck_gedicht);
+app.get('/glueck_gedicht2', ubung.get_glueck_gedicht2);
 app.get('/handy', ubung.get_handy);
 app.get('/home', start.start);
 app.get('/impressum', impressum.get_imp);
@@ -93,10 +95,21 @@ app.get('/zukunft_task1', ubung.get_zukunft_task1);
 app.get('/zukunft_task2', ubung.get_zukunft_task2);
 app.get('/zukunft_task3', ubung.get_zukunft_task3);
 app.get('/zukunft_task4', ubung.get_zukunft_task4);
+app.get('/dml', function(req, res) {
+    var query = req.query;
+    var dml = require('./routes/dml');
+    dml.validate(query, res);
+});
 
-
-
-http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
 });
 
+
+var sio = io.listen(server);
+sio.sockets.on('connection', function (socket) {
+    console.log('A socket connected!');
+    socket.on('userinput', function(data) {
+        dml.validate(data, socket);
+    });
+});
