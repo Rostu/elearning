@@ -61,7 +61,6 @@ function init() {
         }
         div.click(clear);
         check();
-
     };
 
     function shuffle(array) {

@@ -18,13 +18,18 @@ block content
             br(style='clear:both')
             #message.invisible
                 | Richtig!
-            div.target#synonym
+            div.target#synonym(style='float:left;width:45%')
                 b.title
                     | Synonyme
-            div.target#antonym
+
+            div.target#antonym(style='float:left;width:45%')
                 b.title
                     | Antonyme
             br(style='clear:left')
 
      #Field
-            a.buttona(href='#' onclick='validate()') weiter
+         span#weiter
+            a(href='#' onclick='validate()') WEITER
+         span#check
+         span#help
+         span#balken

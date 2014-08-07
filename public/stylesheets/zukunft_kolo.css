@@ -19,7 +19,7 @@
     -moz-box-shadow: 0px 2px 5px darkgrey;
     box-shadow: 0px 2px 5px darkgrey;
     display: table-cell;
-    background-color: rgba(2, 255, 85, 0.16);
+    background-color: rgba(239, 239, 239, 0.59);
     border-radius: 15%;
     width: 400px;
     height: 300px; }
@@ -37,7 +37,7 @@
     -moz-box-shadow: 0px 2px 5px darkgrey;
     box-shadow: 0px 2px 5px darkgrey;
     display: table-cell;
-    background-color: rgba(2, 255, 85, 0.28);
+    background-color: rgba(239, 239, 239, 0.59);
     border-radius: 15%;
     width: 400px;
     height: 300px; }
@@ -53,27 +53,30 @@
     border-radius: 50%;
     background-color: lightgoldenrodyellow;
     min-height: 180px; }
+
 #Antwortbox p {
-    text-align: center; }
+    text-align: center;
+}
 
 .token {
     -webkit-box-shadow: 0px 2px 5px darkgrey;
     -moz-box-shadow: 0px 2px 5px darkgrey;
     box-shadow: 0px 2px 5px darkgrey;
-    background: rgba(239, 239, 239, 0.59);
-    color: green;
+    background: rgba(250, 250, 210, 0.61);
+    color: black;
     font: bold;
     padding: 8px;
     display: inline-block;
     margin: 10px;
-    border-radius: 50%; }
+    border-radius: 50%;
+}
 
 .kolo {
     -webkit-box-shadow: 0px 2px 5px darkgrey;
     -moz-box-shadow: 0px 2px 5px darkgrey;
     box-shadow: 0px 2px 5px darkgrey;
-    background: rgba(239, 239, 239, 0.59);
-    color: green;
+    background: rgba(250, 250, 210, 0.61);
+    color: black;
     font: bold;
     padding: 8px;
     display: inline-block;
@@ -87,7 +90,7 @@
     background: rgba(239, 239, 239, 0.59);
     color: green;
     font: bold;
-    display: inline-block;
+
     margin: 0px auto;
     height: 40px;
     width: 100%;
@@ -128,15 +131,6 @@
     width: 150px;
 }
 
-#Aufgabe {
-    color: black;
-    text-indent: 0;
-    background: rgba(159, 255, 177, 0.8);
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    min-width: 100%; }
 
 #balken_aussen {
     display: inline-block;
@@ -196,9 +190,4 @@ h2 {
         left: 30%;
         margin: 0px auto;
     }
-}
-
-#Aufgabe a{
-    float: right;
-    margin-right: 20px;
 }

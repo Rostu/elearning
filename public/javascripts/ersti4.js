@@ -31,9 +31,9 @@ $(document).ready(function() {
 
             default: break;
         }
-
-            var right = $('.slot').toArray().filter(function(e){return $(e).is(":disabled")});
-            var wrong = $('.slot').toArray().filter(function(e){return !$(e).is(":disabled")});
+        var slots = $('.slot');
+            var right = slots.toArray().filter(function(e){return $(e).is(":disabled")});
+            var wrong = slots.toArray().filter(function(e){return !$(e).is(":disabled")});
             var percent = (right/(right+wrong)) * 100;
             setScore("4", percent);
             document.location.href = "/ersti_end";
@@ -58,9 +58,8 @@ $(document).ready(function() {
                 } else {
                     $(w[i]).animate({backgroundColor:'red'}, 500, "swing",function() {$(this).css({'background-color':'lightblue'})});
 
-                    $(self).animate({borderBottomColor: "#ff0000", borderTopColor: "#ff0000", backgroundColor: "#ff8484"},500,"swing",function() {
-                        $(this).css({"border-top": "1px solid #c0c0c0",
-                            "border-bottom": "1px solid #c0c0c0", "background-color": "#fff"});
+                    $(self).animate({borderBottomColor: "#ff0000", backgroundColor: "#ff8484"},500,"swing",function() {
+                        $(this).css({"border-bottom": "1px solid #000", "background-color": "#fff"});
                     });
                 }
                 return;
@@ -69,9 +68,8 @@ $(document).ready(function() {
         // if we reach this point, the word didn't match any word
         $(self).effect("pulsate", "fast");
 
-        $(self).animate({borderBottomColor: "#ff0000", borderTopColor: "#ff0000", backgroundColor: "#ff8484"},2000,"swing",function() {
-            $(this).css({"border-top": "1px solid #c0c0c0",
-                "border-bottom": "1px solid #c0c0c0", "background-color": "#fff"});
+        $(self).animate({borderBottomColor: "#ff0000",backgroundColor: "#ff8484"},2000,"swing",function() {
+            $(this).css({"border-bottom": "1px solid #000", "background-color": "#fff"});
         });
 
     }
@@ -79,7 +77,7 @@ $(document).ready(function() {
     function checkMark(a,b,m) {
 
         if(!(a-b)) {
-            $(m).animate({borderBottomColor: "#7cfc00", borderTopColor: "#7cfc00", backgroundColor:"#fff"}, "slow");
+            $(m).animate({borderBottomColor: "#7cfc00", backgroundColor:"rbga(0,0,0,0)"}, "slow");
             $(m).prop('disabled', true);
             return true;
         }

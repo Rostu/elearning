@@ -78,8 +78,5 @@ block content
     br
     p
     #Field
-        form#drag(name='dragAndDrop', action='')
-            input(type='BUTTON', name='Aufgabe', value='Fertig!', onclick='validate ()')
-
-        form#weiter(action='/veggieday_u5')
-            input(type='submit', value='Nächste Aufgabe')
+        a.buttona(href="/veggieday_u5") Weiter
+        a.buttona(href="", onclick='validate()') Prüfen

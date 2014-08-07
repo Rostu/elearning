@@ -49,11 +49,14 @@ block content
                 p.h4.invisible
                 p.c4.invisible
                 br
-                a.buttona(href='#', id='check')
-                    | Prüfen
 
         br
     #Field
-        a.buttona(href="#" id='weiter') weiter
-        .helper
-            | (3 korrekte Antworten benötigt)
+        span#weiter
+            a(href="#" id='weiter') WEITER
+        span#check
+            a(href='#' id='check') PRÜFEN
+        span#help HILFE
+            span#inner
+                a(target="_blank", href="http://wortschatz.uni-leipzig.de/")  Wortschatz-Portal
+        span#balken

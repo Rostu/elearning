@@ -50,6 +50,12 @@ exports.get_glueck_gedicht2 = function(req, res){
 exports.get_handy = function(req, res){
     res.render('handy');
 };
+exports.get_handy_task1 = function(req, res){
+    res.render('handy_task1');
+};
+exports.get_handy_task2 = function(req, res){
+    res.render('handy_task2');
+};
 
 exports.get_ersti = function(req, res){
     res.render('ersti_task1');

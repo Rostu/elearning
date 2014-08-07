@@ -1,0 +1,15 @@
+- #Field überarbeiten (span 25%)
+- Logout Button nach rechts
+- Statistik --> Profil
+- Benutzerinformationen:
+    Optionale Benutzerdaten wie
+    Alter
+    Geschlecht
+    Muttersprache
+    Wie lange man Deutsch lernt
+    Welche anderen Sprachen
+    Schulbildung
+ - Admin
+ - standard lockit seiten bearbeiten
+ - Übungsdaten der Benutzer (für jede session)
+
