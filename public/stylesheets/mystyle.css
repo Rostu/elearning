@@ -165,7 +165,7 @@ body {
 #Field a {
     color: navajowhite;
     text-decoration: none;
-    font-size: 1.5em;
+
 }
 
 #Field a:hover {
@@ -181,6 +181,14 @@ body {
 }
 
 #Field #check {
+
+}
+
+#Field span {
+    width: 25%;
+    float: right;
+    text-align: center;
+    font-size: 30px;
 
 }
 
