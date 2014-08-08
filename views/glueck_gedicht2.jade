@@ -4,6 +4,7 @@ block content
     script(src='javascripts/jquery-1.11.1.min.js')
     script(src='javascripts/gluck2.js')
     script(src='/socket.io/socket.io.js')
+    script(src='javascripts/jqdialog.min.js')
     #Aufgabenbox
         p Schreibe das Gedicht über &nbsp;
             b Glück &nbsp;
@@ -168,10 +169,11 @@ block content
                     | ein.
                     p.author #{session.name}
         #Antwortbox
-
+            #message.invisible
+                | Fehleranalyse
 
     #Field
         span#weiter WEITER
         span
-        span#hilfe HILFE
+        span
         span
