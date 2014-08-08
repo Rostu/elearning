@@ -48,7 +48,8 @@ span:hover {
 }
 
 .wrong {
-    background-color: lightcoral;
+    background-color: rgba(240, 115, 210, 0.40);
+    border-radius: 5px 5px 0 0;
 }
 
 .message {
@@ -63,6 +64,12 @@ span:hover {
     text-align: center;
     color: white;
     border-radius: 10px 10px 0 0;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+.dhead a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .dbody {
@@ -103,3 +110,6 @@ span:hover {
     color: black;
 }
 
+.invisible {
+    display: none;
+}
