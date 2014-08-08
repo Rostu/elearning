@@ -184,7 +184,7 @@ function validate(query, io) {
     var iGold = gold[fi];
     f = fi;
     if (/clause\d+/.test(fi)) {
-        io.emit("update",createResponse(202, w, "clause", 0, fi));
+        io.emit("update",createResponse(200, {word:w,status:11}));
         return;
     }
     var status = wordinfo(w, function(data) {
@@ -243,11 +243,11 @@ function validate(query, io) {
         } else {
             // not in database
             if (looksLike(gold[f].class, w)) {
-                io.emit("update",createResponse(202, w, iGold.class, 0,f));
+                io.emit("update",createResponse(200, {word:w,status:6}));
                 return;
             }
             // else not in database, doesn't look like it should
-            io.emit("update",createResponse(400, w, iGold.class, -1,f));
+            io.emit("update",createResponse(200, {word:w,status:7,gold:gold[f].class}));
         }
     });
 };
@@ -273,14 +273,12 @@ function extractParam(array,param) {
     });
 }
 
-function createResponse(statusCode, word, clazz, status, field) {
+function createResponse(statusCode, attr) {
     var o = {
         'statusCode': statusCode
     };
-    o.word = word;
-    o.class = clazz;
-    o.status = status;
-    o.field = field;
+    o.attr = attr;
+    o.field = f;
     return o;
 }
 
@@ -305,17 +303,51 @@ function check() {
 
         if (gold.length == 1) {
             if (!(contains(flat, gold[0]))) {
-                return createResponse(400, "failure", gold[0], 2, f);
+                return switcher(gold[0]);
             }
         } else if (gold.length == 2) {
             if (!(contains(flat, gold[0]) || contains(flat, gold[1]))) {
-                return createResponse(400, "failure", gold[0] + "/" + gold[1], 2, f);
+                if (!contains(flat, gold[0])) {
+                    return switcher(gold[0]);
+                } else {
+                    return switcher(gold[1]);
+                }
             }
         }
     }
-    return createResponse(200, "success", "good", 999,f);
+    return createResponse(200, {status:1});
 }
 
+function switcher (gold) {
+    switch(gold) {
+        case "noun":
+        case "verb":
+        case "adverb":
+        case "adjective": return createResponse(200, {status:2, gold:gold});
+        case "fem":
+        case "mas":
+        case "neu": return createResponse(200, {status:3, gold:gold});
+        case "nom":
+        case "akk":
+        case "dat":
+        case "gen": return createResponse(200, {status:4, gold:gold});
+        case "sin":
+        case "plu": return createResponse(200, {status: 5, gold:gold});
+        case "prä":
+        case "prt":
+        case "kj1":
+        case "kj2": return createResponse(200, {status:8, gold:gold});
+        case "1":
+        case "2":
+        case "3": return createResponse(200, {status:9, gold:gold});
+        case "pa1":
+        case "pa2":
+        case "inf":
+        case "eiz":
+        case "imp": return createResponse(200, {status: 10, gold:gold});
+        default: return createResponse(200, {status:12, gold:gold});
+    }
+}
 var flatten = function(array) {
     var result = [], self = arguments.callee;
     array.forEach(function(item) {
