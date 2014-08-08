@@ -27,7 +27,7 @@ input {
     margin: 0 5px;
     height: 20px;
     font-family: monospace;
-    position: relative;
+
 }
 
 span {
@@ -52,11 +52,31 @@ span:hover {
 }
 
 .message {
-
-    background-color: rgba(255, 241, 0, 0.50);
+    border-radius: 10px;
+    background-color: rgba(143, 86, 255, 0.51);
     color: black;
 
 }
+.dhead {
+    background-color: #8f56ff;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.dbody {
+    text-align: justify;
+    padding: 0 10px 10px;
+
+}
+
+.dbody a {
+    color: #8f56ff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 #Antwortbox {
     -webkit-box-shadow: 0 2px 5px darkgrey;
     -moz-box-shadow: 0 2px 5px darkgrey;
@@ -82,3 +102,4 @@ span:hover {
     margin: 10px;
     color: black;
 }
+
