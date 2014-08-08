@@ -1,7 +1,7 @@
 (function($)
 {
     $(document).ready(function() {
-    var antworten = ["in der","mobil","zu verzichten","Technik","Smartphone","leerer","Handysucht","hoch frequente","elektromagnetische"]
+    var antworten = ["telefoniert","mobil","zu verzichten","Technik","Smartphone","leerer","Handysucht","hoch frequente","elektromagnetische"]
     var count = 0;
         /*
         $("input").tooltip({

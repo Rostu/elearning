@@ -157,22 +157,15 @@ body {
     width: 100%;
 }
 
-#Field span {
-    width: 25%;
-    float: right;
-    text-align: center;
-    font-size: 35px;
-}
-
 #Field span:hover {
     cursor: pointer;
     background: rgba(101, 70, 229, 0.82);
-
 }
 
 #Field a {
     color: navajowhite;
     text-decoration: none;
+    font-size: 1.5em;
 }
 
 #Field a:hover {
