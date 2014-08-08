@@ -1,0 +1,79 @@
+
+form{
+    background:#f0f0f0;
+    padding:6% 4%;
+}
+
+input[type="text"]{
+    width:15%;
+    background:#fff;
+    margin: 30px auto;
+    border:1px solid #ccc;
+    padding:2%;
+    font-family:'Open Sans',sans-serif;
+    font-size:95%;
+    color:#555;
+}
+
+
+.wortbox{
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background:lightgoldenrodyellow;
+    margin: 0px auto;
+    min-height: 200px;
+    padding: 30px;
+    width: 60%;
+    font-size: 1.5em;
+    text-align: center;
+}
+.wort{
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background:lightgray;
+    marin-top: 50px;
+    margin: 20px auto;
+    padding:3px;
+    display: inline;
+}
+.platzhalter{
+    display: table-cell;
+    margin: 20px auto;
+    padding:3px;
+}
+
+#Field{
+    color: navajowhite;
+    font-family: 'Open Sans Condensed', sans-serif;
+    background: rgba(101, 70, 229, 0.60);
+    /*background: rgba(255, 139, 54, 0.66);*/
+    padding-left: 30px;
+    padding-right: 30px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: table;
+}
+#Field a.buttona {
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    margin-left: 18%;
+}
+#Field .span {
+    width: 25%;
+    text-align: center;
+    display: table-cell;
+}
+#Field .inline_span{
+    display: none;
+}
+#Field a.buttona:hover + .inline_span{
+    display: block;
+}
+#Field .inline_span:hover{
+    display: block;
+}
