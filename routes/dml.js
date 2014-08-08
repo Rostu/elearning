@@ -11,8 +11,38 @@ function wordinfo (a, cb) {
 }
 
 var gold = {
-    'adv1': {
+    // misc
+    'adj99': {
         'class': 'adjective',
+        'congruence': 'noun2'
+    },
+    'adj98': {
+        'class': 'adjective',
+        'congruence': 'noun9'
+    },
+    'adj97': {
+        'class': 'adjective',
+        'congruence': 'noun11'
+    },
+    'adj96': {
+        'class': 'adjective',
+        'congruence': 'noun14'
+    },
+    'adj95': {
+        'class': 'adjective',
+        'congruence': 'noun15'
+    },
+    'adj94': {
+        'class': 'adjective',
+        'congruence': 'noun16'
+    },
+    'adj93': {
+        'class': 'adjective',
+        'congruence': 'noun17'
+    },
+    // start poem
+    'adv1': {
+        'class': 'adjective'
     },
     'verb1': {
         'class': 'verb',
@@ -127,6 +157,7 @@ var gold = {
     'noun15': {
         'class': 'noun',
         'number': 'sin',
+        'gender': ['mas','neu'],
         'case': 'nom'
     },
     'noun16': {
