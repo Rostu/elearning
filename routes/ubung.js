@@ -47,6 +47,10 @@ exports.get_glueck_gedicht2 = function(req, res){
     res.render('glueck_gedicht2');
 };
 
+exports.get_glueck_redensarten = function(req, res){
+    res.render('glueck_redensarten');
+};
+
 exports.get_handy = function(req, res){
     res.render('handy');
 };
