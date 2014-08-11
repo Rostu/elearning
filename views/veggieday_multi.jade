@@ -60,6 +60,13 @@ block content
             p <INPUT type=checkbox name="box" value="1">Herz-Kreislauf-Erkrankung<BR>
             p <INPUT type=checkbox name="box" value="0">Lebenserwartung<BR>
 
-    #Field
-        a(href='www.duden.de') DUDEN
         INPUT(TYPE="BUTTON" NAME="Aufgabe" VALUE= "Fertig!" ONCLICK= "boxcheck(this.form)")
+
+    #Field
+        span#balken
+        span#hilfe
+            a(href='http://www.duden.de',targe) DUDEN
+        span#check
+            a(name='Aufgabe', value='Fertig!', onclick='') PRÜFEN
+        span#weiter
+            a(href='/veggieday') ZURÜCK

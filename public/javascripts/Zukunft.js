@@ -28,12 +28,12 @@ function init() {
         textinhalt = textinhalt.replace('"','');
         for(i=0;i<infos.length;i++){
             if(infos[i][0] === textinhalt)
-            {textinfos = infos[i][1]};
+            {textinfos = infos[i][1]}else{textinfos = "Das ist leider nicht richtig. Wenn du nicht weißt, was dieses Wort bedeutet, schau doch mal hier nach:";};
         }
         var div = jQuery('<div/>', {
             class: 'token',
             id: ui.draggable.attr('id'),
-            html: "<p>"+textinhalt+"</p><div id='"+ui.draggable.attr('id') +"' class='hide'><p>"+textinfos+"</p><a target='_blank' href='http://www.duden.de/suchen/dudenonline/"+ui.draggable.context.textContent+"'>INFO-Link</a></div>"
+            html: "<p>"+textinhalt+"</p><div id='"+ui.draggable.attr('id') +"' class='hide'><p>"+textinfos+"</p><a target='_blank' href='http://www.dwds.de/?qu="+ui.draggable.context.textContent+"'>INFO-Link</a></div>"
         });
         div.click(enlarge);
         if($.inArray(textinhalt, testarray)> -1){

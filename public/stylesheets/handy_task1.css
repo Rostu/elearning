@@ -3,8 +3,6 @@
     display: block;
     min-height: 600px;
 }
-
-
 #Textbox{
     -webkit-box-shadow: 0px 2px 5px darkgrey;
     -moz-box-shadow: 0px 2px 5px darkgrey;
@@ -16,9 +14,7 @@
     background-color: rgba(239, 239, 239, 0.59);
     margin: 10px auto;
     color: black;
-
 }
-
 p {
     text-align: justify;
 }
@@ -26,7 +22,6 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
 }
-
 .slot {
     margin: 2px 5px;
     margin-top: 6px;

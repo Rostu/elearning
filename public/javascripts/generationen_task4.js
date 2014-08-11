@@ -1,6 +1,16 @@
 /**
  * Created by David on 03.08.2014.
  */
+
+/*
+ var id=0;
+ var id_speicher = [];
+ var testarray = ["etw. (auseinander) schneiden", "sich annähern", "Ausruhen", "Anziehen", "Sich verbiegen", "Schießen", "PC in die Garage auslagern", "Abstellplatz für PC", "konstanter Reichtum (Besitz)", "aufrechter Stand", "reinigen", "streicheln"];
+ var i = 0;
+ var infos =[["etw. (auseinander) schneiden","Auseinanderschneiden bedeutet etwas mit einer Schere oder ähnlichem im konkreten Wortsinn zu trennen; „Lebenswelten“ ist ein abstrakter Begriff, also nichts, was sich auseinanderschneiden lässt."],["sich annähern","auseinanderklaffen lässt sich in auseinander + klaffen zerteilen. „auseinander“ bedeutet sich entfernen von jemandem oder etwas, also das Gegenteil von „sich annähern“"],["Ausruhen","Wenn ich mich nicht ins Zeug lege, dann ruhe ich mich aus. Ausruhen ist das Gegenteil von ins Zeug legen."], ["Anziehen","hier wurdest du aufs Glatteis geführt: Anziehen hat nichts mit „ins Zeug legen“ zu tun. Man kann beispielsweise Kleidung anziehen."], ["Sich verbiegen","Das bedeutet sich verformen oder krümmen, bzw. verändern."], ["Schießen","Schießen ist ein Verb mit der Bedeutung jmd. töten, feuern, knallen und passt somit von der Wortbedeutung nicht zum Satz."], ["PC in die Garage auslagern","Wenn man etwas (PC) von einer Stelle weg an eine andere verlagert (Garage). Hier ist nicht das „verlagern“ gemeint sondern das „zur Ruhe kommen“."], ["Abstellplatz für PC","einen Abstellplatz für den PC bezeichnet das Gegenteil von  „Jugendlichen vor dem PC platzieren.“"], ["konstanter Reichtum (Besitz)","„konstant“ würde zwar zu Stehvermögen passen. Dennoch ist dieses Wort in Verbindung mit „Reichtum“ darauf bezogen, dass man dauerhaft Vermögenswerte oder Besitz ansammelt. Reichtum ist kein Mittel zur Erlernung von Disziplin und Erfolg."], ["aufrechter Stand ","aufrechtes Stehen bezieht sich eher auf den physischen Aspekt und ist ebenso kein Mittel zur Erlernung von Disziplin und Erfolg."], ["reinigen","„reinigen“ bedeutet etwas säubern bzw. Schmutz oder Flecken von etwas entfernen."], ["streicheln ","„streicheln“ bezeichnet ein Verb „mit leichten, gleitenden Bewegungen der Hand sanft, liebkosend berühren“"]];
+ var r_length=0;
+ var w_length = 0;
+ */
 $(document).ready(function() {
 
     var testarray = ["etw. (auseinander) schneiden", "sich annähern", "Ausruhen", "Anziehen", "Sich verbiegen", "Schießen", "PC in die Garage auslagern", "Abstellplatz für PC", "konstanter Reichtum (Besitz)", "aufrechter Stand", "reinigen", "streicheln"];

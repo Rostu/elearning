@@ -1,6 +1,8 @@
-- #Field überarbeiten (span 25%)
+- einheitliche Benennung der Jade Dateien (ladida_task1 etc.)
+- Design Menü
+- Design login box
 - Logout Button nach rechts
-- Statistik --> Profil
+- Profil --> Statistik
 - Benutzerinformationen:
     Optionale Benutzerdaten wie
     Alter
