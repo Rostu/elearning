@@ -272,3 +272,75 @@ body {
     color: #ff0000;
     cursor: pointer;
 }
+
+#Field span .help {
+    display: none;
+}
+
+.helpmenu {
+    position: fixed;
+    top: 75%;
+    left: 0;
+    display: table;
+    width: 100%;
+    height: 25%;
+
+    color: white;
+    z-index: 80;
+}
+
+.helpmenu span {
+    width:25%;
+    height:100%;
+    display: table-cell;
+}
+
+.helpmenu .menuitem {
+    width: 100%;
+    text-align: center;
+    background-color: rgba(86, 66, 245, 0.51);
+    margin: 5px 0;
+    padding: 10px 0;
+    z-index: 99;
+}
+
+.helpmenu .menuribbon #menutitle {
+    text-align: center;
+    /*display: inline-block;*/
+    font-family: 'Dosis', monospace;
+    font-size: 25px;
+}
+
+.helpmenu .menuribbon i {
+    position: absolute;
+    left: 48%;
+    top: 20px;
+    color: red;
+}
+.helpmenu .menuribbon i:hover {
+    color: #ffffff;
+}
+
+.helpmenu .menuitem:hover {
+    background-color: #5642f5;
+}
+
+.helpmenu .menuitem a {
+    display: block;
+    text-decoration: none;
+    color: #e1a500;
+}
+
+.helpmenu .menuitem a:hover {
+    color: white;
+
+}
+
+.menuhidden {
+    color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.menuribbon {
+    background: rgba(101, 70, 229, 0.90);
+}
