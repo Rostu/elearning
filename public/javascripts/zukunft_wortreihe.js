@@ -40,7 +40,7 @@ function init() {
         else
         {
             $("#infolink").remove();
-            $(".span[id=1]").append("<a id='infolink' class='buttona' target='blank' href='http://www.duden.de/suchen/dudenonline/"+$(this).text()+"'>"+$(this).text()+"??</a>");
+            $("span[id=balken]").append("<a id='infolink' class='buttona' target='blank' href='http://www.duden.de/suchen/dudenonline/"+$(this).text()+"'>"+$(this).text()+"??</a>");
             animatearrow();
             $(this).animate({bottom:'-=0.5em'},"fast");
             $(this).animate({backgroundColor: '#a8383b', color: 'white', fontSize: '+=0.5em'},"slow");
@@ -94,4 +94,6 @@ function init() {
         $('#arrow').animate({top: '+79%',opacity: 1},{duration: 1000, easing: "easeOutBounce" });
         $('#arrow').animate({top: '+10%', opacity: 0},0);
     }
+
+
 };

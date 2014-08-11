@@ -4,44 +4,6 @@ form{
     padding:6% 4%;
 }
 
-
-#Field{
-    color: navajowhite;
-    font-family: 'Open Sans Condensed', sans-serif;
-    background: rgba(101, 70, 229, 0.60);
-    /*background: rgba(255, 139, 54, 0.66);*/
-    padding-left: 30px;
-    padding-right: 30px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: table;
-}
-#Field a{
-    color: white;
-    text-decoration: none;
-    font-size: 2em;
-    margin-left: 18%;
-}
-#Field .span {
-    width: 25%;
-    text-align: center;
-    display: table-cell;
-}
-#Field .inline_span{
-    display: none;
-}
-
-#Field a:hover + .inline_span{
-    display: block;
-    width: 100%;
-}
-#Field .inline_span:hover{
-    display: block;
-    width: 100%;
-
-}
 .wortbox{
     -webkit-box-shadow: 0px 2px 5px darkgrey;
     -moz-box-shadow: 0px 2px 5px darkgrey;
@@ -80,6 +42,6 @@ form{
 #arrow{
     position: fixed;
     top: 10%;
-    left: 12%;
+    left: 8%;
     opacity: 0;
 }

@@ -1,4 +1,5 @@
-- #Field überarbeiten (span 25%)
+- einheitliche Benennung der Jade Dateien (ladida_task1 etc.)
+#Field überarbeiten (span 25%)
 - Logout Button nach rechts
 - Statistik --> Profil
 - Benutzerinformationen:

@@ -3,8 +3,6 @@
     display: block;
     min-height: 600px;
 }
-
-
 #Textbox{
     -webkit-box-shadow: 0px 2px 5px darkgrey;
     -moz-box-shadow: 0px 2px 5px darkgrey;
@@ -41,51 +39,4 @@ h1 {
     padding: 0px;
     opacity: 1;
     display: inline-block;
-}
-#Field{
-    color: navajowhite;
-    font-size: 1.5em;
-    font-family: 'Open Sans Condensed', sans-serif;
-    background: rgba(101, 70, 229, 0.60);
-    /*background: rgba(255, 139, 54, 0.66);*/
-    padding-left: 30px;
-    padding-right: 30px;
-    padding: 5px;
-    height: 50px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: table;
-}
-#Field a.buttona {
-    color: white;
-    text-decoration: none;
-    font-size: 2em;
-    margin-left: 18%;
-}
-#Field p#infotext{
-    text-align: center;
-    font-size: 1.5em;
-    margin:0px;
-    padding:0px;
-}
-#Field .span {
-    width: 25%;
-    text-align: center;
-    display: table-cell;
-}
-#Field .span #1 {
-    width: 50%;
-    text-align: center;
-    display: table-cell;
-}
-#Field .inline_span{
-    display: none;
-}
-#Field a.buttona:hover + .inline_span{
-    display: block;
-}
-#Field .inline_span:hover{
-    display: block;
 }

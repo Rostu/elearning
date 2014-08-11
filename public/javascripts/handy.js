@@ -33,11 +33,11 @@
         };
 
         function showinfo(){
-            $("p#infotext").text(fehlermappe[this.id-1]);
+            $("a#infotext").text(fehlermappe[this.id-1]);
         };
 
         function clearinfo(){
-            $("p#infotext").text("");
+            $("a#infotext").text("");
         };
     });
 })(jQuery);

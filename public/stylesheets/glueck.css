@@ -30,19 +30,6 @@ input {
 
 }
 
-span {
-    width: 25%;
-    text-align: center;
-    float: right;
-    font-family: sans-serif;
-    color: #393973;
-}
-
-span:hover {
-    color: #c6baff;
-    cursor: pointer;
-}
-
 .right {
     background-color: lightgreen;
 }

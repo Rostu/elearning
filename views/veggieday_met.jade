@@ -28,7 +28,11 @@ block content
             | . „Verstehen meine Eltern denn nicht, dass die ganze Fleischesserei &nbsp
             input(type='text', name='antwort4', size='20', value='')
             | . Entrüstet packt Paul seine Sachen und fährt.
-            input(type='BUTTON', name='Aufgabe', value='Fertig!', onclick='validate (this.form)')
+
     #Field
-        a.buttona(href="/veggieday_drag") Weiter
-        a#pruefen.buttona(href="", onclick="validate2()") Prüfen
+        span#balken
+        span#hilfe
+        span#check
+            a#pruefen(href="", onclick="validate2()") PRÜFEN
+        span#weiter
+            a(href='/veggieday_drag') WEITER

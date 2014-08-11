@@ -5,18 +5,14 @@ block content
     script(src='/javascripts/zukunft_wortreihe.js')
     link(rel='stylesheet', href='/stylesheets/zukunft_task1.css')
     #Aufgabenbox
-        p Aufgabe
+        p Finde unter den vorgegebenen Wörtern jene, die nicht in die Reihe passen
     #wrapper
     #arrow
         img(src="/images/arrowdown.png")
     #Field
-        .span(id="1")
-        .span
-            a() Info
-            .inline_span
-                a() Info1
-                a() Info2
-        .span
-            a(id="pruefen") Prüfen
-        .span
-            a(href="/zukunft_task2") Weiter
+        span#balken
+            a(id="infotext")
+        span#hilfe
+        span#check
+        span#weiter
+            a(href="/zukunft_task2") WEITER
