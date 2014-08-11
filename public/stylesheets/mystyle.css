@@ -298,7 +298,8 @@ body {
 .helpmenu .menuitem {
     width: 100%;
     text-align: center;
-    background-color: rgba(86, 66, 245, 0.51);
+    background: rgba(101, 70, 229, 0.60);
+   /* background-color: rgba(86, 66, 245, 0.51);*/
     margin: 5px 0;
     padding: 10px 0;
     z-index: 99;
@@ -342,5 +343,6 @@ body {
 }
 
 .menuribbon {
-    background: rgba(101, 70, 229, 0.90);
+    background: rgba(101, 70, 229, 0.60);
+    /*background: rgba(101, 70, 229, 0.90);*/
 }
