@@ -7,30 +7,16 @@ block content
     #Aufgabenbox
         p Aufgabe
     #wrapper
-        .wortbox(id="1")
-            .wort(id="1") Testwort1
-            .wort(id="2") Testwort1
-            .wort(id="3") Testwort1
-            .wort(id="4") Testwort1
-            .wort(id="5") Testwort1
-            br
-            input(type="Text", title="Hier das Wort einfügen, welches nicht dazu passt")
-        .wortbox(id="2")
-            .wort(id="1") Testwort1
-            .wort(id="2") Testwort1
-            .wort(id="3") Testwort1
-            .wort(id="4") Testwort1
-            .wort(id="5") Testwort1
-            br
-            input(type="Text", title="Hier das Wort einfügen, welches nicht dazu passt")
+    #arrow
+        img(src="/images/arrowdown.png")
     #Field
+        .span(id="1")
         .span
-        .span
-            a.buttona() Info
+            a() Info
             .inline_span
-                a.buttona() Info1
-                a.buttona() Info2
+                a() Info1
+                a() Info2
         .span
-            a.buttona(id="pruefen") Prüfen
+            a(id="pruefen") Prüfen
         .span
-            a.buttona(href="/zukunft_task2") Weiter
+            a(href="/zukunft_task2") Weiter

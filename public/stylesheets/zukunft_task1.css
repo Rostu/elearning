@@ -4,45 +4,6 @@ form{
     padding:6% 4%;
 }
 
-input[type="text"]{
-    width:15%;
-    background:#fff;
-    margin: 30px auto;
-    border:1px solid #ccc;
-    padding:2%;
-    font-family:'Open Sans',sans-serif;
-    font-size:95%;
-    color:#555;
-}
-
-
-.wortbox{
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-    -moz-box-shadow: 0px 2px 5px darkgrey;
-    box-shadow: 0px 2px 5px darkgrey;
-    background:lightgoldenrodyellow;
-    margin: 0px auto;
-    min-height: 200px;
-    padding: 30px;
-    width: 60%;
-    font-size: 1.5em;
-    text-align: center;
-}
-.wort{
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-    -moz-box-shadow: 0px 2px 5px darkgrey;
-    box-shadow: 0px 2px 5px darkgrey;
-    background:lightgray;
-    marin-top: 50px;
-    margin: 20px auto;
-    padding:3px;
-    display: inline;
-}
-.platzhalter{
-    display: table-cell;
-    margin: 20px auto;
-    padding:3px;
-}
 
 #Field{
     color: navajowhite;
@@ -57,7 +18,7 @@ input[type="text"]{
     width: 100%;
     display: table;
 }
-#Field a.buttona {
+#Field a{
     color: white;
     text-decoration: none;
     font-size: 2em;
@@ -71,9 +32,54 @@ input[type="text"]{
 #Field .inline_span{
     display: none;
 }
-#Field a.buttona:hover + .inline_span{
+
+#Field a:hover + .inline_span{
     display: block;
+    width: 100%;
 }
 #Field .inline_span:hover{
     display: block;
+    width: 100%;
+
+}
+.wortbox{
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background:rgba(239, 239, 239, 0.59);
+    margin: 0px auto;
+    min-height: 200px;
+    padding: 15px;
+    width: 60%;
+    font-size: 1.5em;
+    text-align: center;
+}
+.wortbox h5{
+    margin: 15px;
+}
+
+.ui-effects-wrapper {
+    display:inline;
+}
+
+.wort{
+    -webkit-box-shadow: 0px 2px 5px darkgray;
+    -moz-box-shadow: 0px 2px 5px darkgray;
+    box-shadow: 0px 2px 5px darkgray;
+    background: lightgoldenrodyellow;
+    color: black;
+    font: bold;
+    padding: 5px;
+    display: inline-block;
+    flex-direction: column;
+    margin: 10px;
+    border-radius: 7%;
+    position: relative;
+}
+
+#arrow{
+    position: fixed;
+    top: 10%;
+    left: 12%;
+    opacity: 0;
 }
