@@ -110,7 +110,6 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 
 var sio = io.listen(server);
 sio.sockets.on('connection', function (socket) {
-    console.log('A socket connected!');
     socket.on('userinput', function(data) {
         dml.validate(data, socket);
     });
