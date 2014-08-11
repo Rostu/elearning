@@ -1,4 +1,4 @@
-#wrapper {
+  #wrapper {
   width: 100%;
   display: table; }
 
@@ -192,13 +192,17 @@
 
 
 
-
 .word {
     margin: 5px 2px;
     padding: 5px 2px;
-    border: 4px dotted rgba(1, 6, 208, 0.29);
     float: left;
     line-height: normal;
+
+    float: left;
+    margin: 5px 20px;
+    background-color: lightblue;
+    height: 20px;
+    padding: 5px;
 }
 
 .drop {

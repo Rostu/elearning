@@ -346,3 +346,29 @@ body {
     background: rgba(101, 70, 229, 0.60);
     /*background: rgba(101, 70, 229, 0.90);*/
 }
+
+#balken_aussen {
+    display: inline-block;
+    width: 216px;
+    height: 17px;
+    background: white;
+    padding: 1px;
+    margin:0 auto;
+    float: left;
+}
+
+#balken_innen1 {
+    background: lawngreen;
+    display: inline-block;
+    width: 0px;
+    height: 15px;
+    float: left;
+}
+
+#balken_innen2 {
+    background: red;
+    display: inline-block;
+    height: 15px;
+    width: 0px;
+    float: left;
+}
