@@ -1,7 +1,6 @@
 - einheitliche Benennung der Jade Dateien (ladida_task1 etc.)
 - Design Menü
 - Design login box
-- Logout Button nach rechts
 - Profil --> Statistik
 - Benutzerinformationen:
     Optionale Benutzerdaten wie

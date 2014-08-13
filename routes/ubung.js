@@ -150,3 +150,7 @@ exports.get_zukunft_task3 = function(req, res){
 exports.get_zukunft_task4 = function(req, res){
     res.render('zukunft_task4');
 };
+
+exports.get_zukunft_task5 = function(req, res){
+    res.render('zukunft_task5');
+};

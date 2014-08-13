@@ -98,6 +98,7 @@ app.get('/zukunft_task1', ubung.get_zukunft_task1);
 app.get('/zukunft_task2', ubung.get_zukunft_task2);
 app.get('/zukunft_task3', ubung.get_zukunft_task3);
 app.get('/zukunft_task4', ubung.get_zukunft_task4);
+app.get('/zukunft_task5', ubung.get_zukunft_task5);
 app.get('/dml', function(req, res) {
     var query = req.query;
     var dml = require('./routes/dml');

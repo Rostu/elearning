@@ -41,6 +41,8 @@ html
                                                 li(id="header_sub_button")
                                                     a(href='/china' ) China
                                 li(id="header_button")
+                                    a(href='' ) Profil
+                                li(id="header_button")
                                     if (session)
                                         if (session.name)
                                             a(href='/logout') Logout
@@ -48,8 +50,6 @@ html
                                             a(href='/login') Login
                                     //else
                                         a(href='/login') Login
-                                li(id="header_button")
-                                    a(href='' ) Statistik
                                 li(id="header_button")
                                     a(href='/impressum' ) Impressum
                         a(href="http://www.uni-trier.de",target="blank")

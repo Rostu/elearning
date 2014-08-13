@@ -94,6 +94,8 @@ body {
       padding: 15px;
       float: left; }
     body #page #nav {
+      font-size: 1.2em;
+      font-family: 'Dosis', sans-serif;
       display: block;
       width: 95%;
       list-style: none;
