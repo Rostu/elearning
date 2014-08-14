@@ -11,7 +11,7 @@ var applyWords = function( wordArray, group ) {
         $.map( wordArray, function( n ) {
             var regex = new RegExp( n['text'], "g");
             var replaceString = "<div id=\"" + n.id + "\" class=\"inline ui-draggable\""
-                + " style=\"color: #666666\"><div id=\"" + group + "\">"
+                + " style=\"color: #333333\"><div id=\"" + group + "\">"
                 + n.text + "</div></div>";
             // replace phrase if found
             original_text = original_text.replace(regex, replaceString);
@@ -103,11 +103,11 @@ var handleDropEvent = function ( event, ui ) {
     // add and visualy display correctness of the div
     if (correct_p == true)
     {
-        $( "#Antwortbox" ).append( div.animate({backgroundColor: "#0f0"}, 1000) ).append( "<br />" );
+        $( "#Antwortbox" ).append( div.animate({backgroundColor: "#0f0"}, 2000) ).append( "<br />" );
     }
     else if (correct_p == false)
     {
-        $( "#Antwortbox" ).append( div.animate({backgroundColor: "#f00"}, 1000) ).append( "<br />" );
+        $( "#Antwortbox" ).append( div.animate({backgroundColor: "#f00"}, 2000) ).append( "<br />" );
     }
     
     $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','#777777');
