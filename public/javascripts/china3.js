@@ -4,8 +4,9 @@
 var handleDropEvent = function ( event, ui ) {
     // Handles the functionallity of dropping a word into the box and
     // changing it's color if wrong or wright
-    var textinhalt        = ui.draggable.context.textContent;
-
+    var synonyms   = ui.draggable.context.firstChild.id;
+    var textinhalt = ui.draggable.context.textContent + ": " + synonyms;
+    
     // create div to drop
     var div = jQuery('<div/>', {
         class: 'token',
@@ -38,7 +39,7 @@ var applyToolTip = function( wordArray  ) {
             
         var replaceString = "<div id=\"" + n.id + "\" class=\"normalTip inline ui-draggable\""
             + " title=\"" + n.explain + "\" style=\"text-decoration: underline\">"
-            + n.term + "</div>";
+            + "<div id=\"" + n.synonyms.join() + "\">" + n.term + "</div></div>";
             
         // replace phrase if found - seems weird and unintuitive? Welcome to
         // jquery.
