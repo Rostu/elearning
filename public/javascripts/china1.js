@@ -2,7 +2,7 @@
   The only Thing which had to be adjusted for all the china programs was
   the "handleDropEvent" function.
 
-  The remaining functionality is obtained via the "china_lib.js".
+  The remaining functionality is obtained via the "beyeran_lib.js".
 */
 
 var handleDropEvent = function ( event, ui ) {
@@ -52,8 +52,8 @@ var handleDropEvent = function ( event, ui ) {
 ////////////////////////////////////////////////////////////////////////////////
 var init = function () {
     // apply correct words to text
-    loadWords( "/javascripts/china_correct_words.json", "correct", false );
-    loadWords( "/javascripts/china_wrong_words.json", "wrong", false );
+    loadWords( "/javascripts/china_correct_words.json", "group" );
+    loadWords( "/javascripts/china_wrong_words.json", "group" );
     
     // make a dropfield
     $('#Antwortbox').droppable( {

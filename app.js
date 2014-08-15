@@ -93,6 +93,7 @@ app.get('/veggieday_multi', ubung.get_veggieday_multi);
 app.get('/veggieday_u5', ubung.get_veggieday_u5);
 app.post('/neuanlegen', ubung.createUebung);
 app.get('/wertewandel', ubung.get_wertewandel);
+app.get('/ww2', ubung.get_wertewandel2);
 app.get('/zukunft', ubung.get_zukunft);
 app.get('/zukunft_task1', ubung.get_zukunft_task1);
 app.get('/zukunft_task2', ubung.get_zukunft_task2);
