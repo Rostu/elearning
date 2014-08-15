@@ -1,7 +1,9 @@
 extends layout
 block content
+    link(rel='stylesheet', href='//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css ')
     link(rel='stylesheet', href='/stylesheets/china.css')
-    script( src='/javascripts/china.js')
+    script( src='/javascripts/china_lib.js')
+    script( src='/javascripts/china3.js' )
     #Aufgabenbox
         p Ziehe Ausdrücke, die zum Zitieren benutzt werden können, auf die Box!
     #wrapper
@@ -16,36 +18,28 @@ block content
             h3 Viele neue Eindrücke – ein Kulturschock?
             p
             | Wenn es um ihren Studienaufenthalt in China geht,
-            .inline(id=0, data-inhalt="ist ehrlich") ist
-            | Anna Sander erfrischend
-            .inline(id=0,data-inhalt="ist ehrlich") ehrlich:
-            | „Es gab Augenblicke, die ich nur
-            <dfn title="eine Situation als sehr schwierig empfinden">schwer verkraften</dfn>
+            | ist
+            | Anna Sander erfrischend ehrlich
+            | „Es gab Augenblicke, die ich nur schwer verkraften            
             | konnte, in denen ich den Tränen nah war".
             | Niemals wird 26 Jahre alte BWL-Studentin den Moment vergessen, als sie auf der Suche
             | nach einer öffentlichen Toilette war und feststellen musste,
             | dass die Toilettenkabinen keine Türen hatten. „Alles war offen einsehbar. Ich dachte:
-            | Das geht doch nicht, das darf doch nicht wahr sein!“,
-            .inline(id=1,data-inhalt="erinnert sich") erinnert
-            | sie
-            .inline(id=1,data-inhalt="erinnert sich") sich.
+            | Das geht doch nicht, das darf doch nicht wahr sein!“, erinnert
+            | sie sich.
             p
             | Anna studiert „Banking and Finance“ an der Fachhochschule Köln. In diesem Rahmen nahm
             | sie im Herbst 2010 an einer Summer School ihrer Partnerhochschule,
-            | der Dongbei Universität, in Dalian teil.„Eine für chinesische Verhältnisse kleine Stadt“,
-            .inline(id=2) berichtet
+            | der Dongbei Universität, in Dalian teil.„Eine für chinesische Verhältnisse kleine Stadt“, berichtet
             | die Studentin. „Das ist nicht Peking oder Schanghai.
             | Das ist ein echter Kulturschock.“ Sie meint das nicht negativ. Denn trotz aller schwierigen
             | Situationen ist Anna im Rückblick begeistert von ihrem China-Aufenthalt.
-            | „Was ich dort erlebt habe, lässt sich mit keiner anderen Erfahrung vergleichen“,
-            .inline(id=3) sagt
+            | „Was ich dort erlebt habe, lässt sich mit keiner anderen Erfahrung vergleichen“, sagt
             | sie. „Es hat mich für mein Leben geprägt.“
             h3 An einem Tag so viele Vokabeln wie sonst in einer Woche
             p
-            | „Für ein Auslandsstudium nach China zu gehen, das macht man aber nicht einfach
-            <dfn title="Ohne große Anstrengung etwas tun">so nebenbei</dfn>
-            | “,
-            .inline(id=2) berichtet
+            | „Für ein Auslandsstudium nach China zu gehen, das macht man aber nicht einfach so nebenbei
+            | “, berichtet
             | Tobias Roß. Der 25 Jahre alte Bremer Bachelor Absolvent des Fachhochschul-
             | Studiengangs „Angewandte Wirtschaftssprachen“ war schon insgesamt dreimal
             | in China. Er beherrscht die Sprache und hat sich auf seine Aufenthalte gründlich vorbereitet.
@@ -53,31 +47,22 @@ block content
             | überraschende Momente während seines Studiensemesters in Chengdu, einer kleineren Großstadt
             | in der Provinz Sezuan.
             p
-            | „Besonders die Lernkultur
-            <dfn title="eine Situation, die schwierig zu lösen (zu meistern) ist">hat es in sich</dfn>
-            | ",
-            .inline(id=2) berichtet
+            | „Besonders die Lernkultur hat es in sich
+            | ", berichtet
             | er.Geprägt von Frontalunterricht und Auswendig-lernen schwitzte Tobias „wie nie zuvor in
-            | meiner Laufbahn“,
-            .inline(id=3) sagt
-            | er. „Wir mussten an einem Tag so viele Vokabeln lernen wie in Bremen in einer Woche. Ich
-            <dfn title="sich müde oder überanstrengt fühlen">war</dfn>
-            | oft so
-            <dfn title="sich müde oder überanstrengt fühlen">geschlaucht</dfn>
+            | meiner Laufbahn“, sagt
+            | er. „Wir mussten an einem Tag so viele Vokabeln lernen wie in Bremen in einer Woche. Ich war
+            | oft so geschlaucht
             | , dass ich nach der Uni erst mal einen Mittagsschlaf brauchte." Dazu kamen kulturelle Besonderheiten. „Dass
-            | man Vorlesungsinhalte vor versammelter Mannschaft in Frage stellt,
-            <dfn title="umgangssprachlich, negativ für: das ist nicht möglich">das geht gar nicht</dfn>
-            | “,
-            .inline(id=3) sagt
+            | man Vorlesungsinhalte vor versammelter Mannschaft in Frage stellt, das geht gar nicht
+            | “, sagt
             | Tobias. „Der Professor ist eine Autoritätsperson und fühlt sich dann bloßgestellt." Allerdings habe
             | er das vorher nicht gewusst und erst mühsam erfahren müssen, dass er Diskussionen mit
-            | der Lehrperson allenfalls im
-            <dfn title="Unterhaltung zwischen zwei Personen">Vieraugengespräch</dfn>
+            | der Lehrperson allenfalls im Vieraugengespräch
             | führen sollte
             h3 Vorbereitung ist alles
             p
-            | „Eine gute Vorbereitung auf das Land und seine Kultur ist wichtig“,
-            .inline(id=3) sagt
+            | „Eine gute Vorbereitung auf das Land und seine Kultur ist wichtig“, sagt
             | Albers,Referatsleiter China des Deutschen Akademischen Austauschdienstes (DAAD).
             p
             | Er empfiehlt vor allem die Lektüre vorbereitender Bücher und einen Chinesischkurs.
@@ -92,15 +77,13 @@ block content
             | Diese Erfahrung hat auch Denise Nguyen gemacht. Die 26 Jahre alte Münchnerin ging während
             | ihres Biochemie-Studiums nach China, um dort ihre Chinesischkenntnisse
             | zu vertiefen. Schon in ihrer  Schulzeit hatte sie begonnen, die Sprache zu lernen. „Einfach
-            | weil es mich interessiert hat, etwas Komplizierteres zu machen als nur Französisch“,
-            .inline(id=3) sagt
+            | weil es mich interessiert hat, etwas Komplizierteres zu machen als nur Französisch“, sagt
             | sie. Weil ihr Vater aus Vietnam stammt, sei sie außerdem schon immer
             | interessiert an Asien gewesen. China als Land hielt dann aber doch
             | einige Überraschungen für sie bereit. „Der größte Kulturschock für mich war die Tatsache,
-            | dass man sich unter Chinesen nicht bedankt“,
-            .inline(id=1) erinnert sich
+            | dass man sich unter Chinesen nicht bedankt“, erinnert sich
             | Denise.„Ich wohnte in einer Gastfamilie, die sich
-            <dfn title="sich sehr viel Mühe geben, jemandem bei etwas zu helfen">rührend um mich kümmerte</dfn>
+            | rührend um mich kümmerte
             | und viel mit mir unternahm. Für alles, was sie für mich taten,bedankte ich mich überschwänglich.
             | Bis mir meine Gastschwester sagte, dass das in der Familie und
             | unter Freunden nicht üblich sei und an Beleidigung grenze.“ Bis heute tut Denise sich
@@ -108,17 +91,14 @@ block content
             p
             | Wieder zurück an der TU München, kümmert sie sich hin und wieder um chinesische Studierende
             | und begleitet sie, etwa bei Behördengängen. „Dann muss ich immer
-            | schlucken, wenn sie hinterher gar nicht danke sagen“,
-            .inline(id=3) sagt
+            | schlucken, wenn sie hinterher gar nicht danke sagen“, sagt
             | sie. „Bis mir wieder einfällt,dass das ein Kompliment ist.“
             h3 Fazit
             p
             | Trotz aller Bücher, Sprachkurse und Interkulturtrainings: „Völlig vermeiden lässt sich
-            | der Kulturschock in den meisten Fällen nicht“,
-            .inline(id=4,data-inhalt="ist überzeugt") ist
+            | der Kulturschock in den meisten Fällen nicht“, ist
             | Niels Albers
-            | vom DAAD
-            .inline(id=4,data-inhalt="ist überzeugt") überzeugt
+            | vom DAAD überzeugt
             | . „Dann ist es gut, wenn man andere Studenten aus dem eigenen
             | Kulturkreis kennt. Die haben ähnliche Sorgen, mit ihnen kann man sich austauschen.“
         #Platzhalter

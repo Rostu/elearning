@@ -125,3 +125,7 @@ dfn{
 #wrong {
     display: inline;
 }
+
+.normalTip {
+    color: #000;
+}

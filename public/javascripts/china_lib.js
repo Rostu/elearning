@@ -4,13 +4,15 @@
 var applyWords = function( wordArray, group, extend ) {
     // Takes an array of hashes, containing an id, a text and a boolean variable "fits"
     // and makes all words in that array draggable in the DOCUMENT
+    
     // for each textbox
-    $.each( $( "#Textbox p" ), function( x ) {
-        var original_text = $(this).html()
+    $.each( $("#Textbox p"), function( p ) {
+        var original_html = $(this).html();
+
         // for each keyword
         $.map( wordArray, function( n ) {
             var regex = new RegExp( n['text'], "g");
-
+            
             if (extend == true)
             {
                 var replaceString = "<div id=\"" + n.id + "\" class=\"inline ui-draggable\""
@@ -23,11 +25,11 @@ var applyWords = function( wordArray, group, extend ) {
                     + " style=\"color: #333333\"><div id=\"" + group + "\">"
                     + n.text + "</div></div>";
             }
-            
+
             // replace phrase if found
-            original_text = original_text.replace(regex, replaceString);
+            original_html = original_html.replace( regex, replaceString );
         });
-        $(this).html( original_text );
+        $(this).html( original_html );
     });
 };
 
@@ -92,5 +94,6 @@ function clear(){
 var applyToAnswers = function( fn ) {
     // Takes a unary function and assings is to every anwser box
     var answerArray = [ "#Antwortbox1", "#Antwortbox2", "#Antwortbox3", "#Antwortbox4" ];
+
     $.map( answerArray, fn);
 };
