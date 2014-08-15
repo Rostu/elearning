@@ -16,7 +16,8 @@ var handleDropEvent = function ( event, ui ) {
     if (evaluationString == "correct")
     {
         correct_p = true;
-    } else if (evaluationString == "wrong")
+    }
+    else if (evaluationString == "wrong")
     {
         correct_p = false;
     };
@@ -53,13 +54,6 @@ var init = function () {
     // apply correct words to text
     loadWords( "/javascripts/china_correct_words.json", "correct", false );
     loadWords( "/javascripts/china_wrong_words.json", "wrong", false );
-
-    // assign drop behaviour
-    applyToAnswers( function( id ) {
-        $( id ).droppable( {
-            drop: handleDropEvent
-        })
-    });
     
     // make a dropfield
     $('#Antwortbox').droppable( {

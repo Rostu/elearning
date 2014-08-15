@@ -1,4 +1,29 @@
 ////////////////////////////////////////////////////////////////////////////////
+// drag and drop functionallity
+////////////////////////////////////////////////////////////////////////////////
+var handleDropEvent = function ( event, ui ) {
+    // Handles the functionallity of dropping a word into the box and
+    // changing it's color if wrong or wright
+    var textinhalt        = ui.draggable.context.textContent;
+
+    // create div to drop
+    var div = jQuery('<div/>', {
+        class: 'token',
+        id: ui.draggable.attr('id'),
+        text: textinhalt
+    });
+
+    // adding abilities to the div
+    textinhalt = textinhalt.replace(',','');
+    textinhalt = textinhalt.replace('.','');
+    div.click(clear);
+
+    $( "#Antwortbox" ).append( div ).append( "<br />" );
+    
+    $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','#777777');
+};
+
+////////////////////////////////////////////////////////////////////////////////
 // tooltip functionallity
 ////////////////////////////////////////////////////////////////////////////////
 var applyToolTip = function( wordArray  ) {
@@ -11,9 +36,9 @@ var applyToolTip = function( wordArray  ) {
     $.map( wordArray, function( n ) {
         var regex = new RegExp( n.term, "g");
             
-        var replaceString = "<div id=\"" + n.id + "\" class=\"inline ui-draggable\">"
-            + "<a href=\"#\" class=\"normalTip\" title=\"" + n.explain + "\">"
-            + n.term + "</a></div>";
+        var replaceString = "<div id=\"" + n.id + "\" class=\"normalTip inline ui-draggable\""
+            + " title=\"" + n.explain + "\" style=\"text-decoration: underline\">"
+            + n.term + "</div>";
             
         // replace phrase if found - seems weird and unintuitive? Welcome to
         // jquery.
@@ -27,11 +52,24 @@ var makeToolTip = function ( jsonpath ) {
     $.getJSON( jsonpath, function ( json ) {
         var wordArray = [];
 
+        // load words
         $.each( json.words, function( obj, content ) {
             wordArray.push( content );
         });
 
+        // add tool tips
         applyToolTip( wordArray );
+
+        // add drag and drop
+        $(".inline").each(function() {
+            $(this).draggable(
+                {
+                    containment: '#page',
+                    revert: true,
+                    helper: myHelper
+                }
+            );
+        });
     });
 }
 
@@ -41,8 +79,14 @@ var makeToolTip = function ( jsonpath ) {
 var init = function () {
     makeToolTip( "/javascripts/china_additional_words.json" );
 
+    // add tooltip
     $(function() {
         $( document ).tooltip();
+    });
+    
+    // make a dropfield
+    $('#Antwortbox').droppable( {
+        drop: handleDropEvent
     });
 }
 
