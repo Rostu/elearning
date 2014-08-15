@@ -231,3 +231,10 @@
 #rbf1 {
     left: -60px;
 }
+
+#woingenau {
+    opacity: 0.4;
+    position: absolute;
+    left: -80px;
+    top: 50px;
+}
