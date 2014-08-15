@@ -25,7 +25,7 @@ $(document).ready(function() {
     function menuSkeleton() {
         return "<div class='helpmenu'>" +
                 "<span class='menuhidden'>SPAN1</span>" +
-                "<span class='menuribbon' id='mr'><p id='menutitle'>HILFE-MENU</p><i class='fa fa-times'></i></span>" +
+                "<span class='menuribbon' id='mr'><p id='menutitle'>HILFE-MENÜ</p><i class='fa fa-times'></i></span>" +
                 "<span class='menuhidden'>SPAN2</span>" +
                 "<span class='menuhidden'>SPAN3</span>" +
             "</div>";

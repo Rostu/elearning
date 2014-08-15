@@ -89,3 +89,7 @@
     width: 0px;
     float: left;
 }
+
+p#infotext{
+    font-size: 1em;
+}
