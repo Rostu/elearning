@@ -42,7 +42,10 @@ var gold = {
     },
     // start poem
     'adv1': {
-        'class': 'adjective'
+        'class': 'adjective',
+        'gender': 'neu',
+        'number': 'sin',
+        'case': 'nom'
     },
     'verb1': {
         'class': 'verb',
