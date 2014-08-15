@@ -1,0 +1,26 @@
+extends layout
+block content
+    link(rel='stylesheet', href='/stylesheets/beyeran.css')
+    script( src='/javascripts/beyeran_lib.js')
+    script( src='/javascripts/wertewandel2.js')
+
+    #Aufgabenbox
+        p Ordne den Paraphrasierungen die entsprechende, im Text erwähnte Lebensform zu!
+
+    #wrapper
+        #Textbox
+            p gleichgeschlechtliche Lebenspartnerschaften | Fernbeziehung | gewollt kinderlose Ehen | Ehe mit Kindern | nichteheliche Lebensgemeinschaften | Alleinwohnende
+
+    #Antwortbox_ww2_1 Paare wohnen lokal getrennt
+    #Antwortbox_ww2_2 Partner entscheiden sich bewusst für eine Verbindung ohne Kinder
+    #Antwortbox_ww2_3 Partner leben gemeinsam, haben evtl. Kinder, sind aber nicht verheiratet
+    #Antwortbox_ww2_4 Ein Elternteil übernimmt allein die Erziehung der Kinder
+    #Antwortbox_ww2_5 Mann und Mann oder Frau und Frau leben in einer Partnerschaft
+    #Antwortbox_ww2_6 Partner (verschiedene Geschlechter) sind verheiratet und haben gemeinsame Kinder
+
+    #Field
+        span#balken
+        span#hilfe
+        span#check
+        span#weiter
+            a(href='/ww2') WEITER

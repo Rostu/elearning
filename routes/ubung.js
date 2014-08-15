@@ -115,8 +115,12 @@ exports.get_veggieday_u5 = function(req, res){
 exports.get_veggieday_drag = function(req, res){
     res.render('veggieday_drag');
 };
+
 exports.get_wertewandel = function(req, res){
     res.render('wertewandel');
+};
+exports.get_wertewandel2 = function(req, res){
+    res.render('ww2');
 };
 
 exports.get_generationen = function(req, res){

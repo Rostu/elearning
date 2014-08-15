@@ -52,8 +52,8 @@ var handleDropEvent = function ( event, ui ) {
 ////////////////////////////////////////////////////////////////////////////////
 var init = function () {
     // apply correct words to text
-    loadWords( "/javascripts/china_correct_words.json", "correct", false );
-    loadWords( "/javascripts/china_wrong_words.json", "wrong", false );
+    loadWords( "/javascripts/china_correct_words.json", "group" );
+    loadWords( "/javascripts/china_wrong_words.json", "group" );
     
     // make a dropfield
     $('#Antwortbox').droppable( {

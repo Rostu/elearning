@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // loading and applying words
 ////////////////////////////////////////////////////////////////////////////////
-var applyWords = function( wordArray, group, extend ) {
+var applyWords = function( wordArray, addition ) {
     // Takes an array of hashes, containing an id, a text and a boolean variable "fits"
     // and makes all words in that array draggable in the DOCUMENT
     
@@ -12,20 +12,11 @@ var applyWords = function( wordArray, group, extend ) {
         // for each keyword
         $.map( wordArray, function( n ) {
             var regex = new RegExp( n['text'], "g");
-            
-            if (extend == true)
-            {
-                var replaceString = "<div id=\"" + n.id + "\" class=\"inline ui-draggable\""
-                    + " style=\"color: #333333\"><div id=\"" + n.answer + "\">"
-                    + n.text + "</div></div>";
-            }
-            else if (extend == false)
-            {
-                var replaceString = "<div id=\"" + n.id + "\" class=\"inline ui-draggable\""
-                    + " style=\"color: #333333\"><div id=\"" + group + "\">"
-                    + n.text + "</div></div>";
-            }
 
+            var replaceString = "<div id=\"" + n.id + "\" class=\"inline ui-draggable\""
+                + " style=\"color: #333333\"><div id=\"" + n[addition] + "\">"
+                + n.text + "</div></div>";
+            
             // replace phrase if found
             original_html = original_html.replace( regex, replaceString );
         });
@@ -33,7 +24,7 @@ var applyWords = function( wordArray, group, extend ) {
     });
 };
 
-var loadWords = function( jsonpath, group, extend ) {
+var loadWords = function( jsonpath, addition ) {
     // Loads a JSON file from the given part and returns it's objects.
     // These function is used to obtain the words for the lecture. Since
     // JQuery's mysterious scope, the drop event must be passed as well.
@@ -48,7 +39,7 @@ var loadWords = function( jsonpath, group, extend ) {
         // "getJSON" scope. So "applyWords" must be
         // called inside it.
         
-        applyWords( wordArray, group, extend );
+        applyWords( wordArray, addition );
 
         // make the words draggable:
         // I'd prefer this outside, but it would be out

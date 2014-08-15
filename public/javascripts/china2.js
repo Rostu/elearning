@@ -53,11 +53,11 @@ function handleDropEvent( event, ui ) {
 // main function
 ////////////////////////////////////////////////////////////////////////////////
 function init() {
-    loadWords( "/javascripts/china_correct_words.json", "correct", true );
+    loadWords( "/javascripts/china_correct_words.json", "answer" );
 
     // add droppfields
-    applyToAnswers( [ "#Antwortbox1", "#Antwortbox2", "#Antwortbox3", "#Antwortbox4" ], function( id ) {
-        console.log( id );
+    $.map( [ "#Antwortbox1", "#Antwortbox2", "#Antwortbox3", "#Antwortbox4" ], function( id ) {
+
         $( id ).droppable( {
             drop: handleDropEvent
         });

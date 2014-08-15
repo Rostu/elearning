@@ -52,7 +52,7 @@ function handleDropEvent( event, ui ) {
 // main function
 ////////////////////////////////////////////////////////////////////////////////
 function init() {
-    loadWords( "/javascripts/wertewandel1_words.json", "correct", true );
+    loadWords( "/javascripts/wertewandel1_words.json", "answer" );
 
     // add droppfields
     $.map( [ "#Antwortbox_ww_1", "#Antwortbox_ww_2" ], function( id ) {
