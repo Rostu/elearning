@@ -1,0 +1,8 @@
+{
+    "words" : [ { "id": 0, "answer": 1, "text": "gleichgeschlechtliche Lebenspartnerschaften" },
+                { "id": 1, "answer": 1, "text": "Fernbeziehung" },
+                { "id": 2, "answer": 1, "text": "gewollt kinderlose Ehen" },
+                { "id": 3, "answer": 2, "text": "Ehe mit Kindern" },
+                { "id": 4, "answer": 2, "text": "nichteheliche Lebensgemeinschaften" },
+                { "id": 5, "answer": 2, "text": "Alleinwohnende" } ]
+}

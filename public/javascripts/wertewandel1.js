@@ -4,7 +4,6 @@
 
   The remaining functionality is obtained via the "beyeran_lib.js".
 */
-
 function handleDropEvent( event, ui ) {
     // drop event
     // These function is used to obtain the words for the lecture. Since
@@ -39,11 +38,11 @@ function handleDropEvent( event, ui ) {
     // attach the elements
     if (correct_p == true)
     {
-        $( "#Antwortbox" + answerDragged ).append( div.animate({backgroundColor: "#0f0"}, 2000) ).append( "<br />" );
+        $( "#Antwortbox_ww_" + answerDragged ).append( div.animate({backgroundColor: "#0f0"}, 2000) ).append( "<br />" );
     }
     else if (correct_p == false)
     {
-        $( "#Antwortbox" + answerDragged ).append( div.animate({backgroundColor: "#f00"}, 2000) ).append( "<br />" );
+        $( "#Antwortbox_ww_" + answerDragged ).append( div.animate({backgroundColor: "#f00"}, 2000) ).append( "<br />" );
     }
     
     $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','grey');
@@ -53,10 +52,10 @@ function handleDropEvent( event, ui ) {
 // main function
 ////////////////////////////////////////////////////////////////////////////////
 function init() {
-    loadWords( "/javascripts/china_correct_words.json", "correct", true );
+    loadWords( "/javascripts/wertewandel1_words.json", "correct", true );
 
     // add droppfields
-    applyToAnswers( [ "#Antwortbox1", "#Antwortbox2", "#Antwortbox3", "#Antwortbox4" ], function( id ) {
+    $.map( [ "#Antwortbox_ww_1", "#Antwortbox_ww_2" ], function( id ) {
         console.log( id );
         $( id ).droppable( {
             drop: handleDropEvent
