@@ -122,6 +122,9 @@ exports.get_wertewandel = function(req, res){
 exports.get_wertewandel2 = function(req, res){
     res.render('ww2');
 };
+exports.get_wertewandel3 = function(req, res){
+    res.render('ww3');
+};
 
 exports.get_generationen = function(req, res){
     res.render('generationen');
