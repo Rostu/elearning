@@ -95,6 +95,7 @@ app.post('/neuanlegen', ubung.createUebung);
 app.get('/wertewandel', ubung.get_wertewandel);
 app.get('/ww2', ubung.get_wertewandel2);
 app.get('/ww3', ubung.get_wertewandel3);
+app.get('/ww4', ubung.get_wertewandel4);
 app.get('/zukunft', ubung.get_zukunft);
 app.get('/zukunft_task1', ubung.get_zukunft_task1);
 app.get('/zukunft_task2', ubung.get_zukunft_task2);

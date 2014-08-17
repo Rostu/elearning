@@ -1,0 +1,49 @@
+{
+    "words" : [
+        {
+            "id": 0,
+            "text": "Anteil",
+            "fill": 0
+        },
+        {
+            "id": 1,
+            "text": "41%",
+            "fill": 1
+        },
+        {
+            "id": 2,
+            "text": "niedrig",
+            "fill": 2
+        },
+        {
+            "id": 3,
+            "text": "steigen",
+            "fill": 3
+        },
+        {
+            "id": 4,
+            "text": "1991",
+            "fill": 4
+        },
+        {
+            "id": 5,
+            "text": "verringern",
+            "fill": 5
+        },
+        {
+            "id": 6,
+            "text": "Vergleich",
+            "fill": 6
+        },
+        {
+            "id": 7,
+            "text": "groß",
+            "fill": 7
+        },
+        {
+            "id": 8,
+            "text": "kleiner",
+            "fill": 8
+        }
+    ]
+}

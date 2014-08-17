@@ -31,7 +31,7 @@ var loadWords = function( jsonpath, addition ) {
     $.getJSON( jsonpath, function( json ) {
         var wordArray = [];
         
-        $.each( json.words, function( obj, content ) {            
+        $.map( json.words, function( content ) {            
             wordArray.push( content );
         });
         
@@ -86,3 +86,35 @@ var applyToAnswers = function( fn, answerArray ) {
     // Takes a unary function and assings is to every anwser box
     $.map( answerArray, fn);
 };
+
+////////////////////////////////////////////////////////////////////////////////
+// helping functions
+////////////////////////////////////////////////////////////////////////////////
+function shuffle(array) {
+    var counter = array.length, temp, index;
+    // While there are elements in the array
+    while (counter > 0) {
+        // Pick a random index
+        index = Math.floor(Math.random() * counter);
+        // Decrease counter by 1
+        counter--;
+        // And swap the last element with it
+        temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+    }
+    return array;
+};
+
+var update_balken_closure = function () {
+    var r_length = 0;
+
+    function addit() {
+        r_length += 1;
+        
+        //console.log($('#balken_innen1'));
+        $('#balken_innen1').css('width',r_length*10.2857);
+        //$('#balken_innen2').css('width',w_length*4);
+    }
+}
+

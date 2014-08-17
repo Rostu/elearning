@@ -56,7 +56,7 @@ function init() {
 
     // add droppfields
     $.map( [ "#Antwortbox_ww_1", "#Antwortbox_ww_2" ], function( id ) {
-        console.log( id );
+
         $( id ).droppable( {
             drop: handleDropEvent
         });
