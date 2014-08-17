@@ -154,3 +154,14 @@ dfn{
     margin: 15px;
     font-family: Arial, Helvetica, sans-serif;   
 }
+
+#place1, #place2, #place3, #place4, #place5, #place6, #place7, #place8 {
+    display: inline-block;
+    background-color: #f00;
+}
+
+.boxes {
+    padding: 5px;
+    margin: 10px;
+    background-color: rgba(181, 237, 239, 0.29);
+}

@@ -4,6 +4,7 @@
 
   The remaining functionality is obtained via the "beyeran_lib.js".
 */
+
 function handleDropEvent( event, ui ) {
     // drop event
     // These function is used to obtain the words for the lecture. Since
@@ -38,11 +39,11 @@ function handleDropEvent( event, ui ) {
     // attach the elements
     if (correct_p == true)
     {
-        $( "#Antwortbox_ww2_" + answerDragged ).append( div.animate({backgroundColor: "#0f0"}, 2000) ).append( "<br />" );
+        $( "#Antwortbox_ww2_" + answerDragged ).append( div.animate({backgroundColor: "#0f0"}, 2000) );
     }
     else if (correct_p == false)
     {
-        $( "#Antwortbox_ww2_" + answerDragged ).append( div.animate({backgroundColor: "#f00"}, 2000) ).append( "<br />" );
+        $( "#Antwortbox_ww2_" + answerDragged ).append( div.animate({backgroundColor: "#f00"}, 2000) );
     }
     
     $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','grey');
@@ -57,7 +58,7 @@ function init() {
     // add droppfields
     $.map( [ "#Antwortbox_ww2_1", "#Antwortbox_ww2_2", "#Antwortbox_ww2_3", "#Antwortbox_ww2_4",
              "#Antwortbox_ww2_5", "#Antwortbox_ww2_6" ], function( id ) {
-
+                 
                  $( id ).droppable( {
                      drop: handleDropEvent
                  });
