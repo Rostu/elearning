@@ -21,8 +21,7 @@ var placeQuestions = function( questions ) {
         + "<td class=\"questionaire_2\">ja</td>"
         + "<td class=\"questionaire_3\">nein</td></tr>";
     var end = "<tr><td></td><td></td><td></td></tr>"
-        + "<tr><td><div id=\"submit\">pr&uuml;fen"
-        + "</div></td><td></td><td></td></table>";
+        + "<tr><td></td><td></td><td></td></table>";
 
     var original_html = $( "#ww3_form" ).html();
     var counter = 0;
@@ -30,8 +29,8 @@ var placeQuestions = function( questions ) {
     $.map( questions, function( question ) {
         counter += 1;
         
-        var questionString = "<tr><td>" + counter + ". " + question.question
-            + "</td><td><input type=\"radio\" name=\"" + question.id +
+        var questionString = "<tr><td><div id=\"" + question.id + "\">" + counter + ". " + question.question
+            + "</div></td><td><input type=\"radio\" name=\"" + question.id +
             "\" value=\"0\"/></td><td><input type=\"radio\" name=\"" +
             question.id + "\" value=\"1\" /></td></tr>";
         
@@ -39,24 +38,38 @@ var placeQuestions = function( questions ) {
     });
 
     $( "#ww3_form" ).html( preamble + original_html + end );
-}
-
-
-var init = function () {
-    // dda da
-    console.log( " joooar ");
-    
-    applyTo( "/javascripts/wertewandel3_questions.json", placeQuestions );
-    
-    // evaluate answer on
 };
 
-$(function() {
-    $( "#submit" ).click(function () {
-        console.log( " joooar2 ");
-        var answered = $( "#ww3_form :input" ).serializeArray();
-        console.log( answered );
+var init = function () {
+    // load data
+    applyTo( "/javascripts/wertewandel3_questions.json", placeQuestions );
+
+    // evaluate answer on
+    $( "#submit" ).click( function() {
+        // get answers
+        var answered = $( "input[type='radio']" ).serializeArray()
+        
+        // check them on the json file
+        $.getJSON( "/javascripts/wertewandel3_questions.json", function( json ) {
+            $.map( json.questions, function( n ) {
+                // pretty messy... I agree
+                $.map( answered, function( e ) {
+                    if ( n.id == e.name )
+                    {
+                        if ( n.answer == e.value )
+                        {
+                            console.log( e.name );
+                            $( "#" + e.name ).animate({backgroundColor: "#0f0"}, 2000);
+                        }
+                        else
+                        {
+                            $( "#" + e.name ).animate({backgroundColor: "#f00"}, 2000);
+                        }
+                    }
+                });
+            });
+        });
     });
-});
+};
 
 $( init );
