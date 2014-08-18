@@ -9,21 +9,18 @@ $(document).ready(function() {
             case 3: animation(); break;
             default: state = 0;
         }
-        console.log(state);
     });
     $('#check').click(function() {
         switch(state) {
             case 2: state = 3; break;
             default: state = 0;
         }
-        console.log(state);
     });
     $('#hilfe').click(function() {
         switch(state) {
             case 1: state = 2; break;
             default: state = 0;
         }
-        console.log(state);
     });
 
     function animation () {
