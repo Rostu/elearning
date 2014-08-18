@@ -46,11 +46,11 @@ var placeQuestions = function( questions ) {
         
         var replaceString = "<div id=\"" + inline_id + "\" class=\"boxes inline ui-draggable\""
             + "><div id=\"" + inline_id + "\">"
-            + inline_text + "</div></div>";
+            + " " + inline_text + " " + "</div></div>";
         
-        original_html += replaceString + "<br />";
+        original_html += replaceString + "<br /><br />";
         
-        $(this).text( "________________" );
+        $(this).text( " _________ " );
     });
     
     $( "#Antwortbox" ).html( original_html );
