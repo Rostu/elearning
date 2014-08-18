@@ -56,9 +56,13 @@ img {
 
 
 .inline {
-    display: inline-block;
+    display: inline;
     margin-right: 3px;
     margin-left: 3px;
+}
+
+.inline div {
+    display: inline;
 }
 
 #answers #Antwortbox1, #Antwortbox2, #Antwortbox3, #Antwortbox4 {
@@ -164,4 +168,14 @@ dfn{
     padding: 5px;
     margin: 10px;
     background-color: rgba(181, 237, 239, 0.29);
+}
+
+#submit {
+    text-align: center;
+    width: 100px;
+    margin: 20px;
+    padding: 10px;
+    border-color: #000;
+    border-radius: 20px;
+    background-color: #aaa;
 }
