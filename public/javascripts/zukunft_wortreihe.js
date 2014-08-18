@@ -1,6 +1,7 @@
 $(init);
 function init() {
     aktuell = 0;
+    var fehlversuche = 10;
     var ar = [];
     // Inhalte der Aufgabe erstellen, Notiz an mich, in DB ablegen
     var z_task1_1 = new Object();
@@ -21,7 +22,7 @@ function init() {
     //klickhandler für die Wortelemente registriert, der funktion check() bei klick aufruft
     $(".wort").click(check);
 
-    //Funktion die überprüft ob das angeklickte Wort richtig oder falsch ist und die entsprechenden animationen auslöst
+    //Funktion die überprüft ob das angeklickte Wort richtig oder falsch ist und die entsprechenden Animationen auslöst
     function check()
     {
         if ($.inArray($(this).text(),ar[aktuell].loesung) > -1)
@@ -31,17 +32,36 @@ function init() {
             $(this).animate({bottom:'+=0.5em', fontSize: '-=0.5em'}, "slow", function(){
                 $(".wortbox").fadeOut(500, function(){
                     $(this).remove();
-                    if (aktuell < ar.length-1){aktuell++;}else{aktuell = 0;}
-                    newdiv();
+                    if (aktuell < ar.length-1)
+                    {
+                        aktuell++;
+                        newdiv();
+                    }
+                    else
+                    {
+                        $("span[id=weiter]").append("<a id='weiterlink' class='buttona' href='/zukunft_task2'>WEITER</a>");
+                        animatearrow_weiter();
+                        //aktuell = 0;
+                    }
+
                 });
                 $("#infolink").remove();
             });
         }
         else
         {
+            if (fehlversuche > 0) {
+                fehlversuche--;
+                $("#fehler").remove();
+                $("span[id=balken]").append("<a id='fehler' class='buttona'>Fehlversuche: " + fehlversuche + "</a>");
+                $("#fehler").animate({color: '#a8383b'},"fast");
+                if (fehlversuche != 0) {
+                    $("#fehler").animate({color: 'white'}, "fast");
+                }
+            }
             $("#infolink").remove();
-            $("span[id=balken]").append("<a id='infolink' class='buttona' target='blank' href='http://www.duden.de/suchen/dudenonline/"+$(this).text()+"'>"+$(this).text()+"??</a>");
-            animatearrow();
+            $("span[id=hilfe]").append("<a id='infolink' class='buttona' target='blank' href='http://www.duden.de/suchen/dudenonline/"+$(this).text()+"'>"+$(this).text()+"??</a>");
+            animatearrow_wrong();
             $(this).animate({bottom:'-=0.5em'},"fast");
             $(this).animate({backgroundColor: '#a8383b', color: 'white', fontSize: '+=0.5em'},"slow");
             $(this).effect( "shake", {distance: 5}, 125)
@@ -49,11 +69,6 @@ function init() {
         }
     };
 
-    $("#weiter").click(function(){
-
-        $(".wortbox").remove();
-        newdiv();
-    });
     function newdiv() {
         var i= 0;
         var div = jQuery('<div/>', {
@@ -90,9 +105,13 @@ function init() {
     };
     console.log(shuffle(ar[aktuell].inhalt));
     newdiv();
-    function animatearrow(){
-        $('#arrow').animate({top: '+79%',opacity: 1},{duration: 1000, easing: "easeOutBounce" });
-        $('#arrow').animate({top: '+10%', opacity: 0},0);
+    function animatearrow_wrong(){
+        $('#arrow_wrong').animate({top: '+79%',opacity: 1},{duration: 1000, easing: "easeOutBounce" });
+        $('#arrow_wrong').animate({top: '+10%', opacity: 0},0);
+    }
+    function animatearrow_weiter(){
+        $('#arrow_weiter').animate({top: '+79%',opacity: 1},{duration: 1000, easing: "easeOutBounce" });
+        $('#arrow_weiter').animate({top: '+10%', opacity: 0},0);
     }
 
 
