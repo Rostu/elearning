@@ -1,0 +1,54 @@
+{
+   "words" :
+    [
+
+        {
+            "id" : 0,
+            "explain" : "eine Situation als sehr schwierig empfinden",
+            "term" : "schwer verkraften",
+            "synonyms" : ["just", "a", "test"]
+        },
+
+        {
+            "id" : 1,
+            "explain" : "Ohne große Anstrengung etwas tun",
+            "term" : "so nebenbei",
+            "synonyms" : ["just", "a", "test"]
+        },
+
+        {
+            "id" : 2,
+            "explain" : "eine Situation, die schwer zu lösen (zu meistern) ist",
+            "term" : "hat es in sich",
+            "synonyms" : ["just", "a", "test"]
+        },
+
+        {
+            "id" : 3,
+            "explain" : "sich müde oder überanstrengt fühlen",
+            "term" : "geschlaucht",
+            "synonyms" : ["just", "a", "test"]
+        },
+
+        {
+            "id" : 4,
+            "explain" : "umgangssprachlich, negativ für: das ist nicht möglich",
+            "term" : "das geht gar nicht",
+            "synonyms" : ["just", "a", "test"]
+        },
+
+        {
+            "id" : 5,
+            "explain" : "Unterhaltung zwischen zwei Personen",
+            "term" : "Vieraugengespräch",
+            "synonyms" : ["just", "a", "test"]
+        },
+
+        {
+            "id" : 6,
+            "explain" : "sich sehr viel Mühe geben, jemandem bei etwas zu helfen",
+            "term" : "rührend um mich kümmerte",
+            "synonyms" : ["just", "a", "test"]
+        }
+    ]
+}
