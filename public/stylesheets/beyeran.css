@@ -169,3 +169,11 @@ dfn{
     margin: 10px;
     background-color: rgba(181, 237, 239, 0.29);
 }
+
+#submit {
+    text-align: center;
+    width: 100px;
+    margin: 20px;
+    padding: 10px;
+    background-color: #aaa;
+}
