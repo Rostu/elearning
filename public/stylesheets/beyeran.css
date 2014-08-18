@@ -13,7 +13,7 @@
   background-color: rgba(239, 239, 239, 0.59);
   margin: 10px;
   color: black;
-  text-align: justify;
+  text-align: left;
 }
 
 .draggie.ui-draggable-dragging {
@@ -56,9 +56,13 @@ img {
 
 
 .inline {
-    display: inline-block;
+    display: inline;
     margin-right: 3px;
     margin-left: 3px;
+}
+
+.inline div {
+    display: inline;
 }
 
 #answers #Antwortbox1, #Antwortbox2, #Antwortbox3, #Antwortbox4 {
