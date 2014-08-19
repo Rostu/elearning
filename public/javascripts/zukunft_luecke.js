@@ -22,7 +22,7 @@ function init() {
             html: inline_text
         });
         div.draggable({
-            containment: '#page',
+            containment: '#wrapper',
             revert: true
             //helper: myHelper
         });
@@ -48,7 +48,7 @@ function init() {
         }
         else
         {
-            //alert("No Ragrets!");
+
         }
     };
 
@@ -63,7 +63,7 @@ function init() {
 
     function update_balken(){
         //console.log($('#balken_innen1'));
-        $('#balken_innen1').css('width',r_length*10.2857);
+        $('#balken_innen1').css('width',r_length*12);
         //$('#balken_innen2').css('width',w_length*4);
     }
 

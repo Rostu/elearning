@@ -8,7 +8,8 @@
   box-shadow: 0px 2px 5px darkgray;
   width: 45%;
   display: table-cell;
-  padding: 10px;
+  vertical-align: top;
+  padding: 16px;
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgba(239, 239, 239, 0.59);
   margin: 10px;
@@ -29,7 +30,8 @@
   height: 20px;
   width: 175px;
   border-top: hidden;
-  border-bottom-color: hidden; }
+  border-bottom-color: hidden;
+}
 
 #Antwortbox {
   -webkit-box-shadow: 0px 2px 5px darkgray;
@@ -37,6 +39,7 @@
   box-shadow: 0px 2px 5px darkgray;
   background-color: rgba(239, 239, 239, 0.59);
   display: table-cell;
+  vertical-align: top;
   padding: 10px;
   width: 40%;
   margin-left: 15px;
@@ -66,7 +69,8 @@
   color: black;
   font: bold;
   padding: 5px;
-  display: inline-flex;
+  float: left;
+  /*display: inline-flex;*/
   flex-direction: column;
   margin: 10px;
   border-radius: 10%;
@@ -81,7 +85,7 @@
 
 #balken_aussen {
   display: inline-block;
-  width: 216px;
+  width: 204px;
   height: 17px;
   background: white;
   padding: 1px;

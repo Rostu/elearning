@@ -89,3 +89,10 @@
     width: 0px;
     float: left;
 }
+
+#arrow {
+    position: fixed;
+    top: 10%;
+    left: 34%;
+    opacity: 0;
+}

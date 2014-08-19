@@ -72,6 +72,7 @@ app.get('/glueck', ubung.get_glueck);
 app.get('/glueck_gedicht', ubung.get_glueck_gedicht);
 app.get('/glueck_gedicht2', ubung.get_glueck_gedicht2);
 app.get('/glueck_redensarten', ubung.get_glueck_redensarten);
+app.get('/glueck_interview', ubung.get_glueck_interview);
 app.get('/handy', ubung.get_handy);
 app.get('/handy_task1', ubung.get_handy_task1);
 app.get('/handy_task2', ubung.get_handy_task2);

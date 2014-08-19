@@ -39,9 +39,16 @@ form{
     position: relative;
 }
 
-#arrow{
+#arrow_wrong{
     position: fixed;
     top: 10%;
-    left: 8%;
+    left: 34%;
+    opacity: 0;
+}
+
+#arrow_weiter{
+    position: fixed;
+    top: 10%;
+    left: 83.5%;
     opacity: 0;
 }
