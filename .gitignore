@@ -1,0 +1,4 @@
+config.js
+routes/dbhandler.js
+node_modules/*
+*~
