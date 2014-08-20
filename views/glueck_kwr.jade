@@ -1,0 +1,36 @@
+//
+   Created by s2daalft on 19.08.2014.
+
+extends layout
+block content
+    link(rel='stylesheet' href='stylesheets/glueck_kwr.css')
+    script(src='javascripts/glueck_kwr.js')
+    #Aufgabenbox
+        p Löse das Kreuzworträtsel und finde die Redewendung!
+    #wrapper
+        #Textbox
+            #kwr
+        #Antwortbox
+            p Lösung
+            #solve
+                input(type='text' class='cell' id='1' readonly)
+                input(type='text' class='cell' id='2' readonly)
+                input(type='text' class='cell' id='3' readonly)
+                input(type='text' class='cell' id='4' readonly)
+                input(type='text' class='cell' id='5' readonly)
+                input(type='text' class='cell' id='6' readonly)
+                input(type='text' class='cell' id='7' readonly)
+                br
+                input(type='text' class='cell' id='8' readonly)
+                input(type='text' class='cell' id='9' readonly)
+                input(type='text' class='cell' id='10' readonly)
+                input(type='text' class='cell' id='11' readonly)
+                input(type='text' class='cell' id='12' readonly)
+                input(type='text' class='cell' id='13' readonly)
+    #Field
+        span#balken
+        span#hilfe
+        span#check
+            a(href='#') PRÜFEN
+        span#weiter
+            a(href='#') WEITER

@@ -1,0 +1,59 @@
+.title {
+    text-align: center;
+}
+
+.right {
+    background-color: lightgreen;
+}
+
+.wrong {
+    background-color: rgba(240, 115, 210, 0.40);
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+#Textbox {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    display: table-cell;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(239, 239, 239, 0.59);
+    margin: 10px;
+    color: black;
+}
+
+#Antwortbox {
+    -webkit-box-shadow: 0 2px 5px darkgrey;
+    -moz-box-shadow: 0 2px 5px darkgrey;
+    box-shadow: 0 2px 5px darkgrey;
+    display: table-cell;
+    padding: 10px;
+    width: 30%;
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgoldenrodyellow;
+    min-height: 500px;
+    align-items: center;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    font-family: monospace;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: #fffffe;
+}
+
+.cell:focus {
+    border-color: cadetblue;
+}
+
+.ofsol {
+    background-color: lightgreen;
+}
