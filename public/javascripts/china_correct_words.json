@@ -1,0 +1,22 @@
+{
+    "words" : [ { "id": 0, "answer": 3, "text": "Austauschstudent", "group": "correct" },
+                { "id": 1, "answer": 1, "text": "BWL", "group": "correct" },
+                { "id": 2, "answer": 3, "text": "Student", "group": "correct" },
+                { "id": 3, "answer": 1, "text": "Banking and Finance", "group": "correct" },
+                { "id": 4, "answer": 2, "text": "Fachhochschule", "group": "correct" },
+                { "id": 5, "answer": 2, "text": "Summer School", "group": "correct" },
+                { "id": 6, "answer": 4, "text": "Partnerhochschule", "group": "correct" },
+                { "id": 7, "answer": 2, "text": "Universität", "group": "correct" },
+                { "id": 8, "answer": 3, "text": "Absolvent", "group": "correct" },
+                { "id": 9, "answer": 1, "text": "Angewandte Wirtschaftssprachen", "group": "correct" },
+                { "id": 10, "answer": 4, "text": "Frontalunterricht", "group": "correct" },
+                { "id": 11, "answer": 4, "text": "Auswendiglernen", "group": "correct" },
+                { "id": 12, "answer": 4, "text": "Vorlesungsinhalte", "group": "correct" },
+                { "id": 13, "answer": 3, "text": "Professor", "group": "correct" },
+                { "id": 14, "answer": 4, "text": "Diskussionen", "group": "correct" },
+                { "id": 15, "answer": 3, "text": "Lehrperson", "group": "correct" },
+                { "id": 16, "answer": 4, "text": "Lektüre", "group": "correct" },
+                { "id": 17, "answer": 2, "text": "TU München", "group": "correct" },
+                { "id": 18, "answer": 3, "text": "Studierende", "group": "correct" },
+                { "id": 19, "answer": 1, "text": "Studienaufenthalte", "group": "correct"} ]
+}

@@ -1,0 +1,37 @@
+extends layout
+block content
+    link(rel='stylesheet', href='/stylesheets/beyeran.css')
+    script( src='/javascripts/beyeran_lib.js')
+    script( src='/javascripts/wertewandel4.js')
+    #Aufgabenbox
+        p Fülle den Lückentext mit den vorgegebenen Wörtern aus:
+    #wrapper
+        #Textbox
+            p
+            | Der
+            .inline(id=0) Anteil
+            | der Einpersonenhaushalte betrug im Jahr 2012
+            .inline( id=1 ) 41%
+            | , während er 1991 mit 34% deutlich
+            .inline( id=2 ) niedrig
+            | lag. Die Zahl der Zweipersonenhaushalte
+            .inline( id=3 ) steigen
+            | von 31% im Jahr
+            .inline( id=4 ) 1991
+            | auf knapp 35% im Jahr 2012. Dagegen
+            .inline( id=5 ) verringern
+            | sich der Anteil der größeren Haushalte im selben Zeitraum:
+
+            | Im
+            .inline( id=6 ) Vergleich
+            | zum Jahr 1991 ist die Zahl der Haushalte mit drei Personen von 17% auf 12% im Jahr 2012
+            .inline( id=7 ) groß
+            | ; während 1991 noch 18% mit vier oder mehr Personen in einem Haushalt lebten, waren es 2012 nur noch 12%. Insgesamt werden die Haushalte in Duetschland immer
+            .inline( id=8 ) kleiner
+            | .
+
+        #Antwortbox
+            
+    #Field
+        span#hilfe
+        span#check
