@@ -55,6 +55,10 @@ exports.get_glueck_interview = function(req, res){
     res.render('glueck_interview');
 };
 
+exports.get_glueck_kwr = function(req, res){
+    res.render('glueck_kwr');
+};
+
 exports.get_handy = function(req, res){
     res.render('handy');
 };

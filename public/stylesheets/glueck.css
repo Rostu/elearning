@@ -119,3 +119,8 @@ input {
     font-weight: bold;
     text-align: center;
 }
+
+h2 {
+    font-size: 15px;
+    color: #8f56ff;
+}
