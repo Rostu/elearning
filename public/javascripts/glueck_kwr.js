@@ -1,6 +1,8 @@
 /**
  * Created by s2daalft on 19.08.2014.
  */
+
+
 var Cell = function (i,j,k) {
     var x = i;
     var y = j;
@@ -201,7 +203,6 @@ var KWRController = function (model) {
     };
 
     this.solveAll = function () {
-        var r = ["T", "B", "A", "H", "E", "G", "N", "I", "E", "W", "H", "C", "S"];
         var array = grid.getCells();
         for (var i = 0; i < array.length; i++) {
             for (var j = 0; j < array[i].length; j++) {
@@ -250,6 +251,8 @@ var KWRController = function (model) {
         cell.addClass("wrong");
     }
 };
+
+var r = ["T", "B", "A", "H", "E", "G", "N", "I", "E", "W", "H", "C", "S"];
 
 $(document).ready(function() {
     var m = [
@@ -374,9 +377,54 @@ $(document).ready(function() {
         if (/[a-zA-Zäöüß]/.test(inp)) {
             $("#"+(parseInt(this.id)+1)).focus();
         }
+        if(checkScell()) {
+            showConfirmSolution();
+        } else {
+            hideConfirmSolution();
+        }
     });
 
     $('#check').click(function() {
         controller.check();
     });
+
+    function checkScell() {
+        var scells = $('.scell').toArray();
+        for (var i = 0; i < scells.length; i++) {
+            if (!$(scells[i]).val()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function hideConfirmSolution() {
+        var cs = $('#cs');
+        if(cs.length) cs.detach();
+    }
+
+    function showConfirmSolution() {
+        var cs = $('#cs');
+        if(cs.length) return;
+        $('#solve').after("<div class='buttondiv' id='cs'>LÖSUNG BESTÄTIGEN</div>");
+        $('#cs').on("click", function() {
+           if(checkSolution()) {
+               $.jqDialog.alert("Gut gemacht!", function() {}); // add callback with effects?
+           } else {
+               $.jqDialog.alert("Das ist leider nicht die richtige Lösung!", function() {});
+           }
+        });
+    }
+
+    function checkSolution() {
+        var scells = $('.scell').toArray();
+        var ms = r.reverse();
+        for (var i = 0; i < scells.length; i++) {
+            if ($(scells[i]).val().toUpperCase() !== ms[i]) {
+                return false;
+
+            }
+        }
+        return true;
+    }
 });
