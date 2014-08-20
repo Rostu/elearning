@@ -11,25 +11,42 @@ block content
         #Textbox
             #kwr
         #Antwortbox
-            p Lösung
+            p.kwrtitle Hinweise
+            #hint
+            hr
+            p.kwrtitle Lösung
             #solve
-                input(type='text' class='cell' id='1' readonly)
-                input(type='text' class='cell' id='2' readonly)
-                input(type='text' class='cell' id='3' readonly)
-                input(type='text' class='cell' id='4' readonly)
-                input(type='text' class='cell' id='5' readonly)
-                input(type='text' class='cell' id='6' readonly)
-                input(type='text' class='cell' id='7' readonly)
+                input(type='text' class='scell' id='1' maxlength=1)
+                input(type='text' class='scell' id='2' maxlength=1)
+                input(type='text' class='scell' id='3' maxlength=1)
+                input(type='text' class='scell' id='4' maxlength=1)
+                input(type='text' class='scell' id='5' maxlength=1)
+                input(type='text' class='scell' id='6' maxlength=1)
+                input(type='text' class='scell' id='7' maxlength=1)
                 br
-                input(type='text' class='cell' id='8' readonly)
-                input(type='text' class='cell' id='9' readonly)
-                input(type='text' class='cell' id='10' readonly)
-                input(type='text' class='cell' id='11' readonly)
-                input(type='text' class='cell' id='12' readonly)
-                input(type='text' class='cell' id='13' readonly)
+                input(type='text' class='scell' id='8' maxlength=1)
+                input(type='text' class='scell' id='9' maxlength=1)
+                input(type='text' class='scell' id='10' maxlength=1)
+                input(type='text' class='scell' id='11' maxlength=1)
+                input(type='text' class='scell' id='12' maxlength=1)
+                input(type='text' class='scell' id='13' maxlength=1)
     #Field
         span#balken
+            a(href='#', id='solve') LÖSUNG ANZEIGEN
         span#hilfe
+            a(href='#') HILFE
+                span.help
+                    p HINWEISE
+                    p Klicke ein Feld an, um Hinweise zu bekommen, welche Wörter in diese Reihe/Spalte passen.
+                span.help
+                    p FELDER LÖSCHEN
+                    p Klicke mit der rechten Maustaste auf ein Feld, um das Feld zu leeren.
+                span.help
+                    p LÖSEN
+                    p Wenn du die Lösung kennst, kannst du die Lösung auch direkt in die Lösungsfelder eintragen und bestätigen.
+                    p Wenn du nicht weiter weisst oder das Kreuzworträtsel überspringen möchtest, kannst du dir die Lösung auch direkt anzeigen lassen.
+                    p Du bekommst für diese Aufgabe dann &nbsp;
+                        b keine Punkte!
         span#check
             a(href='#') PRÜFEN
         span#weiter
