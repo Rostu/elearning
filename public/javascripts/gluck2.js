@@ -154,7 +154,7 @@ $(document).ready(function() {
 
     $('#weiter').click(function() {
         if (flag) {
-            document.location.href = "/glueck_redensarten";
+            document.location.href = "/glueck";
         } else {
             if ($('#Antwortbox').children('.message').toArray().length) {
                 $.jqDialog.confirm("Das Gedicht enthält noch Fehler. Trotzdem weiterfahren?",
@@ -163,6 +163,7 @@ $(document).ready(function() {
             } else {
                 textify();
             }
+            $('#weiter').html("<a href='#'>ZURÜCK</a>");
         }
     });
 
