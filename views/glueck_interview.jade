@@ -1,6 +1,7 @@
 extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/glueck_interview.css')
+    link(rel='stylesheet', href='/stylesheets/glueck.css')
     script(src='/javascripts/glueck_interview.js')
 
     #Aufgabenbox
@@ -8,8 +9,6 @@ block content
 
     #wrapper
         #Textbox
-            h1 „Glück ohne Verbundenheit gibt es nicht!“
-
             p
             | Der österreichische Regisseur Harald Friedl hat mit seiner Kino-Dokumentation "What Happiness Is"
             .inline(id=0) in diesem Sommer
@@ -24,7 +23,8 @@ block content
             | In Momenten von Nähe und Liebe kann ich auch sehr glücklich sein und beim Genuss von Kunst, Musik, Literatur
             | oder Filmen. Die vielleicht wichtigste Voraussetzung für Glück ist, sich mit Anderen und der Welt verbunden zu
             | fühlen. Glück ohne Verbundenheit gibt es nicht. Wenn man noch dazu mit Empathie ausgestattet ist, kann im
-            | Leben eigentlich nicht mehr viel schief gehen.
+            | Leben eigentlich nicht mehr viel
+            u(title='misslingen, missglücken')  schief gehen.
 
             p
             b Bei welcher Gelegenheit waren Sie das letzte Mal glücklich?
@@ -55,7 +55,9 @@ block content
             .inline(id=4) In der folgenden halben Stunde
             | sind noch drei Leute dazu gestoßen.
             .inline(id=5) Kurz darauf
-            |war ich Teil der Runde, und wir haben
+            |war ich Teil der
+            u(title='Gesellschaft, Gruppe')  Runde,
+            | und wir haben
             | uns unterhalten, als würden wir uns
             .inline(id=6) ewig
             | kennen. Seitdem schreiben wir uns regelmäßig und planen sogar ein
@@ -76,7 +78,8 @@ block content
             | Studenten-Projekt. In Deutschland hätten wir das auch nötig. Dieses Ministerium könnte auf höchster
             | politischer Ebene über Werte diskutieren, die das Wohlbefinden der Menschen beeinflussen.
 
-            p Das Interview führte Ingo Fischer (Stand: 15.09.2013)
+            p.author Das Interview führte Ingo Fischer
+            p.author (Stand: 15.09.2013)
 
         #Platzhalter
         #Antwortbox
