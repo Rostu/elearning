@@ -4,8 +4,8 @@
 $(document).ready(function() {
     var count = 0;
     var a = ["Friedhofs-",
-        "Erwachsen-",
-        "Auseinander-",
+        "erwachsen-",
+        "auseinander-",
         "Schul-",
         "Leistungs-",
         "Kontakt-",

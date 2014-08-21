@@ -1,3 +1,4 @@
+Allgemeine Tasks
 - einheitliche Benennung der Jade Dateien (ladida_task1 etc.)
 - Design Menü
 - Design login box
@@ -14,3 +15,20 @@
  - standard lockit seiten bearbeiten
  - Übungsdaten der Benutzer (für jede session)
 
+1. Navigation muss konsistenter werden und auch insgesamt überarbeitet werden
+    a) <=-Knopf
+    b) ??? übungsinterne Seitennummerierung
+    c) ??? ‚Startseite‘ pro Übung a la Veggie-Day oder Glück
+
+2. Mehr Hilfstexte z.B. allgemein zur Bedienung/Steuerung
+
+3. Die Texte, die die jeweilige  Aufgaben spezifizieren, müssen insgesamt überarbeitet werden. Sie sollten so ausführlich und klar sein, dass Lernende genau wissen, was von Ihnen erwartet wird.
+
+4. Konsistentes Verhalten in allen Übungen:
+   a) Löschen von Fehleingaben durch …
+   b) maximale Zahl der Korrekturversuche
+   c) …
+
+Einzelne Aufgabenbereiche
+
+Generationen_task4 --> Abstand Text-Auswahlkreis vergrößern. Außerdem Abstand Frage-Antwort vergrößern
