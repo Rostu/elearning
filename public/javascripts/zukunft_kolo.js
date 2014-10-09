@@ -50,15 +50,17 @@ function init() {
             id: ui.draggable.attr('id'),
             html: ui.draggable.context.textContent
         });
-        //$("#Antwortbox").append(div);
-        if(ui.draggable.attr('class') == "kolo ui-draggable ui-draggable-dragging"){
+
+        var s = ui.draggable.attr('class');
+        if(s.indexOf("kolo") >=0){
             $(".kolo[id="+ui.draggable.attr('id')+"]").remove();
             $('#a2').append(div);
-        }
-        if(ui.draggable.attr('class') == "token ui-draggable ui-draggable-dragging"){
+
+        };
+        if(s.indexOf("token") >=0){
             $(".token[id="+ui.draggable.attr('id')+"]").remove();
             $('#a1').append(div);
-        }
+        };
         div.click(clear);
         check();
     };

@@ -91,7 +91,6 @@
     color: green;
     font: bold;
 
-    margin: 0px auto;
     height: 40px;
     width: 100%;
     text-align: center;
@@ -117,18 +116,21 @@
 
 #a1{
     background: white;
-    display:table-cell;
     height: 70px;
     width: 150px;
+    padding: 5px;
+    display: inline-block;
+
 }
 
 #a2{
     background: white;
-    display:table-cell;
-    background: white;
-    display:table-cell;
     height: 70px;
     width: 150px;
+    padding: 5px;
+    display: inline-block;
+
+
 }
 
 

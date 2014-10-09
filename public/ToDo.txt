@@ -1,18 +1,18 @@
 Allgemeine Tasks
-- einheitliche Benennung der Jade Dateien (ladida_task1 etc.)
+- Einheitliche benennung der Jade Dateien (bereich_task1 etc.)
 - Design Menü
 - Design login box
 - Profil --> Statistik
 - Benutzerinformationen:
     Optionale Benutzerdaten wie
-    Alter
-    Geschlecht
-    Muttersprache
-    Wie lange man Deutsch lernt
-    Welche anderen Sprachen
-    Schulbildung
- - Admin
- - standard lockit seiten bearbeiten
+        Alter
+        Geschlecht
+        Muttersprache
+        Wie lange man Deutsch lernt
+        Welche anderen Sprachen
+        Schulbildung
+ - Admin (Sonder Funktionen, wie anlegen neuer Übungen, Statistiken der Benutzer, etc.  )
+ - Standard lockit Seiten bearbeiten
  - Übungsdaten der Benutzer (für jede session)
 
 1. Navigation muss konsistenter werden und auch insgesamt überarbeitet werden
@@ -27,7 +27,8 @@ Allgemeine Tasks
 4. Konsistentes Verhalten in allen Übungen:
    a) Löschen von Fehleingaben durch …
    b) maximale Zahl der Korrekturversuche
-   c) …
+   c) Punktevergabe vereinheitlichen (auch allgemeine Anzeige der Punkte)
+   d) ...
 
 Einzelne Aufgabenbereiche
 
