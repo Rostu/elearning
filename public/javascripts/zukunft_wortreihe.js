@@ -7,17 +7,38 @@ function init() {
     var z_task1_1 = new Object();
     z_task1_1.loesung = ["Mystik","Kunstwissenschaf"];
     z_task1_1.inhalt = ["Wissenschaft", "Lehre", "Forschung","Mystik","Kunstwissenschaft"];
+    z_task1_1.vorgabe = "Wissenschaft";
     ar.push(z_task1_1);
 
     var z_task1_2 = new Object();
     z_task1_2.loesung = ["Umweltverschmutzung", "Solarenergie"];
     z_task1_2.inhalt = ["Handystrahlen", "Elektrosmog", "Elektroenergie", "elektrische Ladung","Umweltverschmutzung", "Solarenergie"];
+    z_task1_2.vorgabe = "Handystrahlen";
     ar.push(z_task1_2);
 
     var z_task1_3 = new Object();
     z_task1_3.loesung = ["Computer"];
     z_task1_3.inhalt = ["Internet", "Netz", "World Wide Web", "Kommunikationsmedium","Computer"];
+    z_task1_3.vorgabe = "Internet";
     ar.push(z_task1_3);
+
+    var z_task1_4 = new Object();
+    z_task1_4.loesung = ["Produktion","Industrie"];
+    z_task1_4.inhalt = ["Produktion", "Nanotechnologie", "Wissenschaft und Technologie im Nanometerbereich",  "Industrie"];
+    z_task1_4.vorgabe = "Nanotechnik";
+    ar.push(z_task1_4);
+
+    var z_task1_5 = new Object();
+    z_task1_5.loesung = ["Umstellung","Verpackung"];
+    z_task1_5.inhalt = ["Anfertigung", "Umstellung", "Erzeugung", "Fabrikation", "Verpackung", "Fertigstellung", "Herstellung", "Schaffung"];
+    z_task1_5.vorgabe = "Produktion";
+    ar.push(z_task1_5);
+
+    var z_task1_6 = new Object();
+    z_task1_6.loesung = ["Arbeitsweise"];
+    z_task1_6.inhalt = ["Apparat", "Arbeitsgerät", "Arbeitsweise", "Ausrüstung", "Gerät", "Instrument", "Maschine", "Vorrichtung"];
+    z_task1_6.vorgabe = "Werkzeug";
+    ar.push(z_task1_6);
 
     //klickhandler für die Wortelemente registriert, der funktion check() bei klick aufruft
     $(".wort").click(check);
@@ -74,7 +95,7 @@ function init() {
         var div = jQuery('<div/>', {
             class: 'wortbox',
             id: aktuell,
-            html: "<h5>Fehlersuche</h5>"
+            html: "<h5>"+ar[aktuell].vorgabe+"</h5>"
         });
         $("#wrapper").append(div);
         var arr = shuffle(ar[aktuell].inhalt);

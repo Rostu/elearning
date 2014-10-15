@@ -90,7 +90,6 @@
     background: rgba(239, 239, 239, 0.59);
     color: green;
     font: bold;
-
     height: 40px;
     width: 100%;
     text-align: center;
@@ -120,7 +119,6 @@
     width: 150px;
     padding: 5px;
     display: inline-block;
-
 }
 
 #a2{
@@ -129,8 +127,6 @@
     width: 150px;
     padding: 5px;
     display: inline-block;
-
-
 }
 
 
