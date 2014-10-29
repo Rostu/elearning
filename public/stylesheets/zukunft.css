@@ -96,3 +96,17 @@
     left: 34%;
     opacity: 0;
 }
+
+#counter {
+
+
+
+}
+#l{
+    display:table-cell;
+    width: 80%;
+}
+#r{
+    display: table-cell;
+    width: 10%;
+}

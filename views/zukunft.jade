@@ -1,9 +1,15 @@
 extends layout
 block content
  link(rel='stylesheet', href='/stylesheets/zukunft.css')
+ script( src='/javascripts/d3.v3.min.js')
  script( src='/javascripts/Zukunft.js')
+
  #Aufgabenbox
-    p Ziehe Ausdrücke, die mit "Technik" im Zusammenhang stehen auf die Box!
+     #l
+         p Ziehe Ausdrücke, die mit "Technik" im Zusammenhang stehen auf die Box!
+     #r
+         svg(id="counter", width="100", height="100")
+
  #wrapper
     #Textbox
             h1
