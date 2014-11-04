@@ -6,10 +6,10 @@
 
 * Start the VM.
 ``` bash
-$ `sudo aptitude install nfs-kernel-server`
-$ `vagrant plugin install vagrant-omnibus`
-$ `vagrant plugin install vagrant-librarian-chef`
-$ `gem install librarian-chef` # only if you want to use Librarian directly
+$ sudo aptitude install nfs-kernel-server
+$ vagrant plugin install vagrant-omnibus
+$ vagrant plugin install vagrant-librarian-chef
+$ gem install librarian-chef # only if you want to use Librarian directly
 $ vagrant box add ubuntu/precise64 \
 $ > https://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box
 $ # A long operation, downloads the vm image.
