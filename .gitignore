@@ -2,3 +2,7 @@ config.js
 routes/dbhandler.js
 node_modules/*
 *~
+tmp
+.vagrant
+Cheffile.lock
+cookbooks
