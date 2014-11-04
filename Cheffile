@@ -1,0 +1,8 @@
+#-*- mode: ruby; -*-
+
+site 'https://supermarket.getchef.com/api/v1'
+
+cookbook 'git', '~> 4.0.2'
+cookbook 'nodejs', '~> 2.2.0'
+cookbook 'mongodb', '~> 0.16.1'
+cookbook 'apache2', '~> 2.0.0'
