@@ -1,0 +1,95 @@
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://somproject.mongolab.com:57538/some-projekt');
+
+var db = mongoose.connection;
+
+//definieren eines Schemas für eine Übung
+var ubungschema = mongoose.Schema({
+    typ:  Number,
+    date: { type: Date, default: Date.now },
+    inhalt: Array,
+    name: String
+});
+
+var dmlschema = mongoose.Schema({
+    form: String,
+    morphology: Array
+});
+
+//Compilieren des Schemas in ein Model
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
+    console.log("Verbunden mit Datenbank!");
+});
+
+var Ubung = mongoose.model('ubungschema', ubungschema);
+
+var DmlData = mongoose.model('dmldata', dmlschema, 'dmldata');
+
+//Funktion zum speichern in die Datenbank
+savenew = function savenew(typ,inhalt,name){
+    var ub = new Ubung();
+    ub.name = name;
+    ub.typ = typ;
+    ub.inhalt = inhalt;
+    ub.save(function (err, ub) {
+        if (err) return console.error(err);
+        else console.log("gespeichert");
+    });
+};
+
+//Function um eine Übung aus der Datenbank zu lesen
+getub = function getub(callback){
+    Ubung.find(function (err, übungen) {
+        if (err) {callback([])}
+        else {callback (übungen)}
+    });
+};
+
+getdml = function getdml(callback) {
+  DmlData.find(function(err, data) {
+      if (err) {callback([]);}
+      else callback(data);
+  })
+};
+
+finddml = function finddml (a, cb) {
+    DmlData.findOne({form: a}, function(err,data) {
+        if (err) {
+            cb([]);
+            return;
+        }
+        cb(data);
+    });
+};
+
+// direkt als view registrieren, für XHR
+getubs = function getubs(req, res){
+    res.setHeader("Content-Type", "application/json");
+    Ubung.find({}, {_id: 0, inhalt: 1}).lean().exec(function (err, ubungen) {
+
+            if (err) {
+                res.send(JSON.stringify([]));
+            } else {
+                var round = ubungen.length;
+
+                res.send(JSON.stringify(ubungen[1]));
+            }
+    });
+};
+
+//Funktion zum löschen einer Übung
+exports.delUb = function(id){
+    Ubung.remove({_id: id},function (err, ub) {
+        if (err) {console.log(err);}
+        else {console.log(ub);
+        };
+    });
+};
+
+exports.getub = getub;
+exports.getubs = getubs;
+exports.savenew = savenew;
+exports.getdml = getdml;
+exports.finddml = finddml;
