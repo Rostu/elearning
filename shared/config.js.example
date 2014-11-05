@@ -1,0 +1,83 @@
+exports.db = {
+    url: 'mongodb://project.mongolab.com:57538/some-projekt',
+    collection: 'some-collection'
+};
+
+exports.login = {
+    route: '/login',
+    logoutRoute: '/logout',
+    views: {
+        login: 'index.jade',
+        loggedOut: 'index.jade'
+    }
+};
+
+exports.signup = {
+    views: {
+        signup: 'signup.jade'
+    }
+};
+
+exports.emailType = 'SMTP';
+exports.emailSettings = {
+    service: 'Mailgun',
+    auth: {
+        user: 'postmaster@someproject.mailgun.org',
+        pass: 'some-password'
+    }
+};
+exports.emailFrom = 'admin@example.com';
+
+exports.deleteAccount = {
+    route: '/delete-account',
+    views: {
+        remove: 'me',         // input fields 'name', 'phrase', 'password' | POST /'deleteAccount.route' | local variable 'error'
+        removed: 'jelöschd'         // message that account has been deleted
+    },
+    handleResponse: true  // let lockit handle the response after delete account success
+};
+
+// email signup template
+exports.emailSignup = {
+    subject: 'Welcome to E-Learning',
+    text: [
+        '<h2>Hello <%- username %></h2>',
+        'Welcome to E-Learning.',
+        '<p><%- link %> to complete your registration.</p>'
+    ].join(''),
+    linkText: 'Click here'
+};
+
+// email already taken template
+exports.emailSignupTaken = {
+    subject: 'Email already registered',
+    text: [
+        '<h2>Hello <%- username %></h2>',
+        'you or someone else tried to sign up for E-Learning.',
+        '<p>Your email is already registered and you cannot sign up twice.',
+        ' If you haven\'t tried to sign up, you can safely ignore this email. Everything is fine!</p>',
+        '<p>The E-Learning Team</p>'
+    ].join('')
+};
+
+// resend signup template
+exports.emailResendVerification = {
+    subject: 'Complete your registration',
+    text: [
+        '<h2>Hello <%- username %></h2>',
+        'here is the link again. <%- link %> to complete your registration.',
+        '<p>The E-Learning Team</p>'
+    ].join(''),
+    linkText: 'Click here'
+};
+
+// forgot password template
+exports.emailForgotPassword = {
+    subject: 'Reset your password',
+    text: [
+        '<h2>Hey <%- username %></h2>',
+        '<%- link %> to reset your password.',
+        '<p>The E-Learning Team</p>'
+    ].join(''),
+    linkText: 'Click here'
+};
