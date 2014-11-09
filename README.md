@@ -23,12 +23,12 @@ $ npm install # If needed, possible everything is already there.
 $ # Configure all the sensitive data if needed.
 $ nodejs app.js
 ```
-* You can now access the port `80` (the regular webserver) via `http://localhost:8080`
-  and the port `3000` (the node server) via `http://localhost:3000`. See
-  `config.js` and `Vagrantfile` if you want to know how the port mapping is
-  established. Do *not* start the node app from your workstation, only from
-  inside the VM, otherwise you'll get a port collisions problem since
-  the VM blocks the port `3000`.
+* You can now access the port `80` (the regular webserver) via
+  `http://localhost:8080` and the port `3000` (the node server) via
+  `http://localhost:3000`. See `config.js` and `Vagrantfile` if you want to know
+  how the port mapping is established. Do *not* start the node app from your
+  workstation, only from inside the VM, otherwise you'll get a port collisions
+  problem since the VM blocks the port `3000`.
 
 * The task is: rewrite the application in a way that you are happy with it
   under `http://localhost:8080`.
@@ -36,4 +36,8 @@ $ nodejs app.js
 
 ## Deployment
 
-* Coming soon
+* Start the application in _production_ mode:
+
+``` bash
+$ NODE_ENV=production nodejs app.js
+```
