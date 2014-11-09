@@ -22,10 +22,8 @@ var config = require('./config.js');
 var Lockit = require('lockit');
 var cookieSession = require('cookie-session');
 
-var edt = require("express-debug");
-edt(app);
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3555);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.favicon());
@@ -46,7 +44,10 @@ app.use(lockit.router);
 // development only
 if ('development' == app.get('env')) {
     app.use(express.errorHandler());
+    var edt = require("express-debug");
+    edt(app);
 }
+
 app.use('/', index.get_session);
 app.get('/', routes.index);
 app.get('/china', ubung.get_china);
