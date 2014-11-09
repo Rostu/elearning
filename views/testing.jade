@@ -1,6 +1,6 @@
 extends layout
 block content
-   script(src="/javascripts/modernizr.custom.js")
+   script(src="javascripts/modernizr.custom.js")
 
 button(type="button") Login
     div(class="morph-content")
@@ -8,7 +8,7 @@ button(type="button") Login
             div(class="content-style-form content-style-form-1")
                 span(class="icon icon-close") Close the dialog
                 h2 Login
-                    form(action="/login", method="POST")
+                    form(action="login", method="POST")
                         p
                             label(for="login") Email or Username
                             input(type="text", id="login", name="login", placeholder="Your email or username")

@@ -4,9 +4,9 @@ html
           title= title
           meta(charset="utf-8")
           title= title
-          link(rel='stylesheet', href='/stylesheets/mystyle.css')
+          link(rel='stylesheet', href='stylesheets/mystyle.css')
           link(href='http://fonts.googleapis.com/css?family=Dosis', rel='stylesheet', type='text/css')
-          link(href='//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
+          link(href='http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
           script( src="javascripts/jquery-1.11.1.min.js")
           script( src="javascripts/jquery-ui.min.js")
           script(src="javascripts/general.js")
@@ -14,44 +14,44 @@ html
               #page
                     #header
                         #trow
-                            a(href="/home")
+                            a(href="home")
                                 img(id="front",src="images/header.PNG")
                             ul(id="nav")
                                 li(id="header_button")
-                                    a(href='/home' ) Startseite
+                                    a(href='home' ) Startseite
                                 li(id="header_button")
-                                    a(href='/ubung' ) Übungen
+                                    a(href='ubung' ) Übungen
                                     if (session)
                                         if (session.name)
                                             ul
                                                 li(id="header_sub_button")
-                                                    a(href='/glueck' ) Glück
+                                                    a(href='glueck' ) Glück
                                                 li(id="header_sub_button")
-                                                    a(href='/handy' ) Handy
+                                                    a(href='handy' ) Handy
                                                 li(id="header_sub_button")
-                                                    a(href='/ersti' ) Ersti
+                                                    a(href='ersti' ) Ersti
                                                 li(id="header_sub_button")
-                                                    a(href='/veggieday_inhalt' ) Veggie-Day
+                                                    a(href='veggieday_inhalt' ) Veggie-Day
                                                 li(id="header_sub_button")
-                                                    a(href='/wertewandel' ) Wertewandel
+                                                    a(href='wertewandel' ) Wertewandel
                                                 li(id="header_sub_button")
-                                                    a(href='/generationen' ) Generationen
+                                                    a(href='generationen' ) Generationen
                                                 li(id="header_sub_button")
-                                                    a(href='/zukunft' ) Zukunft
+                                                    a(href='zukunft' ) Zukunft
                                                 li(id="header_sub_button")
-                                                    a(href='/china' ) China
+                                                    a(href='china' ) China
                                 li(id="header_button")
                                     a(href='' ) Profil
                                 li(id="header_button")
                                     if (session)
                                         if (session.name)
-                                            a(href='/logout') Logout
+                                            a(href='logout') Logout
                                         //else
-                                            a(href='/login') Login
+                                            a(href='login') Login
                                     //else
-                                        a(href='/login') Login
+                                        a(href='login') Login
                                 li(id="header_button")
-                                    a(href='/impressum' ) Impressum
+                                    a(href='impressum' ) Impressum
                         a(href="http://www.uni-trier.de",target="blank")
                             img(id='logo', src='images/uni-trier.PNG', width='190', height='182', alt='Universität Trier', align='right')
 
@@ -59,7 +59,7 @@ html
                         if (session.name)
                             block content
                         else
-                            script( src='/javascripts/scripts.js')
+                            script( src='javascripts/scripts.js')
                             img(id="front", src="images/front.jpg")
                             h2 Willkommen auf der Lernplattform Deutsch der Universität Trier
                             p
@@ -67,10 +67,10 @@ html
                             |Dieses elearning-Projekt ist in Zusammenarbeit mit ‚Deutsch als Fremdsprache‘ und der Computerlinguistik Trier entstanden und wird Ihnen ,nach der kostenlosen Anmeldung, zur Verfügung gestellt.
                             h3 Sie müssen sich anmelden um alle Inhalte nutzen zu können
                             #withoutcontent
-                                link(rel='stylesheet', href='/stylesheets/index.css')
+                                link(rel='stylesheet', href='stylesheets/index.css')
                                 #loginbox
                                     h1 Login
-                                    form(action="/login", method="POST")
+                                    form(action="login", method="POST")
                                         input(type="text", id="login", name="login", placeholder="Benutzername")
                                         input(type="password", id="password", name="password", placeholder="Passwort")
                                         input(type="submit", value="Login")
