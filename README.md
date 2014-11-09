@@ -36,7 +36,7 @@ $ nodejs app.js
 
 ## Deployment
 
-* Start the application in _production_ mode:
+* Start the application in the _production_ mode:
 
 ``` bash
 $ NODE_ENV=production nodejs app.js
