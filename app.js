@@ -16,7 +16,6 @@ var index = require('./routes/index');
 var dml = require('./routes/dml');
 var dbhandler = require('./routes/dbhandler');
 
-
 //lockit vars
 var config = require('./config.js');
 var Lockit = require('lockit');
