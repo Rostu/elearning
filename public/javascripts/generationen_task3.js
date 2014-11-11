@@ -51,7 +51,7 @@ $(document).ready(function() {
             alert("Bitte entferne die falschen Antworten");
         } else {
             alert("Weiter so");
-            document.location.href = "/generationen_task4";
+            document.location.href = "generationen_task4";
         }
     });
 

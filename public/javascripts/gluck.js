@@ -4,6 +4,6 @@
 
 $(document).ready(function() {
     $('#weiter').click(function(e) {
-        document.location.href = "/glueck_gedicht2";
+        document.location.href = "glueck_gedicht2";
     });
 });

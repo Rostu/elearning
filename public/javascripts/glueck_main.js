@@ -4,15 +4,15 @@
 
 $(document).ready(function() {
    $('#l1').click(function() {
-        document.location.href = "/glueck_gedicht";
+        document.location.href = "glueck_gedicht";
    });
     $('#l2').click(function() {
-        document.location.href = "/glueck_interview";
+        document.location.href = "glueck_interview";
     });
     $('#l3').click(function() {
-        document.location.href = "/glueck_redensarten";
+        document.location.href = "glueck_redensarten";
     });
     $('#l4').click(function() {
-        document.location.href = "/glueck_kwr";
+        document.location.href = "glueck_kwr";
     });
 });

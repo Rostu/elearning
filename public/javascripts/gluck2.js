@@ -154,7 +154,7 @@ $(document).ready(function() {
 
     $('#weiter').click(function() {
         if (flag) {
-            document.location.href = "/glueck";
+            document.location.href = "glueck";
         } else {
             if ($('#Antwortbox').children('.message').toArray().length) {
                 $.jqDialog.confirm("Das Gedicht enthält noch Fehler. Trotzdem weiterfahren?",
