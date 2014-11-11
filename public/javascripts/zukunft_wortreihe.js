@@ -60,7 +60,7 @@ function init() {
                     }
                     else
                     {
-                        $("span[id=weiter]").append("<a id='weiterlink' class='buttona' href='/zukunft_task2'>WEITER</a>");
+                        $("span[id=weiter]").append("<a id='weiterlink' class='buttona' href='zukunft_task2'>WEITER</a>");
                         animatearrow_weiter();
                         //aktuell = 0;
                     }

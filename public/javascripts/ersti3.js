@@ -127,7 +127,7 @@ $(document).ready(function() {
                     setScore("3b", percent);
                     console.log("Score: " + percent + "%");
                     $('#message').show().effect("puff", 2000, function() {
-                        document.location.href = "/ersti_task3c";
+                        document.location.href = "ersti_task3c";
                     });
                 }
             });
@@ -261,7 +261,7 @@ $(document).ready(function() {
             ];
             $('#weiter3c').click(function() {
                 if(check3c()) {
-                    document.location.href = "/ersti_task4";
+                    document.location.href = "ersti_task4";
                 }
             });
             $('#check3c').click(function() {
@@ -384,7 +384,7 @@ function validate () {
             var percent = ((total-(unassigned+wrong))/total) * 100;
             setScore("3", percent);
             console.log("Score: " + percent + "%");
-            window.location.href = "/ersti_task3b";
+            window.location.href = "ersti_task3b";
         });
     }
 }

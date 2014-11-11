@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#weiter').click(function(e) {
-        document.location.href = "/glueck_interview";
+        document.location.href = "glueck_interview";
     });
 });
 

@@ -79,7 +79,7 @@ $(document).ready(function() {
         if ($('.wrong').toArray().length == 0) {
             alert("Gut gemacht! Weiter so!");
             // TODO neue seite laden
-            //document.location.href = "/generationen_ende";
+            //document.location.href = "generationen_ende";
         }
     });
 
