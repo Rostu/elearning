@@ -5,8 +5,9 @@ block content
     img(id="front", src="images/front.jpg")
     if (session.name)
         p Wilkommen #{session.name}!
-        p Punkte in Aufgabenbereich 1:  #{session.points[0]}
-        button(id='raisebutton') raise
-    else
-        h2 Vorstellung des Projekts...
-        h2 Sie müssen sich anmelden um alle Inhalte nutzen zu können
+        //Punkte in Aufgabenbereich 1:  #{session.points[0]}
+        //button(id='raisebutton') raise
+        h3
+            | Mit alten Browser-Versionen kann es zu Problemen bei der Darstellung kommen, als sicherste Option nutzen Sie bitte Firefox in der neuesten Version.
+            | Aber auch die neuesten Versionen von InternetExplorer(ab v.11) oder Chrome (ab v.36) werden unterstützt.
+            | Für weitere Informationen zur Browseruntertzützung: Link comming soon
