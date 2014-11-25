@@ -1,15 +1,35 @@
-#Textbox{
+#Textbox {
     -webkit-box-shadow: 0px 2px 5px darkgrey;
     -moz-box-shadow: 0px 2px 5px darkgrey;
     box-shadow: 0px 2px 5px darkgrey;
-    width: 60%;
-    padding: 20px;
+    display: table-cell;
+    padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgba(239, 239, 239, 0.59);
-    margin: 0px auto;
+    margin: 10px;
     color: black;
 }
 
-#Textbox h1{
-    text-align: center;
+.lek {
+    width: 400px !important;
+    min-width: 400px !important;
+    height: 150px !important;
+    min-height: 150px !important;
+    border: 1px solid black;
+    background: url("../images/handy_icon.jpg") no-repeat;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.lek p {
+    padding-left: 50px;
+    font-family: Dosis, sans-serif;
+    font-size: 25px;
+    color: #6c00ff;
+}
+
+.lek .gr {
+    padding-left: 35px;
+    padding-top: 30px;
+    color: black;
 }
