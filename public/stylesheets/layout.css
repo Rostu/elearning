@@ -1,0 +1,491 @@
+body {
+    font-family: "Meta", sans-serif;
+    height: 100%;
+    font-size: 13px;
+    overflow-y: scroll;
+    background: #E5EFF5 url("/images/siegel.png") no-repeat scroll -159px 129px;
+}
+
+#redbackground {
+    margin-top: 13px;
+    margin-left: -8px;
+    height: 130px;
+    width: 100%;
+    background: #A91211;
+    z-index: 1;
+    position: absolute;
+}
+
+#darkblue1 {
+    margin-left: -8px;
+    margin-top: 90px;
+    height: 32px;
+    width: 62.5%;
+    color: #D5EBFD;
+    font-weight: bold;
+    border-radius: 0 20px 0 0;
+    box-shadow: 2px 2px 6px #4D4D4F;
+    background: #005E9C;
+    z-index: 3;
+    position: absolute;
+    float: right;
+}
+
+#header {
+    margin-left: -20px;
+    margin-top: 23px;
+    padding-top: 10px;
+    height: 100px;
+    width: 100%;
+    border-left: 10px solid #D5EBFD;
+    border-right: 30px solid #D5EBFD;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px #4D4D4F;
+    background: #D5EBFD;
+    z-index: 3;
+    position: absolute;
+}
+
+#headerblocker {
+    height: 140px;
+    width: 100%;
+}
+
+mark.codex {
+    color: #A91211;
+    background: #D5EBFD;
+}
+
+img.codexLogo {
+    height: 40px;
+    float: left;
+}
+
+#titletext {
+    margin: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    float: left;
+}
+
+img.uniLogo {
+    height: 90px;
+    margin-right: -20px;
+    float: right;
+}
+
+#container {
+    margin: 8px auto;
+    width: 75%;
+    text-align: left;
+    z-index: 2;
+    position: relative;
+}
+
+#mainboard {
+    margin-left: -10px;
+    margin-top: 3px;
+    width: 100%;
+    border-left: 10px solid #A1BED6;
+    border-right: 10px solid #A1BED6;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px #4D4D4F;
+    background: #A1BED6;
+    overflow: hidden;
+    float: left;
+}
+
+#maincontent {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#footer {
+    width: 100%;
+    font-size: 10px;
+    background-color: #A1BED6;
+    border: 0px none;
+}
+
+#impressum {
+    float: left;
+    margin: 7px 0px;
+    display: inline-block;
+    word-spacing: 10px;
+}
+
+.footerlink {
+    margin-right: 10px;
+}
+
+#endfloat {
+    clear: both;
+}
+
+  body #page {
+    margin: auto;
+    display: block;
+    padding: 20px;
+    background-color: white;
+    border: solid;
+    border-color: #555ea9;
+    min-width: 850px;
+    width: 95%;
+    position: static;
+    min-height: 500px; }
+
+  #loginbox{
+    width:400px;
+    margin:0 auto;
+    margin-left: 50%;
+    transition:opacity 1s;
+    -webkit-transition:opacity 1s;
+    -webkit-box-shadow: 0px 0px 4px darkgrey;
+    -moz-box-shadow: 0px 0px 4px darkgrey;
+    box-shadow: 0px 0px 4px darkgrey;
+}
+
+  #loginbox h1{
+      background: #3399cc;
+      padding:20px 0;
+      font-size:140%;
+      font-weight:300;
+      text-align:center;
+      color:#fff;
+      margin: 0px;
+      background: -webkit-linear-gradient(#3399cc 60%, #2288bb); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(#3399cc 60%, #2288bb); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(#3399cc 60%, #2288bb); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#3399cc 60%, #2288bb); /* Standard syntax */
+    }
+
+    #loginbox form{
+      background:#f0f0f0;
+      padding:6% 4%;
+    }
+
+  #loginbox input[type="text"],
+  #loginbox input[type="password"]{
+    width:92%;
+    background:#fff;
+    margin-bottom:4%;
+    border:1px solid #ccc;
+    padding:4%;
+    font-family:'Open Sans',sans-serif;
+    font-size:95%;
+    color:#555;
+}
+
+#loginbox input[type="submit"]{
+    width:100%;
+    background:#3399cc;
+    border:0;
+    padding:4%;
+    font-family:'Open Sans',sans-serif;
+    font-size:100%;
+    color:#fff;
+    cursor:pointer;
+    transition:background .3s;
+    -webkit-transition:background .3s;
+}
+#loginbox input[type="submit"]:hover{
+    background:#2288bb;
+}
+
+#wrapper {
+    width: 100%;
+    display: table; }
+    body #page #header {
+      display: table;
+      width: 100%; }
+    body #page #logo {
+      display: table-cell;
+      position: relative;
+      padding: 10px;
+      float: right; }
+    body #page #trow {
+      display: table-cell; }
+    body #page #front {
+      display: block;
+      position: relative;
+      padding: 15px;
+      float: left; }
+    body #page #nav {
+      font-size: 1.2em;
+      font-family: 'Dosis', sans-serif;
+      display: block;
+      width: 95%;
+      list-style: none;
+      margin-bottom: 10px;
+      float: left;
+      padding: 0px;
+      position: relative;
+      z-index: 5;
+      border-top: solid;
+      border-bottom: solid;
+      margin-bottom: 30px;
+      margin-top: 20px;
+      border-color: gray;
+      border-width: 1px; }
+    body #page #nav li {
+      float: left;
+      margin-right: 10px;
+      position: relative; }
+    body #page #nav a {
+      margin-right: 1em;
+      display: block;
+      padding: 10px;
+      color: black;
+      text-decoration: none; }
+    body #page #nav a:hover {
+      color: white;
+      background: cornflowerblue;
+      text-decoration: none; }
+    body #page #nav ul {
+      list-style: none;
+      position: absolute;
+      display: none; }
+    body #page #nav ul li {
+      padding-top: 2px;
+      float: none;
+      left: -40px; }
+    body #page #nav ul a {
+      white-space: nowrap; }
+    body #page #nav li:hover ul {
+      display: block; }
+    body #page #nav li:hover a {
+      background: cornflowerblue;
+      text-decoration: none; }
+    body #page #nav li:hover ul a {
+      text-decoration: none; }
+    body #page #content {
+      width: 100%;
+      position: relative;
+      float: left; }
+
+#Field{
+    color: navajowhite;
+    font-family: 'Dosis', sans-serif;
+    background: rgba(101, 70, 229, 0.60);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: table;
+}
+
+#Field span:hover {
+    cursor: pointer;
+    background: rgba(101, 70, 229, 0.82);
+}
+
+
+#Field a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+#Field a:hover {
+    text-shadow: 0px 0px 10px white;
+}
+#Field span p #infotext{
+    font-size: 30px;
+    margin: 0px;
+    padding:0;
+}
+
+#Field span {
+    width: 25%;
+    text-align: center;
+    display: table-cell;
+}
+
+#Field #help:hover > #inner {
+    display: block;
+}
+
+#Field span #inner {
+    display: none;
+    float: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(101, 70, 229, 0.78);
+    left: 25%;
+}
+
+#Field span #inner:hover {
+    background-color: rgba(143, 139, 229, 0.67);
+}
+
+#Aufgabenbox{
+    text-align: center;
+    color: #ffffff;
+    background: rgba(101, 70, 229, 0.60);
+    /*background: rgba(99, 168, 255, 0.93);*/
+    padding: 5px;
+    display: block;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+}
+
+#jqDialog_box {
+    background: rgba(101, 70, 229, 0.90);
+    position: absolute;
+    width: 450px;
+    height: 150px;
+    font-family: Arial;
+    border-width: 1px 3px 3px 1px;
+    border-style: solid;
+    border-color: #3300cc;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: 0 0 30px #e6e6e6;
+    color: white;
+}
+
+#jqDialog_content {
+    margin: 10px;
+    font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+    font-size: 18px;
+    height: 90px;
+    overflow: hidden;
+    text-shadow: 0 0 5px black;
+}
+
+#jqDialog_options {
+    margin: 10px;
+    text-align: center;
+}
+
+#jqDialog_options button {
+    font-family: Arial;
+    margin-right: 5px;
+    background: rgba(98, 8, 255, 0.79);
+    border: 0px;
+    font-size: 1.5em;
+    color: #fff;
+    width: auto;
+    cursor: pointer;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#jqDialog_input {
+    padding: 4px;
+    width: 250px;
+}
+
+#jqDialog_close {
+    background: none;
+    border: none;
+    float: right;
+    font-weight: bold;
+    font-size: 10px;
+    color: #ff0000;
+    cursor: pointer;
+}
+
+#Field span .help {
+    display: none;
+}
+
+.helpmenu {
+    position: fixed;
+    top: 75%;
+    left: 0;
+    display: table;
+    width: 100%;
+    height: 25%;
+    color: white;
+    z-index: 80;
+}
+
+.helpmenu span {
+    width:25%;
+    height:100%;
+    display: table-cell;
+}
+
+.helpmenu .menuitem {
+    width: 100%;
+    text-align: center;
+    background: rgba(101, 70, 229, 0.60);
+   /* background-color: rgba(86, 66, 245, 0.51);*/
+    margin: 5px 0;
+    padding: 10px 0;
+    z-index: 99;
+}
+
+.helpmenu .menuribbon #menutitle {
+    text-align: center;
+    /*display: inline-block;*/
+    font-family: 'Dosis', monospace;
+    font-size: 25px;
+}
+
+.helpmenu .menuribbon i {
+    position: absolute;
+    left: 48%;
+    top: 20px;
+    color: red;
+}
+.helpmenu .menuribbon i:hover {
+    color: #ffffff;
+}
+
+.helpmenu .menuitem:hover {
+    background-color: #5642f5;
+}
+
+.helpmenu .menuitem a {
+    display: block;
+    text-decoration: none;
+    color: #e1a500;
+}
+
+.helpmenu .menuitem a:hover {
+    color: white;
+}
+
+.menuhidden {
+    color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.menuribbon {
+    background: rgba(101, 70, 229, 0.60);
+    /*background: rgba(101, 70, 229, 0.90);*/
+}
+
+#balken_aussen {
+    display: inline-block;
+    width: 216px;
+    height: 17px;
+    background: white;
+    padding: 1px;
+    margin:0 auto;
+    float: left;
+}
+
+#balken_innen1 {
+    background: lawngreen;
+    display: inline-block;
+    width: 0px;
+    height: 15px;
+    float: left;
+}
+
+#balken_innen2 {
+    background: red;
+    display: inline-block;
+    height: 15px;
+    width: 0px;
+    float: left;
+}
