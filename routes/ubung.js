@@ -29,6 +29,9 @@ exports.get_china = function(req, res){
     res.render('china');
 };
 
+exports.get_TEST = function(req, res){
+    res.render('TEST');
+};
 exports.get_china2 = function(req, res){
     res.render('china2');
 };

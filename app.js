@@ -77,6 +77,7 @@ app.get('/glueck_kwr', ubung.get_glueck_kwr);
 app.get('/handy', ubung.get_handy);
 app.get('/handy_task1', ubung.get_handy_task1);
 app.get('/handy_task2', ubung.get_handy_task2);
+app.get('/TEST', ubung.get_TEST);
 app.get('/home', start.start);
 app.get('/impressum', impressum.get_imp);
 app.get('/neuanlegen', ubung.neu);
