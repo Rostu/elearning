@@ -8,10 +8,14 @@
 	 overflow="visible" enable-background="new 0 0 44.5 44.5" xml:space="preserve">
 
 <defs>
-<style>
- :hover { fill: #005E9C; }
-</style>
+    <style>
+     :hover #button { fill: #005E9C; }
+    </style>
 </defs>
-<path fill="#A8161C" d="M44.5,22.25c0,12.288-9.962,22.25-22.25,22.25S0,34.538,0,22.25S9.962,0,22.25,0S44.5,9.962,44.5,22.25z
-	 M29.859,9.517L7.853,22.222l22.006,12.705V9.517z"/>
+
+<g id="Ebene_1">
+    <path id="button" fill="#A8161C" d="M44.5,22.25c0,12.288-9.962,22.25-22.25,22.25S0,34.538,0,22.25S9.962,0,22.25,0S44.5,9.962,44.5,22.25z
+         M29.859,9.517L7.853,22.222l22.006,12.705V9.517z"/>
+    <rect x="0" y="0" width="44.5" height="44.5" fill="rgba(0,0,0,0)" stroke="none" stroke-width="0" />
+</g>
 </svg>
