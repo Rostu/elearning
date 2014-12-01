@@ -7,11 +7,20 @@ html
         link(href='http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
         script( src="javascripts/jquery-1.11.1.min.js")
         script( src="javascripts/jquery-ui.min.js")
+        script(src="javascripts/d3.v3.min.js")
         script(src="javascripts/general.js")
         script(src="javascripts/layout.js")
         body
             #redbackground
             #redstripes
+            #special_bar
+                p P U N K T E
+                svg(id="point_bars")
+                #special_nav
+                    object.logo(id='button1', type='image/svg+xml', data='/images/button1.svg', height='40', width='40')
+                    object.logo(type='image/svg+xml', data='/images/button2.svg', height='40', width='40')
+                    object.logo(type='image/svg+xml', data='/images/button3.svg', height='40', width='40')
+
             #darkblueNav
                 #navigation
                     ul

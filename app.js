@@ -43,8 +43,8 @@ app.use(lockit.router);
 // development only
 if ('development' == app.get('env')) {
     app.use(express.errorHandler());
-    var edt = require("express-debug");
-    edt(app);
+    //var edt = require("express-debug");
+    //edt(app);
 }
 
 app.use('/', index.get_session);
@@ -81,7 +81,6 @@ app.get('/handy_start', ubung.get_handy_start);
 app.get('/handy_text', ubung.get_handy_text);
 app.get('/handy_task1', ubung.get_handy_task1);
 app.get('/handy_task2', ubung.get_handy_task2);
-app.get('/TEST', ubung.get_TEST);
 app.get('/home', start.start);
 app.get('/impressum', impressum.get_imp);
 app.get('/neuanlegen', ubung.neu);
