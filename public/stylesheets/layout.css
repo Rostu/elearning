@@ -45,6 +45,29 @@ body {
     font-weight: bold;
 }
 
+#special_bar{
+    position: absolute;
+    margin-top: 155px;
+    margin-left: 88%;
+    /*background-color:#A91211;*/
+    width: 160px;
+    height: 160px;
+}
+#point_bars{
+    height: 100%;
+    width: 100%;
+}
+
+#special_nav{
+
+}
+
+.logo{
+     margin:2px;
+     padding: 2px;
+ }
+
+
 #darkblueNav {
     margin-left: -8px;
     margin-top: 90px;
@@ -266,8 +289,7 @@ img.uniLogo {
 
   #loginbox{
     width:400px;
-    margin:0 auto;
-    margin-left: 50%;
+    margin:10px auto;
     transition:opacity 1s;
     -webkit-transition:opacity 1s;
     -webkit-box-shadow: 0px 0px 4px darkgrey;
@@ -276,17 +298,17 @@ img.uniLogo {
 }
 
   #loginbox h1{
-      background: #3399cc;
+      background: #005E9C;
       padding:20px 0;
       font-size:140%;
       font-weight:300;
       text-align:center;
       color:#fff;
       margin: 0px;
-      background: -webkit-linear-gradient(#3399cc 60%, #2288bb); /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(#3399cc 60%, #2288bb); /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(#3399cc 60%, #2288bb); /* For Firefox 3.6 to 15 */
-      background: linear-gradient(#3399cc 60%, #2288bb); /* Standard syntax */
+      background: -webkit-linear-gradient(#005E9C 60%, #0083cb); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(#005E9C 60%, #0083cb); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(#005E9C 60%, #0083cb); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#005E9C 60%, #0083cb); /* Standard syntax */
     }
 
     #loginbox form{
@@ -308,7 +330,7 @@ img.uniLogo {
 
 #loginbox input[type="submit"]{
     width:100%;
-    background:#3399cc;
+    background:#005E9C;
     border:0;
     padding:4%;
     font-family:'Open Sans',sans-serif;
@@ -319,7 +341,7 @@ img.uniLogo {
     -webkit-transition:background .3s;
 }
 #loginbox input[type="submit"]:hover{
-    background:#2288bb;
+    background:#0083cb;
 }
 
 #wrapper {
@@ -618,4 +640,9 @@ img.uniLogo {
     height: 15px;
     width: 0px;
     float: left;
+}
+#content_background {
+    background-color: #E5EFF5;
+    width: 100%;
+    padding: 10px;
 }

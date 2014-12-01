@@ -27,4 +27,35 @@ $(document).ready(function() {
     {
         $(this).css("textDecoration", "none");
     });
+
+    //functions for the point visualization--------------------------------
+
+    var maxpoints = 100;
+    var maxfaults = 100;
+
+    var myScale = d3.scale.linear().domain([0, maxpoints]).range([0, 2 * Math.PI]);
+    var vis = d3.select("#point_bars");
+    var arc1 = d3.svg.arc().innerRadius(55).outerRadius(65).startAngle(myScale(0)).endAngle(myScale(65));
+    var arc2 = d3.svg.arc().innerRadius(35).outerRadius(50).startAngle(myScale(0)).endAngle(myScale(80));
+
+    vis.append("path").attr("d", arc1).attr("transform", "translate(60,70)").style("fill", "#005E9C");
+    vis.append("path").attr("d", arc2).attr("transform", "translate(60,70)").style("fill", "#A91211");
+
+    //end functions for the point visualization--------------------------------
+
+    $('#button1').hover( handlerIn, handlerOut );
+
+    function handlerIn(){
+        //$(this).setAttribute("opacity", "0.5");
+        console.log("funktioniert");
+    };
+    function handlerOut(){
+        //$(this).setAttribute("opacity", "0.5");
+        console.log("funktioniert");
+    };
+
+    document.getElementById('button1').onmouseover = function () {
+        this.setAttribute ('style','fill: #E4F1F9');
+    }
+
 })
