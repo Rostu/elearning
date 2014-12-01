@@ -65,7 +65,19 @@ body {
 .logo{
      margin:2px;
      padding: 2px;
+     width: 40px;
+     height: 40px;
+     position: relative;
+     display:inline-block;
+     vertical-align: middle;
+     overflow:hidden
  }
+.logo svg {
+    position: absolute;
+    top: -1px; /* fixes rendering issue in FF */
+    width: 98%;
+    height: 98%;
+}
 
 
 #darkblueNav {

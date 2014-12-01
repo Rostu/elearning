@@ -55,7 +55,8 @@ $(document).ready(function() {
     };
 
     document.getElementById('button1').onmouseover = function () {
-        this.setAttribute ('style','fill: #E4F1F9');
+        console.log(this)
+
     }
 
 })
