@@ -11,12 +11,12 @@
             validate(this);
         });
 
-        $('#weiter').on("click", function(e) {
+        /**$('#weiter').on("click", function(e) {
             if (!checkSituation()) {
                 e.preventDefault(); // Stops the browser from opening the next page, using the href attribute on the <a> element
                 alert("Bitte fülle genügend Lücken aus! Es werden mindestens 21 korrekte Antworten benötigt.");
             }
-        });
+        });**/
 
         function validate(self) {
             // Find out which answers array to use, based on the input field's group css class
