@@ -70,7 +70,7 @@ body {
      position: relative;
      display:inline-block;
      vertical-align: middle;
-     overflow:hidden
+
  }
 .logo svg {
     position: absolute;
