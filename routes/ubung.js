@@ -19,7 +19,9 @@ exports.createUebung = function(req, res){
 exports.ubshow = function(req, res){
     dbhandler.getub(function (ubs) {res.render('ubshow', {'ubs': ubs});});
 };
-
+exports.get_TEST = function(req, res){
+    res.render('TEST');
+};
 exports.deleteub = function(req, res){
     dbhandler.delUb(req.params.id);
     res.redirect('/ubshow');
