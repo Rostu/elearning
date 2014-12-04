@@ -6,3 +6,4 @@ tmp
 .vagrant
 Cheffile.lock
 cookbooks
+.idea
