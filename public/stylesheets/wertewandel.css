@@ -1,0 +1,205 @@
+#wrapper {
+    width: 100%;
+    display: table;
+}
+#Textbox {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    width: 60%;
+    display: table-cell;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(239, 239, 239, 0.59);
+    margin: 10px;
+    color: black;
+    text-align: justify;
+}
+
+.draggie.ui-draggable-dragging {
+    color: darkblue;
+    font-size: 2em;
+    padding: 5px;
+    margin: 10px;
+    background: rgba(239, 239, 239, 0.59);
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+}
+
+.token {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background: rgba(239, 239, 239, 0.59);
+    color: darkblue;
+    font: bold;
+    padding: 5px;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.button:hover {
+    background-color: #99FF66;
+}
+.button {
+    color: red;
+}
+
+
+img {
+    margin: 5px;
+    border: solid;
+    border-color: gainsboro;
+    border-width: 1px;
+}
+
+
+.inline {
+    display: inline;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.inline div {
+    display: inline;
+}
+
+#answers #Antwortbox1, #Antwortbox2, #Antwortbox3, #Antwortbox4 {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background-color: #ffffff;
+    display: table-cell;
+    padding: 10px;
+    width: 190px;
+    margin: 0 30px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgoldenrodyellow;
+    min-height: 500px;
+    align-items: center;
+}
+
+#Antwortbox {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background-color: rgba(181, 237, 239, 0.29);
+    display: table-cell;
+    padding: 10px;
+    width: 40%;
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#Antwortbox_ww_1, #Antwortbox_ww_2 {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background-color: rgba(181, 237, 239, 0.29);
+    display: block;
+    padding: 10px;
+    width: 350px;
+    height: 400px;
+    margin: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#Platzhalter {
+    background-color: #ffffff;
+    display: table-cell;
+
+    padding: 10px;
+    width: 2%;
+}
+
+
+#Aufgabe{
+    color: #000000;
+    text-indent: 0;
+    background: rgba(159, 255, 177, 0.8);
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+#Link{
+    display: table-cell;
+}
+
+dfn{
+    text-decoration: underline;
+    font-style: normal;
+}
+
+#correct {
+    display: inline;
+}
+
+#wrong {
+    display: inline;
+}
+
+.normalTip {
+    color: #000;
+}
+
+#Antwortbox_ww2_1, #Antwortbox_ww2_2, #Antwortbox_ww2_3, #Antwortbox_ww2_4, #Antwortbox_ww2_5, #Antwortbox_ww2_6 {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background-color: rgba(181, 237, 239, 0.29);
+    display: block;
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    margin: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#place1, #place2, #place3, #place4, #place5, #place6, #place7, #place8 {
+    display: inline-block;
+    background-color: #f00;
+}
+
+.boxes {
+    padding: 5px;
+    margin: 10px;
+    background-color: rgba(181, 237, 239, 0.29);
+}
+
+#submit {
+    text-align: center;
+    width: 100px;
+    margin: 20px;
+    padding: 10px;
+    border-color: #000;
+    border-radius: 20px;
+    background-color: #aaa;
+}
+
+.lek {
+    width: 400px !important;
+    min-width: 400px !important;
+    height: 150px !important;
+    min-height: 150px !important;
+    border: 1px solid black;
+    background: url("../images/blau_rot_wertewandel.jpg") no-repeat;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.lek p {
+    padding-left: 50px;
+    font-family: Dosis, sans-serif;
+    font-size: 25px;
+    color: #6c00ff;
+}
+
+.lek .gr {
+    padding-left: 35px;
+    padding-top: 30px;
+    color: black;
+}

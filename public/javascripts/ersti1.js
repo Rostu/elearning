@@ -145,7 +145,7 @@ function init_two() {
     };
 };
 
-$(document).on("ready",function(){      // function that checks if you have enough correct words. Lets you pass to the next Page if you do.
+/** $(document).on("ready",function(){      // function that checks if you have enough correct words. Lets you pass to the next Page if you do.
     $('#weiter').on("click", function(e) {
         if (countCorrectAnswers() < 13)
         {
@@ -153,7 +153,7 @@ $(document).on("ready",function(){      // function that checks if you have enou
             alert("Bitte fülle genügend Lücken aus! Es werden mindestens 13 richtige Anworten benötigt.");
         }
     });
-});
+}); **/
 
 function countCorrectAnswers()  //function checks how many answers are correct
 {

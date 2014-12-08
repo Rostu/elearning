@@ -229,7 +229,7 @@ function init_three() {
     };
 };
 
-$(document).on("ready",function(){
+/**$(document).on("ready",function(){
     $('#weiter').on("click", function(e) {
         if (countCorrectAnswers() < 34)
         {
@@ -237,7 +237,7 @@ $(document).on("ready",function(){
             alert("Bitte ordne mindests 34 Wörter dem richtigen Oberbegriff zu");
         }
     });
-});
+});'*/
 
 function countCorrectAnswers()
 {

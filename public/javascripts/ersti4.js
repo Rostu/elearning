@@ -36,7 +36,7 @@ $(document).ready(function() {
             var wrong = slots.toArray().filter(function(e){return !$(e).is(":disabled")});
             var percent = (right/(right+wrong)) * 100;
             setScore("4", percent);
-            document.location.href = "/ersti_end";
+            document.location.href = "ersti_end";
 
     });
     function makeDiv(a, i) {

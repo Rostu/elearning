@@ -238,3 +238,27 @@
     left: -80px;
     top: 50px;
 }
+
+.lek {
+    width: 400px !important;
+    min-width: 400px !important;
+    height: 150px !important;
+    min-height: 150px !important;
+    border: 1px solid black;
+    background: url("../images/glek2.png") no-repeat;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.lek p {
+    padding-left: 50px;
+    font-family: Dosis, sans-serif;
+    font-size: 25px;
+    color: #6c00ff;
+}
+
+.lek .gr {
+    padding-left: 35px;
+    padding-top: 30px;
+    color: black;
+}

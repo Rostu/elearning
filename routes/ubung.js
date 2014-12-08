@@ -26,43 +26,48 @@ exports.deleteub = function(req, res){
     dbhandler.delUb(req.params.id);
     res.redirect('/ubshow');
 };
-
-exports.get_china = function(req, res){
-    res.render('china');
+exports.get_china_start = function(req, res){
+    res.render('china_start');
+};
+exports.get_china_task1 = function(req, res){
+    res.render('china_task1');
 };
 
-exports.get_china2 = function(req, res){
-    res.render('china2');
+exports.get_china_task2 = function(req, res){
+    res.render('china_task2');
 };
-exports.get_china3 = function(req, res){
-    res.render('china3');
+exports.get_china_task3 = function(req, res){
+    res.render('china_task3');
 };
-exports.get_glueck = function(req, res){
-    res.render('glueck');
-};
-
-exports.get_glueck_gedicht = function(req, res){
-    res.render('glueck_gedicht');
+exports.get_glueck_start = function(req, res){
+    res.render('glueck_start');
 };
 
-exports.get_glueck_gedicht2 = function(req, res){
-    res.render('glueck_gedicht2');
+exports.get_glueck_task1a = function(req, res){
+    res.render('glueck_task1a');
 };
 
-exports.get_glueck_redensarten = function(req, res){
-    res.render('glueck_redensarten');
+exports.get_glueck_task1b = function(req, res){
+    res.render('glueck_task1b');
 };
 
-exports.get_glueck_interview = function(req, res){
-    res.render('glueck_interview');
+exports.get_glueck_task3 = function(req, res){
+    res.render('glueck_task3');
 };
 
-exports.get_glueck_kwr = function(req, res){
-    res.render('glueck_kwr');
+exports.get_glueck_task2 = function(req, res){
+    res.render('glueck_task2');
 };
 
-exports.get_handy = function(req, res){
-    res.render('handy');
+exports.get_glueck_task4 = function(req, res){
+    res.render('glueck_task4');
+};
+
+exports.get_handy_start = function(req,res) {
+    res.render('handy_start')
+}
+exports.get_handy_text = function(req, res){
+    res.render('handy_text');
 };
 exports.get_handy_task1 = function(req, res){
     res.render('handy_task1');
@@ -71,6 +76,9 @@ exports.get_handy_task2 = function(req, res){
     res.render('handy_task2');
 };
 
+exports.get_ersti_start = function(req, res) {
+    res.render('ersti_start');
+}
 exports.get_ersti = function(req, res){
     res.render('ersti_task1');
 };
@@ -106,41 +114,50 @@ exports.get_ersti_task4 = function(req, res){
 exports.get_ersti_end = function(req,res) {
     res.render('ersti_end');
 };
-exports.get_veggieday_inhalt = function(req, res){
-    res.render('veggieday_inhalt');
+exports.get_veggieday_start = function(req, res){
+    res.render('veggieday_start');
 };
-exports.get_veggieday = function(req, res){
-    res.render('veggieday');
+exports.get_veggieday_task1 = function(req, res){
+    res.render('veggieday_task1');
 };
-exports.get_veggieday_met = function(req, res){
-    res.render('veggieday_met');
+exports.get_veggieday_task3 = function(req, res){
+    res.render('veggieday_task3');
 };
 
 exports.get_veggieday_multi = function(req, res){
-    res.render('veggieday_multi');
+    res.render('veggieday_multi');1
 };
-exports.get_veggieday_u5 = function(req, res){
-    res.render('veggieday_u5');
+exports.get_veggieday_task5 = function(req, res){
+    res.render('veggieday_task5');
 };
-exports.get_veggieday_drag = function(req, res){
-    res.render('veggieday_drag');
-};
-
-exports.get_wertewandel = function(req, res){
-    res.render('wertewandel');
-};
-exports.get_wertewandel2 = function(req, res){
-    res.render('ww2');
-};
-exports.get_wertewandel3 = function(req, res){
-    res.render('ww3');
-};
-exports.get_wertewandel4 = function(req, res){
-    res.render('ww4');
+exports.get_veggieday_task4 = function(req, res){
+    res.render('veggieday_task4');
 };
 
-exports.get_generationen = function(req, res){
-    res.render('generationen');
+exports.get_wertewandel_start = function(req, res) {
+    res.render('wertewandel_start');
+}
+exports.get_wertewandel_task1 = function(req, res){
+    res.render('wertewandel_task1');
+};
+exports.get_wertewandel_task2 = function(req, res){
+    res.render('wertewandel_task2');
+};
+exports.get_wertewandel_task3 = function(req, res){
+    res.render('wertewandel_task3');
+};
+exports.get_wertewandel_task4 = function(req, res){
+    res.render('wertewandel_task4');
+};
+exports.get_generationen_start = function(req, res){
+    res.render('generationen_start');
+}
+exports.get_generationen_text = function(req, res){
+    res.render('generationen_text');
+};
+
+exports.get_generationen_task1 = function(req, res){
+    res.render('generationen_task1');
 };
 
 exports.get_generationen_task2 = function(req, res){
@@ -150,14 +167,9 @@ exports.get_generationen_task2 = function(req, res){
 exports.get_generationen_task3 = function(req, res){
     res.render('generationen_task3');
 };
-
-exports.get_generationen_task4 = function(req, res){
-    res.render('generationen_task4');
-};
-
-exports.get_zukunft = function(req, res){
-    res.render('zukunft');
-};
+exports.get_zukunft_start = function(req, res){
+    res.render('zukunft_start');
+}
 exports.get_zukunft_task1 = function(req, res){
     res.render('zukunft_task1');
 };
@@ -170,7 +182,6 @@ exports.get_zukunft_task3 = function(req, res){
 exports.get_zukunft_task4 = function(req, res){
     res.render('zukunft_task4');
 };
-
 exports.get_zukunft_task5 = function(req, res){
     res.render('zukunft_task5');
 };

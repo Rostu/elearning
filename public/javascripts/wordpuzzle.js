@@ -6,7 +6,7 @@ $(document).ready(function(){
     var wortarray = [];
     var wahr = false;
 
-    $.getJSON("/ubdata", function (data) {
+    $.getJSON("ubdata", function (data) {
         $(".throbber")[0].style.display = "none";
         ubs = data.inhalt;
 
