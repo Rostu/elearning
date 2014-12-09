@@ -88,7 +88,7 @@ var handleDropEvent = function ( event, ui ) {
 var init = function() {
     var update_balken = update_balken_closure();
     
-    applyTo( "/javascripts/wertewandel4_words.json", placeQuestions );
+    applyTo( "javascripts/wertewandel4_words.json", placeQuestions );
     
     // add droppfields
     $.map( [ "#0", "#1", "#2", "#3",

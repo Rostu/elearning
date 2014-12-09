@@ -78,7 +78,7 @@ var makeToolTip = function ( jsonpath ) {
 // main function
 ////////////////////////////////////////////////////////////////////////////////
 var init = function () {
-    makeToolTip( "/javascripts/china_additional_words.json" );
+    makeToolTip( "javascripts/china_additional_words.json" );
 
     // add tooltip
     $(function() {

@@ -42,7 +42,7 @@ var placeQuestions = function( questions ) {
 
 var init = function () {
     // load data
-    applyTo( "/javascripts/wertewandel3_questions.json", placeQuestions );
+    applyTo( "javascripts/wertewandel3_questions.json", placeQuestions );
 
     // evaluate answer on
     $( "#submit" ).click( function() {
@@ -50,7 +50,7 @@ var init = function () {
         var answered = $( "input[type='radio']" ).serializeArray()
         
         // check them on the json file
-        $.getJSON( "/javascripts/wertewandel3_questions.json", function( json ) {
+        $.getJSON( "javascripts/wertewandel3_questions.json", function( json ) {
             $.map( json.questions, function( n ) {
                 // pretty messy... I agree
                 $.map( answered, function( e ) {
