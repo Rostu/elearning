@@ -19,8 +19,7 @@ body {
 
   #loginbox{
     width:400px;
-    margin:0 auto;
-    margin-left: 50%;
+    margin:20px;
     transition:opacity 1s;
     -webkit-transition:opacity 1s;
     -webkit-box-shadow: 0px 0px 4px darkgrey;
