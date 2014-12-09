@@ -11,7 +11,7 @@ function init() {
     var id_speicher = [];
     var testarray = ["in diesem Sommer","letzte Woche","vor ein paar Monaten","Eine Minute später","Kurz darauf","ewig"];
     var i = 0;
-    var infos =[["in diesem Sommer","testmsg"]["",""]];
+    var infos =[["in diesem Sommer","testmsg"],["",""]];
     var r_length=0;
     var w_length = 0;
     var fb1 = 0;

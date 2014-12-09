@@ -43,8 +43,8 @@ app.use(lockit.router);
 // development only
 if ('development' == app.get('env')) {
     app.use(express.errorHandler());
-    var edt = require("express-debug");
-    edt(app);
+    //var edt = require("express-debug");
+    //edt(app);
 }
 
 app.use('/', index.get_session);

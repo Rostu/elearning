@@ -1,9 +1,291 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: cornflowerblue;
-  position: static;
-  height: 100%;
-  padding: 20px; }
+    font-family: "Meta", sans-serif;
+    height: 100%;
+    font-size: 12px;
+    overflow-y: scroll;
+    background: #E5EFF5 url("/images/siegel.png") no-repeat scroll -159px 129px;
+}
+
+#redbackground {
+    margin-top: 13px;
+    margin-left: -8px;
+    height: 130px;
+    width: 100%;
+    background: #A91211;
+    z-index: 1;
+    position: absolute;
+}
+
+#redstripes {
+    margin-top: 148px;
+    margin-left: -8px;
+    height: 100%;
+    width: 12.5%;
+    z-index: 1000;
+    position: absolute;
+}
+
+.redstripe {
+    margin-top: 15px;
+    width: 20px;
+    height: 27px;
+    background: #A91211;
+    z-index: 1001;
+    border-radius: 0px 0px 20px 0px;
+    box-shadow: 2px 2px 6px #4D4D4F;
+    color: #A91211;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.redlink {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 27px;
+    font-weight: bold;
+}
+
+#special_bar{
+    position: absolute;
+    margin-top: 155px;
+    margin-left: 88%;
+    /*background-color:#A91211;*/
+    width: 160px;
+    height: 160px;
+}
+#point_bars{
+    height: 100%;
+    width: 100%;
+}
+
+#special_nav{
+
+}
+
+.logo{
+     margin:2px;
+     padding: 2px;
+     width: 40px;
+     height: 40px;
+     position: relative;
+     display:inline-block;
+     vertical-align: middle;
+
+ }
+.logo svg {
+    position: absolute;
+    top: -1px; /* fixes rendering issue in FF */
+    width: 98%;
+    height: 98%;
+}
+
+
+#darkblueNav {
+    margin-left: -8px;
+    margin-top: 90px;
+    height: 32px;
+    width: 62.5%;
+    color: #D5EBFD;
+    font-weight: bold;
+    border-radius: 0 20px 0 0;
+    box-shadow: 2px 2px 6px #4D4D4F;
+    background: #005E9C;
+    z-index: 4;
+    position: absolute;
+    float: right;
+}
+
+#header {
+    margin-left: -20px;
+    margin-top: 23px;
+    padding-top: 10px;
+    height: 100px;
+    width: 100%;
+    border-left: 10px solid #D5EBFD;
+    border-right: 30px solid #D5EBFD;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px #4D4D4F;
+    background: #D5EBFD;
+    z-index: 3;
+    position: absolute;
+}
+
+#headerblocker {
+    height: 140px;
+    width: 100%;
+}
+
+mark.codex {
+    color: #A91211;
+    background: #D5EBFD;
+}
+
+img.codexLogo {
+    height: 40px;
+    float: left;
+}
+
+#titletext {
+    margin: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    float: left;
+}
+
+img.uniLogo {
+    height: 90px;
+    margin-right: -20px;
+    float: right;
+}
+
+#container {
+    margin: 8px auto;
+    width: 75%;
+    text-align: left;
+    z-index: 2;
+    position: relative;
+}
+
+#mainboard {
+    margin-left: -10px;
+    margin-top: 3px;
+    width: 100%;
+    border-left: 10px solid #A1BED6;
+    border-right: 10px solid #A1BED6;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px #4D4D4F;
+    background: #A1BED6;
+    overflow: hidden;
+    float: left;
+}
+
+#maincontent {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#footer {
+    width: 100%;
+    font-size: 10px;
+    background-color: #A1BED6;
+    border: 0px none;
+}
+
+#impressum {
+    float: left;
+    margin: 7px 0px;
+
+    word-spacing: 10px;
+}
+
+.footerlink {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+#endfloat {
+    clear: both;
+}
+
+#navigation {
+    margin-left: -14px;
+    padding-left: 20%;
+    width: 79%;
+}
+
+#navigation ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+#navigation ul:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+#navigation ul li{
+    background-color: #005E9C;
+}
+
+#navigation ul li {
+    list-style: none;
+    float:left;
+}
+
+#navigation ul li a {
+    text-decoration: none;
+    display: block;
+    color: #ffffff;
+    padding: 9px 18px 8px 18px;
+}
+
+#navigation ul li:hover > ul {
+    visibility: visible;
+}
+
+#navigation ul li ul{
+    margin-left: -1px;
+    display: inline;
+    visibility: hidden;
+    position: absolute;
+    padding:0px;
+}
+
+#navigation ul li ul li{
+    float: none;
+}
+
+#navigation ul li ul li a:hover{
+    color: #333;
+}
+
+#navigation ul {
+    padding: 0px;
+    margin-bottom: -1px;
+}
+
+#navigation ul li {
+    margin-top: 1px;
+    margin-bottom: 0px;
+    list-style: none;
+    float:left;
+    border-left: 1px solid #D5EBFD;
+}
+
+#navigation ul li a {
+    text-decoration: none;
+    display: block;
+
+    -webkit-transition: background 0.3s ease-out 0s;
+    -moz-transition: background 0.3s ease-out 0s;
+    -o-transition: background 0.3s ease-out 0s;
+    transition: background 0.3s ease-out 0s;
+}
+
+#navigation ul li.cat1:hover a, nav ul li.cat1:hover > ul li a  {
+    background-color: #A91211;
+    box-shadow: 2px 2px 6px #4D4D4F;
+}
+
+#navigation ul li:hover > a {
+    color: #FAFAFA;
+}
+
+#navigation ul li ul li a {
+    color: #FAFAFA;
+}
+
+#navigation ul li ul li a:hover{
+    color: #333;
+    background-color: #FAFAFA !important;
+}
+
+
 
   body #page {
     margin: auto;
@@ -19,7 +301,7 @@ body {
 
   #loginbox{
     width:400px;
-    margin:20px;
+    margin:10px auto;
     transition:opacity 1s;
     -webkit-transition:opacity 1s;
     -webkit-box-shadow: 0px 0px 4px darkgrey;
@@ -28,17 +310,17 @@ body {
 }
 
   #loginbox h1{
-      background: #3399cc;
+      background: #005E9C;
       padding:20px 0;
       font-size:140%;
       font-weight:300;
       text-align:center;
       color:#fff;
       margin: 0px;
-      background: -webkit-linear-gradient(#3399cc 60%, #2288bb); /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(#3399cc 60%, #2288bb); /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(#3399cc 60%, #2288bb); /* For Firefox 3.6 to 15 */
-      background: linear-gradient(#3399cc 60%, #2288bb); /* Standard syntax */
+      background: -webkit-linear-gradient(#005E9C 60%, #0083cb); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(#005E9C 60%, #0083cb); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(#005E9C 60%, #0083cb); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#005E9C 60%, #0083cb); /* Standard syntax */
     }
 
     #loginbox form{
@@ -60,7 +342,7 @@ body {
 
 #loginbox input[type="submit"]{
     width:100%;
-    background:#3399cc;
+    background:#005E9C;
     border:0;
     padding:4%;
     font-family:'Open Sans',sans-serif;
@@ -71,7 +353,7 @@ body {
     -webkit-transition:background .3s;
 }
 #loginbox input[type="submit"]:hover{
-    background:#2288bb;
+    background:#0083cb;
 }
 
 #wrapper {
@@ -370,4 +652,9 @@ body {
     height: 15px;
     width: 0px;
     float: left;
+}
+#content_background {
+    background-color: #E5EFF5;
+    width: 100%;
+    padding: 10px;
 }

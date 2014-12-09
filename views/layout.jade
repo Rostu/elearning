@@ -1,90 +1,158 @@
 doctype html
 html
-      head
-          title= title
-          meta(charset="utf-8")
-          title= title
-          link(rel='stylesheet', href='stylesheets/mystyle.css')
-          link(href='http://fonts.googleapis.com/css?family=Dosis', rel='stylesheet', type='text/css')
-          link(href='http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
-          script( src="javascripts/jquery-1.11.1.min.js")
-          script( src="javascripts/jquery-ui.min.js")
-          script(src="javascripts/general.js")
-          body
-              #page
-                    #header
-                        #trow
-                            a(href="home")
-                                img(id="front",src="images/header.PNG")
-                            ul(id="nav")
-                                li(id="header_button")
-                                    a(href='home' ) Startseite
-                                li(id="header_button")
-                                    a(href='ubung' ) Übungen
-                                    if (session)
-                                        if (session.name)
-                                            ul
-                                                li(id="header_sub_button")
-                                                    a(href='glueck_start' ) Glück
-                                                li(id="header_sub_button")
-                                                    a(href='handy_start' ) Handy
-                                                li(id="header_sub_button")
-                                                    a(href='ersti_start' ) Ersti
-                                                li(id="header_sub_button")
-                                                    a(href='veggieday_start' ) Veggie-Day
-                                                li(id="header_sub_button")
-                                                    a(href='wertewandel_start' ) Wertewandel
-                                                li(id="header_sub_button")
-                                                    a(href='generationen_start' ) Generationen
-                                                li(id="header_sub_button")
-                                                    a(href='zukunft_start' ) Zukunft
-                                                li(id="header_sub_button")
-                                                    a(href='china_start' ) China
-                                li(id="header_button")
-                                    a(href='' ) Profil
-                                li(id="header_button")
-                                    if (session)
-                                        if (session.name)
-                                            a(href='logout') Logout
-                                        //else
-                                            a(href='login') Login
-                                    //else
-                                        a(href='login') Login
-                                li(id="header_button")
-                                    a(href='impressum' ) Impressum
-                        a(href="http://www.uni-trier.de",target="blank")
-                            img(id='logo', src='images/uni-trier.PNG', width='190', height='182', alt='Universität Trier', align='right')
+    head
+        meta(charset="utf-8")
+        link(rel='stylesheet', href='stylesheets/layout.css')
+        link(href='http://fonts.googleapis.com/css?family=Dosis', rel='stylesheet', type='text/css')
+        link(href='http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
+        script( src="javascripts/jquery-1.11.1.min.js")
+        script( src="javascripts/jquery-ui.min.js")
+        script(src="javascripts/d3.v3.min.js")
+        script(src="javascripts/general.js")
+        script(src="javascripts/layout.js")
+        body
+            #redbackground
+            #redstripes
+            #special_bar
+                p P U N K T E
+                svg(id="point_bars")
+                #special_nav
+                    object.logo(id='button1', type='image/svg+xml', data='/images/button1.svg')
+                    object.logo(id='button2',type='image/svg+xml', data='/images/button2.svg')
+                    object.logo(id='button3',type='image/svg+xml', data='/images/button3.svg')
+
+            #darkblueNav
+                #navigation
+                    ul
+                        li.cat1
+                            a(href = 'home') Home
+                        li.cat1
+                            a(href = 'ubung') Übungen
+                            if (session)
+                                if (session.name)
+                                    ul
+                                        li
+                                            a(href = 'glueck_start') Glück
+                                        li
+                                            a(href= 'handy_start') Handy
+                                        li
+                                            a(href = 'ersti_start') Ersti
+                                        li
+                                            a(href = 'veggieday_start') Veggie-Day
+                                        li
+                                            a(href = 'wertewandel_start') Wertewandel
+                                        li
+                                            a(href = 'generationen_start') Generationen
+                                        li
+                                            a(href = 'zukunft_start') Zukunft
+                                        li
+                                            a(href = 'china_start') China
+                        li.cat1
+                            if (session)
+                                if (session.name)
+                                    a(href = 'profil') Profil
+                                    ul
+                                        li
+                                            a(href = '#') Einstellungen
+                                        li
+                                            a(href = '#') Punkteübersicht
+                        li.cat1
+                            a(href = '#') Über ...
+                            ul
+                                li
+                                    a(href= 'https://www.uni-trier.de/index.php?id=1175') Computerlinguistik und Digital Humanities
+                                li
+                                    a(href= 'https://www.uni-trier.de/index.php?id=8356') Deutsch als Fremdsprache
+                        li.cat1
+                            if (session)
+                                if (session.name)
+                                    a(href = 'logout') Logout
+                            else
+                                a(href = 'login') Login
+
+
+
+            #container
+                #header
+                    img.codexLogo(src='images/codex.png')
+                    #titletext Lernplattform
+                        mark.codex  Deutsch
+                    img.uniLogo(src='images/logoBlau.svg')
+
+                #mainboard
+                    #headerblocker
+                    //#header
+                    //    #trow
+                    //        a(href="home")
+                    //            img(id="front",src="images/header.PNG")
+                    //        ul(id="nav")
+                    //            li(id="header_button")
+                    //                a(href='home' ) Startseite
+                    //            li(id="header_button")
+                    //                a(href='ubung' ) Übungen
+                    //                if (session)
+                    //                    if (session.name)
+                    //                        ul
+                    //                            li(id="header_sub_button")
+                    //                                a(href='glueck' ) Glück
+                    //                            li(id="header_sub_button")
+                    //                                a(href='handy' ) Handy
+                    //                            li(id="header_sub_button")
+                    //                                a(href='ersti' ) Ersti
+                    //                            li(id="header_sub_button")
+                    //                                a(href='veggieday_inhalt' ) Veggie-Day
+                    //                            li(id="header_sub_button")
+                    //                                a(href='wertewandel' ) Wertewandel
+                    //                            li(id="header_sub_button")
+                    //                                a(href='generationen' ) Generationen
+                    //                            li(id="header_sub_button")
+                    //                                a(href='zukunft' ) Zukunft
+                    //                            li(id="header_sub_button")
+                    //                                a(href='china' ) China
+                    //            li(id="header_button")
+                    //                a(href='' ) Profil
+                    //            li(id="header_button")
+                    //                if (session)
+                    //                    if (session.name)
+                    //                        a(href='logout') Logout
+                    //                    //else
+                    //                        a(href='login') Login
+                    //                //else
+                    //                    a(href='login') Login
+                    //            li(id="header_button")
+                    //                a(href='impressum' ) Impressum
+                    //    a(href="http://www.uni-trier.de",target="blank")
+                    //        img(id='logo', src='images/uni-trier.PNG', width='190', height='182', alt='Universität Trier', align='right')
 
                     if (session)
                         if (session.name)
                             block content
                         else
-                            script( src='javascripts/scripts.js')
-                            img(id="front", src="images/front.jpg")
-                            h2 Willkommen auf der Lernplattform Deutsch als Fremd- und Zweitsprache der Universität Trier
-                            p
-                            | Auf den folgenden Seiten findet ihr unterschiedliche Aufgaben zum textbasierten Wortschatz lernen. Die Texte stammen aus Zeitungen, Zeitschriften und Magazinen und beschäftigen sich mit aktuellen alltäglichen Themen wie beispielsweise einem Auslandsaufenthalt in China, den Beziehungen zwischen den Generationen, der Zukunft oder dem Veggie-Day. Die Texte wurden für ein mittleres Sprachniveau ausgewählt. In den Aufgaben werden der  thematische wie auch funktionale Wortschatz auf vielfältige Weise geübt, erweitert und gefestigt.
-                            | Diese Plattform wurde in einem gemeinsamen Seminar von Studierenden der Computerlinguistik und  Deutsch als Fremd- und Zweitsprache entwickelt und dient den Studenten gleichzeitig als Erprobungs- und Experimentierplattform.
-                            br
-                            br
-                            br
-                            b.
-                                Mit alten Browser-Versionen kann es zu Problemen bei der Darstellung kommen, als sicherste Option nutzen Sie bitte Firefox in der neuesten Version.
-                                Aber auch die neuesten Versionen von InternetExplorer (ab v.11) oder Chrome (ab v.36) werden unterstützt.
-                                Für weitere Informationen zur Browseruntertzützung: Link comming soon
+                            #content_background
+                                script( src='javascripts/scripts.js')
+                                h2 Willkommen auf der Lernplattform Deutsch der Universität Trier
+                                p
+                                | Hier finden Sie unterschiedliche Texte zu den Themen China, Ersti, Generationen, Zukunft und Veggie-Day. Die abwechslungsreichen Übungsaufgaben bieten Ihnen die Möglichkeit ihr B1-Niveau auszutesten und zu festigen. Durch die unterschiedlichen Aufgabentypen können Sie ihr Wissen auf vielfältige Art und Weise erweitern.
+                                | Dieses elearning-Projekt ist in Zusammenarbeit mit‚ Deutsch als Fremdsprache‘ und der Computerlinguistik Trier entstanden und wird Ihnen, nach der kostenlosen Anmeldung, zur Verfügung gestellt.
+                                br
+                                br
+                                b.
+                                    Mit alten Browser-Versionen kann es zu Problemen bei der Darstellung kommen, als sicherste Option nutzen Sie bitte Firefox in der neuesten Version.
+                                    Aber auch die neuesten Versionen von InternetExplorer (ab v.11) oder Chrome (ab v.36) werden unterstützt.
+                                    Für weitere Informationen zur Browseruntertzützung: Link comming soon
 
-                            h3 Sie müssen sich anmelden um alle Inhalte nutzen zu können
+                                h3 Sie müssen sich anmelden um alle Inhalte nutzen zu können
 
-                            #withoutcontent
-                                link(rel='stylesheet', href='stylesheets/index.css')
-                                #loginbox
-                                    h1 Login
-                                    form(action="login", method="POST")
-                                        input(type="text", id="login", name="login", placeholder="Benutzername")
-                                        input(type="password", id="password", name="password", placeholder="Passwort")
-                                        input(type="submit", value="Login")
-
-
-
-
-
+                                #withoutcontent
+                                    link(rel='stylesheet', href='stylesheets/index.css')
+                                    #loginbox
+                                        h1 Login
+                                        form(action="login", method="POST")
+                                            input(type="text", id="login", name="login", placeholder="Benutzername")
+                                            input(type="password", id="password", name="password", placeholder="Passwort")
+                                            input(type="submit", value="Login")
+                    #footer
+                        #impressum
+                            a.footerlink(href= 'impressum') Impressum
+                            a.footerlink Datenschutzerklärung
+                #endfloat

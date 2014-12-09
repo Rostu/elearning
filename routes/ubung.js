@@ -19,7 +19,9 @@ exports.createUebung = function(req, res){
 exports.ubshow = function(req, res){
     dbhandler.getub(function (ubs) {res.render('ubshow', {'ubs': ubs});});
 };
-
+exports.get_TEST = function(req, res){
+    res.render('TEST');
+};
 exports.deleteub = function(req, res){
     dbhandler.delUb(req.params.id);
     res.redirect('/ubshow');
@@ -180,6 +182,7 @@ exports.get_zukunft_task3 = function(req, res){
 exports.get_zukunft_task4 = function(req, res){
     res.render('zukunft_task4');
 };
+
 exports.get_zukunft_task5 = function(req, res){
     res.render('zukunft_task5');
 };

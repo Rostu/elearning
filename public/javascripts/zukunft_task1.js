@@ -11,13 +11,6 @@ function init() {
     var fb1 = 0;
     var fb2 = 0;
 
-    var myScale = d3.scale.linear().domain([0, 100]).range([0, 2 * Math.PI]);
-    var vis = d3.select("#counter");
-    var arc = d3.svg.arc().innerRadius(27).outerRadius(37).startAngle(myScale(0)).endAngle(myScale(80));
-    var arc2 = d3.svg.arc().innerRadius(15).outerRadius(25).startAngle(myScale(0)).endAngle(myScale(30));
-    vis.append("path").attr("d", arc).attr("fill", "green").attr("transform", "translate(50,50)");
-    vis.append("path").attr("d", arc2).attr("fill", "red").attr("transform", "translate(50,50)");
-
     $(".inline").each(function() {
         $(this).draggable({
             containment: '#page',
