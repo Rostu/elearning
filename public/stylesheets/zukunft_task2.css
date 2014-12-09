@@ -1,0 +1,48 @@
+.wortbox{
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background:rgba(239, 239, 239, 0.59);
+    margin: 0px auto;
+    min-height: 200px;
+    padding: 15px;
+    width: 60%;
+    font-size: 1.5em;
+    text-align: center;
+}
+.wortbox h5{
+    margin: 15px;
+}
+
+.ui-effects-wrapper {
+    display:inline;
+}
+
+.wort{
+    -webkit-box-shadow: 0px 2px 5px darkgray;
+    -moz-box-shadow: 0px 2px 5px darkgray;
+    box-shadow: 0px 2px 5px darkgray;
+    background: lightgoldenrodyellow;
+    color: black;
+    font: bold;
+    padding: 5px;
+    display: inline-block;
+    flex-direction: column;
+    margin: 10px;
+    border-radius: 7%;
+    position: relative;
+}
+
+#arrow_wrong{
+    position: fixed;
+    top: 10%;
+    left: 34%;
+    opacity: 0;
+}
+
+#arrow_weiter{
+    position: fixed;
+    top: 10%;
+    left: 83.5%;
+    opacity: 0;
+}

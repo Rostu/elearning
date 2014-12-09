@@ -1,24 +1,15 @@
 extends layout
 block content
- link(rel='stylesheet', href='stylesheets/zukunft.css')
- script( src='javascripts/Zukunft.js')
- script(src='javascripts/zukunft_wortreihe.js')
  link(rel='stylesheet', href='stylesheets/zukunft_task1.css')
+ script( src='javascripts/d3.v3.min.js')
+ script( src='javascripts/zukunft_task1.js')
+
  #Aufgabenbox
-    p Finde unter den vorgegebenen Wörtern jene, die nicht in die Reihe passen. Bringe die Wortreihe in Ordnung, indem du auf die Box des Wortes klickst, von dem du vermutest, dass es nicht zu der Reihe gehört.
- #wrapper
- #arrow_wrong
-    img(src="images/arrowdown.png")
- #arrow_weiter
-    img(src="images/arrowdown.png")
- #Field
-    span#balken
-        a(id="fehler") Fehlversuche: 10
-    span#hilfe
-    span#check
-    span#weiter
- #Aufgabenbox
-    p Ziehe Ausdrücke, die mit "Technik" im Zusammenhang stehen auf die Box!
+     #l
+         p Ziehe Ausdrücke, die mit "Technik" im Zusammenhang stehen auf die Box!
+     //#r
+         svg(id="counter", width="100", height="100")
+
  #wrapper
     #Textbox
             h1
@@ -299,5 +290,4 @@ block content
              p#infotext Wortfelder und ihre Grenzen sind oft nicht eindeutig. Versuche es zunächst mit Wörtern, bei denen du dir sehr sicher bist, dass sie zum Wortfeld "Technik" gehören.
      span#check
      span#weiter
-         a(href='zukunft_task2') WEITER
->>>>>>> Namesänderung, Startpage
+         a(href='zukunft_task1') WEITER
