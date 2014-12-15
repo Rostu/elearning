@@ -1,3 +1,50 @@
+#lessons {
+    width: 70%;
+    margin: 0px auto;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.lesson {
+    margin: 5px 5px 10px 5px;
+    height: 50px;
+    align: center;
+    float: top;
+}
+
+.licon {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    background: #A6D1F5;
+    float: left;
+    border-radius: 25px;
+}
+
+.lstart {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    background: #A6D1F5;
+    float: right;
+    border-radius: 25px;
+}
+
+.ltitle {
+    margin: 10px 60px 10px 60px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    background: #7AB3E3;
+    color: white;
+    text-align: center;
+}
+
 #wrapper {
     width: 100%;
     display: table; }
