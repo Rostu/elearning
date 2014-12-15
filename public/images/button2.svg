@@ -4,9 +4,8 @@
 	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
 	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
 ]>
-<svg  version="1.1" id="Ebene_1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="44.5" height="44.5" viewBox="0 0 44.5 44.5"
-	 overflow="visible" enable-background="new 0 0 44.5 44.5" xml:space="preserve">
-
+<svg  version="1.1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="44.5" height="44.5" viewBox="0 0 46 46"
+	 overflow="visible" enable-background="new 0 0 44.5 44.5" xml:space="preserve" preserveAspectRatio="xMinYMin meet">
 <defs>
     <style>
      :hover #button { fill: #005E9C; }
@@ -16,6 +15,8 @@
 <g id="Ebene_1">
     <path id="button" fill="#A8161C" d="M44.5,22.25c0,12.288-9.962,22.25-22.25,22.25S0,34.538,0,22.25S9.962,0,22.25,0S44.5,9.962,44.5,22.25z
          M29.859,9.517L7.853,22.222l22.006,12.705V9.517z"/>
-    <rect x="0" y="0" width="44.5" height="44.5" fill="rgba(0,0,0,0)" stroke="none" stroke-width="0" />
+       <a xlink:href="/last" target="_top">
+               <rect id="button2" x="0" y="0" width="44.5" height="44.5"  fill="rgba(0,0,0,0)" cursor="pointer"  stroke="none" stroke-width="0" />
+       </a>
 </g>
 </svg>

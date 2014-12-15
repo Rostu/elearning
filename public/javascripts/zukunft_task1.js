@@ -10,6 +10,8 @@ function init() {
     var w_length = 0;
     var fb1 = 0;
     var fb2 = 0;
+    var actualpoints = 0;
+    var actualfaults = 0;
 
     $(".inline").each(function() {
         $(this).draggable({
@@ -52,9 +54,8 @@ function init() {
         if($.inArray(textinhalt, testarray)> -1){
             $(div).data('korrekt',true);
             $(div).css('background','rgba(2, 255, 85, 0.16)');
-            r_length++;
-            update_balken();
-        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++;update_balken();}
+            actualpoints++;
+        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');actualfaults++;}
         $("#Antwortbox").bind("contextmenu",function(e){return false;});
         $("#Antwortbox").append(div);
         div.mousedown(clear);
@@ -74,18 +75,13 @@ function init() {
         });
     };
 
-    function update_balken(){
-        //console.log($('#balken_innen1'));
-        $('#balken_innen1').css('width',r_length*8);
-        $('#balken_innen2').css('width',w_length*4);
-    }
+
     function clear(ev) {
         if (ev.which == 3) {
             $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
             if($(this).data('korrekt')==true){
-                r_length--;
-            }else{w_length--;}
-            update_balken();
+                actualpoints--;
+            }else{actualfaults--;}
             $(".token[id=" + this.id + "]").remove();
         }
     }

@@ -13,18 +13,19 @@ html
         body
             #redbackground
             #redstripes
-            #special_bar
-                p P U N K T E
-                svg(id="point_bars")
-                #special_nav
-                    object.logo(id='button1', type='image/svg+xml', data='/images/button1.svg')
-                    object.logo(id='button2',type='image/svg+xml', data='/images/button2.svg')
-                    object.logo(id='button3',type='image/svg+xml', data='/images/button3.svg')
-
+            if (session)
+                if (session.lastpage != '')
+                    #special_bar
+                        svg(id="point_bars")
+                        #special_nav
+                            object.logo(id='button1',type='image/svg+xml', data='images/button1.svg')
+                        #special_nav
+                            object.logo(id='button2',type='image/svg+xml', data='images/button2.svg')
+                            object.logo(id='button3', type='image/svg+xml', data='images/button3.svg')
             #darkblueNav
                 #navigation
                     ul
-                        li.cat1
+                        li.cat1(id='firstnav')
                             a(href = 'home') Home
                         li.cat1
                             a(href = 'ubung') Übungen
@@ -68,9 +69,7 @@ html
                                 if (session.name)
                                     a(href = 'logout') Logout
                             else
-                                a(href = 'login') Login
-
-
+                                a(href = 'home') Login
 
             #container
                 #header

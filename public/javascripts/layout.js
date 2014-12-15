@@ -33,53 +33,43 @@ $(document).ready(function() {
     var maxpoints = 100;
     var maxfaults = 100;
 
-    var actualpoints = 65;
-    var actualfaults = 77;
+    var actualpoints = 25;
+    var actualfaults = 5;
 
     var myScale = d3.scale.linear().domain([0, maxpoints]).range([0, 2 * Math.PI]);
     var vis = d3.select("#point_bars");
 
+    var arc3 = d3.svg.arc().innerRadius(40).outerRadius(50).startAngle(myScale(0)).endAngle(myScale(maxpoints));
+    vis.append("path").attr("d", arc3).attr("transform", "translate(50,60)").style("fill", "rgba(0, 94, 156, 0.25)");
+
+    var arc4 = d3.svg.arc().innerRadius(25).outerRadius(35).startAngle(myScale(0)).endAngle(myScale(maxfaults));
+    vis.append("path").attr("d", arc4).attr("transform", "translate(50,60)").style("fill", "rgba(169, 18, 17, 0.20)");
 
     function updatepoints(){
-        var arc1 = d3.svg.arc().innerRadius(55).outerRadius(65).startAngle(myScale(0)).endAngle(myScale(actualpoints));
-        vis.append("path").attr("d", arc1).attr("transform", "translate(60,70)").style("fill", "#005E9C");
+        var arc1 = d3.svg.arc().innerRadius(40).outerRadius(50).startAngle(myScale(0)).endAngle(myScale(actualpoints));
+        vis.append("path").attr("d", arc1).attr("transform", "translate(50,60)").style("fill", "#005E9C");
     }
     function updatefaults(){
-        var arc2 = d3.svg.arc().innerRadius(35).outerRadius(50).startAngle(myScale(0)).endAngle(myScale(actualfaults));
-        vis.append("path").attr("d", arc2).attr("transform", "translate(60,70)").style("fill", "#A91211");
+        var arc2 = d3.svg.arc().innerRadius(25).outerRadius(35).startAngle(myScale(0)).endAngle(myScale(actualfaults));
+        vis.append("path").attr("d", arc2).attr("transform", "translate(50,60)").style("fill", "#A91211");
 
     }
     updatepoints();
     updatefaults();
     //end functions for the point visualization--------------------------------
 
-    $('#button1').hover( handlerIn, handlerOut );
+    $('#button3').click(function() {
+        actualpoints += 5;
+        console.log("+");
+        updatepoints();
+    });
 
-    function handlerIn(){
-        //$(this).setAttribute("opacity", "0.5");
-        console.log("funktioniert");
-    };
-    function handlerOut(){
-        //$(this).setAttribute("opacity", "0.5");
-        console.log("funktioniert");
-    };
 
-    document.getElementById('button3').onclick = function (e) {
-    actualpoints += 5;
-    console.log("+");
-    updatepoints();
-    }
     function update(){
         actualpoints += 5;
         console.log("+");
         updatepoints();
-
     }
 
-    $('#button2').click(function (e) {
-        actualpoints -= 5;
-        console.log("-");
-        updatepoints();
-    });
 
 })

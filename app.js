@@ -55,7 +55,7 @@ app.get('/china_task2', ubung.get_china_task2);
 app.get('/china_task3', ubung.get_china_task3);
 app.get('/deleteub/:id', ubung.deleteub);
 app.get('/ersti_start', ubung.get_ersti_start);
-app.get('/ersti', ubung.get_ersti);
+
 app.get('/ersti_task1', ubung.get_ersti_task1);
 app.get('/ersti_task2', ubung.get_ersti_task2);
 app.get('/ersti_task2b', ubung.get_ersti_task2b);
@@ -109,6 +109,9 @@ app.get('/zukunft_task2', ubung.get_zukunft_task2);
 app.get('/zukunft_task3', ubung.get_zukunft_task3);
 app.get('/zukunft_task4', ubung.get_zukunft_task4);
 app.get('/zukunft_task5', ubung.get_zukunft_task5);
+app.get('/next', ubung.get_next);
+app.get('/last', ubung.get_last);
+app.get('/uindex', ubung.get_uindex);
 app.get('/dml', function(req, res) {
     var query = req.query;
     var dml = require('./routes/dml');
