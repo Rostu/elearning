@@ -297,7 +297,8 @@ img.uniLogo {
     min-width: 850px;
     width: 95%;
     position: static;
-    min-height: 500px; }
+    min-height: 500px;
+  }
 
   #loginbox{
     width:400px;
