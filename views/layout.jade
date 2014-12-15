@@ -81,52 +81,10 @@ html
 
                 #mainboard
                     #headerblocker
-                    //#header
-                    //    #trow
-                    //        a(href="home")
-                    //            img(id="front",src="images/header.PNG")
-                    //        ul(id="nav")
-                    //            li(id="header_button")
-                    //                a(href='home' ) Startseite
-                    //            li(id="header_button")
-                    //                a(href='ubung' ) Übungen
-                    //                if (session)
-                    //                    if (session.name)
-                    //                        ul
-                    //                            li(id="header_sub_button")
-                    //                                a(href='glueck' ) Glück
-                    //                            li(id="header_sub_button")
-                    //                                a(href='handy' ) Handy
-                    //                            li(id="header_sub_button")
-                    //                                a(href='ersti' ) Ersti
-                    //                            li(id="header_sub_button")
-                    //                                a(href='veggieday_inhalt' ) Veggie-Day
-                    //                            li(id="header_sub_button")
-                    //                                a(href='wertewandel' ) Wertewandel
-                    //                            li(id="header_sub_button")
-                    //                                a(href='generationen' ) Generationen
-                    //                            li(id="header_sub_button")
-                    //                                a(href='zukunft' ) Zukunft
-                    //                            li(id="header_sub_button")
-                    //                                a(href='china' ) China
-                    //            li(id="header_button")
-                    //                a(href='' ) Profil
-                    //            li(id="header_button")
-                    //                if (session)
-                    //                    if (session.name)
-                    //                        a(href='logout') Logout
-                    //                    //else
-                    //                        a(href='login') Login
-                    //                //else
-                    //                    a(href='login') Login
-                    //            li(id="header_button")
-                    //                a(href='impressum' ) Impressum
-                    //    a(href="http://www.uni-trier.de",target="blank")
-                    //        img(id='logo', src='images/uni-trier.PNG', width='190', height='182', alt='Universität Trier', align='right')
-
                     if (session)
                         if (session.name)
-                            block content
+                            #content_background
+                                block content
                         else
                             #content_background
                                 script( src='javascripts/scripts.js')
