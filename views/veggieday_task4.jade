@@ -1,87 +1,71 @@
 extends layout
 block content
-    link(rel='stylesheet', href='stylesheets/veggie.css')
-    script( src='javascripts/Veggie_drag.js')
+    link(rel='stylesheet', href='stylesheets/veggie_all.css')
+    script( src='javascripts/Veggie_task4.js')
     #Aufgabenbox
-        p
-        b Aufgabe:
-        |Lies den folgenden Text aufmerksam durch. Hier geht es um die Meinung der Mediziner zum Thema
-        |Veganismus. Ziehe anschließend die enstprechenden Begriffe mit gedrückter Maustaste aus dem Text heraus
-        |ihrer entsprechenden Definition zu.
-        b Hinweis:
-        |Die Bedeutung von <i>kursiv</i> gedruckten Wörtern erfährst du, wenn du auf ihnen mit dem Mauszeiger verweilst!
+        b
+        |Lies den folgenden Text aufmerksam. Hier geht es um die Meinung der Umweltschützer zum
+        |Thema Vegetarismus. Sammel die im Text genannten Argumente über die Folgen des Fleischkonsums für Tiere,
+        |Umwelt und Menschen. Zieh dafür die Wörter in das entsprechende Feld.
 
-    h2(style="center") Übung 4: Meinung der Mediziner
-    p
-    #Textbox
-        h3 Mediziner
-        p
-        | Schon Anfang der achtziger Jahre wurden in Deutschland drei große
-        .inline(id=0) Vegetarierstudien
-        | durchgeführt - mit
-        | erstaunlichen Erkenntnissen. Laut diesen Studien haben Vegetarier besser
-        .inline(id=1) Blutdruckwerte
-        | , ein besseres
-        .inline(id=2) Körpergewicht
-        | , eine höhere
-        .inline(id=3) Lebenserwartung
-        | und ein geringeres Risiko für Krebs und
-        .inline(id=4) Herz-Kreislauf-Erkrankungen
-        | .
-        | Untersuchungen aus anderen Ländern kommen zu ähnlichen Ergebnissen. Die Studie der
-        | <i><span title="Teil der Universität London. Führte die Studie durch.">London School of Hygiene and Tropical Medicine</span></i>
-        | hat 11.000 Vegetarierinnen 12 Jahre lang beobachtet. Sie verglich ihre Teilnehmerinnen mit einer fleischessenden
-        | <i><span title="mit ihrer Hilfe vergleicht man die Ergebnisse der Versuchsgruppe (hier: Fleischesser <-> Vegetarier)">Kontrollgruppe</span></i>.
-        | Das Ergebnis: In allen wichtigen Punkten hatten die Vegetarierinnen bessere Werte. Die
-        .inline(id=5) Sterberate
-        | war um
-        | 20 % niedriger als bei der fleischessenden Kontrollgruppe, die Krebstodesrate war sogar um 40 % niedriger.
-        | Zusammenfassend zeigen diese Studien, dass Vegetarierinnen keine
-        .inline(id=6) Mangelerscheinungen
-        | haben, dass der
-        | allgemeine
-        .inline(id=7) Gesundheitszustand
-        | überdurchschnittlich gut ist und die vegetarische Ernährung als gesund
-        | bezeichnet werden kann.
-        p
+    #wrapper
+
+        #Inhaltbox
+            h3 Umweltschützer
+            p
+            | Die Amerikaner und Westeuropäer konsumieren im Vergleich zu 1900 rund 33% mehr Milchprodukte, 50% mehr
+            | Rindfleisch, 72% mehr Fisch, 190% mehr Eier und 280% mehr Geflügel. Eine solche Entwicklung hatte nicht
+            | nur gesundheitliche Folgen für den Konsumenten. Auch die Weltbevölkerung und die Umwelt, vor allem in den
+            | Dritte Weltländern, wurde davon beeinflusst: Die landwirtschaftlichen Nutzflächen (z.B. Felder und Wiesen)
+            | wurden hauptsächlich für die Tierhaltung und Futterproduktion verwendet und beanspruchen heute mehr als
+            | 64% der gesamten Anbauflächen. Die
+            .inline(id=10) Masttiere
+            | fressen 49% der Getreide-Welternte und mehr als 90% aller
+            | angebauten Sojabohnen. Ihre <i><span title="Ausscheidung (Kot und Urin)">Exkremente</span></i> sind
+            | verantwortlich für:
+            .inline(id=14) die Wasserverschmutzung (50%)
+            | ,
+            .inline(id=15) die Grundwasserverseuchung (50%)
+            | ,
+            .inline(id=16) das Ozonloch
+            | und die
+            .inline(id=17) Temperaturerhöhung (20%-25%)
+            | . Denn die "Produktion" dieser Ausscheidungen beträgt in den USA und Europa
+            | zusammen 110000 kg pro Sekunde (!) und die Entsorgung ist schon lange nicht mehr zu beherrschen.
+            | Allein in den USA werden jährlich mehr Tiere
+            .inline(id=11) geschlachtet
+            | als die ganze Erde Einwohner hat. Wenn die
+            | Amerikaner 10% weniger tierisches Eiweiß essen würden und man auf den freien Flächen Getreide anbauen
+            | würde, könnten mehr als 1 Milliarde Menschen ernährt werden. Doch gegenwärtig sterben weltweit täglich
+            | 38 Tausend Kinder an
+            .inline(id=12) Unterernährung
+            | und 1991 sind über 20 Millionen Menschen verhungert.
+            | Um die riesigen Futtermengen zu produzieren, werden jährlich mehrere Millionen Tonnen
+            .inline(id=18) Pestizide
+            | auf die Felder gestreut. Auch diese Mengen verseuchen über Jahre hinweg unser Grundwasser und sie würden
+            | ausreichen, die ganze
+            .inline(id=13) Weltbevölkerung zu vergiften
+     #Space_two
+    #wrapper
+
         p
         #Antwortbox1
-                p Definition 1:
-                | Jeder Mensch hat sein eigenes Gewicht, je nachdem wie viel man isst. Man kann es auf
-                | einer Waage wiegen kann. Frauen und kleine Menschen wiegen im Schnitt weniger als Männer oder
-                | große Menschen.
-                p Was wird hier definiert?
+            p Folgen für die Tiere [2]:
         #Platzhalter
-
         #Antwortbox2
-                p Definition 2:
-                | Das Alter, das ein Mensch voraussichtlich erreichen wird. Einflüsse wie gesunde
-                | Ernährung und sportliche Aktivität wirken dabei positiv ein und können das erwartete Alter
-                | verlängern; Alkohol und Zigaretten bewirken das Gegenteil.
-                p Was wird hier definiert?
+            p  Folgen für die Menschen [2]:
         #Platzhalter
-
         #Antwortbox3
-                p Definition 3:
-                | Damit ist eine allgemeine Anzahl von Menschen gemeint, die in einen bestimmten Zeitraum
-                | stirbt. Sie kann unterschiedlich ausfallen, je nachdem, wie hoch die Lebensqualität in den
-                | verschiedenen Ländern ist. Meist wird die Zahl in Prozent angegeben.
-                p Was wird hier definiert?
-            p
+            p Folgen für die Umwelt [5]:
         p
 
+        form#drag(name='dragAndDrop', action='')
 
-    p
-    br
-    p
-    p
-    br
-    p
 
     #Field
         span#balken
         span#hilfe
         span#check
-            a(href="", onclick='validate()') PRÜFEN
+            a(name='Aufgabe', value='Fertig!', onclick='validate ()') PRÜFEN
         span#weiter
-            a(href='veggieday_task5') WEITER
+            a(href='veggieday_start') ZURÜCK

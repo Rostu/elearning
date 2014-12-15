@@ -3,12 +3,12 @@ $(document).ready(function() {
         document.location.href = "veggieday_task1";
     });
     $('#l2').click(function() {
-        document.location.href = "veggieday_task3";
+        document.location.href = "veggieday_task2";
     });
     $('#l3').click(function() {
-        document.location.href = "veggieday_task4";
+        document.location.href = "veggieday_task3";
     });
     $('#l4').click(function() {
-        document.location.href = "veggieday_task5";
+        document.location.href = "veggieday_task4";
     });
 });

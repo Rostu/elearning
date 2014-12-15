@@ -118,20 +118,18 @@ exports.get_veggieday_start = function(req, res){
 exports.get_veggieday_task1 = function(req, res){
     res.render('veggieday_task1');
 };
+exports.get_veggieday_task2 = function(req, res){
+    res.render('veggieday_task2');
+};
 exports.get_veggieday_task3 = function(req, res){
     res.render('veggieday_task3');
-};
-
-exports.get_veggieday_multi = function(req, res){
-    res.render('veggieday_multi');1
-};
-exports.get_veggieday_task5 = function(req, res){
-    res.render('veggieday_task5');
 };
 exports.get_veggieday_task4 = function(req, res){
     res.render('veggieday_task4');
 };
-
+exports.get_veggieday_multi = function(req, res){
+    res.render('veggieday_multi');
+};
 exports.get_wertewandel_start = function(req, res) {
     res.render('wertewandel_start');
 }
