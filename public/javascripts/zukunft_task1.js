@@ -32,13 +32,13 @@ function init() {
         textinhalt = textinhalt.replace('"','');
         if($.inArray(textinhalt,testarray) < 0){
             textinfos="Das ist leider nicht richtig. Wenn du nicht weißt, was dieses Wort bedeutet, schau doch mal hier nach:";
-            if(++fb1 == 3){
-                animatearrow();
-            };
-            if(++fb2 == 6){
-                $("span[id=hmenu]").append("<p>Versuche, mehr über das <a target='_blank' href='http://www.dwds.de/?qu=Technik'>Wortfeld \"Technik\"</a> herauszufinden.</p>");
-                animatearrow();
-            };
+            //if(++fb1 == 3){
+            //    animatearrow();
+            //};
+            //if(++fb2 == 6){
+            //    $("span[id=hmenu]").append("<p>Versuche, mehr über das <a target='_blank' href='http://www.dwds.de/?qu=Technik'>Wortfeld \"Technik\"</a> herauszufinden.</p>");
+            //    animatearrow();
+            //};
         };
 
         for(i=0;i<infos.length;i++){
@@ -53,9 +53,9 @@ function init() {
         div.click(enlarge);
         if($.inArray(textinhalt, testarray)> -1){
             $(div).data('korrekt',true);
-            $(div).css('background','rgba(2, 255, 85, 0.16)');
+            $(div).css('background','#02D64A');
             actualpoints++;
-        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');actualfaults++;}
+        }else {$(div).data('korrekt',false);$(div).css('background','#A91211');$(div).css('color','white');actualfaults++;}
         $("#Antwortbox").bind("contextmenu",function(e){return false;});
         $("#Antwortbox").append(div);
         div.mousedown(clear);

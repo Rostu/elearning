@@ -86,7 +86,7 @@ function init() {
             $(this).animate({bottom:'-=0.5em'},"fast");
             $(this).animate({backgroundColor: '#a8383b', color: 'white', fontSize: '+=0.5em'},"slow");
             $(this).effect( "shake", {distance: 5}, 125)
-            $(this).animate({backgroundColor: '#fafad2', color: 'black',bottom:'+=0.5em', fontSize: '-=0.5em'}, "slow");
+            $(this).animate({backgroundColor: '#005E9C', color: 'white',bottom:'+=0.5em', fontSize: '-=0.5em'}, "slow");
         }
     };
 
