@@ -1,6 +1,6 @@
 $( init );
 function init() {
-
+    $('#info1').show();
     var id=0;
     var id_speicher = [];
     var testarray = ["Schusswaffen","Werkzeug","Werkzeugen","Physiker","Wissenschaft","Forschung","Physik","Star-Physiker","Handystrahlen","Nanotechnik","Internet","Pfeil und Bogen","Metallherstellung","Atome","Mikroskop", "Wissenschaftler","Maschinen","Roboter","Computer","Rechenkapazität","Computerspielkonsolen","Rechenleistung","Großrechner","Smartphone","Chip","Autos","Lenkrad","Film","GPS-Systeme","Radar","NASA","Mondlandung"];

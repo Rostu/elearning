@@ -1,6 +1,7 @@
 $( init );
 
 function init() {
+    $('#info1').show();
     $("h1").toggle();
     $("h2").toggle();
     var id=0;
