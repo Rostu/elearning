@@ -1,29 +1,32 @@
+#cont{
+    margin: 5px;
+}
+
 .wortbox{
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-    -moz-box-shadow: 0px 2px 5px darkgrey;
-    box-shadow: 0px 2px 5px darkgrey;
-    background:rgba(239, 239, 239, 0.59);
-    margin: 0px auto;
+    background: #E5EFF5;
+    margin: 10px auto;
     min-height: 200px;
     padding: 15px;
     width: 60%;
     font-size: 1.5em;
     text-align: center;
+
 }
 .wortbox h5{
+    font-size: 1.5em;
     margin: 15px;
+    color:#A91211;
 }
 
 .ui-effects-wrapper {
     display:inline;
 }
-
 .wort{
     -webkit-box-shadow: 0px 2px 5px darkgray;
     -moz-box-shadow: 0px 2px 5px darkgray;
     box-shadow: 0px 2px 5px darkgray;
-    background: lightgoldenrodyellow;
-    color: black;
+    background: #005E9C;
+    color: white;
     font: bold;
     padding: 5px;
     display: inline-block;

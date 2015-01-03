@@ -3,18 +3,24 @@
  */
 
 $(document).ready(function() {
+    $('.redstripe').hide();
+    $('.redtext').hide();
     $('.redstripe').mouseenter(function()
     {
         //$(this).text("dsaf")
-        $(this).animate({width: $(this).children('a.redlink').width(), paddingLeft: "8px", paddingRight: "20px"}, 100);
-        //$(this).animate({width: "+=28px"}, 100);
+        //$(this).animate({width: $(this).children('a.redlink').width(), paddingLeft: "8px", paddingRight: "20px"}, 100);
+        //$(this).animate({width: $(this).children('.redtext').width(), paddingLeft: "8px", paddingRight: "20px"},100);
+        $(this).children('.redtext').show();
+        $(this).animate({width: "90%"}, 100);
         $(this).animate({color: "#ffffff"}, 100);
+
     });
 
     $('.redstripe').mouseleave(function()
     {
-        $(this).animate({color: "#A91211"}, 200);
-        $(this).animate({width: "20px", padding: "0px"},200);
+        $(this).children('.redtext').hide();
+        $(this).animate({color: "#A91211"}, 100);
+        $(this).animate({width: "20px"},100);
         //$(this).text("")
     });
 

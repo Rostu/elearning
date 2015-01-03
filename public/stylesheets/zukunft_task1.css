@@ -4,11 +4,7 @@ form{
     padding:6% 4%;
 }
 
-
 #Textbox {
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-    -moz-box-shadow: 0px 2px 5px darkgrey;
-    box-shadow: 0px 2px 5px darkgrey;
     width: 45%;
     display: table-cell;
     padding: 10px;
@@ -17,22 +13,23 @@ form{
     margin: 10px;
     color: black; }
 
-
 .inline {
     display: inline-block;
     margin-left: 3px;
-    margin-right: 3px; }
-
+    margin-right: 3px;
+}
+#cont{
+    display: table;
+    margin: 5px;
+}
 #Antwortbox {
     -webkit-box-shadow: 0px 2px 5px darkgrey;
     -moz-box-shadow: 0px 2px 5px darkgrey;
     box-shadow: 0px 2px 5px darkgrey;
-    background-color: rgba(181, 237, 239, 0.29);
+    background-color: rgba(0, 131, 198, 0.39);
     display: table-cell;
-    padding: 10px;
     width: 40%;
-    margin-left: 15px;
-    font-family: Arial, Helvetica, sans-serif; }
+ }
 
 #Platzhalter {
     padding: 10px;
@@ -50,16 +47,17 @@ form{
     box-shadow: 0px 2px 5px darkgrey; }
 
 .token {
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-    -moz-box-shadow: 0px 2px 5px darkgrey;
-    box-shadow: 0px 2px 5px darkgrey;
     background: rgba(239, 239, 239, 0.59);
-    color: green;
-    font: bold;
+    color: white;
+    font-weight: bold;
     padding: 5px;
     display: inline-flex;
     flex-direction: column;
     margin: 10px; }
+.token a{
+    font-weight: bold;
+    color: #005E9C;
+}
 
 .button:hover {
     background-color: #99ff66; }

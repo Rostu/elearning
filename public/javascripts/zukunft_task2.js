@@ -1,5 +1,12 @@
 $(init);
 function init() {
+    //shows the info buttons on the left side
+    $('.redstripe').show();
+    //add a content div to the second info button; first one is reserved
+    jQuery('<div/>', {
+        class: 'redtext'
+    }).appendTo('#info2');
+
     aktuell = 0;
     var fehlversuche = 10;
     var ar = [];
@@ -61,12 +68,12 @@ function init() {
                     else
                     {
                         $("span[id=weiter]").append("<a id='weiterlink' class='buttona' href='zukunft_task2'>WEITER</a>");
-                        animatearrow_weiter();
                         //aktuell = 0;
                     }
 
                 });
                 $("#infolink").remove();
+                animateclear();
             });
         }
         else
@@ -81,12 +88,13 @@ function init() {
                 }
             }
             $("#infolink").remove();
-            $("span[id=hilfe]").append("<a id='infolink' class='buttona' target='blank' href='http://www.duden.de/suchen/dudenonline/"+$(this).text()+"'>"+$(this).text()+"??</a>");
+            animateclear();
+            $(".redtext").append("<a id='infolink' class='redlink' target='blank' href='http://www.duden.de/suchen/dudenonline/"+$(this).text()+"'>"+$(this).text()+"??</a>");
             animatearrow_wrong();
             $(this).animate({bottom:'-=0.5em'},"fast");
             $(this).animate({backgroundColor: '#a8383b', color: 'white', fontSize: '+=0.5em'},"slow");
             $(this).effect( "shake", {distance: 5}, 125)
-            $(this).animate({backgroundColor: '#fafad2', color: 'black',bottom:'+=0.5em', fontSize: '-=0.5em'}, "slow");
+            $(this).animate({backgroundColor: '#005E9C', color: 'white',bottom:'+=0.5em', fontSize: '-=0.5em'}, "slow");
         }
     };
 
@@ -126,14 +134,18 @@ function init() {
     };
     console.log(shuffle(ar[aktuell].inhalt));
     newdiv();
-    function animatearrow_wrong(){
-        $('#arrow_wrong').animate({top: '+79%',opacity: 1},{duration: 1000, easing: "easeOutBounce" });
-        $('#arrow_wrong').animate({top: '+10%', opacity: 0},0);
-    }
-    function animatearrow_weiter(){
-        $('#arrow_weiter').animate({top: '+79%',opacity: 1},{duration: 1000, easing: "easeOutBounce" });
-        $('#arrow_weiter').animate({top: '+10%', opacity: 0},0);
-    }
 
+    function animatearrow_wrong(){
+        $('#info2').children('.redtext').show();
+        $('#info2').animate({width: "90%"}, 300);
+        $('#info2').animate({color: "#ffffff"}, 100);
+    };
+
+    function animateclear(){
+        $('#info2').children('.redtext').hide();
+        $('#info2').animate({color: "#A91211"}, 100);
+        $('#info2').animate({width: "20px"},100);
+    };
 
 };
+

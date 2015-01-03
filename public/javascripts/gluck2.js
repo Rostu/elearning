@@ -3,6 +3,7 @@
  */
 
 $(document).ready(function() {
+
     var hidden = true;
     var input = $('input');
     var socket = io.connect('/');

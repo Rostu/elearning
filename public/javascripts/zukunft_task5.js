@@ -27,6 +27,7 @@
 
     var BadChars = "`~!@^*()_={[}]\\|:;\"',<>/?";
 
+
     var TableAcrossWord, TableDownWord;
     var CurrentWord, PrevWordHorizontal, x, y, i, j;
     var CrosswordFinished, Initialized;

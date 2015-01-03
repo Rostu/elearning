@@ -1,6 +1,6 @@
 $( init );
 function init() {
-
+    $('#info1').show();
     var r_length = 0;
     var arr = $(".inline");
     arr = shuffle(arr);
