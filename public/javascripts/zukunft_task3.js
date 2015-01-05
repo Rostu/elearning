@@ -57,14 +57,14 @@ function init() {
             $(".kolo[id="+ui.draggable.attr('id')+"]").remove();
             $('#a2').append(div);
 
-        };
+        }
         if(s.indexOf("token") >=0){
             $(".token[id="+ui.draggable.attr('id')+"]").remove();
             $('#a1').append(div);
-        };
+        }
         div.click(clear);
         check();
-    };
+    }
 
     function shuffle(array) {
         var counter = array.length, temp, index;
@@ -80,7 +80,7 @@ function init() {
             array[index] = temp;
         }
         return array;
-    };
+    }
 
     function check(){
         if($("#Antwortbox .antworttoken").length > 1){
@@ -154,5 +154,17 @@ function init() {
         //console.log($('#balken_innen1'));
         $('#balken_innen1').css('width',r_length*50);
         $('#balken_innen2').css('width',w_length*25);
-    }
+    };
+
+    function raisefaults(){
+        var temp = $("#point_bars").data("actualf") + 1;
+        $("#point_bars").data("actualf", temp);
+        $(document).trigger('PointsChanged');
+    };
+
+    function raisepoints(){
+        var temp = $("#point_bars").data("actualp") + 1;
+        $("#point_bars").data("actualp", temp);
+        $(document).trigger('PointsChanged');
+    };
 };

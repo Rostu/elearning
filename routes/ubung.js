@@ -1,5 +1,6 @@
 var dbhandler = require('./dbhandler');
 var navigation = require('./navbar');
+var pointhandler = require('./pointshandler');
 
 exports.ubung = function(req, res){
     req.session.lastpage = '';
@@ -211,7 +212,8 @@ exports.get_generationen_task3 = function(req, res){
 };
 exports.get_zukunft_start = function(req, res){
     req.session.lastpage = 'zukunft_start';
-    res.render('zukunft_start');
+
+    res.render('zukunft_start',{title:'zukunft_start', maxpoints: 0,maxfaults: 0});
 };
 exports.get_zukunft_task1 = function(req, res){
     req.session.lastpage = 'zukunft_task1';

@@ -3,6 +3,10 @@
  */
 
 $(document).ready(function() {
+    $( "#point_bars" ).data( "actualp", 0 );
+    $( "#point_bars" ).data( "actualf", 0 );
+    //console.log($("body").data());
+
     $('.redstripe').hide();
     $('.redtext').hide();
     $('.redstripe').mouseenter(function()
@@ -13,7 +17,6 @@ $(document).ready(function() {
         $(this).children('.redtext').show();
         $(this).animate({width: "90%"}, 100);
         $(this).animate({color: "#ffffff"}, 100);
-
     });
 
     $('.redstripe').mouseleave(function()
@@ -36,46 +39,49 @@ $(document).ready(function() {
 
     //functions for the point visualization--------------------------------
 
-    var maxpoints = 100;
-    var maxfaults = 100;
-
-    var actualpoints = 25;
-    var actualfaults = 5;
-
-    var myScale = d3.scale.linear().domain([0, maxpoints]).range([0, 2 * Math.PI]);
+    var maxp = 0;
+    var maxf = 0;
     var vis = d3.select("#point_bars");
 
-    var arc3 = d3.svg.arc().innerRadius(40).outerRadius(50).startAngle(myScale(0)).endAngle(myScale(maxpoints));
-    vis.append("path").attr("d", arc3).attr("transform", "translate(50,60)").style("fill", "rgba(0, 94, 156, 0.25)");
+    $.getJSON('/points', function(data){
+        maxp = data.maxpoints;
+        maxf = data.maxfaults;
+        myScale = d3.scale.linear().domain([0, maxp]).range([0, 2 * Math.PI]);
+        arc3 = d3.svg.arc().innerRadius(40).outerRadius(50).startAngle(myScale(0)).endAngle(myScale(maxp));
+        arc4 = d3.svg.arc().innerRadius(25).outerRadius(35).startAngle(myScale(0)).endAngle(myScale(maxf));
+        vis.append("path").attr("d", arc3).attr("transform", "translate(50,60)").style("fill", "rgba(0, 94, 156, 0.25)");
+        vis.append("path").attr("d", arc4).attr("transform", "translate(50,60)").style("fill", "rgba(169, 18, 17, 0.20)");
+        updatepoints();
+        updatefaults();
 
-    var arc4 = d3.svg.arc().innerRadius(25).outerRadius(35).startAngle(myScale(0)).endAngle(myScale(maxfaults));
-    vis.append("path").attr("d", arc4).attr("transform", "translate(50,60)").style("fill", "rgba(169, 18, 17, 0.20)");
+    });
 
     function updatepoints(){
-        var arc1 = d3.svg.arc().innerRadius(40).outerRadius(50).startAngle(myScale(0)).endAngle(myScale(actualpoints));
+        var actualp = $("#point_bars").data("actualp");
+        var arc1 = d3.svg.arc().innerRadius(40).outerRadius(50).startAngle(myScale(0)).endAngle(myScale(actualp));
         vis.append("path").attr("d", arc1).attr("transform", "translate(50,60)").style("fill", "#005E9C");
+
     }
     function updatefaults(){
-        var arc2 = d3.svg.arc().innerRadius(25).outerRadius(35).startAngle(myScale(0)).endAngle(myScale(actualfaults));
+        var actualf = $("#point_bars").data("actualf");
+        var arc2 = d3.svg.arc().innerRadius(25).outerRadius(35).startAngle(myScale(0)).endAngle(myScale(actualf));
         vis.append("path").attr("d", arc2).attr("transform", "translate(50,60)").style("fill", "#A91211");
 
     }
-    updatepoints();
-    updatefaults();
-    //end functions for the point visualization--------------------------------
 
-    $('#button3').click(function() {
-        actualpoints += 5;
-        console.log("+");
+    //$(document).on('data-attribute-changed', function() {
+    //    updatepoints();
+    //    updatefaults();
+    //});
+
+    $(document).on("PointsChanged", function() {
         updatepoints();
+        updatefaults();
     });
 
-
-    function update(){
-        actualpoints += 5;
-        console.log("+");
-        updatepoints();
-    }
+    //end functions for the point visualization--------------------------------
 
 
-})
+
+
+});

@@ -10,8 +10,6 @@ function init() {
     var w_length = 0;
     var fb1 = 0;
     var fb2 = 0;
-    var actualpoints = 0;
-    var actualfaults = 0;
 
     $(".inline").each(function() {
         $(this).draggable({
@@ -54,8 +52,8 @@ function init() {
         if($.inArray(textinhalt, testarray)> -1){
             $(div).data('korrekt',true);
             $(div).css('background','#02D64A');
-            actualpoints++;
-        }else {$(div).data('korrekt',false);$(div).css('background','#A91211');$(div).css('color','white');actualfaults++;}
+            raisepoints();
+        }else {$(div).data('korrekt',false);$(div).css('background','#A91211');$(div).css('color','white');raisefaults();}
         $("#Antwortbox").bind("contextmenu",function(e){return false;});
         $("#Antwortbox").append(div);
         div.mousedown(clear);
@@ -80,8 +78,8 @@ function init() {
         if (ev.which == 3) {
             $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
             if($(this).data('korrekt')==true){
-                actualpoints--;
-            }else{actualfaults--;}
+                decreasepoints();
+            }else{decreasefaults();}
             $(".token[id=" + this.id + "]").remove();
         }
     }
@@ -94,4 +92,27 @@ function init() {
         $('#arrow').animate({top: '+79%',opacity: 1},{duration: 1000, easing: "easeOutBounce" });
         $('#arrow').animate({top: '+10%', opacity: 0},0);
     }
+
+    function raisefaults(){
+        var temp = $("#point_bars").data("actualf") + 1;
+        $("#point_bars").data("actualf", temp);
+        $(document).trigger('PointsChanged');
+    };
+    function decreasefaults(){
+        var temp = $("#point_bars").data("actualf") -1;
+        $("#point_bars").data("actualf", temp);
+        $(document).trigger('PointsChanged');
+    };
+    function raisepoints(){
+        var temp = $("#point_bars").data("actualp") + 1;
+        $("#point_bars").data("actualp", temp);
+        $(document).trigger('PointsChanged');
+    };
+    function decreasepoints(){
+        var temp = $("#point_bars").data("actualf") -1;
+        $("#point_bars").data("actualp", temp);
+        $(document).trigger('PointsChanged');
+    };
+
+
 };

@@ -15,7 +15,8 @@ var app = express();
 var index = require('./routes/index');
 var dml = require('./routes/dml');
 var dbhandler = require('./routes/dbhandler');
-
+var pointshandler = require('./routes/pointshandler');
+var points = require('./public/javascripts/points.json');
 //lockit vars
 var config = require('./config.js');
 var Lockit = require('lockit');
@@ -84,6 +85,16 @@ app.get('/handy_task2', ubung.get_handy_task2);
 app.get('/home', start.start);
 app.get('/impressum', impressum.get_imp);
 app.get('/neuanlegen', ubung.neu);
+//app.get('/points', pointshandler.get_points);
+
+app.get('/points', function(req, res){
+    //console.log(req.session.lastpage);
+    var site ={};
+    points.sites.forEach(function(entry) {
+        if (entry.name == req.session.lastpage ){site = entry}
+    });
+    res.json(site);
+});
 app.get('/signup', signup.get_signup);
 app.get('/users', user.list);
 app.get('/start', start.start);
