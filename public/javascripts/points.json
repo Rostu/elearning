@@ -13,7 +13,8 @@
     },
     {
         "name":"glueck_task3", "maxpoints":0, "maxfaults":0
-    },{
+    },
+    {
         "name":"glueck_task4", "maxpoints":0, "maxfaults":0
     },
     {
@@ -74,7 +75,7 @@
         "name":"generationen_text", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"generationen_task1", "maxpoints":0, "maxfaults":0
+        "name":"generationen_task1", "maxpoints":9, "maxfaults":9
     },
     {
         "name":"generationen_task2", "maxpoints":0, "maxfaults":0

@@ -5,7 +5,7 @@ body {
     height: 100%;
     font-size: 12px;
     overflow-y: scroll;
-    background: #E5EFF5 url("images/siegel.png") no-repeat scroll -159px 129px;
+    /*background: #E5EFF5 url("images/siegel.png") no-repeat scroll -159px 129px;*/
 }
 
 #redbackground {
@@ -122,6 +122,7 @@ body {
 mark.codex {
     color: #A91211;
     background: #D5EBFD;
+    
 }
 
 img.codexLogo {

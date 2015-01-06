@@ -140,18 +140,5 @@ function init() {
         $('#info2').animate({width: "20px"},100);
     };
 
-    function raisefaults(){
-        var temp = $("#point_bars").data("actualf") + 1;
-        $("#point_bars").data("actualf", temp);
-        $(document).trigger('PointsChanged');
-    };
-
-    function raisepoints(){
-        var temp = $("#point_bars").data("actualp") + 1;
-        $("#point_bars").data("actualp", temp);
-        $(document).trigger('PointsChanged');
-    };
-
-
 };
 

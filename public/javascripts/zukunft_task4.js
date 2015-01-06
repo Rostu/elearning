@@ -44,7 +44,7 @@ function init() {
             ui.helper.fadeOut();
             ui.draggable.remove();
 
-            update_balken();
+            raisepoints();
         }
         else
         {
@@ -61,11 +61,6 @@ function init() {
         });
     };
 
-    function update_balken(){
-        //console.log($('#balken_innen1'));
-        $('#balken_innen1').css('width',r_length*12);
-        //$('#balken_innen2').css('width',w_length*4);
-    }
 
     function shuffle(array) {
         var counter = array.length, temp, index;

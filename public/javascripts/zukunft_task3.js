@@ -87,12 +87,13 @@ function init() {
             if( $("#Antwortbox .antworttoken")[0].id == $("#Antwortbox .antworttoken")[1].id){
                 $("#Antwortbox .antworttoken").delay(800).fadeOut( function() { $("#Antwortbox .antworttoken").remove(); });
                 r_length++;
-                update_balken();
+                raisepoints();
                 $("h1").fadeToggle(800,function(){ $("h1").hide();});
             }else{
                 $("#Antwortbox .antworttoken").delay(800).fadeOut( function() {
                    clear2(this);
                 });
+                raisefaults();
                 $("h2").fadeToggle(800,function(){ $("h2").hide();});
             }
         }
@@ -149,22 +150,4 @@ function init() {
             $(token).remove();
         }
     }
-
-    function update_balken(){
-        //console.log($('#balken_innen1'));
-        $('#balken_innen1').css('width',r_length*50);
-        $('#balken_innen2').css('width',w_length*25);
-    };
-
-    function raisefaults(){
-        var temp = $("#point_bars").data("actualf") + 1;
-        $("#point_bars").data("actualf", temp);
-        $(document).trigger('PointsChanged');
-    };
-
-    function raisepoints(){
-        var temp = $("#point_bars").data("actualp") + 1;
-        $("#point_bars").data("actualp", temp);
-        $(document).trigger('PointsChanged');
-    };
 };

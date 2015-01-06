@@ -79,9 +79,31 @@ $(document).ready(function() {
         updatefaults();
     });
 
+
     //end functions for the point visualization--------------------------------
 
 
 
 
 });
+
+function raisefaults(){
+    var temp = $("#point_bars").data("actualf") + 1;
+    $("#point_bars").data("actualf", temp);
+    $(document).trigger('PointsChanged');
+};
+function decreasefaults(){
+    var temp = $("#point_bars").data("actualf") -1;
+    $("#point_bars").data("actualf", temp);
+    $(document).trigger('PointsChanged');
+};
+function raisepoints(){
+    var temp = $("#point_bars").data("actualp") + 1;
+    $("#point_bars").data("actualp", temp);
+    $(document).trigger('PointsChanged');
+};
+function decreasepoints(){
+    var temp = $("#point_bars").data("actualp") -1;
+    $("#point_bars").data("actualp", temp);
+    $(document).trigger('PointsChanged');
+};

@@ -93,26 +93,5 @@ function init() {
         $('#arrow').animate({top: '+10%', opacity: 0},0);
     }
 
-    function raisefaults(){
-        var temp = $("#point_bars").data("actualf") + 1;
-        $("#point_bars").data("actualf", temp);
-        $(document).trigger('PointsChanged');
-    };
-    function decreasefaults(){
-        var temp = $("#point_bars").data("actualf") -1;
-        $("#point_bars").data("actualf", temp);
-        $(document).trigger('PointsChanged');
-    };
-    function raisepoints(){
-        var temp = $("#point_bars").data("actualp") + 1;
-        $("#point_bars").data("actualp", temp);
-        $(document).trigger('PointsChanged');
-    };
-    function decreasepoints(){
-        var temp = $("#point_bars").data("actualf") -1;
-        $("#point_bars").data("actualp", temp);
-        $(document).trigger('PointsChanged');
-    };
-
 
 };
