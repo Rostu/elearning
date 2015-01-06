@@ -65,10 +65,12 @@ $(document).ready(function() {
         if (o.text()) {
             if (pd.attr("id").substring(1) == drag.attr("id").substring(1)) {
                 flash(null, '#90EE90');
+                raisepoints();
                 $('#message').show().effect("puff", 2000, function() {
                     $('#a1').text("");
                     $('#a2').text("");
                     count++;
+
                     if (count > 9) {
                         // end task
                     }
@@ -76,12 +78,14 @@ $(document).ready(function() {
             } else {
                 flash();
                 $('.drop2').css({'color':'darkred'});
+                raisefaults();
                 $('#message2').show().effect("puff", 2000, function() {
                     pp.append(pd);
                     parent.append(drag);
                     $('#a1').text("");
                     $('#a2').text("");
                     $('.drop2').css({'color':'green'});
+
                 });
             }
         } else {
@@ -121,4 +125,16 @@ $(document).ready(function() {
             });
         }
     }
+    function raisefaults(){
+        var temp = $("#point_bars").data("actualf") + 1;
+        $("#point_bars").data("actualf", temp);
+        $(document).trigger('PointsChanged');
+    };
+
+    function raisepoints(){
+        var temp = $("#point_bars").data("actualp") + 1;
+        $("#point_bars").data("actualp", temp);
+        $(document).trigger('PointsChanged');
+    };
+
 });

@@ -57,14 +57,14 @@ function init() {
             $(".kolo[id="+ui.draggable.attr('id')+"]").remove();
             $('#a2').append(div);
 
-        };
+        }
         if(s.indexOf("token") >=0){
             $(".token[id="+ui.draggable.attr('id')+"]").remove();
             $('#a1').append(div);
-        };
+        }
         div.click(clear);
         check();
-    };
+    }
 
     function shuffle(array) {
         var counter = array.length, temp, index;
@@ -80,19 +80,20 @@ function init() {
             array[index] = temp;
         }
         return array;
-    };
+    }
 
     function check(){
         if($("#Antwortbox .antworttoken").length > 1){
             if( $("#Antwortbox .antworttoken")[0].id == $("#Antwortbox .antworttoken")[1].id){
                 $("#Antwortbox .antworttoken").delay(800).fadeOut( function() { $("#Antwortbox .antworttoken").remove(); });
                 r_length++;
-                update_balken();
+                raisepoints();
                 $("h1").fadeToggle(800,function(){ $("h1").hide();});
             }else{
                 $("#Antwortbox .antworttoken").delay(800).fadeOut( function() {
                    clear2(this);
                 });
+                raisefaults();
                 $("h2").fadeToggle(800,function(){ $("h2").hide();});
             }
         }
@@ -148,11 +149,5 @@ function init() {
             });
             $(token).remove();
         }
-    }
-
-    function update_balken(){
-        //console.log($('#balken_innen1'));
-        $('#balken_innen1').css('width',r_length*50);
-        $('#balken_innen2').css('width',w_length*25);
     }
 };

@@ -1,0 +1,116 @@
+{"sites":[
+    {
+        "name":"glueck_start", "maxpoints": 0, "maxfaults": 0
+    },
+    {
+        "name":"glueck_task1a", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"glueck_task1b", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"glueck_task2", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"glueck_task3", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"glueck_task4", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"handy_start", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"handy_task1", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"handy_task2", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"ersti_start", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"ersti_task1", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"ersti_task2", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"ersti_task2b", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"ersti_task2c", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"ersti_task3", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"ersti_task3b", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"ersti_task3c", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"ersti_task4", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"wertewandel_start", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"wertewandel_task1", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"wertewandel_task2", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"wertewandel_task3", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"wertewandel_task4", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"generationen_start", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"generationen_text", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"generationen_task1", "maxpoints":9, "maxfaults":9
+    },
+    {
+        "name":"generationen_task2", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"generationen_task3", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"zukunft_start", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"zukunft_task1", "maxpoints":20, "maxfaults":20
+    },
+    {
+        "name":"zukunft_task2", "maxpoints":6, "maxfaults":10
+    },
+    {
+        "name":"zukunft_task3", "maxpoints":4, "maxfaults":10
+    },
+    {
+        "name":"zukunft_task4", "maxpoints":17, "maxfaults":25
+    },
+    {
+        "name":"zukunft_task5", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"china_start", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"china_task1", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"china_task2", "maxpoints":0, "maxfaults":0
+    },
+    {
+        "name":"china_task2", "maxpoints":0, "maxfaults":0
+    }
+]}

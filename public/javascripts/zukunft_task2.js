@@ -8,7 +8,7 @@ function init() {
     }).appendTo('#info2');
 
     aktuell = 0;
-    var fehlversuche = 10;
+
     var ar = [];
     // Inhalte der Aufgabe erstellen, Notiz an mich, in DB ablegen
     var z_task1_1 = new Object();
@@ -55,6 +55,7 @@ function init() {
     {
         if ($.inArray($(this).text(),ar[aktuell].loesung) > -1)
         {
+            raisepoints();
             $(this).animate({bottom:'-=0.5em'},"fast");
             $(this).animate({backgroundColor: '#90bf60', color: 'white', fontSize: '+=0.5em'},"slow");
             $(this).animate({bottom:'+=0.5em', fontSize: '-=0.5em'}, "slow", function(){
@@ -78,15 +79,7 @@ function init() {
         }
         else
         {
-            if (fehlversuche > 0) {
-                fehlversuche--;
-                $("#fehler").remove();
-                $("span[id=balken]").append("<a id='fehler' class='buttona'>Fehlversuche: " + fehlversuche + "</a>");
-                $("#fehler").animate({color: '#a8383b'},"fast");
-                if (fehlversuche != 0) {
-                    $("#fehler").animate({color: 'white'}, "fast");
-                }
-            }
+            raisefaults();
             $("#infolink").remove();
             animateclear();
             $(".redtext").append("<a id='infolink' class='redlink' target='blank' href='http://www.duden.de/suchen/dudenonline/"+$(this).text()+"'>"+$(this).text()+"??</a>");

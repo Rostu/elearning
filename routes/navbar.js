@@ -6,7 +6,7 @@ var sites = [
     ['wertewandel_start','wertewandel_task1','wertewandel_task2','wertewandel_task3','wertewandel_task4'],
     ['generationen_start','generationen_text','generationen_task1','generationen_task2','generationen_task3'],
     ['zukunft_start','zukunft_task1','zukunft_task2','zukunft_task3','zukunft_task4','zukunft_task5'],
-    ['china_start', 'china_task1','china_task2','china_start3']
+    ['china_start', 'china_task1','china_task2','china_task3']
 ];
 
 
