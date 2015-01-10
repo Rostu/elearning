@@ -792,3 +792,7 @@ img.uniLogo {
     color: white;
     text-align: center;
 }
+
+#impressumcontent {
+    margin: 0px 10px -10px 10px;
+}
