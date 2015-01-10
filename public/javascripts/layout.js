@@ -9,6 +9,7 @@ $(document).ready(function() {
 
     $('.redstripe').hide();
     $('.redtext').hide();
+
     $('.redstripe').mouseenter(function()
     {
         //$(this).text("dsaf")
@@ -36,6 +37,23 @@ $(document).ready(function() {
     {
         $(this).css("textDecoration", "none");
     });
+
+    //implements dropdown menu for start pages
+
+    $('.panelarrow').click(function() {
+        var parents = $(this).parents();
+        var panel_id = $(parents[1]).attr("id");
+        var panelcontent = $("div#" + panel_id).children('.panelcontent');
+        if ($(panelcontent).css('display') == "none") {
+            $(panelcontent).css('display', 'inherit');
+            $(this).css("background-image", 'url("/images/button_up.gif")');
+        } else {
+            $(panelcontent).css('display', 'none');
+            $(this).css("background-image", 'url("/images/button_down.gif")');
+        }
+    });
+
+
 
     //functions for the point visualization--------------------------------
 
