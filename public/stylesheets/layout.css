@@ -5,7 +5,7 @@ body {
     height: 100%;
     font-size: 12px;
     overflow-y: scroll;
-    background: #E5EFF5 url("/images/siegel.png") no-repeat scroll -159px 129px;
+    background: #E5EFF5 url("/public/images/siegel.png") no-repeat scroll -159px 129px;
 }
 
 #redbackground {
@@ -757,7 +757,6 @@ img.uniLogo {
     margin: 5px 5px 10px 5px;
     height: 50px;
     align: center;
-    float: top;
 }
 
 .licon {
@@ -781,6 +780,13 @@ img.uniLogo {
     float: right;
     border-radius: 25px;
 }
+
+.lstart a {
+    width: 50px;
+    padding:25px;
+    height: 50px;
+}
+
 
 .ltitle {
     margin: 10px 60px 10px 60px;
