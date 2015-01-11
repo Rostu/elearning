@@ -1,19 +1,27 @@
 extends layout
 block content
-    link(rel='stylesheet', href='stylesheets/handy.css')
-    script(src='javascripts/handy_start.js')
-    #Aufgabenbox
-        h1(style='font-family:Dosis,sans-serif;') Handy
-    #wrapper
-        #Textbox
-            div#l1.lek
-                p Lektion 1
-                p.gr Lückentext
-            div#l2.lek
-                p Lektion 2
-                p.gr Gegenteil
-    #Field
-        span#balken
-        span#hilfe
-        span#check
-        span#weiter
+    #subjecttitle
+        h1 Handy
+    #text.startpanel
+        div.panelheader
+            div.panelarrow
+            h2 Text: Unbekannter Titel
+        #subjecttext.panelcontent
+    #lessons.startpanel
+        div.panelheader
+            div.panelarrow
+            h2 Lektionen
+        #lessonlist.panelcontent
+            div#les1.lesson
+                div.licon Icon
+                div.lstart
+                div.ltitle Lückentext
+            div#les2.lesson
+                div.licon Icon
+                div.lstart
+                div.ltitle Gegenteil
+    #media.startpanel
+        div.panelheader
+            div.panelarrow
+            h2 Medien
+        #mediashow.panelcontent

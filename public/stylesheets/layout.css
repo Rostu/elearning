@@ -5,7 +5,7 @@ body {
     height: 100%;
     font-size: 12px;
     overflow-y: scroll;
-    /*background: #E5EFF5 url("images/siegel.png") no-repeat scroll -159px 129px;*/
+    background: #E5EFF5 url("/images/siegel.png") no-repeat scroll -159px 129px;
 }
 
 #redbackground {
@@ -292,7 +292,7 @@ img.uniLogo {
     background-color: #FAFAFA !important;
 }
 
-#Aufgabenbox{
+#Aufgabenbox {
     /*text-align: center;
     color: #000000;
     background: #E5EFF5;
@@ -684,9 +684,115 @@ img.uniLogo {
     width: 0px;
     float: left;
 }
+
 #content_background {
-    background-color: #E5EFF5;
+    padding-bottom: 10px;
     width: 100%;
     position: relative;
+    background-color: #E5EFF5;
+}
 
+#subjecttitle {
+    padding: 5px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: black;
+    background: #A6D1F5;
+}
+
+#text {
+
+}
+
+#media {
+
+}
+
+#lessons {
+
+}
+
+
+
+.startpanel {
+    margin: 10px 10px auto;
+    background: #D5EBFD;
+    padding-bottom: 1px;
+}
+
+.panelheader {
+    padding: 5px 5px 5px 57px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+    background: #7AB3E3;
+}
+
+.panelarrow {
+    margin: 1px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background: #A6D1F5 url("/images/button_down.gif");
+    float: right;
+    border-radius: 25px;
+}
+
+#lessonlist {
+    width: 70%;
+    margin: 0px auto;
+    position: relative;
+}
+
+.panelcontent {
+    display: none;
+}
+
+.lesson {
+    margin: 5px 5px 10px 5px;
+    height: 50px;
+    align: center;
+    float: top;
+}
+
+.licon {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    background: #A6D1F5;
+    float: left;
+    border-radius: 25px;
+}
+
+.lstart {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    background: #A6D1F5 url("/images/button_right.gif");
+    float: right;
+    border-radius: 25px;
+}
+
+.ltitle {
+    margin: 10px 60px 10px 60px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    background: #A1BED6;
+    color: white;
+    text-align: center;
+}
+
+#impressumcontent {
+    margin: 0px 10px -10px 10px;
 }
