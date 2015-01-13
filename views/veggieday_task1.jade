@@ -1,38 +1,39 @@
 extends layout
 block content
     link(rel='stylesheet', href='stylesheets/veggie.css')
+    script( src='javascripts/veggie_task1.js')
     #Aufgabenbox
         p
-        b Aufgabe:
-        |Lies die fünf Zeitungsartikel zum Thema "Fleischfreier Montag" aufmerksam und informiere dich
-        |über die Bedeutung der <b><font color="#FF0000">rot</font></b> gedruckten Schlagwörter auf &nbsp
-        b Duden
-        |und auf dem
-        b Wortschatzportal der Universität Leipzig
-        |. Bei dieser Aufgabe geht es nicht nur darum, die Bedeutung der Wörter kennenzulernen, sondern auch um den
-        |Umgang mit den beiden Portalen zu üben. Diese können dir in Zukunft helfen, unbekannte Wörter besser zu verstehen.
+        b
+        | Hier siehst du Ausschnitte einer Zeitung. Lies die fünf Zeitungsartikel zum Thema "Fleischfreier Montag"
+        | aufmerksam und informiere dich über die Bedeutung der <b><font color="#FF0000">rot</font></b> gedruckten Schlagwörter auf
+        b &nbsp Duden
+        | &nbsp und auf dem
+        b &nbsp Wortschatzportal der Universität Leipzig
+        | . Bei dieser Aufgabe geht es nicht nur darum, die Bedeutung der Wörter kennenzulernen, sondern auch um den
+        | Umgang mit den beiden Portalen zu üben. Diese können dir in Zukunft helfen, unbekannte Wörter besser zu verstehen.
         p
-    h2(style="center") Übung 1: Vegetarismus
-    p
-    #Inhaltbox
+        p
+    #Textbox
         #Zeitung
             h2 Fleischfreier Montag
-            p Ein Tag pro Woche <b><font color="#FF0000"> Vegetarier </font></b> werden: Es gibt gute Gründe, bei dieser Aktion mitzumachen!
+            p
+            center Ein Tag pro Woche <b><font color="#FF0000"> Vegetarier </font></b> werden: Es gibt gute Gründe, bei dieser Aktion mitzumachen!
         p
         #Zeitung
             h3 Meat-free macht fit
-            img(id="front", src="images/moehren.jpg")
-            p
+            img(id="front", align="left", vspace="10", hspace="10", src="images/moehren.jpg")
             | Ab und an auf Wurstbrot und Steak zu erzichten, ist gut für die Gesundheit
             | (mindert z.B. das <b><font color="#FF0000"> Herzinfarktrisiko</font></b>). Die Deutsche Gesellschaft für Ernährung empfiehlt den
             | Verzehr von 300 bis 600 g Fleisch pro Woche. Gegessen werden im Schnitt aber fast 1,2 Kilo.
         #Zeitung
-            h3 Damals..
-            img(id="front", src="images/damals.jpg")
+            h3 Wer hat's erfunden?
+            img(id="front", align="left", vspace="10", hspace="10", src="images/erfunden.jpg")
             p
-            | 1968 wurden 23 Prozent der Nahrungsmittelausgaben für Fleisch verwendet. Heute sind es nur 13 Prozent,
-            | obwohl mehr Fleisch gegessen wird. <b><font color="#FF0000"> Massentierhaltung </font></b> macht Fleisch billiger und
-            | den <b><font color="#FF0000">Sonntagsbraten</font></b> zur Alltagskost.
+            | Ex-Beatle Paul McCartney. Der 70-jährige Vegetarier ruft seit 2009 mit seinen Töchtern Stelle (re.)
+            | und Mary zum "Meat Free Monday" auf, um den <b><font color="#FF0000"> Fleischkonsum </font></b> weltweit zu reduzieren und damit
+            | zu <b><font color="#FF0000"> Klimaschutz </font></b>  beizutragen. Immer mehr Menschen unterstützen die Aktion - auch Stars wie
+            | Gwyneth Paltrow und Oprah Winfrey.
         p
         #Zeitung
             h3 Richtig dicke Luft
@@ -43,27 +44,23 @@ block content
             | der <b><font color="#FF0000"> Brandrodung </font></b> von Weideflächen.
         p
         #Zeitung
-            h3 Wer hat's erfunden?
-            img(id="front", src="images/erfunden.jpg")
+            h3 Damals..
+            img(id="front", align="right", vspace="10", hspace="10", src="images/damals.jpg")
             p
-            | Ex-Beatle Paul McCartney. Der 70-jährige Vegetarier ruft seit 2009 mit seinen Töchtern Stelle (re.)
-            | und Mary zum "Meat Free Monday" auf, um den <b><font color="#FF0000"> Fleischkonsum </font></b> weltweit zu reduzieren und damit
-            | zu <b><font color="#FF0000"> Klimaschutz </font></b>  beizutragen. Immer mehr Menschen unterstützen die Aktion - auch Stars wie
-            | Gwyneth Paltrow und Oprah Winfrey.
+            | 1968 wurden 23 Prozent der Nahrungsmittelausgaben für Fleisch verwendet. Heute sind es nur 13 Prozent,
+            | obwohl mehr Fleisch gegessen wird. <b><font color="#FF0000"> Massentierhaltung </font></b> macht Fleisch billiger und
+            | den <b><font color="#FF0000">Sonntagsbraten</font></b> zur Alltagskost.
+            p
         #Zeitung
             h3 Veggie-Speiseplan
-            img(id="front", src="images/speiseplan.jpg")
+            img(id="front", align="left", vspace="10", hspace="10", src="images/speiseplan.jpg")
             p
             | Montags nur Möhren? Das "Meat Free Monday"-Kochbuch bringt Abwechslung auf den Tisch - mit 52
             | fleischfreien Speiseplänen für je einen ganzen Tag.
         p
 
     p
-    br
-    p
-    p
-    br
-    p
+
 
     #Field
         span#balken

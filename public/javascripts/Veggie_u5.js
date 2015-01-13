@@ -128,12 +128,18 @@ function validate ()
     }
     else if ( counterCheck || ( numberOfGivenResults == numberOfCorrectResults ) )
     {
-        alert ( 'Überdenke nochmal deine Zuordnung!' );
+        alert ( 'Überdenke nochmal deine Zuordnung! (Technischer Hinweis: Ein zugeordneter Begriff lässt sich durch Anklicken entfernen.)' );
     }
     else
     {
-        alert ( 'Nicht fertig! Es wurde nicht zu jeder Definition ein Begriff zugeordnet oder eine Box enthält nicht die erwartete Anzahl an Begriffen!' );
+        alert ( 'HALT! Es wurde nicht zu jeder Definition ein Begriff zugeordnet oder eine Box enthält nicht die erwartete Anzahl an Begriffen! (Technischer Hinweis: Ein zugeordneter Begriff lässt sich durch Anklicken entfernen.)' );
     }
 
 
 }
+
+$(init);
+function init() {
+    //shows the info buttons on the left side
+    $('#info1').show();
+};
