@@ -741,6 +741,7 @@ img.uniLogo {
     background: #A6D1F5 url("/images/button_down.gif");
     float: right;
     border-radius: 25px;
+    cursor: pointer;
 }
 
 #lessonlist {
@@ -749,8 +750,32 @@ img.uniLogo {
     position: relative;
 }
 
+#subjecttext {
+    padding: 0px 10px;
+}
+
+#mediashow {
+    margin: 0px 50px;
+ }
+
+#mediashowcontent {
+    overflow: auto;
+    text-align: center;
+    padding: 5px 5px;
+}
+
 .panelcontent {
     display: none;
+}
+
+.mediaelement {
+    display: inline-block;
+    margin: 5px 5px;
+    height: 100px;
+}
+
+.mediaimage {
+    height: 100px;
 }
 
 .lesson {
