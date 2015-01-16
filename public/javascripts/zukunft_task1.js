@@ -73,13 +73,13 @@ function init() {
         });
     };
 
-
     function clear(ev) {
         if (ev.which == 3) {
             $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
             if($(this).data('korrekt')==true){
                 decreasepoints();
-            }else{decreasefaults();}
+                console.log("Punkte reduziert")
+            }else{}
             $(".token[id=" + this.id + "]").remove();
         }
     }
