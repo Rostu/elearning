@@ -4,7 +4,7 @@ $( init );
 function init()
 {
     var id=0;
-
+    $('#info1').show();
     var i = 0;
 
     $(".inline").each(function()
@@ -128,12 +128,9 @@ function validate ()
     }
     else if ( counterCheck || ( numberOfGivenResults == numberOfCorrectResults ) )
     {
-        alert ( 'Überdenke nochmal deine Zuordnung!' );
+        alert ( 'Überdenke nochmal deine Zuordnung! (Technischer Hinweis: Ein zugeordneter Begriff lässt sich durch Anklicken entfernen.)' );
     }
-    else
-    {
-        alert ( 'Nicht fertig! Es wurde nicht zu jeder Definition ein Begriff zugeordnet oder eine Box enthält nicht die erwartete Anzahl an Begriffen!' );
+    else {
+        alert('HALT! Es wurde nicht zu jeder Definition ein Begriff zugeordnet oder eine Box enthält nicht die erwartete Anzahl an Begriffen! (Technischer Hinweis: Ein zugeordneter Begriff lässt sich durch Anklicken entfernen.)');
     }
-
-
 }

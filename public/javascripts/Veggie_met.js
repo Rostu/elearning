@@ -38,17 +38,17 @@ function validate ( sender )
             // leeres Feld
             if ( ! input )
             {
-                err_msg.push ( 'Frage ' + ( j+1 ) + ' (nicht ausgefüllt)' );
+                err_msg.push ( 'Feld ' + ( j+1 ) + ':' + ' Hier fehlt eine Metapher!' );
             }
             // richtiges Wort aber Groß-/Kleinschreibung falsch
             else if ( input.toUpperCase () == results [ j ].toUpperCase () )
             {
-                err_msg.push ( 'Frage ' + ( j+1 ) + ' (Groß-/Kleinschreibung)' );
+                err_msg.push ( 'Feld ' + ( j+1 ) + ':' + ' Beachte deine Groß-/Kleinschreibung!' );
             }
             // falsches Wort
             else
             {
-                err_msg.push ( 'Frage ' + ( j+1 )  + ' (falsches Wort)' );
+                err_msg.push ( 'Feld ' + ( j+1 )  + ':' + ' Das ist leider nicht die gesuchte Metapher!' );
             }
             field.style.border = "1px solid #ff0000";
         }
@@ -66,9 +66,12 @@ function validate ( sender )
     }
     else
     {
-        alert ( 'Glückwunsch! Du hast alles richtig zugeordnet!' );
+        alert ( 'Glückwunsch! Du hast alle Metaphern richtig verwendet!' );
     }
 }
 
-
-
+$(init);
+function init() {
+    //shows the info buttons on the left side
+    $('#info1').show();
+};
