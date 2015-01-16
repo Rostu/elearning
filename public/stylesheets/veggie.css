@@ -130,3 +130,17 @@ h2 {
     padding-top: 30px;
     color: black;
 }
+#pruefbutton{
+    margin: 10px auto;
+}
+a#pruefen{
+    background-color: #A91211;
+    font-size: 1.3em;
+    color: white;
+    padding: 5px;
+}
+
+a#pruefen:hover{
+    background-color: #005E9C;
+    cursor: pointer;
+}

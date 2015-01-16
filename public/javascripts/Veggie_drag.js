@@ -4,7 +4,7 @@ $( init );
 function init()
 {
     var id=0;
-
+    $('#info1').show();
     var i = 0;
 
     $(".inline").each(function()
@@ -132,8 +132,4 @@ function validate ()
 
 }
 
-$(init);
-function init() {
-    //shows the info buttons on the left side
-    $('#info1').show();
-};
+
