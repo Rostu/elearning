@@ -756,12 +756,13 @@ img.uniLogo {
 
 #mediashow {
     margin: 0px 50px;
- }
-
-#mediashowcontent {
     overflow: auto;
     text-align: center;
     padding: 5px 5px;
+ }
+
+#mediashowcontent {
+
 }
 
 .panelcontent {
