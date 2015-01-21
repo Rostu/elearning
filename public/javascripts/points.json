@@ -54,6 +54,15 @@
         "name":"ersti_task4", "maxpoints":0, "maxfaults":0
     },
     {
+        "name":"veggieday_task3", "maxpoints":4, "maxfaults":4
+    },
+    {
+        "name":"veggieday_task4", "maxpoints":8, "maxfaults":8
+    },
+    {
+        "name":"veggieday_task5", "maxpoints":9, "maxfaults":9
+    },
+    {
         "name":"wertewandel_start", "maxpoints":0, "maxfaults":0
     },
     {
@@ -87,7 +96,7 @@
         "name":"zukunft_start", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"zukunft_task1", "maxpoints":20, "maxfaults":20
+        "name":"zukunft_task1", "maxpoints":20, "maxfaults":5
     },
     {
         "name":"zukunft_task2", "maxpoints":6, "maxfaults":10
