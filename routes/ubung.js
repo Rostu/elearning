@@ -217,9 +217,7 @@ exports.get_zukunft_start = function(req, res){
 };
 exports.get_zukunft_task1 = function(req, res){
     req.session.lastpage = 'zukunft_task1';
-    res.render('zukunft_task1', {
-        maxPoints: 0 ,
-        maxfaults: 0});
+    res.render('zukunft_task1');
 };
 exports.get_zukunft_task2 = function(req, res){
     req.session.lastpage = 'zukunft_task2';
