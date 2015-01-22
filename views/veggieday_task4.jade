@@ -4,22 +4,21 @@ block content
     script( src='javascripts/Veggie_drag.js')
     #Aufgabenbox
         p
-        b Aufgabe:
+        b
         |Lies den folgenden Text aufmerksam durch. Hier geht es um die Meinung der Mediziner zum Thema
         |Veganismus. Ziehe anschließend die enstprechenden Begriffe mit gedrückter Maustaste aus dem Text heraus
         |ihrer entsprechenden Definition zu.
+        p
         b Hinweis:
-        |Die Bedeutung von <i>kursiv</i> gedruckten Wörtern erfährst du, wenn du auf ihnen mit dem Mauszeiger verweilst!
-
-    h2(style="center") Übung 4: Meinung der Mediziner
-    p
+        | &nbsp Die Bedeutung von <i>kursiv</i> gedruckten Wörtern erfährst du, wenn du auf ihnen mit dem Mauszeiger verweilst!
+        p
     #Textbox
-        h3 Mediziner
+        h3 Meinung der Mediziner
         p
         | Schon Anfang der achtziger Jahre wurden in Deutschland drei große
         .inline(id=0) Vegetarierstudien
         | durchgeführt - mit
-        | erstaunlichen Erkenntnissen. Laut diesen Studien haben Vegetarier besser
+        | erstaunlichen Erkenntnissen . Laut diesen Studien haben Vegetarier besser
         .inline(id=1) Blutdruckwerte
         | , ein besseres
         .inline(id=2) Körpergewicht
@@ -27,61 +26,56 @@ block content
         .inline(id=3) Lebenserwartung
         | und ein geringeres Risiko für Krebs und
         .inline(id=4) Herz-Kreislauf-Erkrankungen
-        | .
-        | Untersuchungen aus anderen Ländern kommen zu ähnlichen Ergebnissen. Die Studie der
-        | <i><span title="Teil der Universität London. Führte die Studie durch.">London School of Hygiene and Tropical Medicine</span></i>
-        | hat 11.000 Vegetarierinnen 12 Jahre lang beobachtet. Sie verglich ihre Teilnehmerinnen mit einer fleischessenden
-        | <i><span title="mit ihrer Hilfe vergleicht man die Ergebnisse der Versuchsgruppe (hier: Fleischesser <-> Vegetarier)">Kontrollgruppe</span></i>.
-        | Das Ergebnis: In allen wichtigen Punkten hatten die Vegetarierinnen bessere Werte. Die
+        | . Untersuchungen aus anderen Ländern kommen zu ähnlichen Ergebnissen . Die Studie der
+        | <i><span title="Teil der Universität London. Sie führte die Studie durch.">London School of Hygiene and Tropical Medicine</span></i>
+        | hat 11.000 Vegetarierinnen 12 Jahre lang beobachtet . Sie verglich ihre Teilnehmerinnen mit einer fleischessenden
+        | <i><span title="Mit ihrer Hilfe vergleicht man die Ergebnisse der Versuchsgruppe (hier: Fleischesser <-> Vegetarier)">Kontrollgruppe</span></i> .
+        | Das Ergebnis: In allen wichtigen Punkten hatten die Vegetarierinnen bessere Werte . Die
         .inline(id=5) Sterberate
         | war um
-        | 20 % niedriger als bei der fleischessenden Kontrollgruppe, die Krebstodesrate war sogar um 40 % niedriger.
-        | Zusammenfassend zeigen diese Studien, dass Vegetarierinnen keine
+        | 20 % niedriger als bei der fleischessenden Kontrollgruppe , die Krebstodesrate war sogar um 40 % niedriger .
+        | Zusammenfassend zeigen diese Studien , dass Vegetarierinnen keine
         .inline(id=6) Mangelerscheinungen
         | haben, dass der
         | allgemeine
         .inline(id=7) Gesundheitszustand
         | überdurchschnittlich gut ist und die vegetarische Ernährung als gesund
-        | bezeichnet werden kann.
+        | bezeichnet werden kann .
         p
         p
         #Antwortbox1
-                p Definition 1:
-                | Jeder Mensch hat sein eigenes Gewicht, je nachdem wie viel man isst. Man kann es auf
-                | einer Waage wiegen kann. Frauen und kleine Menschen wiegen im Schnitt weniger als Männer oder
-                | große Menschen.
-                p Was wird hier definiert?
+            p
+            b Definition 1:
+            p
+            | Jeder Mensch hat sein eigenes Gewicht, je nachdem wie viel man isst. Man kann es auf
+            | einer Waage wiegen. Frauen und kleine Menschen wiegen im Schnitt weniger als Männer oder
+            | große Menschen.
+            p
+            b Was wird hier definiert?
+            p
         #Platzhalter
 
         #Antwortbox2
-                p Definition 2:
-                | Das Alter, das ein Mensch voraussichtlich erreichen wird. Einflüsse wie gesunde
-                | Ernährung und sportliche Aktivität wirken dabei positiv ein und können das erwartete Alter
-                | verlängern; Alkohol und Zigaretten bewirken das Gegenteil.
-                p Was wird hier definiert?
+            p
+            b Definition 2:
+            p
+            | Das Alter, das ein Mensch voraussichtlich erreichen wird. Einflüsse wie gesunde
+            | Ernährung und sportliche Aktivität wirken dabei positiv ein und können das erwartete Alter
+            | verlängern; Alkohol und Zigaretten bewirken das Gegenteil.
+            p
+            b Was wird hier definiert?
+            p
         #Platzhalter
 
         #Antwortbox3
-                p Definition 3:
-                | Damit ist eine allgemeine Anzahl von Menschen gemeint, die in einen bestimmten Zeitraum
-                | stirbt. Sie kann unterschiedlich ausfallen, je nachdem, wie hoch die Lebensqualität in den
-                | verschiedenen Ländern ist. Meist wird die Zahl in Prozent angegeben.
-                p Was wird hier definiert?
             p
-        p
-
-
-    p
-    br
-    p
-    p
-    br
-    p
-
-    #Field
-        span#balken
-        span#hilfe
-        span#check
-            a(href="", onclick='validate()') PRÜFEN
-        span#weiter
-            a(href='veggieday_task5') WEITER
+            b Definition 3:
+            p
+            | Damit ist eine allgemeine Anzahl von Menschen gemeint, die in einen bestimmten Zeitraum
+            | stirbt. Sie kann unterschiedlich ausfallen, je nachdem, wie hoch die Lebensqualität in den
+            | verschiedenen Ländern ist. Meist wird die Zahl in Prozent angegeben.
+            p
+            b Was wird hier definiert?
+            p
+        #pruefbutton
+            a#pruefen(onclick="validate()") Prüfen

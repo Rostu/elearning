@@ -2,35 +2,30 @@ extends layout
 block content
     link(rel='stylesheet', href='stylesheets/veggie.css')
     script( src='javascripts/Veggie_met.js')
-    #Aufgabenbox
-        p
-        b Aufgabe:
-        |Ein Sprachmittel der Überschriften in Zeitungsartikeln sind Metaphern. In unseren
-        |Zeitungsartikeln befanden sich vier davon, nämlich:
-        b Info:
-        |nur Gemüse im Kopf, richtig dicke Luft, zum Himmel stinken, Sonntagsbraten.
-        |&nbsp Um zu testen, ob du die Metaphern richtig verstanden hast, musst du sie an der richtigen Stelle im
-        |nachstehenden Lückentext einsetzen!
-    h2(style="center") Übung 3: Metaphern
-    p
-    #Inhaltbox
-        p
-        form#lueckentext(name='metaphor', action='')
-            | Am Wochenende fährt Paul, der bekennende Vegetarier, nachhause zu seinen Eltern. Seine Mutter hat schon den
-            | ganzen Tag fleißig gekocht, um ihm einen leckeren &nbsp
-            input(type='text', name='antwort1', size='20', value='')
-            | &nbsp zu servieren. Paul ist schockiert und denkt  sich: „ Die haben  wohl &nbsp
-            input(type='text', name='antwort2', size='20', value='')
-            | !“. Die Vorfreude aller wandelt sich schnell und es herrscht &nbsp
-            input(type='text', name='antwort3', size='20', value='')
-            | . „Verstehen meine Eltern denn nicht, dass die ganze Fleischesserei &nbsp
-            input(type='text', name='antwort4', size='20', value='')
-            | . Entrüstet packt Paul seine Sachen und fährt.
+    #content_background
+        #Aufgabenbox
+            p
+            b
+            | Ein Sprachmittel der Überschriften in Zeitungsartikeln sind Metaphern. In unseren
+            | Zeitungsartikeln befanden sich vier davon, nämlich:
+            p
+            i nur Gemüse im Kopf, richtig dicke Luft, zum Himmel stinkt, Sonntagsbraten.
+            p
+            | &nbsp Um zu testen, ob du die Metaphern richtig verstanden hast, musst du sie an der richtigen Stelle im
+            | nachstehenden Lückentext einsetzen!
+            p
+        #Textbox
+            p
+            form#lueckentext(name='metaphor', action='')
+                | Am Wochenende fährt Paul, der bekennende Vegetarier, nachhause zu seinen Eltern. Seine Mutter hat schon den
+                | ganzen Tag fleißig gekocht, um ihm einen leckeren &nbsp
+                input(type='text', name='antwort1', size='20', value='')
+                | &nbsp zu servieren. Paul ist schockiert und denkt  sich: „ Die haben  wohl &nbsp
+                input(type='text', name='antwort2', size='20', value='')
+                | !“. Die Vorfreude aller wandelt sich schnell und es herrscht &nbsp
+                input(type='text', name='antwort3', size='20', value='')
+                | . „Verstehen meine Eltern denn nicht, dass die ganze Fleischesserei &nbsp
+                input(type='text', name='antwort4', size='20', value='')
+                | . Entrüstet packt Paul seine Sachen und fährt.
 
-    #Field
-        span#balken
-        span#hilfe
-        span#check
-            a#pruefen(href="", onclick="validate2()") PRÜFEN
-        span#weiter
-            a(href='veggieday_task4') WEITER
+            a#pruefen(onclick="validate2()") Prüfen
