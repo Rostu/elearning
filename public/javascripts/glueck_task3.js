@@ -254,6 +254,51 @@ var KWRController = function (model) {
 var r = ["T", "B", "A", "H", "E", "G", "N", "I", "E", "W", "H", "C", "S"];
 
 $(document).ready(function() {
+    $('#helpdi').dialog({autoOpen: false,
+        show: {
+            effect: "fade",
+            duration: 1000
+        },
+        hide: {
+            effect: "fade",
+            duration: 1000
+        },
+        modal: true,
+        title: "KREUZWORTRÄTSEL",
+        buttons: [
+            {
+                text: "OK",
+                icons: {
+                    primary: "null"
+                },
+                click: function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        ],
+        draggable: false
+    });
+    $('#really').dialog({
+       autoOpen: false,
+        modal: true,
+        title: "AUFLÖSEN",
+        buttons: [
+            {
+                text: "Ja",
+                click: function() {
+                    controller.solveAll();
+                    $(this).dialog("close");
+                }
+            },
+            {
+                text: "Nein",
+                click: function() {
+                    $(this).dialog("close");
+                }
+            }
+        ]
+    });
+
     var m = [
         "Wer fegt den Kamin?",
         "Wie viele Blätter muss ein Kleeblatt haben, um Glück zu bringen?",
@@ -317,7 +362,7 @@ $(document).ready(function() {
     $('#info2').show().hover(
         function() {
             var a = $('<a href="#" class="redlink">Lösung zeigen</a>');
-            a.on("click", controller.solveAll);
+            a.on("click", reallysolve);
             $(this).append(a);
         },
         function() {
@@ -450,6 +495,12 @@ $(document).ready(function() {
     }
 
     function help () {
-        $.jqDialog.alert(null, "bla");
+       $('#helpdi').dialog("open");
     }
+
+    function reallysolve () {
+        $('#really').dialog("open");
+    }
+    // open the help dialog when the page has finished loading
+    $('#helpdi').dialog("open");
 });
