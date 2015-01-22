@@ -1,0 +1,133 @@
+extends layout
+block content
+    link(rel='stylesheet', href='stylesheets/veggie.css')
+    #Aufgabenbox
+        h2 Wie funktioniert diese Plattform?
+    #Textbox
+        | Hier findest du eine Kurzübersicht über die wichtigsten Funktionen, die dir diese Plattform bietet. Wenn du nur eine bestimmte Frage hast, kannst du direkt hier zur entsprechenden Erklärung navigieren:
+        p
+        ul
+            li
+                a(href='#menueleiste') Menüleiste
+            li
+                a(href='#lernmaterial') Lernmaterial & Übungen
+            li
+                a(href='#aufgabentypen') Aufgabentypen
+            li
+                a(href='#punktevergabe') Punktevergabe
+            li
+                a(href='#hilfebuttons') Hilfebuttons
+    p
+    #Aufgabenbox
+    #Textbox
+        h3
+            a(name= 'menueleiste') Menüleiste
+        p
+        | Über den
+        img(id="front", align="super", vspace="0", hspace="5", src="images/home_erklaerung.jpg")
+        | -button gelangst du zurück zur Startseite.
+        | Unter der Rubrik
+        img(id="front", vspace="0", hspace="5", src="images/themen_erklaerung.jpg")
+        | befinden sich die einzelnen Wortschatzgebiete, zu denen du dowohl Lernamterial erhälst als auch Übungen absolvieren kannst.
+        | Die Themengebiete sind Glück, Handy, Ersti, Veggie-Day, Wertewandel, Generationen, Zukunft und China.
+        | Ebenfalls über die Menüleiste kannst du Einstellungen an deinem
+        img(id="front", vspace="0", hspace="5", src="images/profil_erklaerung.jpg")
+        | verändern  oder aber auch eine Übersicht über deine bisher erlangten Punkte erhalten.
+        | Hinter dem Button
+        img(id="front", vspace="0", hspace="5", src="images/ueber_erklaerung.jpg")
+        | verbergen sich Infos über die Entwickler dieser Plattform.
+        | Wenn du deine aktuelle Sitzung beenden möchtest, kannst du dich über
+        img(id="front", vspace="0", hspace="5", src="images/logout_erklaerung.jpg")
+        | ausloggen.
+    p
+    #Aufgabenbox
+    #Textbox
+        h3
+            a(name= 'lernmaterial') Lernmaterial & Übungen
+        p
+        | Zum Lernmaterial und den dazugehörigen Übungen gelangst du, indem du auf ein Themenfeld unter der Rubrick 'Thema'
+        | in der Menüleiste klicks. Sobald du ein Themengebiet angeklickt hast, erhälst du drei Optionen:
+        ul
+            li
+                b Text:
+                | &nbsp; Möchtest du textbezogenes Lernmaterial durchlesen musst du auf „Text: Name“ klicken.
+                | Der sich öffnede Reiter enthält Texte, die als Grundlage für die folgenden Übungen dienen.
+            li
+                b Medien:
+                | &nbsp; Multimediales Lernmaterial wie Videos oder Audiodateien findest du unter der Rubrik „Medien“.
+            li
+                b Lektionen:
+                img(id="front", align="right", vspace="0", hspace="5", src="images/lernmaterial_erklaerung.jpg")
+                | &nbsp; Wenn du dich bereit für eine oder mehrere Übungen fühlst, klicke auf das Feld  „Lektionen“.
+                | Du erhälst zunächst einen Überblick über alle in diesem Themenfeld vorhandenen Aufgaben.
+                br
+                | In jedem Themenfeld gibt es verschiedene Aufgabentypen mit unterschiedlichem Schwierigkeitsgrad.
+                | Die Übungen sind so strukturiert, dass man diese in beliebiger Reihenfolge absolvieren kann.
+                | Wir empfehlen jedoch die Reihenfolge einzuhalten.
+                br
+                | Um zu einer bestimmten Übung zu gelangen, musst du diese einfach anklicken.
+                | Du kannst die Übungen so oft wiederholen, wie du möchtest!
+                br
+                | Am rechten Bildschirmrand findest sowohl im Übersichtsmenü als auch während den Übungen drei weitere,
+                | rot eingerahmte Symbole.
+                img(id="front", align="left", vspace="0", hspace="5", src="images/rotebuttons_erklaerung.jpg")
+                | Der oberste Button führt dich stest zurück zur Übersicht aller themebezogenen Aufgaben.
+                | Wenn du die Übungen der Reihe nach absolvieren möchtest bzw. du dich bereits innerhalb einer Übung befindest
+                | und möchtest mit der nächsten Aufgabe fortfahren willst, kannst du einfach den rechten, rot gerahmten Button
+                | anklicken.
+                | Möchtest du zu der vorherigen Übung zurückkehren, klicke auf den linken Button.
+    p
+    #Aufgabenbox
+    #Textbox
+        h3
+            a(name= 'aufgabentypen') Aufgabentypen
+        p
+        | Auf dieser Lernplattform begegnen dir die unterschiedlichsten Aufgabentypen, die im folgenden kurz vorgestellt werden.
+        #Erklaerungsbox
+            b Zuordnungaufgaben:
+        #Erklaerungsbox
+            | Bei dieser Aufgabenart lassen sich ausgewählte Wörter anklicken und verschieben. Teilweise werden die Wörter
+            | vorgegeben, teilweise musst du sie selbst im Text finden und aus dem Text herausziehen. Deine Aufgabe ist es
+            | jeweils, die richtigen Wörter an die richtige Stelle zu ziehen. Bei einigen Übungen wird dir sofort angezeigt,
+            | ob du richtig oder falsch liegst: Eine richtige Antwort wird grün hinterlegt, eine falsche rot. Bei manchen
+            | Übungen hast du die Chance, deine Auswahl zu korrigieren.
+        p
+        #Erklaerungsbox
+            b Lückentext:
+        #Erklaerungsbox
+            | Bei einem Lückentext bekommst du je nach Aufgabenstellung entweder Wörter vorgegeben oder du musst dir selbst
+            | überlegen, welches Wort sinnvoll wäre. Einige Lückentexte treten in Kombination mit einer Zuordnungsaufgabe auf,
+            | sodass sich die gesuchten Wörter in die Lücken verschieben lassen. Oftmals musst du die Wörter jedoch manuell
+            | eingeben. Achte dabei genau auf deine Rechtschreibung!!
+        p
+        #Erklaerungsbox
+            b Mehrfachauswahl:
+        #Erklaerungsbox
+            | Einige Aufgaben geben dir bereits mehrere Antwortmöglichkeiten vor. Du musst dich für eine entscheiden indem
+            | du die von dir für richtig gehaltene Antwort anklickst.
+        p
+        #Erklaerungsbox
+            b Kreuzworträtsel:
+        #Erklaerungsbox
+            | In einigen Themenfelder begegnen dir Kreuzworträtsel. Die jeweiligen Fragen erhältst du, wenn du ein beliebiges
+            | Feld im Rätsel anklickst.
+    p
+    #Aufgabenbox
+    #Textbox
+        h3
+            a(name= 'punktevergabe') Punktevergabe
+        p
+        | Je nach Schwierigkeit der Aufgabe kannst du eine unterschiedliche Anzahl an Punkten erhalten. Die erarbeitenden
+        | Punkte pro Aufgabe kannst du an den beiden Kreisen am rechten Bildschirmrand erkennen. Am Anfang einer jeden
+        | Aufgabe hast du null Punkte, d.h. die Kreise sind noch nicht gefüllt. Sobald du eine richtige Antwort tätigst,
+        | füllt sich der äußere, blaue Kreis! Er zeigt dir also an, wie viel du schon richtig geantwortet hast. Der innere,
+        | rote Kreis füllt sich mit jeder falsch gegebenen Antwort!
+    p
+    #Aufgabenbox
+    #Textbox
+        h3
+            a(name= 'hilfebuttons') Hilfebuttons
+        p
+        | Brauchst du Hilfe, musst du mit dem Mauszeiger zu den roten Balken am linken Bildschirmrand fahren.
+        | Sie verweisen dich zum Beispiel auf relevante Texte, die in diesem Themengebiet bearbeitet werden, oder auch
+        | auf externe Online-Nachschlagewerke.
