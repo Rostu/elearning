@@ -27,12 +27,13 @@
                     $(self).prop('disabled', true);
                     $(".inline[id=" + a[i]  + "]").css('color', 'green');
                     a.splice(i,1); // Delete the found word from the list of correct words
+                    raisepoints();
                     return;
                 }
             }
             // if we reach this point, the word didn't match any word
             $(self).effect("pulsate", "fast");
-
+            raisefaults();
             $(self).animate({borderBottomColor: "#ff0000", borderTopColor: "#ff0000", backgroundColor: "#ff8484"},2000,"swing",function() {
                 $(this).css({"border-top": "1px solid #c0c0c0",
                     "border-bottom": "1px solid #c0c0c0", "background-color": "#fff"});

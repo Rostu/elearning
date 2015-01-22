@@ -28,7 +28,7 @@ $(document).ready(function() {
 
         $('.target').droppable({drop: function(e,ui) {
             $(ui.draggable).attr("style","").addClass("revertable").attr("style","position:relative").appendTo($(this));
-
+            validate();
         }});
         $(document).on("contextmenu",".revertable",function(e){
             var ct = $(e.currentTarget);
@@ -42,6 +42,24 @@ $(document).ready(function() {
     } else // not 3, therefore 3b or 3c
     {
         if (/.+?3b#?$/.test(whereami)) {
+
+            $('#info1').show().hover(function() {
+                $(this).html('<a target="_blank" href="http://wortschatz.uni-leipzig.de/" class="redlink">Wortschatz-Portal</a>');
+            }, function () {
+                $(this).find("a:last").remove();
+            });
+
+            // TODO this should be visible all the time!
+            $('#info2').show().hover(
+                function() {
+                    var a = $('<a href="#" id="check" class="redlink">Prüfen</a>');
+                    a.on("click", mcheck);
+                    $(this).append(a);
+                },
+                function() {
+                    $(this).find("a:last").remove();
+                }
+            );
             var c = [];
             var a = ["doof", "dumm", "hirnlos", "idiotisch"];
             a.map(function (e) {
@@ -58,8 +76,7 @@ $(document).ready(function() {
             b = b.concat(c);
             c = [];
 
-            $('#check').on("click", function () {
-
+            function mcheck() {
                 var w1 = $('#w1');
                 var w2 = $('#w2');
                 var w3 = $('#w3');
@@ -116,7 +133,7 @@ $(document).ready(function() {
                     }
                 }
 
-            });
+            };
 
             $('#weiter').on('click', function () {
                 $('#check').click();
@@ -161,7 +178,6 @@ $(document).ready(function() {
             }
 
             function trick(a) {
-                console.log(a.split("").reverse().shift());
                 if (/e$/.test(a)) {
                     var b = a.split("").reverse();
                     b.shift();
@@ -181,6 +197,7 @@ $(document).ready(function() {
             }
 
             function markTrue(elem) {
+                raisepoints();
                 removeAllMarks(elem);
                 hideHints(elem);
                 elem.addClass("marktrue");
@@ -194,6 +211,7 @@ $(document).ready(function() {
             }
 
             function markFalse(elem, dup) {
+                raisefaults();
                 dup = dup || 0;
                 removeAllMarks(elem);
                 hideHints(elem);
@@ -244,6 +262,28 @@ $(document).ready(function() {
                 }
             }
         } else {
+            $('#info1').show().hover(
+                function() {
+                    var a = $('<a href="#" class="redlink">Prüfen</a>');
+                    a.on("click", check3c);
+                    $(this).append(a);
+                },
+                function() {
+                    $(this).find("a:last").remove();
+                }
+            );
+
+            $('#info2').show().hover(
+                function() {
+                    var a = $('<a href="#" class="redlink">Zurücksetzen</a>');
+                    a.on("click", reload);
+                    $(this).append(a);
+                },
+                function() {
+                    $(this).find("a:last").remove();
+                }
+            );
+
             var ac = ["wesentliche", "zentrale", "grundlegende", "wichtige", "entscheidende"];
             var bc = ["aktuelle", "unangenehme", "umstrittene", "rhetorische", "heikle", "soziale", "strittige", "kritische", "technische"];
             // TODO:
@@ -309,17 +349,20 @@ $(document).ready(function() {
                     var t = $(m).text();
                     if ($.inArray(t, ac) > -1) {
                         $(m).addClass("passive");
+                        raisepoints();
                     } else {
                         $('#expl').removeClass('invisible').effect("highlight");
                         modify($(m));
+                        raisefaults();
                     }
                 });
                 return ($('.passive').length >= 4) && ($('.plainw').length == 0);
             }
 
             function modify(m) {
+
                 m.tooltip({ items: ".word" , content: cc[m.attr("id").substring(1)-1]});
-                m.tooltip( "option", "position", { my: "left+15 center", at: "right center" });
+                m.tooltip( "option", "position", { my: "left+15 center", at: "right center"});
                 m.addClass("plainw");
             }
 
@@ -357,16 +400,14 @@ function validate () {
     var syn = $('#synonym');
     var ant = $('#antonym');
 
-    var b = (kvalidate($('.worddrag')).length < 10);
-
-    if (!b) {
-        showModal("Bitte ordne mehr Wörter zu!");
-    }
+    kvalidate($('.worddrag'));
 
     var c = lvalidate(syn, ant);
-
-    var p1 = fun1(syn);
-    var p2 = fun1(ant);
+    if (c) {
+        raisepoints();
+    }
+    fun1(syn);
+    fun1(ant);
 
     function fun1 (a) {
         return !(a.children('.word').toArray().map(function (e) {
@@ -374,18 +415,6 @@ function validate () {
         }).reduce(function (a, e) {
             return a + e;
         },0) < 10);
-    }
-
-    if (b && c && p1 && p2) {
-        $('#message').show().effect("puff", 2000, function() {
-            var unassigned = kvalidate($('.worddrag')).length;
-            var wrong = $('.markfalse').toArray().length;
-            var total = $('.word').toArray().length;
-            var percent = ((total-(unassigned+wrong))/total) * 100;
-            setScore("3", percent);
-            console.log("Score: " + percent + "%");
-            window.location.href = "ersti_task3b";
-        });
     }
 }
 
@@ -403,14 +432,17 @@ function lvalidate(s,a) {
                     markFalse($(e));
                     return false;
                 }
+
                 return true;
             } else {
                 if(e.id.substring(1) > 14) {
                     markFalse($(e));
                     return false;
                 }
+
                 return true;
             }
+
         }).reduce(function(a,e) {return a&&e;}, true);
     }
     return b1 && b2;
@@ -429,5 +461,6 @@ function reload() {
 }
 
 function markFalse (elem) {
+    raisefaults();
     elem.addClass("markfalse");
 }

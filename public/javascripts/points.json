@@ -30,28 +30,28 @@
         "name":"ersti_start", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"ersti_task1", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task1", "maxpoints":16, "maxfaults":8
     },
     {
-        "name":"ersti_task2", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task2", "maxpoints":18, "maxfaults":10
     },
     {
-        "name":"ersti_task2b", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task2b", "maxpoints":43, "maxfaults":11
     },
     {
-        "name":"ersti_task2c", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task2c", "maxpoints":26, "maxfaults":13
     },
     {
-        "name":"ersti_task3", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task3", "maxpoints":29, "maxfaults":5
     },
     {
-        "name":"ersti_task3b", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task3b", "maxpoints":4, "maxfaults":4
     },
     {
-        "name":"ersti_task3c", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task3c", "maxpoints":4, "maxfaults":5
     },
     {
-        "name":"ersti_task4", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task4", "maxpoints":9, "maxfaults":5
     },
     {
         "name":"wertewandel_start", "maxpoints":0, "maxfaults":0
