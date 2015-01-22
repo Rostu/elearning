@@ -9,7 +9,7 @@
         "name":"glueck_task1b", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"glueck_task2", "maxpoints":0, "maxfaults":0
+        "name":"glueck_task2", "maxpoints":7, "maxfaults":7
     },
     {
         "name":"glueck_task3", "maxpoints":0, "maxfaults":0
@@ -78,10 +78,10 @@
         "name":"generationen_task1", "maxpoints":9, "maxfaults":9
     },
     {
-        "name":"generationen_task2", "maxpoints":0, "maxfaults":0
+        "name":"generationen_task2", "maxpoints":24, "maxfaults":12
     },
     {
-        "name":"generationen_task3", "maxpoints":0, "maxfaults":0
+        "name":"generationen_task3", "maxpoints":6, "maxfaults":6
     },
     {
         "name":"zukunft_start", "maxpoints":0, "maxfaults":0

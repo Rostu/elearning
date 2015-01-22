@@ -4,6 +4,18 @@
 
 $(document).ready(function() {
 
+    $('#info1').show().hover(
+        function() {
+            var a = $('<a href="#" class="redlink">Prüfen</a>');
+            a.on("click", check);
+            $(this).append(a);
+        },
+        function() {
+            $(this).find("a:last").remove();
+        }
+    );
+
+
     var testarray = ["etw. (auseinander) schneiden", "sich annähern", "Ausruhen", "Anziehen", "Sich verbiegen", "Schießen", "PC in die Garage auslagern", "Abstellplatz für PC", "konstanter Reichtum (Besitz)", "aufrechter Stand", "reinigen", "streicheln"];
     var array = ["Abstand vergrößern","Anstrengen","Gehen","etw./jmd. (ab-)setzen [um Ruhe zu haben]","Ausdauer","streiten"];
     var infos =["Auseinanderschneiden bedeutet etwas mit einer Schere oder ähnlichem im konkreten Wortsinn zu trennen; „Lebenswelten“ ist ein abstrakter Begriff, also nichts, was sich auseinanderschneiden lässt.",
@@ -44,7 +56,7 @@ $(document).ready(function() {
         return "<label for='c" + i + "'>" + text + "</label>";
     }
 
-    $('#check').click(function() {
+    function check() {
         $('.mco').toArray().map(function(e) {
             $(e).children('input').toArray().map(function(f) {
                 if($(f).is(':checked')) {
@@ -59,7 +71,7 @@ $(document).ready(function() {
                 }
             });
         });
-    });
+    };
 
     function makeNotice(where, what) {
         removeNoticeIfPresent(where);
@@ -84,12 +96,14 @@ $(document).ready(function() {
     });
 
     function markfalse(elem) {
+        raisefaults();
         if (elem.hasClass("wrong")) return;
         if (elem.hasClass("right")) elem.removeClass("right");
         elem.addClass("wrong");
     }
 
     function marktrue(elem) {
+        raisepoints();
         if (elem.hasClass("right")) return;
         if (elem.hasClass("wrong")) elem.removeClass("wrong");
         elem.addClass("right");

@@ -2,7 +2,6 @@
  * Created by s2daalft on 19.08.2014.
  */
 
-
 var Cell = function (i,j,k) {
     var x = i;
     var y = j;
@@ -304,6 +303,28 @@ $(document).ready(function() {
 
     var sell = $('.cell');
 
+    $('#info1').show().hover(
+        function() {
+            var a = $('<a href="#" class="redlink">Hilfe</a>');
+            a.on("click", help);
+            $(this).append(a);
+        },
+        function() {
+            $(this).find("a:last").remove();
+        }
+    );
+
+    $('#info2').show().hover(
+        function() {
+            var a = $('<a href="#" class="redlink">Lösung zeigen</a>');
+            a.on("click", controller.solveAll);
+            $(this).append(a);
+        },
+        function() {
+            $(this).find("a:last").remove();
+        }
+    );
+
     sell.on("keyup", function(e) {
         var inp = String.fromCharCode(e.keyCode);
         if (/[a-zA-Zäöüß]/.test(inp))
@@ -426,5 +447,9 @@ $(document).ready(function() {
             }
         }
         return true;
+    }
+
+    function help () {
+        $.jqDialog.alert(null, "bla");
     }
 });
