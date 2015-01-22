@@ -46,8 +46,6 @@ $(document).ready(function() {
         }
     });
 
-
-
     //functions for the point visualization--------------------------------
 
     var maxp = 0;
@@ -57,28 +55,29 @@ $(document).ready(function() {
     $.getJSON('/points', function(data){
         maxp = data.maxpoints;
         maxf = data.maxfaults;
-        myScale = d3.scale.linear().domain([0, maxp]).range([0, 2 * Math.PI]);
-        arc3 = d3.svg.arc().innerRadius(40).outerRadius(50).startAngle(myScale(0)).endAngle(myScale(maxp));
-        arc4 = d3.svg.arc().innerRadius(25).outerRadius(35).startAngle(myScale(0)).endAngle(myScale(maxf));
+        myScalePoints = d3.scale.linear().domain([0, maxp]).range([0, 2 * Math.PI]);
+        myScaleFaults = d3.scale.linear().domain([0, maxf]).range([0, 2 * Math.PI]);
+        var arc1 = d3.svg.arc().innerRadius(40).outerRadius(50).startAngle(myScalePoints(0)).endAngle(myScalePoints(0));
+        var arc2 = d3.svg.arc().innerRadius(25).outerRadius(35).startAngle(myScaleFaults(0)).endAngle(myScaleFaults(0));
+        arc3 = d3.svg.arc().innerRadius(40).outerRadius(50).startAngle(myScalePoints(0)).endAngle(myScalePoints(maxp));
+        arc4 = d3.svg.arc().innerRadius(25).outerRadius(35).startAngle(myScaleFaults(0)).endAngle(myScaleFaults(maxf));
         vis.append("path").attr("d", arc3).attr("transform", "translate(50,60)").style("fill", "rgba(0, 94, 156, 0.25)");
         vis.append("path").attr("d", arc4).attr("transform", "translate(50,60)").style("fill", "rgba(169, 18, 17, 0.20)");
-        updatepoints();
-        updatefaults();
-
+        vis.append("path").attr("d", arc1).attr("transform", "translate(50,60)").attr("id", "pointspath").style("fill", "#005E9C");
+        vis.append("path").attr("d", arc2).attr("transform", "translate(50,60)").attr("id", "faultspath").style("fill", "#A91211");
     });
 
     function updatepoints(){
         var actualp = $("#point_bars").data("actualp");
-        var arc1 = d3.svg.arc().innerRadius(40).outerRadius(50).startAngle(myScale(0)).endAngle(myScale(actualp));
-        vis.append("path").attr("d", arc1).attr("transform", "translate(50,60)").style("fill", "#005E9C");
-
+        var newarc = d3.svg.arc().innerRadius(40).outerRadius(50).startAngle(myScalePoints(0)).endAngle(myScalePoints(actualp));
+        d3.select("#pointspath").attr("d",newarc);
     }
     function updatefaults(){
         var actualf = $("#point_bars").data("actualf");
-        var arc2 = d3.svg.arc().innerRadius(25).outerRadius(35).startAngle(myScale(0)).endAngle(myScale(actualf));
-        vis.append("path").attr("d", arc2).attr("transform", "translate(50,60)").style("fill", "#A91211");
-
+        var newarc = d3.svg.arc().innerRadius(25).outerRadius(35).startAngle(myScaleFaults(0)).endAngle(myScaleFaults(actualf));
+        d3.select("#faultspath").attr("d",newarc);
     }
+
 
     //$(document).on('data-attribute-changed', function() {
     //    updatepoints();
@@ -90,11 +89,7 @@ $(document).ready(function() {
         updatefaults();
     });
 
-
     //end functions for the point visualization--------------------------------
-
-
-
 
 });
 
@@ -118,3 +113,4 @@ function decreasepoints(){
     $("#point_bars").data("actualp", temp);
     $(document).trigger('PointsChanged');
 };
+//end functions for the point visualization--------------------------------
