@@ -7,25 +7,18 @@ $(document).ready(function() {
     $( "#point_bars" ).data( "actualf", 0 );
     //console.log($("body").data());
 
-    $('.redstripe').hide();
-    $('.redtext').hide();
-
     $('.redstripe').mouseenter(function()
     {
-        //$(this).text("dsaf")
-        //$(this).animate({width: $(this).children('a.redlink').width(), paddingLeft: "8px", paddingRight: "20px"}, 100);
-        //$(this).animate({width: $(this).children('.redtext').width(), paddingLeft: "8px", paddingRight: "20px"},100);
-        $(this).children('.redtext').show();
-        $(this).animate({width: "90%"}, 100);
-        $(this).animate({color: "#ffffff"}, 100);
+        $(this).animate({width: $(this).children('.redlink').width(), paddingRight: "20px"}, 100);
+        $(this).children().show;
+        $(this).children().animate({color: "#ffffff"}, 200);
     });
 
     $('.redstripe').mouseleave(function()
     {
-        $(this).children('.redtext').hide();
-        $(this).animate({color: "#A91211"}, 100);
-        $(this).animate({width: "20px"},100);
-        //$(this).text("")
+        $(this).children().animate({color: "#A91211"}, 100);
+        $(this).children().hide;
+        $(this).animate({width: "0px", paddingRight: "12px"},200);
     });
 
     $('.footerlink').mouseenter(function()
