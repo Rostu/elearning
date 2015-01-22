@@ -92,6 +92,16 @@
     line-height: 30px;
 }
 
+#Erklaerungsbox {
+    display: table-cell;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(229,239,245, 0.8);
+    margin: 5px;
+    color: black;
+    line-height: 30px;
+}
+
 #Antwortbox1, #Antwortbox2,  #Antwortbox3 {
     -webkit-box-shadow: 0px 2px 5px darkgrey;
     -moz-box-shadow: 0px 2px 5px darkgrey;
