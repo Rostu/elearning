@@ -279,7 +279,7 @@ $(document).ready(function() {
         draggable: false
     });
     $('#really').dialog({
-       autoOpen: false,
+        autoOpen: false,
         modal: true,
         title: "AUFLÖSEN",
         buttons: [
@@ -348,27 +348,16 @@ $(document).ready(function() {
 
     var sell = $('.cell');
 
-    $('#info1').show().hover(
-        function() {
-            var a = $('<a href="#" class="redlink">Hilfe</a>');
-            a.on("click", help);
-            $(this).append(a);
-        },
-        function() {
-            $(this).find("a:last").remove();
-        }
-    );
+    $('#info1').show();
+    var a1 = $('<a href="#" class="redlink">Hilfe</a>');
+    a1.on("click", help);
+    $('#info1').append(a1);
 
-    $('#info2').show().hover(
-        function() {
-            var a = $('<a href="#" class="redlink">Lösung zeigen</a>');
-            a.on("click", reallysolve);
-            $(this).append(a);
-        },
-        function() {
-            $(this).find("a:last").remove();
-        }
-    );
+
+    $('#info2').show();
+    var a2 = $('<a href="#" class="redlink">Lösung zeigen</a>');
+    a2.on("click", reallysolve);
+    $('#info2').append(a2);
 
     sell.on("keyup", function(e) {
         var inp = String.fromCharCode(e.keyCode);
@@ -474,11 +463,12 @@ $(document).ready(function() {
         if(cs.length) return;
         $('#solve').after("<div class='buttondiv' id='cs'>LÖSUNG BESTÄTIGEN</div>");
         $('#cs').on("click", function() {
-           if(checkSolution()) {
-               $.jqDialog.alert("Gut gemacht!", function() {}); // add callback with effects?
-           } else {
-               $.jqDialog.alert("Das ist leider nicht die richtige Lösung!", function() {});
-           }
+            if(checkSolution()) {
+                alert("Gut gemacht!");
+                // TODO what happens?
+            } else {
+                alert("Das ist leider nicht die richtige Lösung!");
+            }
         });
     }
 
@@ -495,7 +485,7 @@ $(document).ready(function() {
     }
 
     function help () {
-       $('#helpdi').dialog("open");
+        $('#helpdi').dialog("open");
     }
 
     function reallysolve () {
