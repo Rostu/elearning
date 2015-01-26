@@ -31,20 +31,102 @@ $(document).ready(function() {
         $(this).css("textDecoration", "none");
     });
 
-    //implements dropdown menu for start pages
+    //handle highlighting on start pages
 
-    $('.panelarrow').click(function() {
-        var parents = $(this).parents();
-        var panel_id = $(parents[1]).attr("id");
-        var panelcontent = $("div#" + panel_id).children('.panelcontent');
-        if ($(panelcontent).css('display') == "none") {
-            $(panelcontent).css('display', 'inherit');
-            $(this).css("background-image", 'url("/images/button_up.gif")');
+    $('.panelheader').mouseenter(function()
+    {
+        startPageFadeIn($(this));
+    });
+
+    $('.panelheader').mouseleave(function()
+    {
+        startPageFadeOut($(this));
+    });
+
+    $('.panelarrow').mouseenter(function()
+    {
+        $(this).css("backgroundColor", "#005E9C");
+    });
+
+    $('.panelarrow').mouseleave(function()
+    {
+        $(this).css("backgroundColor", "#A6D1F5");
+    });
+
+    $('.ltitle').mouseenter(function()
+    {
+        startPageFadeIn($(this));
+    });
+
+    $('.ltitle').mouseleave(function()
+    {
+        startPageFadeOut($(this));
+    });
+
+    $('.lstart').mouseenter(function()
+    {
+        $(this).css("backgroundColor", "#FFFFFF");
+    });
+
+    $('.lstart').mouseleave(function()
+    {
+        $(this).css("backgroundColor", "#E5EFF5");
+    });
+
+    $('.ltask').mouseenter(function()
+    {
+        $(this).css("backgroundColor", "#FFFFFF");
+    });
+
+    $('.ltask').mouseleave(function()
+    {
+        $(this).css("backgroundColor", "#E5EFF5");
+    });
+
+    function startPageFadeIn(owner) {
+        $(owner).fadeTo(100, 0.7);
+    }
+
+    function startPageFadeOut(owner) {
+        $(owner).fadeTo(100, 1.0);
+    }
+
+    //handle clicking on start pages
+
+    $('.panelheader').click(function() {
+        togglePanelContent($(this));
+    });
+
+    $('.ltitle').click(function() {
+        var link = $(this).find('.tasklink');
+        $(link)[0].click();
+    });
+
+    $('.ltask').click(function(e) {
+        e.stopPropagation();
+        var lesson = $(this).closest('.lesson');
+        var task = $(lesson).children('.lessontask');
+        if ($(task).css('display') == "none") {
+            $(task).css('display', 'inherit');
         } else {
-            $(panelcontent).css('display', 'none');
-            $(this).css("background-image", 'url("/images/button_down.gif")');
+            $(task).css('display', 'none');
         }
     });
+
+    function togglePanelContent(clickablePanelChild){
+        var panel = $(clickablePanelChild).closest('.startpanel');
+        var arrow = $(clickablePanelChild).children('.panelarrow');
+        var panel_id = $(panel).attr("id");
+        var panelcontent = $("div#" + panel_id).children('.panelcontent');
+        //console.log($(parent).closest('.panelarrow'));
+        if ($(panelcontent).css('display') == "none") {
+            $(panelcontent).css('display', 'inherit');
+            $(arrow).css("background-image", 'url("/images/button_up2.gif")');
+        } else {
+            $(panelcontent).css('display', 'none');
+            $(arrow).css("background-image", 'url("/images/button_down2.gif")');
+        }
+    }
 
     //functions for the point visualization--------------------------------
 

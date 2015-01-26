@@ -725,12 +725,13 @@ img.uniLogo {
 }
 
 .panelheader {
-    padding: 5px 5px 5px 57px;
+    padding: 5px 5px 5px 55px;
     text-align: center;
     position: relative;
     z-index: 1;
     color: white;
     background: #7AB3E3;
+    cursor: pointer;
 }
 
 .panelarrow {
@@ -741,10 +742,9 @@ img.uniLogo {
     font-weight: bold;
     text-align: center;
     color: white;
-    background: #A6D1F5 url("/images/button_down.gif");
+    background: #A6D1F5 url("/images/button_down2.gif");
     float: right;
     border-radius: 25px;
-    cursor: pointer;
 }
 
 #lessonlist {
@@ -779,9 +779,16 @@ img.uniLogo {
 }
 
 .lesson {
-    margin: 5px 5px 10px 5px;
-    height: 50px;
+    margin: 10px 10px;
     align: center;
+}
+
+.lessontask {
+    margin: 0px 60px;
+    padding: 5px;
+    text-align: center;
+    background: #E5EFF5;
+    display: none;
 }
 
 .licon {
@@ -795,33 +802,58 @@ img.uniLogo {
     border-radius: 25px;
 }
 
-.lstart {
+.lpoints {
     width: 50px;
     height: 50px;
     line-height: 50px;
     font-weight: bold;
     text-align: center;
-    background: #A6D1F5 url("/images/button_right.gif");
+    background: #A6D1F5;
     float: right;
     border-radius: 25px;
 }
 
-.lstart a {
-    width: 50px;
-    padding:25px;
-    height: 50px;
-}
-
-
 .ltitle {
-    margin: 10px 60px 10px 60px;
-    height: 50px;
-    line-height: 50px;
+    padding: 5px;
+    margin: 0px 60px;
+    height: 40px;
+    line-height: 40px;
     font-weight: bold;
     text-align: center;
     background: #A1BED6;
     color: white;
     text-align: center;
+    cursor: pointer;
+}
+
+.ltask {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    text-align: center;
+    background: #E5EFF5;
+    color: #A1BED6;
+    float: left;
+    border-radius: 20px;
+}
+
+.lstart {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    text-align: center;
+    background: #E5EFF5 url("/images/button_right2_small.gif");
+    float: right;
+    border-radius: 20px;
+}
+
+.tasklink {
+    padding: 13px 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
 }
 
 #impressumcontent {
