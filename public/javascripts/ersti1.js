@@ -37,11 +37,14 @@ function init() {
         });
         div.click(enlarge);
         if($.inArray(textinhalt, testarray)> -1){
+            raisepoints();
             $(div).data('korrekt',true);
             $(div).css('background','rgba(2, 255, 85, 0.16)');
             r_length++;
             $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','green');
-        }else {$(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
+        }else {
+            raisefaults();
+            $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
             $(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++}
         $("#Antwortbox").bind("contextmenu",function(e){return false;});
         $("#Antwortbox").append(div);
@@ -109,10 +112,13 @@ function init_two() {
         });
         if($.inArray(textinhalt, testarray_two)> -1){
             $(div).data('korrekt',true);
+            raisepoints();
             $(div).css('background','rgba(2, 255, 85, 0.16)');
             r_length++;
             $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','green');
-        }else {$(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
+        }else {
+            raisefaults();
+            $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
             $(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++}
         $("#Antwortbox_two").bind("contextmenu",function(e){return false;});
         $("#Antwortbox_two").append(div);

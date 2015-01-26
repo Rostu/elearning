@@ -9,9 +9,9 @@ function init() {
 
     var id=0;
     var id_speicher = [];
-    var testarray = ["in diesem Sommer","letzte Woche","vor ein paar Monaten","Eine Minute später","Kurz darauf","ewig"];
+    var testarray = ["in diesem Sommer","letzte Woche","vor ein paar Monaten","In der folgenden halben Stunde", "Eine Minute später","Kurz darauf","ewig"];
     var i = 0;
-    var infos =[["in diesem Sommer","testmsg"],["",""]];
+    var infos =[["",""],["",""]];
     var r_length=0;
     var w_length = 0;
     var fb1 = 0;
@@ -58,8 +58,10 @@ function init() {
             $(div).data('korrekt',true);
             $(div).css('background','rgba(2, 255, 85, 0.16)');
             r_length++;
-            update_balken();
-        }else {$(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++;update_balken();}
+            raisepoints();
+        }else {
+
+            $(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++;update_balken();}
         $("#Antwortbox").bind("contextmenu",function(e){return false;});
         $("#Antwortbox").append(div);
         div.mousedown(clear);
@@ -79,11 +81,7 @@ function init() {
         });
     };
 
-    function update_balken(){
-        //console.log($('#balken_innen1'));
-        $('#balken_innen1').css('width',r_length*8);
-        $('#balken_innen2').css('width',w_length*4);
-    }
+
     function clear(ev) {
         if (ev.which == 3) {
             $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
