@@ -2,6 +2,7 @@
  * Created by David on 06.08.2014.
  */
 $(document).ready(function() {
+    $('#info1').show().html("<a href='#' id='check' class='redlink'>Prüfen</a>");
     var a = [];
     var b = [];
     a[1] = "bekommen";
@@ -20,9 +21,15 @@ $(document).ready(function() {
             var val = $(e).val();
             if (a[index]===val) {
                 mark(1,$(e));
+                raisepoints();
             } else {
-                if (b[index]===val) mark(1,$(e));
-                else mark(2,$(e));
+                if (b[index]===val) {
+                    mark(1,$(e));
+                    raisepoints();
+                } else {
+                    mark(2,$(e));
+                    raisefaults();
+                }
             }
         });
     });
