@@ -153,10 +153,6 @@
     background-color: rgba(18,245,120,0.1);
 }
 
-.redlink {
-    margin-left: 10px;
-}
-
 .ui-dialog {
     z-index: 10000;
     width: 100%;
