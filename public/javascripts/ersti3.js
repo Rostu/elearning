@@ -43,23 +43,16 @@ $(document).ready(function() {
     {
         if (/.+?3b#?$/.test(whereami)) {
 
-            $('#info1').show().hover(function() {
-                $(this).html('<a target="_blank" href="http://wortschatz.uni-leipzig.de/" class="redlink">Wortschatz-Portal</a>');
-            }, function () {
-                $(this).find("a:last").remove();
-            });
+            $('#info1').show().html('<a target="_blank" href="http://wortschatz.uni-leipzig.de/" class="redlink">Wortschatz-Portal</a>');
 
             // TODO this should be visible all the time!
-            $('#info2').show().hover(
-                function() {
-                    var a = $('<a href="#" id="check" class="redlink">Prüfen</a>');
-                    a.on("click", mcheck);
-                    $(this).append(a);
-                },
-                function() {
-                    $(this).find("a:last").remove();
-                }
-            );
+            $('#info2').show();
+
+            var ia = $('<a href="#" id="check" class="redlink">Prüfen</a>');
+            ia.on("click", mcheck);
+            $('#info2').append(ia);
+
+
             var c = [];
             var a = ["doof", "dumm", "hirnlos", "idiotisch"];
             a.map(function (e) {
@@ -262,27 +255,17 @@ $(document).ready(function() {
                 }
             }
         } else {
-            $('#info1').show().hover(
-                function() {
-                    var a = $('<a href="#" class="redlink">Prüfen</a>');
-                    a.on("click", check3c);
-                    $(this).append(a);
-                },
-                function() {
-                    $(this).find("a:last").remove();
-                }
-            );
+            $('#info1').show();
+            var ja = $('<a href="#" class="redlink">Prüfen</a>');
+            ja.on("click", check3c);
+            $('#info1').append(ja);
 
-            $('#info2').show().hover(
-                function() {
-                    var a = $('<a href="#" class="redlink">Zurücksetzen</a>');
-                    a.on("click", reload);
-                    $(this).append(a);
-                },
-                function() {
-                    $(this).find("a:last").remove();
-                }
-            );
+
+
+            $('#info2').show();
+            var ka = $('<a href="#" class="redlink">Zurücksetzen</a>');
+            ka.on("click", reload);
+            $('#info2').append(ka);
 
             var ac = ["wesentliche", "zentrale", "grundlegende", "wichtige", "entscheidende"];
             var bc = ["aktuelle", "unangenehme", "umstrittene", "rhetorische", "heikle", "soziale", "strittige", "kritische", "technische"];

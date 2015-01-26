@@ -1,10 +1,6 @@
 $(document).ready(function() {
 
-    $('#info1').show().hover(function() {
-        $(this).html('<a target="_blank" href="http://wortschatz.uni-leipzig.de/" class="redlink">Wortschatz-Portal</a>');
-    }, function () {
-        $(this).find("a:last").remove();
-    });
+    $('#info1').show().html('<a target="_blank" href="http://wortschatz.uni-leipzig.de/" class="redlink">Wortschatz-Portal</a>');
 
 });
 $( init ); // function for Veranstaltungen

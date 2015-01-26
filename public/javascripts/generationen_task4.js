@@ -4,17 +4,10 @@
 
 $(document).ready(function() {
 
-    $('#info1').show().hover(
-        function() {
-            var a = $('<a href="#" class="redlink">Prüfen</a>');
-            a.on("click", check);
-            $(this).append(a);
-        },
-        function() {
-            $(this).find("a:last").remove();
-        }
-    );
-
+    $('#info1').show();
+    var a = $('<a href="#" class="redlink">Prüfen</a>');
+    a.on("click", check);
+    $('#info1').append(a);
 
     var testarray = ["etw. (auseinander) schneiden", "sich annähern", "Ausruhen", "Anziehen", "Sich verbiegen", "Schießen", "PC in die Garage auslagern", "Abstellplatz für PC", "konstanter Reichtum (Besitz)", "aufrechter Stand", "reinigen", "streicheln"];
     var array = ["Abstand vergrößern","Anstrengen","Gehen","etw./jmd. (ab-)setzen [um Ruhe zu haben]","Ausdauer","streiten"];
@@ -85,15 +78,6 @@ $(document).ready(function() {
             obj.detach();
         }
     }
-
-    $('#weiter').click(function() {
-        $('#check').click();
-        if ($('.wrong').toArray().length == 0) {
-            alert("Gut gemacht! Weiter so!");
-            // TODO neue seite laden
-            //document.location.href = "generationen_ende";
-        }
-    });
 
     function markfalse(elem) {
         raisefaults();
