@@ -24,7 +24,7 @@
         "name":"handy_task1", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"handy_task2", "maxpoints":0, "maxfaults":0
+        "name":"handy_task2", "maxpoints":7, "maxfaults":7
     },
     {
         "name":"ersti_start", "maxpoints":0, "maxfaults":0
