@@ -149,6 +149,8 @@ function init() {
         $("#info2").children().hide;
         $("#info2").animate({width: "0px", paddingRight: "12px"},100);
     };
-
+    $(document).on("MaxFaultsReached", function() {
+       alert('Das kannst du doch besser')
+    });
 };
 

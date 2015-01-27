@@ -99,7 +99,7 @@
         "name":"zukunft_task1", "maxpoints":20, "maxfaults":5
     },
     {
-        "name":"zukunft_task2", "maxpoints":6, "maxfaults":10
+        "name":"zukunft_task2", "maxpoints":6, "maxfaults":6
     },
     {
         "name":"zukunft_task3", "maxpoints":4, "maxfaults":10
