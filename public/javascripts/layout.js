@@ -169,10 +169,21 @@ $(document).ready(function() {
     $(document).on("PointsChanged", function() {
         updatepoints();
         updatefaults();
+        check();
     });
 
-    //end functions for the point visualization--------------------------------
+    //this function will check if the actual point/faults equal the max points/faults and trigger a event if so
+    function check(){
+        var actualp = $("#point_bars").data("actualp");
+        var actualf = $("#point_bars").data("actualf");
 
+        if((maxp == actualp) && (actualp != 0)){
+            $(document).trigger('MaxPointsReached');
+        }
+        if((maxf == actualf) && (actualf != 0)){
+            $(document).trigger('MaxFaultsReached');
+        }
+    }
 });
 
 function raisefaults(){
