@@ -23,6 +23,7 @@ exports.ubshow = function(req, res){
     dbhandler.getub(function (ubs) {res.render('ubshow', {'ubs': ubs});});
 };
 exports.get_TEST = function(req, res){
+    req.session.lastpage = '';
     res.render('TEST');
 };
 exports.deleteub = function(req, res){
@@ -196,6 +197,11 @@ exports.get_generationen_text = function(req, res){
     res.render('generationen_text');
 };
 
+exports.get_anleitung = function(req, res){
+    req.session.lastpage = '';
+    res.render('anleitung');
+};
+
 exports.get_generationen_task1 = function(req, res){
     req.session.lastpage = 'generationen_task1';
     res.render('generationen_task1');
@@ -212,7 +218,6 @@ exports.get_generationen_task3 = function(req, res){
 };
 exports.get_zukunft_start = function(req, res){
     req.session.lastpage = 'zukunft_start';
-
     res.render('zukunft_start',{title:'zukunft_start', maxpoints: 0,maxfaults: 0});
 };
 exports.get_zukunft_task1 = function(req, res){

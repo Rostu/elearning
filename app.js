@@ -96,6 +96,7 @@ app.get('/points', function(req, res){
     res.json(site);
 });
 app.get('/signup', signup.get_signup);
+app.get('/anleitung', ubung.get_anleitung);
 app.get('/users', user.list);
 app.get('/start', start.start);
 app.get('/testing', index.get_testing);
