@@ -1,5 +1,5 @@
 body {
-    margin: 0px;
+    margin: 0;
     min-width: 1024px;
     font-family: "Meta", sans-serif;
     height: 100%;
@@ -27,13 +27,13 @@ body {
 
 .redstripe {
     margin-top: 15px;
-    width: 0px;
+    width: 0;
     padding-left: 8px;
     padding-right: 12px;
     height: 27px;
     background: #A91211;
     z-index: 1001;
-    border-radius: 0px 0px 20px 0px;
+    border-radius: 0 0 20px 0;
     box-shadow: 2px 2px 6px #4D4D4F;
     color: #A91211;
     white-space: nowrap;
@@ -68,8 +68,8 @@ body {
 }
 
 #special_nav{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     height: 45px;
     width: 110px;
     text-align: center;
@@ -179,12 +179,12 @@ img.uniLogo {
     width: 100%;
     font-size: 10px;
     background-color: #A1BED6;
-    border: 0px none;
+    border: 0 none;
 }
 
 #impressum {
     float: left;
-    margin: 7px 0px;
+    margin: 7px 0;
 
     word-spacing: 10px;
 }
@@ -205,8 +205,8 @@ img.uniLogo {
 }
 
 #navigation ul {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 #navigation ul:after {
@@ -243,7 +243,7 @@ img.uniLogo {
     display: inline;
     visibility: hidden;
     position: absolute;
-    padding:0px;
+    padding:0;
 }
 
 #navigation ul li ul li{
@@ -255,13 +255,13 @@ img.uniLogo {
 }
 
 #navigation ul {
-    padding: 0px;
+    padding: 0;
     margin-bottom: -1px;
 }
 
 #navigation ul li {
     margin-top: 1px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     list-style: none;
     float:left;
     border-left: 1px solid #D5EBFD;
@@ -351,9 +351,9 @@ img.uniLogo {
     margin:10px auto;
     transition:opacity 1s;
     -webkit-transition:opacity 1s;
-    -webkit-box-shadow: 0px 0px 4px darkgrey;
-    -moz-box-shadow: 0px 0px 4px darkgrey;
-    box-shadow: 0px 0px 4px darkgrey;
+    -webkit-box-shadow: 0 0 4px darkgrey;
+    -moz-box-shadow: 0 0 4px darkgrey;
+    box-shadow: 0 0 4px darkgrey;
 }
 
   #loginbox h1{
@@ -363,7 +363,7 @@ img.uniLogo {
       font-weight:300;
       text-align:center;
       color:#fff;
-      margin: 0px;
+      margin: 0;
       background: -webkit-linear-gradient(#005E9C 60%, #0083cb); /* For Safari 5.1 to 6.0 */
       background: -o-linear-gradient(#005E9C 60%, #0083cb); /* For Opera 11.1 to 12.0 */
       background: -moz-linear-gradient(#005E9C 60%, #0083cb); /* For Firefox 3.6 to 15 */
@@ -427,9 +427,8 @@ img.uniLogo {
       display: block;
       width: 95%;
       list-style: none;
-      margin-bottom: 10px;
       float: left;
-      padding: 0px;
+      padding: 0;
       position: relative;
       z-index: 5;
       border-top: solid;
@@ -498,11 +497,11 @@ img.uniLogo {
 }
 
 #Field a:hover {
-    text-shadow: 0px 0px 10px white;
+    text-shadow: 0 0 10px white;
 }
 #Field span p #infotext{
     font-size: 30px;
-    margin: 0px;
+    margin: 0;
     padding:0;
 }
 
@@ -564,7 +563,7 @@ img.uniLogo {
     font-family: Arial;
     margin-right: 5px;
     background: rgba(98, 8, 255, 0.79);
-    border: 0px;
+    border: 0;
     font-size: 1.5em;
     color: #fff;
     width: auto;
@@ -675,7 +674,7 @@ img.uniLogo {
 #balken_innen1 {
     background: lawngreen;
     display: inline-block;
-    width: 0px;
+    width: 0;
     height: 15px;
     float: left;
 }
@@ -684,7 +683,7 @@ img.uniLogo {
     background: red;
     display: inline-block;
     height: 15px;
-    width: 0px;
+    width: 0;
     float: left;
 }
 
@@ -715,8 +714,6 @@ img.uniLogo {
 #lessons {
 
 }
-
-
 
 .startpanel {
     margin: 10px 10px auto;
@@ -749,16 +746,16 @@ img.uniLogo {
 
 #lessonlist {
     width: 70%;
-    margin: 0px auto;
+    margin: 0 auto;
     position: relative;
 }
 
 #subjecttext {
-    padding: 0px 10px;
+    padding: 0 10px;
 }
 
 #mediashow {
-    margin: 0px 50px;
+    margin: 0 50px;
     overflow: auto;
     text-align: center;
     padding: 5px 5px;
@@ -780,11 +777,11 @@ img.uniLogo {
 
 .lesson {
     margin: 10px 10px;
-    align: center;
+    text-align: center;
 }
 
 .lessontask {
-    margin: 0px 60px;
+    margin: 0 60px;
     padding: 5px;
     text-align: center;
     background: #E5EFF5;
@@ -815,7 +812,7 @@ img.uniLogo {
 
 .ltitle {
     padding: 5px;
-    margin: 0px 60px;
+    margin: 0 60px;
     height: 40px;
     line-height: 40px;
     font-weight: bold;
@@ -857,5 +854,5 @@ img.uniLogo {
 }
 
 #impressumcontent {
-    margin: 0px 10px -10px 10px;
+    margin: 0 10px -10px 10px;
 }
