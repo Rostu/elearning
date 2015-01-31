@@ -22,12 +22,12 @@
     display:inline;
 }
 .wort{
-    -webkit-box-shadow: 0px 2px 5px darkgray;
-    -moz-box-shadow: 0px 2px 5px darkgray;
-    box-shadow: 0px 2px 5px darkgray;
+    -webkit-box-shadow: 0 2px 5px darkgray;
+    -moz-box-shadow: 0 2px 5px darkgray;
+    box-shadow: 0 2px 5px darkgray;
     background: #005E9C;
     color: white;
-    font: bold;
+    font-weight: bold ;
     padding: 5px;
     display: inline-block;
     flex-direction: column;
