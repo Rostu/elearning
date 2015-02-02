@@ -8,6 +8,122 @@ body {
     background: #E5EFF5 url("../images/siegel.png") no-repeat scroll -159px 129px;
 }
 
+#startoverlaybackground {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    min-width: 1024px;
+    background: #005E9C;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 3000;
+    display: none;
+}
+
+#startoverlaybluebar {
+    margin-top: 13px;
+    height: 130px;
+    width: 100%;
+    min-width: 1024px;
+    background: #005E9C;
+    position: absolute;
+    z-index: 3002;
+    display: none;
+}
+
+#startoverlayheader {
+    width: 100%;
+    position: relative;
+}
+
+.startoverlayheaderbar {
+    padding: 5px;
+    margin: 0px 0px 10px 0px;
+    min-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    background: #7AB3E3;
+    color: white;
+    text-align: center;
+}
+
+.startoverlayheaderinfo {
+    margin: 2.5px 2.5px;
+    padding: 0px 3px;
+    height: 18px;
+    line-height: 18px;
+    border: 1px solid #E5EFF5;
+    display: inline-block;
+}
+
+#startoverlaymediatypeicon, #startoverlaycloseicon {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    background: #E5EFF5;
+    color: #A1BED6;
+    float: left;
+    border-radius: 25px;
+}
+
+#startoverlaycloseicon {
+    float: right;
+}
+
+#startoverlayheadertext {
+    margin: 0 55px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+
+
+#startoverlay {
+    margin: 0px;
+    width: 100%;
+    min-width: 1024px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3003;
+    display: none;
+}
+
+#startoverlaywatermark {
+    margin: 0px;
+    height: 958px;
+    width: 100%;
+    min-width: 1024px;
+    background: url("../images/siegel_weiss.png") no-repeat scroll -159px 129px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3001;
+    display: none;
+}
+
+#startoverlaywrapper {
+    margin: 11px 15% 11px 15%;
+}
+
+#startoverlaybox {
+    margin-left: -20px;
+    margin-right: -20px;
+    border: 10px solid #E5EFF5;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px #4D4D4F;
+    background: #E5EFF5;
+}
+
+#startoverlaycontent {
+    margin: 0px;
+    padding: 0px;
+}
+
 #redbackground {
     min-width: 1024px;
     margin-top: 13px;
@@ -18,9 +134,48 @@ body {
     position: absolute;
 }
 
+#specialbackground {
+    min-width: 1024px;
+    margin-top: 143px;
+    width: 100%;
+    height: 210px;
+    z-index: 1;
+    position: absolute;
+}
+
+#specialtest {
+    margin: 0px;
+    height: 220px;
+    width: 15%;
+    background: green;
+    float: right;
+}
+
+#special_bar {
+    margin: 0px;
+    /*background-color:#A91211;*/
+    width: 13.9%;
+    z-index: 1;
+    float: right;
+}
+
+#point_bars_div, #point_bars {
+    margin: auto;
+    height: 115px;
+    width: 100px;
+}
+
+#special_nav{
+    margin: 0px auto;
+    padding: 0px;
+    height: 45px;
+    width: 100px;
+    text-align: center;
+}
+
 #redstripes {
     margin-top: 148px;
-    width: 12.5%;
+    width: 100px;
     z-index: 1000;
     position: absolute;
 }
@@ -52,27 +207,6 @@ body {
     line-height: 27px;
     font-weight: bold;
     color: #A91211;
-}
-
-#special_bar {
-    position: absolute;
-    margin-top: 155px;
-    margin-left: 88.5%;
-    /*background-color:#A91211;*/
-    width: 12%;
-}
-
-#point_bars{
-    height: 110px;
-    width: 110px;
-}
-
-#special_nav{
-    margin: 0;
-    padding: 0;
-    height: 45px;
-    width: 110px;
-    text-align: center;
 }
 
 .logo{
@@ -711,7 +845,7 @@ img.uniLogo {
 
 }
 
-#lessons {
+#tasks {
 
 }
 
@@ -744,7 +878,7 @@ img.uniLogo {
     border-radius: 25px;
 }
 
-#lessonlist {
+#tasklist {
     width: 70%;
     margin: 0 auto;
     position: relative;
@@ -771,16 +905,25 @@ img.uniLogo {
     height: 100px;
 }
 
+.mediaelement_mini {
+    display: inline-block;
+    margin: 5px 5px;
+    height: 70px;
+}
+.mediaimage_mini {
+    height: 70px;
+}
+
 .mediaimage {
     height: 100px;
 }
 
-.lesson {
+.task {
     margin: 10px 10px;
     text-align: center;
 }
 
-.lessontask {
+.taskmedia {
     margin: 0 60px;
     padding: 5px;
     text-align: center;
@@ -788,7 +931,7 @@ img.uniLogo {
     display: none;
 }
 
-.licon {
+.taskicon {
     width: 50px;
     height: 50px;
     line-height: 50px;
@@ -799,7 +942,7 @@ img.uniLogo {
     border-radius: 25px;
 }
 
-.lpoints {
+.taskpoints {
     width: 50px;
     height: 50px;
     line-height: 50px;
@@ -810,7 +953,7 @@ img.uniLogo {
     border-radius: 25px;
 }
 
-.ltitle {
+.tasktitle {
     padding: 5px;
     margin: 0 60px;
     height: 40px;
@@ -823,7 +966,7 @@ img.uniLogo {
     cursor: pointer;
 }
 
-.ltask {
+.taskmediaicon {
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -835,7 +978,7 @@ img.uniLogo {
     border-radius: 20px;
 }
 
-.lstart {
+.taskstart {
     width: 40px;
     height: 40px;
     line-height: 40px;
