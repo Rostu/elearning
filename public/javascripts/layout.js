@@ -53,32 +53,32 @@ $(document).ready(function() {
         $(this).css("backgroundColor", "#A6D1F5");
     });
 
-    $('.ltitle').mouseenter(function()
+    $('.tasktitle').mouseenter(function()
     {
         startPageFadeIn($(this));
     });
 
-    $('.ltitle').mouseleave(function()
+    $('.tasktitle').mouseleave(function()
     {
         startPageFadeOut($(this));
     });
 
-    $('.lstart').mouseenter(function()
+    $('.taskstart').mouseenter(function()
     {
         $(this).css("backgroundColor", "#FFFFFF");
     });
 
-    $('.lstart').mouseleave(function()
+    $('.taskstart').mouseleave(function()
     {
         $(this).css("backgroundColor", "#E5EFF5");
     });
 
-    $('.ltask').mouseenter(function()
+    $('.taskmediaicon').mouseenter(function()
     {
         $(this).css("backgroundColor", "#FFFFFF");
     });
 
-    $('.ltask').mouseleave(function()
+    $('.taskmediaicon').mouseleave(function()
     {
         $(this).css("backgroundColor", "#E5EFF5");
     });
@@ -97,20 +97,28 @@ $(document).ready(function() {
         togglePanelContent($(this));
     });
 
-    $('.ltitle').click(function() {
+    $('.tasktitle').click(function() {
         var link = $(this).find('.tasklink');
         $(link)[0].click();
     });
 
-    $('.ltask').click(function(e) {
+    $('.taskmediaicon').click(function(e) {
         e.stopPropagation();
-        var lesson = $(this).closest('.lesson');
-        var task = $(lesson).children('.lessontask');
-        if ($(task).css('display') == "none") {
-            $(task).css('display', 'inherit');
+        var task = $(this).closest('.task');
+        var taskmedia = $(task).children('.taskmedia');
+        if ($(taskmedia).css('display') == "none") {
+            $(taskmedia).css('display', 'inherit');
         } else {
-            $(task).css('display', 'none');
+            $(taskmedia).css('display', 'none');
         }
+    });
+
+    $('.mediaelement_mini').click(function() {
+        toggleStartOverlay();
+    });
+
+    $('#startoverlaycloseicon').click(function() {
+        toggleStartOverlay();
     });
 
     function togglePanelContent(clickablePanelChild){
@@ -125,6 +133,26 @@ $(document).ready(function() {
         } else {
             $(panelcontent).css('display', 'none');
             $(arrow).css("background-image", 'url("/images/button_down2.gif")');
+        }
+    }
+
+    function toggleStartOverlay(){
+        var startoverlaybackground = document.getElementById('startoverlaybackground');
+        var startoverlaybluebar = document.getElementById('startoverlaybluebar');
+        var startoverlaywatermark = document.getElementById('startoverlaywatermark');
+        var startoverlay = document.getElementById('startoverlay');
+        startoverlaybackground.style.opacity = .75;
+        //startoverlaybluebar.style.opacity = .9;
+        if ($(startoverlaybackground).css('display') == "none") {
+            $(startoverlaybackground).css('display', 'inherit');
+            $(startoverlaybluebar).css('display', 'inherit');
+            $(startoverlay).css('display', 'inherit');
+            $(startoverlaywatermark).css('display', 'inherit');
+        } else {
+            $(startoverlaybackground).css('display', 'none');
+            $(startoverlaybluebar).css('display', 'none');
+            $(startoverlay).css('display', 'none');
+            $(startoverlaywatermark).css('display', 'none');
         }
     }
 
