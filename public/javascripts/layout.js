@@ -86,11 +86,6 @@ $(document).ready(function() {
     }
 
 
-    //$(document).on('data-attribute-changed', function() {
-    //    updatepoints();
-    //    updatefaults();
-    //});
-
     $(document).on("PointsChanged", function() {
         updatepoints();
         updatefaults();

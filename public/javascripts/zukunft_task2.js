@@ -3,9 +3,9 @@ function init() {
     //shows the info buttons on the left side
     $('.redstripe').show();
     //add a content div to the second info button; first one is reserved
-    jQuery('<div/>', {
-        class: 'redtext'
-    }).appendTo('#info2');
+    /*    jQuery('<div/>', {
+     class: 'redtext'
+     }).appendTo('#info2');*/
 
     aktuell = 0;
 
@@ -59,6 +59,8 @@ function init() {
             $(this).animate({bottom:'-=0.5em'},"fast");
             $(this).animate({backgroundColor: '#90bf60', color: 'white', fontSize: '+=0.5em'},"slow");
             $(this).animate({bottom:'+=0.5em', fontSize: '-=0.5em'}, "slow", function(){
+                animateclear();
+                $("#infolink").remove();
                 $(".wortbox").fadeOut(500, function(){
                     $(this).remove();
                     if (aktuell < ar.length-1)
@@ -73,8 +75,8 @@ function init() {
                     }
 
                 });
-                $("#infolink").remove();
-                animateclear();
+                //$("#infolink").remove();
+                //animateclear();
             });
         }
         else
@@ -82,7 +84,7 @@ function init() {
             raisefaults();
             $("#infolink").remove();
             animateclear();
-            $(".redtext").append("<a id='infolink' class='redlink' target='blank' href='http://www.duden.de/suchen/dudenonline/"+$(this).text()+"'>"+$(this).text()+"??</a>");
+            $("#info2").append("<a id='infolink' class='redlink' target='blank' href='http://www.duden.de/suchen/dudenonline/"+$(this).text()+"'>"+$(this).text()+"</a>");
             animatearrow_wrong();
             $(this).animate({bottom:'-=0.5em'},"fast");
             $(this).animate({backgroundColor: '#a8383b', color: 'white', fontSize: '+=0.5em'},"slow");
@@ -129,16 +131,26 @@ function init() {
     newdiv();
 
     function animatearrow_wrong(){
-        $('#info2').children('.redtext').show();
-        $('#info2').animate({width: "90%"}, 300);
-        $('#info2').animate({color: "#ffffff"}, 100);
+        //$('#info2').children('.redtext').show();
+        //$("#info2").animate({width: $("#info2").children('.redlink').width(), paddingLeft: "8px", paddingRight: "20px"}, 100);
+        //$("#info2").children().animate({color: "#ffffff"}, 150);
+        //$('#info2').animate({width: "90%"}, 300);
+        //$('#info2').animate({color: "#ffffff"}, 100);
+        $("#info2").animate({width: $("#info2").children('.redlink').width(), paddingRight: "20px"}, 100);
+        $("#info2").children().show;
+        $("#info2").children().animate({color: "#ffffff"}, 200);
     };
 
     function animateclear(){
-        $('#info2').children('.redtext').hide();
-        $('#info2').animate({color: "#A91211"}, 100);
-        $('#info2').animate({width: "20px"},100);
+        //$('#info2').children('.redtext').hide();
+        //$('#info2').animate({color: "#A91211"}, 100);
+        //$('#info2').animate({width: "20px"},100);
+        $("#info2").children().animate({color: "#A91211"}, 50);
+        $("#info2").children().hide;
+        $("#info2").animate({width: "0px", paddingRight: "12px"},100);
     };
-
+    $(document).on("MaxFaultsReached", function() {
+       alert('Das kannst du doch besser')
+    });
 };
 
