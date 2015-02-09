@@ -233,4 +233,10 @@ function decreasepoints(){
     $("#point_bars").data("actualp", temp);
     $(document).trigger('PointsChanged');
 };
+function clearpoints(){
+    $("#point_bars").data("actualp",0);
+    var temp = $("#point_bars").data("actualp");
+    $("#point_bars").data("actualf", temp);
+    $(document).trigger('PointsChanged');
+};
 //end functions for the point visualization--------------------------------
