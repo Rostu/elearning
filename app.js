@@ -44,10 +44,15 @@ app.use(lockit.router);
 // development only
 if ('development' == app.get('env')) {
     app.use(express.errorHandler());
-    //var edt = require("express-debug");
-    //edt(app);
+    var edt = require("express-debug");
+    edt(app);
 }
-
+app.use(function(req, res, next){
+    //console.log(req.path);
+    //console.log(req.path);
+    res.locals.last = req.path;
+    next();
+});
 app.use('/', index.get_session);
 app.get('/', routes.index);
 app.get('/china_start', ubung.get_china_start);
@@ -87,14 +92,14 @@ app.get('/impressum', impressum.get_imp);
 app.get('/neuanlegen', ubung.neu);
 //app.get('/points', pointshandler.get_points);
 
-app.get('/points', function(req, res){
-    //console.log(req.session.lastpage);
+app.get('/points:last?', function(req, res){
     var site ={};
     points.sites.forEach(function(entry) {
-        if (entry.name == req.session.lastpage ){site = entry}
+        if (entry.name == req.param('last') ){site = entry}
     });
     res.json(site);
 });
+
 app.get('/signup', signup.get_signup);
 app.get('/users', user.list);
 app.get('/start', start.start);
@@ -120,8 +125,8 @@ app.get('/zukunft_task2', ubung.get_zukunft_task2);
 app.get('/zukunft_task3', ubung.get_zukunft_task3);
 app.get('/zukunft_task4', ubung.get_zukunft_task4);
 app.get('/zukunft_task5', ubung.get_zukunft_task5);
-app.get('/next', ubung.get_next);
-app.get('/last', ubung.get_last);
+app.get('/next:last?', ubung.get_next);
+app.get('/last:last?', ubung.get_last);
 app.get('/uindex', ubung.get_uindex);
 app.get('/dml', function(req, res) {
     var query = req.query;
