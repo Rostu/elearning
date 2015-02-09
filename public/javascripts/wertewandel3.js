@@ -13,7 +13,7 @@ var applyTo = function( jsonpath, fn ) {
 
         fn( questArray );
     });
-}
+};
 
 var placeQuestions = function( questions ) {
     // Places the question on the website
@@ -47,7 +47,7 @@ var init = function () {
     // evaluate answer on
     $( "#submit" ).click( function() {
         // get answers
-        var answered = $( "input[type='radio']" ).serializeArray()
+        var answered = $( "input[type='radio']" ).serializeArray();
         
         // check them on the json file
         $.getJSON( "javascripts/wertewandel3_questions.json", function( json ) {
@@ -58,11 +58,12 @@ var init = function () {
                     {
                         if ( n.answer == e.value )
                         {
-                            console.log( e.name );
+                            raisepoints()
                             $( "#" + e.name ).animate({backgroundColor: "#0f0"}, 2000);
                         }
                         else
                         {
+                            raisefaults();
                             $( "#" + e.name ).animate({backgroundColor: "#f00"}, 2000);
                         }
                     }
@@ -73,3 +74,4 @@ var init = function () {
 };
 
 $( init );
+addPointBars();

@@ -38,10 +38,12 @@ var handleDropEvent = function ( event, ui ) {
     if (correct_p == true)
     {
         $( "#Antwortbox" ).append( div.animate({backgroundColor: "#0f0"}, 2000) ).append( "<br />" );
+        raisepoints();
     }
     else if (correct_p == false)
     {
         $( "#Antwortbox" ).append( div.animate({backgroundColor: "#f00"}, 2000) ).append( "<br />" );
+        raisefaults();
     }
     
     $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','#777777');
@@ -63,3 +65,4 @@ var init = function () {
 
 // needs to be a jquery argument
 $( init );
+addPointsBar();
