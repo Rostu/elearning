@@ -66,16 +66,6 @@ html
             #redstripes
                 .redstripe#info1
                 .redstripe#info2
-            if (session)
-                if (session.lastpage != '')
-                    #special_bar
-                        svg(id="point_bars")
-
-                        #special_nav
-                            object.logo(id='button1',type='image/svg+xml', data='images/button1.svg')
-                        #special_nav
-                            object.logo(id='button2',type='image/svg+xml', data='images/button2.svg')
-                            object.logo(id='button3', type='image/svg+xml', data='images/button3.svg')
             #darkblueNav
                 #navigation
                     ul
@@ -126,7 +116,6 @@ html
                                     a(href = 'logout') Logout
                             else
                                 a(href = 'home') Login
-
             #container
                 #header
                     img.codexLogo(src='images/codex.png')
