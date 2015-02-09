@@ -21,7 +21,7 @@
         "name":"handy_start", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"handy_task1", "maxpoints":0, "maxfaults":0
+        "name":"handy_task1", "maxpoints":9, "maxfaults":9
     },
     {
         "name":"handy_task2", "maxpoints":7, "maxfaults":7
