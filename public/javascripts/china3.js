@@ -72,7 +72,7 @@ var makeToolTip = function ( jsonpath ) {
             );
         });
     });
-}
+};
 
 ////////////////////////////////////////////////////////////////////////////////
 // main function
@@ -89,6 +89,7 @@ var init = function () {
     $('#Antwortbox').droppable( {
         drop: handleDropEvent
     });
-}
+};
 
 $( init );
+addPointsBar();

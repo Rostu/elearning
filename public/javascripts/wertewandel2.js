@@ -39,10 +39,12 @@ function handleDropEvent( event, ui ) {
     // attach the elements
     if (correct_p == true)
     {
+        raisepoints();
         $( "#Antwortbox_ww2_" + answerDragged ).append( div.animate({backgroundColor: "#0f0"}, 2000) );
     }
     else if (correct_p == false)
     {
+        raisefaults();
         $( "#Antwortbox_ww2_" + answerDragged ).append( div.animate({backgroundColor: "#f00"}, 2000) );
     }
     
@@ -66,3 +68,4 @@ function init() {
 };
 
 $( init );
+addPointBars();
