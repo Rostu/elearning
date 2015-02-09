@@ -53,13 +53,13 @@ var loadWords = function( jsonpath, addition ) {
                 }
             );
         });
-    })
+    });
 };
 
 ////////////////////////////////////////////////////////////////////////////////
 // handle drag & drop events
 ////////////////////////////////////////////////////////////////////////////////
-var clear = function () {
+function clear() {
     $(".inline.ui-draggable[id="+this.id+"]").draggable("enable").css('color','black');
     $(this).remove();
 }
@@ -76,11 +76,6 @@ var myHelper = function ( event ) {
         text: textinhalt
     });
 };
-
-function clear(){
-    $(".inline.ui-draggable[id="+this.id+"]").draggable("enable").css('color','black');
-    $(this).remove();
-}
 
 var applyToAnswers = function( fn, answerArray ) {
     // Takes a unary function and assings is to every anwser box
@@ -116,5 +111,9 @@ var update_balken_closure = function () {
         $('#balken_innen1').css('width',r_length*10.2857);
         //$('#balken_innen2').css('width',w_length*4);
     }
-}
+};
 
+function addPointBars() {
+    $("#point_bars").data("acualf");
+    $("#point_bars").data("actualp");
+}

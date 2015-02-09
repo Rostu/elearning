@@ -101,6 +101,7 @@ app.get('/points:last?', function(req, res){
 });
 
 app.get('/signup', signup.get_signup);
+app.get('/anleitung', ubung.get_anleitung);
 app.get('/users', user.list);
 app.get('/start', start.start);
 app.get('/testing', index.get_testing);

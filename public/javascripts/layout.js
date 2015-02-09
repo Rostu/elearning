@@ -7,25 +7,18 @@ $(document).ready(function() {
     $( "#point_bars" ).data( "actualf", 0 );
     //console.log($("body").data());
 
-    $('.redstripe').hide();
-    $('.redtext').hide();
-
     $('.redstripe').mouseenter(function()
     {
-        //$(this).text("dsaf")
-        //$(this).animate({width: $(this).children('a.redlink').width(), paddingLeft: "8px", paddingRight: "20px"}, 100);
-        //$(this).animate({width: $(this).children('.redtext').width(), paddingLeft: "8px", paddingRight: "20px"},100);
-        $(this).children('.redtext').show();
-        $(this).animate({width: "90%"}, 100);
-        $(this).animate({color: "#ffffff"}, 100);
+        $(this).animate({width: $(this).children('.redlink').width(), paddingRight: "20px"}, 100);
+        $(this).children().show;
+        $(this).children().animate({color: "#ffffff"}, 200);
     });
 
     $('.redstripe').mouseleave(function()
     {
-        $(this).children('.redtext').hide();
-        $(this).animate({color: "#A91211"}, 100);
-        $(this).animate({width: "20px"},100);
-        //$(this).text("")
+        $(this).children().animate({color: "#A91211"}, 100);
+        $(this).children().hide;
+        $(this).animate({width: "0px", paddingRight: "12px"},200);
     });
 
     $('.footerlink').mouseenter(function()
@@ -38,20 +31,130 @@ $(document).ready(function() {
         $(this).css("textDecoration", "none");
     });
 
-    //implements dropdown menu for start pages
+    //handle highlighting on start pages
 
-    $('.panelarrow').click(function() {
-        var parents = $(this).parents();
-        var panel_id = $(parents[1]).attr("id");
-        var panelcontent = $("div#" + panel_id).children('.panelcontent');
-        if ($(panelcontent).css('display') == "none") {
-            $(panelcontent).css('display', 'inherit');
-            $(this).css("background-image", 'url("/images/button_up.gif")');
+    $('.panelheader').mouseenter(function()
+    {
+        startPageFadeIn($(this));
+    });
+
+    $('.panelheader').mouseleave(function()
+    {
+        startPageFadeOut($(this));
+    });
+
+    $('.panelarrow').mouseenter(function()
+    {
+        $(this).css("backgroundColor", "#005E9C");
+    });
+
+    $('.panelarrow').mouseleave(function()
+    {
+        $(this).css("backgroundColor", "#A6D1F5");
+    });
+
+    $('.tasktitle').mouseenter(function()
+    {
+        startPageFadeIn($(this));
+    });
+
+    $('.tasktitle').mouseleave(function()
+    {
+        startPageFadeOut($(this));
+    });
+
+    $('.taskstart').mouseenter(function()
+    {
+        $(this).css("backgroundColor", "#FFFFFF");
+    });
+
+    $('.taskstart').mouseleave(function()
+    {
+        $(this).css("backgroundColor", "#E5EFF5");
+    });
+
+    $('.taskmediaicon').mouseenter(function()
+    {
+        $(this).css("backgroundColor", "#FFFFFF");
+    });
+
+    $('.taskmediaicon').mouseleave(function()
+    {
+        $(this).css("backgroundColor", "#E5EFF5");
+    });
+
+    function startPageFadeIn(owner) {
+        $(owner).fadeTo(100, 0.7);
+    }
+
+    function startPageFadeOut(owner) {
+        $(owner).fadeTo(100, 1.0);
+    }
+
+    //handle clicking on start pages
+
+    $('.panelheader').click(function() {
+        togglePanelContent($(this));
+    });
+
+    $('.tasktitle').click(function() {
+        var link = $(this).find('.tasklink');
+        $(link)[0].click();
+    });
+
+    $('.taskmediaicon').click(function(e) {
+        e.stopPropagation();
+        var task = $(this).closest('.task');
+        var taskmedia = $(task).children('.taskmedia');
+        if ($(taskmedia).css('display') == "none") {
+            $(taskmedia).css('display', 'inherit');
         } else {
-            $(panelcontent).css('display', 'none');
-            $(this).css("background-image", 'url("/images/button_down.gif")');
+            $(taskmedia).css('display', 'none');
         }
     });
+
+    $('.mediaelement_mini').click(function() {
+        toggleStartOverlay();
+    });
+
+    $('#startoverlaycloseicon').click(function() {
+        toggleStartOverlay();
+    });
+
+    function togglePanelContent(clickablePanelChild){
+        var panel = $(clickablePanelChild).closest('.startpanel');
+        var arrow = $(clickablePanelChild).children('.panelarrow');
+        var panel_id = $(panel).attr("id");
+        var panelcontent = $("div#" + panel_id).children('.panelcontent');
+        //console.log($(parent).closest('.panelarrow'));
+        if ($(panelcontent).css('display') == "none") {
+            $(panelcontent).css('display', 'inherit');
+            $(arrow).css("background-image", 'url("/images/button_up2.gif")');
+        } else {
+            $(panelcontent).css('display', 'none');
+            $(arrow).css("background-image", 'url("/images/button_down2.gif")');
+        }
+    }
+
+    function toggleStartOverlay(){
+        var startoverlaybackground = document.getElementById('startoverlaybackground');
+        var startoverlaybluebar = document.getElementById('startoverlaybluebar');
+        var startoverlaywatermark = document.getElementById('startoverlaywatermark');
+        var startoverlay = document.getElementById('startoverlay');
+        startoverlaybackground.style.opacity = .75;
+        //startoverlaybluebar.style.opacity = .9;
+        if ($(startoverlaybackground).css('display') == "none") {
+            $(startoverlaybackground).css('display', 'inherit');
+            $(startoverlaybluebar).css('display', 'inherit');
+            $(startoverlay).css('display', 'inherit');
+            $(startoverlaywatermark).css('display', 'inherit');
+        } else {
+            $(startoverlaybackground).css('display', 'none');
+            $(startoverlaybluebar).css('display', 'none');
+            $(startoverlay).css('display', 'none');
+            $(startoverlaywatermark).css('display', 'none');
+        }
+    }
 
     //functions for the point visualization--------------------------------
 
@@ -93,10 +196,21 @@ $(document).ready(function() {
     $(document).on("PointsChanged", function() {
         updatepoints();
         updatefaults();
+        check();
     });
 
-    //end functions for the point visualization--------------------------------
+    //this function will check if the actual point/faults equal the max points/faults and trigger a event if so
+    function check(){
+        var actualp = $("#point_bars").data("actualp");
+        var actualf = $("#point_bars").data("actualf");
 
+        if((maxp == actualp) && (actualp != 0)){
+            $(document).trigger('MaxPointsReached');
+        }
+        if((maxf == actualf) && (actualf != 0)){
+            $(document).trigger('MaxFaultsReached');
+        }
+    }
 });
 
 function raisefaults(){

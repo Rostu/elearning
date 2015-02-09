@@ -28,7 +28,7 @@
   height: 20px;
   width: 175px;
   border-top: hidden;
-  border-bottom-color: hidden;
+  border-bottom-color: transparent;
 }
 
 #Antwortbox {
@@ -54,14 +54,14 @@
   margin: 3px;
   background: lightgoldenrodyellow;
   color: black;
-  -webkit-box-shadow: 0px 2px 5px darkgray;
-  -moz-box-shadow: 0px 2px 5px darkgray;
-  box-shadow: 0px 2px 5px darkgray; }
+  -webkit-box-shadow: 0 2px 5px darkgray;
+  -moz-box-shadow: 0 2px 5px darkgray;
+  box-shadow: 0 2px 5px darkgray; }
 
 .token {
-  -webkit-box-shadow: 0px 2px 5px darkgray;
-  -moz-box-shadow: 0px 2px 5px darkgray;
-  box-shadow: 0px 2px 5px darkgray;
+  -webkit-box-shadow: 0 2px 5px darkgray;
+  -moz-box-shadow: 0 2px 5px darkgray;
+  box-shadow: 0 2px 5px darkgray;
   background: #0083cb;
   color: white;
   font-weight: bold;
@@ -92,14 +92,14 @@
 #balken_innen1 {
   background: lawngreen;
   display: inline-block;
-  width: 0px;
+  width: 0;
   height: 15px; }
 
 #balken_innen2 {
   background: red;
   display: inline-block;
   height: 15px;
-  width: 0px; }
+  width: 0; }
 
 .ui-state-hover{
     background-color: cornflowerblue;

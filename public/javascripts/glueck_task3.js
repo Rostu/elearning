@@ -2,7 +2,6 @@
  * Created by s2daalft on 19.08.2014.
  */
 
-
 var Cell = function (i,j,k) {
     var x = i;
     var y = j;
@@ -255,6 +254,51 @@ var KWRController = function (model) {
 var r = ["T", "B", "A", "H", "E", "G", "N", "I", "E", "W", "H", "C", "S"];
 
 $(document).ready(function() {
+    $('#helpdi').dialog({autoOpen: false,
+        show: {
+            effect: "fade",
+            duration: 1000
+        },
+        hide: {
+            effect: "fade",
+            duration: 1000
+        },
+        modal: true,
+        title: "KREUZWORTRÄTSEL",
+        buttons: [
+            {
+                text: "OK",
+                icons: {
+                    primary: "null"
+                },
+                click: function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        ],
+        draggable: false
+    });
+    $('#really').dialog({
+        autoOpen: false,
+        modal: true,
+        title: "AUFLÖSEN",
+        buttons: [
+            {
+                text: "Ja",
+                click: function() {
+                    controller.solveAll();
+                    $(this).dialog("close");
+                }
+            },
+            {
+                text: "Nein",
+                click: function() {
+                    $(this).dialog("close");
+                }
+            }
+        ]
+    });
+
     var m = [
         "Wer fegt den Kamin?",
         "Wie viele Blätter muss ein Kleeblatt haben, um Glück zu bringen?",
@@ -303,6 +347,17 @@ $(document).ready(function() {
     controller.setValue("Ü", 8 , 11);
 
     var sell = $('.cell');
+
+    $('#info1').show();
+    var a1 = $('<a href="#" class="redlink">Hilfe</a>');
+    a1.on("click", help);
+    $('#info1').append(a1);
+
+
+    $('#info2').show();
+    var a2 = $('<a href="#" class="redlink">Lösung zeigen</a>');
+    a2.on("click", reallysolve);
+    $('#info2').append(a2);
 
     sell.on("keyup", function(e) {
         var inp = String.fromCharCode(e.keyCode);
@@ -408,11 +463,12 @@ $(document).ready(function() {
         if(cs.length) return;
         $('#solve').after("<div class='buttondiv' id='cs'>LÖSUNG BESTÄTIGEN</div>");
         $('#cs').on("click", function() {
-           if(checkSolution()) {
-               $.jqDialog.alert("Gut gemacht!", function() {}); // add callback with effects?
-           } else {
-               $.jqDialog.alert("Das ist leider nicht die richtige Lösung!", function() {});
-           }
+            if(checkSolution()) {
+                alert("Gut gemacht!");
+                // TODO what happens?
+            } else {
+                alert("Das ist leider nicht die richtige Lösung!");
+            }
         });
     }
 
@@ -427,4 +483,14 @@ $(document).ready(function() {
         }
         return true;
     }
+
+    function help () {
+        $('#helpdi').dialog("open");
+    }
+
+    function reallysolve () {
+        $('#really').dialog("open");
+    }
+    // open the help dialog when the page has finished loading
+    $('#helpdi').dialog("open");
 });

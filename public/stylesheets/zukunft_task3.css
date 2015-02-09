@@ -48,12 +48,12 @@
     height: 160px; }
 
 #Antwortbox {
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-    -moz-box-shadow: 0px 2px 5px darkgrey;
-    box-shadow: 0px 2px 5px darkgrey;
+    -webkit-box-shadow: 0 2px 5px darkgrey;
+    -moz-box-shadow: 0 2px 5px darkgrey;
+    box-shadow: 0 2px 5px darkgrey;
     padding: 20px;
     margin: 10px auto;
-    display: box;
+    display: block;
     width: 50%;
     border-radius: 50%;
     background-color: #005E9C;
@@ -67,13 +67,13 @@
 }
 
 .token {
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-    -moz-box-shadow: 0px 2px 5px darkgrey;
-    box-shadow: 0px 2px 5px darkgrey;
+    -webkit-box-shadow: 0 2px 5px darkgrey;
+    -moz-box-shadow: 0 2px 5px darkgrey;
+    box-shadow: 0 2px 5px darkgrey;
     background: #0083cb;
     font-size: 1.2em;
     color: white;
-    font: bold;
+    font-weight: bold;
     padding: 8px;
     display: inline-block;
     margin: 10px;
@@ -81,13 +81,13 @@
 }
 
 .kolo {
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-    -moz-box-shadow: 0px 2px 5px darkgrey;
-    box-shadow: 0px 2px 5px darkgrey;
+    -webkit-box-shadow: 0 2px 5px darkgrey;
+    -moz-box-shadow: 0 2px 5px darkgrey;
+    box-shadow: 0 2px 5px darkgrey;
     background: #0083cb;
     font-size: 1.2em;
     color: white;
-    font: bold;
+    font-weight: bold;
     padding: 8px;
     display: inline-block;
     margin: 10px;
@@ -96,7 +96,7 @@
 .antworttoken {
     background: #0083cb;
     color: white;
-    font: bold;
+    font-weight: bold;
     height: 40px;
     width: 340px;
     text-align: center;
@@ -150,14 +150,14 @@
 #balken_innen1 {
     background: lawngreen;
     display: inline-block;
-    width: 0px;
+    width: 0;
     height: 15px; }
 
 #balken_innen2 {
     background: red;
     display: inline-block;
     height: 15px;
-    width: 0px; }
+    width: 0; }
 
 h1 {
     position: fixed;
@@ -184,7 +184,6 @@ h2 {
     from {
         font-size: 1em;
         position: fixed;
-        font-size: 1em;
         top: 50%;
         left: 30%;
     }
@@ -194,7 +193,7 @@ h2 {
         position: fixed;
         top: 50%;
         left: 30%;
-        margin: 0px auto;
+        margin: 0 auto;
     }
 }
 

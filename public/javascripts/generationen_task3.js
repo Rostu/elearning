@@ -24,9 +24,10 @@ $(document).ready(function() {
     $('.drop').droppable({drop: function(e,ui) {
         var elem = $(ui.draggable).attr("style","").addClass("revertable").attr("style","position:relative").detach();
         $(this).append(elem);
+        check();
     }});
 
-    $('#check').click(function() {
+    function check() {
         $('#jung').children('.word').toArray().map(function(e) {
             if ($.inArray($(e).text(), a) > -1) {
                 markfalse($(e));
@@ -40,24 +41,18 @@ $(document).ready(function() {
             } else {
                 marktrue($(e));
             }
+
         });
-    });
+    }
 
     $('#weiter').click(function() {
         $('#check').click();
-        // TODO
-        // Validierung verbessern
-        if ($('.wrong').toArray().length > 0) {
-            alert("Bitte entferne die falschen Antworten");
-        } else {
-            alert("Weiter so");
-            document.location.href = "generationen_task4";
-        }
     });
 
     $(document).on("contextmenu",".revertable",function(e){
         var ct = $(e.currentTarget);
         if (ct.hasClass("wrong")) ct.removeClass("wrong");
+        if (ct.hasClass("right")) ct.removeClass("right");
         c.append(ct.removeClass("revertable").detach());
         return false;
     });
@@ -80,12 +75,14 @@ $(document).ready(function() {
 
     function markfalse (e) {
         if (e.hasClass("wrong")) return;
+        raisefaults();
         if (e.hasClass("right")) e.removeClass("right");
         e.addClass("wrong");
     }
 
     function marktrue(elem) {
         if (elem.hasClass("right")) return;
+        raisepoints();
         if (elem.hasClass("wrong")) elem.removeClass("wrong");
         elem.addClass("right");
     }

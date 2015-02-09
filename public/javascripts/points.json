@@ -9,7 +9,7 @@
         "name":"glueck_task1b", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"glueck_task2", "maxpoints":0, "maxfaults":0
+        "name":"glueck_task2", "maxpoints":7, "maxfaults":7
     },
     {
         "name":"glueck_task3", "maxpoints":0, "maxfaults":0
@@ -21,37 +21,37 @@
         "name":"handy_start", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"handy_task1", "maxpoints":0, "maxfaults":0
+        "name":"handy_task1", "maxpoints":9, "maxfaults":9
     },
     {
-        "name":"handy_task2", "maxpoints":0, "maxfaults":0
+        "name":"handy_task2", "maxpoints":7, "maxfaults":7
     },
     {
         "name":"ersti_start", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"ersti_task1", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task1", "maxpoints":16, "maxfaults":8
     },
     {
-        "name":"ersti_task2", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task2", "maxpoints":18, "maxfaults":10
     },
     {
-        "name":"ersti_task2b", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task2b", "maxpoints":43, "maxfaults":11
     },
     {
-        "name":"ersti_task2c", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task2c", "maxpoints":26, "maxfaults":13
     },
     {
-        "name":"ersti_task3", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task3", "maxpoints":29, "maxfaults":5
     },
     {
-        "name":"ersti_task3b", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task3b", "maxpoints":4, "maxfaults":4
     },
     {
-        "name":"ersti_task3c", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task3c", "maxpoints":4, "maxfaults":5
     },
     {
-        "name":"ersti_task4", "maxpoints":0, "maxfaults":0
+        "name":"ersti_task4", "maxpoints":9, "maxfaults":5
     },
     {
         "name":"veggieday_task3", "maxpoints":4, "maxfaults":4
@@ -66,16 +66,16 @@
         "name":"wertewandel_start", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"wertewandel_task1", "maxpoints":0, "maxfaults":0
+        "name":"wertewandel_task1", "maxpoints":6, "maxfaults":5
     },
     {
-        "name":"wertewandel_task2", "maxpoints":0, "maxfaults":0
+        "name":"wertewandel_task2", "maxpoints":6, "maxfaults":3
     },
     {
         "name":"wertewandel_task3", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"wertewandel_task4", "maxpoints":0, "maxfaults":0
+        "name":"wertewandel_task4", "maxpoints":4, "maxfaults":4
     },
     {
         "name":"generationen_start", "maxpoints":0, "maxfaults":0
@@ -87,10 +87,10 @@
         "name":"generationen_task1", "maxpoints":9, "maxfaults":9
     },
     {
-        "name":"generationen_task2", "maxpoints":0, "maxfaults":0
+        "name":"generationen_task2", "maxpoints":24, "maxfaults":12
     },
     {
-        "name":"generationen_task3", "maxpoints":0, "maxfaults":0
+        "name":"generationen_task3", "maxpoints":6, "maxfaults":6
     },
     {
         "name":"zukunft_start", "maxpoints":0, "maxfaults":0
@@ -99,7 +99,7 @@
         "name":"zukunft_task1", "maxpoints":20, "maxfaults":5
     },
     {
-        "name":"zukunft_task2", "maxpoints":6, "maxfaults":10
+        "name":"zukunft_task2", "maxpoints":6, "maxfaults":6
     },
     {
         "name":"zukunft_task3", "maxpoints":4, "maxfaults":10
@@ -114,12 +114,12 @@
         "name":"china_start", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"china_task1", "maxpoints":0, "maxfaults":0
+        "name":"china_task1", "maxpoints":14, "maxfaults":10
     },
     {
-        "name":"china_task2", "maxpoints":0, "maxfaults":0
+        "name":"china_task2", "maxpoints":19, "maxfaults":10
     },
     {
-        "name":"china_task2", "maxpoints":0, "maxfaults":0
+        "name":"china_task3", "maxpoints":6, "maxfaults":5
     }
 ]}

@@ -102,10 +102,12 @@ function validate ()
                         if ( results[begriff] == j )
                         {
                             boxKorrekt[j-1]++;
+                            raisepoints();
                             document.getElementById ( document.getElementById ('Antwortbox' + j ).children[i].id ).style.color="green";
                         }
                         else
                         {
+                            decreasefaults();
                             document.getElementById ( document.getElementById ('Antwortbox' + j ).children[i].id ).style.color="red";
                         }
                     }
