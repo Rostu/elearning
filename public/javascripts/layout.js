@@ -161,8 +161,12 @@ $(document).ready(function() {
     var maxp = 0;
     var maxf = 0;
     var vis = d3.select("#point_bars");
+    var actualpage = $('a#ind').attr('href');
+    if (actualpage) {
+        actualpage = actualpage.replace("/uindex?last=/", "");
+    }
 
-    $.getJSON('/points', function(data){
+    $.getJSON('/points?last='+actualpage, function(data){
         maxp = data.maxpoints;
         maxf = data.maxfaults;
         myScalePoints = d3.scale.linear().domain([0, maxp]).range([0, 2 * Math.PI]);
@@ -188,11 +192,6 @@ $(document).ready(function() {
         d3.select("#faultspath").attr("d",newarc);
     }
 
-
-    //$(document).on('data-attribute-changed', function() {
-    //    updatepoints();
-    //    updatefaults();
-    //});
 
     $(document).on("PointsChanged", function() {
         updatepoints();
@@ -232,6 +231,12 @@ function raisepoints(){
 function decreasepoints(){
     var temp = $("#point_bars").data("actualp") -1;
     $("#point_bars").data("actualp", temp);
+    $(document).trigger('PointsChanged');
+};
+function clearpoints(){
+    $("#point_bars").data("actualp",0);
+    var temp = $("#point_bars").data("actualp");
+    $("#point_bars").data("actualf", temp);
     $(document).trigger('PointsChanged');
 };
 //end functions for the point visualization--------------------------------

@@ -53,15 +53,16 @@ html
             #redbackground
             #specialbackground
                 if (session)
-                    if (session.lastpage != '')
+                    if (last != "/home")
                         #special_bar
                             #point_bars_div
                                 svg(id="point_bars")
-                            #special_nav
-                                object.logo(id='button1',type='image/svg+xml', data='images/button1.svg')
-                            #special_nav
-                                object.logo(id='button2',type='image/svg+xml', data='images/button2.svg')
-                                object.logo(id='button3', type='image/svg+xml', data='images/button3.svg')
+                            .special_nav
+                                a#ind(href="/uindex?last="+ last)
+                            .special_nav
+                                a#las(href="/last?last="+ last)
+                                a#nex(href="/next?last="+ last)
+
             #redstripes
                 .redstripe#info1
                 .redstripe#info2
@@ -115,7 +116,6 @@ html
                                     a(href = 'logout') Logout
                             else
                                 a(href = 'home') Login
-
             #container
                 #header
                     img.codexLogo(src='images/codex.png')
