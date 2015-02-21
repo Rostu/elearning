@@ -38,10 +38,12 @@ function handleDropEvent( event, ui ) {
     // attach the elements
     if (correct_p == true)
     {
+        raisepoints();
         $( "#Antwortbox_ww_" + answerDragged ).append( div.animate({backgroundColor: "#0f0"}, 2000) ).append( "<br />" );
     }
     else if (correct_p == false)
     {
+        raisefaults();
         $( "#Antwortbox_ww_" + answerDragged ).append( div.animate({backgroundColor: "#f00"}, 2000) ).append( "<br />" );
     }
     
@@ -64,3 +66,4 @@ function init() {
 };
 
 $( init );
+addPointsBar();

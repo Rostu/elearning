@@ -1,11 +1,127 @@
 body {
-    margin: 0px;
+    margin: 0;
     min-width: 1024px;
     font-family: "Meta", sans-serif;
     height: 100%;
     font-size: 12px;
     overflow-y: scroll;
     background: #E5EFF5 url("../images/siegel.png") no-repeat scroll -159px 129px;
+}
+
+#startoverlaybackground {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    min-width: 1024px;
+    background: #005E9C;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 3000;
+    display: none;
+}
+
+#startoverlaybluebar {
+    margin-top: 13px;
+    height: 130px;
+    width: 100%;
+    min-width: 1024px;
+    background: #005E9C;
+    position: absolute;
+    z-index: 3002;
+    display: none;
+}
+
+#startoverlayheader {
+    width: 100%;
+    position: relative;
+}
+
+.startoverlayheaderbar {
+    padding: 5px;
+    margin: 0px 0px 10px 0px;
+    min-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    background: #7AB3E3;
+    color: white;
+    text-align: center;
+}
+
+.startoverlayheaderinfo {
+    margin: 2.5px 2.5px;
+    padding: 0px 3px;
+    height: 18px;
+    line-height: 18px;
+    border: 1px solid #E5EFF5;
+    display: inline-block;
+}
+
+#startoverlaymediatypeicon, #startoverlaycloseicon {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    background: #E5EFF5;
+    color: #A1BED6;
+    float: left;
+    border-radius: 25px;
+}
+
+#startoverlaycloseicon {
+    float: right;
+}
+
+#startoverlayheadertext {
+    margin: 0 55px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+
+
+#startoverlay {
+    margin: 0px;
+    width: 100%;
+    min-width: 1024px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3003;
+    display: none;
+}
+
+#startoverlaywatermark {
+    margin: 0px;
+    height: 958px;
+    width: 100%;
+    min-width: 1024px;
+    background: url("../images/siegel_weiss.png") no-repeat scroll -159px 129px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3001;
+    display: none;
+}
+
+#startoverlaywrapper {
+    margin: 11px 15% 11px 15%;
+}
+
+#startoverlaybox {
+    margin-left: -20px;
+    margin-right: -20px;
+    border: 10px solid #E5EFF5;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px #4D4D4F;
+    background: #E5EFF5;
+}
+
+#startoverlaycontent {
+    margin: 0px;
+    padding: 0px;
 }
 
 #redbackground {
@@ -18,22 +134,61 @@ body {
     position: absolute;
 }
 
+#specialbackground {
+    min-width: 1024px;
+    margin-top: 143px;
+    width: 100%;
+    height: 210px;
+    z-index: 1;
+    position: absolute;
+}
+
+#specialtest {
+    margin: 0px;
+    height: 220px;
+    width: 15%;
+    background: green;
+    float: right;
+}
+
+#special_bar {
+    margin: 0px;
+    /*background-color:#A91211;*/
+    width: 13.9%;
+    z-index: 1;
+    float: right;
+}
+
+#point_bars_div, #point_bars {
+    margin: auto;
+    height: 115px;
+    width: 100px;
+}
+
+#special_nav{
+    margin: 0px auto;
+    padding: 0px;
+    height: 45px;
+    width: 100px;
+    text-align: center;
+}
+
 #redstripes {
     margin-top: 148px;
-    width: 12.5%;
+    width: 100px;
     z-index: 1000;
     position: absolute;
 }
 
 .redstripe {
     margin-top: 15px;
-    width: 0px;
+    width: 0;
     padding-left: 8px;
     padding-right: 12px;
     height: 27px;
     background: #A91211;
     z-index: 1001;
-    border-radius: 0px 0px 20px 0px;
+    border-radius: 0 0 20px 0;
     box-shadow: 2px 2px 6px #4D4D4F;
     color: #A91211;
     white-space: nowrap;
@@ -54,25 +209,54 @@ body {
     color: #A91211;
 }
 
-#special_bar {
-    position: absolute;
-    margin-top: 155px;
-    margin-left: 88.5%;
-    /*background-color:#A91211;*/
-    width: 12%;
-}
-
-#point_bars{
-    height: 110px;
-    width: 110px;
-}
-
-#special_nav{
+#specialtest {
     margin: 0px;
+    height: 220px;
+    width: 15%;
+    background: green;
+    float: right;
+}
+
+#special_bar {
+    margin: 0px;
+    /*background-color:#A91211;*/
+    width: 13.9%;
+    z-index: 1;
+    float: right;
+}
+
+#point_bars_div, #point_bars {
+    margin: auto;
+    height: 115px;
+    width: 100px;
+}
+
+.special_nav{
+    margin: 0px auto;
     padding: 0px;
     height: 45px;
-    width: 110px;
+    width: 100px;
     text-align: center;
+}
+
+.special_nav a#ind{background-image: url("../images/button1.png");width: 44px;height: 44px;display: inline-block;background-size: 44px; margin: 0px auto;}
+.special_nav a#ind:hover{background-image: url("../images/button1hover.png");}
+.special_nav a#las{background-image: url("../images/button2.png");width: 44px;height: 44px;display: inline-block;background-size: 44px;margin: 0px auto;}
+.special_nav a#las:hover{background-image: url("../images/button2hover.png");}
+.special_nav a#nex{background-image: url("../images/button3.png");width: 44px;height: 44px;display: inline-block;background-size: 44px;margin: 0px auto;}
+.special_nav a#nex:hover{background-image: url("../images/button3hover.png");}
+#redstripes{margin-top: 148px;width: 100px;z-index: 1000;position: absolute;}
+.redstripe{margin-top: 15px;width: 0;padding-left: 8px;padding-right: 12px;height: 27px;background: #A91211;z-index: 1001;border-radius: 0 0 20px 0;box-shadow: 2px 2px 6px #4D4D4F;color: #A91211;white-space: nowrap;overflow: hidden;display: none;}
+.redtext{
+    text-align: center;
+    padding:2px;
+}
+.redlink {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 27px;
+    font-weight: bold;
+    color: #A91211;
 }
 
 .logo{
@@ -83,10 +267,8 @@ body {
      display: inline-block;
      text-align: center;
  }
-
 #button1{
 }
-
 #darkblueNav {
     min-width: 640px;
     margin-top: 90px;
@@ -101,7 +283,6 @@ body {
     position: absolute;
     float: right;
 }
-
 #header {
     margin-left: -20px;
     margin-top: 23px;
@@ -116,36 +297,29 @@ body {
     z-index: 3;
     position: absolute;
 }
-
 #headerblocker {
     height: 140px;
     width: 100%;
 }
-
 mark.codex {
     color: #A91211;
     background: #D5EBFD;
-    
 }
-
 img.codexLogo {
     height: 40px;
     float: left;
 }
-
 #titletext {
     margin: 10px;
     font-size: 28px;
     font-weight: bold;
     float: left;
 }
-
 img.uniLogo {
     height: 90px;
     margin-right: -20px;
     float: right;
 }
-
 #container {
     margin: 8px;
     margin-left: 15%;
@@ -156,7 +330,6 @@ img.uniLogo {
     position: relative;
     min-width: 716px;
 }
-
 #mainboard {
     margin-left: -10px;
     margin-top: 3px;
@@ -174,27 +347,23 @@ img.uniLogo {
     margin-top: 10px;
     width: 100%;
 }
-
 #footer {
     width: 100%;
     font-size: 10px;
     background-color: #A1BED6;
-    border: 0px none;
+    border: 0 none;
 }
-
 #impressum {
     float: left;
-    margin: 7px 0px;
+    margin: 7px 0;
 
     word-spacing: 10px;
 }
-
 .footerlink {
     margin-right: 10px;
     text-decoration: none;
     color: #000;
 }
-
 #endfloat {
     clear: both;
 }
@@ -205,10 +374,9 @@ img.uniLogo {
 }
 
 #navigation ul {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
-
 #navigation ul:after {
     clear: both;
     content: " ";
@@ -243,7 +411,7 @@ img.uniLogo {
     display: inline;
     visibility: hidden;
     position: absolute;
-    padding:0px;
+    padding:0;
 }
 
 #navigation ul li ul li{
@@ -255,13 +423,13 @@ img.uniLogo {
 }
 
 #navigation ul {
-    padding: 0px;
+    padding: 0;
     margin-bottom: -1px;
 }
 
 #navigation ul li {
     margin-top: 1px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     list-style: none;
     float:left;
     border-left: 1px solid #D5EBFD;
@@ -351,9 +519,9 @@ img.uniLogo {
     margin:10px auto;
     transition:opacity 1s;
     -webkit-transition:opacity 1s;
-    -webkit-box-shadow: 0px 0px 4px darkgrey;
-    -moz-box-shadow: 0px 0px 4px darkgrey;
-    box-shadow: 0px 0px 4px darkgrey;
+    -webkit-box-shadow: 0 0 4px darkgrey;
+    -moz-box-shadow: 0 0 4px darkgrey;
+    box-shadow: 0 0 4px darkgrey;
 }
 
   #loginbox h1{
@@ -363,7 +531,7 @@ img.uniLogo {
       font-weight:300;
       text-align:center;
       color:#fff;
-      margin: 0px;
+      margin: 0;
       background: -webkit-linear-gradient(#005E9C 60%, #0083cb); /* For Safari 5.1 to 6.0 */
       background: -o-linear-gradient(#005E9C 60%, #0083cb); /* For Opera 11.1 to 12.0 */
       background: -moz-linear-gradient(#005E9C 60%, #0083cb); /* For Firefox 3.6 to 15 */
@@ -427,9 +595,8 @@ img.uniLogo {
       display: block;
       width: 95%;
       list-style: none;
-      margin-bottom: 10px;
       float: left;
-      padding: 0px;
+      padding: 0;
       position: relative;
       z-index: 5;
       border-top: solid;
@@ -498,11 +665,11 @@ img.uniLogo {
 }
 
 #Field a:hover {
-    text-shadow: 0px 0px 10px white;
+    text-shadow: 0 0 10px white;
 }
 #Field span p #infotext{
     font-size: 30px;
-    margin: 0px;
+    margin: 0;
     padding:0;
 }
 
@@ -564,7 +731,7 @@ img.uniLogo {
     font-family: Arial;
     margin-right: 5px;
     background: rgba(98, 8, 255, 0.79);
-    border: 0px;
+    border: 0;
     font-size: 1.5em;
     color: #fff;
     width: auto;
@@ -675,7 +842,7 @@ img.uniLogo {
 #balken_innen1 {
     background: lawngreen;
     display: inline-block;
-    width: 0px;
+    width: 0;
     height: 15px;
     float: left;
 }
@@ -684,7 +851,7 @@ img.uniLogo {
     background: red;
     display: inline-block;
     height: 15px;
-    width: 0px;
+    width: 0;
     float: left;
 }
 
@@ -712,11 +879,9 @@ img.uniLogo {
 
 }
 
-#lessons {
+#tasks {
 
 }
-
-
 
 .startpanel {
     margin: 10px 10px auto;
@@ -747,18 +912,18 @@ img.uniLogo {
     border-radius: 25px;
 }
 
-#lessonlist {
+#tasklist {
     width: 70%;
-    margin: 0px auto;
+    margin: 0 auto;
     position: relative;
 }
 
 #subjecttext {
-    padding: 0px 10px;
+    padding: 0 10px;
 }
 
 #mediashow {
-    margin: 0px 50px;
+    margin: 0 50px;
     overflow: auto;
     text-align: center;
     padding: 5px 5px;
@@ -774,24 +939,33 @@ img.uniLogo {
     height: 100px;
 }
 
+.mediaelement_mini {
+    display: inline-block;
+    margin: 5px 5px;
+    height: 70px;
+}
+.mediaimage_mini {
+    height: 70px;
+}
+
 .mediaimage {
     height: 100px;
 }
 
-.lesson {
+.task {
     margin: 10px 10px;
-    align: center;
+    text-align: center;
 }
 
-.lessontask {
-    margin: 0px 60px;
+.taskmedia {
+    margin: 0 60px;
     padding: 5px;
     text-align: center;
     background: #E5EFF5;
     display: none;
 }
 
-.licon {
+.taskicon {
     width: 50px;
     height: 50px;
     line-height: 50px;
@@ -802,7 +976,7 @@ img.uniLogo {
     border-radius: 25px;
 }
 
-.lpoints {
+.taskpoints {
     width: 50px;
     height: 50px;
     line-height: 50px;
@@ -813,9 +987,9 @@ img.uniLogo {
     border-radius: 25px;
 }
 
-.ltitle {
+.tasktitle {
     padding: 5px;
-    margin: 0px 60px;
+    margin: 0 60px;
     height: 40px;
     line-height: 40px;
     font-weight: bold;
@@ -826,7 +1000,7 @@ img.uniLogo {
     cursor: pointer;
 }
 
-.ltask {
+.taskmediaicon {
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -838,7 +1012,7 @@ img.uniLogo {
     border-radius: 20px;
 }
 
-.lstart {
+.taskstart {
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -857,5 +1031,5 @@ img.uniLogo {
 }
 
 #impressumcontent {
-    margin: 0px 10px -10px 10px;
+    margin: 0 10px -10px 10px;
 }
