@@ -2,39 +2,86 @@ extends layout
 block content
     #subjecttitle
         h1 Veggie-Day
-    #text.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Text: Unbekannter Titel
-        #subjecttext.panelcontent
     #tasks.startpanel
         div.panelheader
             div.panelarrow
             h2 Lektionen
         #tasklist.panelcontent
-            div#les1.task
-                div.taskicon Icon
-                div.taskstart
-                    a(href='veggieday_task1')
-                div.tasktitle Vegetarismus
-            div#les2.task
-                div.taskicon Icon
-                div.taskstart
-                    a(href='veggieday_task3')
-                div.tasktitle Metaphern
-            div#les3.task
-                div.taskicon Icon
-                div.taskstart
-                    a(href='veggieday_task4')
-                div.tasktitle Meinung der Mediziner
-            div#les4.task
-                div.taskicon Icon
-                div.taskstart
-                    a(href='veggieday_task5')
-                div.tasktitle Meinung der Umweltschützer
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Vegetarismus
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a(href='veggieday_task1')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Metaphern
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a(href='veggieday_task3')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Meinung der Mediziner
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a(href='veggieday_task4')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Meinung der Umweltschützer
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a(href='veggieday_task5')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+
     #media.startpanel
         div.panelheader
             div.panelarrow
             h2 Medien
         #mediashow.panelcontent
-
+            div.mediaelement
+                img.mediaimage(src='images/Testbild1.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild2.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild3.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild4.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild5.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild1.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild2.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild3.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild4.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild5.png')
