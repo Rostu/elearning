@@ -1033,3 +1033,14 @@ img.uniLogo {
 #impressumcontent {
     margin: 0 10px -10px 10px;
 }
+
+#Textbox {
+    width: 45%;
+    display: table-cell;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(229,239,245, 0.8);
+    margin: 10px;
+    color: black;
+    line-height: 30px;
+}
