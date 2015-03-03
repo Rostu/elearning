@@ -72,7 +72,7 @@
         "name":"wertewandel_task2", "maxpoints":6, "maxfaults":3
     },
     {
-        "name":"wertewandel_task3", "maxpoints":0, "maxfaults":0
+        "name":"wertewandel_task3", "maxpoints":7, "maxfaults":7
     },
     {
         "name":"wertewandel_task4", "maxpoints":4, "maxfaults":4
