@@ -2,38 +2,85 @@ extends layout
 block content
     #subjecttitle
         h1 Wertewandel
-    #text.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Text: Pluralisierung der Lebensformen
-        #subjecttext.panelcontent
     #tasks.startpanel
         div.panelheader
             div.panelarrow
             h2 Lektionen
         #tasklist.panelcontent
-            div#les1.task
-                div.taskicon Icon
-                div.taskstart
-                    a(href='wertewandel_task1')
-                div.tasktitle Textverständnis
-            div#les2.task
-                div.taskicon Icon
-                div.taskstart
-                    a(href='wertewandel_task2')
-                div.tasktitle Zuordnung
-            div#les3.task
-                div.taskicon Icon
-                div.taskstart
-                    a(href='wertewandel_task3')
-                div.tasktitle Multiple Choice
-            div#les4.task
-                div.taskicon Icon
-                div.taskstart
-                    a(href='wertewandel_task4')
-                div.tasktitle Lückentext
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textverständnis
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a(href='wertewandel_task1')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Zuordnung
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a(href='wertewandel_task2')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Multiple Choice
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a(href='wertewandel_task3')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Lückentext
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a(href='wertewandel_task4')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
     #media.startpanel
         div.panelheader
             div.panelarrow
             h2 Medien
         #mediashow.panelcontent
+            div.mediaelement
+                img.mediaimage(src='images/Testbild1.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild2.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild3.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild4.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild5.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild1.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild2.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild3.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild4.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild5.png')
