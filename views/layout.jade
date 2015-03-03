@@ -132,28 +132,38 @@ html
                                 block content
                         else
                             #content_background
-                                script( src='javascripts/scripts.js')
-                                h2 Willkommen auf der Lernplattform Deutsch der Universität Trier
-                                p
-                                | Hier finden Sie unterschiedliche Texte zu den Themen China, Ersti, Generationen, Zukunft und Veggie-Day. Die abwechslungsreichen Übungsaufgaben bieten Ihnen die Möglichkeit ihr B1-Niveau auszutesten und zu festigen. Durch die unterschiedlichen Aufgabentypen können Sie ihr Wissen auf vielfältige Art und Weise erweitern.
-                                | Dieses elearning-Projekt ist in Zusammenarbeit mit‚ Deutsch als Fremdsprache‘ und der Computerlinguistik Trier entstanden und wird Ihnen, nach der kostenlosen Anmeldung, zur Verfügung gestellt.
-                                br
-                                br
-                                b.
-                                    Mit alten Browser-Versionen kann es zu Problemen bei der Darstellung kommen, als sicherste Option nutzen Sie bitte Firefox in der neuesten Version.
-                                    Aber auch die neuesten Versionen von InternetExplorer (ab v.11) oder Chrome (ab v.36) werden unterstützt.
-                                    Für weitere Informationen zur Browseruntertzützung: Link comming soon
+                                #Textbox
+                                    script( src='javascripts/scripts.js')
+                                    h2(align='center') Willkommen auf der Lernplattform "Deutsch als Fremdsprache" der Universität Trier!
+                                    | Auf dieser Lernplattform findest du unterschiedliches Lernmaterial samt Übungen zu den Themengebieten
+                                    | Glück, Handy, Ersti, Veggie-Day, Wertewandel, Generationen, Zukunft und China.
+                                    | Die abwechslungsreichen Übungsaufgaben bieten dir die Möglichkeit dein B1-Niveau
+                                    | auszutesten und zu festigen.
+                                    | Durch die unterschiedlichen Aufgabentypen kannst du dein Wissen auf vielfältige Art und Weise erweitern.
+                                    br
+                                    | Dieses elearning-Projekt ist in Zusammenarbeit mit ‚Deutsch als Fremdsprache‘ und der Computerlinguistik
+                                    | Trier entstanden und steht dir nach der einmaligen Registration <b>kostenlos</b>
+                                    | zur Verfügung!
+                                    p
 
-                                h3 Sie müssen sich anmelden um alle Inhalte nutzen zu können
+                                    #withoutcontent
+                                        link(rel='stylesheet', href='stylesheets/index.css')
+                                        #loginbox
+                                            h1 Login
+                                            form(action="login", method="POST")
+                                                input(type="text", id="login", name="login", placeholder="Benutzername")
+                                                input(type="password", id="password", name="password", placeholder="Passwort")
+                                                input(type="submit", value="Login")
+                                    p
+                                    br
+                                    | Technischer Hinweis:
+                                    br
+                                    | Mit alten Browser-Versionen kann es zu Problemen bei der Darstellung kommen. Als sicherste Option empfehlen wir
+                                    | dir Firefox in der neuesten Version.
+                                    | Aber auch die aktuellste Versionen von InternetExplorer(ab v.11) oder Chrome (ab v.36) werden erfahrungsgemäß
+                                    | unterstützt.
+                                    | Für weitere Informationen zur Browseruntertzützung: Link comming soon
 
-                                #withoutcontent
-                                    link(rel='stylesheet', href='stylesheets/index.css')
-                                    #loginbox
-                                        h1 Login
-                                        form(action="login", method="POST")
-                                            input(type="text", id="login", name="login", placeholder="Benutzername")
-                                            input(type="password", id="password", name="password", placeholder="Passwort")
-                                            input(type="submit", value="Login")
                     #footer
                         #impressum
                             a.footerlink(href= 'impressum') Impressum
