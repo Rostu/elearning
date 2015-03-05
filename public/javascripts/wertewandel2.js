@@ -19,8 +19,9 @@ function handleDropEvent( event, ui ) {
         
     textinhalt = textinhalt.replace(',','');
     textinhalt = textinhalt.replace('.','');
-        
-    div.click(clear);
+
+    //no correction feature desired for this exercise
+    //div.click(clear);
 
     // get drop id and append it to where it was dropped
     var draggedDivId = $(this).closest('div').attr('id');
