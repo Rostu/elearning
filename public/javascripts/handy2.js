@@ -2,10 +2,11 @@
  * Created by David on 06.08.2014.
  */
 $(document).ready(function() {
-    $('#info1').show().html("<a href='#' id='check' class='redlink'>Prüfen</a>");
+    //$('#info1').show().html("<a href='#' id='check' class='redlink'>Prüfen</a>");
     var a = [];
     var b = [];
     a[1] = "bekommen";
+    b[1] = "empfangen";
     a[2] = "löschen";
     b[2] = "loeschen";
     a[3] = "laden";
@@ -14,40 +15,41 @@ $(document).ready(function() {
     a[6] = "voll";
     a[7] = "schließen";
     b[7] = "schliessen";
-    $('#check').click(function() {
-        removeMarks();
-        $('input').toArray().map(function(e) {
-            var index = e.id.substring(1);
-            var val = $(e).val();
-            if (a[index]===val) {
-                mark(1,$(e));
+
+    $('input').focusout(function() {
+        //check the field just if there is entered anything
+        if(!($(this).val() === "")) {
+            var index = this.id.substring(1);
+            var val = $(this).val();
+
+            if (a[index] === val) {
+                //add the class right
+                mark(0,$(this));
+                $(this).prop('disabled', true);
                 raisepoints();
             } else {
-                if (b[index]===val) {
-                    mark(1,$(e));
+                if (b[index] === val) {
+                    //add the class right
+                    mark(0,$(this));
+                    $(this).prop('disabled', true);
                     raisepoints();
                 } else {
-                    mark(2,$(e));
+                    mark(1, $(this));
                     raisefaults();
                 }
             }
-        });
+        }
     });
 
-    function mark(i, e) {
-        var c = ((i-1) ? "gnorw" : "thgir").split("").reverse().join("");
-        if (e.hasClass(c)) e.removeClass(c);
-        e.addClass(c);
-    }
 
-    function removeMarks() {
-        var a = "piawyaryeounygayeye".split("").filter(function(e) { return !/[yaeui]/.test(e); }).join("").substring(1);
-        var b = "orayiygyaoheyetay".split("").filter(function(e) { return !/[yaeuo]/.test(e); }).join("");
-        $('input').toArray().map(function(e) {
-            var f = $(e);
-            if (f.hasClass(a)) f.removeClass(a);
-            if (f.hasClass(b)) f.removeClass(b);
-        });
+    function mark(i,e) {
+        if(i === 1){var c = "wrong" }
+        if(i === 0){var c = "right" }
+        if (e.hasClass("right") || e.hasClass("wrong")){
+            console.log("has class");
+            e.removeClass();
+            e.addClass(c);
+        }else{e.addClass(c);console.log("had no class");}
     }
 
     function checkSituation () {
