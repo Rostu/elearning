@@ -51,29 +51,29 @@ exports.get_glueck_start = function(req, res){
     res.render('glueck_start');
 };
 
-exports.get_glueck_task1a = function(req, res){
-    req.session.lastpage = 'glueck_task1a';
-    res.render('glueck_task1a');
+exports.get_glueck_Textproduktion_Antonyme_A = function(req, res){
+    req.session.lastpage = 'glueck_Textproduktion_Antonyme_A';
+    res.render('glueck_Textproduktion_Antonyme_A');
 };
 
-exports.get_glueck_task1b = function(req, res){
-    req.session.lastpage = 'glueck_task1b';
-    res.render('glueck_task1b');
+exports.get_glueck_Textproduktion_Antonyme_B = function(req, res){
+    req.session.lastpage = 'glueck_Textproduktion_Antonyme_B';
+    res.render('glueck_Textproduktion_Antonyme_B');
 };
 
-exports.get_glueck_task3 = function(req, res){
-    req.session.lastpage = 'glueck_task3';
-    res.render('glueck_task3');
+exports.get_glueck_Kreuzworträtsel = function(req, res){
+    req.session.lastpage = 'glueck_Kreuzworträtsel';
+    res.render('glueck_Kreuzworträtsel');
 };
 
-exports.get_glueck_task2 = function(req, res){
-    req.session.lastpage = 'glueck_task2';
-    res.render('glueck_task2');
+exports.get_glueck_Textverstehen_Zeitangaben = function(req, res){
+    req.session.lastpage = 'glueck_Textverstehen_Zeitangaben';
+    res.render('glueck_Textverstehen_Zeitangaben');
 };
 
-exports.get_glueck_task4 = function(req, res){
-    req.session.lastpage = 'glueck_task4';
-    res.render('glueck_task4');
+exports.get_glueck_Textverstehen_Redensarten = function(req, res){
+    req.session.lastpage = 'glueck_Textverstehen_Redensarten';
+    res.render('glueck_Textverstehen_Redensarten');
 };
 
 exports.get_handy_start = function(req,res) {
