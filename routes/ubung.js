@@ -143,10 +143,6 @@ exports.get_veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen = fu
     req.session.lastpage = 'veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen';
     res.render('veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen');
 };
-exports.get_veggieday_Metaphern = function(req, res){
-    req.session.lastpage = 'veggieday_Metaphern';
-    res.render('veggieday_Metaphern');
-};
 exports.get_veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1 = function(req, res){
     req.session.lastpage = 'veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1';
     res.render('veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1');
@@ -159,21 +155,21 @@ exports.get_wertewandel_start = function(req, res) {
     req.session.lastpage = 'wertewandel_start';
     res.render('wertewandel_start');
 };
-exports.get_wertewandel_task1 = function(req, res){
-    req.session.lastpage = 'wertewandel_task1';
-    res.render('wertewandel_task1');
+exports.get_wertewandel_Textverstehen_Schluesselwoerter = function(req, res){
+    req.session.lastpage = 'wertewandel_Textverstehen_Schluesselwoerter';
+    res.render('wertewandel_Textverstehen_Schluesselwoerter');
 };
-exports.get_wertewandel_task2 = function(req, res){
-    req.session.lastpage = 'wertewandel_task2';
-    res.render('wertewandel_task2');
+exports.get_wertewandel_Wortbedeutung_verstehen = function(req, res){
+    req.session.lastpage = 'wertewandel_Wortbedeutung_verstehen';
+    res.render('wertewandel_Wortbedeutung_verstehen');
 };
-exports.get_wertewandel_task3 = function(req, res){
-    req.session.lastpage = 'wertewandel_task3';
-    res.render('wertewandel_task3');
+exports.get_wertewandel_Textverstehen_Kernaussagen = function(req, res){
+    req.session.lastpage = 'wertewandel_Textverstehen_Kernaussagen';
+    res.render('wertewandel_Textverstehen_Kernaussagen');
 };
-exports.get_wertewandel_task4 = function(req, res){
-    req.session.lastpage = 'wertewandel_task4';
-    res.render('wertewandel_task4');
+exports.get_wertewandel_Textproduktion_Statistische_Angaben = function(req, res){
+    req.session.lastpage = 'wertewandel_Textproduktion_Statistische_Angaben';
+    res.render('wertewandel_Textproduktion_Statistische_Angaben');
 };
 exports.get_generationen_start = function(req, res){
     req.session.lastpage = 'generationen_start';
