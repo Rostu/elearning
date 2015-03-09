@@ -33,18 +33,17 @@ exports.get_china_start = function(req, res){
     req.session.lastpage = 'china_start';
     res.render('china_start');
 };
-exports.get_china_task1 = function(req, res){
-    req.session.lastpage = 'china_task1';
-    res.render('china_task1');
+exports.get_china_Textverstehen_Wortfeld_Studium = function(req, res){
+    req.session.lastpage = 'china_Textverstehen_Wortfeld_Studium';
+    res.render('china_Textverstehen_Wortfeld_Studium');
 };
-
-exports.get_china_task2 = function(req, res){
-    req.session.lastpage = 'china_task2';
-    res.render('china_task2');
+exports.get_china_Wortschatz_ordnen = function(req, res){
+    req.session.lastpage = 'china_Wortschatz_ordnen';
+    res.render('china_Wortschatz_ordnen');
 };
-exports.get_china_task3 = function(req, res){
-    req.session.lastpage = 'china_task3';
-    res.render('china_task3');
+exports.get_china_Textverstehen_Redewiedergabe = function(req, res){
+    req.session.lastpage = 'china_Textverstehen_Redewiedergabe';
+    res.render('china_Textverstehen_Redewiedergabe');
 };
 exports.get_glueck_start = function(req, res){
     req.session.lastpage = 'glueck_start';
@@ -181,45 +180,44 @@ exports.get_generationen_text = function(req, res){
     res.render('generationen_text');
 };
 
-exports.get_generationen_task1 = function(req, res){
-    req.session.lastpage = 'generationen_task1';
-    res.render('generationen_task1');
+exports.get_generationen_Textverstehen_Komposita = function(req, res){
+    req.session.lastpage = 'generationen_Textverstehen_Komposita';
+    res.render('generationen_Textverstehen_Komposita');
 };
 
-exports.get_generationen_task2 = function(req, res){
-    req.session.lastpage = 'generationen_task2';
-    res.render('generationen_task2');
+exports.get_generationen_Wortschatz_ordnen = function(req, res){
+    req.session.lastpage = 'generationen_Wortschatz_ordnen';
+    res.render('generationen_Wortschatz_ordnen');
 };
 
-exports.get_generationen_task3 = function(req, res){
-    req.session.lastpage = 'generationen_task3';
-    res.render('generationen_task3');
+exports.get_generationen_Textverstehen_Bedeutungserschliessung = function(req, res){
+    req.session.lastpage = 'generationen_Textverstehen_Bedeutungserschliessung';
+    res.render('generationen_Textverstehen_Bedeutungserschliessung');
 };
 exports.get_zukunft_start = function(req, res){
     req.session.lastpage = 'zukunft_start';
 
     res.render('zukunft_start',{title:'zukunft_start', maxpoints: 0,maxfaults: 0});
 };
-exports.get_zukunft_task1 = function(req, res){
-    req.session.lastpage = 'zukunft_task1';
-    res.render('zukunft_task1');
+exports.get_zukunft_Textverstehen_Wortfeld_Technik = function(req, res){
+    req.session.lastpage = 'zukunft_Textverstehen_Wortfeld_Technik';
+    res.render('zukunft_Textverstehen_Wortfeld_Technik');
 };
-exports.get_zukunft_task2 = function(req, res){
-    req.session.lastpage = 'zukunft_task2';
-    res.render('zukunft_task2');
+exports.get_zukunft_Wortschatz_ordnen = function(req, res){
+    req.session.lastpage = 'zukunft_Wortschatz_ordnen';
+    res.render('zukunft_Wortschatz_ordnen');
 };
-exports.get_zukunft_task3 = function(req, res){
-    req.session.lastpage = 'zukunft_task3';
-    res.render('zukunft_task3');
+exports.get_zukunft_Wortschatzerweiterung_fest_Wortverbindungen = function(req, res){
+    req.session.lastpage = 'zukunft_Wortschatzerweiterung_fest_Wortverbindungen';
+    res.render('zukunft_Wortschatzerweiterung_fest_Wortverbindungen');
 };
-exports.get_zukunft_task4 = function(req, res){
-    req.session.lastpage = 'zukunft_task4';
-    res.render('zukunft_task4');
+exports.get_zukunft_Textproduktion = function(req, res){
+    req.session.lastpage = 'zukunft_Textproduktion';
+    res.render('zukunft_Textproduktion');
 };
-
-exports.get_zukunft_task5 = function(req, res){
-    req.session.lastpage = 'zukunft_task5';
-    res.render('zukunft_task5');
+exports.get_zukunft_Kreuzwortraetsel = function(req, res){
+    req.session.lastpage = 'zukunft_Kreuzwortraetsel';
+    res.render('zukunft_Kreuzwortraetsel');
 };
 
 exports.get_next = function(req, res){
