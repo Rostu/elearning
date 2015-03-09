@@ -139,28 +139,22 @@ exports.get_veggieday_start = function(req, res){
     req.session.lastpage = 'veggieday_start';
     res.render('veggieday_start');
 };
-exports.get_veggieday_task1 = function(req, res){
-    req.session.lastpage = 'veggieday_task1';
-    res.render('veggieday_task1');
+exports.get_veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen = function(req, res){
+    req.session.lastpage = 'veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen';
+    res.render('veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen');
 };
-exports.get_veggieday_task3 = function(req, res){
-    req.session.lastpage = 'veggieday_task3';
-    res.render('veggieday_task3');
+exports.get_veggieday_Metaphern = function(req, res){
+    req.session.lastpage = 'veggieday_Metaphern';
+    res.render('veggieday_Metaphern');
 };
-
-exports.get_veggieday_multi = function(req, res){
-    req.session.lastpage = 'veggieday_multi';
-    res.render('veggieday_multi');
+exports.get_veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1 = function(req, res){
+    req.session.lastpage = 'veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1';
+    res.render('veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1');
 };
-exports.get_veggieday_task5 = function(req, res){
-    req.session.lastpage = 'veggieday_task5';
-    res.render('veggieday_task5');
+exports.get_veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_2 = function(req, res){
+    req.session.lastpage = 'veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_2';
+    res.render('veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_2');
 };
-exports.get_veggieday_task4 = function(req, res){
-    req.session.lastpage = 'veggieday_task4';
-    res.render('veggieday_task4');
-};
-
 exports.get_wertewandel_start = function(req, res) {
     req.session.lastpage = 'wertewandel_start';
     res.render('wertewandel_start');
