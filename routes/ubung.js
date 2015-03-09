@@ -61,9 +61,9 @@ exports.get_glueck_Textproduktion_Antonyme_B = function(req, res){
     res.render('glueck_Textproduktion_Antonyme_B');
 };
 
-exports.get_glueck_Kreuzworträtsel = function(req, res){
-    req.session.lastpage = 'glueck_Kreuzworträtsel';
-    res.render('glueck_Kreuzworträtsel');
+exports.get_glueck_Kreuzwortraetsel = function(req, res){
+    req.session.lastpage = 'glueck_Kreuzwortraetsel';
+    res.render('glueck_Kreuzwortraetsel');
 };
 
 exports.get_glueck_Textverstehen_Zeitangaben = function(req, res){

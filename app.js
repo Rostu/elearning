@@ -75,7 +75,7 @@ app.get('/generationen_task3', ubung.get_generationen_task3);
 app.get('/glueck_start', ubung.get_glueck_start);
 app.get('/glueck_Textproduktion_Antonyme_A', ubung.get_glueck_Textproduktion_Antonyme_A);
 app.get('/glueck_Textproduktion_Antonyme_B', ubung.get_glueck_Textproduktion_Antonyme_B);
-app.get('/glueck_Kreuzworträtsel', ubung.get_glueck_Kreuzworträtsel);
+app.get('/glueck_Kreuzwortraetsel', ubung.get_glueck_Kreuzwortraetsel);
 app.get('/glueck_Textverstehen_Zeitangaben', ubung.get_glueck_Textverstehen_Zeitangaben);
 app.get('/glueck_Textverstehen_Redensarten', ubung.get_glueck_Textverstehen_Redensarten);
 app.get('/handy_start', ubung.get_handy_start);
