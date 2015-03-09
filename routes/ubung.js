@@ -99,42 +99,37 @@ exports.get_ersti_start = function(req, res) {
     res.render('ersti_start');
 };
 
-exports.get_ersti_task1 = function(req, res){
-    req.session.lastpage = 'ersti_task1';
-    res.render('ersti_task1');
+exports.get_ersti_Textverstehen_emotionale_Woerter = function(req, res){
+    req.session.lastpage = 'ersti_Textverstehen_emotionale_Woerter';
+    res.render('ersti_Textverstehen_emotionale_Woerter');
 };
-
-exports.get_ersti_task2 = function(req, res){
-    req.session.lastpage = 'ersti_task2';
-    res.render('ersti_task2');
+exports.get_ersti_Textverstehen_Wortfeld_Universitaet_A = function(req, res){
+    req.session.lastpage = 'ersti_Textverstehen_Wortfeld_Universitaet_A';
+    res.render('ersti_Textverstehen_Wortfeld_Universitaet_A');
 };
-exports.get_ersti_task2b = function(req, res){
-    req.session.lastpage = 'ersti_task2b';
-    res.render('ersti_task2b');
+exports.get_ersti_Textverstehen_Wortfeld_Universitaet_B = function(req, res){
+    req.session.lastpage = 'ersti_Textverstehen_Wortfeld_Universitaet_B';
+    res.render('ersti_Textverstehen_Wortfeld_Universitaet_B');
 };
-exports.get_ersti_task2c = function(req, res){
-    req.session.lastpage = 'ersti_task2c';
-    res.render('ersti_task2c');
+exports.get_ersti_Textverstehen_Wortfeld_Universitaet_C = function(req, res){
+    req.session.lastpage = 'ersti_Textverstehen_Wortfeld_Universitaet_C';
+    res.render('ersti_Textverstehen_Wortfeld_Universitaet_C');
 };
-exports.get_ersti_task2d = function(req, res){
-    req.session.lastpage = 'ersti_task2d';
-    res.render('ersti_task2d');
+exports.get_ersti_Wortschatz_ordnen_A = function(req, res){
+    req.session.lastpage = 'ersti_Wortschatz_ordnen_A';
+    res.render('ersti_Wortschatz_ordnen_A');
 };
-exports.get_ersti_task3 = function(req, res){
-    req.session.lastpage = 'ersti_task3';
-    res.render('ersti_task3');
+exports.get_ersti_Wortschatz_ordnen_B = function(req, res){
+    req.session.lastpage = 'ersti_Wortschatz_ordnen_B';
+    res.render('ersti_Wortschatz_ordnen_B');
 };
-exports.get_ersti_task3b = function(req, res){
-    req.session.lastpage = 'ersti_task3b';
-    res.render('ersti_task3b');
+exports.get_ersti_Wortschatz_ordnen_C = function(req, res){
+    req.session.lastpage = 'ersti_Wortschatz_ordnen_C';
+    res.render('ersti_Wortschatz_ordnen_C');
 };
-exports.get_ersti_task3c = function(req, res){
-    req.session.lastpage = 'ersti_task3c';
-    res.render('ersti_task3c');
-};
-exports.get_ersti_task4 = function(req, res){
-    req.session.lastpage = 'ersti_task4';
-    res.render('ersti_task4');
+exports.get_ersti_Wortschatz_erweitern = function(req, res){
+    req.session.lastpage = 'ersti_Wortschatz_erweitern';
+    res.render('ersti_Wortschatz_erweitern');
 };
 exports.get_ersti_end = function(req,res) {
     req.session.lastpage = 'ersti_end';
