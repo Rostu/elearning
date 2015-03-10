@@ -54,12 +54,13 @@ $(document).ready(function() {
             if ($(w[i]).text()===t) {
 
                 if(checkMark(w[i].id.substring(1), id.substring(1), self)) {
+                    raisepoints();
                     $(w[i]).addClass("passive");
                 } else {
-                    $(w[i]).animate({backgroundColor:'red'}, 500, "swing",function() {$(this).css({'background-color':'lightblue'})});
-
+                    $(w[i]).animate({backgroundColor:'red'}, 500, "swing",function() {$(this).removeAttr("style")});
+                    raisefaults();
                     $(self).animate({borderBottomColor: "#ff0000", backgroundColor: "#ff8484"},500,"swing",function() {
-                        $(this).css({"border-bottom": "1px solid #000", "background-color": "#fff"});
+                        $(this).css({"border-bottom": "1px solid #000"});
                     });
                 }
                 return;
@@ -69,7 +70,7 @@ $(document).ready(function() {
         $(self).effect("pulsate", "fast");
 
         $(self).animate({borderBottomColor: "#ff0000",backgroundColor: "#ff8484"},2000,"swing",function() {
-            $(this).css({"border-bottom": "1px solid #000", "background-color": "#fff"});
+            $(this).css({"border-bottom": "1px solid #000"});
         });
 
     }
@@ -77,7 +78,7 @@ $(document).ready(function() {
     function checkMark(a,b,m) {
 
         if(!(a-b)) {
-            $(m).animate({borderBottomColor: "#7cfc00", backgroundColor:"rbga(0,0,0,0)"}, "slow");
+            $(m).animate({borderBottomColor: "#7cfc00", backgroundColor: "transparent"}, "slow");
             $(m).prop('disabled', true);
             return true;
         }

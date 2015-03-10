@@ -2,34 +2,72 @@ extends layout
 block content
     #subjecttitle
         h1 Veggie-Day
-    #text.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Text: Unbekannter Titel
-        #subjecttext.panelcontent
-    #lessons.startpanel
+    #tasks.startpanel
         div.panelheader
             div.panelarrow
             h2 Lektionen
-        #lessonlist.panelcontent
-            div#les1.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen')
-                div.ltitle Textverstehen: Schlüsselwörter in Boulevardzeitungen
-            div#les2.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1')
-                div.ltitle Textverstehen: Schlüsselwörter in Fachtexten 1
-            div#les3.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_2')
-                div.ltitle Textverstehen: Schlüsselwörter in Fachtexten 1
+        #tasklist.panelcontent
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textverstehen: Schlüsselwörter in Boulevardzeitungen
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a(href='veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textverstehen: Schlüsselwörter in Fachtexten 1
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textverstehen: Schlüsselwörter in Fachtexten 1
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_2')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
     #media.startpanel
         div.panelheader
             div.panelarrow
             h2 Medien
         #mediashow.panelcontent
-
+            div.mediaelement
+                img.mediaimage(src='images/Testbild1.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild2.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild3.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild4.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild5.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild1.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild2.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild3.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild4.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild5.png')

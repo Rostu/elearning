@@ -1,7 +1,7 @@
 (function($)
 {
     $(document).ready(function() {
-        var a_Veranstaltung = ["Seminar", "Übung", "Vorlesung", "Tutorium", "Kolloqium", "Konferenz", "Workshop"];
+        var a_Veranstaltung = ["Seminar", "Übung", "Vorlesung", "Tutorium", "Kolloquium", "Konferenz", "Workshop"];
         var a_Personal = ["Dozent", "Professor", "Sekretärin", "Prof", "HiWi", "Tutor", "Lehrer", "Hausmeister"];
         var a_Lerner = ["Lerner", "Bachelor", "Master", "Absolvent", "Student", "Erstsemesterstudent", "Ersti", "Kommilitone"];
         var a_shortcut = ["Prof", "HiWi", "Ersti"];
@@ -41,6 +41,7 @@
                 for (var i = 0; i < a.length; i++) {
 
                     if (a[i] === t_a) { // If word in array matches the word in the input field
+                        raisepoints();
                         $(self).prop('disabled', true);
                         $(".inline_big.hidden[id=" + a[i]  + "]").css("visibility", "visible").css("color", "green"); // marks the correct written word green in the Text and set it to visible
                         a.splice(i,1); // Delete the found word from the list of correct words
@@ -53,6 +54,7 @@
             for (var i = 0; i < a.length; i++) {
 
                 if (a[i] === t) { // If word in array matches the word in the input field
+                    raisepoints();
                     $(self).addClass("passive");
                     $(self).animate({borderBottomColor: "#7cfc00", borderTopColor: "#7cfc00", backgroundColor:"#fff"}, "slow");
                     $(self).prop('disabled', true);
@@ -63,7 +65,7 @@
             }
             // if we reach this point, the word didn't match any word
             $(self).effect("pulsate", "fast");
-
+            raisefaults();
             $(self).animate({borderBottomColor: "#ff0000", borderTopColor: "#ff0000", backgroundColor: "#ff8484"},2000,"swing",function() {
                 $(this).css({"border-top": "1px solid #c0c0c0",
                     "border-bottom": "1px solid #c0c0c0", "background-color": "#fff"});

@@ -19,8 +19,9 @@ function handleDropEvent( event, ui ) {
         
     textinhalt = textinhalt.replace(',','');
     textinhalt = textinhalt.replace('.','');
-        
-    div.click(clear);
+
+    //no correction feature desired for this exercise
+    //div.click(clear);
 
     // get drop id and append it to where it was dropped
     var draggedDivId = $(this).closest('div').attr('id');
@@ -39,10 +40,12 @@ function handleDropEvent( event, ui ) {
     // attach the elements
     if (correct_p == true)
     {
+        raisepoints();
         $( "#Antwortbox_ww2_" + answerDragged ).append( div.animate({backgroundColor: "#0f0"}, 2000) );
     }
     else if (correct_p == false)
     {
+        raisefaults();
         $( "#Antwortbox_ww2_" + answerDragged ).append( div.animate({backgroundColor: "#f00"}, 2000) );
     }
     
@@ -66,3 +69,4 @@ function init() {
 };
 
 $( init );
+addPointBars();

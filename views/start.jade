@@ -1,13 +1,34 @@
 extends layout
 
 block content
-    script( src='javascripts/scripts.js')
-    img(id="front", src="images/front.jpg")
-    if (session.name)
-        p Wilkommen #{session.name}!
-        //Punkte in Aufgabenbereich 1:  #{session.points[0]}
-        //button(id='raisebutton') raise
-        h3
-            | Mit alten Browser-Versionen kann es zu Problemen bei der Darstellung kommen, als sicherste Option nutzen Sie bitte Firefox in der neuesten Version.
-            | Aber auch die neuesten Versionen von InternetExplorer(ab v.11) oder Chrome (ab v.36) werden unterstützt.
-            | Für weitere Informationen zur Browseruntertzützung: Link comming soon
+    link(rel='stylesheet', href='stylesheets/veggie.css')
+    //script( src='javascripts/scripts.js')
+    #Textbox
+        if (session.name)
+            p
+            h3 Wilkommen #{session.name}!
+            //Punkte in Aufgabenbereich 1:  #{session.points[0]}
+            //button(id='raisebutton') raise
+            img(id="front", align="right", vspace="5", hspace="5", src="images/front.jpg")
+            | Dieses elearning-Projekt ist in Zusammenarbeit mit ‚Deutsch als Fremdsprache‘ und der Computerlinguistik
+            | Trier entstanden und steht dir kostenlos zur Verfügung.
+            br
+            | Hier findest du unterschiedliche Texte zu den Themen Glück, Handy, Ersti, Veggie-Day, Wertewandel,
+            | Generationen, Zukunft und China.
+            br
+            | Die abwechslungsreichen Übungsaufgaben bieten dir die Möglichkeit dein B1-Niveau auszutesten und zu festigen.
+            | Durch die unterschiedlichen Aufgabentypen kannst du dein Wissen auf vielfältige Art und Weise erweitern.
+            p
+            | Eine Übersicht über die Funktionen, die dir diese Lernplattform bietet, findest du unter dem Menüpunkt
+            img(id="front", vspace="0", hspace="5", src="images/hilfe_erklaerung.jpg")
+            | .
+    p
+    #Textbox
+        p
+        | Technischer Hinweis:
+        br
+        | Mit alten Browser-Versionen kann es zu Problemen bei der Darstellung kommen. Als sicherste Option empfehlen wir
+        | dir Firefox in der neuesten Version.
+        | Aber auch die aktuellste Versionen von InternetExplorer(ab v.11) oder Chrome (ab v.36) werden erfahrungsgemäß
+        | unterstützt.
+        | Für weitere Informationen zur Browseruntertzützung: Link comming soon

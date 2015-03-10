@@ -2,34 +2,72 @@ extends layout
 block content
     #subjecttitle
         h1 Generationen
-    #text.startpanel
+    #tasks.startpanel
         div.panelheader
             div.panelarrow
-            h2 Text: Unbekannter Titel
-        #subjecttext.panelcontent
-    #lessons.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Lektionen
-        #lessonlist.panelcontent
-            div#les1.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='generationen_Textverstehen_Komposita')
-                div.ltitle Textverstehen: Komposita
-            div#les2.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='generationen_Wortschatz_ordnen')
-                div.ltitle Wortschatz ordnen
-            div#les3.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='generationen_Textverstehen_Bedeutungserschliessung')
-                div.ltitle Textverstehen: Bedeutungserschließung
+            h2 Aufgaben
+        #tasklist.panelcontent
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textverstehen: Komposita
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='generationen_Textverstehen_Komposita')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Wortschatz ordnen
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='generationen_Wortschatz_ordnen')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textverstehen: Bedeutungserschließung
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='generationen_Textverstehen_Bedeutungserschließung')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
     #media.startpanel
         div.panelheader
             div.panelarrow
             h2 Medien
         #mediashow.panelcontent
-
+            div.mediaelement
+                img.mediaimage(src='images/Testbild1.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild2.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild3.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild4.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild5.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild1.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild2.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild3.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild4.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild5.png')

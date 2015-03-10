@@ -196,6 +196,7 @@
     width: 20%;
     border-radius: 5%;
     border: 1px solid yellow;
+    z-index: 999;
 }
 
 .ui-tooltip-content {

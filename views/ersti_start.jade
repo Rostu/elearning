@@ -2,38 +2,85 @@ extends layout
 block content
     #subjecttitle
         h1 Ersti
-    #text.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Text: Unbekannter Titel
-        #subjecttext.panelcontent
-    #lessons.startpanel
+    #tasks.startpanel
         div.panelheader
             div.panelarrow
             h2 Lektionen
-        #lessonlist.panelcontent
-            div#les1.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='ersti_Textverstehen_emotionale_Woerter')
-                div.ltitle Textverstehen: emotionale Wörter
-            div#les2.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='ersti_Textverstehen_Wortfeld_Universitaet_A')
-                div.ltitle Textverstehen: Wortfeld Universität
-            div#les3.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='ersti_Wortschatz_ordnen_A')
-                div.ltitle Wortschatz ordnen
-            div#les4.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='ersti_Wortschatz_erweitern')
-                div.ltitle Wortschatz erweitern
+        #tasklist.panelcontent
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textverstehen: emotionale Wörter
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='ersti_Textverstehen_emotionale_Woerter')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textverstehen: Wortfeld Universität
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='ersti_Textverstehen_Wortfeld_Universitaet_A')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Wortschatz ordnen
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='ersti_Wortschatz_ordnen_A')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Wortschatz erweitern
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='ersti_Wortschatz_erweitern')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
     #media.startpanel
         div.panelheader
             div.panelarrow
             h2 Medien
         #mediashow.panelcontent
+            div.mediaelement
+                img.mediaimage(src='images/Testbild1.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild2.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild3.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild4.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild5.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild1.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild2.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild3.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild4.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild5.png')

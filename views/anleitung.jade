@@ -1,0 +1,217 @@
+extends layout
+block content
+    script( src='javascripts/anleitung.js')
+    link(rel='stylesheet', href='stylesheets/anleitung.css')
+    #Aufgabenbox
+        h2 Wie funktioniert diese Plattform?
+    #Textbox
+        | Im Folgenden findest du eine Kurzübersicht über die wichtigsten Funktionen,
+        | die dir diese Plattform bietet. Wenn du zum ersten Mal hier bist, kann dir diese Seite einen leichteren Einstieg
+        | in die Handhabung dieser Lernplattform ermöglichen. Falls du dich nur für eine bestimmte Funktion
+        | interessierst,
+        | kannst du durch Anklicken auf das entsprechende Themengebiet zur Erklärung gelangen.
+        p
+        ul
+            li
+                a(href='#menueleiste') Menüleiste
+            li
+                a(href='#lernmaterial') Lernmaterial & Übungen
+            li
+                a(href='#aufgabentypen') Aufgabentypen
+            li
+                a(href='#punktevergabe') Punktevergabe
+            li
+                a(href='#hilfebuttons') Hilfebuttons
+        p
+        | Wenn du dich hier schon ein bisschen auskennst oder du auch nur eine bestimmte Frage hast,
+        | können dir auch die &nbsp
+        a(href='#faq') FAQ
+        | &nbsp weiterhelfen. Hier werden die am häufigsten gestellten Fragen beantwortet.
+    p
+    #Aufgabenbox
+    #Textbox
+        h3
+            a(name= 'menueleiste') Menüleiste
+        p
+        | Über den
+        img(id="front", align="super", vspace="0", hspace="5", src="images/home_erklaerung.jpg")
+        | -button gelangst du zurück zur Startseite.
+        | Unter der Rubrik
+        img(id="front", vspace="0", hspace="5", src="images/themen_erklaerung.jpg")
+        | befinden sich die einzelnen Wortschatzgebiete, zu denen du sowohl Lernamterial erhälst als auch Übungen absolvieren kannst.
+        | Die Themengebiete sind Glück, Handy, Ersti, Veggie-Day, Wertewandel, Generationen, Zukunft und China.
+        | Ebenfalls über die Menüleiste kannst du Einstellungen an deinem
+        img(id="front", vspace="0", hspace="5", src="images/profil_erklaerung.jpg")
+        | verändern  oder aber auch eine Übersicht über deine bisher erlangten Punkte erhalten.
+        | Hinter dem Button
+        img(id="front", vspace="0", hspace="5", src="images/ueber_erklaerung.jpg")
+        | verbergen sich Infos über die Entwickler dieser Plattform.
+        | Wenn du deine aktuelle Sitzung beenden möchtest, kannst du dich über
+        img(id="front", vspace="0", hspace="5", src="images/logout_erklaerung.jpg")
+        | ausloggen.
+    p
+    #Aufgabenbox
+    #Textbox
+        h3
+            a(name= 'lernmaterial') Lernmaterial & Übungen
+        p
+        | Zum Lernmaterial und den dazugehörigen Übungen gelangst du, indem du auf ein Themenfeld unter der Rubrik 'Thema'
+        | in der Menüleiste klickst. Sobald du die für ein Themengebiet entschieden hast, erhälst du folgende Möglichkeiten:
+        img(id="front", align="right", vspace="0", hspace="5", src="images/lernmaterial_erklaerung.jpg")
+        ul
+            li
+                | Du kannst dir für dieses Themengebiet vorhandenen Übungen angzeigen lassen. Dafür klickst du auf '<b>Aufgaben</b>'.
+            li
+                | Wenn du jedoch nur Übungen machen möchtest, die ein bestimmtes Medium enthält, z.B. eine Audiodatei,
+                | dann musst du einfach auf '<b>Medien</b>' klicken.
+
+        b Aufgaben:
+        | &nbsp; Hier erhälst du zunächst einen Überblick über alle in diesem Themenfeld vorhandenen Übungen.
+        | Das Symbol neben jeder Aufgabe zeigt dir an, welche (multimedialen) Lernmaterialien dir für
+        | diese Übung zur Verfügung stehen.
+        br
+        | Es können drei verschiedene Symbole vorkommen:
+        br
+        | ---> Symbole einblenden! <---- Dieses Symbol sagt dir, dass nur Textmaterial zur Verfügung steht.
+        br
+        | ---> Symbole einblenden! <---- Erscheint dieses Symbol, können in den Übungen nicht nur Text
+        | sondern auch Audio- oder Videomaterial integriert sein.
+        br
+        | ---> Symbole einblenden! <---- Besteht das Lernmaterial einer Übung nur aus Audio- oder Videodateien,
+        | erscheint hingegen dieses Symbol.
+        p
+        | In jedem Themenfeld gibt es verschiedene Aufgabentypen mit unterschiedlichem Schwierigkeitsgrad.
+        | Die Übungen sind so strukturiert, dass man diese in beliebiger Reihenfolge absolvieren kann.
+        p
+        b Medien:
+        | &nbsp; Multimediales Lernmaterial wie Audio- oder Videodateien findest du unter der Rubrik „Medien“.
+        | Wenn du auf eine bestimmte Audio- oder Videodatei klickst, gelangst du zu der entsprechenden Übung.
+        | Dadurch hast du die Möglichkeit, gezielt mit dem von dir gewünschten Lernmaterial zu arbeiten.
+        p
+        | Um zu einer bestimmten Aufgabe zu gelangen, musst du diese einfach anklicken.
+        | Du kannst die Übungen so oft wiederholen, wie du möchtest!
+        br
+        | Am rechten Bildschirmrand findest du sowohl im Übersichtsmenü als auch während den Übungen drei weitere,
+        | rot eingerahmte Symbole.
+        img(id="front", align="left", vspace="0", hspace="5", src="images/rotebuttons_erklaerung.jpg")
+        | Der oberste Button führt dich stets zurück zur Übersicht aller themenbezogenen Aufgaben.
+        | Wenn du die Übungen der Reihe nach absolvieren möchtest bzw. du dich bereits innerhalb einer Übung befindest
+        | und mit der nächsten Aufgabe fortfahren willst, kannst du einfach den rechten, rot gerahmten Button
+        | anklicken.
+        | Möchtest du zu der vorherigen Übung zurückkehren, klicke auf den linken Button.
+    p
+    #Aufgabenbox
+    #Textbox
+        h3
+            a(name= 'aufgabentypen') Aufgabentypen
+        p
+        | Auf dieser Lernplattform begegnen dir die unterschiedlichsten Aufgabentypen, die im folgenden kurz vorgestellt werden.
+        #Erklaerungsbox
+            b Zuordnungaufgaben:
+        #Erklaerungsbox
+            | Bei dieser Aufgabenart lassen sich ausgewählte Wörter anklicken und verschieben. Teilweise werden die Wörter
+            | vorgegeben, teilweise musst du sie selbst im Text finden und aus dem Text herausziehen. Deine Aufgabe ist es
+            | jeweils, die richtigen Wörter an die richtige Stelle zu ziehen. Bei einigen Übungen wird dir sofort angezeigt,
+            | ob du richtig oder falsch liegst: Eine richtige Antwort wird grün hinterlegt, eine falsche rot. Bei manchen
+            | Übungen hast du die Chance, deine Auswahl zu korrigieren.
+        p
+        #Erklaerungsbox
+            b Lückentext:
+        #Erklaerungsbox
+            | Bei einem Lückentext bekommst du je nach Aufgabenstellung entweder Wörter vorgegeben oder du musst dir selbst
+            | überlegen, welches Wort sinnvoll wäre. Einige Lückentexte treten in Kombination mit einer Zuordnungsaufgabe auf,
+            | sodass sich die gesuchten Wörter in die Lücken verschieben lassen. Oftmals musst du die Wörter jedoch manuell
+            | eingeben. Achte dabei genau auf deine Rechtschreibung!!
+        p
+        #Erklaerungsbox
+            b Mehrfachauswahl:
+        #Erklaerungsbox
+            | Einige Aufgaben geben dir bereits mehrere Antwortmöglichkeiten vor. Du musst dich für eine entscheiden indem
+            | du die von dir für richtig gehaltene Antwort anklickst.
+        p
+        #Erklaerungsbox
+            b Kreuzworträtsel:
+        #Erklaerungsbox
+            | In einigen Themenfeldern begegnen dir Kreuzworträtsel. Die jeweiligen Fragen erhältst du, wenn du ein beliebiges
+            | Feld im Rätsel anklickst.
+    p
+    #Aufgabenbox
+    #Textbox
+        h3
+            a(name= 'punktevergabe') Punktevergabe
+        p
+        img(id="front", align="right", vspace="0", hspace="5", src="images/punkte_erklaerung.jpg")
+        | Je nach Schwierigkeit der Aufgabe kannst du eine unterschiedliche Anzahl an Punkten erhalten. Die erarbeiteten
+        | Punkte pro Aufgabe kannst du an den beiden Kreisen am rechten Bildschirmrand erkennen. Am Anfang einer jeden
+        | Aufgabe hast du null Punkte, d.h. die Kreise sind noch nicht gefüllt. Mit jeder richtigen Antwort füllt sich
+        | der äußere, blaue Kreis. Der innere, rote Kreis füllt sich mit jeder falsch gegebenen Antwort.
+    p
+    #Aufgabenbox
+    #Textbox
+        h3
+            a(name= 'hilfebuttons') Hilfebuttons
+        p
+        | Sobald du dich in einer Übung befindest, erscheinen am linken Bildschirmrand rote Balken.
+        | Wenn du mit dem Mauszeiger über diese Balken fährst, vergrößern sie sich. Jeder Balken bietet dir dabei
+        | eine andere Möglichkeit:
+        | Wenn du während einer Übung nicht weiter weißt und du dir das Lernmaterial lieber noch einmal genauer
+        | ansehen oder -hören möchtest, kann dir immer der erste rote Balken weiterhelfen. Sobald du seine Hilfe durch
+        | Anklicken annimmst, öffnet sich ein neues Fenster mit dem für diese Übung relevanten Lernmaterial.
+        | Dadurch kannst du das Lernmaterial parallel zur Übung betrachten.
+        br
+        | Je nach Übung stehen noch weitere Balken zur Verfügung.
+        | Diese verweisen dich jeweils auf externe Online-Nachschlagewerke, wie Duden oder das Leipziger Wortschatzportal.
+    p
+    #Aufgabenbox
+    #Textbox
+        h3
+            a(name= 'faq') FAQ
+        p
+        | Hier findest du die Antworten auf die am häufigsten gestellten Fragen.
+        ul
+            li
+                | <a onclick="return toggleMe('para1')" href="javascript:void(0)"> Welche Themengebiete werden auf dieser Lernplattform behandelt?</a>
+                | <div id="para1" style="display:none"> Aktuell wird der Wortschatz zu den Themengebieten Glück, Handy,
+                | Ersti, Veggie-Day, Wertewandel, Generationen, Zukunft und China behandelt. </div>
+            li
+                | <a onclick="return toggleMe('para2')" href="javascript:void(0)"> Wie gelang ich zu den Übungen? </a>
+                | <div id="para2" style="display:none"> Über die Rubrik "Themen" in der oberen Menüleiste.
+                | Die  Wegbeschreibung zu den Übungen ist &nbsp
+                a(href='#lernmaterial') hier
+                | &nbsp noch einmal genauer beschrieben. </div>
+            li
+                | <a onclick="return toggleMe('para3')" href="javascript:void(0)"> Welche Übungstypen gibt es? </a>
+                | <div id="para3" style="display:none"> Die einzelnen Übungstypen und wie diese zu lösen sind, wird &nbsp
+                a(href='#aufgabentypen') hier
+                | &nbsp beschrieben. </div>
+            li
+                | <a onclick="return toggleMe('para4')" href="javascript:void(0)"> Wo bekomm ich Hilfe? </a>
+                | <div id="para4" style="display:none"> Wenn du Hilfe zu den Übungen brauchst, helfen dir die &nbsp
+                a(href= '#hilfebuttons') roten Balken
+                | , die während einer Übung am linken Bildschirmrand auftauchen, weiter. Die Antwort auf alle technischen
+                | Fragen findet sich auf dieser Seite. </div>
+            li
+                | <a onclick="return toggleMe('para5')" href="javascript:void(0)"> Welche Art von Lernmaterial steht zur Verfügung? </a>
+                | <div id="para5" style="display:none"> Es gibt sowohl reine Textaufgaben, als auch Audio- und Videodateien.
+                | Welches Lernmaterial in einer Übung verwendet wird, erkennst du anhand der Symbole, die neben einer Aufgabe erscheinen.
+                | Genauere Informationen dazu findest du &nbsp
+                a(href='#lernmaterial') hier
+                | . </div>
+            li
+                | <a onclick="return toggleMe('para6')" href="javascript:void(0)"> Wo sehe ich meine bisher erreichten Punkte? </a>
+                | <div id="para6" style="display:none"> Deine bsiher erreichte Gesamtpunktzahl siehst du, wenn du in der
+                | oberen Menüleiste auf 'Profil -> Punkteübersicht' klickst. Wenn du dich innerhalb einer Übung befindest,
+                | kannst du deine bisher erreichten Punkte für diese Aufgabe anhand der &nbsp
+                a(href= '#punktevergabe') beiden Kreise
+                | &nbsp am rechten Bilschirmrand erkennen. </div>
+            li
+                | <a onclick="return toggleMe('para7')" href="javascript:void(0)"> Was bedeuten die beiden Kreise am rechten Bildschirmrand? </a>
+                | <div id="para7" style="display:none"> Die beiden Kreise erscheinen, sofern du dich innerhalb einer Übung befindest.
+                | Sie zeigen dir die Anzahl sowohl deiner richtigen, als auch deiner falschen Antworten an. Nähere
+                | Informationen dazu findest du &nbsp
+                a(href='#punktevergabe') hier
+                | . </div>
+            li
+                | <a onclick="return toggleMe('para8')" href="javascript:void(0)"> Ist diese Lernplattform kostenlos? </a>
+                | <div id="para8" style="display:none"> Ja, sämtliche Funktionen stehen dir kostenlos zur Verfügung. </div>
+    p

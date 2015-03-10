@@ -2,56 +2,87 @@ extends layout
 block content
     #subjecttitle
         h1 Zukunft
-    #text.startpanel
+    #tasks.startpanel
         div.panelheader
             div.panelarrow
-            h2 Text: Die Zukunft der Menschheit wird fantastisch!
-        #subjecttext.panelcontent
-            h1 Die Zukunft der Menschheit wird fantastisch!
-            h2 Wie werden wir in 100 Jahren leben? Diese Frage hat der Physiker Michio Kaku den 300 klügsten Köpfen aus Wissenschaft und Forschung gestellt. Die Ergebnisse sind atemberaubend.
-            #autor Frank Schmiecher
-            p Nein, die Welt wird nicht untergehen. Sie wird sich verändern. Dramatisch verändern. Michio Kaku verzichtet in seinem Buch "Die Physik der Zukunft" auf Weltuntergangszenarien, die uns im warmen Wohnzimmer kalte Schauer über den Rücken laufen lassen.
-            p Im Gegenteil: Der Star-Physiker und Bestsellerautor zeigt sich optimistisch. Er glaubt fest daran, dass in 100 Jahren viel mehr Menschen viel besser leben als heute.
-            p Warum sehen die meisten Menschen eher schwarz, wenn es um die Zukunft geht? Bücher über das Ende der Menschheit gibt es wie Sand am Meer. Die Katastrophe lauert an jeder Ecke. Das Klima, die Weltwirtschaft, Handystrahlen, Nanotechnik, das Internet – unser Ende scheint nah. Oder?
-            h3 Die Zukunft der Dinge
-            p Was unterscheidet den Menschen von Tieren? Zum Beispiel benutzt der Mensch alle Arten von Werkzeugen. Menschen benutzten Pfeil und Bogen und anschließend Schusswaffen. Dadurch wurde die Versorgung mit Nahrungsmitteln besser. Außerdem gab es früher Hütten aus Lehm und Stroh, doch die Metallherstellung führte zu großen, stabilen Gebäuden.
-            p Bereits jetzt haben wir das mächtigste Werkzeug, das Menschen jemals besessen haben. Wir sind in der Lage den Grundbaustoff aller Dinge, einzelne Atome, zu manipulieren. So ist heute die Produktion von Materialien möglich, von denen wir bisher nur geträumt haben.
-            p Per Mikroskop lassen sich einzelne Atome beobachten und manipulieren. Noch vor wenigen Jahren konnten keine Atome beobachtet werden. Jetzt können wir sogar mit ihnen spielen. In San Jose basteln Wissenschaftler aus einzelnen Atomen primitive Maschinen.
-            h3 Die Zukunft der Roboter und Computer
-            p Das Tempo der modernen Welt wird vom Tempo der Computer bestimmt. Und deren Geschwindigkeit nimmt stetig zu. Die Rechenkapazität von Computern verdoppelt sich etwa alle 18 Monate. Computerspielkonsolen besitzen heute mehr Rechenleistung als die Großrechner in vergangenen Jahrzehnten.
-            p Ein Smartphone verfügt über mehr Leistung als die NASA im Jahr der Mondlandung 1969. In Zukunft werden wir von Computern umzingelt sein. Sie sehen allerdings anders aus oder sind überhaupt nicht mehr als Computer zu erkennen. In jedem Gegenstand, jeder Wand, jeder Tapete, in allem, was uns umgibt, wird sich ein rechnender Chip befinden, der mit dem Internet verbunden ist.
-            p Unsere Umgebung wird intelligent. Ein Raum wird bemerken, wenn Sie ihn betreten, und er wird dafür sorgen, dass an den richtigen Stellen das Licht angeht und eine vernünftige Temperatur herrscht. Computer gehen in unserer Umgebung auf und werden unsichtbar und lautlos unsere Befehle ausführen, weil wir sie mit unseren Gedanken steuern.
-            p Auch Autos werden intelligent. Sie fahren, vom Computer gelenkt, ohne Lenkrad und Fahrer zu ihrem Ziel. Die Insassen können sich entspannen, sich unterhalten oder einen Film schauen. Unfälle und Staus gehören der Vergangenheit an. GPS-Systeme und Radar sorgen für freie Fahrt und lenken sicherer durch den Verkehr der Zukunft, als es ein Mensch jemals könnte.
-    #lessons.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Lektionen
-        #lessonlist.panelcontent
-            div#les1.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='zukunft_Textverstehen_Wortfeld_Technik')
-                div.ltitle Textverstehen: Wortfeld Technik
-            div#les2.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='zukunft_Wortschatz_ordnen')
-                div.ltitle Wortschatz ordnen
-            div#les3.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='zukunft_Wortschatzerweiterung_fest_Wortverbindungen')
-                div.ltitle Wortschatzerweiterung: fest Wortverbindungen
-            div#les4.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='zukunft_Textproduktion')
-                div.ltitle Textproduktion
-            div#les5.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='zukunft_Kreuzwortraetsel')
-                div.ltitle Kreuzworträtsel
+            h2 Aufgaben
+        #tasklist.panelcontent
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textverstehen: Wortfeld Technik
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='zukunft_Textverstehen_Wortfeld_Technik1')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild3.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild4.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Wortschatz ordnen
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='zukunft_Wortschatz_ordnen')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Wortschatzerweiterung: fest Wortverbindungen
+
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='zukunft_Wortschatzerweiterung_fest_Wortverbindungen')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild3.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild4.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textproduktion
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='zukunft_Textproduktion')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Kreuzworträtsel
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='zukunft_Kreuzwortraetsel')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild3.png')
     #media.startpanel
         div.panelheader
             div.panelarrow
@@ -96,3 +127,24 @@ block content
             div#l5.lek
                 p Lektion 5
                 p.gr Kreuzworträtsel
+
+        //    #text.startpanel
+        //        div.panelheader
+        //            div.panelarrow
+        //            h2 Text: Die Zukunft der Menschheit wird fantastisch!
+        //        #subjecttext.panelcontent
+        //            h1 Die Zukunft der Menschheit wird fantastisch!
+        //            h2 Wie werden wir in 100 Jahren leben? Diese Frage hat der Physiker Michio Kaku den 300 klügsten Köpfen aus Wissenschaft und Forschung gestellt. Die Ergebnisse sind atemberaubend.
+        //            #autor Frank Schmiecher
+        //            p Nein, die Welt wird nicht untergehen. Sie wird sich verändern. Dramatisch verändern. Michio Kaku verzichtet in seinem Buch "Die Physik der Zukunft" auf Weltuntergangszenarien, die uns im warmen Wohnzimmer kalte Schauer über den Rücken laufen lassen.
+        //            p Im Gegenteil: Der Star-Physiker und Bestsellerautor zeigt sich optimistisch. Er glaubt fest daran, dass in 100 Jahren viel mehr Menschen viel besser leben als heute.
+        //            p Warum sehen die meisten Menschen eher schwarz, wenn es um die Zukunft geht? Bücher über das Ende der Menschheit gibt es wie Sand am Meer. Die Katastrophe lauert an jeder Ecke. Das Klima, die Weltwirtschaft, Handystrahlen, Nanotechnik, das Internet – unser Ende scheint nah. Oder?
+        //            h3 Die Zukunft der Dinge
+        //            p Was unterscheidet den Menschen von Tieren? Zum Beispiel benutzt der Mensch alle Arten von Werkzeugen. Menschen benutzten Pfeil und Bogen und anschließend Schusswaffen. Dadurch wurde die Versorgung mit Nahrungsmitteln besser. Außerdem gab es früher Hütten aus Lehm und Stroh, doch die Metallherstellung führte zu großen, stabilen Gebäuden.
+        //            p Bereits jetzt haben wir das mächtigste Werkzeug, das Menschen jemals besessen haben. Wir sind in der Lage den Grundbaustoff aller Dinge, einzelne Atome, zu manipulieren. So ist heute die Produktion von Materialien möglich, von denen wir bisher nur geträumt haben.
+        //            p Per Mikroskop lassen sich einzelne Atome beobachten und manipulieren. Noch vor wenigen Jahren konnten keine Atome beobachtet werden. Jetzt können wir sogar mit ihnen spielen. In San Jose basteln Wissenschaftler aus einzelnen Atomen primitive Maschinen.
+        //            h3 Die Zukunft der Roboter und Computer
+        //            p Das Tempo der modernen Welt wird vom Tempo der Computer bestimmt. Und deren Geschwindigkeit nimmt stetig zu. Die Rechenkapazität von Computern verdoppelt sich etwa alle 18 Monate. Computerspielkonsolen besitzen heute mehr Rechenleistung als die Großrechner in vergangenen Jahrzehnten.
+        //            p Ein Smartphone verfügt über mehr Leistung als die NASA im Jahr der Mondlandung 1969. In Zukunft werden wir von Computern umzingelt sein. Sie sehen allerdings anders aus oder sind überhaupt nicht mehr als Computer zu erkennen. In jedem Gegenstand, jeder Wand, jeder Tapete, in allem, was uns umgibt, wird sich ein rechnender Chip befinden, der mit dem Internet verbunden ist.
+        //            p Unsere Umgebung wird intelligent. Ein Raum wird bemerken, wenn Sie ihn betreten, und er wird dafür sorgen, dass an den richtigen Stellen das Licht angeht und eine vernünftige Temperatur herrscht. Computer gehen in unserer Umgebung auf und werden unsichtbar und lautlos unsere Befehle ausführen, weil wir sie mit unseren Gedanken steuern.
+        //            p Auch Autos werden intelligent. Sie fahren, vom Computer gelenkt, ohne Lenkrad und Fahrer zu ihrem Ziel. Die Insassen können sich entspannen, sich unterhalten oder einen Film schauen. Unfälle und Staus gehören der Vergangenheit an. GPS-Systeme und Radar sorgen für freie Fahrt und lenken sicherer durch den Verkehr der Zukunft, als es ein Mensch jemals könnte.

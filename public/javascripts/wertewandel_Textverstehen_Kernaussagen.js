@@ -13,7 +13,7 @@ var applyTo = function( jsonpath, fn ) {
 
         fn( questArray );
     });
-}
+};
 
 var placeQuestions = function( questions ) {
     // Places the question on the website
@@ -38,38 +38,43 @@ var placeQuestions = function( questions ) {
     });
 
     $( "#ww3_form" ).html( preamble + original_html + end );
+
+    // evaluate answer on click
+    $( "input[type='radio']").on( "click", function() {
+        //console.log(this.name);
+        var name = this.name;
+        var value = this.value;
+        var button = this;
+        $.getJSON( "javascripts/wertewandel3_questions.json", function( json ){
+            json.questions.forEach(function(n) {
+                if ( n.id == name ){
+                    if ( n.answer == value )
+                    {
+                        raisepoints();
+                        $("input[name='"+name+"']").parent().css("background-color","#02D64A");
+                        $(button).attr('disabled', true);
+                    }
+                    else
+                    {
+                        raisefaults();
+                        $("input[name='"+name+"']").parent().css("background-color","#A91211");
+                        $(button).attr('disabled', true);
+                    }
+                }
+
+            });
+
+        });
+
+
+    });
 };
 
 var init = function () {
     // load data
     applyTo( "javascripts/wertewandel3_questions.json", placeQuestions );
 
-    // evaluate answer on
-    $( "#submit" ).click( function() {
-        // get answers
-        var answered = $( "input[type='radio']" ).serializeArray()
-        
-        // check them on the json file
-        $.getJSON( "javascripts/wertewandel3_questions.json", function( json ) {
-            $.map( json.questions, function( n ) {
-                // pretty messy... I agree
-                $.map( answered, function( e ) {
-                    if ( n.id == e.name )
-                    {
-                        if ( n.answer == e.value )
-                        {
-                            console.log( e.name );
-                            $( "#" + e.name ).animate({backgroundColor: "#0f0"}, 2000);
-                        }
-                        else
-                        {
-                            $( "#" + e.name ).animate({backgroundColor: "#f00"}, 2000);
-                        }
-                    }
-                });
-            });
-        });
-    });
 };
 
 $( init );
+addPointBars();

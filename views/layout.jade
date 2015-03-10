@@ -11,20 +11,62 @@ html
         script(src="javascripts/general.js")
         script(src="javascripts/layout.js")
         body
+            #startoverlaybackground
+            #startoverlaywatermark
+            #startoverlaybluebar
+            #startoverlay
+                #startoverlaywrapper
+                    #startoverlaybox
+                        #startoverlayheader
+                            div.startoverlayheaderbar
+                                #startoverlaymediatypeicon MTI
+                                #startoverlaycloseicon Close
+                                #startoverlayheadertext Deutsch als Fremdsprache - Medienvorschau
+                            div.startoverlayheaderbar
+                                .startoverlayheaderinfo Zukunft
+                                .startoverlayheaderinfo Technischer Fortschritt
+                                .startoverlayheaderinfo Text
+                                .startoverlayheaderinfo Die Zukunft der Menschheit wird fantastisch!
+                                .startoverlayheaderinfo Frank Schmiecher
+                                .startoverlayheaderinfo Michio Kaku
+                                .startoverlayheaderinfo Die Physik der Zukunft
+                                .startoverlayheaderinfo Roboter
+                                .startoverlayheaderinfo Computer
+                        #startoverlaycontent
+                            block overlay
+                            h1 Die Zukunft der Menschheit wird fantastisch!
+                            h2 Wie werden wir in 100 Jahren leben? Diese Frage hat der Physiker Michio Kaku den 300 klügsten Köpfen aus Wissenschaft und Forschung gestellt. Die Ergebnisse sind atemberaubend.
+                            #autor Frank Schmiecher
+                            p Nein, die Welt wird nicht untergehen. Sie wird sich verändern. Dramatisch verändern. Michio Kaku verzichtet in seinem Buch "Die Physik der Zukunft" auf Weltuntergangszenarien, die uns im warmen Wohnzimmer kalte Schauer über den Rücken laufen lassen.
+                            p Im Gegenteil: Der Star-Physiker und Bestsellerautor zeigt sich optimistisch. Er glaubt fest daran, dass in 100 Jahren viel mehr Menschen viel besser leben als heute.
+                            p Warum sehen die meisten Menschen eher schwarz, wenn es um die Zukunft geht? Bücher über das Ende der Menschheit gibt es wie Sand am Meer. Die Katastrophe lauert an jeder Ecke. Das Klima, die Weltwirtschaft, Handystrahlen, Nanotechnik, das Internet – unser Ende scheint nah. Oder?
+                            h3 Die Zukunft der Dinge
+                            p Was unterscheidet den Menschen von Tieren? Zum Beispiel benutzt der Mensch alle Arten von Werkzeugen. Menschen benutzten Pfeil und Bogen und anschließend Schusswaffen. Dadurch wurde die Versorgung mit Nahrungsmitteln besser. Außerdem gab es früher Hütten aus Lehm und Stroh, doch die Metallherstellung führte zu großen, stabilen Gebäuden.
+                            p Bereits jetzt haben wir das mächtigste Werkzeug, das Menschen jemals besessen haben. Wir sind in der Lage den Grundbaustoff aller Dinge, einzelne Atome, zu manipulieren. So ist heute die Produktion von Materialien möglich, von denen wir bisher nur geträumt haben.
+                            p Per Mikroskop lassen sich einzelne Atome beobachten und manipulieren. Noch vor wenigen Jahren konnten keine Atome beobachtet werden. Jetzt können wir sogar mit ihnen spielen. In San Jose basteln Wissenschaftler aus einzelnen Atomen primitive Maschinen.
+                            h3 Die Zukunft der Roboter und Computer
+                            p Das Tempo der modernen Welt wird vom Tempo der Computer bestimmt. Und deren Geschwindigkeit nimmt stetig zu. Die Rechenkapazität von Computern verdoppelt sich etwa alle 18 Monate. Computerspielkonsolen besitzen heute mehr Rechenleistung als die Großrechner in vergangenen Jahrzehnten.
+                            p Ein Smartphone verfügt über mehr Leistung als die NASA im Jahr der Mondlandung 1969. In Zukunft werden wir von Computern umzingelt sein. Sie sehen allerdings anders aus oder sind überhaupt nicht mehr als Computer zu erkennen. In jedem Gegenstand, jeder Wand, jeder Tapete, in allem, was uns umgibt, wird sich ein rechnender Chip befinden, der mit dem Internet verbunden ist.
+                            p Unsere Umgebung wird intelligent. Ein Raum wird bemerken, wenn Sie ihn betreten, und er wird dafür sorgen, dass an den richtigen Stellen das Licht angeht und eine vernünftige Temperatur herrscht. Computer gehen in unserer Umgebung auf und werden unsichtbar und lautlos unsere Befehle ausführen, weil wir sie mit unseren Gedanken steuern.
+                            p Auch Autos werden intelligent. Sie fahren, vom Computer gelenkt, ohne Lenkrad und Fahrer zu ihrem Ziel. Die Insassen können sich entspannen, sich unterhalten oder einen Film schauen. Unfälle und Staus gehören der Vergangenheit an. GPS-Systeme und Radar sorgen für freie Fahrt und lenken sicherer durch den Verkehr der Zukunft, als es ein Mensch jemals könnte.
+            #mediacontainer
+                #mediabox
             #redbackground
+            #specialbackground
+                if (session)
+                    if (last != "/home")
+                        #special_bar
+                            #point_bars_div
+                                svg(id="point_bars")
+                            .special_nav
+                                a#ind(href="/uindex?last="+ last)
+                            .special_nav
+                                a#las(href="/last?last="+ last)
+                                a#nex(href="/next?last="+ last)
+
             #redstripes
                 .redstripe#info1
                 .redstripe#info2
-            if (session)
-                if (session.lastpage != '')
-                    #special_bar
-                        svg(id="point_bars")
-
-                        #special_nav
-                            object.logo(id='button1',type='image/svg+xml', data='images/button1.svg')
-                        #special_nav
-                            object.logo(id='button2',type='image/svg+xml', data='images/button2.svg')
-                            object.logo(id='button3', type='image/svg+xml', data='images/button3.svg')
             #darkblueNav
                 #navigation
                     ul
@@ -68,12 +110,13 @@ html
                                 li
                                     a(href= 'https://www.uni-trier.de/index.php?id=8356') Deutsch als Fremdsprache
                         li.cat1
+                            a(href = 'anleitung') Hilfe
+                        li.cat1
                             if (session)
                                 if (session.name)
                                     a(href = 'logout') Logout
                             else
                                 a(href = 'home') Login
-
             #container
                 #header
                     img.codexLogo(src='images/codex.png')
@@ -90,28 +133,38 @@ html
                                 block content
                         else
                             #content_background
-                                script( src='javascripts/scripts.js')
-                                h2 Willkommen auf der Lernplattform Deutsch der Universität Trier
-                                p
-                                | Hier finden Sie unterschiedliche Texte zu den Themen China, Ersti, Generationen, Zukunft und Veggie-Day. Die abwechslungsreichen Übungsaufgaben bieten Ihnen die Möglichkeit ihr B1-Niveau auszutesten und zu festigen. Durch die unterschiedlichen Aufgabentypen können Sie ihr Wissen auf vielfältige Art und Weise erweitern.
-                                | Dieses elearning-Projekt ist in Zusammenarbeit mit‚ Deutsch als Fremdsprache‘ und der Computerlinguistik Trier entstanden und wird Ihnen, nach der kostenlosen Anmeldung, zur Verfügung gestellt.
-                                br
-                                br
-                                b.
-                                    Mit alten Browser-Versionen kann es zu Problemen bei der Darstellung kommen, als sicherste Option nutzen Sie bitte Firefox in der neuesten Version.
-                                    Aber auch die neuesten Versionen von InternetExplorer (ab v.11) oder Chrome (ab v.36) werden unterstützt.
-                                    Für weitere Informationen zur Browseruntertzützung: Link comming soon
+                                #Textbox
+                                    script( src='javascripts/scripts.js')
+                                    h2(align='center') Willkommen auf der Lernplattform "Deutsch als Fremdsprache" der Universität Trier!
+                                    | Auf dieser Lernplattform findest du unterschiedliches Lernmaterial samt Übungen zu den Themengebieten
+                                    | Glück, Handy, Ersti, Veggie-Day, Wertewandel, Generationen, Zukunft und China.
+                                    | Die abwechslungsreichen Übungsaufgaben bieten dir die Möglichkeit dein B1-Niveau
+                                    | auszutesten und zu festigen.
+                                    | Durch die unterschiedlichen Aufgabentypen kannst du dein Wissen auf vielfältige Art und Weise erweitern.
+                                    br
+                                    | Dieses elearning-Projekt ist in Zusammenarbeit mit ‚Deutsch als Fremdsprache‘ und der Computerlinguistik
+                                    | Trier entstanden und steht dir nach der einmaligen Registration <b>kostenlos</b>
+                                    | zur Verfügung!
+                                    p
 
-                                h3 Sie müssen sich anmelden um alle Inhalte nutzen zu können
+                                    #withoutcontent
+                                        link(rel='stylesheet', href='stylesheets/index.css')
+                                        #loginbox
+                                            h1 Login
+                                            form(action="login", method="POST")
+                                                input(type="text", id="login", name="login", placeholder="Benutzername")
+                                                input(type="password", id="password", name="password", placeholder="Passwort")
+                                                input(type="submit", value="Login")
+                                    p
+                                    br
+                                    | Technischer Hinweis:
+                                    br
+                                    | Mit alten Browser-Versionen kann es zu Problemen bei der Darstellung kommen. Als sicherste Option empfehlen wir
+                                    | dir Firefox in der neuesten Version.
+                                    | Aber auch die aktuellste Versionen von InternetExplorer(ab v.11) oder Chrome (ab v.36) werden erfahrungsgemäß
+                                    | unterstützt.
+                                    | Für weitere Informationen zur Browseruntertzützung: Link comming soon
 
-                                #withoutcontent
-                                    link(rel='stylesheet', href='stylesheets/index.css')
-                                    #loginbox
-                                        h1 Login
-                                        form(action="login", method="POST")
-                                            input(type="text", id="login", name="login", placeholder="Benutzername")
-                                            input(type="password", id="password", name="password", placeholder="Passwort")
-                                            input(type="submit", value="Login")
                     #footer
                         #impressum
                             a.footerlink(href= 'impressum') Impressum

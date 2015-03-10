@@ -2,38 +2,85 @@ extends layout
 block content
     #subjecttitle
         h1 Glück
-    #text.startpanel
+    #tasks.startpanel
         div.panelheader
             div.panelarrow
-            h2 Text: Unbekannter Titel
-        #subjecttext.panelcontent
-    #lessons.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Lektionen
-        #lessonlist.panelcontent
-            div#les1.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='glueck_Textproduktion_Antonyme_A')
-                div.ltitle Textproduktion: Antonyme
-            div#les2.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='glueck_Textverstehen_Zeitangaben')
-                div.ltitle Textverstehen: Zeitangaben
-            div#les3.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='glueck_Kreuzwortraetsel')
-                div.ltitle Kreuzworträtsel
-            div#les4.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='glueck_Textverstehen_Redensarten')
-                div.ltitle Textverstehen: Redensarten
+            h2 Aufgaben
+        #tasklist.panelcontent
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textproduktion: Antonyme
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='glueck_Textproduktion_Antonyme_A')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textverstehen: Zeitangaben
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='glueck_Textverstehen_Zeitangaben')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Kreuzworträtsel
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='glueck_Kreuzwortraetsel')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textverstehen: Redensarten
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='glueck_Textverstehen_Redensarten')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
     #media.startpanel
         div.panelheader
             div.panelarrow
             h2 Medien
         #mediashow.panelcontent
+            div.mediaelement
+                img.mediaimage(src='images/Testbild1.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild2.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild3.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild4.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild5.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild1.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild2.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild3.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild4.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild5.png')

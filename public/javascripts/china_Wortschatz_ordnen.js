@@ -40,10 +40,12 @@ function handleDropEvent( event, ui ) {
     if (correct_p == true)
     {
         $( "#Antwortbox" + answerDragged ).append( div.animate({backgroundColor: "#0f0"}, 2000) ).append( "<br />" );
+        raisepoints();
     }
     else if (correct_p == false)
     {
         $( "#Antwortbox" + answerDragged ).append( div.animate({backgroundColor: "#f00"}, 2000) ).append( "<br />" );
+        raisefaults();
     }
     
     $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','grey');
@@ -65,3 +67,4 @@ function init() {
 };
 
 $( init );
+addPointsBar();

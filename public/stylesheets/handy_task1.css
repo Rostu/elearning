@@ -40,3 +40,15 @@ h1 {
     opacity: 1;
     display: inline-block;
 }
+
+.ui-dialog {
+    z-index: 10000;
+    width: 100%;
+    min-width: 1000px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.70);
+    padding: 15px;
+    color: white;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 15px;
+}

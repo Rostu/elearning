@@ -38,7 +38,7 @@ var applyToolTip = function( wordArray  ) {
         var regex = new RegExp( n.term, "g");
             
         var replaceString = "<div id=\"" + n.id + "\" class=\"normalTip inline ui-draggable\""
-            + " title=\"" + n.explain + "\" style=\"text-decoration: underline\">"
+            + " title=\"" + n.explain + "\" style=\"text-decoration: none\">"
             + "<div id=\"" + n.synonyms.join() + "\">" + n.term + "</div></div>";
             
         // replace phrase if found - seems weird and unintuitive? Welcome to
@@ -72,7 +72,7 @@ var makeToolTip = function ( jsonpath ) {
             );
         });
     });
-}
+};
 
 ////////////////////////////////////////////////////////////////////////////////
 // main function
@@ -89,6 +89,7 @@ var init = function () {
     $('#Antwortbox').droppable( {
         drop: handleDropEvent
     });
-}
+};
 
 $( init );
+addPointsBar();

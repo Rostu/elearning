@@ -2,33 +2,72 @@ extends layout
 block content
     #subjecttitle
         h1 China
-    #text.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Text: Studium in China
-        #subjecttext.panelcontent
-    #lessons.startpanel
+    #tasks.startpanel
         div.panelheader
             div.panelarrow
             h2 Lektionen
-        #lessonlist.panelcontent
-            div#les1.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='china_Textverstehen_Wortfeld_Studium')
-                div.ltitle Textverstehen: Wortfeld Studium
-            div#les2.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='china_Wortschatz_ordnen')
-                div.ltitle Wortschatz ordnen
-            div#les3.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='china_Textverstehen_Redewiedergabe')
-                div.ltitle Textverstehen: Redewiedergabe
+        #tasklist.panelcontent
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textverstehen: Wortfeld Studium
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='china_Textverstehen_Wortfeld_Studium')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Wortschatz ordnen
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='china_Wortschatz_ordnen')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Textverstehen: Redewiedergabe
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='china_Textverstehen_Redewiedergabe')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
     #media.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Medien
-        #mediashow.panelcontent
+    div.panelheader
+        div.panelarrow
+        h2 Medien
+    #mediashow.panelcontent
+        div.mediaelement
+            img.mediaimage(src='images/Testbild1.png')
+        div.mediaelement
+            img.mediaimage(src='images/Testbild2.png')
+        div.mediaelement
+            img.mediaimage(src='images/Testbild3.png')
+        div.mediaelement
+            img.mediaimage(src='images/Testbild4.png')
+        div.mediaelement
+            img.mediaimage(src='images/Testbild5.png')
+        div.mediaelement
+            img.mediaimage(src='images/Testbild1.png')
+        div.mediaelement
+            img.mediaimage(src='images/Testbild2.png')
+        div.mediaelement
+            img.mediaimage(src='images/Testbild3.png')
+        div.mediaelement
+            img.mediaimage(src='images/Testbild4.png')
+        div.mediaelement
+            img.mediaimage(src='images/Testbild5.png')

@@ -26,7 +26,7 @@ var applyTo = function( jsonpath, fn ) {
             );
         });
     });
-}
+};
 
 var placeQuestions = function( questions ) {
     // Places the question on the website
@@ -62,7 +62,7 @@ var placeQuestions = function( questions ) {
 var handleDropEvent = function ( event, ui ) {
     // drop event
 
-    // These function is used to obtain the words for the lecture. Since
+    // This function is used to obtain the words for the lecture. Since
     // JQuery's mysterious scope, the drop event must be passed as well.
 
     // .... see "zukunft_luecke" - Thanks Robert!
@@ -99,6 +99,7 @@ var init = function() {
             drop: handleDropEvent
         });
     });
-}
+};
 
 $( init );
+addPointBars();

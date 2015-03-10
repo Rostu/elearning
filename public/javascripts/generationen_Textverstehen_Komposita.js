@@ -2,6 +2,8 @@
  * Created by David on 03.08.2014.
  */
 $(document).ready(function() {
+    $('#info1').html('<a href="http://richtiges_gutes_de.deacademic.com/1292/Kompositum" target="_blank" class="redlink">Kompositum?</a>');
+
     var count = 0;
     var a = ["Friedhofs-",
         "erwachsen-",
@@ -66,7 +68,7 @@ $(document).ready(function() {
             if (pd.attr("id").substring(1) == drag.attr("id").substring(1)) {
                 flash(null, '#90EE90');
                 raisepoints();
-                $('#message').show().effect("puff", 2000, function() {
+                $('.drop2').animate({'color':'green'}, 1000, "swing", function() {
                     $('#a1').text("");
                     $('#a2').text("");
                     count++;
@@ -75,17 +77,17 @@ $(document).ready(function() {
                         // end task
                     }
                 });
+
+
             } else {
                 flash();
-                $('.drop2').css({'color':'darkred'});
                 raisefaults();
-                $('#message2').show().effect("puff", 2000, function() {
+                $('.drop2').animate({'color':'darkred'}, 1500, "easeOutExpo", function() {
                     pp.append(pd);
                     parent.append(drag);
                     $('#a1').text("");
                     $('#a2').text("");
                     $('.drop2').css({'color':'green'});
-
                 });
             }
         } else {
@@ -125,16 +127,4 @@ $(document).ready(function() {
             });
         }
     }
-    function raisefaults(){
-        var temp = $("#point_bars").data("actualf") + 1;
-        $("#point_bars").data("actualf", temp);
-        $(document).trigger('PointsChanged');
-    };
-
-    function raisepoints(){
-        var temp = $("#point_bars").data("actualp") + 1;
-        $("#point_bars").data("actualp", temp);
-        $(document).trigger('PointsChanged');
-    };
-
 });

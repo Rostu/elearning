@@ -2,28 +2,59 @@ extends layout
 block content
     #subjecttitle
         h1 Handy
-    #text.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Text: Unbekannter Titel
-        #subjecttext.panelcontent
-    #lessons.startpanel
+    #tasks.startpanel
         div.panelheader
             div.panelarrow
             h2 Lektionen
-        #lessonlist.panelcontent
-            div#les1.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='handy_task1')
-                div.ltitle Lückentext
-            div#les2.lesson
-                div.licon Icon
-                div.lstart
-                    a(href='handy_task2')
-                div.ltitle Gegenteil
+        #tasklist.panelcontent
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Lückentext
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='handy_task1')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Gegenteil
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='handy_task2')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild1.png')
+                    div.mediaelement_mini
+                        img.mediaimage_mini(src='images/Testbild2.png')
     #media.startpanel
         div.panelheader
             div.panelarrow
             h2 Medien
         #mediashow.panelcontent
+            div.mediaelement
+                img.mediaimage(src='images/Testbild1.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild2.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild3.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild4.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild5.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild1.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild2.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild3.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild4.png')
+            div.mediaelement
+                img.mediaimage(src='images/Testbild5.png')

@@ -1,5 +1,6 @@
 
 exports.index = function(req, res){
+    req.session.lastpage = '';
     res.render('index', { title: 'Express' });
 };
 

@@ -3,79 +3,79 @@
         "name":"glueck_start", "maxpoints": 0, "maxfaults": 0
     },
     {
-        "name":"glueck_task1a", "maxpoints":0, "maxfaults":0
+        "name":"glueck_Textproduktion_Antonyme_A", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"glueck_task1b", "maxpoints":0, "maxfaults":0
+        "name":"glueck_Textproduktion_Antonyme__B", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"glueck_task2", "maxpoints":0, "maxfaults":0
+        "name":"glueck_Textverstehen_Zeitangaben", "maxpoints":7, "maxfaults":7
     },
     {
-        "name":"glueck_task3", "maxpoints":0, "maxfaults":0
+        "name":"glueck_Kreuzwortraetsel", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"glueck_task4", "maxpoints":0, "maxfaults":0
+        "name":"glueck_Textverstehen_Redensarten", "maxpoints":0, "maxfaults":0
     },
     {
         "name":"handy_start", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"handy_task1", "maxpoints":0, "maxfaults":0
+        "name":"handy_task1", "maxpoints":9, "maxfaults":9
     },
     {
-        "name":"handy_task2", "maxpoints":0, "maxfaults":0
+        "name":"handy_task2", "maxpoints":7, "maxfaults":7
     },
     {
         "name":"ersti_start", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"ersti_task1", "maxpoints":0, "maxfaults":0
+        "name":"ersti_Textverstehen_emotionale_Woerter", "maxpoints":16, "maxfaults":8
     },
     {
-        "name":"ersti_task2", "maxpoints":0, "maxfaults":0
+        "name":"ersti_Textverstehen_Wortfeld_Universitaet_A", "maxpoints":18, "maxfaults":10
     },
     {
-        "name":"ersti_task2b", "maxpoints":0, "maxfaults":0
+        "name":"ersti_Textverstehen_Wortfeld_Universitaet_B", "maxpoints":43, "maxfaults":11
     },
     {
-        "name":"ersti_task2c", "maxpoints":0, "maxfaults":0
+        "name":"ersti_Textverstehen_Wortfeld_Universitaet_C", "maxpoints":26, "maxfaults":13
     },
     {
-        "name":"ersti_task3", "maxpoints":0, "maxfaults":0
+        "name":"ersti_Wortschatz_ordnen_A", "maxpoints":29, "maxfaults":5
     },
     {
-        "name":"ersti_task3b", "maxpoints":0, "maxfaults":0
+        "name":"ersti_Wortschatz_ordnen_B", "maxpoints":4, "maxfaults":4
     },
     {
-        "name":"ersti_task3c", "maxpoints":0, "maxfaults":0
+        "name":"ersti_Wortschatz_ordnen_C", "maxpoints":4, "maxfaults":5
     },
     {
-        "name":"ersti_task4", "maxpoints":0, "maxfaults":0
+        "name":"ersti_Wortschatz_erweitern", "maxpoints":9, "maxfaults":5
     },
     {
-        "name":"veggieday_task3", "maxpoints":4, "maxfaults":4
+        "name":"veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen", "maxpoints":4, "maxfaults":4
     },
     {
-        "name":"veggieday_task4", "maxpoints":8, "maxfaults":8
+        "name":"veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1", "maxpoints":8, "maxfaults":8
     },
     {
-        "name":"veggieday_task5", "maxpoints":9, "maxfaults":9
+        "name":"veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_2", "maxpoints":9, "maxfaults":9
     },
     {
         "name":"wertewandel_start", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"wertewandel_task1", "maxpoints":0, "maxfaults":0
+        "name":"wertewandel_Textverstehen_Schluesselwoerter", "maxpoints":6, "maxfaults":5
     },
     {
-        "name":"wertewandel_task2", "maxpoints":0, "maxfaults":0
+        "name":"wertewandel_Wortbedeutung_verstehen", "maxpoints":6, "maxfaults":3
     },
     {
-        "name":"wertewandel_task3", "maxpoints":0, "maxfaults":0
+        "name":"wertewandel_Textverstehen_Kernaussagen", "maxpoints":7, "maxfaults":7
     },
     {
-        "name":"wertewandel_task4", "maxpoints":0, "maxfaults":0
+        "name":"wertewandel_Textproduktion_Statistische_Angaben", "maxpoints":4, "maxfaults":4
     },
     {
         "name":"generationen_start", "maxpoints":0, "maxfaults":0
@@ -84,42 +84,42 @@
         "name":"generationen_text", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"generationen_task1", "maxpoints":9, "maxfaults":9
+        "name":"generationen_Textverstehen_Komposita", "maxpoints":9, "maxfaults":9
     },
     {
-        "name":"generationen_task2", "maxpoints":0, "maxfaults":0
+        "name":"generationen_Textverstehen_Bedeutungserschliessung", "maxpoints":24, "maxfaults":12
     },
     {
-        "name":"generationen_task3", "maxpoints":0, "maxfaults":0
+        "name":"generationen_Textverstehen_Bedeutungserschließung", "maxpoints":6, "maxfaults":6
     },
     {
         "name":"zukunft_start", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"zukunft_task1", "maxpoints":20, "maxfaults":5
+        "name":"zukunft_Textverstehen_Wortfeld_Technik1", "maxpoints":20, "maxfaults":5
     },
     {
-        "name":"zukunft_task2", "maxpoints":6, "maxfaults":10
+        "name":"zukunft_Wortschatz_ordnen", "maxpoints":6, "maxfaults":6
     },
     {
-        "name":"zukunft_task3", "maxpoints":4, "maxfaults":10
+        "name":"zukunft_Wortschatzerweiterung_fest_Wortverbindungen", "maxpoints":4, "maxfaults":10
     },
     {
-        "name":"zukunft_task4", "maxpoints":17, "maxfaults":25
+        "name":"zukunft_Textproduktion", "maxpoints":17, "maxfaults":25
     },
     {
-        "name":"zukunft_task5", "maxpoints":0, "maxfaults":0
+        "name":"zukunft_Kreuzwortraetsel", "maxpoints":0, "maxfaults":0
     },
     {
         "name":"china_start", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"china_task1", "maxpoints":0, "maxfaults":0
+        "name":"china_Textverstehen_Wortfeld_Studium", "maxpoints":14, "maxfaults":10
     },
     {
-        "name":"china_task2", "maxpoints":0, "maxfaults":0
+        "name":"china_Wortschatz_ordnen", "maxpoints":19, "maxfaults":10
     },
     {
-        "name":"china_task2", "maxpoints":0, "maxfaults":0
+        "name":"china_Textverstehen_Redewiedergabe", "maxpoints":6, "maxfaults":5
     }
 ]}
