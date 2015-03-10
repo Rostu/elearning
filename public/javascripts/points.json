@@ -96,7 +96,7 @@
         "name":"zukunft_start", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"zukunft_Textverstehen_Wortfeld_Technik1", "maxpoints":20, "maxfaults":5
+        "name":"zukunft_Textverstehen_Wortfeld_Technik", "maxpoints":20, "maxfaults":5
     },
     {
         "name":"zukunft_Wortschatz_ordnen", "maxpoints":6, "maxfaults":6
