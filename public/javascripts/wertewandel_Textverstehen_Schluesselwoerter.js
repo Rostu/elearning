@@ -9,13 +9,13 @@ function handleDropEvent( event, ui ) {
     // These function is used to obtain the words for the lecture. Since
     // JQuery's mysterious scope, the drop event must be passed as well.
     var textinhalt = ui.draggable.context.textContent;
-    
+
     var div = jQuery('<div/>', {
         class: 'token',
         id:     ui.draggable.attr('id'),
         text: textinhalt
     });
-        
+
     textinhalt = textinhalt.replace(',','');
     textinhalt = textinhalt.replace('.','');
 
@@ -26,10 +26,11 @@ function handleDropEvent( event, ui ) {
     var draggedDivId = $(this).closest('div').attr('id');
     var answerDragged = parseInt( draggedDivId.slice(-1) );
     var realAnswer    = ui.draggable.context.firstChild.id;
-    
+
     // is right?
     var correct_p;
-        
+    var w_token;
+
     if (answerDragged == realAnswer) {
         correct_p = true;
     } else {
@@ -40,16 +41,28 @@ function handleDropEvent( event, ui ) {
     if (correct_p == true)
     {
         raisepoints();
-        $( "#Antwortbox_ww_" + answerDragged ).append( div.animate({backgroundColor: "#0f0"}, 2000) ).append( "<br />" );
+        $( "#Antwortbox_ww_" + answerDragged ).append( div.animate({backgroundColor: "#02D64A"}, 2000) ).append( "<br />" );
     }
     else if (correct_p == false)
     {
         raisefaults();
-        $( "#Antwortbox_ww_" + answerDragged ).append( div.animate({backgroundColor: "#f00"}, 2000) ).append( "<br />" );
+        $( "#Antwortbox_ww_" + answerDragged ).append( div.animate({backgroundColor: "#A91211"}, 2000).css("color","white")).append( "<br />" );
+
+
     }
-    
+
     $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','grey');
+    div.mousedown(clear);
+    $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
+
+    function clear(ev) {
+        if (correct_p == false){
+            $(".inline.ui-draggable[id="+this.id+"]").draggable("enable").css('color','black');
+            this.remove();
+        }
+    }
 };
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // main function
@@ -67,4 +80,3 @@ function init() {
 };
 
 $( init );
-addPointsBar();

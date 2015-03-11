@@ -46,7 +46,7 @@ function handleDropEvent( event, ui ) {
     else if (correct_p == false)
     {
         raisefaults();
-        $( "#Antwortbox_ww2_" + answerDragged ).append( div.animate({backgroundColor: "#f00"}, 2000) );
+        $( "#Antwortbox_ww2_" + answerDragged ).append( div.animate({backgroundColor: "#A91211"}, 2000).css("color","white"));
     }
     
     $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','grey');
