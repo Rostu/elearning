@@ -1,0 +1,46 @@
+//
+   Created by s2daalft on 19.08.2014.
+
+extends layout
+block content
+    link(rel='stylesheet' href='stylesheets/glueck_kwr.css')
+    script(src='javascripts/jqdialog.min.js')
+    script(src='javascripts/glueck_Kreuzwortraetsel.js')
+    #helpdi(style='display:none;')
+            b _HINWEISE
+            p Klicke ein Feld an, um Hinweise zu bekommen, welche W&ouml;rter in diese Reihe/Spalte passen.
+            b _FELDER L&Ouml;SCHEN
+            p Klicke mit der rechten Maustaste auf ein Feld, um das Feld zu leeren.
+            b _LÖSEN
+            p Wenn du die Lösung kennst, kannst du die Lösung auch direkt in die Lösungsfelder eintragen und bestätigen.
+            p Wenn du nicht weiter weisst oder das Kreuzworträtsel überspringen möchtest, kannst du dir die Lösung auch direkt anzeigen lassen. Du bekommst für diese Aufgabe dann keine Punkte!
+            b _HILFE
+            p Um dieses Fenster erneut anzuzeigen, klicke links auf die obere Leiste ("Hilfe")
+    #really(style='display:none;')
+        p Willst du die Lösung wirklich anzeigen lassen?
+    #Aufgabenbox
+        p Löse das Kreuzworträtsel und finde die Redewendung!
+    #wrapper
+        #Textbox
+            #kwr
+        #Antwortbox
+            p.kwrtitle Hinweise
+            #hint
+            hr
+            p.kwrtitle Lösung
+            #solve
+                input(type='text' class='scell' id='1' maxlength=1)
+                input(type='text' class='scell' id='2' maxlength=1)
+                input(type='text' class='scell' id='3' maxlength=1)
+                input(type='text' class='scell' id='4' maxlength=1)
+                input(type='text' class='scell' id='5' maxlength=1)
+                input(type='text' class='scell' id='6' maxlength=1)
+                input(type='text' class='scell' id='7' maxlength=1)
+                br
+                input(type='text' class='scell' id='8' maxlength=1)
+                input(type='text' class='scell' id='9' maxlength=1)
+                input(type='text' class='scell' id='10' maxlength=1)
+                input(type='text' class='scell' id='11' maxlength=1)
+                input(type='text' class='scell' id='12' maxlength=1)
+                input(type='text' class='scell' id='13' maxlength=1)
+

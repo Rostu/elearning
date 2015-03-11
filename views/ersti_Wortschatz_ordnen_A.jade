@@ -1,0 +1,26 @@
+//
+   Created by David on 17.07.2014.
+
+extends layout
+block content
+    link(rel='stylesheet', href='stylesheets/ersti.css')
+    script( src='javascripts/ersti_Wortschatz_ordnen_A_B_C.js')
+    script( src='javascripts/ersti.js')
+    #Aufgabenbox
+        p  Ordne die unten stehenden Wörter nach Synonymen und Antonymen. Welche der Wörter drücken das gleiche aus wie „interessant“ („interessante Veranstaltung“) und welche der Wörter bedeuten das Gegenteil? Rechtsklick auf ein Wort entfernt dieses Wort wieder aus der Liste.
+
+    #wrapper
+      #Textbox
+        div.unselectable.container
+            div.worddrag
+            br(style='clear:both')
+            #message.invisible
+                | Richtig!
+            div.target#synonym(style='float:left;width:45%')
+                b.title
+                    | Synonyme
+
+            div.target#antonym(style='float:left;width:45%')
+                b.title
+                    | Antonyme
+            br(style='clear:left')

@@ -1,0 +1,63 @@
+extends layout
+block content
+    link(rel='stylesheet', href='stylesheets/veggie.css')
+    script( src='javascripts/veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_2.js')
+    #Aufgabenbox
+        p
+        | Lies den folgenden Text aufmerksam. Hier geht es um die Meinung der Umweltschützer zum
+        | Thema Vegetarismus. Sammel die im Text genannten Argumente über die Folgen des Fleischkonsums für Tiere,
+        | Umwelt und Menschen. Zieh dafür die Wörter in das entsprechende Feld.
+        p
+    #Textbox
+        h3 Meinung der Umweltschützer
+        | Die Amerikaner und Westeuropäer konsumieren im Vergleich zu 1900 rund 33% mehr Milchprodukte , 50% mehr
+        | Rindfleisch , 72% mehr Fisch , 190% mehr Eier und 280% mehr Geflügel . Eine solche Entwicklung hatte nicht
+        | nur gesundheitliche Folgen für den Konsumenten . Auch die Weltbevölkerung und die Umwelt , vor allem in den
+        | Dritte Weltländern , wurde davon beeinflusst: Die landwirtschaftlichen Nutzflächen (z.B. Felder und Wiesen)
+        | wurden hauptsächlich für die Tierhaltung und Futterproduktion verwendet und beanspruchen heute mehr als
+        | 64% der gesamten Anbauflächen . Die
+        .inline(id=10) Masttiere
+        | fressen 49% der Getreide-Welternte und mehr als 90% aller
+        | angebauten Sojabohnen . Ihre <i><span title="Ausscheidung (Kot und Urin)">Exkremente</span></i> sind
+        | verantwortlich für:
+        .inline(id=14) die Wasserverschmutzung (50%)
+        | ,
+        .inline(id=15) die Grundwasserverseuchung (50%)
+        | ,
+        .inline(id=16) das Ozonloch
+        | und die
+        .inline(id=17) Temperaturerhöhung (20%-25%)
+        | . Denn die "Produktion" dieser Ausscheidungen beträgt in den USA und Europa
+        | zusammen 110000 kg pro Sekunde (!) und die Entsorgung ist schon lange nicht mehr zu beherrschen .
+        | Allein in den USA werden jährlich mehr Tiere
+        .inline(id=11) geschlachtet
+        | als die ganze Erde Einwohner hat . Wenn die
+        | Amerikaner 10% weniger tierisches Eiweiß essen würden und man auf den freien Flächen Getreide anbauen
+        | würde , könnten mehr als 1 Milliarde Menschen ernährt werden . Doch gegenwärtig sterben weltweit täglich
+        | 38 Tausend Kinder an
+        .inline(id=12) Unterernährung
+        | und 1991 sind über 20 Millionen Menschen verhungert .
+        | Um die riesigen Futtermengen zu produzieren , werden jährlich mehrere Millionen Tonnen
+        .inline(id=18) Pestizide
+        | auf die Felder gestreut . Auch diese Mengen verseuchen über Jahre hinweg unser Grundwasser und sie würden
+        | ausreichen , die ganze
+        .inline(id=13) Weltbevölkerung zu vergiften
+        | .
+        p
+
+        #Antwortbox1
+            b Folgen für die Tiere [2]:
+            p
+        #Platzhalter
+        #Antwortbox2
+            b Folgen für die Menschen [2]:
+            p
+        #Platzhalter
+        #Antwortbox3
+            b Folgen für die Umwelt [5]:
+            p
+
+        #pruefbutton
+            a#pruefen(onclick="validate()") Prüfen
+
+        form#drag(name='dragAndDrop', action='')

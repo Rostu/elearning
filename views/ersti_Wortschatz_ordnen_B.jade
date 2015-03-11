@@ -1,0 +1,50 @@
+//
+   Created by David on 17.07.2014.
+
+extends layout
+block content
+    link(rel='stylesheet', href='stylesheets/ersti.css')
+    script(src='javascripts/ersti_Wortschatz_ordnen_A_B_C.js')
+    script( src='javascripts/ersti.js')
+    #Aufgabenbox
+        p Finde im Wortschatzportal Leipzig vier Synonyme, die das Adjektiv „dämlich“ („dämliche Frage“) im Kontext des Textes ersetzen können.
+
+    #wrapper
+
+
+        #Textbox
+
+            .unselectable.container(style='clear: left;')
+                | An der Uni habe ich das Gefühl, dass die älteren Semester sich ebenso belästigt von der Erstis fühlen, die nun planlos auf dem Campus herumgeistern und mit
+                span.placeholderdots |...___...|
+                |  Fragen nerven.
+                br
+                #message.invisible
+                    | Richtig!
+                br
+                label(for='w1')
+                    | Wort 1
+                input(type='text' id='w1' class='slot')
+                p.h1.invisible
+                p.c1.invisible
+                br
+                label(for='w2')
+                    | Wort 2
+                input(type='text' id='w2' class='slot')
+                p.h2.invisible
+                p.c2.invisible
+                br
+                label(for='w3')
+                    | Wort 3
+                input(type='text' id='w3' class='slot')
+                p.h3.invisible
+                p.c3.invisible
+                br
+                label(for='w4')
+                    | Wort 4
+                input(type='text' id='w4' class='slot')
+                p.h4.invisible
+                p.c4.invisible
+                br
+
+        br
