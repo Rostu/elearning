@@ -1,9 +1,3 @@
-$(document).ready(function() {
-    $('#weiter').click(function(e) {
-        document.location.href = "glueck_interview";
-    });
-});
-
 $( init );
 function init() {
 
