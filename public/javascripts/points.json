@@ -15,7 +15,7 @@
         "name":"glueck_Kreuzwortraetsel", "maxpoints":0, "maxfaults":0
     },
     {
-        "name":"glueck_Textverstehen_Redensarten", "maxpoints":0, "maxfaults":0
+        "name":"glueck_Textverstehen_Redensarten", "maxpoints":6, "maxfaults":3
     },
     {
         "name":"handy_start", "maxpoints":0, "maxfaults":0

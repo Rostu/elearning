@@ -8,6 +8,7 @@
     background-color: rgba(239, 239, 239, 0.59);
     margin: 0px auto;
     color: black;
+    display: inline-block;
 }
 
 #Auswahlbox {
@@ -21,4 +22,8 @@
     margin: 0px auto;
     color: black;
     margin-bottom: 20px;
+}
+
+input{
+
 }
