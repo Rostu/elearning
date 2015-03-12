@@ -57,7 +57,7 @@
         "name":"veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen", "maxpoints":4, "maxfaults":4
     },
     {
-        "name":"veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1", "maxpoints":8, "maxfaults":8
+        "name":"veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1", "maxpoints":3, "maxfaults":4
     },
     {
         "name":"veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_2", "maxpoints":9, "maxfaults":9
