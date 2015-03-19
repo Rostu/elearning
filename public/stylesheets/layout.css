@@ -179,6 +179,17 @@ body {
     z-index: 1000;
     position: absolute;
 }
+.redcontainer{
+    margin-top: 15px;
+    margin-left: 15px;
+    background: rgb(169, 18, 17);
+    display: none;
+    width: 200%;
+}
+.redcontainer p{
+    color: white;
+    padding: 5px;
+}
 
 .redstripe {
     margin-top: 15px;
