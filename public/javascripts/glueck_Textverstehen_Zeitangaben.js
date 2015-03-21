@@ -82,7 +82,6 @@ function init() {
             if($(this).data('korrekt')==true){
                 r_length--;
             }else{w_length--;}
-            update_balken();
             $(".token[id=" + this.id + "]").remove();
         }
     }

@@ -918,7 +918,7 @@ img.uniLogo {
     font-weight: bold;
     text-align: center;
     color: white;
-    background: #A6D1F5 url("/images/button_down2.gif");
+    background: #A6D1F5 url("../images/button_down2.gif");
     float: right;
     border-radius: 25px;
 }
@@ -1029,7 +1029,7 @@ img.uniLogo {
     line-height: 40px;
     font-weight: bold;
     text-align: center;
-    background: #E5EFF5 url("/images/button_right2_small.gif");
+    background: #E5EFF5 url("../images/button_right2_small.gif");
     float: right;
     border-radius: 20px;
 }

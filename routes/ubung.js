@@ -185,18 +185,21 @@ exports.get_next = function(req, res){
     var lastsite = req.param("last");
     lastsite = lastsite.replace("/","");
     var nextsite = navigation.getnext(lastsite);
-    res.redirect(nextsite);
+    res.locals.last = nextsite;
+    res.render(nextsite);
 };
 exports.get_last = function(req, res){
     var lastsite = req.param("last");
     lastsite = lastsite.replace("/","");
     var lastsite = navigation.getlast(lastsite);
-    res.redirect(lastsite);
+    res.locals.last = lastsite;
+    res.render(lastsite);
 };
 
 exports.get_uindex = function(req, res){
     var lastsite = req.param("last");
     lastsite = lastsite.replace("/","");
     var indexsite = navigation.getindex(lastsite);
-    res.redirect(indexsite);
+    res.locals.last = indexsite;
+    res.render(indexsite);
 };

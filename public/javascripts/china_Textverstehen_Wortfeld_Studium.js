@@ -65,4 +65,4 @@ var init = function () {
 
 // needs to be a jquery argument
 $( init );
-addPointsBar();
+
