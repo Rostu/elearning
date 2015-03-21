@@ -163,10 +163,12 @@ $(document).ready(function() {
     var vis = d3.select("#point_bars");
     var actualpage = $('a#ind').attr('href');
     if (actualpage) {
-        actualpage = actualpage.replace("/uindex?last=/", "");
+        if (actualpage.indexOf("/uindex?last=/") > -1){
+            actualpage = actualpage.replace("/uindex?last=/", "");}else{actualpage = actualpage.replace("/uindex?last=", "");}
+        console.log(actualpage);
     }
 
-    $.getJSON('/points?last='+actualpage, function(data){
+    $.getJSON('points?last='+actualpage, function(data){
         maxp = data.maxpoints;
         maxf = data.maxfaults;
         myScalePoints = d3.scale.linear().domain([0, maxp]).range([0, 2 * Math.PI]);
