@@ -5,7 +5,7 @@ var sites = [
     ['veggieday_start','veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen','veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1','veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_2'],
     ['wertewandel_start','wertewandel_Textverstehen_Schluesselwoerter','wertewandel_Wortbedeutung_verstehen','wertewandel_Textverstehen_Kernaussagen','wertewandel_Textproduktion_Statistische_Angaben'],
     ['generationen_start','generationen_text','generationen_Textverstehen_Komposita','generationen_Wortschatz_ordnen','generationen_Textverstehen_Bedeutungserschliessung'],
-    ['zukunft_start','zukunft_Textverstehen_Wortfeld_Technik','zukunft_Wortschatz_ordnen','zukunft_Wortschatzerweiterung_fest_Wortverbindungen','zukunft_Textproduktion','zukunft_Kreuzwortraetsel'],
+    ['zukunft_start','zukunft_Textverstehen_Wortfeld_Technik','zukunft_Wortschatz_ordnen','zukunft_Wortschatzerweiterung_fest_Wortverbindungen','zukunft_Textproduktion','zukunft_Kreuzwortraetsel','spiral'],
     ['china_start', 'china_Textverstehen_Wortfeld_Studium','china_Wortschatz_ordnen','china_Textverstehen_Redewiedergabe']
 ];
 

@@ -164,8 +164,8 @@ $(document).ready(function() {
     var actualpage = $('a#ind').attr('href');
     if (actualpage) {
         if (actualpage.indexOf("/uindex?last=/") > -1){
-            actualpage = actualpage.replace("/uindex?last=/", "");}else{actualpage = actualpage.replace("/uindex?last=", "");}
-        console.log(actualpage);
+            actualpage = actualpage.replace("/uindex?last=/", "");}else{actualpage = actualpage.replace("/uindex?last=", "");actualpage = actualpage.replace("uindex?last=", "");}
+        //console.log(actualpage);
     }
 
     $.getJSON('points?last='+actualpage, function(data){

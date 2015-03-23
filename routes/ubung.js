@@ -34,6 +34,11 @@ exports.get_china_start = function(req, res){
 exports.get_memory = function(req, res){
     res.render('memory');
 };
+
+exports.get_spiral = function(req, res){
+    res.render('spiral');
+};
+
 exports.get_china_Textverstehen_Wortfeld_Studium = function(req, res){
     res.render('china_Textverstehen_Wortfeld_Studium');
 };

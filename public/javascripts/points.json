@@ -121,5 +121,8 @@
     },
     {
         "name":"china_Textverstehen_Redewiedergabe", "maxpoints":6, "maxfaults":5
+    },
+    {
+        "name":"spiral", "maxpoints":23, "maxfaults":10
     }
 ]}

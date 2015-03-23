@@ -43,12 +43,9 @@ function init() {
 
             ui.helper.fadeOut();
             ui.draggable.remove();
-
             raisepoints();
-        }
-        else
-        {
-
+        }else{
+            raisefaults();
         }
     };
 
