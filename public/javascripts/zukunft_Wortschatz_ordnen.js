@@ -127,7 +127,7 @@ function init() {
         }
         return array;
     };
-    console.log(shuffle(ar[aktuell].inhalt));
+    //console.log(shuffle(ar[aktuell].inhalt));
     newdiv();
 
     function animatearrow_wrong(){

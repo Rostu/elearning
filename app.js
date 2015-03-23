@@ -49,7 +49,9 @@ if ('development' == app.get('env')) {
 }
 app.use(function(req, res, next){
     //console.log(req.path);
-    res.locals.last = req.path;
+    var newpath = req.path;
+    newpath = newpath.replace("/","");
+    res.locals.last = newpath;
     next();
 });
 app.use('/', index.get_session);
@@ -87,6 +89,7 @@ app.get('/handy_task2', ubung.get_handy_task2);
 app.get('/home', start.start);
 app.get('/impressum', impressum.get_imp);
 app.get('/memory', ubung.get_memory);
+app.get('/spiral', ubung.get_spiral);
 app.get('/neuanlegen', ubung.neu);
 //app.get('/points', pointshandler.get_points);
 
