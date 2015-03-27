@@ -1,0 +1,75 @@
+form{
+    background:#f0f0f0;
+    padding:6% 4%;
+}
+#wrapper{
+    height: 400px;
+}
+.mem_token{
+    perspective: 1000px;
+    width: 200px;
+    height: 200px;
+    margin:15px;
+    display: inline-block;
+}
+
+.mem_token:hover .flipper, .mem_token.hover .flipper {
+    /*transform: rotateY(180deg);*/
+}
+.mem_token.flip .flipper, .mem_token.flip .flipper, .mem_token.flip .flipper {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 200px;
+    height: 200px;
+    border: solid 1px #005E9C;
+    /* gradients */
+    background: -webkit-gradient(linear, left top, left bottom,
+    color-stop(0%, white), color-stop(15%, white), color-stop(100%,#A1BED6));
+    background: -moz-linear-gradient(top,#E5EFF5 0%,#E5EFF5 10%, #A1BED6 100%);
+    color: rgba(212, 18, 17, 0.83);
+    text-align: center;
+    display: inline-block;
+    -moz-box-shadow: -5px 5px 5px #292929; /* Firefox */
+    -webkit-box-shadow: -5px 5px 5px #292929; /* Chrome, Safari */
+    -khtml-box-shadow: -5px 5px 5px #292929; /* Konqueror */
+    box-shadow: -5px 5px 5px #aaa;
+}
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+.front h2{
+    margin-top: 75px;
+}
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(180deg);
+}
+/*.mem_token[revealed=true]{
+    display: inline-block;
+    color: forestgreen;
+    height: 200px;
+    overflow: hidden;
+    background: lightgoldenrodyellow;
+}*/
+
+
+

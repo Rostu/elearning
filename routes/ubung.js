@@ -31,8 +31,8 @@ exports.deleteub = function(req, res){
 exports.get_china_start = function(req, res){
     res.render('china_start');
 };
-exports.get_memory = function(req, res){
-    res.render('memory');
+exports.get_glueck_memory = function(req, res){
+    res.render('glueck_Memory');
 };
 
 exports.get_spiral = function(req, res){
