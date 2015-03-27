@@ -145,3 +145,32 @@ body
 #welcomemessage{
     display: none;
 }
+
+
+#antwort{
+    display: inline-block;
+    border: solid 1px;
+    width:30%;
+    min-height: 500px;
+}
+
+#raetsel{
+    display: inline-block;
+    border: solid 1px;
+    min-height: 500px;
+    width:60%;
+    min-width: 500px;
+}
+.row{
+    display: block;
+    margin: 0px auto;
+}
+.char_box{
+    display: inline-block;
+    margin-top: 3px;
+    margin-left:3px;
+    background-color: #b5d592;
+    height: 30px;
+    width: 30px;
+
+}

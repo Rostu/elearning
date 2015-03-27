@@ -421,10 +421,13 @@ $(document).ready(function() {
         var ms = r.reverse();
         for (var i = 0; i < scells.length; i++) {
             if ($(scells[i]).val().toUpperCase() !== ms[i]) {
+                raisefaults();
                 return false;
 
             }
         }
+        raisepoints();
         return true;
+
     }
 });
