@@ -4,9 +4,22 @@ block content
         link(rel='stylesheet', href='stylesheets/spiral.css')
         script( src='javascripts/spiral.js')
         #Aufgabenbox
-            p Wortspirale
+            p In dieser Wortschnecke sind weitere Zeitbegriffe versteckt. Finde sie und trage sie in die vorgegebenen Felder ein.
+            | Bestätige deine Eingabe mit der Enter Taste
         #wrapper
             #spiral_area
                 h2
-            #inputfield
-                input#textbox(type="text")
+            #inputwrapper
+                #inputfield
+                    #vergangenheit
+                        input.textbox#0(type="text")
+                        .antwort
+                            h3 Vergangenheit
+                    #gegenwart
+                        input.textbox#1(type="text")
+                        .antwort
+                            h3 Gegenwart
+                    #zukunft
+                        input.textbox#2(type="text")
+                        .antwort
+                            h3 Zukunft

@@ -7,6 +7,11 @@ $(document).ready(function() {
     $( "#point_bars" ).data( "actualf", 0 );
     //console.log($("body").data());
 
+    $( window ).resize(function() {
+        var testwidth = $("body").width() / 9;
+        $( ".redcontainer" ).css("width",testwidth);
+    });
+
     $('.redstripe').mouseenter(function()
     {
         $(this).animate({width: $(this).children('.redlink').width(), paddingRight: "20px"}, 100);
