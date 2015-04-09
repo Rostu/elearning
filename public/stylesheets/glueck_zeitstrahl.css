@@ -1,0 +1,68 @@
+
+.token {
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.55);
+    background: rgba(0, 136, 207, 0.77);
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    float: left;
+    /*display: inline-flex;*/
+    flex-direction: column;
+    margin: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+#Token_area{
+    width: 70%;
+    background-color: rgba(135, 195, 246, 0.53);
+    min-height: 200px;
+    margin: 20px auto;
+}
+
+#Zeitstrahl{
+    width: 100%;
+}
+#triangle-left {
+    width: 0;
+    height: 0;
+    border-top:
+    50px solid transparent;
+    border-right: 100px solid red;
+    border-bottom: 50px solid transparent;
+}
+#arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 40px solid rgb(0, 136, 207);
+}
+#arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-right:40px solid rgb(0, 136, 207);
+}
+.strahl{
+    display: table-cell;
+}
+#line{
+    width: 100%;
+
+}
+#zeit{
+    min-height: 25px;
+    background-color: rgb(0, 136, 207);
+    margin-bottom: 35px;
+    text-align: center;
+    position: relative;
+}
+#zeit p{
+    margin: 0px;
+    padding: 5px;
+    color: white;
+}

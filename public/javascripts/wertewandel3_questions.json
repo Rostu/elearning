@@ -1,10 +1,10 @@
 {
     "questions": [
-        { "id": 0, "question": "Die Ehe ist in Deutschland eine traditionelle Lebensform", "answer": 1 },
-        { "id": 1, "question": "Eine Pluralisierung findet vor allem bei Lebensformen ohne Kinder statt", "answer": 1},
-        { "id": 2, "question": "Die Größe der Haushalte nimmt im Verlauf der Jahre zu", "answer": 0},
-        { "id": 3, "question": "Gleichgeschlechtliche Ehen sind in Deutschland verboten", "answer": 0},
-        { "id": 4, "question": "Die größe der Vielfalt der Lebensformen lässt sich bei den 30-40 Jährigen feststellen.", "answer": 1},
-        { "id": 5, "question": "57% der Deutschen leben in einer Ehe mit Kindern", "answer": 0},
+        { "id": 0, "question": "Die Ehe ist in Deutschland eine traditionelle Lebensform.", "answer": 0 },
+        { "id": 1, "question": "Eine Pluralisierung findet vor allem bei Lebensformen ohne Kinder statt.", "answer": 0},
+        { "id": 2, "question": "Die Größe der Haushalte nimmt im Verlauf der Jahre zu.", "answer": 0},
+        { "id": 3, "question": "Gleichgeschlechtliche Ehen sind in Deutschland verboten.", "answer": 1},
+        { "id": 4, "question": "Die Vielfalt der Lebensformen lässt sich besonders bei den 30-40 Jährigen feststellen.", "answer": 0},
+        { "id": 5, "question": "57% der Deutschen leben in einer Ehe mit Kindern.", "answer": 0},
         { "id": 6, "question": "In der heutigen Zeit ist es einfacher in einer nichttraditionellen Lebensform zu leben.", "answer": 1} ]
 }

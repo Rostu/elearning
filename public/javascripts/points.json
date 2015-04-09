@@ -78,7 +78,7 @@
         "name":"wertewandel_Textverstehen_Kernaussagen", "maxpoints":7, "maxfaults":7
     },
     {
-        "name":"wertewandel_Textproduktion_Statistische_Angaben", "maxpoints":4, "maxfaults":4
+        "name":"wertewandel_Textproduktion_Statistische_Angaben", "maxpoints":9, "maxfaults":4
     },
     {
         "name":"generationen_start", "maxpoints":0, "maxfaults":0
@@ -126,6 +126,6 @@
         "name":"china_Textverstehen_Redewiedergabe", "maxpoints":6, "maxfaults":5
     },
     {
-        "name":"spiral", "maxpoints":23, "maxfaults":10
+        "name":"glueck_Textverstehen_Wortspirale", "maxpoints":23, "maxfaults":10
     }
 ]}

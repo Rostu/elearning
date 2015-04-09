@@ -10,13 +10,19 @@
             "id": 0,
             "answer": 1,
             "phrase": 5,
-            "text": "gleichgeschlechtliche Lebenspartnerschaften"
+            "text": "gleichgeschlechtliche Lebensgemeinschaften"
         },        
         {
             "id": 1,
             "answer": 1,
             "phrase": 1,
             "text": "Fernbeziehung"
+        },
+        {
+            "id": 1,
+            "answer": 1,
+            "phrase": 1,
+            "text": "Fernbeziehungen"
         },
         {
             "id": 2,
@@ -37,6 +43,12 @@
             "text": "nichteheliche Lebensgemeinschaften"
         },
         {
+            "id": 4,
+            "answer": 2,
+            "phrase": 3,
+            "text": "nichtehelichen Lebensgemeinschaften"
+        },
+        {
             "id": 5,
             "answer": 2,
             "phrase": 4,
@@ -47,6 +59,12 @@
             "answer": 1,
             "phrase": 7,
             "text": "Alleinerziehende"
+        },
+        {
+            "id": 6,
+            "answer": 1,
+            "phrase": 7,
+            "text": "Alleinerziehen"
         }
     ]
 }

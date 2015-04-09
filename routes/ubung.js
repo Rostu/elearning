@@ -35,8 +35,8 @@ exports.get_glueck_memory = function(req, res){
     res.render('glueck_Memory');
 };
 
-exports.get_spiral = function(req, res){
-    res.render('spiral');
+exports.get_glueck_Textverstehen_Wortspirale = function(req, res){
+    res.render('glueck_Textverstehen_Wortspirale');
 };
 
 exports.get_china_Textverstehen_Wortfeld_Studium = function(req, res){
@@ -65,6 +65,10 @@ exports.get_glueck_Kreuzwortraetsel = function(req, res){
 
 exports.get_glueck_Textverstehen_Zeitangaben = function(req, res){
     res.render('glueck_Textverstehen_Zeitangaben');
+};
+
+exports.get_glueck_Zeitstrahl = function(req, res){
+    res.render('glueck_Zeitstrahl.jade');
 };
 
 exports.get_glueck_Textverstehen_Redensarten = function(req, res){
