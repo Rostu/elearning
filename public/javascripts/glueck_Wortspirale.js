@@ -3,7 +3,6 @@ function init() {
 
     $('#info3').show();
 
-
     var data = [["gestern",0],["Letztens",0],["Kürzlich",0],["Neulich",0],["Vorgestern",0],["Früher",0],["Einst",0],["Damals",0],["vorher",0],["Heute",1],["Momentan",1], ["Gerade",1],["Derzeit",1],["Nun",1],["Heutzutage",1],["aktuell",1],["Morgen",2],["Übermorgen",2],["Bald",2],["Demnächst",2],["Zukünftig",2],["Später",2] ];
     var div_container =[];
     var id = 1;

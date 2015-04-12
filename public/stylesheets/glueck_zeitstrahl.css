@@ -25,14 +25,39 @@
 #Zeitstrahl{
     width: 100%;
 }
-#triangle-left {
-    width: 0;
-    height: 0;
-    border-top:
-    50px solid transparent;
-    border-right: 100px solid red;
-    border-bottom: 50px solid transparent;
+.fragment{
+    width: 9%;
+    background-color: rgb(0, 136, 207);
+    z-index: 1000;
+    min-height: 35px;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    padding:0;
+    display: inline-block;
+    margin-left:5px;
+    margin-right: 5px;
 }
+.ui-state-hover{
+    background-color: #7AB3E3;
+}
+.dropped{
+
+    border-radius: 10px;
+    overflow: hidden;
+}
+.korrekt{
+    background-color: #02D64A;
+}
+.falsch{
+    background-color: #A91211;
+}
+.dropped p{
+    position: relative;
+    top: 20%;
+    transform: translateY(-50%);
+}
+
 #arrow-right {
     width: 0;
     height: 0;
@@ -49,20 +74,26 @@
 }
 .strahl{
     display: table-cell;
+    margin: 0;
+    padding: 0;
 }
 #line{
     width: 100%;
-
 }
 #zeit{
     min-height: 25px;
     background-color: rgb(0, 136, 207);
-    margin-bottom: 35px;
+    margin-bottom: 25px;
+    padding: 0;
     text-align: center;
     position: relative;
 }
-#zeit p{
-    margin: 0px;
-    padding: 5px;
-    color: white;
+#middle{
+    background-color: #A91211;
+    width:5px;
+    min-height: 50px;
+    z-index: 1000;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
 }

@@ -21,6 +21,9 @@
         "name":"glueck_Memory", "maxpoints":6, "maxfaults":20
     },
     {
+        "name":"glueck_Zeitstrahl", "maxpoints":5, "maxfaults":10
+    },
+    {
         "name":"handy_start", "maxpoints":0, "maxfaults":0
     },
     {
