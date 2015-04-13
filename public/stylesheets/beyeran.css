@@ -3,9 +3,9 @@
     display: table;
 }
 #Textbox {
-  -webkit-box-shadow: 0px 2px 5px darkgrey;
-  -moz-box-shadow: 0px 2px 5px darkgrey;
-  box-shadow: 0px 2px 5px darkgrey;
+  -webkit-box-shadow: 0 2px 5px darkgrey;
+  -moz-box-shadow: 0 2px 5px darkgrey;
+  box-shadow: 0 2px 5px darkgrey;
   width: 60%;
   display: table-cell;
   padding: 10px;
@@ -22,17 +22,20 @@
     padding: 5px;
     margin: 10px;
     background: rgba(239, 239, 239, 0.59);
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-    -moz-box-shadow: 0px 2px 5px darkgrey;
-    box-shadow: 0px 2px 5px darkgrey;
+    -webkit-box-shadow: 0 2px 5px darkgrey;
+    -moz-box-shadow: 0 2px 5px darkgrey;
+    box-shadow: 0 2px 5px darkgrey;
+}
+.ui-state-hover{
+    background-color: cornflowerblue;
 }
 
 .token {
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-     box-shadow: 0px 2px 5px darkgrey;
+    -webkit-box-shadow: 0 2px 5px darkgrey;
+     box-shadow: 0 2px 5px darkgrey;
      background: rgba(239, 239, 239, 0.59);
      color: darkblue;
-     font: bold;
+     font-weight: bold;
      padding: 5px;
      display: inline-flex;
      flex-direction: column;
@@ -64,12 +67,16 @@ img {
 .inline div {
     display: inline;
 }
+.boxes.inline.ui-draggable.ui-draggable-handle{
+    background-color: #005E9C;
+    color: white;
+
+}
 
 #answers #Antwortbox1, #Antwortbox2, #Antwortbox3, #Antwortbox4 {
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-    -moz-box-shadow: 0px 2px 5px darkgrey;
-    box-shadow: 0px 2px 5px darkgrey;
-    background-color: #ffffff;
+    -webkit-box-shadow: 0 2px 5px darkgrey;
+    -moz-box-shadow: 0 2px 5px darkgrey;
+    box-shadow: 0 2px 5px darkgrey;
     display: table-cell;
     padding: 10px;
     width: 190px;
@@ -81,9 +88,9 @@ img {
 }
 
 #Antwortbox {
-  -webkit-box-shadow: 0px 2px 5px darkgrey;
-  -moz-box-shadow: 0px 2px 5px darkgrey;
-  box-shadow: 0px 2px 5px darkgrey;
+  -webkit-box-shadow: 0 2px 5px darkgrey;
+  -moz-box-shadow: 0 2px 5px darkgrey;
+  box-shadow: 0 2px 5px darkgrey;
   background-color: rgba(181, 237, 239, 0.29);
   display: table-cell;
   padding: 10px;
@@ -93,9 +100,9 @@ img {
 }
 
 #Antwortbox_ww_1, #Antwortbox_ww_2 {
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-    -moz-box-shadow: 0px 2px 5px darkgrey;
-    box-shadow: 0px 2px 5px darkgrey;
+    -webkit-box-shadow: 0 2px 5px darkgrey;
+    -moz-box-shadow: 0 2px 5px darkgrey;
+    box-shadow: 0 2px 5px darkgrey;
     background-color: rgba(181, 237, 239, 0.29);
     display: block;
     padding: 10px;
@@ -147,9 +154,9 @@ dfn{
 }
 
 #Antwortbox_ww2_1, #Antwortbox_ww2_2, #Antwortbox_ww2_3, #Antwortbox_ww2_4, #Antwortbox_ww2_5, #Antwortbox_ww2_6 {
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-    -moz-box-shadow: 0px 2px 5px darkgrey;
-    box-shadow: 0px 2px 5px darkgrey;
+    -webkit-box-shadow: 0 2px 5px darkgrey;
+    -moz-box-shadow: 0 2px 5px darkgrey;
+    box-shadow: 0 2px 5px darkgrey;
     background-color: rgba(181, 237, 239, 0.29);
     display: block;
     padding: 10px;

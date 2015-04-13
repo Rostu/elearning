@@ -184,11 +184,15 @@ body {
     margin-left: 15px;
     background: rgb(169, 18, 17);
     display: none;
+    z-index: 1001;
     width: 200%;
+    position: relative;
+    overflow: hidden;
 }
 .redcontainer p{
     color: white;
-    padding: 5px;
+    margin: 10px;
+
 }
 
 .redstripe {

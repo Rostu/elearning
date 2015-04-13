@@ -77,16 +77,15 @@ var handleDropEvent = function ( event, ui ) {
 
         ui.helper.fadeOut();
         ui.draggable.remove();
-        
-        update_balken();
-    }
+        raisepoints();
+    }else{raisefaults();}
 };
 
 ////////////////////////////////////////////////////////////////////////////////
 // main function
 ////////////////////////////////////////////////////////////////////////////////
 var init = function() {
-    var update_balken = update_balken_closure();
+    //var update_balken = update_balken_closure();
     
     applyTo( "javascripts/wertewandel4_words.json", placeQuestions );
     
@@ -102,4 +101,4 @@ var init = function() {
 };
 
 $( init );
-addPointBars();
+

@@ -1,0 +1,25 @@
+extends layout
+block content
+    #content_background
+        link(rel='stylesheet', href='stylesheets/glueck_Wortspirale.css')
+        script( src='javascripts/glueck_Wortspirale.js')
+        #Aufgabenbox
+            p In dieser Wortschnecke sind weitere Zeitbegriffe versteckt. Finde sie und trage sie in die vorgegebenen Felder ein.
+            | Bestätige deine Eingabe mit der Enter Taste
+        #wrapper
+            #spiral_area
+                h2
+            #inputwrapper
+                #inputfield
+                    #vergangenheit
+                        input.textbox#0(type="text")
+                        .antwort
+                            h3 Vergangenheit
+                    #gegenwart
+                        input.textbox#1(type="text")
+                        .antwort
+                            h3 Gegenwart
+                    #zukunft
+                        input.textbox#2(type="text")
+                        .antwort
+                            h3 Zukunft
