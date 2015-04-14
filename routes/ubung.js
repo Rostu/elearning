@@ -31,6 +31,14 @@ exports.deleteub = function(req, res){
 exports.get_china_start = function(req, res){
     res.render('china_start');
 };
+exports.get_glueck_memory = function(req, res){
+    res.render('glueck_Memory');
+};
+
+exports.get_glueck_Textverstehen_Wortspirale = function(req, res){
+    res.render('glueck_Textverstehen_Wortspirale');
+};
+
 exports.get_china_Textverstehen_Wortfeld_Studium = function(req, res){
     res.render('china_Textverstehen_Wortfeld_Studium');
 };
@@ -57,6 +65,10 @@ exports.get_glueck_Kreuzwortraetsel = function(req, res){
 
 exports.get_glueck_Textverstehen_Zeitangaben = function(req, res){
     res.render('glueck_Textverstehen_Zeitangaben');
+};
+
+exports.get_glueck_Zeitstrahl = function(req, res){
+    res.render('glueck_Zeitstrahl.jade');
 };
 
 exports.get_glueck_Textverstehen_Redensarten = function(req, res){
@@ -182,18 +194,21 @@ exports.get_next = function(req, res){
     var lastsite = req.param("last");
     lastsite = lastsite.replace("/","");
     var nextsite = navigation.getnext(lastsite);
-    res.redirect(nextsite);
+    res.locals.last = nextsite;
+    res.render(nextsite);
 };
 exports.get_last = function(req, res){
     var lastsite = req.param("last");
     lastsite = lastsite.replace("/","");
     var lastsite = navigation.getlast(lastsite);
-    res.redirect(lastsite);
+    res.locals.last = lastsite;
+    res.render(lastsite);
 };
 
 exports.get_uindex = function(req, res){
     var lastsite = req.param("last");
     lastsite = lastsite.replace("/","");
     var indexsite = navigation.getindex(lastsite);
-    res.redirect(indexsite);
+    res.locals.last = indexsite;
+    res.render(indexsite);
 };

@@ -76,7 +76,7 @@
   box-shadow: 0px 2px 5px darkgrey;
   padding: 20px;
   margin: -10px auto;
-  display: box;
+  display: inline-block;
   width: 50%;
   border-radius: 50%;
   background-color: lightgoldenrodyellow;
@@ -90,7 +90,7 @@
   box-shadow: 0px 2px 5px darkgrey;
   background: rgba(239, 239, 239, 0.59);
   color: green;
-  font: bold;
+  font-weight: bold;
   padding: 8px;
   display: inline-block;
   margin: 20px;
@@ -105,7 +105,7 @@
     box-shadow: 0px 2px 5px darkgrey;
     background: rgba(239, 239, 239, 0.59);
     color: green;
-    font: bold;
+    font-weight: bold;
     padding: 8px;
     display: inline-block;
     margin: 20px;
@@ -117,7 +117,7 @@
     box-shadow: 0px 2px 5px darkgrey;
     background: rgba(239, 239, 239, 0.59);
     color: green;
-    font: bold;
+    font-weight: bold;
     display: inline-block;
     margin: 0px auto;
     height: 40px;
@@ -224,7 +224,7 @@
     height: auto;
     min-height: 20px;
     border: 1px solid darkgrey;
-    float: left;
+    display:inline-block;
 }
 
 .wrong {

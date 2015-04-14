@@ -2,6 +2,8 @@
  * Created by David on 03.08.2014.
  */
 $(document).ready(function() {
+    $('#info1').show();
+    $("#info1").append("<a id='infolink' class='redlink' href='#'>falsch zugeordnete Wörter können korrigiert werden</a>");
     var a = ["alten Kompostis", "langweilig", "Abstellgreis", "Friedhofsgemüse", "Verwesungsanwärter", "jung im Kopf", "muffelig", "stark geprägt durch strenge Erziehung",
         "Respekt vor Autoritäten", "Leistungsbereitschaft", "Werteorientierung", "starken Zusammenhalt"
     ];
@@ -33,6 +35,7 @@ $(document).ready(function() {
                 markfalse($(e));
             } else {
                 marktrue($(e));
+                $(e).removeClass('revertable');
             }
         });
         $('#alt').children('.word').toArray().map(function(e) {
@@ -40,14 +43,12 @@ $(document).ready(function() {
                 markfalse($(e));
             } else {
                 marktrue($(e));
+                $(e).removeClass('revertable');
             }
 
         });
     }
 
-    $('#weiter').click(function() {
-        $('#check').click();
-    });
 
     $(document).on("contextmenu",".revertable",function(e){
         var ct = $(e.currentTarget);

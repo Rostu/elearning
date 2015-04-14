@@ -27,17 +27,44 @@ function init()
 
     function handleDropEvent( event, ui )
     {
+        var results = { "Masttiere":         1,
+            "geschlachtet":                  1,
+            "Unterernährung":                2,
+            "Weltbevölkerung zu vergiften":  2,
+            "die Wasserverschmutzung (50%)":  3,
+            "die Grundwasserverseuchung (50%)":  3,
+            "das Ozonloch":                 3,
+            "Temperaturerhöhung (20%-25%)": 3,
+            "Pestizide":                    3  };
+        var correct = false;
         var textinhalt = ui.draggable.context.textContent;
 
+        if (results[textinhalt] == parseInt($(this).attr('id').slice(-1))){
+            correct = true;
+        };
         var div = jQuery('<div/>', {
             class: 'token',
             id: ui.draggable.attr('id'),
             html: "<p>"+textinhalt+"</p>"
         });
-        div.click(clear);
         i++;
         $(this).append(div);
-        $(":button[id="+ui.draggable.attr('id') +"]").click(clear);
+        if (correct){
+            $(div).css('background-color','#02D64A');
+            raisepoints();
+        }else{
+            $(div).css('background-color','#A91211');
+            $(div).css("color","white");
+            raisefaults();
+            div.click(clear);
+            $("#info1").append("<a id='infolink' class='redlink' href='#'>Ein falsch zugeordneter Begriff lässt sich durch Anklicken entfernen!</a>");
+            //$("#info2").append('Überdenke nochmal deine Zuordnung! (Technischer Hinweis: Ein zugeordneter Begriff lässt sich durch Anklicken entfernen.) ');
+
+            $('#info1').animate({width: $('#info1').children('.redlink').width(), paddingRight: "20px"}, 100);
+            $('#info1').children().show;
+            $('#info1').children().animate({color: "#ffffff"}, 200);
+        }
+
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
         $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','blue');
     };
@@ -65,74 +92,3 @@ function init()
 
 };
 
-function validate ()
-{
-    var results = { "Masttiere":         1,
-        "geschlachtet":                  1,
-        "Unterernährung":                2,
-        "Weltbevölkerung zu vergiften":  2,
-        "die Wasserverschmutzung (50%)":  3,
-        "die Grundwasserverseuchung (50%)":  3,
-        "das Ozonloch":                 3,
-        "Temperaturerhöhung (20%-25%)": 3,
-        "Pestizide":                    3  };
-
-    var counter    = [0,0,0]; 		// ermittelte Anzahl der Antworten pro Antwortbox
-    var counterRef = [2,2,5]; 		// erwartete Anzahl der Antworten pro Antwortbox
-    var boxKorrekt = [0,0,0];		// ermittelte Anzahl der korrekten Antworten pro Antwortbox
-    var numberOfGivenResults = 0;   // Anzahl der vom Nutzer zugeordneten Begriffe
-    var numberOfCorrectResults = 9; // Anzahl der richtigen Antworten
-    var counterCheck = true;		// gibt an, ob zu jeder Antwort die richtige Anzahl an erwarteten Antworten vorhanden ist
-    var resultsCheck = true;		// gibt an, ob zu jeder Antwort die richtigen Antworten gegeben wurden
-
-    for ( var j = 1; j <= counter.length; j++ )		// jede Antwortbox einzeln prüfen
-    {
-        for ( var i = 0; i < document.getElementById ( 'Antwortbox' + j ).children.length; i++ )
-        {
-            if ( document.getElementById ( 'Antwortbox' + j ).children[i].nodeName == "DIV" )
-            {
-                counter[j-1]++;
-                numberOfGivenResults++;
-                for ( var z = 0; z < document.getElementById ( 'Antwortbox' + j ).children[i].children.length; z++ )
-                {
-                    if ( document.getElementById ( 'Antwortbox' + j ).children[i].children[z].nodeName == "P" )
-                    {
-                        var begriff = document.getElementById ('Antwortbox' + j ).children[i].children[z].textContent;
-
-                        if ( results[begriff] == j )
-                        {
-                            boxKorrekt[j-1]++;
-                            raisepoints();
-                            document.getElementById ( document.getElementById ('Antwortbox' + j ).children[i].id ).style.color="green";
-                        }
-                        else
-                        {
-                            decreasefaults();
-                            document.getElementById ( document.getElementById ('Antwortbox' + j ).children[i].id ).style.color="red";
-                        }
-                    }
-                }
-            }
-        }
-        if ( counter[j-1] != counterRef[j-1] )
-        {
-            counterCheck = false;
-        }
-        if ( boxKorrekt[j-1] != counterRef[j-1] )
-        {
-            resultsCheck = false;
-        }
-    }
-
-    if ( counterCheck && resultsCheck )
-    {
-        alert ( 'Glückwunsch! Du hast alles richtig zugeordnet!' );
-    }
-    else if ( counterCheck || ( numberOfGivenResults == numberOfCorrectResults ) )
-    {
-        alert ( 'Überdenke nochmal deine Zuordnung! (Technischer Hinweis: Ein zugeordneter Begriff lässt sich durch Anklicken entfernen.)' );
-    }
-    else {
-        alert('HALT! Es wurde nicht zu jeder Definition ein Begriff zugeordnet oder eine Box enthält nicht die erwartete Anzahl an Begriffen! (Technischer Hinweis: Ein zugeordneter Begriff lässt sich durch Anklicken entfernen.)');
-    }
-}

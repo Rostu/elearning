@@ -44,7 +44,8 @@ var placeQuestions = function( questions ) {
         //console.log(this.name);
         var name = this.name;
         var value = this.value;
-        var button = this;
+        var button = this.name;
+        console.log(button);
         $.getJSON( "javascripts/wertewandel3_questions.json", function( json ){
             json.questions.forEach(function(n) {
                 if ( n.id == name ){
@@ -52,13 +53,13 @@ var placeQuestions = function( questions ) {
                     {
                         raisepoints();
                         $("input[name='"+name+"']").parent().css("background-color","#02D64A");
-                        $(button).attr('disabled', true);
+                        $("input[name='"+button+"']").attr('disabled', true);
                     }
                     else
                     {
                         raisefaults();
                         $("input[name='"+name+"']").parent().css("background-color","#A91211");
-                        $(button).attr('disabled', true);
+                        //$(button).attr('disabled', true);
                     }
                 }
 

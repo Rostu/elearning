@@ -3,8 +3,8 @@
 $( init );
 function init()
 {
-    var id=0;
     $('#info1').show();
+    var id=0;
     var i = 0;
 
     $(".inline").each(function()
@@ -27,19 +27,49 @@ function init()
 
     function handleDropEvent( event, ui )
     {
+        var correct = false;
         var textinhalt = ui.draggable.context.textContent;
+        var results = { "Vegetarierstudien":            -1,
+            "Blutdruckwerte":               -1,
+            "Körpergewicht":                1,
+            "Lebenserwartung":              2,
+            "Herz-Kreislauf-Erkrankungen":  -1,
+            "Sterberate":                   3,
+            "Mangelerscheinungen":          -1,
+            "Gesundheitszustand":		    -1 };
+
+        if (results[textinhalt] == parseInt($(this).attr('id').slice(-1))){
+            correct = true;
+        };
 
         var div = jQuery('<div/>', {
             class: 'token',
             id: ui.draggable.attr('id'),
             html: "<p>"+textinhalt+"</p>"
                      });
-        div.click(clear);
         i++;
         $(this).append(div);
-        $(":button[id="+ui.draggable.attr('id') +"]").click(clear);
+
+        if (correct){
+            $(div).css('background-color','#02D64A');
+            raisepoints();
+        }else{
+            $(div).css('background-color','#A91211');
+            $(div).css("color","white");
+            raisefaults();
+            div.click(clear);
+            $("#info1").append("<a id='infolink' class='redlink' href='#'>Ein falsch zugeordneter Begriff lässt sich durch Anklicken entfernen!</a>");
+            //$("#info2").append('Überdenke nochmal deine Zuordnung! (Technischer Hinweis: Ein zugeordneter Begriff lässt sich durch Anklicken entfernen.) ');
+
+                $('#info1').animate({width: $('#info1').children('.redlink').width(), paddingRight: "20px"}, 100);
+                $('#info1').children().show;
+                $('#info1').children().animate({color: "#ffffff"}, 200);
+
+        }
+
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
         $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','blue');
+
     };
 
     function myHelper( event )
@@ -66,70 +96,5 @@ function init()
 
 };
 
-function validate ()
-{
-    var results = { "Vegetarierstudien":            -1,
-        "Blutdruckwerte":               -1,
-        "Körpergewicht":                1,
-        "Lebenserwartung":              2,
-        "Herz-Kreislauf-Erkrankungen":  -1,
-        "Sterberate":                   3,
-        "Mangelerscheinungen":          -1,
-        "Gesundheitszustand":		    -1 };
-
-    var counter = [0,0,0];
-    var counterCheck = true;
-    var boxKorrekt = [false, false, false];
-
-    for ( var j = 1; j <= counter.length; j++ )
-    {
-        for ( var i = 0; i < document.getElementById ( 'Antwortbox' + j ).children.length; i++ )
-        {
-            if ( document.getElementById ( 'Antwortbox' + j ).children[i].nodeName == "DIV" )
-            {
-                counter[j-1]++;
-                for ( var z = 0; z < document.getElementById ( 'Antwortbox' + j ).children[i].children.length; z++ )
-                {
-                    if ( document.getElementById ( 'Antwortbox' + j ).children[i].children[z].nodeName == "P" )
-                    {
-                        var begriff = document.getElementById ('Antwortbox' + j ).children[i].children[z].textContent;
-
-                        if ( results[begriff] == j )
-                        {
-                            boxKorrekt[j-1] = true;
-                            document.getElementById ( document.getElementById ('Antwortbox' + j ).children[i].id ).style.color="green";
-
-                        }
-                        else
-                        {
-                            document.getElementById ( document.getElementById ('Antwortbox' + j ).children[i].id ).style.color="red";
-                        }
-                    }
-                }
-
-            }
-        }
-        if ( counter[j-1] != 1 )
-        {
-            counterCheck = false;
-        }
-
-    }
-
-    if ( counterCheck && boxKorrekt.indexOf ( false ) == -1 )
-    {
-        alert ( 'Glückwunsch! Du hast alles richtig zugeordnet!' );
-    }
-    else if ( counterCheck )
-    {
-        alert ( 'Überdenke nochmal deine Zuordnung! (Technischer Hinweis: Ein zugeordneter Begriff lässt sich durch Anklicken entfernen.) ' );
-    }
-    else
-    {
-        alert ( 'Es wurde nicht zu jeder Definition ein Begriff zugeordnet oder eine Box enthält mehr als einen Begriff! (Technischer Hinweis: Ein zugeordneter Begriff lässt sich durch Anklicken entfernen.)' );
-    }
-
-
-}
 
 

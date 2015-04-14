@@ -2,6 +2,7 @@
  * Created by David on 03.08.2014.
  */
 $(document).ready(function() {
+    $('#info1').show();
     $('#info1').html('<a href="http://richtiges_gutes_de.deacademic.com/1292/Kompositum" target="_blank" class="redlink">Kompositum?</a>');
 
     var count = 0;

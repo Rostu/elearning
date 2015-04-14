@@ -51,9 +51,9 @@ function init() {
         div.click(enlarge);
         if($.inArray(textinhalt, testarray)> -1){
             $(div).data('korrekt',true);
-            $(div).css('background','#02D64A');
+            $(div).css('background','#02D64A').css("color","#005E9C");
             raisepoints();
-        }else {$(div).data('korrekt',false);$(div).css('background','#A91211');$(div).css('color','white');raisefaults();}
+        }else {$(div).data('korrekt',false);$(div).css('background','#A91211');$(div).css('color','#ECECEC');raisefaults();}
         $("#Antwortbox").bind("contextmenu",function(e){return false;});
         $("#Antwortbox").append(div);
         div.mousedown(clear);

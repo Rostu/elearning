@@ -54,19 +54,20 @@ html
             #redbackground
             #specialbackground
                 if (session)
-                    if (last != "/home")
+                    if (last != "home")
                         #special_bar
                             #point_bars_div
                                 svg(id="point_bars")
                             .special_nav
-                                a#ind(href="/uindex?last="+ last)
+                                a#ind(href="uindex?last="+ last)
                             .special_nav
-                                a#las(href="/last?last="+ last)
-                                a#nex(href="/next?last="+ last)
+                                a#las(href="last?last="+ last)
+                                a#nex(href="next?last="+ last)
 
             #redstripes
                 .redstripe#info1
                 .redstripe#info2
+                .redcontainer#info3
             #darkblueNav
                 #navigation
                     ul
@@ -79,7 +80,7 @@ html
                                     ul
                                         li
                                             a(href = 'glueck_start') Glück
-                                        //li
+                                        li
                                             a(href= 'handy_start') Handy
                                         li
                                             a(href = 'ersti_start') Ersti

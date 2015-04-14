@@ -46,10 +46,24 @@ function handleDropEvent( event, ui ) {
     else if (correct_p == false)
     {
         raisefaults();
-        $( "#Antwortbox_ww2_" + answerDragged ).append( div.animate({backgroundColor: "#A91211"}, 2000).css("color","white"));
+        $( "#Antwortbox_ww2_" + answerDragged ).append( div.animate({backgroundColor: "#f00"}, 2000).css("color","white") );
     }
-    
-    $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','grey');
+    if(correct_p == true){
+        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','green');
+    }
+    else {
+        $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
+    }
+
+    div.mousedown(clear);
+    $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
+
+    function clear(ev) {
+        if (correct_p == false) {
+            $(".inline.ui-draggable[id="+this.id+"]").draggable("enable").css('color','black');
+            this.remove();
+        }
+    }
 };
 
 ////////////////////////////////////////////////////////////////////////////////

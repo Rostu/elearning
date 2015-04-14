@@ -1,0 +1,80 @@
+form{
+    background:#f0f0f0;
+    padding:6% 4%;
+}
+#wrapper{
+    height: 400px;
+    display: table;
+}
+
+#spiral_area{
+    height:500px;
+    width: 50%;
+    float: left;
+    display: block;
+}
+#spiral_area h2 span {
+    font: 26px Monaco, MonoSpace;
+    height: 200px;
+    position: absolute;
+    color:#005E9C;
+    width: 20px;
+    left: 23%;
+    top: 15%;
+    transform-origin: bottom center;
+    -webkit-transition: 2s ease-in-out;
+    -moz-transition: 2s ease-in-out;
+    -o-transition: 2s ease-in-out;
+    transition: 2s ease-in-out;
+}
+input.textbox{
+    width: 40%;
+    -moz-border-radius-topright: 15px;
+    -webkit-border-top-right-radius: 15px;
+    border-top-right-radius: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -webkit-border-bottom-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 1px solid #848484;
+    outline:0;
+    height:25px;
+    padding-right:7px;
+    padding-left:7px;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-bottom: 5px;
+}
+
+#inputwrapper{
+    display: block;
+}
+#inputfield{
+    display: table;
+    width: 100%;
+}
+#gegenwart,#zukunft,#vergangenheit{
+    display: table-row;
+    margin: 0px;
+}
+
+.antwort{
+    width: 45%;
+    background-color: rgba(134, 195, 243, 0.24);
+    height:150px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #005E9C;
+    text-align: center;
+}
+h3{
+    padding: 3px;
+    margin: 3px;
+}
+.antwort_token{
+    background-color: #02D64A;
+    display: inline-block;
+    padding: 3px;
+    margin: 3px;
+    color:white;
+    font-weight: bold;
+}

@@ -179,6 +179,21 @@ body {
     z-index: 1000;
     position: absolute;
 }
+.redcontainer{
+    margin-top: 15px;
+    margin-left: 15px;
+    background: rgb(169, 18, 17);
+    display: none;
+    z-index: 1001;
+    width: 200%;
+    position: relative;
+    overflow: hidden;
+}
+.redcontainer p{
+    color: white;
+    margin: 10px;
+
+}
 
 .redstripe {
     margin-top: 15px;
@@ -907,7 +922,7 @@ img.uniLogo {
     font-weight: bold;
     text-align: center;
     color: white;
-    background: #A6D1F5 url("/images/button_down2.gif");
+    background: #A6D1F5 url("../images/button_down2.gif");
     float: right;
     border-radius: 25px;
 }
@@ -1018,7 +1033,7 @@ img.uniLogo {
     line-height: 40px;
     font-weight: bold;
     text-align: center;
-    background: #E5EFF5 url("/images/button_right2_small.gif");
+    background: #E5EFF5 url("../images/button_right2_small.gif");
     float: right;
     border-radius: 20px;
 }

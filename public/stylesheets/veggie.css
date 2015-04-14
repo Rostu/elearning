@@ -106,16 +106,6 @@ span {
     line-height: 30px;
 }
 
-#Erklaerungsbox {
-    display: table-cell;
-    padding: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgba(229,239,245, 0.8);
-    margin: 5px;
-    color: black;
-    line-height: 30px;
-}
-
 #Antwortbox1, #Antwortbox2,  #Antwortbox3 {
     -webkit-box-shadow: 0px 2px 5px darkgrey;
     -moz-box-shadow: 0px 2px 5px darkgrey;
@@ -125,7 +115,14 @@ span {
     width: 30%;
     background-color: rgba(22, 86, 211, 0.17);
     margin-left: 15px;
-    font-family: Arial, Helvetica, sans-serif; }
+    min-height: 400px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#Antwort{
+    display: table;
+    width: 100%;
+    min-height: 300px;
+}
 
 h2 {
     text-align: center;
@@ -154,17 +151,22 @@ h2 {
     padding-top: 30px;
     color: black;
 }
-#pruefbutton{
-    margin: 10px auto;
+
+#article{
+    width:70%;
+    margin: 20px auto;
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 1.1em;
+    background-image: url("../images/newspaper.jpg");
+    color: #000000;
+
 }
-a#pruefen{
-    background-color: #A91211;
-    font-size: 1.3em;
-    color: white;
-    padding: 5px;
+#article h3{
+    text-align: center;
+
 }
 
-a#pruefen:hover{
-    background-color: #005E9C;
-    cursor: pointer;
-}

@@ -49,8 +49,9 @@ if ('development' == app.get('env')) {
 }
 app.use(function(req, res, next){
     //console.log(req.path);
-    //console.log(req.path);
-    res.locals.last = req.path;
+    var newpath = req.path;
+    newpath = newpath.replace("/","");
+    res.locals.last = newpath;
     next();
 });
 app.use('/', index.get_session);
@@ -81,12 +82,15 @@ app.get('/glueck_Textproduktion_Antonyme_B', ubung.get_glueck_Textproduktion_Ant
 app.get('/glueck_Kreuzwortraetsel', ubung.get_glueck_Kreuzwortraetsel);
 app.get('/glueck_Textverstehen_Zeitangaben', ubung.get_glueck_Textverstehen_Zeitangaben);
 app.get('/glueck_Textverstehen_Redensarten', ubung.get_glueck_Textverstehen_Redensarten);
+app.get('/glueck_Zeitstrahl', ubung.get_glueck_Zeitstrahl);
 app.get('/handy_start', ubung.get_handy_start);
 app.get('/handy_text', ubung.get_handy_text);
 app.get('/handy_task1', ubung.get_handy_task1);
 app.get('/handy_task2', ubung.get_handy_task2);
 app.get('/home', start.start);
 app.get('/impressum', impressum.get_imp);
+app.get('/glueck_Memory', ubung.get_glueck_memory);
+app.get('/glueck_Textverstehen_Wortspirale', ubung.get_glueck_Textverstehen_Wortspirale);
 app.get('/neuanlegen', ubung.neu);
 //app.get('/points', pointshandler.get_points);
 
