@@ -3,7 +3,7 @@ function init() {
 
     $('#info3').show();
 
-    var data = [["gestern",0],["Letztens",0],["Kürzlich",0],["Neulich",0],["Vorgestern",0],["Früher",0],["Einst",0],["Damals",0],["vorher",0],["Heute",1],["Momentan",1], ["Gerade",1],["Derzeit",1],["Nun",1],["Heutzutage",1],["aktuell",1],["Morgen",2],["Übermorgen",2],["Bald",2],["Demnächst",2],["Zukünftig",2],["Später",2] ];
+    var data = [["gestern",0],["letztens",0],["kürzlich",0],["neulich",0],["vorgestern",0],["früher",0],["einst",0],["damals",0],["vorher",0],["heute",1],["momentan",1], ["gerade",1],["derzeit",1],["nun",1],["heutzutage",1],["aktuell",1],["morgen",2],["übermorgen",2],["bald",2],["demnächst",2],["zukünftig",2],["später",2] ];
     var div_container =[];
     var id = 1;
     data.forEach(function (entry) {
@@ -82,6 +82,7 @@ function init() {
                     makeNotice(1,input);
                 }
 
+
             }
         }
     });
@@ -130,8 +131,49 @@ function init() {
                 ret = true;
             }
             counter = 0;
+            if(getEditDistance(word,testword)<= 2){
+                console.log(getEditDistance(word,testword) + " " +testword);
+            }
         });
+
         return ret;
 
     }
+    // Compute the edit distance between the two given strings
+
+    function getEditDistance(a, b) {
+        if(a.length === 0) return b.length;
+        if(b.length === 0) return a.length;
+
+        var matrix = [];
+
+        // increment along the first column of each row
+        var i;
+        for(i = 0; i <= b.length; i++){
+            matrix[i] = [i];
+        }
+
+        // increment each column in the first row
+        var j;
+        for(j = 0; j <= a.length; j++){
+            matrix[0][j] = j;
+        }
+
+        // Fill in the rest of the matrix
+        for(i = 1; i <= b.length; i++){
+            for(j = 1; j <= a.length; j++){
+                if(b.charAt(i-1) == a.charAt(j-1)){
+                    matrix[i][j] = matrix[i-1][j-1];
+                } else {
+                    matrix[i][j] = Math.min(matrix[i-1][j-1] + 1, // substitution
+                        Math.min(matrix[i][j-1] + 1, // insertion
+                            matrix[i-1][j] + 1)); // deletion
+                }
+            }
+        }
+
+        return matrix[b.length][a.length];
+    };
+
+
 }
