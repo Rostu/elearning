@@ -117,22 +117,12 @@ function init() {
     }
 
     function ckeckForSpelling(word) {
-        var counter = 0;
         var ret = false;
         data.forEach(function(elem) {
             var testword = elem[0];
-
-            for( i=0; i<testword.length; i++) {
-                if( word.charAt(i) == testword.charAt(i)) counter++;
-            }
-
-            if((counter/testword.length) >= 0.7){
-                //console.log(counter/testword.length);
+            if(getEditDistance(word,testword)<= 3){
+                //console.log(getEditDistance(word,testword) + " " +testword);
                 ret = true;
-            }
-            counter = 0;
-            if(getEditDistance(word,testword)<= 2){
-                console.log(getEditDistance(word,testword) + " " +testword);
             }
         });
 
@@ -140,7 +130,6 @@ function init() {
 
     }
     // Compute the edit distance between the two given strings
-
     function getEditDistance(a, b) {
         if(a.length === 0) return b.length;
         if(b.length === 0) return a.length;
