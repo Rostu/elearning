@@ -32,7 +32,7 @@ var handleDropEvent = function ( event, ui ) {
     // adding abilities to the div
     textinhalt = textinhalt.replace(',','');
     textinhalt = textinhalt.replace('.','');
-    div.click(clear);
+
 
     // add and visualy display correctness of the div
     if (correct_p == true)
@@ -42,6 +42,7 @@ var handleDropEvent = function ( event, ui ) {
     }
     else if (correct_p == false)
     {
+        div.click(clear);
         $( "#Antwortbox" ).append( div.animate({backgroundColor: "#f00"}, 2000) ).append( "<br />" );
         raisefaults();
     }

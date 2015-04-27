@@ -15,7 +15,12 @@
   color: black;
   text-align: justify;
 }
-
+#Textbox p{
+    margin: 5px;
+}
+#Textbox h3{
+    margin: 10px;
+}
 .draggie.ui-draggable-dragging {
     color: darkblue;
     font-size: 2em;
@@ -49,19 +54,17 @@
     color: red;
 }
 
-
 img {
-      margin: 5px;
+      margin: 10px;
       border: solid;
       border-color: gainsboro;
       border-width: 1px;
 }
 
-
 .inline {
     display: inline;
-    margin-right: 3px;
-    margin-left: 3px;
+    /*margin-right: 3px;
+    margin-left: 3px;*/
 }
 
 .inline div {
@@ -119,7 +122,6 @@ img {
     padding: 10px;
     width: 2%;
 }
-
 
 #Aufgabe{
     color: #000000;
