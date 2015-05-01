@@ -28,7 +28,7 @@ form{
     transition: 2s ease-in-out;
 }
 input.textbox{
-    width: 40%;
+    width: 80%;
     -moz-border-radius-topright: 15px;
     -webkit-border-top-right-radius: 15px;
     border-top-right-radius: 15px;
@@ -46,19 +46,22 @@ input.textbox{
 }
 
 #inputwrapper{
+    width: 50%;
+    float: left;
     display: block;
 }
 #inputfield{
-    display: table;
-    width: 100%;
+    display: inline-block;
+    width: 50%;
 }
 #gegenwart,#zukunft,#vergangenheit{
-    display: table-row;
+    display: inline-block;
     margin: 0px;
+    width:100%;
 }
 
 .antwort{
-    width: 45%;
+    width: 90%;
     background-color: rgba(134, 195, 243, 0.24);
     height:150px;
     margin-left: 20px;

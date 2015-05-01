@@ -5,6 +5,7 @@
 .poem {
     margin-left: auto;
     margin-right: auto;
+    display:table-cell;
     width: 360px;
 }
 

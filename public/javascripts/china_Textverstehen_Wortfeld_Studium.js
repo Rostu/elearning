@@ -32,17 +32,18 @@ var handleDropEvent = function ( event, ui ) {
     // adding abilities to the div
     textinhalt = textinhalt.replace(',','');
     textinhalt = textinhalt.replace('.','');
-    div.click(clear);
+
 
     // add and visualy display correctness of the div
     if (correct_p == true)
     {
-        $( "#Antwortbox" ).append( div.animate({backgroundColor: "#0f0"}, 2000) ).append( "<br />" );
+        $( "#Antwortbox" ).append( div.animate({backgroundColor: "#02D64A",color: "#005E9C" }, 2000) ).append( "<br />" );
         raisepoints();
     }
     else if (correct_p == false)
     {
-        $( "#Antwortbox" ).append( div.animate({backgroundColor: "#f00"}, 2000) ).append( "<br />" );
+        div.click(clear);
+        $( "#Antwortbox" ).append( div.animate({backgroundColor: "#A91211",color: "white"}, 2000) ).append( "<br />" );
         raisefaults();
     }
     

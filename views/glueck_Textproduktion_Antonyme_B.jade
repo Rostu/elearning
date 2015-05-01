@@ -5,35 +5,88 @@ block content
     script(src='socket.io/socket.io.js')
     script(src='javascripts/jqdialog.min.js')
     #Aufgabenbox
-        p Schreibe das Gedicht über &nbsp;
-            b Glück &nbsp;
-            | in ein Gedicht über &nbsp;
-            b Pech &nbsp;
-            | um!
-        p (Es muss sich nicht reimen)
+        p Schreibe nun einige Strophen des Gedichts über Glück in ein Gedicht über Pech um!
+        | Fülle dazu jede Lücke mit einem Wort, welches das Gegenteil zu dem Wort im Glück-Gedicht ausdrückt. (Bsp. heiß – kalt)
+
 
     #wrapper
         #Textbox
-            h2.title Pech
             div.poem
+                h2.title Pech
                 div.text
                     b Pech &nbsp;
-                    | ist gar nicht mal so
-                    input#adv1(value='selten')
-                    | ,
+                    | ist eigentlich sehr selten,
                     br
                     b Pech &nbsp;
-                    | wird überall
-                    input#verb1(value='beschert')
-                    | .
+                    | wird
+                    input#adv1(value='nirgendwo')
+                    | beschert.
                     br
-                    | Vieles kann als&nbsp;
-                    b Pech &nbsp;
+                    input#adv2(value='Weniges')
+                    | kann als
+                    b  Pech&nbsp;
                     | uns gelten,
                     br
                     | was das Leben uns so lehrt.
                     br
                     br
+                    b Pech &nbsp;
+                    | ist, Sonne wenn es
+                    input#adv3(value='heiß')
+                    | ist,
+                    br
+                    b Pech&nbsp;
+                    | ist
+                    input#noun1(value='Hagel')
+                    | nach dem Guss.
+                    br
+                    b Pech
+                    | ist, wenn
+                    input#pro(value='kein')
+                    | Kind ein Eis isst,
+                    br
+                    | weil es gerade lernen muss.
+                    br
+                    br
+                    b Pech &nbsp;
+                    | ist eine
+                    input#adj1(value='laute')
+                    | Stunde,
+                    br
+                    b Pech &nbsp;
+                    | ist auch ein
+                    input#adj2(value='schlechtes')
+                    | Buch.
+                    br
+                    b Pech &nbsp;
+                    | ist eine
+                    input#adj3(value='triste')
+                    | Runde,
+                    br
+                    b Pech &nbsp;
+                    | ist ein
+                    input#adj4(value='nerviger')
+                    | Besuch.
+                    br
+                    br
+                    | Aber
+                    b Pech
+                    | bleibt
+                    input#adj5(value='niemals')
+                    | lange da,
+                    br
+                    input#pro2(value='niemand')
+                    | kennt nur
+                    b Pech
+                    | allein.
+                    br
+                    b Pech
+                    | hat
+                    input#adj(value='niemals')
+                    | der, der sah,
+                    br
+                    | "Es braucht ein wenig zum glücklich sein."
+                //
                     b Pech &nbsp;
                     | ist jeder
                     input#adj1(value='neue')
@@ -173,6 +226,43 @@ block content
                     input#noun19(value='Schöne')
                     | ein.
                     p.author #{session.name}
+            div.poem
+                h2.title Glück
+                div.text
+                    |Glück ist gar nicht mal so selten,
+                    br
+                    |Glück wird überall beschert.
+                    br
+                    |Vieles kann als Glück uns gelten,
+                    br
+                    |was das Leben uns so lehrt.
+                    br
+                    br
+                    |Glück ist Regen, wenn es heiß ist,
+                    br
+                    |Glück ist Sonne nach dem Guss.
+                    br
+                    |Glück ist, wenn ein Kind ein Eis isst,
+                    br
+                    |Glück ist auch ein lieber Gruß.
+                    br
+                    br
+                    |Glück ist eine stille Stunde,
+                    br
+                    |Glück ist auch ein gutes Buch.
+                    br
+                    |Glück ist eine frohe Runde,
+                    br
+                    |Glück ist freundlicher Besuch.
+                    br
+                    br
+                    |Glück ist niemals ortsgebunden,
+                    br
+                    |Glück kennt keine Jahreszeit.
+                    br
+                    |Glück hat immer der gefunden,
+                    br
+                    |der sich seines Lebens freut.
         #Antwortbox
             #message.invisible
                 | Fehleranalyse
