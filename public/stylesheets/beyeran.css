@@ -75,17 +75,22 @@ img {
     color: white;
 
 }
-
-#answers #Antwortbox1, #Antwortbox2, #Antwortbox3, #Antwortbox4 {
+#answers{
+    height: 300px;
+    display: table;
+    width: 100%;
+}
+#Antwortbox1, #Antwortbox2, #Antwortbox3, #Antwortbox4 {
     -webkit-box-shadow: 0 2px 5px darkgrey;
     -moz-box-shadow: 0 2px 5px darkgrey;
     box-shadow: 0 2px 5px darkgrey;
     display: table-cell;
     padding: 10px;
-    width: 190px;
+    width: 20%;
     margin: 0 30px 0;
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: lightgoldenrodyellow;
+    background-color: #7AB3E3;
     min-height: 500px;
     align-items: center;
 }
@@ -116,7 +121,7 @@ img {
 }
 
 #Platzhalter {
-    background-color: #ffffff;
+    background-color: #E5EFF5;
     display: table-cell;
 
     padding: 10px;

@@ -39,13 +39,13 @@ function handleDropEvent( event, ui ) {
     // attach the elements
     if (correct_p == true)
     {
-        $( "#Antwortbox" + answerDragged ).append( div.animate({backgroundColor: "#0f0"}, 2000) ).append( "<br />" );
+        $( "#Antwortbox" + answerDragged ).append( div.animate({backgroundColor: "#02D64A",color: "#005E9C"}, 2000) ).append( "<br />" );
         raisepoints();
     }
     else if (correct_p == false)
     {
         div.click(clear);
-        $( "#Antwortbox" + answerDragged ).append( div.animate({backgroundColor: "#f00"}, 2000) ).append( "<br />" );
+        $( "#Antwortbox" + answerDragged ).append( div.animate({backgroundColor: "#A91211",color: "white"}, 2000) ).append( "<br />" );
         raisefaults();
     }
     

@@ -86,7 +86,6 @@ function init() {
 
 $( init_two );  // function for Personal
 function init_two() {
-
     var id=0;
     var id_speicher = [];
     var testarray = ["Dozent", "Professor", "Lehrer", "Tutor", "Trainer", "Ober", "Hausmeister", "Sekretärin", "Prof", "HiWi", "Chauffeur", "Zimmermädchen"];
