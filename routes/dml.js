@@ -42,19 +42,14 @@ var gold = {
     },
     // start poem
     'adv1': {
-        'class': 'adjective',
-        'gender': 'neu',
-        'number': 'sin',
-        'case': 'nom'
+        'class': 'adverb'
     },
-    'verb1': {
-        'class': 'verb',
-        'form': 'pa2'
+    'adv2':{
+        'class': 'adverb'
     },
     // ende absatz 1
-    'adj1': {
-        'class': 'adjective',
-        'congruence': 'noun1'
+    'adj1':{
+        'class': 'adjective'
     },
     'noun1': {
         'class': 'noun',
@@ -62,6 +57,36 @@ var gold = {
         'number': 'sin',
         'case': 'nom'
     },
+    'pro1': {
+        'class': 'pronoun'
+    },
+    // ende absatz 2
+    'adj2':{
+        'class': 'adjective'
+    },
+    'adj3':{
+        'class': 'adjective'
+    },
+    'adj4':{
+        'class': 'adjective',
+        'gender': 'fem',
+        'number': 'sin',
+        'case': 'nom'
+    },
+    'adj5':{
+        'class': 'adjective'
+    },
+    // ende absatz 3
+    'adv3':{
+        'class': 'adverb'
+    },
+    'pro2': {
+        'class': 'pronoun'
+    },
+    'adv4':{
+        'class': 'adverb'
+    }
+    /*
     'noun2': {
         'class': 'noun',
         'case': 'nom'
@@ -78,7 +103,7 @@ var gold = {
         'tempus': 'prä',
         'number': 'sin'
     },
-    // ende absatz 2
+
     'noun4': {
         'class': 'noun',
         'case': 'nom',
@@ -209,7 +234,7 @@ var gold = {
         'gender': 'neu',
         'case': 'akk',
         'number': 'sin'
-    }
+    }*/
     // end
 };
 function validate(query, io) {

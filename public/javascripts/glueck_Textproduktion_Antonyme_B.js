@@ -6,7 +6,17 @@ $(document).ready(function() {
 
     var hidden = true;
     var input = $('input');
-    var socket = io.connect('/');
+    var socket = io({
+        transports: [
+            'websocket',
+            'flashsocket',
+            'htmlfile',
+            'xhr-polling',
+            'jsonp-polling',
+            'polling'
+        ]
+    }).connect('/');
+    //var socket = io.connect('/');
     input.toArray().map(function(e) {
         $(e).css({'width':((e.value.length + 1) * 10) + 'px'});
     });

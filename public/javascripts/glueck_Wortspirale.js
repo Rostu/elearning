@@ -106,7 +106,6 @@ function init() {
         if(which == 2){
             $('#info3').append("<p>Das Wort ist schonmal richtig, aber die Zeitform stimmt nicht!</p>");
         }
-
     }
 
     function removeNoticeIfPresent() {
@@ -127,7 +126,5 @@ function init() {
         });
 
         return ret;
-
     }
-
 }
