@@ -42,49 +42,61 @@ var gold = {
     },
     // start poem
     'adv1': {
-        'class': 'adverb'
+        'class': 'adverb',
+        'answers' : ['nirgendwo','nirgens']
     },
     'adv2':{
-        'class': 'adverb'
+        'class': 'adverb',
+        'answers' : ['weniges','Weniges']
     },
     // ende absatz 1
     'adj1':{
-        'class': 'adjective'
+        'class': 'adjective',
+        'answers' : ['heiß','brühheiß','glühheiß','glutheiß','kochend','sehr warm','siedend']
     },
     'noun1': {
         'class': 'noun',
         'gender': 'mas',
         'number': 'sin',
-        'case': 'nom'
+        'case': 'nom',
+        'answers' : ['Hagel']
     },
     'pro1': {
-        'class': 'pronoun'
+        'class': 'pronoun',
+        'answers' : ['kein']
     },
     // ende absatz 2
     'adj2':{
-        'class': 'adjective'
+        'class': 'adjective',
+        'answers' : ['laute','dröhnende','schallende','unüberhörbare','ohrenbetäubende','lautstarke']
     },
     'adj3':{
-        'class': 'adjective'
+        'class': 'adjective',
+        'answers' : ['schlechtes','fehlerhaftes','geringwertiges','minderwertiges','mangelhaftes','niveauloses','schwaches','ungenügendes','unzureichendes','unzulängliches','beschissenes','grottenschlechtes','grottiges','armseliges','dilettantisches','dürftiges','kümmerliches','lausiges','schäbiges','mieses','miserabeles']
     },
     'adj4':{
         'class': 'adjective',
         'gender': 'fem',
         'number': 'sin',
-        'case': 'nom'
+        'case': 'nom',
+        'answers' : ['triste','abwechslungslose', 'bedrückende', 'deprimierende', 'dunkle', 'einförmige', 'eintönige', 'ereignislose', 'freudlose', 'gleichförmige', 'graue', 'langweilige', 'monotone', 'öde', 'reizlose', 'traurige', 'trostlose', 'trübe', 'uninteressante','fade','tupide']
     },
     'adj5':{
-        'class': 'adjective'
+        'class': 'adjective',
+        'answers' : ['nerviger', 'anstrengender', 'beschwerlicher', 'lästiger', 'störender', 'strenger', 'unliebsamer', 'verdrießlicher']
     },
     // ende absatz 3
     'adv3':{
-        'class': 'adverb'
+        'class': 'adverb',
+        'answers' : ['niemals','auf keinen Fall', 'ausgeschlossen', 'beileibe nicht','bei Weitem nicht','bestimmt nicht', 'Gott behüte','Gott bewahre', 'keinesfalls', 'nie','nie und nimmer', 'um keinen Preis', 'unter keinen Umständen', 'zu keiner Zeit','im Leben nicht', 'mein Lebtag nicht', 'nie im Leben', 'zu keiner Sekunde', 'nimmer']
     },
     'pro2': {
-        'class': 'pronoun'
+        'class': 'pronoun',
+        'answers' : ['niemand','keiner', 'kein Einziger', 'keine einzige Person', 'keine Menschenseele', 'kein Mensch', 'nicht einer', 'nicht ein Einziger', 'kein Aas', 'kein Schwanz', 'kein Schwein', 'kein Teufel', 'kine Sau', 'keine lebendige Seele']
     },
     'adv4':{
-        'class': 'adverb'
+        'class': 'adverb',
+        'answers' : ['niemals','auf keinen Fall', 'ausgeschlossen', 'beileibe nicht','bei Weitem nicht','bestimmt nicht', 'Gott behüte','Gott bewahre', 'keinesfalls', 'nie','nie und nimmer', 'um keinen Preis', 'unter keinen Umständen', 'zu keiner Zeit','im Leben nicht', 'mein Lebtag nicht', 'nie im Leben', 'zu keiner Sekunde', 'nimmer']
     }
     /*
     'noun2': {
@@ -241,9 +253,14 @@ function validate(query, io) {
     var w = query.word;
     var fi = query.field;
     var iGold = gold[fi];
+    var loesung = iGold['answers'];
     f = fi;
     if (/clause\d+/.test(fi)) {
         io.emit("update",createResponse(200, {word:w,status:11}));
+        return;
+    }
+    if (loesung.indexOf(w)>-1){
+        io.emit("update",createResponse(200, {word:w,status:13}));
         return;
     }
     var status = wordinfo(w, function(data) {

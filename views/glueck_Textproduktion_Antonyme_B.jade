@@ -8,7 +8,6 @@ block content
         p Schreibe nun einige Strophen des Gedichts über Glück in ein Gedicht über Pech um!
         | Fülle dazu jede Lücke mit einem Wort, welches das Gegenteil zu dem Wort im Glück-Gedicht ausdrückt. (Bsp. heiß – kalt)
 
-
     #wrapper
         #Textbox
             div.poem
@@ -19,10 +18,12 @@ block content
                     br
                     b Pech &nbsp;
                     | wird
-                    input#adv1(value='nirgendwo')
+                    //input#adv1(value='nirgendwo')
+                    input#adv1
                     | beschert.
                     br
-                    input#adv2(value='Weniges')
+                    //input#adv2(value='Weniges')
+                    input#adv2
                     | kann als
                     b  Pech&nbsp;
                     | uns gelten,
@@ -32,17 +33,20 @@ block content
                     br
                     b Pech &nbsp;
                     | ist, Sonne wenn es
-                    input#adj1(value='heiß')
+                    //input#adj1(value='heiß')
+                    input#adj1
                     | ist,
                     br
                     b Pech&nbsp;
                     | ist
-                    input#noun1(value='Hagel')
+                    //input#noun1(value='Hagel')
+                    input#noun1
                     | nach dem Guss.
                     br
                     b Pech
                     | ist, wenn
-                    input#pro1(value='kein')
+                    //input#pro1(value='kein')
+                    input#pro1
                     | Kind ein Eis isst,
                     br
                     | weil es gerade lernen muss.
@@ -50,39 +54,46 @@ block content
                     br
                     b Pech &nbsp;
                     | ist eine
-                    input#adj2(value='laute')
+                    //input#adj2(value='laute')
+                    input#adj2
                     | Stunde,
                     br
                     b Pech &nbsp;
                     | ist auch ein
-                    input#adj3(value='schlechtes')
+                    //input#adj3(value='schlechtes')
+                    input#adj3
                     | Buch.
                     br
                     b Pech &nbsp;
                     | ist eine
-                    input#adj4(value='triste')
+                    //input#adj4(value='triste')
+                    input#adj4
                     | Runde,
                     br
                     b Pech &nbsp;
                     | ist ein
-                    input#adj5(value='nerviger')
+                    //input#adj5(value='nerviger')
+                    input#adj5
                     | Besuch.
                     br
                     br
                     | Aber
                     b Pech
                     | bleibt
-                    input#adv3(value='niemals')
+                    //input#adv3(value='niemals')
+                    input#adv3
                     | lange da,
                     br
-                    input#pro2(value='niemand')
+                    //input#pro2(value='niemand')
+                    input#pro2
                     | kennt nur
                     b Pech
                     | allein.
                     br
                     b Pech
                     | hat
-                    input#adv4(value='niemals')
+                    //input#adv4(value='niemals')
+                    input#adv4
                     | der, der sah,
                     br
                     | "Es braucht ein wenig zum glücklich sein."
@@ -266,3 +277,35 @@ block content
         #Antwortbox
             #message.invisible
                 | Fehleranalyse
+block overlay
+    #overlaycontentbox
+        h1 Pech
+        h2 Herkunft: mittelhochdeutsch bech, pech, althochdeutsch beh, peh < lateinisch pix (Genitiv: picis)
+        h2 unglückliche Fügung; Missgeschick, das jemandes Vorhaben, Pläne durchkreuzt
+        b Beispiel:
+        li Er hatte viel Pech in seinem Leben, seine Familie ist bei einem Autounfall gestorben.
+        li er hat viel Pech gehabt in den letzten Jahren (vieles ist nicht so gegangen, wie er es gewünscht hätte)
+
+        br
+        b Redewendungen:
+        li Zusammenhalten wie Pech und Schwefel
+        li Pech haben, „Pech im Spiel, Glück in der Liebe“
+        li das war wirklich Pech!
+        li Pech für dich (umgangssprachlich; nichts zu machen)
+        h1 Unglück
+        h2 Herkunft: mittelhochdeutsch ung(e)lück(e)
+        h2 (1)plötzlich hereinbrechendes Geschick, verhängnisvolles Ereignis, das einen oder viele Menschen trifft
+        b Beispiel:
+        li ein schweres Unglück ist geschehen/ hat sich ereignet
+        li die beiden Unglücke haben fünf Todesopfer gefordert
+        li lass nur, das ist kein Unglück (ist nicht so schlimm)!
+        li ein Unglück verursachen, gerade noch verhüten können
+        li bei dem Unglück gab es viele Verletzte
+        h2 (2)Zustand des Geschädigtseins durch ein schlimmes, unheilvolles Ereignis; Elend, Verderben
+        b Beispiel:
+        li der Krieg brachte Unglück über das Land
+        br
+        b Redewendungen:
+        li jemanden ins Unglück bringen/stoßen/stürzen (gehoben: jemanden in eine schlimme Lage bringen, ihm großen Schaden zufügen)
+        li in sein Unglück rennen (umgangssprachlich: sich in eine schlimme Lage bringen, ohne es selbst zu merken)
+        p (Quelle: Duden online)

@@ -27,6 +27,7 @@ input {
     font-size: 16px;
     margin: 0 5px;
     height: 20px;
+    width:90px;
     font-family: monospace;
 
 }
@@ -122,7 +123,7 @@ input {
 
 h2 {
     font-size: 15px;
-    color: #8f56ff;
+    color: #005E9C;
 }
 
 .lek {
@@ -135,16 +136,22 @@ h2 {
     margin-top: 20px;
     cursor: pointer;
 }
-
 .lek p {
     padding-left: 50px;
     font-family: Dosis, sans-serif;
     font-size: 25px;
     color: #6c00ff;
 }
-
 .lek .gr {
     padding-left: 35px;
     padding-top: 30px;
     color: black;
+}
+#testbutton{
+    min-width: 50px;
+    min-height: 50px;
+    background-color: #00A000;
+}
+#overlaycontentbox{
+    padding: 20px;
 }
