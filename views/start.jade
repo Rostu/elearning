@@ -2,7 +2,6 @@ extends layout
 
 block content
     link(rel='stylesheet', href='stylesheets/veggie.css')
-    //script( src='javascripts/scripts.js')
     #Textbox
         if (session.name)
             p
@@ -17,15 +16,15 @@ block content
             | Generationen, Zukunft und China.
             br
             | Die abwechslungsreichen Übungsaufgaben bieten dir die Möglichkeit dein B1-Niveau auszutesten und zu festigen.
+            br
             | Durch die unterschiedlichen Aufgabentypen kannst du dein Wissen auf vielfältige Art und Weise erweitern.
             p
             | Eine Übersicht über die Funktionen, die dir diese Lernplattform bietet, findest du unter dem Menüpunkt
-            img(id="front", vspace="0", hspace="5", src="images/hilfe_erklaerung.jpg")
+            img(id="hilfe", vspace="0", hspace="5", src="images/hilfe_erklaerung.jpg")
             | .
     p
     #Textbox
-        p
-        | Technischer Hinweis:
+        b Technischer Hinweis:
         br
         | Mit alten Browser-Versionen kann es zu Problemen bei der Darstellung kommen. Als sicherste Option empfehlen wir
         | dir Firefox in der neuesten Version.

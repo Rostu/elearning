@@ -27,6 +27,7 @@ input {
     font-size: 16px;
     margin: 0 5px;
     height: 20px;
+    width:90px;
     font-family: monospace;
 
 }
@@ -42,12 +43,12 @@ input {
 
 .message {
     border-radius: 10px;
-    background-color: rgba(143, 86, 255, 0.51);
+    background-color: #7AB3E3;
     color: black;
 
 }
 .dhead {
-    background-color: #8f56ff;
+    background-color: #0083cb;
     font-weight: bold;
     text-align: center;
     color: white;
@@ -63,11 +64,10 @@ input {
 .dbody {
     text-align: justify;
     padding: 0 10px 10px;
-
 }
 
 .dbody a {
-    color: #8f56ff;
+    color: #005E9C;
     font-weight: bold;
     text-decoration: none;
 }
@@ -81,7 +81,7 @@ input {
     width: 30%;
     margin-left: 15px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: lightgoldenrodyellow;
+    background-color: #E5EFF5;
     min-height: 500px;
     align-items: center;
 }
@@ -123,7 +123,7 @@ input {
 
 h2 {
     font-size: 15px;
-    color: #8f56ff;
+    color: #005E9C;
 }
 
 .lek {
@@ -136,16 +136,22 @@ h2 {
     margin-top: 20px;
     cursor: pointer;
 }
-
 .lek p {
     padding-left: 50px;
     font-family: Dosis, sans-serif;
     font-size: 25px;
     color: #6c00ff;
 }
-
 .lek .gr {
     padding-left: 35px;
     padding-top: 30px;
     color: black;
+}
+#testbutton{
+    min-width: 50px;
+    min-height: 50px;
+    background-color: #00A000;
+}
+#overlaycontentbox{
+    padding: 20px;
 }

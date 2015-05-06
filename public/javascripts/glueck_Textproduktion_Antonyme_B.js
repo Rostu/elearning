@@ -3,21 +3,36 @@
  */
 
 $(document).ready(function() {
-
+    $('#info1').show();
+    $('#info3').show();
+    $("#info1").append("<a id='infolink1' class='redlink' href='#'>Was ist Glück/Pech?</a>");
     var hidden = true;
     var input = $('input');
-    var socket = io.connect('/');
+    var socket = io({
+        transports: [
+            'websocket',
+            'flashsocket',
+            'htmlfile',
+            'xhr-polling',
+            'jsonp-polling',
+            'polling'
+        ]
+    }).connect('/');
+    //var socket = io.connect('/');
     input.toArray().map(function(e) {
-        $(e).css({'width':((e.value.length + 1) * 10) + 'px'});
+            //$(e).css({'width': ((e.value.length + 1) * 10) + 'px'});
     });
     input.on("keyup", function() {
-        $(this).css({'width':((this.value.length + 1) * 10) + 'px'});
+            $(this).css({'width': ((this.value.length + 1) * 10) + 'px'});
     });
     input.on("blur", function() {
         if ($(this).val()) {
             var val = $(this).val();
             socket.emit("userinput", {word:val,field:this.id});
         }
+    });
+    $('#infolink1').on('click',function(){
+        toggleStartOverlay();
     });
 
     var msg = ["","",
@@ -83,6 +98,9 @@ $(document).ready(function() {
                 markwrong(field);
                 makeNotice(msg[12],"irgendwas",field);
                 break;
+            case 13: // right
+                markright(field);
+                break;
             default: break;
         }
     });
@@ -90,6 +108,7 @@ $(document).ready(function() {
     function makeNotice (msg, target, field) {
         var sel = $('#m'+field.attr("id"));
         if (sel.length) sel.remove();
+
         $('#Antwortbox').append($("<div class='message' id='m"+ field.attr("id") +"'>"
                 + "<p class='dhead'><a href='http://www.duden.de/rechtschreibung/" + field.val() + "' target='_blank'>" + field.val() + "</a></p>"
                 +    "<p class='dbody'>"
@@ -107,6 +126,21 @@ $(document).ready(function() {
         }
         if (elem.hasClass("right")) elem.removeClass("right");
         elem.addClass("wrong");
+        raisefaults();
+    }
+    function markright (elem) {
+        if (elem.hasClass("wrong")) elem.removeClass("wrong");
+        var note = $('#m' + elem.attr("id"));
+        if (note.length) {
+            note.remove();
+        }
+        if (!$('#Antwortbox').children('.message').toArray().length) {
+            $('#message').hide("puff");
+        }
+        elem.addClass("right");
+        $(elem).attr('disabled', true);
+        raisepoints();
+        $("#info3").append("<li><a target='_blank' href='http://www.duden.de/suchen/dudenonline/"+elem[0].value+"'>"+elem[0].value+"</a></li>");
     }
 
     function unmark(elem) {
