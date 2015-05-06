@@ -93,3 +93,10 @@ function getEditDistance(a, b) {
 
     return matrix[b.length][a.length];
 };
+
+function removeNoticeIfPresent() {
+    var obj = $('#info3 p');
+    if (obj.length) {
+        obj.detach();
+    }
+}

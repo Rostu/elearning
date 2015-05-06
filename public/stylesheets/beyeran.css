@@ -73,7 +73,6 @@ img {
 .boxes.inline.ui-draggable.ui-draggable-handle{
     background-color: #005E9C;
     color: white;
-
 }
 #answers{
     height: 300px;
@@ -90,7 +89,7 @@ img {
     margin: 0 30px 0;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #7AB3E3;
+    background-color: rgba(0, 131, 198, 0.39);
     min-height: 500px;
     align-items: center;
 }
@@ -99,7 +98,7 @@ img {
   -webkit-box-shadow: 0 2px 5px darkgrey;
   -moz-box-shadow: 0 2px 5px darkgrey;
   box-shadow: 0 2px 5px darkgrey;
-  background-color: rgba(181, 237, 239, 0.29);
+  background-color: rgba(0, 131, 198, 0.39);
   display: table-cell;
   padding: 10px;
   width: 40%;
@@ -111,7 +110,7 @@ img {
     -webkit-box-shadow: 0 2px 5px darkgrey;
     -moz-box-shadow: 0 2px 5px darkgrey;
     box-shadow: 0 2px 5px darkgrey;
-    background-color: rgba(181, 237, 239, 0.29);
+    background-color: rgba(0, 131, 198, 0.39);
     display: block;
     padding: 10px;
     width: 350px;
