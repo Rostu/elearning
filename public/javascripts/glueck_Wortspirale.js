@@ -3,7 +3,7 @@ function init() {
 
     $('#info3').show();
 
-    var data = [["gestern",0],["Letztens",0],["Kürzlich",0],["Neulich",0],["Vorgestern",0],["Früher",0],["Einst",0],["Damals",0],["vorher",0],["Heute",1],["Momentan",1], ["Gerade",1],["Derzeit",1],["Nun",1],["Heutzutage",1],["aktuell",1],["Morgen",2],["Übermorgen",2],["Bald",2],["Demnächst",2],["Zukünftig",2],["Später",2] ];
+    var data = [["gestern",0],["letztens",0],["kürzlich",0],["neulich",0],["vorgestern",0],["früher",0],["einst",0],["damals",0],["vorher",0],["heute",1],["momentan",1], ["gerade",1],["derzeit",1],["nun",1],["heutzutage",1],["aktuell",1],["morgen",2],["übermorgen",2],["bald",2],["demnächst",2],["zukünftig",2],["später",2] ];
     var div_container =[];
     var id = 1;
     data.forEach(function (entry) {
@@ -82,6 +82,7 @@ function init() {
                     makeNotice(1,input);
                 }
 
+
             }
         }
     });
@@ -105,7 +106,6 @@ function init() {
         if(which == 2){
             $('#info3').append("<p>Das Wort ist schonmal richtig, aber die Zeitform stimmt nicht!</p>");
         }
-
     }
 
     function removeNoticeIfPresent() {
@@ -116,22 +116,15 @@ function init() {
     }
 
     function ckeckForSpelling(word) {
-        var counter = 0;
         var ret = false;
         data.forEach(function(elem) {
             var testword = elem[0];
-
-            for( i=0; i<testword.length; i++) {
-                if( word.charAt(i) == testword.charAt(i)) counter++;
-            }
-
-            if((counter/testword.length) >= 0.7){
-                //console.log(counter/testword.length);
+            if(getEditDistance(word,testword)<= 3){
+                //console.log(getEditDistance(word,testword) + " " +testword);
                 ret = true;
             }
-            counter = 0;
         });
-        return ret;
 
+        return ret;
     }
 }

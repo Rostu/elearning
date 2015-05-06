@@ -247,3 +247,22 @@ function clearpoints(){
     $(document).trigger('PointsChanged');
 };
 //end functions for the point visualization--------------------------------
+function toggleStartOverlay(){
+    var startoverlaybackground = document.getElementById('startoverlaybackground');
+    var startoverlaybluebar = document.getElementById('startoverlaybluebar');
+    var startoverlaywatermark = document.getElementById('startoverlaywatermark');
+    var startoverlay = document.getElementById('startoverlay');
+    startoverlaybackground.style.opacity = .75;
+    //startoverlaybluebar.style.opacity = .9;
+    if ($(startoverlaybackground).css('display') == "none") {
+        $(startoverlaybackground).css('display', 'inherit');
+        $(startoverlaybluebar).css('display', 'inherit');
+        $(startoverlay).css('display', 'inherit');
+        $(startoverlaywatermark).css('display', 'inherit');
+    } else {
+        $(startoverlaybackground).css('display', 'none');
+        $(startoverlaybluebar).css('display', 'none');
+        $(startoverlay).css('display', 'none');
+        $(startoverlaywatermark).css('display', 'none');
+    }
+}
