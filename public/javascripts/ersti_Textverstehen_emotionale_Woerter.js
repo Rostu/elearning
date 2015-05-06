@@ -35,20 +35,19 @@ function init() {
             id: ui.draggable.attr('id'),
             html: "<p>"+$(".inline.ui-draggable[id=" + ui.draggable.attr('id') + "]").data("text")+"</p><div id='"+ui.draggable.attr('id') +"' class='hide'>"
         });
-        div.click(enlarge);
         if($.inArray(textinhalt, testarray)> -1){
             raisepoints();
             $(div).data('korrekt',true);
-            $(div).css('background','rgba(2, 255, 85, 0.16)');
+            $(div).css('background','#02D64A');
             r_length++;
             $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','green');
         }else {
             raisefaults();
             $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
-            $(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++}
+            $(div).data('korrekt',false);$(div).css('background','#A91211');$(div).css('color','white');w_length++}
         $("#Antwortbox").bind("contextmenu",function(e){return false;});
         $("#Antwortbox").append(div);
-        div.mousedown(clear);
+        div.click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
     };
 
@@ -62,19 +61,12 @@ function init() {
             text: textinhalt
         });
     };
-    function clear(ev) {
-        if (ev.which == 3) {
+    function clear()
+        {
             $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
-            if($(this).data('korrekt')==true){
-                r_length--;
-            }else{w_length--;}
             $(".token[id=" + this.id + "]").remove();
         }
-    }
 
-    function enlarge() {
-        $(".hide[id=" +$(this).attr('id')+"]").toggle();
-    };
 };
 
 
@@ -113,16 +105,16 @@ function init_two() {
         if($.inArray(textinhalt, testarray_two)> -1){
             $(div).data('korrekt',true);
             raisepoints();
-            $(div).css('background','rgba(2, 255, 85, 0.16)');
+            $(div).css('background','#02D64A');
             r_length++;
             $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','green');
         }else {
             raisefaults();
             $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
-            $(div).data('korrekt',false);$(div).css('background','rgba(240, 128, 128, 0.44)');$(div).css('color','black');w_length++}
+            $(div).data('korrekt',false);$(div).css('background','#A91211');$(div).css('color','white');w_length++}
         $("#Antwortbox_two").bind("contextmenu",function(e){return false;});
         $("#Antwortbox_two").append(div);
-        div.mousedown(clear);
+        div.click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
     };
 
@@ -136,19 +128,11 @@ function init_two() {
             text: textinhalt
         });
     };
-    function clear(ev) {
-        if (ev.which == 3) {
-            $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
-            if($(this).data('korrekt')==true){
-                r_length--;
-            }else{w_length--;}
-            $(".token[id=" + this.id + "]").remove();
-        }
-    }
-
-    function enlarge() {
-        $(".hide[id=" +$(this).attr('id')+"]").toggle();
-    };
+    function clear()
+            {
+                $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
+                $(".token[id=" + this.id + "]").remove();
+            }
 };
 
 /** $(document).on("ready",function(){      // function that checks if you have enough correct words. Lets you pass to the next Page if you do.
