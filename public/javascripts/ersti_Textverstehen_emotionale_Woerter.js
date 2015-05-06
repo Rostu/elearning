@@ -44,10 +44,10 @@ function init() {
         }else {
             raisefaults();
             $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
-            $(div).data('korrekt',false);$(div).css('background','#A91211');$(div).css('color','white');w_length++}
+            $(div).data('korrekt',false);$(div).css('background','#A91211');$(div).css('color','white');w_length++
+            div.click(clear);}
         $("#Antwortbox").bind("contextmenu",function(e){return false;});
         $("#Antwortbox").append(div);
-        div.click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
     };
 
@@ -111,10 +111,11 @@ function init_two() {
         }else {
             raisefaults();
             $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');
-            $(div).data('korrekt',false);$(div).css('background','#A91211');$(div).css('color','white');w_length++}
+            $(div).data('korrekt',false);$(div).css('background','#A91211');$(div).css('color','white');w_length++
+            div.click(clear);}
         $("#Antwortbox_two").bind("contextmenu",function(e){return false;});
         $("#Antwortbox_two").append(div);
-        div.click(clear);
+
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
     };
 

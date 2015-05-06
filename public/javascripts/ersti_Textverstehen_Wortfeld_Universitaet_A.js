@@ -20,16 +20,13 @@
         function validate(self) {
             var t = $(self).val();
             var i = a.indexOf(t);
-            console.log(t);
-            console.log(a[i]);
-            console.log(i);
             if (t.length == 0) return;
             if (a.indexOf(t) > -1 && t != "") {
                 $(self).addClass("passive");
                 $(self).animate({
-                    borderBottomColor: "#7cfc00",
+                    borderBottomColor: "#02D64A",
                     borderTopColor: "#7cfc00",
-                    backgroundColor: "#fff"
+                    backgroundColor: "#02D64A"
                 }, "slow");
                 $(self).prop('disabled', true);
                 $(".inline[id=" + a[i] + "]").css('color', 'green');
@@ -40,11 +37,23 @@
             } else {
                 if (checkForSpelling(t)) {
                     removeNoticeIfPresent();
-                    $("#info3").append("<p>ladidadida</p>");
-                    console.log("wort halbrichtig")
+                    $("#info3").append("<p>Überprüfe noch einmal deine Rechtschreibung</p>");
+                    $(self).effect("pulsate", "fast");
+                    raisefaults();
+                    $(self).animate({
+                        borderBottomColor: "#ff0000",
+                        borderTopColor: "#ff0000",
+                        backgroundColor: "#ff8484"
+                    }, 2000, "swing", function () {
+                        $(this).css({
+                            "border-top": "1px solid #c0c0c0",
+                            "border-bottom": "1px solid #c0c0c0", "background-color": "#fff"
+                        });
+                    });
                 } else {
                     // if we reach this point, the word didn't match any word
                     removeNoticeIfPresent();
+                    $("#info3").append("<p>Diese Antwort gehört nicht zum Wortfeld Universität</p>")
                     $(self).effect("pulsate", "fast");
                     raisefaults();
                     $(self).animate({
