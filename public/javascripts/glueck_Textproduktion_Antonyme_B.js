@@ -4,6 +4,7 @@
 
 $(document).ready(function() {
     $('#info1').show();
+    $('#info3').show();
     $("#info1").append("<a id='infolink1' class='redlink' href='#'>Was ist Glück/Pech?</a>");
     var hidden = true;
     var input = $('input');
@@ -139,6 +140,7 @@ $(document).ready(function() {
         elem.addClass("right");
         $(elem).attr('disabled', true);
         raisepoints();
+        $("#info3").append("<li><a target='_blank' href='http://www.duden.de/suchen/dudenonline/"+elem[0].value+"'>"+elem[0].value+"</a></li>");
     }
 
     function unmark(elem) {

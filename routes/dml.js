@@ -262,7 +262,7 @@ function validate(query, io) {
     if (loesung.indexOf(w)>-1){
         io.emit("update",createResponse(200, {word:w,status:13}));
         return;
-    }
+    }else{
     var status = wordinfo(w, function(data) {
         if (data !== null) {
             var morphologyArray = data.morphology;
@@ -326,6 +326,7 @@ function validate(query, io) {
             io.emit("update",createResponse(200, {word:w,status:7,gold:gold[f].class}));
         }
     });
+    }
 };
 
 function looksLike (template, word) {

@@ -192,7 +192,14 @@ body {
 .redcontainer p{
     color: white;
     margin: 10px;
-
+}
+.redcontainer a{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 27px;
+    font-weight: bold;
+    color: white;
+    padding-left: 10px;
 }
 
 .redstripe {
