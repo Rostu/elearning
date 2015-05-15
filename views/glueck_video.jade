@@ -1,0 +1,14 @@
+extends layout
+block content
+    link(type="text/css" rel="stylesheet" href="https://vjs.zencdn.net/4.12/video-js.css")
+    link(rel='stylesheet', href='stylesheets/glueck_video.css')
+    script(src="https://vjs.zencdn.net/4.12/video.js")
+    script(src="javascripts/vjs.youtube.js")
+    script(src='javascripts/glueck_video.js')
+
+    #Aufgabenbox
+        p Schaue dir das Video an.
+
+    #wrapper
+        #Videobox
+            video(id="vid1" class="video-js vjs-default-skin" controls="true" preload="auto" width="640" height="360" data-setup='{"techOrder": ["youtube"], "src": "http://www.youtube.com/watch?v=cUYRa3LeqlY"}')
