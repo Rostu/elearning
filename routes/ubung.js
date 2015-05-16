@@ -71,6 +71,10 @@ exports.get_glueck_Zeitstrahl = function(req, res){
     res.render('glueck_Zeitstrahl.jade');
 };
 
+exports.get_glueck_video = function(req, res){
+    res.render('glueck_video.jade');
+};
+
 exports.get_glueck_Textverstehen_Redensarten = function(req, res){
     res.render('glueck_Textverstehen_Redensarten');
 };

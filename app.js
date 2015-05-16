@@ -83,6 +83,7 @@ app.get('/glueck_Kreuzwortraetsel', ubung.get_glueck_Kreuzwortraetsel);
 app.get('/glueck_Textverstehen_Zeitangaben', ubung.get_glueck_Textverstehen_Zeitangaben);
 app.get('/glueck_Textverstehen_Redensarten', ubung.get_glueck_Textverstehen_Redensarten);
 app.get('/glueck_Zeitstrahl', ubung.get_glueck_Zeitstrahl);
+app.get('/glueck_video', ubung.get_glueck_video);
 app.get('/handy_start', ubung.get_handy_start);
 app.get('/handy_text', ubung.get_handy_text);
 app.get('/handy_task1', ubung.get_handy_task1);

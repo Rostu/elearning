@@ -270,7 +270,6 @@ function validate(query, io) {
             var goldclass = iGold.class;
             var goldcases, goldgenders, goldnumber,
                 goldtempus, goldperson, goldform;
-
             // get silver information
             var silvercases, silvergenders, silvernumbers,
                 silvertempora, silverpersons, silverform;
