@@ -1,7 +1,7 @@
 /**
  * Module dependencies.
  */
-var io = require('socket.io');
+
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
@@ -136,12 +136,21 @@ app.get('/dml', function(req, res) {
 });
 
 
-var server = http.createServer(app).listen(app.get('port'), function(){
-    console.log('Express server listening on port ' + app.get('port'));
-});
+var server = http.createServer(app);
+var io = require('socket.io');
+
+
 var sio = io.listen(server);
+if ('production' == app.get('env')) {
+    sio.set({path: '/lernplattform-daf-cl/socket.io/'});
+}
+console.log(app.get('env'));
 sio.sockets.on('connection', function (socket) {
     socket.on('userinput', function(data) {
         dml.validate(data, socket);
     });
+});
+
+server.listen(app.get('port'), function(){
+    console.log('Express server listening on port ' + app.get('port'));
 });
