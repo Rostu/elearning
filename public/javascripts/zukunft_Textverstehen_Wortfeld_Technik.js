@@ -53,10 +53,17 @@ function init() {
             $(div).data('korrekt',true);
             $(div).css('background','#02D64A').css("color","#005E9C");
             raisepoints();
-        }else {$(div).data('korrekt',false);$(div).css('background','#A91211');$(div).css('color','#ECECEC');raisefaults();}
+        }else {
+            $(div).data('korrekt',false);
+            $(div).css('background','#A91211');
+            $(div).css('color','#ECECEC');
+            raisefaults();
+            div.mousedown(clear);
+
+        }
         $("#Antwortbox").bind("contextmenu",function(e){return false;});
         $("#Antwortbox").append(div);
-        div.mousedown(clear);
+
         //$(":button[id="+ui.draggable.attr('id') +"]").click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
         $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','red');

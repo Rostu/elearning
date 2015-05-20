@@ -77,12 +77,14 @@ function init() {
 
 
     function clear(ev) {
-        if (ev.which == 3) {
-            $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
-            if($(this).data('korrekt')==true){
-                r_length--;
-            }else{w_length--;}
-            $(".token[id=" + this.id + "]").remove();
+        if($(this).data('korrekt')==false){
+            if (ev.which == 3) {
+                $(".inline.ui-draggable[id=" + this.id + "]").draggable("enable").css('color', 'black');
+                if($(this).data('korrekt')==true){
+                    r_length--;
+                }else{w_length--;}
+                $(".token[id=" + this.id + "]").remove();
+            }
         }
     }
 

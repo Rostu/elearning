@@ -135,10 +135,8 @@ app.get('/dml', function(req, res) {
     dml.validate(query, res);
 });
 
-
 var server = http.createServer(app);
 var io = require('socket.io');
-
 
 var sio = io.listen(server);
 if ('production' == app.get('env')) {

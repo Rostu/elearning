@@ -52,7 +52,6 @@
     box-shadow: 0px 2px 5px darkgrey;
     background: rgba(239, 239, 239, 0.59);
     color: green;
-    font: bold;
     padding: 5px;
     display: inline-flex;
     flex-direction: column;
@@ -95,4 +94,43 @@
     top: 10%;
     left: 34%;
     opacity: 0;
+}
+#frage{
+    float:left;
+    border-radius: 8px;
+    //background-color: rgba(0, 156, 255, 0.39);
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    padding:5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin:5px;
+    margin-right: 50%;
+    background-image: linear-gradient(to bottom, rgb(206, 243, 255) 0%, rgb(195, 232, 244) 15%, rgba(0, 156, 255, 0.42) 100%);
+    color:#005E9C;
+}
+
+
+#antwort{
+    float:right;
+    border-radius: 8px;
+    //background-color: rgba(0, 204, 62, 0.56);
+    background-image: linear-gradient(to bottom, rgba(0, 252, 71, 0.19) 0%, rgba(0, 204, 62, 0.30) 15%, rgba(0, 204, 62, 0.65) 100%);
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    width: 60%;
+    padding:5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin:5px;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+#diclaimer{
+    float:right;
+    width: 40%;
+    margin-left: 50%;
+
 }
