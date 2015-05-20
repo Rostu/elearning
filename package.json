@@ -14,7 +14,9 @@
     "lockit": "^1.0.0",
     "mongoose": "3.8.8",
     "socket.io": "^1.3.5",
-    "socket.io-client": "*"
+    "socket.io-client": "*",
+    "video.js": "^4.12.6",
+    "videojs-youtube": "^1.2.10"
   },
   "description": "Studienprojekt im Rahmen der Veranstaltung E-Learning",
   "main": "app.js",

@@ -1,7 +1,7 @@
 /**
  * Module dependencies.
  */
-var io = require('socket.io');
+
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
@@ -83,6 +83,7 @@ app.get('/glueck_Kreuzwortraetsel', ubung.get_glueck_Kreuzwortraetsel);
 app.get('/glueck_Textverstehen_Zeitangaben', ubung.get_glueck_Textverstehen_Zeitangaben);
 app.get('/glueck_Textverstehen_Redensarten', ubung.get_glueck_Textverstehen_Redensarten);
 app.get('/glueck_Zeitstrahl', ubung.get_glueck_Zeitstrahl);
+app.get('/glueck_video', ubung.get_glueck_video);
 app.get('/handy_start', ubung.get_handy_start);
 app.get('/handy_text', ubung.get_handy_text);
 app.get('/handy_task1', ubung.get_handy_task1);
@@ -134,13 +135,20 @@ app.get('/dml', function(req, res) {
     dml.validate(query, res);
 });
 
+var server = http.createServer(app);
+var io = require('socket.io');
 
-var server = http.createServer(app).listen(app.get('port'), function(){
-    console.log('Express server listening on port ' + app.get('port'));
-});
 var sio = io.listen(server);
+if ('production' == app.get('env')) {
+    sio.set({path: '/lernplattform-daf-cl/socket.io/'});
+}
+console.log(app.get('env'));
 sio.sockets.on('connection', function (socket) {
     socket.on('userinput', function(data) {
         dml.validate(data, socket);
     });
+});
+
+server.listen(app.get('port'), function(){
+    console.log('Express server listening on port ' + app.get('port'));
 });
