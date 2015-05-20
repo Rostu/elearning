@@ -155,3 +155,31 @@ h2 {
 #overlaycontentbox{
     padding: 20px;
 }
+.poemglueck{
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: large;
+    color: #618d4f;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-shadow: 0px 2px 7px #898d8b;
+    -moz-box-shadow: 0px 2px 7px #898d8b;
+    box-shadow: 0px 2px 7px #898d8b;
+    text-align: center;
+    width: 350px;
+    background: url("../images/klee-back.jpg") repeat;
+}
+#Textbox{
+    /*background: url("../images/glueck-back2.jpg") repeat;*/
+}
+.titleA{
+    background: url("../images/gluck.jpg") no-repeat;
+    height:90px;
+    width: 250px;
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+}

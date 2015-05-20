@@ -251,6 +251,8 @@ var gold = {
 };
 function validate(query, io) {
     var w = query.word;
+    console.log(query.word);
+    console.log(query.field);
     var fi = query.field;
     var iGold = gold[fi];
     var loesung = iGold['answers'];
@@ -270,7 +272,6 @@ function validate(query, io) {
             var goldclass = iGold.class;
             var goldcases, goldgenders, goldnumber,
                 goldtempus, goldperson, goldform;
-
             // get silver information
             var silvercases, silvergenders, silvernumbers,
                 silvertempora, silverpersons, silverform;

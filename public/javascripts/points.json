@@ -9,6 +9,9 @@
         "name":"glueck_Textproduktion_Antonyme_B", "maxpoints":12, "maxfaults":12
     },
     {
+        "name":"glueck_video", "maxpoints":0, "maxfaults":0
+    },
+    {
         "name":"glueck_Textverstehen_Zeitangaben", "maxpoints":7, "maxfaults":7
     },
     {
