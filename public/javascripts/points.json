@@ -27,6 +27,12 @@
         "name":"glueck_Zeitstrahl", "maxpoints":5, "maxfaults":10
     },
     {
+        "name":"glueck_video", "maxpoints":5, "maxfaults":10
+    },
+    {
+        "name":"glueck_video_zuordnen", "maxpoints":21, "maxfaults":10
+    },
+    {
         "name":"handy_start", "maxpoints":0, "maxfaults":0
     },
     {
