@@ -1,7 +1,7 @@
 $( init );
 function init() {
     $('#info3').show();
-
+    var actualColor = "#00aa00";
 
     //since svg Dom is a bit trixky to handle with jquery we have to pre select some element with plain javaScript
     window.onload=function() {
@@ -21,10 +21,16 @@ function init() {
     };
 
     function leafClick(){
-        this.setAttribute("fill", "green");
+        this.setAttribute("fill", actualColor);
     }
 
+    $(".color").on("click", colorPick);
 
+    function colorPick(){
+        $(".selected").removeClass( "selected" );
+        $(this).addClass("selected");
+        actualColor = $(this).attr("colorCode")
+    }
 
 
 }

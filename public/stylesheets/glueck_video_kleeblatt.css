@@ -1,6 +1,30 @@
 path.form:hover{
     background-color: green;
 }
-#klee{
 
+
+#colorSwitcher{
+    height: 100px;
+    width: 120px;
+}
+.color{
+    display: inline-block;
+    height: 30px;
+    width: 50px;
+    margin: 2px;
+}
+#green1{
+    background-color: #00aa00;
+}
+#green2{
+    background-color: rgb(178, 231, 149);
+}
+#green3{
+    background-color: #b3b700;
+}
+#green4{
+    background-color: #5bc669;
+}
+.selected{
+    border: solid 2px red;
 }
