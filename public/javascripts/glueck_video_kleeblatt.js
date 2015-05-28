@@ -1,7 +1,7 @@
 $( init );
 function init() {
     $('#info3').show();
-    var actualColor = "#00aa00";
+    var actualColor = "#629833";
 
     //since svg Dom is a bit trixky to handle with jquery we have to pre select some element with plain javaScript
     window.onload=function() {

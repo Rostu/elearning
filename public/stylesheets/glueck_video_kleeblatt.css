@@ -14,16 +14,16 @@ path.form:hover{
     margin: 2px;
 }
 #green1{
-    background-color: #00aa00;
+    background-color: #629833;
 }
 #green2{
-    background-color: rgb(178, 231, 149);
+    background-color: #BCE498;
 }
 #green3{
-    background-color: #b3b700;
+    background-color: #8CBE5F;
 }
 #green4{
-    background-color: #5bc669;
+    background-color: #407213;
 }
 .selected{
     border: solid 2px red;
