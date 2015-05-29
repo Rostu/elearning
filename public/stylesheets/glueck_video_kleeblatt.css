@@ -5,13 +5,25 @@ path.form:hover{
 
 #colorSwitcher{
     height: 100px;
-    width: 120px;
+    width: 160px;
 }
 .color{
+    text-align: center;
     display: inline-block;
     height: 30px;
-    width: 50px;
+    width: 70px;
     margin: 2px;
+    padding-top:10px;
+    font-weight: bold;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+
+    /*
+      Introduced in IE 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
 }
 #green1{
     background-color: #629833;
