@@ -1,0 +1,49 @@
+extends layout
+block content
+    link(rel='stylesheet', href='stylesheets/glueck_video_kleeblatt.css')
+    script(src='javascripts/glueck_video_kleeblatt.js')
+    #Aufgabenbox
+        p Im Kleeblatt befinden sich Wörter, die zu vier verschiedenen Wortarten gehören
+        | Färbe das Kleeblatt mit den unten angezeigten Farben ein.
+    #wrapper
+        #svgbox
+            object(id="klee-svg", data="images/klee3.svg", type="image/svg+xml", width="700" height="700") Sie benötigen einen SVG-Viewer
+            #colorSwitcher
+                #green1.color.selected(colorCode="#629833") Substantiv
+                #green2.color(colorCode="#BCE498") Adjektiv
+                #green3.color(colorCode="#8CBE5F") Adverb
+                #green4.color(colorCode="#407213") Verb
+
+block overlay
+    #overlaycontentbox
+        h1 Hinweise/Tipps: hier kannst du die Wörter in einen Satz finden.
+        h2 Was ist für dich Glück?
+        p Was macht mich glücklich?
+        p Ich glaube Glück kann man kaum beschreiben.
+        p Glück ist die Balance zwischen Kopf und Bauch.
+        p Das kommt von ganz unten rauf und dann ist das so ein Jubeln.
+        p Glück ist wenn man frei ist.
+        p Wenn die Sonne scheint.
+        p Wenn man die Augen aufmacht.
+        p Dass man immer das Lachen nicht verliert.
+        p Spaß am Leben.
+        p Zufriedenheit.
+        p Frieden auf der Welt.
+        p Wenn man sich wünscht, den Moment festhalten zu können.
+        p Tatsächlich morgens nach dem Aufwachen - neben Ihm.
+        p Glück hängt ganz bestimmt nicht von Geld ab.
+        p 'ne ordentliche Arbeitsstelle.
+        p Wenn man seine Rechnungen bezahlen kann.
+        p Erst mal würde ich mich freuen, wenn ich wirklich mal 'nen festen Job bekommen würde.
+        p Zu wissen, dass ich gebraucht werde.
+        p Als Mensch auftauchen und menschlich sein.
+        p Mut zum Weiterleben.
+        p Wenn meine Kinder mich anlachen und mir sagen, dass sie mich lieben.
+        p Man kann ja nur glücklich sein, wenn man mal unglücklich gewesen ist.
+        p Wenn ich mit meiner Familie zusammen sein kann.
+        p 'Nen besten Freund zu haben. 'Ne schöne Hochzeit.
+        p Dass ich noch lebe.
+        p Dass ich meinen Führerschein erhalten habe.
+        p Glück ist da für alle.
+        p Man hat nur dieses ein Leben und da muss man das Beste daraus machen.
+        p Glück ist Leben.

@@ -220,6 +220,11 @@ $(document).ready(function() {
     }
 });
 
+function setpoints(count){
+    $("#point_bars").data("actualp", count);
+    $(document).trigger('PointsChanged');
+}
+
 function raisefaults(){
     var temp = $("#point_bars").data("actualf") + 1;
     $("#point_bars").data("actualf", temp);
