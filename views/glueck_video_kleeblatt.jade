@@ -6,12 +6,13 @@ block content
         p Im Kleeblatt befinden sich Wörter, die zu vier verschiedenen Wortarten gehören
         | Färbe das Kleeblatt mit den unten angezeigten Farben ein.
     #wrapper
-        object(id="klee-svg", data="images/klee3.svg", type="image/svg+xml", width="700" height="700") Sie benötigen einen SVG-Viewer
-        #colorSwitcher
-            #green1.color.selected(colorCode="#629833") Substantiv
-            #green2.color(colorCode="#BCE498") Adjektiv
-            #green3.color(colorCode="#8CBE5F") Adverb
-            #green4.color(colorCode="#407213") Verb
+        #svgbox
+            object(id="klee-svg", data="images/klee3.svg", type="image/svg+xml", width="700" height="700") Sie benötigen einen SVG-Viewer
+            #colorSwitcher
+                #green1.color.selected(colorCode="#629833") Substantiv
+                #green2.color(colorCode="#BCE498") Adjektiv
+                #green3.color(colorCode="#8CBE5F") Adverb
+                #green4.color(colorCode="#407213") Verb
 
 block overlay
     #overlaycontentbox

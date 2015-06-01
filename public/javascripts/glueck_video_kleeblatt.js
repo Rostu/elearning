@@ -27,7 +27,7 @@ function init() {
         ["beste",2,"'Nen besten Freund zu haben." ],
         ["hier",3,"Glück ist hier zu leben" ],
         ["gebraucht",2,"Zu wissen, dass ich gebraucht werde." ],
-        ["leben",3,"Glück ist hier zu leben"  ],
+        ["leben",4,"Glück ist hier zu leben"  ],
         ["da",3,"Man hat nur dieses ein Leben und da muss man das Beste daraus machen." ],
         ["Jubeln",1,"Das kommt von ganz unten rauf und dann ist das so ein Jubeln." ],
         ["menschlich",2,"Als Mensch auftauchen und menschlich sein." ],
