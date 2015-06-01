@@ -132,7 +132,7 @@ function init() {
                         allItems[i].setAttribute("correct", "false");
                         allItems[i].setAttribute("colored", "false");
                         removeNoticeIfPresent();
-                        $('#info3').append("<p>Da waren noch nicht alles richtig, Probier es nochmal.</p>");
+                        $('#info3').append("<p>Da war noch nicht alles richtig, Probier es nochmal.</p>");
                     }
                 }
                 setpoints(countCorrect);

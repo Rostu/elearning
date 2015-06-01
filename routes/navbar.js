@@ -1,5 +1,5 @@
 var sites = [
-    ['glueck_start','glueck_Textproduktion_Antonyme_A','glueck_Textproduktion_Antonyme_B','glueck_Textverstehen_Zeitangaben','glueck_Zeitstrahl','glueck_Textverstehen_Wortspirale','glueck_Textverstehen_Redensarten','glueck_Kreuzwortraetsel','glueck_Memory','glueck_video','glueck_video_zuordnen'],
+    ['glueck_start','glueck_Textproduktion_Antonyme_A','glueck_Textproduktion_Antonyme_B','glueck_Textverstehen_Zeitangaben','glueck_Zeitstrahl','glueck_Textverstehen_Wortspirale','glueck_Textverstehen_Redensarten','glueck_Kreuzwortraetsel','glueck_Memory','glueck_video','glueck_video_zuordnen','glueck_video_kleeblatt'],
     ['handy_start','handy_task1','handy_task2'],
     ['ersti_start','ersti_Textverstehen_emotionale_Woerter','ersti_Textverstehen_Wortfeld_Universitaet_A','ersti_Textverstehen_Wortfeld_Universitaet_B','ersti_Textverstehen_Wortfeld_Universitaet_C','ersti_Wortschatz_ordnen_A','ersti_Wortschatz_ordnen_B','ersti_Wortschatz_ordnen_C','ersti_Wortschatz_erweitern'],
     ['veggieday_start','veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen','veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1','veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_2'],
@@ -8,7 +8,6 @@ var sites = [
     ['zukunft_start','zukunft_Textverstehen_Wortfeld_Technik','zukunft_Wortschatz_ordnen','zukunft_Wortschatzerweiterung_fest_Wortverbindungen','zukunft_Textproduktion','zukunft_Kreuzwortraetsel'],
     ['china_start', 'china_Textverstehen_Wortfeld_Studium','china_Wortschatz_ordnen','china_Textverstehen_Redewiedergabe']
 ];
-
 
 exports.getnext = function(last){
     for (i=0;i<sites.length;i++){
