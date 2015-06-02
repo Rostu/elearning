@@ -31,16 +31,16 @@ path.form:hover{
     user-select: none;
 }
 #green1{
-    background-color: #629833;
+    background-color: #668ED8;
 }
 #green2{
     background-color: #BCE498;
 }
 #green3{
-    background-color: #8CBE5F;
+    background-color: #FFFFAA;
 }
 #green4{
-    background-color: #407213;
+    background-color: #B176A9;
 }
 .selected{
     border: solid 2px red;
