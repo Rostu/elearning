@@ -80,7 +80,7 @@ exports.get_glueck_video_zuordnen = function(req, res){
 
 exports.get_glueck_video_kleeblatt = function(req, res){
     res.render('glueck_video_kleeblatt.jade');
-}
+};
 exports.get_glueck_Textverstehen_Redensarten = function(req, res){
     res.render('glueck_Textverstehen_Redensarten');
 };
@@ -177,10 +177,10 @@ exports.get_anleitung = function(req, res){
 exports.get_generationen_Wortschatz_ordnen = function(req, res){
     res.render('generationen_Wortschatz_ordnen');
 };
-
 exports.get_generationen_Textverstehen_Bedeutungserschliessung = function(req, res){
     res.render('generationen_Textverstehen_Bedeutungserschliessung');
 };
+
 exports.get_zukunft_start = function(req, res){
     res.render('zukunft_start',{last:'zukunft_start'});
 };
@@ -198,6 +198,10 @@ exports.get_zukunft_Textproduktion = function(req, res){
 };
 exports.get_zukunft_Kreuzwortraetsel = function(req, res){
     res.render('zukunft_Kreuzwortraetsel');
+};
+
+exports.vulkane_start = function(req, res) {
+    res.render('Vulkane_start');
 };
 
 exports.get_next = function(req, res){
