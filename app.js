@@ -128,6 +128,8 @@ app.get('/zukunft_Wortschatz_ordnen', ubung.get_zukunft_Wortschatz_ordnen);
 app.get('/zukunft_Wortschatzerweiterung_fest_Wortverbindungen', ubung.get_zukunft_Wortschatzerweiterung_fest_Wortverbindungen);
 app.get('/zukunft_Textproduktion', ubung.get_zukunft_Textproduktion);
 app.get('/zukunft_Kreuzwortraetsel', ubung.get_zukunft_Kreuzwortraetsel);
+app.get('/vulkane_start', ubung.get_vulkane_start);
+app.get('/vulkane_brief_vervollstaendigen', ubung.get_vulkane_brief_vervollstaendigen);
 app.get('/next:last?', ubung.get_next);
 app.get('/last:last?', ubung.get_last);
 app.get('/uindex', ubung.get_uindex);

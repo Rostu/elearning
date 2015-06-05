@@ -200,8 +200,11 @@ exports.get_zukunft_Kreuzwortraetsel = function(req, res){
     res.render('zukunft_Kreuzwortraetsel');
 };
 
-exports.vulkane_start = function(req, res) {
-    res.render('Vulkane_start');
+exports.get_vulkane_start = function(req, res) {
+    res.render('vulkane_start');
+};
+exports.get_vulkane_brief_vervollstaendigen = function(req, res){
+    res.render('vulkane_brief_vervollstaendigen');
 };
 
 exports.get_next = function(req, res){
