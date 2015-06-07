@@ -1,0 +1,25 @@
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+#flexybox {
+    margin: 0 10px 0 0;
+
+    display: flex; /* or inline-flex */
+
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+#text {
+    width: 40%;
+
+    margin: 10px 0 0 10px;
+    padding: 10px;
+
+    flex: 1 1 auto;
+    align-self: auto;
+    /*order: <integer>*/
+
+    background-color: aliceblue;
+}
