@@ -26,7 +26,7 @@ function init() {
         ["auftauchen",4,"Als Mensch auftauchen und menschlich sein." ],
         ["beste",2,"'Nen besten Freund zu haben." ],
         ["hier",3,"Glück ist hier zu leben" ],
-        ["gebraucht",2,"Zu wissen, dass ich gebraucht werde." ],
+        ["brauchen",4,"Zu wissen, dass ich gebraucht werde." ],
         ["leben",4,"Glück ist hier zu leben"  ],
         ["da",3,"Man hat nur dieses ein Leben und da muss man das Beste daraus machen." ],
         ["Jubeln",1,"Das kommt von ganz unten rauf und dann ist das so ein Jubeln." ],
@@ -59,7 +59,7 @@ function init() {
     $('#infolink1').on('click',function(){
         toggleStartOverlay();
     });
-    var actualColor = "#629833";
+    var actualColor = "#668ED8";
 
     //since svg Dom is a bit trixky to handle with jquery we have to pre select some element with plain javaScript
     window.onload=function() {
@@ -90,16 +90,16 @@ function init() {
             var actualWordType = 0;
             var coloredCheck = 0;
             switch(actualColor) {
-                case "#629833":
+                case "#668ED8":
                     actualWordType = 1;
                     break;
                 case "#BCE498":
                     actualWordType = 2;
                     break;
-                case "#8CBE5F":
+                case "#FFFFAA":
                     actualWordType = 3;
                     break;
-                case "#407213":
+                case "#B176A9":
                     actualWordType = 4;
                     break;
             }
@@ -147,6 +147,4 @@ function init() {
         $(this).addClass("selected");
         actualColor = $(this).attr("colorCode")
     }
-
-
 }
