@@ -203,8 +203,8 @@ exports.get_zukunft_Kreuzwortraetsel = function(req, res){
 exports.get_vulkane_start = function(req, res) {
     res.render('vulkane_start');
 };
-exports.get_vulkane_brief_vervollstaendigen = function(req, res){
-    res.render('vulkane_brief_vervollstaendigen');
+exports.get_vulkane_brief_formen = function(req, res){
+    res.render('vulkane_brief_formen');
 };
 
 exports.get_next = function(req, res){

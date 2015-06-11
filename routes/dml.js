@@ -43,7 +43,7 @@ var gold = {
     // start poem
     'adv1': {
         'class': 'adverb',
-        'answers' : ['nirgendwo','nirgens']
+        'answers' : ['nirgendwo','nirgends']
     },
     'adv2':{
         'class': 'adverb',
@@ -328,7 +328,7 @@ function validate(query, io) {
         }
     });
     }
-};
+}
 
 function looksLike (template, word) {
     switch(template) {
