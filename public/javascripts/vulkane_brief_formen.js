@@ -11,13 +11,8 @@ function init() {
         console.log(lemma_forms_associative);
         read_all_db(lemma_forms_associative, function () {
             console.log(lemma_forms_associative);
-            fs.writeFile("javascripts/vulkane1_selection.json", JSON.stringify(lemma_forms_associative), function(err) {
-                if(err) {
-                    console.log(err);
-                }
-                else {
-                    console.log("dropbox data saved to 'javascripts/vulkane1_selection.json'");
-                }
+            send_json(JSON.stringify(lemma_forms_associative), function() {
+                //console.log("goihfdgüifdahgürsagr");
             });
         });
     });
@@ -58,7 +53,7 @@ function read_dropbox(name, data, callback) {
 }
 
 function search_lemma(lemma, callback) {
-    $.getJSON('/vollformlexikon/lemma', {
+    $.getJSON('/vollformlexikon_lemma', {
         filter: { lemma: lemma }
     }, function(data){
         callback([].concat.apply([], extractParam(data.morphology,"lemma"))[0]);
@@ -66,7 +61,7 @@ function search_lemma(lemma, callback) {
 }
 
 function search_forms(lemma, callback) {
-    $.getJSON('/vollformlexikon/forms', {
+    $.getJSON('/vollformlexikon_forms', {
         filter: { lemma: lemma }
     }, function(data){
         callback((JSON.stringify($.map(data, function (index) { return index.form; }))));
@@ -83,3 +78,16 @@ function extractParam(array,param) {
         });
     });
 }
+
+function send_json(data, callback) {
+    $.post('/vulkane_json_save', {data: data}, function(result, err) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(result);
+        }
+    });
+    callback();
+}
+
