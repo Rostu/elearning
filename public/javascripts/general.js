@@ -59,7 +59,6 @@ function shuffle(array) {
     }
     return array;
 }
-
 function getEditDistance(a, b) {
     if(a.length === 0) return b.length;
     if(b.length === 0) return a.length;

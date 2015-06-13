@@ -81,6 +81,11 @@ exports.get_glueck_video_zuordnen = function(req, res){
 exports.get_glueck_video_kleeblatt = function(req, res){
     res.render('glueck_video_kleeblatt.jade');
 }
+
+exports.get_glueck_video_paraphrase = function(req, res){
+    res.render('glueck_video_paraphrase.jade');
+}
+
 exports.get_glueck_Textverstehen_Redensarten = function(req, res){
     res.render('glueck_Textverstehen_Redensarten');
 };

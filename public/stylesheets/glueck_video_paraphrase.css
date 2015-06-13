@@ -1,0 +1,40 @@
+.wortbox{
+    background: url("../images/klee-back.jpg") ;
+    background-color: rgba(135, 195, 246, 0.53);
+    width: 50%;
+    margin-left:auto;
+    padding: 10px;
+    margin-right:auto;
+    margin-top:10px;
+}
+.wortbox span{
+    text-decoration: underline;
+}
+.wortbox p{
+    text-align: center;
+    font-weight: bold;
+    color: #007122;
+    font-size: 1.5em;
+}
+#wrapper{
+    min-height:100%
+}
+.antwort{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    font-size: 1.2em;
+    background-color: rgba(60, 208, 87, 0.65);
+    font-weight: bold;
+    text-align: center;
+    color: #007122;
+    padding: 5px;
+    width:80%;
+    margin-left:auto;
+    margin-top: 5px;
+    margin-right: auto;
+}
+.antwort:hover{
+    background-color: rgba(65, 230, 92, 0.52);
+}
