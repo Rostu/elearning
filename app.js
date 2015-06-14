@@ -86,6 +86,7 @@ app.get('/glueck_Zeitstrahl', ubung.get_glueck_Zeitstrahl);
 app.get('/glueck_video', ubung.get_glueck_video);
 app.get('/glueck_video_zuordnen', ubung.get_glueck_video_zuordnen);
 app.get('/glueck_video_kleeblatt', ubung.get_glueck_video_kleeblatt);
+app.get('/glueck_video_paraphrase', ubung.get_glueck_video_paraphrase);
 app.get('/handy_start', ubung.get_handy_start);
 app.get('/handy_text', ubung.get_handy_text);
 app.get('/handy_task1', ubung.get_handy_task1);

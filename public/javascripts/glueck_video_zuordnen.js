@@ -2,7 +2,18 @@ $( init );
 function init() {
     $('#info3').show();
     var r_length = 0;
-    var arr = [["Wenn ich was mit meinen Eltern machen kann",1],["Wenn ich jemanden hab, der mich liebt",1],["Wenn meine Kinder mich anlachen und mir sagen, dass sie mich lieben",1],["Wenn meine Tochter morgens aufwacht",1],["Wenn ich mit meiner Familie zusammen sein kann",1],["Mein Enkelkind",1],["Einen besten Freund zu haben",1],["Eine Freundin",1],["Wenn ich mit meinen Freunden unterwegs bin",1],["Wenn man die Augen aufmacht",2],["Spaß am Leben",2],["Als Mensch auftauchen und menschlich sein",2],["Mut zum Weiterleben",2],["Das ich noch lebe",2],["Man hat nur dieses eine Leben und da muss man Beste draus machen",2],["Glück ist einfach zu leben",2],["Eine ordentliche Arbeitsstelle",3],["Wenn man seine Rechnungen bezahlen kann",3],["Erst mal würde ich mich freuen, wenn ich wirklich mal 'nen festen Job bekommen würde",3],["Sechs richtige im Lotto",3],["Geld",3]];
+    var arr = [["Wenn ich was mit meinen Eltern machen kann",1],
+        ["Wenn ich jemanden hab, der mich liebt",1],
+        ["Wenn meine Kinder mich anlachen und mir sagen, dass sie mich lieben",1],
+        ["Wenn meine Tochter morgens aufwacht",1],["Wenn ich mit meiner Familie zusammen sein kann",1],
+        ["Mein Enkelkind",1],["Einen besten Freund zu haben",1],
+        ["Eine Freundin",1],["Wenn ich mit meinen Freunden unterwegs bin",1],
+        ["Wenn man die Augen aufmacht",2],["Spaß am Leben",2],["Als Mensch auftauchen und menschlich sein",2],
+        ["Mut zum Weiterleben",2],["Das ich noch lebe",2],["Man hat nur dieses eine Leben und da muss man Beste draus machen",2],
+        ["Glück ist einfach zu leben",2],["Eine ordentliche Arbeitsstelle",3],
+        ["Wenn man seine Rechnungen bezahlen kann",3],["Erst mal würde ich mich freuen, wenn ich wirklich mal 'nen festen Job bekommen würde",3],
+        ["Sechs richtige im Lotto",3],["Geld",3]];
+
     arr = shuffle(arr);
 
     arr.forEach(function(elem) {
