@@ -1,3 +1,5 @@
+
+//data for the exercise
 var questions = {"questions":[
     {"id":"1","text":"Glück ist die <span>Balance zwischen Kopf und Bauch.</span>", "Answers":[["zwischen Verstand und Intuition.", "korrekt"],["zwischen Kopfschmerz und Hunger.",""],["zwischen Gedanken und Körper.",""]]},
     {"id":"2","text":"Glück ist,<span> wenn man die Augen aufmacht.</span>", "Answers":[["wenn man lebt.","korrekt"],["wenn man etwas sieht.","Das ist die allgemeine Bedeutung von Augen öffnen. Sie ist hier nicht gemeint. Versuche es noch einmal."],["wenn man nicht mehr schläft.","Das ist hier nicht gemeint. Versuche es noch einmal."]]},
@@ -13,12 +15,18 @@ var questions = {"questions":[
 
 $( init );
 function init() {
+    //enable info box
     $('#info3').show();
+
     //pointer für die Übung
     var aktuell = 0;
     var quest = shuffle(questions.questions);
     var actualAnswers = shuffle(quest[aktuell].Answers);
 
+    //add a click listener tht is attached to every existing or later created div with the class .antwort
+    $(document).on("click",".antwort",clickfunction);
+
+    //function to add a new #wortbox to the page
     function newdiv(){
         var div = jQuery('<div/>', {
             class: 'wortbox',
@@ -34,9 +42,8 @@ function init() {
        }else{
            wait()
        }
-
-
     }
+    //function to add the last box
     function enddiv(){
         var div = jQuery('<div/>', {
             class: 'wortbox',
@@ -45,14 +52,16 @@ function init() {
         });
         $("#wrapper").append(div);
     }
-
+    //initial wortbox
     newdiv();
 
-
+    //function to handle a click event on an answer
     function clickfunction(){
-
+        //if clicked answer is correct
         if(actualAnswers[parseInt(this.id)][1]== "korrekt"){
+            //raise the pointer to the next exercise token
             aktuell++;
+            //as long as the pointer is in range of the exercise token array, raise points, remove old div, add new one, also remove possible infobox from last choice
             if(aktuell<quest.length){
                 actualAnswers = shuffle(quest[aktuell].Answers);
                 raisepoints();
@@ -61,13 +70,16 @@ function init() {
                     this.remove();
                     newdiv();
                 });
+                //if there are no more exercise tokens, remove last div and add a end div
             }else{
                 removeNoticeIfPresent();
+                raisepoints();
                 $("#wortbox").fadeOut(500,function(){
                     this.remove();
                     enddiv();
                 });
             }
+        //if clicked answer is wrong: raisefaults, and if present add info to the infobox
         }else{
             raisefaults();
             if(actualAnswers[parseInt(this.id)][1] != ""){
@@ -77,7 +89,6 @@ function init() {
         }
     }
 
-    $(document).on("click",".antwort",clickfunction);
 
 
 
