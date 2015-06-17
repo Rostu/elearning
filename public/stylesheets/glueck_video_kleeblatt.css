@@ -45,3 +45,21 @@ path.form:hover{
 .selected{
     border: solid 2px red;
 }
+#holder{
+    width:85%;
+    margin: auto;
+}
+.box{
+    display: table-cell;
+    width: 40%;
+    margin-left:auto;
+    margin-right:auto;
+}
+h1,h2{
+    text-align: center;
+}
+.boxy{
+    width:70%;
+    margin: auto;
+    margin-top:30px;
+}
