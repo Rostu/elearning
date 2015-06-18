@@ -25,5 +25,15 @@
 }
 
 select.dropbox {
+    -webkit-appearance: none;  /*REMOVES DEFAULT CHROME & SAFARI STYLE*/
+    -moz-appearance: none;  /*REMOVES DEFAULT FIREFOX STYLE*/
+    border: 0 !important;  /*REMOVES BORDER*/
+    /*width: 24px;*/
+    border-radius: 2px;
+    background: #7AB3E3 url("../images/button_down2.gif") no-repeat right center;
+    background-size: 24px 18px; /*TO ACCOUNT FOR @2X IMAGE FOR RETINA */
+    color: #fff;
+    
+    cursor: pointer;
     display: inline;
 }

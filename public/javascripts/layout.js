@@ -14,7 +14,7 @@ $(document).ready(function() {
 
     $('.redstripe').mouseenter(function()
     {
-        $(this).animate({width: $(this).children('.redlink').width(), paddingRight: "20px"}, 100);
+        $(this).animate({width: $(this).children('.redlink').width(), paddingRight: "20px"}, 6000);
         $(this).children().show;
         $(this).children().animate({color: "#ffffff"}, 200);
     });
