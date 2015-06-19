@@ -81,6 +81,9 @@
         "name":"veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_2", "maxpoints":9, "maxfaults":9
     },
     {
+        "name":"vulkane_brief_formen", "maxpoints":6, "maxfaults":3
+    },
+    {
         "name":"wertewandel_start", "maxpoints":0, "maxfaults":0
     },
     {

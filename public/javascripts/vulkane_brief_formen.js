@@ -7,48 +7,67 @@ function init() {
     var lemma_forms_associative;
 
     load_dropbox_data (function (dropbox_data) {
-        lemma_forms_associative = dropbox_data;
-        var dropboxes = $(".dropbox");
-        var dbox_count = dropboxes.length;
-        dropboxes.each(function() {
-            var dbox = $(this);
-            var dbox_name = this.name;
-            //console.log(dbox_name);
-            var dbn_regex = new RegExp(this.name, "i");
-            $.each(dropbox_data, function(elem, forms_hash) {
-                //console.log(elem);
-                $.each(forms_hash, function(form, form_hash) {
-                    //console.log(form_hash);
-                    var current_forms = Object.keys(form_hash);
-                    if (equals(current_forms, dbox_name)) {
-                        var selected_item_str = elem.replace(/[\(\)\[\]]/g, '');
-                        console.log(selected_item_str);
-                        console.log(current_forms);
-                        for (var i = 0; i < current_forms.length; i++) {
-                            var opt = jQuery('<option>' + current_forms[i] + '</option>');
-                            $(opt).attr('value', current_forms[i]);
-                            $(opt).attr('selected', selected_item_str == current_forms[i]);
-                            dbox.append(opt);                 
-                        }
-                        return;                        
+        load_answer_data (function (answer_data) {
+            var dropboxes = $(".dropbox");
+            var dbox_count = dropboxes.length;
+            dropboxes.each(function() {
+                var dbox = $(this);
+                var dbox_name = this.id;
+                var corr_form;
+                $.each(answer_data, function(elem, data) {
+                    if (dbox_name == elem) {
+                        corr_form = data.form;
                     }
-                        //console.log(strstr);
-                        //if (strstr.search(dbn_regex) != -1) {
-                        //    console.log(elem);
-                        //}
                 });
+                corr_form_upper = (corr_form.charAt(0) == corr_form.charAt(0).toUpperCase());
+                //console.log(corr_form_upper);
+                if (corr_form_upper) {
+                    console.log(corr_form);
+                }
+                $.each(dropbox_data, function(elem, forms_hash) {
+                    $.each(forms_hash, function(form, form_hash) {
+                        var current_forms = Object.keys(form_hash);
+                        if (equals(current_forms, new RegExp('^' + corr_form + '$', 'i'))) {
+                            var selected_item_str = elem.replace(/[\(\)\[\]]/g, '');
+                            for (var i = 0; i < current_forms.length; i++) {
+                                var strval = ((corr_form_upper) ? current_forms[i].charAt(0).toUpperCase() + current_forms[i].slice(1) : current_forms[i]);
+                                
+                                var opt = jQuery('<option>' + strval + '</option>');
+                                $(opt).attr('value', strval);
+                                $(opt).attr('selected', selected_item_str == current_forms[i]);
+                                dbox.append(opt);
+                            }
+                            return;
+                        }
+                    });
+                });
+                this.onchange = function() {
+                    // access form and value properties via this (keyword)
+                    if (corr_form == this.value) {
+                        
+                    }
+                    else {
+                        //alert('git rekt, m9');
+                    }
+                };
             });
-        });
-        dropboxes.each(function() {
-            var curr_width = $(this).children()[0].clientWidth;
-            $(this).width(curr_width + 4);
-            //console.log($($(this).children()[0]).current_width());
+            dropboxes.each(function() {
+                var curr_width = $(this).children()[0].clientWidth;
+                $(this).width(curr_width + 4);
+                //console.log($($(this).children()[0]).current_width());
+            });
         });
     });
 }
 
 function load_dropbox_data (callback) {
     $.getJSON("javascripts/vulkane1_selection.json", function(json) {
+        callback(json);
+    });
+}
+
+function load_answer_data (callback) {
+    $.getJSON("javascripts/vulkane1_correct.json", function(json) {
         callback(json);
     });
 }
@@ -108,9 +127,9 @@ function extractParam(array,param) {
     });
 }
 
-function equals(a, str){
+function equals(a, regex){
     for(var i = 0; i < a.length; i++) {
-        if(a[i] == str){
+        if (a[i].match(regex)) {
             return true;
         }
     }

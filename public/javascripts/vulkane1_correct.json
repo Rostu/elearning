@@ -1,0 +1,4942 @@
+{
+  "p01w001": {
+    "form": "﻿Du",
+    "used": false
+  },
+  "p01w002": {
+    "form": "verlangst",
+    "used": false
+  },
+  "p01w003": {
+    "form": "dass",
+    "used": false
+  },
+  "p01w004": {
+    "form": "ich",
+    "used": false
+  },
+  "p01w005": {
+    "form": "dir",
+    "used": false
+  },
+  "p01w006": {
+    "form": "den",
+    "used": false
+  },
+  "p01w007": {
+    "form": "Tod",
+    "used": false
+  },
+  "p01w008": {
+    "form": "meines",
+    "used": false
+  },
+  "p01w009": {
+    "form": "Onkels",
+    "used": false
+  },
+  "p01w010": {
+    "form": "beschreibe",
+    "used": false
+  },
+  "p01w011": {
+    "form": "damit",
+    "used": false
+  },
+  "p01w012": {
+    "form": "du",
+    "used": false
+  },
+  "p01w013": {
+    "form": "es",
+    "used": false
+  },
+  "p01w014": {
+    "form": "der",
+    "used": false
+  },
+  "p01w015": {
+    "form": "Nachwelt",
+    "used": false
+  },
+  "p01w016": {
+    "form": "unverfälscht",
+    "used": false
+  },
+  "p01w017": {
+    "form": "überliefern",
+    "used": false
+  },
+  "p01w018": {
+    "form": "kannst",
+    "used": false
+  },
+  "p01w019": {
+    "form": "Ich",
+    "used": false
+  },
+  "p01w020": {
+    "form": "danke",
+    "used": false
+  },
+  "p01w021": {
+    "form": "dir",
+    "used": false
+  },
+  "p01w022": {
+    "form": "denn",
+    "used": false
+  },
+  "p01w023": {
+    "form": "ich",
+    "used": false
+  },
+  "p01w024": {
+    "form": "sehe",
+    "used": false
+  },
+  "p01w025": {
+    "form": "dass",
+    "used": false
+  },
+  "p01w026": {
+    "form": "seinem",
+    "used": false
+  },
+  "p01w027": {
+    "form": "Tod",
+    "used": false
+  },
+  "p01w028": {
+    "form": "unsterblicher",
+    "used": false
+  },
+  "p01w029": {
+    "form": "Ruhm",
+    "used": false
+  },
+  "p01w030": {
+    "form": "in",
+    "used": false
+  },
+  "p01w031": {
+    "form": "Aussicht",
+    "used": false
+  },
+  "p01w032": {
+    "form": "gestellt",
+    "used": false
+  },
+  "p01w033": {
+    "form": "wird",
+    "used": false
+  },
+  "p01w034": {
+    "form": "wenn",
+    "used": false
+  },
+  "p01w035": {
+    "form": "er",
+    "used": false
+  },
+  "p01w036": {
+    "form": "von",
+    "used": false
+  },
+  "p01w037": {
+    "form": "dir",
+    "used": false
+  },
+  "p01w038": {
+    "form": "allgemein",
+    "used": false
+  },
+  "p01w039": {
+    "form": "bekannt",
+    "used": false
+  },
+  "p01w040": {
+    "form": "gemacht",
+    "used": false
+  },
+  "p01w041": {
+    "form": "wird",
+    "used": false
+  },
+  "p01w042": {
+    "form": "Obwohl",
+    "used": false
+  },
+  "p01w043": {
+    "form": "er",
+    "used": false
+  },
+  "p01w044": {
+    "form": "nämlich",
+    "used": false
+  },
+  "p01w045": {
+    "form": "beim",
+    "used": false
+  },
+  "p01w046": {
+    "form": "Untergang",
+    "used": false
+  },
+  "p01w047": {
+    "form": "der",
+    "used": false
+  },
+  "p01w048": {
+    "form": "schönsten",
+    "used": false
+  },
+  "p01w049": {
+    "form": "Landschaften",
+    "used": false
+  },
+  "p01w050": {
+    "form": "zusammen",
+    "used": false
+  },
+  "p01w051": {
+    "form": "mit",
+    "used": false
+  },
+  "p01w052": {
+    "form": "Völkern",
+    "used": false
+  },
+  "p01w053": {
+    "form": "und",
+    "used": false
+  },
+  "p01w054": {
+    "form": "Städten",
+    "used": false
+  },
+  "p01w055": {
+    "form": "umkam",
+    "used": false
+  },
+  "p01w056": {
+    "form": "so",
+    "used": false
+  },
+  "p01w057": {
+    "form": "wird",
+    "used": false
+  },
+  "p01w058": {
+    "form": "er",
+    "used": false
+  },
+  "p01w059": {
+    "form": "durch",
+    "used": false
+  },
+  "p01w060": {
+    "form": "dieses",
+    "used": false
+  },
+  "p01w061": {
+    "form": "denkwürdige",
+    "used": false
+  },
+  "p01w062": {
+    "form": "Unglück",
+    "used": false
+  },
+  "p01w063": {
+    "form": "auch",
+    "used": false
+  },
+  "p01w064": {
+    "form": "ewig",
+    "used": false
+  },
+  "p01w065": {
+    "form": "weiterleben",
+    "used": false
+  },
+  "p01w066": {
+    "form": "Auch",
+    "used": false
+  },
+  "p01w067": {
+    "form": "wenn",
+    "used": false
+  },
+  "p01w068": {
+    "form": "er",
+    "used": false
+  },
+  "p01w069": {
+    "form": "selbst",
+    "used": false
+  },
+  "p01w070": {
+    "form": "sehr",
+    "used": false
+  },
+  "p01w071": {
+    "form": "viele",
+    "used": false
+  },
+  "p01w072": {
+    "form": "Werke",
+    "used": false
+  },
+  "p01w073": {
+    "form": "geschaffen",
+    "used": false
+  },
+  "p01w074": {
+    "form": "hat",
+    "used": false
+  },
+  "p01w075": {
+    "form": "die",
+    "used": false
+  },
+  "p01w076": {
+    "form": "fortbestehen",
+    "used": false
+  },
+  "p01w077": {
+    "form": "werden",
+    "used": false
+  },
+  "p01w078": {
+    "form": "wird",
+    "used": false
+  },
+  "p01w079": {
+    "form": "die",
+    "used": false
+  },
+  "p01w080": {
+    "form": "Tragweite",
+    "used": false
+  },
+  "p01w081": {
+    "form": "deiner",
+    "used": false
+  },
+  "p01w082": {
+    "form": "Schriften",
+    "used": false
+  },
+  "p01w083": {
+    "form": "sein",
+    "used": false
+  },
+  "p01w084": {
+    "form": "Fortleben",
+    "used": false
+  },
+  "p01w085": {
+    "form": "stark",
+    "used": false
+  },
+  "p01w086": {
+    "form": "vorantreiben",
+    "used": false
+  },
+  "p02w001": {
+    "form": "Ich",
+    "used": false
+  },
+  "p02w002": {
+    "form": "halte",
+    "used": false
+  },
+  "p02w003": {
+    "form": "jedenfalls",
+    "used": false
+  },
+  "p02w004": {
+    "form": "diejenigen",
+    "used": false
+  },
+  "p02w005": {
+    "form": "für",
+    "used": false
+  },
+  "p02w006": {
+    "form": "selig",
+    "used": false
+  },
+  "p02w007": {
+    "form": "denen",
+    "used": false
+  },
+  "p02w008": {
+    "form": "die",
+    "used": false
+  },
+  "p02w009": {
+    "form": "Götter",
+    "used": false
+  },
+  "p02w010": {
+    "form": "das",
+    "used": false
+  },
+  "p02w011": {
+    "form": "Talent",
+    "used": false
+  },
+  "p02w012": {
+    "form": "geschenkt",
+    "used": false
+  },
+  "p02w013": {
+    "form": "haben",
+    "used": false
+  },
+  "p02w014": {
+    "form": "etwas",
+    "used": false
+  },
+  "p02w015": {
+    "form": "Schreibenswertes",
+    "used": false
+  },
+  "p02w016": {
+    "form": "zu",
+    "used": false
+  },
+  "p02w017": {
+    "form": "tun",
+    "used": false
+  },
+  "p02w018": {
+    "form": "oder",
+    "used": false
+  },
+  "p02w019": {
+    "form": "etwas",
+    "used": false
+  },
+  "p02w020": {
+    "form": "Lesenswertes",
+    "used": false
+  },
+  "p02w021": {
+    "form": "zu",
+    "used": false
+  },
+  "p02w022": {
+    "form": "schreiben",
+    "used": false
+  },
+  "p02w023": {
+    "form": "Diejenigen",
+    "used": false
+  },
+  "p02w024": {
+    "form": "denen",
+    "used": false
+  },
+  "p02w025": {
+    "form": "beides",
+    "used": false
+  },
+  "p02w026": {
+    "form": "vergönnt",
+    "used": false
+  },
+  "p02w027": {
+    "form": "ist",
+    "used": false
+  },
+  "p02w028": {
+    "form": "sind",
+    "used": false
+  },
+  "p02w029": {
+    "form": "in",
+    "used": false
+  },
+  "p02w030": {
+    "form": "meinen",
+    "used": false
+  },
+  "p02w031": {
+    "form": "Augen",
+    "used": false
+  },
+  "p02w032": {
+    "form": "besonders",
+    "used": false
+  },
+  "p02w033": {
+    "form": "glückselig",
+    "used": false
+  },
+  "p02w034": {
+    "form": "Zu",
+    "used": false
+  },
+  "p02w035": {
+    "form": "diesen",
+    "used": false
+  },
+  "p02w036": {
+    "form": "Menschen",
+    "used": false
+  },
+  "p02w037": {
+    "form": "wird",
+    "used": false
+  },
+  "p02w038": {
+    "form": "mein",
+    "used": false
+  },
+  "p02w039": {
+    "form": "Onkel",
+    "used": false
+  },
+  "p02w040": {
+    "form": "sowohl",
+    "used": false
+  },
+  "p02w041": {
+    "form": "durch",
+    "used": false
+  },
+  "p02w042": {
+    "form": "seine",
+    "used": false
+  },
+  "p02w043": {
+    "form": "als",
+    "used": false
+  },
+  "p02w044": {
+    "form": "auch",
+    "used": false
+  },
+  "p02w045": {
+    "form": "durch",
+    "used": false
+  },
+  "p02w046": {
+    "form": "deine",
+    "used": false
+  },
+  "p02w047": {
+    "form": "Bücher",
+    "used": false
+  },
+  "p02w048": {
+    "form": "zählen",
+    "used": false
+  },
+  "p02w049": {
+    "form": "Umso",
+    "used": false
+  },
+  "p02w050": {
+    "form": "lieber",
+    "used": false
+  },
+  "p02w051": {
+    "form": "übernehme",
+    "used": false
+  },
+  "p02w052": {
+    "form": "ich",
+    "used": false
+  },
+  "p02w053": {
+    "form": "das",
+    "used": false
+  },
+  "p02w054": {
+    "form": "was",
+    "used": false
+  },
+  "p02w055": {
+    "form": "du",
+    "used": false
+  },
+  "p02w056": {
+    "form": "mir",
+    "used": false
+  },
+  "p02w057": {
+    "form": "aufträgst",
+    "used": false
+  },
+  "p02w058": {
+    "form": "und",
+    "used": false
+  },
+  "p02w059": {
+    "form": "bestehe",
+    "used": false
+  },
+  "p02w060": {
+    "form": "sogar",
+    "used": false
+  },
+  "p02w061": {
+    "form": "dringend",
+    "used": false
+  },
+  "p02w062": {
+    "form": "darauf",
+    "used": false
+  },
+  "p03w001": {
+    "form": "Er",
+    "used": false
+  },
+  "p03w002": {
+    "form": "war",
+    "used": false
+  },
+  "p03w003": {
+    "form": "der",
+    "used": false
+  },
+  "p03w004": {
+    "form": "derzeitige",
+    "used": false
+  },
+  "p03w005": {
+    "form": "Oberbefehlshaber",
+    "used": false
+  },
+  "p03w006": {
+    "form": "der",
+    "used": false
+  },
+  "p03w007": {
+    "form": "Kriegsflotte",
+    "used": false
+  },
+  "p03w008": {
+    "form": "in",
+    "used": false
+  },
+  "p03w009": {
+    "form": "Misenum",
+    "used": false
+  },
+  "p03w010": {
+    "form": "Am",
+    "used": false
+  },
+  "p03w011": {
+    "form": "August",
+    "used": false
+  },
+  "p03w012": {
+    "form": "ungefähr",
+    "used": false
+  },
+  "p03w013": {
+    "form": "gegen",
+    "used": false
+  },
+  "p03w014": {
+    "form": "Uhr",
+    "used": false
+  },
+  "p03w015": {
+    "form": "berichtete",
+    "used": false
+  },
+  "p03w016": {
+    "form": "ihm",
+    "used": false
+  },
+  "p03w017": {
+    "form": "meine",
+    "used": false
+  },
+  "p03w018": {
+    "form": "Mutter",
+    "used": false
+  },
+  "p03w019": {
+    "form": "dass",
+    "used": false
+  },
+  "p03w020": {
+    "form": "eine",
+    "used": false
+  },
+  "p03w021": {
+    "form": "Wolke",
+    "used": false
+  },
+  "p03w022": {
+    "form": "ungewöhnlich",
+    "used": false
+  },
+  "p03w023": {
+    "form": "sowohl",
+    "used": false
+  },
+  "p03w024": {
+    "form": "in",
+    "used": false
+  },
+  "p03w025": {
+    "form": "ihrer",
+    "used": false
+  },
+  "p03w026": {
+    "form": "Größe",
+    "used": false
+  },
+  "p03w027": {
+    "form": "als",
+    "used": false
+  },
+  "p03w028": {
+    "form": "auch",
+    "used": false
+  },
+  "p03w029": {
+    "form": "in",
+    "used": false
+  },
+  "p03w030": {
+    "form": "ihrem",
+    "used": false
+  },
+  "p03w031": {
+    "form": "Aussehen",
+    "used": false
+  },
+  "p03w032": {
+    "form": "aufgetaucht",
+    "used": false
+  },
+  "p03w033": {
+    "form": "war",
+    "used": false
+  },
+  "p03w034": {
+    "form": "Nach",
+    "used": false
+  },
+  "p03w035": {
+    "form": "einem",
+    "used": false
+  },
+  "p03w036": {
+    "form": "Sonnenbad",
+    "used": false
+  },
+  "p03w037": {
+    "form": "einem",
+    "used": false
+  },
+  "p03w038": {
+    "form": "anschließenden",
+    "used": false
+  },
+  "p03w039": {
+    "form": "Bad",
+    "used": false
+  },
+  "p03w040": {
+    "form": "in",
+    "used": false
+  },
+  "p03w041": {
+    "form": "kaltem",
+    "used": false
+  },
+  "p03w042": {
+    "form": "Wasser",
+    "used": false
+  },
+  "p03w043": {
+    "form": "und",
+    "used": false
+  },
+  "p03w044": {
+    "form": "nachdem",
+    "used": false
+  },
+  "p03w045": {
+    "form": "er",
+    "used": false
+  },
+  "p03w046": {
+    "form": "im",
+    "used": false
+  },
+  "p03w047": {
+    "form": "Liegen",
+    "used": false
+  },
+  "p03w048": {
+    "form": "ein",
+    "used": false
+  },
+  "p03w049": {
+    "form": "paar",
+    "used": false
+  },
+  "p03w050": {
+    "form": "Bissen",
+    "used": false
+  },
+  "p03w051": {
+    "form": "zu",
+    "used": false
+  },
+  "p03w052": {
+    "form": "sich",
+    "used": false
+  },
+  "p03w053": {
+    "form": "genommen",
+    "used": false
+  },
+  "p03w054": {
+    "form": "hatte",
+    "used": false
+  },
+  "p03w055": {
+    "form": "widmete",
+    "used": false
+  },
+  "p03w056": {
+    "form": "er",
+    "used": false
+  },
+  "p03w057": {
+    "form": "sich",
+    "used": false
+  },
+  "p03w058": {
+    "form": "der",
+    "used": false
+  },
+  "p03w059": {
+    "form": "Wissenschaft",
+    "used": false
+  },
+  "p03w060": {
+    "form": "Er",
+    "used": false
+  },
+  "p03w061": {
+    "form": "forderte",
+    "used": false
+  },
+  "p03w062": {
+    "form": "Sandalen",
+    "used": false
+  },
+  "p03w063": {
+    "form": "und",
+    "used": false
+  },
+  "p03w064": {
+    "form": "stieg",
+    "used": false
+  },
+  "p03w065": {
+    "form": "zu",
+    "used": false
+  },
+  "p03w066": {
+    "form": "dem",
+    "used": false
+  },
+  "p03w067": {
+    "form": "Ort",
+    "used": false
+  },
+  "p03w068": {
+    "form": "hinauf",
+    "used": false
+  },
+  "p03w069": {
+    "form": "von",
+    "used": false
+  },
+  "p03w070": {
+    "form": "dem",
+    "used": false
+  },
+  "p03w071": {
+    "form": "aus",
+    "used": false
+  },
+  "p03w072": {
+    "form": "jenes",
+    "used": false
+  },
+  "p03w073": {
+    "form": "Wunderwerk",
+    "used": false
+  },
+  "p03w074": {
+    "form": "am",
+    "used": false
+  },
+  "p03w075": {
+    "form": "besten",
+    "used": false
+  },
+  "p03w076": {
+    "form": "betrachtet",
+    "used": false
+  },
+  "p03w077": {
+    "form": "werden",
+    "used": false
+  },
+  "p03w078": {
+    "form": "konnte",
+    "used": false
+  },
+  "p04w001": {
+    "form": "Eine",
+    "used": false
+  },
+  "p04w002": {
+    "form": "Wolke",
+    "used": false
+  },
+  "p04w003": {
+    "form": "deren",
+    "used": false
+  },
+  "p04w004": {
+    "form": "Ursprung",
+    "used": false
+  },
+  "p04w005": {
+    "form": "fernen",
+    "used": false
+  },
+  "p04w006": {
+    "form": "Beobachtern",
+    "used": false
+  },
+  "p04w007": {
+    "form": "unbekannt",
+    "used": false
+  },
+  "p04w008": {
+    "form": "war",
+    "used": false
+  },
+  "p04w009": {
+    "form": "dass",
+    "used": false
+  },
+  "p04w010": {
+    "form": "es",
+    "used": false
+  },
+  "p04w011": {
+    "form": "der",
+    "used": false
+  },
+  "p04w012": {
+    "form": "Vesuv",
+    "used": false
+  },
+  "p04w013": {
+    "form": "war",
+    "used": false
+  },
+  "p04w014": {
+    "form": "wurde",
+    "used": false
+  },
+  "p04w015": {
+    "form": "später",
+    "used": false
+  },
+  "p04w016": {
+    "form": "erkannt",
+    "used": false
+  },
+  "p04w017": {
+    "form": "erhob",
+    "used": false
+  },
+  "p04w018": {
+    "form": "sich",
+    "used": false
+  },
+  "p04w019": {
+    "form": "der",
+    "used": false
+  },
+  "p04w020": {
+    "form": "kein",
+    "used": false
+  },
+  "p04w021": {
+    "form": "anderer",
+    "used": false
+  },
+  "p04w022": {
+    "form": "Baum",
+    "used": false
+  },
+  "p04w023": {
+    "form": "mehr",
+    "used": false
+  },
+  "p04w024": {
+    "form": "als",
+    "used": false
+  },
+  "p04w025": {
+    "form": "die",
+    "used": false
+  },
+  "p04w026": {
+    "form": "Pinie",
+    "used": false
+  },
+  "p04w027": {
+    "form": "ähnlich",
+    "used": false
+  },
+  "p04w028": {
+    "form": "gewesen",
+    "used": false
+  },
+  "p04w029": {
+    "form": "ist",
+    "used": false
+  },
+  "p04w030": {
+    "form": "Denn",
+    "used": false
+  },
+  "p04w031": {
+    "form": "wie",
+    "used": false
+  },
+  "p04w032": {
+    "form": "ein",
+    "used": false
+  },
+  "p04w033": {
+    "form": "sehr",
+    "used": false
+  },
+  "p04w034": {
+    "form": "langer",
+    "used": false
+  },
+  "p04w035": {
+    "form": "Stamm",
+    "used": false
+  },
+  "p04w036": {
+    "form": "war",
+    "used": false
+  },
+  "p04w037": {
+    "form": "sie",
+    "used": false
+  },
+  "p04w038": {
+    "form": "in",
+    "used": false
+  },
+  "p04w039": {
+    "form": "die",
+    "used": false
+  },
+  "p04w040": {
+    "form": "Höhe",
+    "used": false
+  },
+  "p04w041": {
+    "form": "gestiegen",
+    "used": false
+  },
+  "p04w042": {
+    "form": "und",
+    "used": false
+  },
+  "p04w043": {
+    "form": "breitete",
+    "used": false
+  },
+  "p04w044": {
+    "form": "sich",
+    "used": false
+  },
+  "p04w045": {
+    "form": "über",
+    "used": false
+  },
+  "p04w046": {
+    "form": "einige",
+    "used": false
+  },
+  "p04w047": {
+    "form": "Äste",
+    "used": false
+  },
+  "p04w048": {
+    "form": "aus",
+    "used": false
+  },
+  "p04w049": {
+    "form": "weil",
+    "used": false
+  },
+  "p04w050": {
+    "form": "sie",
+    "used": false
+  },
+  "p04w051": {
+    "form": "wie",
+    "used": false
+  },
+  "p04w052": {
+    "form": "ich",
+    "used": false
+  },
+  "p04w053": {
+    "form": "glaube",
+    "used": false
+  },
+  "p04w054": {
+    "form": "durch",
+    "used": false
+  },
+  "p04w055": {
+    "form": "den",
+    "used": false
+  },
+  "p04w056": {
+    "form": "frischen",
+    "used": false
+  },
+  "p04w057": {
+    "form": "Wind",
+    "used": false
+  },
+  "p04w058": {
+    "form": "nach",
+    "used": false
+  },
+  "p04w059": {
+    "form": "oben",
+    "used": false
+  },
+  "p04w060": {
+    "form": "getrieben",
+    "used": false
+  },
+  "p04w061": {
+    "form": "worden",
+    "used": false
+  },
+  "p04w062": {
+    "form": "war",
+    "used": false
+  },
+  "p04w063": {
+    "form": "und",
+    "used": false
+  },
+  "p04w064": {
+    "form": "dann",
+    "used": false
+  },
+  "p04w065": {
+    "form": "weil",
+    "used": false
+  },
+  "p04w066": {
+    "form": "dieser",
+    "used": false
+  },
+  "p04w067": {
+    "form": "nachgelassen",
+    "used": false
+  },
+  "p04w068": {
+    "form": "hatte",
+    "used": false
+  },
+  "p04w069": {
+    "form": "hatte",
+    "used": false
+  },
+  "p04w070": {
+    "form": "sie",
+    "used": false
+  },
+  "p04w071": {
+    "form": "den",
+    "used": false
+  },
+  "p04w072": {
+    "form": "Auftrieb",
+    "used": false
+  },
+  "p04w073": {
+    "form": "verloren",
+    "used": false
+  },
+  "p04w074": {
+    "form": "oder",
+    "used": false
+  },
+  "p04w075": {
+    "form": "sogar",
+    "used": false
+  },
+  "p04w076": {
+    "form": "weil",
+    "used": false
+  },
+  "p04w077": {
+    "form": "sie",
+    "used": false
+  },
+  "p04w078": {
+    "form": "von",
+    "used": false
+  },
+  "p04w079": {
+    "form": "ihrem",
+    "used": false
+  },
+  "p04w080": {
+    "form": "Gewicht",
+    "used": false
+  },
+  "p04w081": {
+    "form": "bezwungen",
+    "used": false
+  },
+  "p04w082": {
+    "form": "worden",
+    "used": false
+  },
+  "p04w083": {
+    "form": "war",
+    "used": false
+  },
+  "p04w084": {
+    "form": "zerfloss",
+    "used": false
+  },
+  "p04w085": {
+    "form": "sie",
+    "used": false
+  },
+  "p04w086": {
+    "form": "in",
+    "used": false
+  },
+  "p04w087": {
+    "form": "die",
+    "used": false
+  },
+  "p04w088": {
+    "form": "Breite",
+    "used": false
+  },
+  "p04w089": {
+    "form": "manchmal",
+    "used": false
+  },
+  "p04w090": {
+    "form": "glänzend",
+    "used": false
+  },
+  "p04w091": {
+    "form": "weiß",
+    "used": false
+  },
+  "p04w092": {
+    "form": "manchmal",
+    "used": false
+  },
+  "p04w093": {
+    "form": "schwarz",
+    "used": false
+  },
+  "p04w094": {
+    "form": "und",
+    "used": false
+  },
+  "p04w095": {
+    "form": "fleckig",
+    "used": false
+  },
+  "p04w096": {
+    "form": "je",
+    "used": false
+  },
+  "p04w097": {
+    "form": "nachdem",
+    "used": false
+  },
+  "p04w098": {
+    "form": "wie",
+    "used": false
+  },
+  "p04w099": {
+    "form": "sie",
+    "used": false
+  },
+  "p04w100": {
+    "form": "Erde",
+    "used": false
+  },
+  "p04w101": {
+    "form": "oder",
+    "used": false
+  },
+  "p04w102": {
+    "form": "Asche",
+    "used": false
+  },
+  "p04w103": {
+    "form": "aufgenommen",
+    "used": false
+  },
+  "p04w104": {
+    "form": "hatte",
+    "used": false
+  },
+  "p05w001": {
+    "form": "Es",
+    "used": false
+  },
+  "p05w002": {
+    "form": "schien",
+    "used": false
+  },
+  "p05w003": {
+    "form": "dem",
+    "used": false
+  },
+  "p05w004": {
+    "form": "äußerst",
+    "used": false
+  },
+  "p05w005": {
+    "form": "gebildeten",
+    "used": false
+  },
+  "p05w006": {
+    "form": "Mann",
+    "used": false
+  },
+  "p05w007": {
+    "form": "eine",
+    "used": false
+  },
+  "p05w008": {
+    "form": "großartige",
+    "used": false
+  },
+  "p05w009": {
+    "form": "und",
+    "used": false
+  },
+  "p05w010": {
+    "form": "näher",
+    "used": false
+  },
+  "p05w011": {
+    "form": "betrachtenswerte",
+    "used": false
+  },
+  "p05w012": {
+    "form": "bedeutende",
+    "used": false
+  },
+  "p05w013": {
+    "form": "Sache",
+    "used": false
+  },
+  "p05w014": {
+    "form": "zu",
+    "used": false
+  },
+  "p05w015": {
+    "form": "sein",
+    "used": false
+  },
+  "p05w016": {
+    "form": "Er",
+    "used": false
+  },
+  "p05w017": {
+    "form": "befahl",
+    "used": false
+  },
+  "p05w018": {
+    "form": "einen",
+    "used": false
+  },
+  "p05w019": {
+    "form": "Schnellsegler",
+    "used": false
+  },
+  "p05w020": {
+    "form": "bereit",
+    "used": false
+  },
+  "p05w021": {
+    "form": "zu",
+    "used": false
+  },
+  "p05w022": {
+    "form": "machen",
+    "used": false
+  },
+  "p05w023": {
+    "form": "Mir",
+    "used": false
+  },
+  "p05w024": {
+    "form": "bot",
+    "used": false
+  },
+  "p05w025": {
+    "form": "er",
+    "used": false
+  },
+  "p05w026": {
+    "form": "die",
+    "used": false
+  },
+  "p05w027": {
+    "form": "Möglichkeit",
+    "used": false
+  },
+  "p05w028": {
+    "form": "an",
+    "used": false
+  },
+  "p05w029": {
+    "form": "ihn",
+    "used": false
+  },
+  "p05w030": {
+    "form": "zu",
+    "used": false
+  },
+  "p05w031": {
+    "form": "begleiten",
+    "used": false
+  },
+  "p05w032": {
+    "form": "Ich",
+    "used": false
+  },
+  "p05w033": {
+    "form": "habe",
+    "used": false
+  },
+  "p05w034": {
+    "form": "geantwortet",
+    "used": false
+  },
+  "p05w035": {
+    "form": "dass",
+    "used": false
+  },
+  "p05w036": {
+    "form": "ich",
+    "used": false
+  },
+  "p05w037": {
+    "form": "lieber",
+    "used": false
+  },
+  "p05w038": {
+    "form": "studieren",
+    "used": false
+  },
+  "p05w039": {
+    "form": "wollte",
+    "used": false
+  },
+  "p05w040": {
+    "form": "und",
+    "used": false
+  },
+  "p05w041": {
+    "form": "zufällig",
+    "used": false
+  },
+  "p05w042": {
+    "form": "hatte",
+    "used": false
+  },
+  "p05w043": {
+    "form": "er",
+    "used": false
+  },
+  "p05w044": {
+    "form": "selbst",
+    "used": false
+  },
+  "p05w045": {
+    "form": "mir",
+    "used": false
+  },
+  "p05w046": {
+    "form": "das",
+    "used": false
+  },
+  "p05w047": {
+    "form": "Thema",
+    "used": false
+  },
+  "p05w048": {
+    "form": "gegeben",
+    "used": false
+  },
+  "p05w049": {
+    "form": "das",
+    "used": false
+  },
+  "p05w050": {
+    "form": "ich",
+    "used": false
+  },
+  "p05w051": {
+    "form": "beschreiben",
+    "used": false
+  },
+  "p05w052": {
+    "form": "sollte",
+    "used": false
+  },
+  "p06w001": {
+    "form": "Er",
+    "used": false
+  },
+  "p06w002": {
+    "form": "ging",
+    "used": false
+  },
+  "p06w003": {
+    "form": "aus",
+    "used": false
+  },
+  "p06w004": {
+    "form": "dem",
+    "used": false
+  },
+  "p06w005": {
+    "form": "Haus",
+    "used": false
+  },
+  "p06w006": {
+    "form": "und",
+    "used": false
+  },
+  "p06w007": {
+    "form": "nahm",
+    "used": false
+  },
+  "p06w008": {
+    "form": "dort",
+    "used": false
+  },
+  "p06w009": {
+    "form": "die",
+    "used": false
+  },
+  "p06w010": {
+    "form": "Briefe",
+    "used": false
+  },
+  "p06w011": {
+    "form": "der",
+    "used": false
+  },
+  "p06w012": {
+    "form": "Rectina",
+    "used": false
+  },
+  "p06w013": {
+    "form": "entgegen",
+    "used": false
+  },
+  "p06w014": {
+    "form": "die",
+    "used": false
+  },
+  "p06w015": {
+    "form": "Frau",
+    "used": false
+  },
+  "p06w016": {
+    "form": "eines",
+    "used": false
+  },
+  "p06w017": {
+    "form": "gewissen",
+    "used": false
+  },
+  "p06w018": {
+    "form": "Tascus",
+    "used": false
+  },
+  "p06w019": {
+    "form": "die",
+    "used": false
+  },
+  "p06w020": {
+    "form": "wegen",
+    "used": false
+  },
+  "p06w021": {
+    "form": "der",
+    "used": false
+  },
+  "p06w022": {
+    "form": "drohenden",
+    "used": false
+  },
+  "p06w023": {
+    "form": "Gefahr",
+    "used": false
+  },
+  "p06w024": {
+    "form": "aufgeschreckt",
+    "used": false
+  },
+  "p06w025": {
+    "form": "worden",
+    "used": false
+  },
+  "p06w026": {
+    "form": "war",
+    "used": false
+  },
+  "p06w027": {
+    "form": "denn",
+    "used": false
+  },
+  "p06w028": {
+    "form": "ihr",
+    "used": false
+  },
+  "p06w029": {
+    "form": "Haus",
+    "used": false
+  },
+  "p06w030": {
+    "form": "lag",
+    "used": false
+  },
+  "p06w031": {
+    "form": "unterhalb",
+    "used": false
+  },
+  "p06w032": {
+    "form": "des",
+    "used": false
+  },
+  "p06w033": {
+    "form": "Vesuvs",
+    "used": false
+  },
+  "p06w034": {
+    "form": "und",
+    "used": false
+  },
+  "p06w035": {
+    "form": "es",
+    "used": false
+  },
+  "p06w036": {
+    "form": "gab",
+    "used": false
+  },
+  "p06w037": {
+    "form": "keine",
+    "used": false
+  },
+  "p06w038": {
+    "form": "Möglichkeit",
+    "used": false
+  },
+  "p06w039": {
+    "form": "zur",
+    "used": false
+  },
+  "p06w040": {
+    "form": "Flucht",
+    "used": false
+  },
+  "p06w041": {
+    "form": "außer",
+    "used": false
+  },
+  "p06w042": {
+    "form": "zu",
+    "used": false
+  },
+  "p06w043": {
+    "form": "Schiff",
+    "used": false
+  },
+  "p06w044": {
+    "form": "sie",
+    "used": false
+  },
+  "p06w045": {
+    "form": "bat",
+    "used": false
+  },
+  "p06w046": {
+    "form": "ihn",
+    "used": false
+  },
+  "p06w047": {
+    "form": "darum",
+    "used": false
+  },
+  "p06w048": {
+    "form": "sie",
+    "used": false
+  },
+  "p06w049": {
+    "form": "vor",
+    "used": false
+  },
+  "p06w050": {
+    "form": "der",
+    "used": false
+  },
+  "p06w051": {
+    "form": "überaus",
+    "used": false
+  },
+  "p06w052": {
+    "form": "großen",
+    "used": false
+  },
+  "p06w053": {
+    "form": "Gefahr",
+    "used": false
+  },
+  "p06w054": {
+    "form": "zu",
+    "used": false
+  },
+  "p06w055": {
+    "form": "retten",
+    "used": false
+  },
+  "p06w056": {
+    "form": "Mein",
+    "used": false
+  },
+  "p06w057": {
+    "form": "Onkel",
+    "used": false
+  },
+  "p06w058": {
+    "form": "änderte",
+    "used": false
+  },
+  "p06w059": {
+    "form": "sein",
+    "used": false
+  },
+  "p06w060": {
+    "form": "Vorhaben",
+    "used": false
+  },
+  "p06w061": {
+    "form": "und",
+    "used": false
+  },
+  "p06w062": {
+    "form": "nahm",
+    "used": false
+  },
+  "p06w063": {
+    "form": "mit",
+    "used": false
+  },
+  "p06w064": {
+    "form": "Heldenmut",
+    "used": false
+  },
+  "p06w065": {
+    "form": "auf",
+    "used": false
+  },
+  "p06w066": {
+    "form": "sich",
+    "used": false
+  },
+  "p06w067": {
+    "form": "was",
+    "used": false
+  },
+  "p06w068": {
+    "form": "er",
+    "used": false
+  },
+  "p06w069": {
+    "form": "mit",
+    "used": false
+  },
+  "p06w070": {
+    "form": "dem",
+    "used": false
+  },
+  "p06w071": {
+    "form": "Eifer",
+    "used": false
+  },
+  "p06w072": {
+    "form": "eines",
+    "used": false
+  },
+  "p06w073": {
+    "form": "Wissenschaftlers",
+    "used": false
+  },
+  "p06w074": {
+    "form": "begonnen",
+    "used": false
+  },
+  "p06w075": {
+    "form": "hatte",
+    "used": false
+  },
+  "p07w001": {
+    "form": "Er",
+    "used": false
+  },
+  "p07w002": {
+    "form": "brachte",
+    "used": false
+  },
+  "p07w003": {
+    "form": "die",
+    "used": false
+  },
+  "p07w004": {
+    "form": "Vierruderer",
+    "used": false
+  },
+  "p07w005": {
+    "form": "zu",
+    "used": false
+  },
+  "p07w006": {
+    "form": "Wasser",
+    "used": false
+  },
+  "p07w007": {
+    "form": "und",
+    "used": false
+  },
+  "p07w008": {
+    "form": "bestieg",
+    "used": false
+  },
+  "p07w009": {
+    "form": "jene",
+    "used": false
+  },
+  "p07w010": {
+    "form": "selbst",
+    "used": false
+  },
+  "p07w011": {
+    "form": "um",
+    "used": false
+  },
+  "p07w012": {
+    "form": "nicht",
+    "used": false
+  },
+  "p07w013": {
+    "form": "nur",
+    "used": false
+  },
+  "p07w014": {
+    "form": "Rectina",
+    "used": false
+  },
+  "p07w015": {
+    "form": "sondern",
+    "used": false
+  },
+  "p07w016": {
+    "form": "auch",
+    "used": false
+  },
+  "p07w017": {
+    "form": "vielen",
+    "used": false
+  },
+  "p07w018": {
+    "form": "anderen",
+    "used": false
+  },
+  "p07w019": {
+    "form": "Hilfe",
+    "used": false
+  },
+  "p07w020": {
+    "form": "zu",
+    "used": false
+  },
+  "p07w021": {
+    "form": "bringen",
+    "used": false
+  },
+  "p07w022": {
+    "form": "denn",
+    "used": false
+  },
+  "p07w023": {
+    "form": "die",
+    "used": false
+  },
+  "p07w024": {
+    "form": "malerische",
+    "used": false
+  },
+  "p07w025": {
+    "form": "Küste",
+    "used": false
+  },
+  "p07w026": {
+    "form": "war",
+    "used": false
+  },
+  "p07w027": {
+    "form": "stark",
+    "used": false
+  },
+  "p07w028": {
+    "form": "besiedelt",
+    "used": false
+  },
+  "p07w029": {
+    "form": "Er",
+    "used": false
+  },
+  "p07w030": {
+    "form": "eilte",
+    "used": false
+  },
+  "p07w031": {
+    "form": "zu",
+    "used": false
+  },
+  "p07w032": {
+    "form": "dem",
+    "used": false
+  },
+  "p07w033": {
+    "form": "Ort",
+    "used": false
+  },
+  "p07w034": {
+    "form": "von",
+    "used": false
+  },
+  "p07w035": {
+    "form": "dem",
+    "used": false
+  },
+  "p07w036": {
+    "form": "andere",
+    "used": false
+  },
+  "p07w037": {
+    "form": "flohen",
+    "used": false
+  },
+  "p07w038": {
+    "form": "und",
+    "used": false
+  },
+  "p07w039": {
+    "form": "steuerte",
+    "used": false
+  },
+  "p07w040": {
+    "form": "geradewegs",
+    "used": false
+  },
+  "p07w041": {
+    "form": "auf",
+    "used": false
+  },
+  "p07w042": {
+    "form": "die",
+    "used": false
+  },
+  "p07w043": {
+    "form": "Gefahr",
+    "used": false
+  },
+  "p07w044": {
+    "form": "zu",
+    "used": false
+  },
+  "p07w045": {
+    "form": "er",
+    "used": false
+  },
+  "p07w046": {
+    "form": "hielt",
+    "used": false
+  },
+  "p07w047": {
+    "form": "Kurs",
+    "used": false
+  },
+  "p07w048": {
+    "form": "so",
+    "used": false
+  },
+  "p07w049": {
+    "form": "sehr",
+    "used": false
+  },
+  "p07w050": {
+    "form": "frei",
+    "used": false
+  },
+  "p07w051": {
+    "form": "von",
+    "used": false
+  },
+  "p07w052": {
+    "form": "jeglicher",
+    "used": false
+  },
+  "p07w053": {
+    "form": "Furcht",
+    "used": false
+  },
+  "p07w054": {
+    "form": "dass",
+    "used": false
+  },
+  "p07w055": {
+    "form": "er",
+    "used": false
+  },
+  "p07w056": {
+    "form": "alle",
+    "used": false
+  },
+  "p07w057": {
+    "form": "Begegnungen",
+    "used": false
+  },
+  "p07w058": {
+    "form": "jenen",
+    "used": false
+  },
+  "p07w059": {
+    "form": "Übels",
+    "used": false
+  },
+  "p07w060": {
+    "form": "alle",
+    "used": false
+  },
+  "p07w061": {
+    "form": "Figuren",
+    "used": false
+  },
+  "p07w062": {
+    "form": "diktiert",
+    "used": false
+  },
+  "p07w063": {
+    "form": "hat",
+    "used": false
+  },
+  "p07w064": {
+    "form": "und",
+    "used": false
+  },
+  "p07w065": {
+    "form": "aufschreiben",
+    "used": false
+  },
+  "p07w066": {
+    "form": "ließ",
+    "used": false
+  },
+  "p07w067": {
+    "form": "wie",
+    "used": false
+  },
+  "p07w068": {
+    "form": "er",
+    "used": false
+  },
+  "p07w069": {
+    "form": "sie",
+    "used": false
+  },
+  "p07w070": {
+    "form": "sie",
+    "used": false
+  },
+  "p07w071": {
+    "form": "mit",
+    "used": false
+  },
+  "p07w072": {
+    "form": "eigenen",
+    "used": false
+  },
+  "p07w073": {
+    "form": "Augen",
+    "used": false
+  },
+  "p07w074": {
+    "form": "gesehen",
+    "used": false
+  },
+  "p07w075": {
+    "form": "hat",
+    "used": false
+  },
+  "p08w001": {
+    "form": "Schon",
+    "used": false
+  },
+  "p08w002": {
+    "form": "fiel",
+    "used": false
+  },
+  "p08w003": {
+    "form": "Asche",
+    "used": false
+  },
+  "p08w004": {
+    "form": "auf",
+    "used": false
+  },
+  "p08w005": {
+    "form": "die",
+    "used": false
+  },
+  "p08w006": {
+    "form": "Schiffe",
+    "used": false
+  },
+  "p08w007": {
+    "form": "herunter",
+    "used": false
+  },
+  "p08w008": {
+    "form": "die",
+    "used": false
+  },
+  "p08w009": {
+    "form": "umso",
+    "used": false
+  },
+  "p08w010": {
+    "form": "heißer",
+    "used": false
+  },
+  "p08w011": {
+    "form": "und",
+    "used": false
+  },
+  "p08w012": {
+    "form": "dichter",
+    "used": false
+  },
+  "p08w013": {
+    "form": "war",
+    "used": false
+  },
+  "p08w014": {
+    "form": "je",
+    "used": false
+  },
+  "p08w015": {
+    "form": "näher",
+    "used": false
+  },
+  "p08w016": {
+    "form": "sie",
+    "used": false
+  },
+  "p08w017": {
+    "form": "herankamen",
+    "used": false
+  },
+  "p08w018": {
+    "form": "dann",
+    "used": false
+  },
+  "p08w019": {
+    "form": "fielen",
+    "used": false
+  },
+  "p08w020": {
+    "form": "Bimssteine",
+    "used": false
+  },
+  "p08w021": {
+    "form": "herab",
+    "used": false
+  },
+  "p08w022": {
+    "form": "mal",
+    "used": false
+  },
+  "p08w023": {
+    "form": "schwarz",
+    "used": false
+  },
+  "p08w024": {
+    "form": "mal",
+    "used": false
+  },
+  "p08w025": {
+    "form": "verkohlt",
+    "used": false
+  },
+  "p08w026": {
+    "form": "mal",
+    "used": false
+  },
+  "p08w027": {
+    "form": "vom",
+    "used": false
+  },
+  "p08w028": {
+    "form": "Feuer",
+    "used": false
+  },
+  "p08w029": {
+    "form": "zerbrochen",
+    "used": false
+  },
+  "p08w030": {
+    "form": "dann",
+    "used": false
+  },
+  "p08w031": {
+    "form": "eine",
+    "used": false
+  },
+  "p08w032": {
+    "form": "Untiefe",
+    "used": false
+  },
+  "p08w033": {
+    "form": "und",
+    "used": false
+  },
+  "p08w034": {
+    "form": "eine",
+    "used": false
+  },
+  "p08w035": {
+    "form": "von",
+    "used": false
+  },
+  "p08w036": {
+    "form": "von",
+    "used": false
+  },
+  "p08w037": {
+    "form": "Felsbrocken",
+    "used": false
+  },
+  "p08w038": {
+    "form": "versperrte",
+    "used": false
+  },
+  "p08w039": {
+    "form": "Küste",
+    "used": false
+  },
+  "p08w040": {
+    "form": "Nachdem",
+    "used": false
+  },
+  "p08w041": {
+    "form": "er",
+    "used": false
+  },
+  "p08w042": {
+    "form": "zunächst",
+    "used": false
+  },
+  "p08w043": {
+    "form": "etwas",
+    "used": false
+  },
+  "p08w044": {
+    "form": "gezögert",
+    "used": false
+  },
+  "p08w045": {
+    "form": "hatte",
+    "used": false
+  },
+  "p08w046": {
+    "form": "ob",
+    "used": false
+  },
+  "p08w047": {
+    "form": "er",
+    "used": false
+  },
+  "p08w048": {
+    "form": "umkehren",
+    "used": false
+  },
+  "p08w049": {
+    "form": "sollte",
+    "used": false
+  },
+  "p08w050": {
+    "form": "sagte",
+    "used": false
+  },
+  "p08w051": {
+    "form": "er",
+    "used": false
+  },
+  "p08w052": {
+    "form": "dann",
+    "used": false
+  },
+  "p08w053": {
+    "form": "dem",
+    "used": false
+  },
+  "p08w054": {
+    "form": "mahnenden",
+    "used": false
+  },
+  "p08w055": {
+    "form": "Steuermann",
+    "used": false
+  },
+  "p08w056": {
+    "form": "dass",
+    "used": false
+  },
+  "p08w057": {
+    "form": "er",
+    "used": false
+  },
+  "p08w058": {
+    "form": "es",
+    "used": false
+  },
+  "p08w059": {
+    "form": "wie",
+    "used": false
+  },
+  "p08w060": {
+    "form": "folgt",
+    "used": false
+  },
+  "p08w061": {
+    "form": "tun",
+    "used": false
+  },
+  "p08w062": {
+    "form": "sollte",
+    "used": false
+  },
+  "p08w063": {
+    "form": "Dem",
+    "used": false
+  },
+  "p08w064": {
+    "form": "Tapferen",
+    "used": false
+  },
+  "p08w065": {
+    "form": "hilft",
+    "used": false
+  },
+  "p08w066": {
+    "form": "das",
+    "used": false
+  },
+  "p08w067": {
+    "form": "Glück",
+    "used": false
+  },
+  "p08w068": {
+    "form": "Steuere",
+    "used": false
+  },
+  "p08w069": {
+    "form": "auf",
+    "used": false
+  },
+  "p08w070": {
+    "form": "Flottenoffizier",
+    "used": false
+  },
+  "p08w071": {
+    "form": "Pomponianus",
+    "used": false
+  },
+  "p08w072": {
+    "form": "zu",
+    "used": false
+  },
+  "p09w001": {
+    "form": "Dieser",
+    "used": false
+  },
+  "p09w002": {
+    "form": "war",
+    "used": false
+  },
+  "p09w003": {
+    "form": "in",
+    "used": false
+  },
+  "p09w004": {
+    "form": "Stabiae",
+    "used": false
+  },
+  "p09w005": {
+    "form": "und",
+    "used": false
+  },
+  "p09w006": {
+    "form": "durch",
+    "used": false
+  },
+  "p09w007": {
+    "form": "die",
+    "used": false
+  },
+  "p09w008": {
+    "form": "dazwischenliegende",
+    "used": false
+  },
+  "p09w009": {
+    "form": "Bucht",
+    "used": false
+  },
+  "p09w010": {
+    "form": "eingekesselt",
+    "used": false
+  },
+  "p09w011": {
+    "form": "denn",
+    "used": false
+  },
+  "p09w012": {
+    "form": "das",
+    "used": false
+  },
+  "p09w013": {
+    "form": "Meer",
+    "used": false
+  },
+  "p09w014": {
+    "form": "strömt",
+    "used": false
+  },
+  "p09w015": {
+    "form": "kaum",
+    "used": false
+  },
+  "p09w016": {
+    "form": "merklich",
+    "used": false
+  },
+  "p09w017": {
+    "form": "auf",
+    "used": false
+  },
+  "p09w018": {
+    "form": "die",
+    "used": false
+  },
+  "p09w019": {
+    "form": "bogenförmig",
+    "used": false
+  },
+  "p09w020": {
+    "form": "gekrümmte",
+    "used": false
+  },
+  "p09w021": {
+    "form": "Küste",
+    "used": false
+  },
+  "p09w022": {
+    "form": "zu",
+    "used": false
+  },
+  "p09w023": {
+    "form": "Obwohl",
+    "used": false
+  },
+  "p09w024": {
+    "form": "sich",
+    "used": false
+  },
+  "p09w025": {
+    "form": "die",
+    "used": false
+  },
+  "p09w026": {
+    "form": "Gefahr",
+    "used": false
+  },
+  "p09w027": {
+    "form": "diesem",
+    "used": false
+  },
+  "p09w028": {
+    "form": "Ort",
+    "used": false
+  },
+  "p09w029": {
+    "form": "noch",
+    "used": false
+  },
+  "p09w030": {
+    "form": "nicht",
+    "used": false
+  },
+  "p09w031": {
+    "form": "näherte",
+    "used": false
+  },
+  "p09w032": {
+    "form": "trotzdem",
+    "used": false
+  },
+  "p09w033": {
+    "form": "erkennbar",
+    "used": false
+  },
+  "p09w034": {
+    "form": "war",
+    "used": false
+  },
+  "p09w035": {
+    "form": "wuchs",
+    "used": false
+  },
+  "p09w036": {
+    "form": "und",
+    "used": false
+  },
+  "p09w037": {
+    "form": "unmittelbar",
+    "used": false
+  },
+  "p09w038": {
+    "form": "bevor",
+    "used": false
+  },
+  "p09w039": {
+    "form": "stand",
+    "used": false
+  },
+  "p09w040": {
+    "form": "hatte",
+    "used": false
+  },
+  "p09w041": {
+    "form": "Pomponianus",
+    "used": false
+  },
+  "p09w042": {
+    "form": "dort",
+    "used": false
+  },
+  "p09w043": {
+    "form": "das",
+    "used": false
+  },
+  "p09w044": {
+    "form": "Gepäck",
+    "used": false
+  },
+  "p09w045": {
+    "form": "in",
+    "used": false
+  },
+  "p09w046": {
+    "form": "den",
+    "used": false
+  },
+  "p09w047": {
+    "form": "Schiffen",
+    "used": false
+  },
+  "p09w048": {
+    "form": "zusammengetragen",
+    "used": false
+  },
+  "p09w049": {
+    "form": "bereit",
+    "used": false
+  },
+  "p09w050": {
+    "form": "zur",
+    "used": false
+  },
+  "p09w051": {
+    "form": "Flucht",
+    "used": false
+  },
+  "p09w052": {
+    "form": "sobald",
+    "used": false
+  },
+  "p09w053": {
+    "form": "sich",
+    "used": false
+  },
+  "p09w054": {
+    "form": "der",
+    "used": false
+  },
+  "p09w055": {
+    "form": "Gegenwind",
+    "used": false
+  },
+  "p09w056": {
+    "form": "gelegt",
+    "used": false
+  },
+  "p09w057": {
+    "form": "hatte",
+    "used": false
+  },
+  "p10w001": {
+    "form": "Nachdem",
+    "used": false
+  },
+  "p10w002": {
+    "form": "mein",
+    "used": false
+  },
+  "p10w003": {
+    "form": "Onkel",
+    "used": false
+  },
+  "p10w004": {
+    "form": "dann",
+    "used": false
+  },
+  "p10w005": {
+    "form": "bei",
+    "used": false
+  },
+  "p10w006": {
+    "form": "diesem",
+    "used": false
+  },
+  "p10w007": {
+    "form": "äußerst",
+    "used": false
+  },
+  "p10w008": {
+    "form": "günstigen",
+    "used": false
+  },
+  "p10w009": {
+    "form": "Rückenwind",
+    "used": false
+  },
+  "p10w010": {
+    "form": "dorthin",
+    "used": false
+  },
+  "p10w011": {
+    "form": "gesegelt",
+    "used": false
+  },
+  "p10w012": {
+    "form": "war",
+    "used": false
+  },
+  "p10w013": {
+    "form": "umarmte",
+    "used": false
+  },
+  "p10w014": {
+    "form": "er",
+    "used": false
+  },
+  "p10w015": {
+    "form": "den",
+    "used": false
+  },
+  "p10w016": {
+    "form": "Verängstigten",
+    "used": false
+  },
+  "p10w017": {
+    "form": "tröstete",
+    "used": false
+  },
+  "p10w018": {
+    "form": "und",
+    "used": false
+  },
+  "p10w019": {
+    "form": "ermunterte",
+    "used": false
+  },
+  "p10w020": {
+    "form": "ihn",
+    "used": false
+  },
+  "p10w021": {
+    "form": "und",
+    "used": false
+  },
+  "p10w022": {
+    "form": "um",
+    "used": false
+  },
+  "p10w023": {
+    "form": "dessen",
+    "used": false
+  },
+  "p10w024": {
+    "form": "Angst",
+    "used": false
+  },
+  "p10w025": {
+    "form": "mit",
+    "used": false
+  },
+  "p10w026": {
+    "form": "seiner",
+    "used": false
+  },
+  "p10w027": {
+    "form": "Sorglosigkeit",
+    "used": false
+  },
+  "p10w028": {
+    "form": "zu",
+    "used": false
+  },
+  "p10w029": {
+    "form": "lindern",
+    "used": false
+  },
+  "p10w030": {
+    "form": "befahl",
+    "used": false
+  },
+  "p10w031": {
+    "form": "er",
+    "used": false
+  },
+  "p10w032": {
+    "form": "ins",
+    "used": false
+  },
+  "p10w033": {
+    "form": "Bad",
+    "used": false
+  },
+  "p10w034": {
+    "form": "getragen",
+    "used": false
+  },
+  "p10w035": {
+    "form": "zu",
+    "used": false
+  },
+  "p10w036": {
+    "form": "werden",
+    "used": false
+  },
+  "p10w037": {
+    "form": "Der",
+    "used": false
+  },
+  "p10w038": {
+    "form": "Gebadete",
+    "used": false
+  },
+  "p10w039": {
+    "form": "lag",
+    "used": false
+  },
+  "p10w040": {
+    "form": "bei",
+    "used": false
+  },
+  "p10w041": {
+    "form": "Tisch",
+    "used": false
+  },
+  "p10w042": {
+    "form": "speiste",
+    "used": false
+  },
+  "p10w043": {
+    "form": "entweder",
+    "used": false
+  },
+  "p10w044": {
+    "form": "fröhlich",
+    "used": false
+  },
+  "p10w045": {
+    "form": "oder",
+    "used": false
+  },
+  "p10w046": {
+    "form": "was",
+    "used": false
+  },
+  "p10w047": {
+    "form": "ebenso",
+    "used": false
+  },
+  "p10w048": {
+    "form": "großartig",
+    "used": false
+  },
+  "p10w049": {
+    "form": "war",
+    "used": false
+  },
+  "p10w050": {
+    "form": "anscheinend",
+    "used": false
+  },
+  "p10w051": {
+    "form": "heiter",
+    "used": false
+  },
+  "p11w001": {
+    "form": "Inwischen",
+    "used": false
+  },
+  "p11w002": {
+    "form": "leuchteten",
+    "used": false
+  },
+  "p11w003": {
+    "form": "vom",
+    "used": false
+  },
+  "p11w004": {
+    "form": "Vesuv",
+    "used": false
+  },
+  "p11w005": {
+    "form": "aus",
+    "used": false
+  },
+  "p11w006": {
+    "form": "an",
+    "used": false
+  },
+  "p11w007": {
+    "form": "mehreren",
+    "used": false
+  },
+  "p11w008": {
+    "form": "Orten",
+    "used": false
+  },
+  "p11w009": {
+    "form": "sehr",
+    "used": false
+  },
+  "p11w010": {
+    "form": "weit",
+    "used": false
+  },
+  "p11w011": {
+    "form": "ausgedehnte",
+    "used": false
+  },
+  "p11w012": {
+    "form": "Brände",
+    "used": false
+  },
+  "p11w013": {
+    "form": "und",
+    "used": false
+  },
+  "p11w014": {
+    "form": "hochragende",
+    "used": false
+  },
+  "p11w015": {
+    "form": "Feuer",
+    "used": false
+  },
+  "p11w016": {
+    "form": "auf",
+    "used": false
+  },
+  "p11w017": {
+    "form": "deren",
+    "used": false
+  },
+  "p11w018": {
+    "form": "leuchtender",
+    "used": false
+  },
+  "p11w019": {
+    "form": "Schein",
+    "used": false
+  },
+  "p11w020": {
+    "form": "durch",
+    "used": false
+  },
+  "p11w021": {
+    "form": "der",
+    "used": false
+  },
+  "p11w022": {
+    "form": "Finsternis",
+    "used": false
+  },
+  "p11w023": {
+    "form": "der",
+    "used": false
+  },
+  "p11w024": {
+    "form": "Nacht",
+    "used": false
+  },
+  "p11w025": {
+    "form": "gestärkt",
+    "used": false
+  },
+  "p11w026": {
+    "form": "wurde",
+    "used": false
+  },
+  "p11w027": {
+    "form": "Mein",
+    "used": false
+  },
+  "p11w028": {
+    "form": "Onkel",
+    "used": false
+  },
+  "p11w029": {
+    "form": "sagte",
+    "used": false
+  },
+  "p11w030": {
+    "form": "immer",
+    "used": false
+  },
+  "p11w031": {
+    "form": "wieder",
+    "used": false
+  },
+  "p11w032": {
+    "form": "als",
+    "used": false
+  },
+  "p11w033": {
+    "form": "Hilfsmittel",
+    "used": false
+  },
+  "p11w034": {
+    "form": "gegen",
+    "used": false
+  },
+  "p11w035": {
+    "form": "die",
+    "used": false
+  },
+  "p11w036": {
+    "form": "Furcht",
+    "used": false
+  },
+  "p11w037": {
+    "form": "dass",
+    "used": false
+  },
+  "p11w038": {
+    "form": "die",
+    "used": false
+  },
+  "p11w039": {
+    "form": "Herdfeuer",
+    "used": false
+  },
+  "p11w040": {
+    "form": "aus",
+    "used": false
+  },
+  "p11w041": {
+    "form": "Angst",
+    "used": false
+  },
+  "p11w042": {
+    "form": "von",
+    "used": false
+  },
+  "p11w043": {
+    "form": "den",
+    "used": false
+  },
+  "p11w044": {
+    "form": "Bauern",
+    "used": false
+  },
+  "p11w045": {
+    "form": "zurückgelassen",
+    "used": false
+  },
+  "p11w046": {
+    "form": "wurden",
+    "used": false
+  },
+  "p11w047": {
+    "form": "und",
+    "used": false
+  },
+  "p11w048": {
+    "form": "nun",
+    "used": false
+  },
+  "p11w049": {
+    "form": "zusammen",
+    "used": false
+  },
+  "p11w050": {
+    "form": "mit",
+    "used": false
+  },
+  "p11w051": {
+    "form": "den",
+    "used": false
+  },
+  "p11w052": {
+    "form": "im",
+    "used": false
+  },
+  "p11w053": {
+    "form": "Stich",
+    "used": false
+  },
+  "p11w054": {
+    "form": "gelassenen",
+    "used": false
+  },
+  "p11w055": {
+    "form": "Landhäusern",
+    "used": false
+  },
+  "p11w056": {
+    "form": "brannten",
+    "used": false
+  },
+  "p11w057": {
+    "form": "Dann",
+    "used": false
+  },
+  "p11w058": {
+    "form": "widmete",
+    "used": false
+  },
+  "p11w059": {
+    "form": "er",
+    "used": false
+  },
+  "p11w060": {
+    "form": "sich",
+    "used": false
+  },
+  "p11w061": {
+    "form": "dem",
+    "used": false
+  },
+  "p11w062": {
+    "form": "Schlaf",
+    "used": false
+  },
+  "p11w063": {
+    "form": "und",
+    "used": false
+  },
+  "p11w064": {
+    "form": "schlief",
+    "used": false
+  },
+  "p11w065": {
+    "form": "sicherlich",
+    "used": false
+  },
+  "p11w066": {
+    "form": "sehr",
+    "used": false
+  },
+  "p11w067": {
+    "form": "tief",
+    "used": false
+  },
+  "p11w068": {
+    "form": "denn",
+    "used": false
+  },
+  "p11w069": {
+    "form": "das",
+    "used": false
+  },
+  "p11w070": {
+    "form": "Atemholen",
+    "used": false
+  },
+  "p11w071": {
+    "form": "das",
+    "used": false
+  },
+  "p11w072": {
+    "form": "für",
+    "used": false
+  },
+  "p11w073": {
+    "form": "ihn",
+    "used": false
+  },
+  "p11w074": {
+    "form": "wegen",
+    "used": false
+  },
+  "p11w075": {
+    "form": "seines",
+    "used": false
+  },
+  "p11w076": {
+    "form": "Körperumfangs",
+    "used": false
+  },
+  "p11w077": {
+    "form": "ziemlich",
+    "used": false
+  },
+  "p11w078": {
+    "form": "schwer",
+    "used": false
+  },
+  "p11w079": {
+    "form": "und",
+    "used": false
+  },
+  "p11w080": {
+    "form": "laut",
+    "used": false
+  },
+  "p11w081": {
+    "form": "war",
+    "used": false
+  },
+  "p11w082": {
+    "form": "wurde",
+    "used": false
+  },
+  "p11w083": {
+    "form": "von",
+    "used": false
+  },
+  "p11w084": {
+    "form": "denen",
+    "used": false
+  },
+  "p11w085": {
+    "form": "gehört",
+    "used": false
+  },
+  "p11w086": {
+    "form": "die",
+    "used": false
+  },
+  "p11w087": {
+    "form": "sich",
+    "used": false
+  },
+  "p11w088": {
+    "form": "vor",
+    "used": false
+  },
+  "p11w089": {
+    "form": "der",
+    "used": false
+  },
+  "p11w090": {
+    "form": "Schwelle",
+    "used": false
+  },
+  "p11w091": {
+    "form": "aufhielten",
+    "used": false
+  },
+  "p12w001": {
+    "form": "Aber",
+    "used": false
+  },
+  "p12w002": {
+    "form": "der",
+    "used": false
+  },
+  "p12w003": {
+    "form": "Hof",
+    "used": false
+  },
+  "p12w004": {
+    "form": "von",
+    "used": false
+  },
+  "p12w005": {
+    "form": "dem",
+    "used": false
+  },
+  "p12w006": {
+    "form": "aus",
+    "used": false
+  },
+  "p12w007": {
+    "form": "der",
+    "used": false
+  },
+  "p12w008": {
+    "form": "Wohnraum",
+    "used": false
+  },
+  "p12w009": {
+    "form": "betreten",
+    "used": false
+  },
+  "p12w010": {
+    "form": "wurde",
+    "used": false
+  },
+  "p12w011": {
+    "form": "war",
+    "used": false
+  },
+  "p12w012": {
+    "form": "mit",
+    "used": false
+  },
+  "p12w013": {
+    "form": "Asche",
+    "used": false
+  },
+  "p12w014": {
+    "form": "und",
+    "used": false
+  },
+  "p12w015": {
+    "form": "gemischten",
+    "used": false
+  },
+  "p12w016": {
+    "form": "Lavabrocken",
+    "used": false
+  },
+  "p12w017": {
+    "form": "gefüllt",
+    "used": false
+  },
+  "p12w018": {
+    "form": "und",
+    "used": false
+  },
+  "p12w019": {
+    "form": "hatte",
+    "used": false
+  },
+  "p12w020": {
+    "form": "sich",
+    "used": false
+  },
+  "p12w021": {
+    "form": "so",
+    "used": false
+  },
+  "p12w022": {
+    "form": "angehoben",
+    "used": false
+  },
+  "p12w023": {
+    "form": "dass",
+    "used": false
+  },
+  "p12w024": {
+    "form": "wenn",
+    "used": false
+  },
+  "p12w025": {
+    "form": "er",
+    "used": false
+  },
+  "p12w026": {
+    "form": "länger",
+    "used": false
+  },
+  "p12w027": {
+    "form": "im",
+    "used": false
+  },
+  "p12w028": {
+    "form": "Wohnraum",
+    "used": false
+  },
+  "p12w029": {
+    "form": "verweilen",
+    "used": false
+  },
+  "p12w030": {
+    "form": "würde",
+    "used": false
+  },
+  "p12w031": {
+    "form": "der",
+    "used": false
+  },
+  "p12w032": {
+    "form": "Ausgang",
+    "used": false
+  },
+  "p12w033": {
+    "form": "versperrt",
+    "used": false
+  },
+  "p12w034": {
+    "form": "worden",
+    "used": false
+  },
+  "p12w035": {
+    "form": "wäre",
+    "used": false
+  },
+  "p12w036": {
+    "form": "Nachdem",
+    "used": false
+  },
+  "p12w037": {
+    "form": "er",
+    "used": false
+  },
+  "p12w038": {
+    "form": "geweckt",
+    "used": false
+  },
+  "p12w039": {
+    "form": "worden",
+    "used": false
+  },
+  "p12w040": {
+    "form": "war",
+    "used": false
+  },
+  "p12w041": {
+    "form": "trat",
+    "used": false
+  },
+  "p12w042": {
+    "form": "er",
+    "used": false
+  },
+  "p12w043": {
+    "form": "hervor",
+    "used": false
+  },
+  "p12w044": {
+    "form": "und",
+    "used": false
+  },
+  "p12w045": {
+    "form": "kehrte",
+    "used": false
+  },
+  "p12w046": {
+    "form": "zu",
+    "used": false
+  },
+  "p12w047": {
+    "form": "Pomponianus",
+    "used": false
+  },
+  "p12w048": {
+    "form": "und",
+    "used": false
+  },
+  "p12w049": {
+    "form": "den",
+    "used": false
+  },
+  "p12w050": {
+    "form": "Übrigen",
+    "used": false
+  },
+  "p12w051": {
+    "form": "die",
+    "used": false
+  },
+  "p12w052": {
+    "form": "durchgewacht",
+    "used": false
+  },
+  "p12w053": {
+    "form": "hatten",
+    "used": false
+  },
+  "p12w054": {
+    "form": "zurück",
+    "used": false
+  },
+  "p13w001": {
+    "form": "Gemeinsam",
+    "used": false
+  },
+  "p13w002": {
+    "form": "überlegten",
+    "used": false
+  },
+  "p13w003": {
+    "form": "sie",
+    "used": false
+  },
+  "p13w004": {
+    "form": "ob",
+    "used": false
+  },
+  "p13w005": {
+    "form": "sie",
+    "used": false
+  },
+  "p13w006": {
+    "form": "in",
+    "used": false
+  },
+  "p13w007": {
+    "form": "den",
+    "used": false
+  },
+  "p13w008": {
+    "form": "Häusern",
+    "used": false
+  },
+  "p13w009": {
+    "form": "bleiben",
+    "used": false
+  },
+  "p13w010": {
+    "form": "oder",
+    "used": false
+  },
+  "p13w011": {
+    "form": "ob",
+    "used": false
+  },
+  "p13w012": {
+    "form": "sie",
+    "used": false
+  },
+  "p13w013": {
+    "form": "im",
+    "used": false
+  },
+  "p13w014": {
+    "form": "Freien",
+    "used": false
+  },
+  "p13w015": {
+    "form": "gehen",
+    "used": false
+  },
+  "p13w016": {
+    "form": "sollten",
+    "used": false
+  },
+  "p13w017": {
+    "form": "Denn",
+    "used": false
+  },
+  "p13w018": {
+    "form": "durch",
+    "used": false
+  },
+  "p13w019": {
+    "form": "die",
+    "used": false
+  },
+  "p13w020": {
+    "form": "häufigen",
+    "used": false
+  },
+  "p13w021": {
+    "form": "und",
+    "used": false
+  },
+  "p13w022": {
+    "form": "gewaltigen",
+    "used": false
+  },
+  "p13w023": {
+    "form": "Erdbeben",
+    "used": false
+  },
+  "p13w024": {
+    "form": "schwankten",
+    "used": false
+  },
+  "p13w025": {
+    "form": "die",
+    "used": false
+  },
+  "p13w026": {
+    "form": "Häuser",
+    "used": false
+  },
+  "p13w027": {
+    "form": "und",
+    "used": false
+  },
+  "p13w028": {
+    "form": "weil",
+    "used": false
+  },
+  "p13w029": {
+    "form": "sie",
+    "used": false
+  },
+  "p13w030": {
+    "form": "auch",
+    "used": false
+  },
+  "p13w031": {
+    "form": "aus",
+    "used": false
+  },
+  "p13w032": {
+    "form": "ihrem",
+    "used": false
+  },
+  "p13w033": {
+    "form": "Fundament",
+    "used": false
+  },
+  "p13w034": {
+    "form": "gehoben",
+    "used": false
+  },
+  "p13w035": {
+    "form": "worden",
+    "used": false
+  },
+  "p13w036": {
+    "form": "waren",
+    "used": false
+  },
+  "p13w037": {
+    "form": "schienen",
+    "used": false
+  },
+  "p13w038": {
+    "form": "sie",
+    "used": false
+  },
+  "p13w039": {
+    "form": "mal",
+    "used": false
+  },
+  "p13w040": {
+    "form": "hierhin",
+    "used": false
+  },
+  "p13w041": {
+    "form": "mal",
+    "used": false
+  },
+  "p13w042": {
+    "form": "dorthin",
+    "used": false
+  },
+  "p13w043": {
+    "form": "zu",
+    "used": false
+  },
+  "p13w044": {
+    "form": "schwinden",
+    "used": false
+  },
+  "p13w045": {
+    "form": "und",
+    "used": false
+  },
+  "p13w046": {
+    "form": "zurückgetragen",
+    "used": false
+  },
+  "p13w047": {
+    "form": "zu",
+    "used": false
+  },
+  "p13w048": {
+    "form": "werden",
+    "used": false
+  },
+  "p13w049": {
+    "form": "Obwohl",
+    "used": false
+  },
+  "p13w050": {
+    "form": "andererseits",
+    "used": false
+  },
+  "p13w051": {
+    "form": "unter",
+    "used": false
+  },
+  "p13w052": {
+    "form": "freiem",
+    "used": false
+  },
+  "p13w053": {
+    "form": "Himmel",
+    "used": false
+  },
+  "p13w054": {
+    "form": "herunterfallende",
+    "used": false
+  },
+  "p13w055": {
+    "form": "leichte",
+    "used": false
+  },
+  "p13w056": {
+    "form": "und",
+    "used": false
+  },
+  "p13w057": {
+    "form": "ausgehöhlte",
+    "used": false
+  },
+  "p13w058": {
+    "form": "Bimssteine",
+    "used": false
+  },
+  "p13w059": {
+    "form": "gefürchtet",
+    "used": false
+  },
+  "p13w060": {
+    "form": "wurde",
+    "used": false
+  },
+  "p13w061": {
+    "form": "hat",
+    "used": false
+  },
+  "p13w062": {
+    "form": "der",
+    "used": false
+  },
+  "p13w063": {
+    "form": "Vergleich",
+    "used": false
+  },
+  "p13w064": {
+    "form": "der",
+    "used": false
+  },
+  "p13w065": {
+    "form": "Gefahren",
+    "used": false
+  },
+  "p13w066": {
+    "form": "die",
+    "used": false
+  },
+  "p13w067": {
+    "form": "letztere",
+    "used": false
+  },
+  "p13w068": {
+    "form": "trotzdem",
+    "used": false
+  },
+  "p13w069": {
+    "form": "bevorzugt",
+    "used": false
+  },
+  "p13w070": {
+    "form": "Bei",
+    "used": false
+  },
+  "p13w071": {
+    "form": "meinem",
+    "used": false
+  },
+  "p13w072": {
+    "form": "Onkel",
+    "used": false
+  },
+  "p13w073": {
+    "form": "hatte",
+    "used": false
+  },
+  "p13w074": {
+    "form": "wenigstens",
+    "used": false
+  },
+  "p13w075": {
+    "form": "die",
+    "used": false
+  },
+  "p13w076": {
+    "form": "Vernunft",
+    "used": false
+  },
+  "p13w077": {
+    "form": "den",
+    "used": false
+  },
+  "p13w078": {
+    "form": "Verstand",
+    "used": false
+  },
+  "p13w079": {
+    "form": "bei",
+    "used": false
+  },
+  "p13w080": {
+    "form": "den",
+    "used": false
+  },
+  "p13w081": {
+    "form": "anderen",
+    "used": false
+  },
+  "p13w082": {
+    "form": "die",
+    "used": false
+  },
+  "p13w083": {
+    "form": "Angst",
+    "used": false
+  },
+  "p13w084": {
+    "form": "die",
+    "used": false
+  },
+  "p13w085": {
+    "form": "Furcht",
+    "used": false
+  },
+  "p13w086": {
+    "form": "besiegt",
+    "used": false
+  },
+  "p14w001": {
+    "form": "Sie",
+    "used": false
+  },
+  "p14w002": {
+    "form": "hatten",
+    "used": false
+  },
+  "p14w003": {
+    "form": "Kopfkissen",
+    "used": false
+  },
+  "p14w004": {
+    "form": "auf",
+    "used": false
+  },
+  "p14w005": {
+    "form": "ihre",
+    "used": false
+  },
+  "p14w006": {
+    "form": "Köpfe",
+    "used": false
+  },
+  "p14w007": {
+    "form": "gesetzt",
+    "used": false
+  },
+  "p14w008": {
+    "form": "und",
+    "used": false
+  },
+  "p14w009": {
+    "form": "banden",
+    "used": false
+  },
+  "p14w010": {
+    "form": "sie",
+    "used": false
+  },
+  "p14w011": {
+    "form": "mit",
+    "used": false
+  },
+  "p14w012": {
+    "form": "Leintüchern",
+    "used": false
+  },
+  "p14w013": {
+    "form": "fest",
+    "used": false
+  },
+  "p14w014": {
+    "form": "dies",
+    "used": false
+  },
+  "p14w015": {
+    "form": "war",
+    "used": false
+  },
+  "p14w016": {
+    "form": "ein",
+    "used": false
+  },
+  "p14w017": {
+    "form": "Schutz",
+    "used": false
+  },
+  "p14w018": {
+    "form": "gegen",
+    "used": false
+  },
+  "p14w019": {
+    "form": "die",
+    "used": false
+  },
+  "p14w020": {
+    "form": "herabfallenden",
+    "used": false
+  },
+  "p14w021": {
+    "form": "Steine",
+    "used": false
+  },
+  "p14w022": {
+    "form": "Schon",
+    "used": false
+  },
+  "p14w023": {
+    "form": "war",
+    "used": false
+  },
+  "p14w024": {
+    "form": "es",
+    "used": false
+  },
+  "p14w025": {
+    "form": "anderswo",
+    "used": false
+  },
+  "p14w026": {
+    "form": "Tag",
+    "used": false
+  },
+  "p14w027": {
+    "form": "an",
+    "used": false
+  },
+  "p14w028": {
+    "form": "jenem",
+    "used": false
+  },
+  "p14w029": {
+    "form": "Ort",
+    "used": false
+  },
+  "p14w030": {
+    "form": "aber",
+    "used": false
+  },
+  "p14w031": {
+    "form": "war",
+    "used": false
+  },
+  "p14w032": {
+    "form": "es",
+    "used": false
+  },
+  "p14w033": {
+    "form": "Nacht",
+    "used": false
+  },
+  "p14w034": {
+    "form": "schwärzer",
+    "used": false
+  },
+  "p14w035": {
+    "form": "und",
+    "used": false
+  },
+  "p14w036": {
+    "form": "anhaltender",
+    "used": false
+  },
+  "p14w037": {
+    "form": "als",
+    "used": false
+  },
+  "p14w038": {
+    "form": "alle",
+    "used": false
+  },
+  "p14w039": {
+    "form": "Nächte",
+    "used": false
+  },
+  "p14w040": {
+    "form": "Trotzend",
+    "used": false
+  },
+  "p14w041": {
+    "form": "lösten",
+    "used": false
+  },
+  "p14w042": {
+    "form": "viele",
+    "used": false
+  },
+  "p14w043": {
+    "form": "Fackeln",
+    "used": false
+  },
+  "p14w044": {
+    "form": "und",
+    "used": false
+  },
+  "p14w045": {
+    "form": "andere",
+    "used": false
+  },
+  "p14w046": {
+    "form": "Lichter",
+    "used": false
+  },
+  "p14w047": {
+    "form": "diese",
+    "used": false
+  },
+  "p14w048": {
+    "form": "Nacht",
+    "used": false
+  },
+  "p14w049": {
+    "form": "auf",
+    "used": false
+  },
+  "p15w001": {
+    "form": "Man",
+    "used": false
+  },
+  "p15w002": {
+    "form": "beschloss",
+    "used": false
+  },
+  "p15w003": {
+    "form": "zum",
+    "used": false
+  },
+  "p15w004": {
+    "form": "Strand",
+    "used": false
+  },
+  "p15w005": {
+    "form": "hinaus",
+    "used": false
+  },
+  "p15w006": {
+    "form": "zu",
+    "used": false
+  },
+  "p15w007": {
+    "form": "gehen",
+    "used": false
+  },
+  "p15w008": {
+    "form": "und",
+    "used": false
+  },
+  "p15w009": {
+    "form": "aus",
+    "used": false
+  },
+  "p15w010": {
+    "form": "der",
+    "used": false
+  },
+  "p15w011": {
+    "form": "aus",
+    "used": false
+  },
+  "p15w012": {
+    "form": "der",
+    "used": false
+  },
+  "p15w013": {
+    "form": "der",
+    "used": false
+  },
+  "p15w014": {
+    "form": "Nähe",
+    "used": false
+  },
+  "p15w015": {
+    "form": "zu",
+    "used": false
+  },
+  "p15w016": {
+    "form": "betrachten",
+    "used": false
+  },
+  "p15w017": {
+    "form": "ob",
+    "used": false
+  },
+  "p15w018": {
+    "form": "das",
+    "used": false
+  },
+  "p15w019": {
+    "form": "Meer",
+    "used": false
+  },
+  "p15w020": {
+    "form": "schon",
+    "used": false
+  },
+  "p15w021": {
+    "form": "etwas",
+    "used": false
+  },
+  "p15w022": {
+    "form": "zulässt",
+    "used": false
+  },
+  "p15w023": {
+    "form": "dieses",
+    "used": false
+  },
+  "p15w024": {
+    "form": "verblieb",
+    "used": false
+  },
+  "p15w025": {
+    "form": "jedoch",
+    "used": false
+  },
+  "p15w026": {
+    "form": "rau",
+    "used": false
+  },
+  "p15w027": {
+    "form": "und",
+    "used": false
+  },
+  "p15w028": {
+    "form": "feindlich",
+    "used": false
+  },
+  "p15w029": {
+    "form": "Dort",
+    "used": false
+  },
+  "p15w030": {
+    "form": "auf",
+    "used": false
+  },
+  "p15w031": {
+    "form": "einem",
+    "used": false
+  },
+  "p15w032": {
+    "form": "ausgebreiteten",
+    "used": false
+  },
+  "p15w033": {
+    "form": "Leintuch",
+    "used": false
+  },
+  "p15w034": {
+    "form": "ruhend",
+    "used": false
+  },
+  "p15w035": {
+    "form": "verlangte",
+    "used": false
+  },
+  "p15w036": {
+    "form": "mein",
+    "used": false
+  },
+  "p15w037": {
+    "form": "Onkel",
+    "used": false
+  },
+  "p15w038": {
+    "form": "von",
+    "used": false
+  },
+  "p15w039": {
+    "form": "Zeit",
+    "used": false
+  },
+  "p15w040": {
+    "form": "zu",
+    "used": false
+  },
+  "p15w041": {
+    "form": "Zeit",
+    "used": false
+  },
+  "p15w042": {
+    "form": "kaltes",
+    "used": false
+  },
+  "p15w043": {
+    "form": "Wasser",
+    "used": false
+  },
+  "p15w044": {
+    "form": "und",
+    "used": false
+  },
+  "p15w045": {
+    "form": "trank",
+    "used": false
+  },
+  "p15w046": {
+    "form": "Dann",
+    "used": false
+  },
+  "p15w047": {
+    "form": "trieben",
+    "used": false
+  },
+  "p15w048": {
+    "form": "die",
+    "used": false
+  },
+  "p15w049": {
+    "form": "Flammen",
+    "used": false
+  },
+  "p15w050": {
+    "form": "und",
+    "used": false
+  },
+  "p15w051": {
+    "form": "der",
+    "used": false
+  },
+  "p15w052": {
+    "form": "Schwefelgeruch",
+    "used": false
+  },
+  "p15w053": {
+    "form": "als",
+    "used": false
+  },
+  "p15w054": {
+    "form": "Vorbote",
+    "used": false
+  },
+  "p15w055": {
+    "form": "der",
+    "used": false
+  },
+  "p15w056": {
+    "form": "Brände",
+    "used": false
+  },
+  "p15w057": {
+    "form": "die",
+    "used": false
+  },
+  "p15w058": {
+    "form": "anderen",
+    "used": false
+  },
+  "p15w059": {
+    "form": "in",
+    "used": false
+  },
+  "p15w060": {
+    "form": "die",
+    "used": false
+  },
+  "p15w061": {
+    "form": "Flucht",
+    "used": false
+  },
+  "p15w062": {
+    "form": "und",
+    "used": false
+  },
+  "p15w063": {
+    "form": "beunruhigten",
+    "used": false
+  },
+  "p15w064": {
+    "form": "auch",
+    "used": false
+  },
+  "p15w065": {
+    "form": "ihn",
+    "used": false
+  },
+  "p16w001": {
+    "form": "Sich",
+    "used": false
+  },
+  "p16w002": {
+    "form": "auf",
+    "used": false
+  },
+  "p16w003": {
+    "form": "zwei",
+    "used": false
+  },
+  "p16w004": {
+    "form": "kleine",
+    "used": false
+  },
+  "p16w005": {
+    "form": "Sklaven",
+    "used": false
+  },
+  "p16w006": {
+    "form": "stützend",
+    "used": false
+  },
+  "p16w007": {
+    "form": "richtete",
+    "used": false
+  },
+  "p16w008": {
+    "form": "er",
+    "used": false
+  },
+  "p16w009": {
+    "form": "sich",
+    "used": false
+  },
+  "p16w010": {
+    "form": "auf",
+    "used": false
+  },
+  "p16w011": {
+    "form": "und",
+    "used": false
+  },
+  "p16w012": {
+    "form": "brach",
+    "used": false
+  },
+  "p16w013": {
+    "form": "sofort",
+    "used": false
+  },
+  "p16w014": {
+    "form": "zusammen",
+    "used": false
+  },
+  "p16w015": {
+    "form": "durch",
+    "used": false
+  },
+  "p16w016": {
+    "form": "den",
+    "used": false
+  },
+  "p16w017": {
+    "form": "ziemlich",
+    "used": false
+  },
+  "p16w018": {
+    "form": "dichten",
+    "used": false
+  },
+  "p16w019": {
+    "form": "Qualm",
+    "used": false
+  },
+  "p16w020": {
+    "form": "wie",
+    "used": false
+  },
+  "p16w021": {
+    "form": "ich",
+    "used": false
+  },
+  "p16w022": {
+    "form": "es",
+    "used": false
+  },
+  "p16w023": {
+    "form": "mir",
+    "used": false
+  },
+  "p16w024": {
+    "form": "zusammenreime",
+    "used": false
+  },
+  "p16w025": {
+    "form": "hat",
+    "used": false
+  },
+  "p16w026": {
+    "form": "sein",
+    "used": false
+  },
+  "p16w027": {
+    "form": "Atemzug",
+    "used": false
+  },
+  "p16w028": {
+    "form": "ausgesetzt",
+    "used": false
+  },
+  "p16w029": {
+    "form": "und",
+    "used": false
+  },
+  "p16w030": {
+    "form": "die",
+    "used": false
+  },
+  "p16w031": {
+    "form": "Luftröhre",
+    "used": false
+  },
+  "p16w032": {
+    "form": "war",
+    "used": false
+  },
+  "p16w033": {
+    "form": "verschlossen",
+    "used": false
+  },
+  "p16w034": {
+    "form": "worden",
+    "used": false
+  },
+  "p16w035": {
+    "form": "die",
+    "used": false
+  },
+  "p16w036": {
+    "form": "bei",
+    "used": false
+  },
+  "p16w037": {
+    "form": "ihm",
+    "used": false
+  },
+  "p16w038": {
+    "form": "von",
+    "used": false
+  },
+  "p16w039": {
+    "form": "Natur",
+    "used": false
+  },
+  "p16w040": {
+    "form": "aus",
+    "used": false
+  },
+  "p16w041": {
+    "form": "schwach",
+    "used": false
+  },
+  "p16w042": {
+    "form": "und",
+    "used": false
+  },
+  "p16w043": {
+    "form": "eng",
+    "used": false
+  },
+  "p16w044": {
+    "form": "und",
+    "used": false
+  },
+  "p16w045": {
+    "form": "häufig",
+    "used": false
+  },
+  "p16w046": {
+    "form": "entzündet",
+    "used": false
+  },
+  "p16w047": {
+    "form": "war",
+    "used": false
+  },
+  "p17w001": {
+    "form": "Als",
+    "used": false
+  },
+  "p17w002": {
+    "form": "der",
+    "used": false
+  },
+  "p17w003": {
+    "form": "Tag",
+    "used": false
+  },
+  "p17w004": {
+    "form": "zurückgekehrt",
+    "used": false
+  },
+  "p17w005": {
+    "form": "war",
+    "used": false
+  },
+  "p17w006": {
+    "form": "den",
+    "used": false
+  },
+  "p17w007": {
+    "form": "letzten",
+    "used": false
+  },
+  "p17w008": {
+    "form": "Tag",
+    "used": false
+  },
+  "p17w009": {
+    "form": "hatte",
+    "used": false
+  },
+  "p17w010": {
+    "form": "er",
+    "used": false
+  },
+  "p17w011": {
+    "form": "drei",
+    "used": false
+  },
+  "p17w012": {
+    "form": "Tage",
+    "used": false
+  },
+  "p17w013": {
+    "form": "zuvor",
+    "used": false
+  },
+  "p17w014": {
+    "form": "gesehen",
+    "used": false
+  },
+  "p17w015": {
+    "form": "war",
+    "used": false
+  },
+  "p17w016": {
+    "form": "der",
+    "used": false
+  },
+  "p17w017": {
+    "form": "Körper",
+    "used": false
+  },
+  "p17w018": {
+    "form": "noch",
+    "used": false
+  },
+  "p17w019": {
+    "form": "unverletzt",
+    "used": false
+  },
+  "p17w020": {
+    "form": "gefunden",
+    "used": false
+  },
+  "p17w021": {
+    "form": "worden",
+    "used": false
+  },
+  "p17w022": {
+    "form": "und",
+    "used": false
+  },
+  "p17w023": {
+    "form": "so",
+    "used": false
+  },
+  "p17w024": {
+    "form": "verhüllt",
+    "used": false
+  },
+  "p17w025": {
+    "form": "wie",
+    "used": false
+  },
+  "p17w026": {
+    "form": "er",
+    "used": false
+  },
+  "p17w027": {
+    "form": "bekleidet",
+    "used": false
+  },
+  "p17w028": {
+    "form": "gewesen",
+    "used": false
+  },
+  "p17w029": {
+    "form": "war",
+    "used": false
+  },
+  "p17w030": {
+    "form": "Das",
+    "used": false
+  },
+  "p17w031": {
+    "form": "Aussehen",
+    "used": false
+  },
+  "p17w032": {
+    "form": "des",
+    "used": false
+  },
+  "p17w033": {
+    "form": "Körpers",
+    "used": false
+  },
+  "p17w034": {
+    "form": "war",
+    "used": false
+  },
+  "p17w035": {
+    "form": "einem",
+    "used": false
+  },
+  "p17w036": {
+    "form": "Schlafenden",
+    "used": false
+  },
+  "p17w037": {
+    "form": "ähnlicher",
+    "used": false
+  },
+  "p17w038": {
+    "form": "als",
+    "used": false
+  },
+  "p17w039": {
+    "form": "einem",
+    "used": false
+  },
+  "p17w040": {
+    "form": "Toten",
+    "used": false
+  },
+  "p18w001": {
+    "form": "Inzwischen",
+    "used": false
+  },
+  "p18w002": {
+    "form": "waren",
+    "used": false
+  },
+  "p18w003": {
+    "form": "ich",
+    "used": false
+  },
+  "p18w004": {
+    "form": "und",
+    "used": false
+  },
+  "p18w005": {
+    "form": "meine",
+    "used": false
+  },
+  "p18w006": {
+    "form": "Mutter",
+    "used": false
+  },
+  "p18w007": {
+    "form": "in",
+    "used": false
+  },
+  "p18w008": {
+    "form": "Misenum",
+    "used": false
+  },
+  "p18w009": {
+    "form": "das",
+    "used": false
+  },
+  "p18w010": {
+    "form": "ist",
+    "used": false
+  },
+  "p18w011": {
+    "form": "aber",
+    "used": false
+  },
+  "p18w012": {
+    "form": "nichts",
+    "used": false
+  },
+  "p18w013": {
+    "form": "für",
+    "used": false
+  },
+  "p18w014": {
+    "form": "deine",
+    "used": false
+  },
+  "p18w015": {
+    "form": "Geschichtsschreibung",
+    "used": false
+  },
+  "p18w016": {
+    "form": "und",
+    "used": false
+  },
+  "p18w017": {
+    "form": "du",
+    "used": false
+  },
+  "p18w018": {
+    "form": "hast",
+    "used": false
+  },
+  "p18w019": {
+    "form": "nichts",
+    "used": false
+  },
+  "p18w020": {
+    "form": "anderes",
+    "used": false
+  },
+  "p18w021": {
+    "form": "als",
+    "used": false
+  },
+  "p18w022": {
+    "form": "von",
+    "used": false
+  },
+  "p18w023": {
+    "form": "seinem",
+    "used": false
+  },
+  "p18w024": {
+    "form": "Tod",
+    "used": false
+  },
+  "p18w025": {
+    "form": "wissen",
+    "used": false
+  },
+  "p18w026": {
+    "form": "wollen",
+    "used": false
+  },
+  "p18w027": {
+    "form": "Folglich",
+    "used": false
+  },
+  "p18w028": {
+    "form": "werde",
+    "used": false
+  },
+  "p18w029": {
+    "form": "ich",
+    "used": false
+  },
+  "p18w030": {
+    "form": "zum",
+    "used": false
+  },
+  "p18w031": {
+    "form": "Ende",
+    "used": false
+  },
+  "p18w032": {
+    "form": "kommen",
+    "used": false
+  },
+  "p18w033": {
+    "form": "Eines",
+    "used": false
+  },
+  "p18w034": {
+    "form": "werde",
+    "used": false
+  },
+  "p18w035": {
+    "form": "ich",
+    "used": false
+  },
+  "p18w036": {
+    "form": "hinzufügen",
+    "used": false
+  },
+  "p18w037": {
+    "form": "Ich",
+    "used": false
+  },
+  "p18w038": {
+    "form": "habe",
+    "used": false
+  },
+  "p18w039": {
+    "form": "alle",
+    "used": false
+  },
+  "p18w040": {
+    "form": "Dinge",
+    "used": false
+  },
+  "p18w041": {
+    "form": "die",
+    "used": false
+  },
+  "p18w042": {
+    "form": "ich",
+    "used": false
+  },
+  "p18w043": {
+    "form": "selbst",
+    "used": false
+  },
+  "p18w044": {
+    "form": "erlebt",
+    "used": false
+  },
+  "p18w045": {
+    "form": "habe",
+    "used": false
+  },
+  "p18w046": {
+    "form": "und",
+    "used": false
+  },
+  "p18w047": {
+    "form": "die",
+    "used": false
+  },
+  "p18w048": {
+    "form": "die",
+    "used": false
+  },
+  "p18w049": {
+    "form": "ich",
+    "used": false
+  },
+  "p18w050": {
+    "form": "sofort",
+    "used": false
+  },
+  "p18w051": {
+    "form": "wenn",
+    "used": false
+  },
+  "p18w052": {
+    "form": "besonders",
+    "used": false
+  },
+  "p18w053": {
+    "form": "die",
+    "used": false
+  },
+  "p18w054": {
+    "form": "wahren",
+    "used": false
+  },
+  "p18w055": {
+    "form": "Dinge",
+    "used": false
+  },
+  "p18w056": {
+    "form": "erwähnt",
+    "used": false
+  },
+  "p18w057": {
+    "form": "werden",
+    "used": false
+  },
+  "p18w058": {
+    "form": "gehört",
+    "used": false
+  },
+  "p18w059": {
+    "form": "hatte",
+    "used": false
+  },
+  "p18w060": {
+    "form": "beschrieben",
+    "used": false
+  },
+  "p19w001": {
+    "form": "Du",
+    "used": false
+  },
+  "p19w002": {
+    "form": "wählst",
+    "used": false
+  },
+  "p19w003": {
+    "form": "das",
+    "used": false
+  },
+  "p19w004": {
+    "form": "Wichtigste",
+    "used": false
+  },
+  "p19w005": {
+    "form": "aus",
+    "used": false
+  },
+  "p19w006": {
+    "form": "einen",
+    "used": false
+  },
+  "p19w007": {
+    "form": "Brief",
+    "used": false
+  },
+  "p19w008": {
+    "form": "zu",
+    "used": false
+  },
+  "p19w009": {
+    "form": "schreiben",
+    "used": false
+  },
+  "p19w010": {
+    "form": "oder",
+    "used": false
+  },
+  "p19w011": {
+    "form": "Geschichte",
+    "used": false
+  },
+  "p19w012": {
+    "form": "zu",
+    "used": false
+  },
+  "p19w013": {
+    "form": "schreiben",
+    "used": false
+  },
+  "p19w014": {
+    "form": "sind",
+    "used": false
+  },
+  "p19w015": {
+    "form": "ebenso",
+    "used": false
+  },
+  "p19w016": {
+    "form": "unterschiedliche",
+    "used": false
+  },
+  "p19w017": {
+    "form": "Dinge",
+    "used": false
+  },
+  "p19w018": {
+    "form": "wie",
+    "used": false
+  },
+  "p19w019": {
+    "form": "das",
+    "used": false
+  },
+  "p19w020": {
+    "form": "Schreiben",
+    "used": false
+  },
+  "p19w021": {
+    "form": "für",
+    "used": false
+  },
+  "p19w022": {
+    "form": "einen",
+    "used": false
+  },
+  "p19w023": {
+    "form": "Freund",
+    "used": false
+  },
+  "p19w024": {
+    "form": "oder",
+    "used": false
+  },
+  "p19w025": {
+    "form": "das",
+    "used": false
+  },
+  "p19w026": {
+    "form": "Schreiben",
+    "used": false
+  },
+  "p19w027": {
+    "form": "für",
+    "used": false
+  },
+  "p19w028": {
+    "form": "die",
+    "used": false
+  },
+  "p19w029": {
+    "form": "Allgemeinheit",
+    "used": false
+  },
+  "p20w001": {
+    "form": "Lebe",
+    "used": false
+  },
+  "p20w002": {
+    "form": "wohl",
+    "used": false
+  }
+}
