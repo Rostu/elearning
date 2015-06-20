@@ -133,9 +133,6 @@ app.get('/vulkane_brief_formen', ubung.get_vulkane_brief_formen);
 app.get('/next:last?', ubung.get_next);
 app.get('/last:last?', ubung.get_last);
 app.get('/uindex', ubung.get_uindex);
-app.post('/vulkane_json_save', dbhandler.post_json);
-app.get('/vollformlexikon_lemma', dbhandler.get_lemma);
-app.get('/vollformlexikon_forms', dbhandler.get_forms);
 app.get('/dml', function(req, res) {
     var query = req.query;
     var dml = require('./routes/dml');

@@ -44,9 +44,10 @@ function init() {
                 this.onchange = function() {
                     // access form and value properties via this (keyword)
                     if (corr_form == this.value) {
-                        
+                        raisepoints();
                     }
                     else {
+                        raisefaults();
                         //alert('git rekt, m9');
                     }
                 };

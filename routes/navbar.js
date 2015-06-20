@@ -6,7 +6,7 @@ var sites = [
     ['wertewandel_start','wertewandel_Textverstehen_Schluesselwoerter','wertewandel_Wortbedeutung_verstehen','wertewandel_Textverstehen_Kernaussagen','wertewandel_Textproduktion_Statistische_Angaben'],
     ['generationen_start','generationen_text','generationen_Textverstehen_Komposita','generationen_Wortschatz_ordnen','generationen_Textverstehen_Bedeutungserschliessung'],
     ['zukunft_start','zukunft_Textverstehen_Wortfeld_Technik','zukunft_Wortschatz_ordnen','zukunft_Wortschatzerweiterung_fest_Wortverbindungen','zukunft_Textproduktion','zukunft_Kreuzwortraetsel'],
-    ['vulkane_start','vulkane_brief_vervollstaendigen'],
+    ['vulkane_start','vulkane_brief_formen'],
     ['china_start', 'china_Textverstehen_Wortfeld_Studium','china_Wortschatz_ordnen','china_Textverstehen_Redewiedergabe']
 ];
 
