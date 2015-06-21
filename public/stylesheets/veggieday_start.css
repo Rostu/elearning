@@ -1,0 +1,32 @@
+.Zeitung {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    width: 40%;
+    display: table-cell;
+    padding: 10px;
+    margin:10px;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../images/newspaper.jpg");
+    color: #000000;
+    min-height:200px;
+}
+.newspaperContent{
+    display: table;
+}
+
+span {
+    vertical-align: middle;
+    display: table-cell;
+}
+#Textbox {
+    width: 45%;
+    display: table-cell;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(229,239,245, 0.8);
+    margin: 10px;
+    color: black;
+    line-height: 30px;
+}
