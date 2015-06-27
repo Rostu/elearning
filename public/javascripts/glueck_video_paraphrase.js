@@ -61,15 +61,18 @@ function init() {
         if(actualAnswers[parseInt(this.id)][1]== "korrekt"){
             //raise the pointer to the next exercise token
             aktuell++;
+
             //as long as the pointer is in range of the exercise token array, raise points, remove old div, add new one, also remove possible infobox from last choice
             if(aktuell<quest.length){
                 actualAnswers = shuffle(quest[aktuell].Answers);
                 raisepoints();
                 removeNoticeIfPresent();
+                toggleKorrekt();
                 $("#wortbox").fadeOut(500,function() {
                     this.remove();
                     newdiv();
-                });
+                    });
+
                 //if there are no more exercise tokens, remove last div and add a end div
             }else{
                 removeNoticeIfPresent();
@@ -82,6 +85,7 @@ function init() {
         //if clicked answer is wrong: raisefaults, and if present add info to the infobox
         }else{
             raisefaults();
+            toggleFalsch();
             if(actualAnswers[parseInt(this.id)][1] != ""){
                 removeNoticeIfPresent();
                 $('#info3').append("<p>"+actualAnswers[parseInt(this.id)][1]+"</p>");
