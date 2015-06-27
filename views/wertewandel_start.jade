@@ -1,5 +1,6 @@
 extends layout
 block content
+    link(rel='stylesheet', href='stylesheets/wertewandel_start.css')
     #subjecttitle
         h1 Wertewandel
     #tasks.startpanel
@@ -17,9 +18,7 @@ block content
                             a.tasklink(href='wertewandel_Textverstehen_Schluesselwoerter')
                 div.taskmedia
                     div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild1.png')
-                    div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild2.png')
+                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
             div.task
                 div.taskbar
                     div.taskicon Icon
@@ -30,9 +29,7 @@ block content
                             a.tasklink(href='wertewandel_Wortbedeutung_verstehen')
                 div.taskmedia
                     div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild1.png')
-                    div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild2.png')
+                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
             div.task
                 div.taskbar
                     div.taskicon Icon
@@ -43,9 +40,7 @@ block content
                             a.tasklink(href='wertewandel_Textverstehen_Kernaussagen')
                 div.taskmedia
                     div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild1.png')
-                    div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild2.png')
+                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
             div.task
                 div.taskbar
                     div.taskicon Icon
@@ -56,31 +51,15 @@ block content
                             a.tasklink(href='wertewandel_Textproduktion_Statistische_Angaben')
                 div.taskmedia
                     div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild1.png')
-                    div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild2.png')
+                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
     #media.startpanel
         div.panelheader
             div.panelarrow
             h2 Medien
         #mediashow.panelcontent
             div.mediaelement
-                img.mediaimage(src='images/Testbild1.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild2.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild3.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild4.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild5.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild1.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild2.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild3.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild4.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild5.png')
+                img.mediaimage.text_media(src='/images/media_icon_text.png')
+
+
+block overlay
+    #overlaycontentbox
