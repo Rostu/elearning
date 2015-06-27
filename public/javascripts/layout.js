@@ -82,6 +82,31 @@ $(document).ready(function() {
     {
         $(this).css("backgroundColor", "#FFFFFF");
     });
+    //hover funktions for the media icons
+    $('.text_media').hover(
+        function(){
+            $(this).attr('src','images/media_icon_text_hover.png')
+        },
+        function(){
+            $(this).attr('src','images/media_icon_text.png')
+        }
+    )
+    $('.video_media').hover(
+        function(){
+            $(this).attr('src','images/media_icon_video_hover.png')
+        },
+        function(){
+            $(this).attr('src','images/media_icon_video.png')
+        }
+    )
+    $('.audio_media').hover(
+        function(){
+            $(this).attr('src','images/media_icon_audio_hover.png')
+        },
+        function(){
+            $(this).attr('src','images/media_icon_audio.png')
+        }
+    )
 
     $('.taskmediaicon').mouseleave(function()
     {
@@ -122,8 +147,15 @@ $(document).ready(function() {
         toggleStartOverlay();
     });
 
+    $('.mediaelement').click(function() {
+        toggleStartOverlay();
+    });
     $('#startoverlaycloseicon').click(function() {
         toggleStartOverlay();
+        //if there is a video embedded in the overlay we have to pause it when closing the overlay
+        if($(".video-js")){
+            $(".video-js")[0].player.pause();
+        }
     });
 
     function togglePanelContent(clickablePanelChild){
