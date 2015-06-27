@@ -147,6 +147,7 @@ $(document).ready(function() {
         toggleStartOverlay();
     });
 
+
     $('.mediaelement').click(function() {
         toggleStartOverlay();
     });
@@ -194,6 +195,8 @@ $(document).ready(function() {
     }
 
     //functions for the point visualization--------------------------------
+
+
 
     var maxp = 0;
     var maxf = 0;
