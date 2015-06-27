@@ -1,0 +1,30 @@
+extends layout
+block content
+    #subjecttitle
+        h1 Ersti
+    #tasks.startpanel
+        div.panelheader
+            div.panelarrow
+            h2 Lektionen
+        #tasklist.panelcontent
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Wortfeld: Solarantrieb
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='energie_Wortfeld_Solarantrieb')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
+
+    #media.startpanel
+        div.panelheader
+            div.panelarrow
+            h2 Medien
+        #mediashow.panelcontent
+            div.mediaelement
+                img.mediaimage.text_media(src='/images/media_icon_text.png')
+block overlay
+    #overlaycontentbox

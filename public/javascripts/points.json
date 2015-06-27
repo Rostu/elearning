@@ -1,5 +1,11 @@
 {"sites":[
     {
+        "name":"energie_start", "maxpoints": 0, "maxfaults": 0
+    },
+    {
+        "name":"energie_Wortfeld_Solarantrieb", "maxpoints":0, "maxfaults":0
+    },
+    {
         "name":"glueck_start", "maxpoints": 0, "maxfaults": 0
     },
     {
