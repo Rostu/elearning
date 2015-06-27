@@ -99,3 +99,13 @@ function removeNoticeIfPresent() {
         obj.detach();
     }
 }
+
+//two functions to animate a short visual feedback for correct and false (defined in layout.jade/css)
+
+function toggleKorrekt(){
+    $("#vifeedbackKorrekt").fadeToggle(500,function(){ $("#vifeedbackKorrekt").hide();});
+}
+
+function toggleFalsch(){
+    $("#vifeedbackFalsch").fadeToggle(500,function(){ $("#vifeedbackFalsch").hide();});
+}
