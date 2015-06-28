@@ -9,8 +9,106 @@
     align-content: stretch;
 }
 
+.linebox {
+    display: flex; /* or inline-flex */
+    width: 60%;
+    
+    margin: 10px 0 0 10px;
+    padding: 0 10px 10px 0;
+
+    line-height: 18px;
+
+    flex: 1 1 auto;
+    align-self: auto;
+    
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    background-color: aliceblue;
+}
+
+.targetline, .sourceline, .resetarea {
+    display: flex;
+    width: 40%;
+    
+    margin: 10px 0 0 10px;
+    padding: 0 10px 10px 0;
+
+    line-height: 18px;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: stretch;
+    
+    background-color: #D5EBFD;
+}
+
+.targetline {
+    width: 45%;
+    
+    background-color: #7AB3E3;
+}
+
+.sourceline {
+    margin: 10px 0 0 0px;
+
+    justify-content: center;
+
+    background-color: #D5EBFD;
+}
+
+.resetarea {
+    width: 50px;
+
+    margin: 10px 0 0 0px;
+
+    line-height: 18px;
+
+    flex: 0 1 0;
+    align-self: auto;
+
+    justify-content: flex-end;
+    align-items: center;
+    align-content: stretch;    
+}
+
+.panelarrow {
+    height: 40px;
+    width: 40px;
+
+    margin: 10px 0 0 10px;
+    border-radius: 20px;
+    
+    background: #A6D1F5 url("../images/button_down2.gif") no-repeat center center;
+    background-size: 30px 30px;
+}
+
+.tgtelem, .srcelem {
+    margin: 10px 0 0 10px;
+    padding: 10px;
+
+    line-height: 18px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+}
+
+.tgtelem {
+    padding: 10px 0 10px 10px;
+}
+
+.srcelem {
+    background-color: #A6D1F5;
+    draggable: true;
+}
+
 #targetbox, #sourcebox {
-    display: flex;    
+    display: flex;
     width: 40%;
 
     margin: 10px 0 0 10px;
@@ -26,64 +124,18 @@
     justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
-    
-    background-color: aliceblue;
-}
 
-#sourcebox {
-    background-color: #7AB3E3;
+    background-color: aliceblue;
 }
 
 #targetbox {
+    padding: 0 0px 10px 0;
+
     color: white;
 }
 
-.targetline, .sourceline {
-    display: flex;
-    
-    margin: 10px 0 0 10px;
-    padding: 0 10px 10px 0;
-
-    line-height: 18px;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
-    
-    background-color: #7AB3E3;
-}
-
-.targetline {
-
-}
-
-.sourceline {
-    background-color: aliceblue;
-
-    justify-content: center;
-}
-
-.tgtelem, .srcelem {
-    margin: 10px 0 0 10px;
-    padding: 10px;
-    
-    line-height: 18px;
-
-    flex: 0 1 auto;
-    align-self: auto;
-}
-
-.tgtelem {
-    padding: 10px 0 10px 10px;
-}
-
-.srcelem {
-    background-color: #A6D1F5;
-    draggable: true;
+#sourcebox {
+    margin: 10px 0 0 0px;
 }
 
 select.dropbox {
