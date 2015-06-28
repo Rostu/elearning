@@ -1,0 +1,101 @@
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+#flexybox {
+    display: flex; /* or inline-flex */
+    padding: 0 10px 0 0;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+#targetbox, #sourcebox {
+    display: flex;    
+    width: 40%;
+
+    margin: 10px 0 0 10px;
+    padding: 0 10px 10px 0;
+
+    line-height: 18px;
+
+    flex: 1 1 auto;
+    align-self: auto;
+    /*order: <integer>*/
+
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    
+    background-color: aliceblue;
+}
+
+#sourcebox {
+    background-color: #7AB3E3;
+}
+
+#targetbox {
+    color: white;
+}
+
+.targetline, .sourceline {
+    display: flex;
+    
+    margin: 10px 0 0 10px;
+    padding: 0 10px 10px 0;
+
+    line-height: 18px;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    
+    background-color: #7AB3E3;
+}
+
+.targetline {
+
+}
+
+.sourceline {
+    background-color: aliceblue;
+
+    justify-content: center;
+}
+
+.tgtelem, .srcelem {
+    margin: 10px 0 0 10px;
+    padding: 10px;
+    
+    line-height: 18px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+}
+
+.tgtelem {
+    padding: 10px 0 10px 10px;
+}
+
+.srcelem {
+    background-color: #A6D1F5;
+    draggable: true;
+}
+
+select.dropbox {
+    -webkit-appearance: none;  /*REMOVES DEFAULT CHROME & SAFARI STYLE*/
+    -moz-appearance: none;  /*REMOVES DEFAULT FIREFOX STYLE*/
+    border: 0 !important;  /*REMOVES BORDER*/
+    /*width: 24px;*/
+    border-radius: 2px;
+    background: #7AB3E3 url("../images/button_down2.gif") no-repeat right center;
+    background-size: 24px 18px; /*TO ACCOUNT FOR @2X IMAGE FOR RETINA */
+    color: #fff;
+
+    cursor: pointer;
+    display: inline;
+}
