@@ -71,6 +71,8 @@ app.get('/ersti_Wortschatz_ordnen_B', ubung.get_ersti_Wortschatz_ordnen_B);
 app.get('/ersti_Wortschatz_ordnen_C', ubung.get_ersti_Wortschatz_ordnen_C);
 app.get('/ersti_Wortschatz_erweitern', ubung.get_ersti_Wortschatz_erweitern);
 app.get('/ersti_end', ubung.get_ersti_end);
+app.get('/energie_start', ubung.get_energie_start);
+app.get('/energie_Wortfeld_Solarantrieb', ubung.get_energie_Wortfeld_Solarantrieb);
 app.get('/generationen_start', ubung.get_generationen_start);
 app.get('/generationen_text', ubung.get_generationen_text);
 app.get('/generationen_Textverstehen_Komposita', ubung.get_generationen_Textverstehen_Komposita);
