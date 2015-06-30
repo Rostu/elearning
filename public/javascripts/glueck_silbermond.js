@@ -10,6 +10,17 @@ function init() {
         $(this).attr("id", parentID + "se" + srcid++);
         $(this).attr("draggable", "true");
         $(this).attr("ondragstart", "drag(event)");
+        $(this).append($('<div class="handle">'));
+    });
+
+    $('.srcelem').mouseenter(function()
+    {
+        $($(this).children('.handle')[0]).css("backgroundColor", "#7AB3E3");
+    });
+
+    $('.srcelem').mouseleave(function()
+    {
+        $($(this).children('.handle')[0]).css("backgroundColor", "#005E9C");
     });
 
     $(".sourceline").each(function () {
@@ -36,6 +47,85 @@ function init() {
     $('[class$="panelarrow"]').each(function() {
         $(this).attr("onclick", "resetAll(event)");
     });
+    
+    $('[class$="select_buffer"]').each(function() {
+        $(this).attr("onclick", "stopProp(event)");
+        $(this).attr("oncontextmenu", "stopProp(event)");
+    });
+    
+    load_dropbox_data (function (dropbox_data) {
+        load_answer_data (function (answer_data) {
+            var dropboxes = $(".dropbox");
+            var dbox_count = dropboxes.length;
+            dropboxes.each(function() {
+                var dbox = $(this);
+                var dbox_name = this.id;
+                var corr_form;
+                $.each(answer_data, function(elem, data) {
+                    if (dbox_name == elem) {
+                        corr_form = data.form;
+                    }
+                });
+                corr_form_upper = (corr_form.charAt(0) == corr_form.charAt(0).toUpperCase());
+                //console.log(corr_form_upper);
+                if (corr_form_upper) {
+                    console.log(corr_form);
+                }
+                $.each(dropbox_data, function(elem, forms_hash) {
+                    $.each(forms_hash, function(form, form_hash) {
+                        var current_forms = Object.keys(form_hash);
+                        if (equals(current_forms, new RegExp('^' + corr_form + '$', 'i'))) {
+                            var selected_item_str = elem.replace(/[\(\)\[\]]/g, '');
+                            for (var i = 0; i < current_forms.length; i++) {
+                                var strval = ((corr_form_upper) ? current_forms[i].charAt(0).toUpperCase() + current_forms[i].slice(1) : current_forms[i]);
+
+                                var opt = jQuery('<option>' + strval + '</option>');
+                                $(opt).attr('value', strval);
+                                $(opt).attr('selected', selected_item_str == current_forms[i]);
+                                dbox.append(opt);
+                            }
+                            return;
+                        }
+                    });
+                });
+                this.onchange = function() {
+                    // access form and value properties via this (keyword)
+                    if (corr_form == this.value) {
+                        raisepoints();
+                    }
+                    else {
+                        raisefaults();
+                    }
+                };
+            });
+            dropboxes.each(function() {
+                var curr_width = $(this).children()[0].clientWidth;
+                $(this).width(curr_width + 4);
+                //console.log($($(this).children()[0]).current_width());
+            });
+        });
+    });
+}
+
+function load_dropbox_data (callback) {
+    $.getJSON("javascripts/glueck_ist_1.json", function(json) {
+        callback(json);
+    });
+}
+
+function load_answer_data (callback) {
+    $.getJSON("javascripts/glueck_ist_1_correct.json", function(json) {
+        callback(json);
+    });
+}
+
+function equals(a, regex){
+    for(var i = 0; i < a.length; i++) {
+        if (a[i].match(regex)) {
+            return true;
+        }
+    }
+    return false;
 }
 
 function allowDrop(ev) {
@@ -50,6 +140,11 @@ function allowDrop(ev) {
     else if (ev.target.getAttribute("class") == "tgtelem") {
         ev.dataTransfer.dropEffect = "none";
     }
+}
+
+function stopProp(ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
 }
 
 function drag(ev) {
@@ -75,16 +170,32 @@ function srcelemOnClick(ev) {
 }
 
 function setOne(ev) {
+    var src = ev.target.closest('.srcelem');
     var linebox = ev.target.closest('.linebox');
     var targetline = $(linebox).children('.targetline');
-    targetline.append(ev.target);
+    targetline.append($(src));
+    if (ev.target.getAttribute("class") == "handle") {
+        $(ev.target).css("backgroundColor", "#005E9C");
+    }
+    else {
+        console.log(ev.target.getAttribute("class"));
+        $($(ev.target).children('.handle')[0]).css("backgroundColor", "#005E9C");
+    }
 }
 
 function resetOne(ev) {
     ev.preventDefault();
+    var src = ev.target.closest('.srcelem');
     var linebox = ev.target.closest('.linebox');
     var soureceline = $(linebox).children('.sourceline');
-    soureceline.append(ev.target);
+    soureceline.append($(src));
+    if (ev.target.getAttribute("class") == "handle") {
+        $(ev.target).css("backgroundColor", "#005E9C");
+    }
+    else {
+        console.log(ev.target.getAttribute("class"));
+        $($(ev.target).children('.handle')[0]).css("backgroundColor", "#005E9C");
+    }
 }
 
 function resetAll(ev) {

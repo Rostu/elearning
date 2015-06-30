@@ -1,0 +1,334 @@
+{
+  "p01w001": {
+    "form": "Glück",
+    "used": false
+  },
+  "p01w002": {
+    "form": "ist",
+    "used": false
+  },
+  "p01w003": {
+    "form": "wenn",
+    "used": false
+  },
+  "p01w004": {
+    "form": "man",
+    "used": false
+  },
+  "p01w005": {
+    "form": "frei",
+    "used": false
+  },
+  "a": {
+    "form": "ist",
+    "used": false
+  },
+  "p02w001": {
+    "form": "Glück",
+    "used": false
+  },
+  "p02w002": {
+    "form": "ist",
+    "used": false
+  },
+  "p02w003": {
+    "form": "wenn",
+    "used": false
+  },
+  "p02w004": {
+    "form": "die",
+    "used": false
+  },
+  "p02w005": {
+    "form": "Sonne",
+    "used": false
+  },
+  "b": {
+    "form": "scheint",
+    "used": false
+  },
+  "p03w001": {
+    "form": "Glück",
+    "used": false
+  },
+  "p03w002": {
+    "form": "ist",
+    "used": false
+  },
+  "p03w003": {
+    "form": "wenn",
+    "used": false
+  },
+  "p03w004": {
+    "form": "man",
+    "used": false
+  },
+  "p03w005": {
+    "form": "die",
+    "used": false
+  },
+  "p03w006": {
+    "form": "Augen",
+    "used": false
+  },
+  "c": {
+    "form": "aufmacht",
+    "used": false
+  },
+  "p04w001": {
+    "form": "Glück",
+    "used": false
+  },
+  "p04w002": {
+    "form": "ist",
+    "used": false
+  },
+  "p04w003": {
+    "form": "dass",
+    "used": false
+  },
+  "p04w004": {
+    "form": "man",
+    "used": false
+  },
+  "p04w005": {
+    "form": "das",
+    "used": false
+  },
+  "p04w006": {
+    "form": "Lachen",
+    "used": false
+  },
+  "p04w007": {
+    "form": "nicht",
+    "used": false
+  },
+  "d": {
+    "form": "verliert",
+    "used": false
+  },
+  "p05w001": {
+    "form": "Glück",
+    "used": false
+  },
+  "p05w002": {
+    "form": "ist",
+    "used": false
+  },
+  "p05w003": {
+    "form": "wenn",
+    "used": false
+  },
+  "p05w004": {
+    "form": "man",
+    "used": false
+  },
+  "p05w005": {
+    "form": "mit",
+    "used": false
+  },
+  "p05w006": {
+    "form": "sich",
+    "used": false
+  },
+  "p05w007": {
+    "form": "selbst",
+    "used": false
+  },
+  "p05w008": {
+    "form": "zufrieden",
+    "used": false
+  },
+  "e": {
+    "form": "ist",
+    "used": false
+  },
+  "p06w001": {
+    "form": "Glück",
+    "used": false
+  },
+  "p06w002": {
+    "form": "ist",
+    "used": false
+  },
+  "p06w003": {
+    "form": "wenn",
+    "used": false
+  },
+  "p06w004": {
+    "form": "ich",
+    "used": false
+  },
+  "p06w005": {
+    "form": "etwas",
+    "used": false
+  },
+  "p06w006": {
+    "form": "mit",
+    "used": false
+  },
+  "p06w007": {
+    "form": "meinen",
+    "used": false
+  },
+  "p06w008": {
+    "form": "Eltern",
+    "used": false
+  },
+  "f": {
+    "form": "machen",
+    "used": false
+  },
+  "g": {
+    "form": "kann",
+    "used": false
+  },
+  "p07w001": {
+    "form": "Glück",
+    "used": false
+  },
+  "p07w002": {
+    "form": "ist",
+    "used": false
+  },
+  "p07w003": {
+    "form": "dass",
+    "used": false
+  },
+  "p07w004": {
+    "form": "ich",
+    "used": false
+  },
+  "p07w005": {
+    "form": "in",
+    "used": false
+  },
+  "p07w006": {
+    "form": "Zukunft",
+    "used": false
+  },
+  "p07w007": {
+    "form": "etwas",
+    "used": false
+  },
+  "p07w008": {
+    "form": "aus",
+    "used": false
+  },
+  "p07w009": {
+    "form": "mir",
+    "used": false
+  },
+  "h": {
+    "form": "mache",
+    "used": false
+  },
+  "p08w001": {
+    "form": "Glück",
+    "used": false
+  },
+  "p08w002": {
+    "form": "ist",
+    "used": false
+  },
+  "p08w003": {
+    "form": "wenn",
+    "used": false
+  },
+  "p08w004": {
+    "form": "ich",
+    "used": false
+  },
+  "p08w005": {
+    "form": "jemanden",
+    "used": false
+  },
+  "j": {
+    "form": "habe",
+    "used": false
+  },
+  "p08w007": {
+    "form": "der",
+    "used": false
+  },
+  "p08w008": {
+    "form": "mich",
+    "used": false
+  },
+  "k": {
+    "form": "liebt",
+    "used": false
+  },
+  "p09w001": {
+    "form": "Glück",
+    "used": false
+  },
+  "p09w002": {
+    "form": "ist",
+    "used": false
+  },
+  "p09w003": {
+    "form": "wenn",
+    "used": false
+  },
+  "p09w004": {
+    "form": "meine",
+    "used": false
+  },
+  "p09w005": {
+    "form": "Tochter",
+    "used": false
+  },
+  "p09w006": {
+    "form": "morgens",
+    "used": false
+  },
+  "l": {
+    "form": "aufwacht",
+    "used": false
+  },
+  "p10w001": {
+    "form": "Glück",
+    "used": false
+  },
+  "p10w002": {
+    "form": "ist",
+    "used": false
+  },
+  "p10w003": {
+    "form": "an",
+    "used": false
+  },
+  "p10w004": {
+    "form": "einem",
+    "used": false
+  },
+  "p10w005": {
+    "form": "Tag",
+    "used": false
+  },
+  "p10w006": {
+    "form": "wie",
+    "used": false
+  },
+  "p10w007": {
+    "form": "heute",
+    "used": false
+  },
+  "p10w008": {
+    "form": "hier",
+    "used": false
+  },
+  "m": {
+    "form": "stehen",
+    "used": false
+  },
+  "p10w010": {
+    "form": "zu",
+    "used": false
+  },
+  "n": {
+    "form": "dürfen",
+    "used": false
+  }
+}
