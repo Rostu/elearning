@@ -48,6 +48,14 @@ exports.get_china_Wortschatz_ordnen = function(req, res){
 exports.get_china_Textverstehen_Redewiedergabe = function(req, res){
     res.render('china_Textverstehen_Redewiedergabe');
 };
+
+exports.get_energie_Wortfeld_Solarantrieb = function(req, res){
+    res.render('energie_Wortfeld_Solarantrieb');
+};
+exports.get_energie_start = function(req, res){
+    res.render('energie_start');
+};
+
 exports.get_glueck_start = function(req, res){
     res.render('glueck_start');
 };
@@ -74,6 +82,17 @@ exports.get_glueck_Zeitstrahl = function(req, res){
 exports.get_glueck_video = function(req, res){
     res.render('glueck_video.jade');
 };
+exports.get_glueck_video_zuordnen = function(req, res){
+    res.render('glueck_video_zuordnen.jade');
+};
+
+exports.get_glueck_video_kleeblatt = function(req, res){
+    res.render('glueck_video_kleeblatt.jade');
+}
+
+exports.get_glueck_video_paraphrase = function(req, res){
+    res.render('glueck_video_paraphrase.jade');
+}
 
 exports.get_glueck_Textverstehen_Redensarten = function(req, res){
     res.render('glueck_Textverstehen_Redensarten');

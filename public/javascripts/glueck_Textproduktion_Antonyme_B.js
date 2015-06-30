@@ -9,9 +9,9 @@ $(document).ready(function() {
     var hidden = true;
     var input = $('input');
 
-    var socket = io({path: '/lernplattform-daf-cl/socket.io/', transports: ['xhr-polling', 'jsonp-polling', 'polling' ]});
+    //var socket = io({path: '/lernplattform-daf-cl/socket.io/', transports: ['xhr-polling', 'jsonp-polling', 'polling' ]});
     //Damit die socket.io Verbindung local funktioniert muss die Folgende Zeile mit der Zeile oben vertauscht werden.
-    //var socket = io({ transports: ['websocket','flashsocket', 'htmlfile','xhr-polling', 'jsonp-polling', 'polling' ]});
+    var socket = io({ transports: ['websocket','flashsocket', 'htmlfile','xhr-polling', 'jsonp-polling', 'polling' ]});
     //var socket = io.connect('/');
     input.toArray().map(function(e) {
             //$(e).css({'width': ((e.value.length + 1) * 10) + 'px'});

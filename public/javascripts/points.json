@@ -1,5 +1,11 @@
 {"sites":[
     {
+        "name":"energie_start", "maxpoints": 0, "maxfaults": 0
+    },
+    {
+        "name":"energie_Wortfeld_Solarantrieb", "maxpoints":0, "maxfaults":0
+    },
+    {
         "name":"glueck_start", "maxpoints": 0, "maxfaults": 0
     },
     {
@@ -25,6 +31,18 @@
     },
     {
         "name":"glueck_Zeitstrahl", "maxpoints":5, "maxfaults":10
+    },
+    {
+        "name":"glueck_video", "maxpoints":5, "maxfaults":10
+    },
+    {
+        "name":"glueck_video_zuordnen", "maxpoints":21, "maxfaults":10
+    },
+    {
+        "name":"glueck_video_kleeblatt", "maxpoints":51, "maxfaults":10
+    },
+    {
+        "name":"glueck_video_paraphrase", "maxpoints":10, "maxfaults":10
     },
     {
         "name":"handy_start", "maxpoints":0, "maxfaults":0

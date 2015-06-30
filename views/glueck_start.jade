@@ -1,5 +1,11 @@
 extends layout
 block content
+    link(rel='stylesheet', href='stylesheets/glueck_start.css')
+    script(src='javascripts/glueck_start.js')
+    link(type="text/css" rel="stylesheet" href="https://vjs.zencdn.net/4.12/video-js.css")
+    script(src="https://vjs.zencdn.net/4.12/video.js")
+    script(src="javascripts/vjs.youtube.js")
+    script(src='javascripts/glueck_video.js')
     #subjecttitle
         h1 Glück
     #tasks.startpanel
@@ -17,9 +23,7 @@ block content
                             a.tasklink(href='glueck_Textproduktion_Antonyme_A')
                 div.taskmedia
                     div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild1.png')
-                    div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild2.png')
+                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
             div.task
                 div.taskbar
                     div.taskicon Icon
@@ -30,9 +34,7 @@ block content
                             a.tasklink(href='glueck_Textverstehen_Zeitangaben')
                 div.taskmedia
                     div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild1.png')
-                    div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild2.png')
+                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
             div.task
                 div.taskbar
                     div.taskicon Icon
@@ -42,6 +44,8 @@ block content
                         div.taskstart
                             a.tasklink(href='glueck_Zeitstrahl')
                 div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
             div.task
                 div.taskbar
                     div.taskicon Icon
@@ -51,6 +55,8 @@ block content
                         div.taskstart
                             a.tasklink(href='glueck_Textverstehen_Wortspirale')
                 div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
             div.task
                 div.taskbar
                     div.taskicon Icon
@@ -61,9 +67,7 @@ block content
                             a.tasklink(href='glueck_Textverstehen_Redensarten')
                 div.taskmedia
                     div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild1.png')
-                    div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild2.png')
+                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
             div.task
                 div.taskbar
                     div.taskicon Icon
@@ -74,9 +78,7 @@ block content
                             a.tasklink(href='glueck_Kreuzwortraetsel')
                 div.taskmedia
                     div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild1.png')
-                    div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild2.png')
+                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
             div.task
                 div.taskbar
                     div.taskicon Icon
@@ -87,9 +89,7 @@ block content
                             a.tasklink(href='glueck_Memory')
                 div.taskmedia
                     div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild1.png')
-                    div.mediaelement_mini
-                        img.mediaimage_mini(src='images/Testbild2.png')
+                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
             div.task
                 div.taskbar
                     div.taskicon Icon
@@ -99,28 +99,122 @@ block content
                         div.taskstart
                             a.tasklink(href='glueck_video')
                 div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini.video_media(src='/images/media_icon_video.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Video Zuordnung
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='glueck_video_zuordnen')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini.video_media(src='/images/media_icon_video.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Video Kleeblatt
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='glueck_video_kleeblatt')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini.video_media(src='/images/media_icon_video.png')
+            div.task
+                div.taskbar
+                    div.taskicon Icon
+                    div.taskpoints Points
+                    div.tasktitle Video Paraphrasen
+                        div.taskmediaicon ???
+                        div.taskstart
+                            a.tasklink(href='glueck_video_paraphrase')
+                div.taskmedia
+                    div.mediaelement_mini
+                        img.mediaimage_mini.video_media(src='/images/media_icon_video.png')
+
     #media.startpanel
         div.panelheader
             div.panelarrow
             h2 Medien
         #mediashow.panelcontent
             div.mediaelement
-                img.mediaimage(src='images/Testbild1.png')
+                img.mediaimage.text_media(src='/images/media_icon_text.png')
             div.mediaelement
-                img.mediaimage(src='images/Testbild2.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild3.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild4.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild5.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild1.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild2.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild3.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild4.png')
-            div.mediaelement
-                img.mediaimage(src='images/Testbild5.png')
+                img.mediaimage.video_media(src='/images/media_icon_video.png')
+
+block overlay
+    #overlaycontentbox
+        #textcontent
+            div.titleA
+            div.poemglueck
+                div.text
+                    |Glück ist gar nicht mal so selten,
+                    br
+                    |Glück wird überall beschert.
+                    br
+                    |Vieles kann als Glück uns gelten,
+                    br
+                    |was das Leben uns so lehrt.
+                    br
+                    br
+                    |Glück ist jeder neue Morgen,
+                    br
+                    |Glück ist bunte Blumenpracht,
+                    br
+                    |Glück sind Tage ohne Sorgen,
+                    br
+                    |Glück ist, wenn man fröhlich lacht.
+                    br
+                    br
+                    |Glück ist Regen, wenn es heiß ist,
+                    br
+                    |Glück ist Sonne nach dem Guss.
+                    br
+                    |Glück ist, wenn ein Kind ein Eis isst,
+                    br
+                    |Glück ist auch ein lieber Gruß.
+                    br
+                    br
+                    |Glück ist Wärme, wenn es kalt ist,
+                    br
+                    |Glück ist weißer Meeresstrand.
+                    br
+                    |Glück ist Ruhe, die im Wald ist,
+                    br
+                    |Glück ist eine Freundeshand.
+                    br
+                    br
+                    |Glück ist eine stille Stunde,
+                    br
+                    |Glück ist auch ein gutes Buch.
+                    br
+                    |Glück ist eine frohe Runde,
+                    br
+                    |Glück ist freundlicher Besuch.
+                    br
+                    br
+                    |Glück ist niemals ortsgebunden,
+                    br
+                    |Glück kennt keine Jahreszeit.
+                    br
+                    |Glück hat immer der gefunden,
+                    br
+                    |der sich seines Lebens freut.
+                    br
+                    br
+                    |Liebe schenken, Freude geben,
+                    br
+                    |dankbar und zufrieden sein,
+                    br
+                    |ist das höchste Gut im Leben
+                    br
+                    |und schließt alles Schöne ein.
+
+                p.author Autor Unbekannt
+        #videocontent
+            #Videobox
+                video(id="vid1" class="video-js vjs-default-skin" controls="true" preload="auto" width="640" height="360" data-setup='{"techOrder": ["youtube"], "src": "http://www.youtube.com/watch?v=cUYRa3LeqlY"}')
+                    track(kind="captions" src="javascripts/subs.vtt" srclang="de" label="Deutsch" default)
