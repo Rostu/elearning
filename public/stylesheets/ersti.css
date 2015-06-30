@@ -1,12 +1,13 @@
 .word {
     float: left;
     margin: 5px 20px;
-    background-color: lightblue;
-    height: 20px;
-    padding: 5px;
+    background-color: rgba(239, 239, 239, 0.59);
+    height: 10px;
+    padding: 10px;#
 }
 .passive {
-    background-color: lightgreen;
+    color: rgb(0, 128, 0);
+    font-weight: bold;
 }
 
 .plainw {

@@ -53,7 +53,7 @@
                 } else {
                     // if we reach this point, the word didn't match any word
                     removeNoticeIfPresent();
-                    $("#info3").append("<p>Diese Antwort gehört nicht zum Wortfeld Universität</p>")
+                    $("#info3").append("<p>Diese Antwort gehört nicht zum Wortfeld Universität</p>");
                     $(self).effect("pulsate", "fast");
                     raisefaults();
                     $(self).animate({

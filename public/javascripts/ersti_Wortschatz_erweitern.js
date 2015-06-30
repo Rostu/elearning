@@ -19,6 +19,8 @@ $(document).ready(function() {
         validate(this);
     });
 
+    $("#info3").show();
+
     $('#weiter').on("click", function() {
         switch(checkSituation()) {
             case 0:
@@ -51,34 +53,52 @@ $(document).ready(function() {
         var w = $('.word');
         for (var i = 0; i < w.length; i++) {
 
-            if ($(w[i]).text()===t) {
+            removeNoticeIfPresent();
+            if ($(w[i]).text() === t) {
 
-                if(checkMark(w[i].id.substring(1), id.substring(1), self)) {
+                if (checkMark(w[i].id.substring(1), id.substring(1), self)) {
                     raisepoints();
+                    removeNoticeIfPresent();
                     $(w[i]).addClass("passive");
-                } else {
-                    $(w[i]).animate({backgroundColor:'red'}, 500, "swing",function() {$(this).removeAttr("style")});
+
+                }
+                else {
+
+                    $("#info3").append("<p>Dieses Wort passt nicht in diese Lücke.</p>");
+                    $(w[i]).animate({backgroundColor: 'red'}, 500, "swing", function () {
+                        $(this).removeAttr("style")
+                    });
                     raisefaults();
-                    $(self).animate({borderBottomColor: "#ff0000", backgroundColor: "#ff8484"},500,"swing",function() {
+                    $(self).animate({
+                        borderBottomColor: "#ff0000",
+                        backgroundColor: "#ff8484"
+                    }, 500, "swing", function () {
                         $(this).css({"border-bottom": "1px solid #000"});
                     });
                 }
                 return;
             }
-        }
-        // if we reach this point, the word didn't match any word
-        $(self).effect("pulsate", "fast");
 
-        $(self).animate({borderBottomColor: "#ff0000",backgroundColor: "#ff8484"},2000,"swing",function() {
-            $(this).css({"border-bottom": "1px solid #000"});
-        });
+        }
+        if(checkForSpelling(t)){
+            $("#info3").append("<p>Überprüfe noch einmal deine Rechtschreibung.</p>")
+        }
+        else {
+            // if we reach this point, the word didn't match any word
+            $(self).effect("pulsate", "fast");
+            $("#info3").append("<p>Bitte überprüfe noch einmal die Aufgabenstellung.</p>")
+            $(self).animate({borderBottomColor: "#ff0000",backgroundColor: "#ff8484"},2000,"swing",function() {
+                $(this).css({"border-bottom": "1px solid #000"});
+            });
+
+        }
 
     }
 
     function checkMark(a,b,m) {
 
         if(!(a-b)) {
-            $(m).animate({borderBottomColor: "#7cfc00", backgroundColor: "transparent"}, "slow");
+            $(m).animate({borderBottomColor: "rgba(239, 239, 239, 0.59)", backgroundColor: "transparent", color: "rgb(0, 128, 0)"}, "slow");
             $(m).prop('disabled', true);
             return true;
         }
@@ -95,6 +115,18 @@ $(document).ready(function() {
             }
         }
         return 2;
+    }
+
+    function checkForSpelling(word) {
+        var ret = false;
+        a.forEach(function(elem) {
+            if(getEditDistance(word,elem)<= 3){
+                //console.log(getEditDistance(word,testword) + " " +testword);
+                ret = true;
+            }
+        });
+
+        return ret;
     }
 
     function shuffle(array) {

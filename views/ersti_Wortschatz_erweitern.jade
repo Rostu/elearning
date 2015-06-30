@@ -10,10 +10,11 @@ block content
         p Setze die passenden Begriffe aus dem Originaltext, die im Kästchen gesammelt wurden, in die dafür passende Lücke ein.
 
     #wrapper
+            #Textbox
+                .unselectable.words
+                #message.invisible
+                    | Richtig!
         #Textbox
-            .unselectable.words
-            #message.invisible
-                | Richtig!
             .unselectable.container(style='clear: left;')
                 | „Gerade bin ich auf dem Campus angekommen. Ich bin hier noch nie gewesen und weiß leider nicht, wo ich hingehen muss! Ich bin ziemlich
                 input#s1.slot(type='text')

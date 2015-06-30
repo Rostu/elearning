@@ -51,15 +51,6 @@
         "name":"ersti_Textverstehen_Wortfeld_Universitaet_C", "maxpoints":26, "maxfaults":13
     },
     {
-        "name":"ersti_Wortschatz_ordnen_A", "maxpoints":29, "maxfaults":5
-    },
-    {
-        "name":"ersti_Wortschatz_ordnen_B", "maxpoints":4, "maxfaults":4
-    },
-    {
-        "name":"ersti_Wortschatz_ordnen_C", "maxpoints":4, "maxfaults":5
-    },
-    {
         "name":"ersti_Wortschatz_erweitern", "maxpoints":9, "maxfaults":5
     },
     {
