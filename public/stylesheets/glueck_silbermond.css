@@ -105,6 +105,7 @@
 .srcelem {
     background-color: #A6D1F5;
     draggable: true;
+    cursor: grab;
 }
 
 #targetbox, #sourcebox {

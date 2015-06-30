@@ -28,8 +28,13 @@ function init() {
         $(this).attr("ondragover", "allowDrop(event)");
     });
 
+    $('[class$="srcelem"]').each(function() {
+        $(this).attr("onclick", "setOne(event)");
+        $(this).attr("oncontextmenu", "resetOne(event)");
+    });
+
     $('[class$="panelarrow"]').each(function() {
-        $(this).attr("onclick", "reset(event)");
+        $(this).attr("onclick", "resetAll(event)");
     });
 }
 
@@ -57,7 +62,32 @@ function drop(ev) {
     ev.target.appendChild(document.getElementById(data));
 }
 
-function reset(ev) {
+function srcelemOnClick(ev) {
+    var isRightMB;
+    ev = ev || window.event;
+
+    if ("which" in ev)  // Gecko (Firefox), WebKit (Safari/Chrome) & Opera
+        isRightMB = ev.which == 3;
+    else if ("button" in ev)  // IE, Opera 
+        isRightMB = ev.button == 2;
+
+    isRightMB ? resetOne(ev) : setOne(ev)
+}
+
+function setOne(ev) {
+    var linebox = ev.target.closest('.linebox');
+    var targetline = $(linebox).children('.targetline');
+    targetline.append(ev.target);
+}
+
+function resetOne(ev) {
+    ev.preventDefault();
+    var linebox = ev.target.closest('.linebox');
+    var soureceline = $(linebox).children('.sourceline');
+    soureceline.append(ev.target);
+}
+
+function resetAll(ev) {
     var linebox = ev.target.closest('.linebox');
     var sourceline = $(linebox).children('.sourceline');
     var src_regex = new RegExp($(sourceline).attr('id') + "se", "i");
