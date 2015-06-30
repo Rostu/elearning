@@ -59,7 +59,6 @@ function shuffle(array) {
     }
     return array;
 }
-
 function getEditDistance(a, b) {
     if(a.length === 0) return b.length;
     if(b.length === 0) return a.length;
@@ -99,4 +98,14 @@ function removeNoticeIfPresent() {
     if (obj.length) {
         obj.detach();
     }
+}
+
+//two functions to animate a short visual feedback for correct and false (defined in layout.jade/css)
+
+function toggleKorrekt(){
+    $("#vifeedbackKorrekt").fadeToggle(500,function(){ $("#vifeedbackKorrekt").hide();});
+}
+
+function toggleFalsch(){
+    $("#vifeedbackFalsch").fadeToggle(500,function(){ $("#vifeedbackFalsch").hide();});
 }

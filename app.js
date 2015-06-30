@@ -71,6 +71,8 @@ app.get('/ersti_Wortschatz_ordnen_B', ubung.get_ersti_Wortschatz_ordnen_B);
 app.get('/ersti_Wortschatz_ordnen_C', ubung.get_ersti_Wortschatz_ordnen_C);
 app.get('/ersti_Wortschatz_erweitern', ubung.get_ersti_Wortschatz_erweitern);
 app.get('/ersti_end', ubung.get_ersti_end);
+app.get('/energie_start', ubung.get_energie_start);
+app.get('/energie_Wortfeld_Solarantrieb', ubung.get_energie_Wortfeld_Solarantrieb);
 app.get('/generationen_start', ubung.get_generationen_start);
 app.get('/generationen_text', ubung.get_generationen_text);
 app.get('/generationen_Textverstehen_Komposita', ubung.get_generationen_Textverstehen_Komposita);
@@ -84,6 +86,9 @@ app.get('/glueck_Textverstehen_Zeitangaben', ubung.get_glueck_Textverstehen_Zeit
 app.get('/glueck_Textverstehen_Redensarten', ubung.get_glueck_Textverstehen_Redensarten);
 app.get('/glueck_Zeitstrahl', ubung.get_glueck_Zeitstrahl);
 app.get('/glueck_video', ubung.get_glueck_video);
+app.get('/glueck_video_zuordnen', ubung.get_glueck_video_zuordnen);
+app.get('/glueck_video_kleeblatt', ubung.get_glueck_video_kleeblatt);
+app.get('/glueck_video_paraphrase', ubung.get_glueck_video_paraphrase);
 app.get('/handy_start', ubung.get_handy_start);
 app.get('/handy_text', ubung.get_handy_text);
 app.get('/handy_task1', ubung.get_handy_task1);

@@ -189,6 +189,24 @@ body {
     position: relative;
     overflow: hidden;
 }
+
+.vfeedback{
+    margin-left:30%;
+    margin-top: 25%;
+    height: 200px;
+    z-index: 1500;
+    width: 200px;
+    position: fixed;
+    overflow: hidden;
+    display: none;
+}
+#vifeedbackFalsch{
+    background-image:url("../images/falsch.png");
+}
+#vifeedbackKorrekt{
+    background-image:url("../images/korrekt.png");
+}
+
 .redcontainer p{
     color: white;
     margin: 10px;
