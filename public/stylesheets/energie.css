@@ -23,8 +23,11 @@
 }
 
 .underline{
-    display: inline;
+    display: inline-block;
     text-decoration: underline;
     margin-left: 3px;
     margin-right: 3px;
+}
+.bold{
+    font-weight: bold;
 }
