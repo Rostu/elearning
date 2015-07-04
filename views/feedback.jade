@@ -1,0 +1,26 @@
+
+extends layout
+block content
+    link(rel='stylesheet', href='stylesheets/feedback.css')
+    script(src='javascripts/feedback.js')
+    script(src='javascripts/jquery.autosize.js')
+    #wrapper
+        .head
+            h3 Hier könnt Ihr feedback zu den besuchten Seiten abgeben!
+            p Vorläufig erscheint hier nur ein einfacher Feedback Fragebogen
+        .feedback_content_area
+            form.input-holder(action="/feedback_new" method="post")
+                p Zu welcher Seite möchtest du ein Feedback geben?
+                select( name="Seite")
+                    option(value="#{feed}") #{feed}
+                    option(value="volvo") Volvo
+                    option(value="volvo") Volvo
+                    option(value="volvo") Volvo
+                p Gibt es etwas das am Design dieser Aufgabe verändert werden sollte?
+                textarea.input-textarea#design( placeholder="Feedback zum Design")
+                p Sollte an dem Inhalt der Aufgaben estwas geändert werden?
+                textarea.input-textarea#aufgabe( placeholder="Feedback zum inhalt der Aufgabe")
+                p Gibt es etwas das am Design dieser Aufgabe verändert werden sollte?
+                textarea.input-textarea#funktion( placeholder="Feedback zur Funktion der Seite/Aufgabe")
+                input( type="submit")
+
