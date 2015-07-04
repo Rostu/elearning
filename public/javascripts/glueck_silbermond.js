@@ -1,27 +1,9 @@
 $( init );
 
 function init() {
-   
-    var srcid = 1;
-    
-    $(".srcelem").each(function () {
-        var parentID = $(this).context.parentNode.id;
-        //console.log(parentID);
-        $(this).attr("id", parentID + "se" + srcid++);
-        $(this).attr("draggable", "true");
-        $(this).attr("ondragstart", "drag(event)");
-        $(this).append($('<div class="handle">'));
-    });
 
-    $('.srcelem').mouseenter(function()
-    {
-        $($(this).children('.handle')[0]).css("backgroundColor", "#7AB3E3");
-    });
-
-    $('.srcelem').mouseleave(function()
-    {
-        $($(this).children('.handle')[0]).css("backgroundColor", "#005E9C");
-    });
+    //var md5test = sha256_digest("bla");
+    //console.log(md5test);
 
     $(".sourceline").each(function () {
         for (var i = $(this).children('.srcelem').length; i >= 0; i--) {
@@ -33,19 +15,52 @@ function init() {
     for (var i = $(flexy).children('.linebox').length; i >= 0; i--) {
         $(flexy).append($(flexy).children('.linebox')[Math.random() * i | 0]);
     }
+
+    var srcid = 1;
+    
+    $(".srcelem").each(function () {
+        var parentID = $(this).context.parentNode.id;
+        //console.log(parentID);
+        $(this).attr("id", parentID + "se" + srcid++);
+        $(this).attr("draggable", "true");
+        $(this).attr("ondragstart", "drag(event)");
+        $(this).append($('<div class="handle">'));
+    });
+
+    $('.srcelem').mouseenter(function() { $($(this).children('.handle')[0]).css("backgroundColor", "#7AB3E3"); });
+    $('.srcelem').mouseleave(function() { $($(this).children('.handle')[0]).css("backgroundColor", "#005E9C"); });
+
+    $('.resetico').mouseenter(function() { $(this).css("backgroundColor", "#005E9C"); });
+    $('.resetico').mouseleave(function() { $(this).css("backgroundColor", "#A6D1F5"); });
+
+
+
     
     $('[class$="line"]').each(function() {
         $(this).attr("ondrop", "drop(event)");
         $(this).attr("ondragover", "allowDrop(event)");
     });
 
+    $('[class$="area"]').each(function() {
+        $(this).attr("ondragover", "allowDrop(event)");
+    });
+
+    $('.helparea').each(function() {
+        $(this).attr("ondrop", "dropHelpTgt(event)");
+    });
+
+    $('.resetarea').each(function() {
+        $(this).attr("ondrop", "dropHelpSrc(event)");
+    });
+
+
     $('[class$="srcelem"]').each(function() {
         $(this).attr("onclick", "setOne(event)");
         $(this).attr("oncontextmenu", "resetOne(event)");
     });
 
-    $('[class$="panelarrow"]').each(function() {
-        $(this).attr("onclick", "resetAll(event)");
+    $('.resetico').click(function(event) {
+        resetAll(event);
     });
     
     $('[class$="select_buffer"]').each(function() {
@@ -94,6 +109,7 @@ function init() {
                         raisepoints();
                     }
                     else {
+                        alert('gitrekt');
                         raisefaults();
                     }
                 };
@@ -119,34 +135,6 @@ function load_answer_data (callback) {
     });
 }
 
-function equals(a, regex){
-    for(var i = 0; i < a.length; i++) {
-        if (a[i].match(regex)) {
-            return true;
-        }
-    }
-    return false;
-}
-
-function allowDrop(ev) {
-    ev.preventDefault();
-    var seID = 't' + ev.dataTransfer.getData("seID");
-    if (!seID.match(new RegExp(ev.target.getAttribute("id"), "i"))) {
-        ev.dataTransfer.dropEffect = "none";
-    }
-    else if (ev.target.getAttribute("draggable") == "true") {
-        ev.dataTransfer.dropEffect = "none"; // dropping is not allowed
-    }
-    else if (ev.target.getAttribute("class") == "tgtelem") {
-        ev.dataTransfer.dropEffect = "none";
-    }
-}
-
-function stopProp(ev) {
-    ev.preventDefault();
-    ev.stopPropagation();
-}
-
 function drag(ev) {
     ev.dataTransfer.setData("seID", ev.target.id);
 }
@@ -154,19 +142,45 @@ function drag(ev) {
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("seID");
+    var elem = (document.getElementById(data))
     ev.target.appendChild(document.getElementById(data));
 }
 
-function srcelemOnClick(ev) {
-    var isRightMB;
-    ev = ev || window.event;
+function dropHelpSrc(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("seID");
+    var elem = (document.getElementById(data));
+    var linebox = ev.target.closest('.linebox');
+    var sourceline = $(linebox).children('.sourceline');
+    sourceline.append(document.getElementById(data));
+}
 
-    if ("which" in ev)  // Gecko (Firefox), WebKit (Safari/Chrome) & Opera
-        isRightMB = ev.which == 3;
-    else if ("button" in ev)  // IE, Opera 
-        isRightMB = ev.button == 2;
+function dropHelpTgt(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("seID");
+    var elem = (document.getElementById(data));
+    var linebox = ev.target.closest('.linebox');
+    var targetline = $(linebox).children('.targetline');
+    targetline.append(document.getElementById(data));
+}
 
-    isRightMB ? resetOne(ev) : setOne(ev)
+function allowDrop(ev) {
+    ev.preventDefault();
+    var seID = ev.dataTransfer.getData("seID");
+    var cropped = seID.match(/\d+/)[0];
+
+    var allowed = ['sol' + cropped, 'tal' + cropped, 'hpa' + cropped, 'rsa' + cropped];
+    var forbidden = ["tgtelem", "helpico", "resetico"];
+
+    if ($.inArray(ev.target.getAttribute("id"), allowed) == -1) {
+        ev.dataTransfer.dropEffect = "none";
+    }
+    else if (ev.target.getAttribute("draggable") == "true") {
+        ev.dataTransfer.dropEffect = "none"; // dropping is not allowed
+    }
+    else if ($.inArray(ev.target.getAttribute("class"), forbidden) > -1) {
+        ev.dataTransfer.dropEffect = "none";
+    }
 }
 
 function setOne(ev) {
@@ -187,8 +201,8 @@ function resetOne(ev) {
     ev.preventDefault();
     var src = ev.target.closest('.srcelem');
     var linebox = ev.target.closest('.linebox');
-    var soureceline = $(linebox).children('.sourceline');
-    soureceline.append($(src));
+    var sourceline = $(linebox).children('.sourceline');
+    sourceline.append($(src));
     if (ev.target.getAttribute("class") == "handle") {
         $(ev.target).css("backgroundColor", "#005E9C");
     }
@@ -207,4 +221,18 @@ function resetAll(ev) {
     $(srcs).each(function() {
         sourceline.append(this);
     });
+}
+
+function equals(array, regex){
+    for(var i = 0; i < array.length; i++) {
+        if (array[i].match(regex)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function stopProp(ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
 }

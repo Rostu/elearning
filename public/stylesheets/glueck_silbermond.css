@@ -7,6 +7,7 @@
     justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
+    font-size: 1.3em;
 }
 
 .linebox {
@@ -28,9 +29,9 @@
     background-color: aliceblue;
 }
 
-.targetline, .sourceline, .resetarea {
+.targetline, .sourceline {
     display: flex;
-    width: 40%;
+    width: 38%;
     
     margin: 10px 0 0 10px;
     padding: 0 10px 10px 0;
@@ -44,12 +45,11 @@
     justify-content: flex-start;
     align-items: center;
     align-content: center;
-    
+
     background-color: #D5EBFD;
 }
 
 .targetline {
-    width: 45%;
     align-items: flex-start;
     background-color: #7AB3E3;
 }
@@ -62,9 +62,8 @@
     background-color: #D5EBFD;
 }
 
-.resetarea {
-    width: 50px;
-
+.resetarea, .helparea {
+    display: flex;
     margin: 10px 0 0 0px;
 
     line-height: 18px;
@@ -72,27 +71,41 @@
     flex: 0 1 auto;
     align-self: auto;
 
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
-    align-content: stretch;    
+    align-content: center;
+
+    background-color: green;
 }
 
-.panelarrow {
+.helparea {
+    background-color: red;
+}
+
+.resetico, .helpico {
     height: 40px;
     width: 40px;
 
-    margin: 10px 0 0 10px;
+    margin: 0 0 0 10px;
     border-radius: 20px;
+
+    flex: 0 1 auto;
+    align-self: auto;
     
     background: #A6D1F5 url("../images/button_down2.gif") no-repeat center center;
     background-size: 30px 30px;
+}
+
+.helpico {
+    margin: 0 10px 0 0;
 }
 
 .tgtelem, .srcelem {
     margin: 10px 0 0 10px;
     padding: 10px;
 
-    line-height: 18px;
+    height: 50px;
+    line-height: 50px;
 
     flex: 0 1 auto;
     align-self: auto;
@@ -103,14 +116,14 @@
 }
 
 .srcelem {
-    background-color: #A6D1F5;
-    draggable: true;
-    cursor: grab;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
     align-content: center;
+    background-color: #A6D1F5;
+    draggable: true;
+    cursor: grab;
 }
 
 #targetbox, #sourcebox {
@@ -149,11 +162,12 @@ select.dropbox {
     -moz-appearance: none;  /*REMOVES DEFAULT FIREFOX STYLE*/
     border: 0 !important;  /*REMOVES BORDER*/
     /*width: 24px;*/
-    height: 20px;
+    height: 30px;
     border-radius: 2px;
     background: #7AB3E3 url("../images/button_down2.gif") no-repeat right center;
     background-size: 24px 18px; /*TO ACCOUNT FOR @2X IMAGE FOR RETINA */
     color: #fff;
+    font-size: 1.1em;
 
     cursor: pointer;
     display: inline;
