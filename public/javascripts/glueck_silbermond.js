@@ -63,7 +63,7 @@ function init() {
         resetAll(event);
     });
     
-    $('[class$="select_buffer"]').each(function() {
+    $('[class$="selectbuffer"]').each(function() {
         $(this).attr("onclick", "stopProp(event)");
         $(this).attr("oncontextmenu", "stopProp(event)");
     });
