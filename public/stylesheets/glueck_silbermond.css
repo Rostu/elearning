@@ -100,12 +100,16 @@
     margin: 0 10px 0 0;
 }
 
+.resetico:hover, .helpico:hover {
+    background-color: #005E9C;
+}
+
 .tgtelem, .srcelem {
     margin: 10px 0 0 10px;
     padding: 10px;
 
-    height: 50px;
-    line-height: 50px;
+    height: 20px;
+    line-height: 20px;
 
     flex: 0 1 auto;
     align-self: auto;
@@ -124,6 +128,14 @@
     background-color: #A6D1F5;
     draggable: true;
     cursor: grab;
+}
+
+.correct .handle {
+    background-color: green !important;
+}
+
+.incorrect .handle {
+    background-color: red !important;
 }
 
 #targetbox, #sourcebox {
@@ -180,5 +192,13 @@ select.dropbox {
     margin: 0 0 0 10px;
     border-radius: 8px;
 
+    background: #7AB3E3;
+}
+
+.srcelem:hover .handle {
     background: #005E9C;
+}
+
+.ui-draggable-dragging .handle {
+    background: orange !important;
 }

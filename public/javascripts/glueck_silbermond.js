@@ -5,120 +5,106 @@ function init() {
     //var md5test = sha256_digest("bla");
     //console.log(md5test);
 
+    var flexy = $("#flexybox");
+
+    for (var i = $(flexy).children('.linebox').length; i >= 0; i--) {
+        $(flexy).append($(flexy).children('.linebox')[Math.random() * i | 0]);
+    }
+    
     $(".sourceline").each(function () {
         for (var i = $(this).children('.srcelem').length; i >= 0; i--) {
             $(this).append($(this).children('.srcelem')[Math.random() * i | 0]);
         }
     });
 
-    var flexy = $("#flexybox");
-    for (var i = $(flexy).children('.linebox').length; i >= 0; i--) {
-        $(flexy).append($(flexy).children('.linebox')[Math.random() * i | 0]);
-    }
-
-    var srcid = 1;
-    
-    $(".srcelem").each(function () {
-        var parentID = $(this).context.parentNode.id;
-        //console.log(parentID);
-        $(this).attr("id", parentID + "se" + srcid++);
-        $(this).attr("draggable", "true");
-        $(this).attr("ondragstart", "drag(event)");
-        $(this).append($('<div class="handle">'));
+    //Control logic    
+    $('.srcelem').each(function() {
+        $(this).draggable( {
+            containment: $(this).closest('.linebox'),
+            revert: true,
+            revertDuration: 100,
+            opacity: 0.75,
+            cursor: 'move',
+            stack: $('.srcelem'),
+            delay: 50
+        } );
+        $(this).attr("onclick", "setOne(event)");
+        $(this).attr("oncontextmenu", "resetOne(event)");
     });
 
-    $('.srcelem').mouseenter(function() { $($(this).children('.handle')[0]).css("backgroundColor", "#7AB3E3"); });
-    $('.srcelem').mouseleave(function() { $($(this).children('.handle')[0]).css("backgroundColor", "#005E9C"); });
-
-    $('.resetico').mouseenter(function() { $(this).css("backgroundColor", "#005E9C"); });
-    $('.resetico').mouseleave(function() { $(this).css("backgroundColor", "#A6D1F5"); });
-
-
-
-    
     $('[class$="line"]').each(function() {
-        $(this).attr("ondrop", "drop(event)");
-        $(this).attr("ondragover", "allowDrop(event)");
-    });
-
-    $('[class$="area"]').each(function() {
-        $(this).attr("ondragover", "allowDrop(event)");
+        $(this).droppable({
+            drop: lineDrop,
+            accept: $('.srcelem'),
+        });
     });
 
     $('.helparea').each(function() {
-        $(this).attr("ondrop", "dropHelpTgt(event)");
+        $(this).droppable({
+            drop: helpDrop,
+            tolerance: "pointer",
+            accept: $('.srcelem'),
+        });
     });
 
     $('.resetarea').each(function() {
-        $(this).attr("ondrop", "dropHelpSrc(event)");
-    });
-
-
-    $('[class$="srcelem"]').each(function() {
-        $(this).attr("onclick", "setOne(event)");
-        $(this).attr("oncontextmenu", "resetOne(event)");
+        $(this).droppable({
+            drop: resetDrop,
+            tolerance: "pointer",
+            accept: $('.srcelem'),
+        });
     });
 
     $('.resetico').click(function(event) {
         resetAll(event);
     });
     
-    $('[class$="selectbuffer"]').each(function() {
+    $('.selectbuffer').each(function() {
         $(this).attr("onclick", "stopProp(event)");
         $(this).attr("oncontextmenu", "stopProp(event)");
     });
-    
+
+    //Load select data
+    var dropboxes = $(".dropbox");
+    var dbox_count = dropboxes.length;
+ 
     load_dropbox_data (function (dropbox_data) {
-        load_answer_data (function (answer_data) {
-            var dropboxes = $(".dropbox");
-            var dbox_count = dropboxes.length;
-            dropboxes.each(function() {
-                var dbox = $(this);
-                var dbox_name = this.id;
-                var corr_form;
-                $.each(answer_data, function(elem, data) {
-                    if (dbox_name == elem) {
-                        corr_form = data.form;
-                    }
-                });
-                corr_form_upper = (corr_form.charAt(0) == corr_form.charAt(0).toUpperCase());
-                //console.log(corr_form_upper);
-                if (corr_form_upper) {
-                    console.log(corr_form);
-                }
-                $.each(dropbox_data, function(elem, forms_hash) {
-                    $.each(forms_hash, function(form, form_hash) {
-                        var current_forms = Object.keys(form_hash);
-                        if (equals(current_forms, new RegExp('^' + corr_form + '$', 'i'))) {
-                            var selected_item_str = elem.replace(/[\(\)\[\]]/g, '');
+        dropboxes.each(function () {
+            var dbox = $(this);
+            var dbox_name = $(this).attr('name');
+            var dbox_id = $(this).closest('.srcelem').attr('random');
+            //console.log(dbox_name);
+            var corr_form_upper = false;
+            $.each(dropbox_data, function(elem, forms_hash) {
+                elem = elem.replace(/[\(\)\[\]]/g, '');
+                if (dbox_name === elem) {
+                    $.each(forms_hash, function (form, form_hash) {
+                        var current_forms = [];
+                        $.each(form_hash, function (f, f_h) {
+                            $.each(f_h, function (f_h_k, f_h_v) {
+                                if (f_h_v['wkl'] === 'VER' && !equals(current_forms, new RegExp('^' + f + '$'))) {
+                                    current_forms.push(f);
+                                    return;
+                                }
+                            });
+                        });
+                        if (equals(current_forms, new RegExp('^' + dbox_name + '$', 'i'))) {
                             for (var i = 0; i < current_forms.length; i++) {
                                 var strval = ((corr_form_upper) ? current_forms[i].charAt(0).toUpperCase() + current_forms[i].slice(1) : current_forms[i]);
-
+    
                                 var opt = jQuery('<option>' + strval + '</option>');
                                 $(opt).attr('value', strval);
-                                $(opt).attr('selected', selected_item_str == current_forms[i]);
+                                $(opt).attr('selected', elem === current_forms[i]);
                                 dbox.append(opt);
                             }
                             return;
                         }
                     });
-                });
-                this.onchange = function() {
-                    // access form and value properties via this (keyword)
-                    if (corr_form == this.value) {
-                        raisepoints();
-                    }
-                    else {
-                        alert('gitrekt');
-                        raisefaults();
-                    }
-                };
+                }
             });
-            dropboxes.each(function() {
-                var curr_width = $(this).children()[0].clientWidth;
-                $(this).width(curr_width + 4);
-                //console.log($($(this).children()[0]).current_width());
-            });
+        });
+        dropboxes.each(function() {
+            $(this).width($(this).width() + 18  );
         });
     });
 }
@@ -135,51 +121,49 @@ function load_answer_data (callback) {
     });
 }
 
-function drag(ev) {
-    ev.dataTransfer.setData("seID", ev.target.id);
+function lineDrop( event, ui ) {
+    $(this).append(ui.draggable);
+    var dragID = ui.draggable.attr('id');
+    var dropID = $(this).attr('id');
+    handleFormCheck( dragID, dropID );
 }
 
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("seID");
-    var elem = (document.getElementById(data))
-    ev.target.appendChild(document.getElementById(data));
+function helpDrop( event, ui ) {
+    var linebox = $(this).closest('.linebox');
+    var targetline = linebox.children('.targetline');
+    targetline.append(ui.draggable);
+    handleFormCheck( ui.draggable.attr('id'), targetline.attr('id') );
 }
 
-function dropHelpSrc(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("seID");
-    var elem = (document.getElementById(data));
-    var linebox = ev.target.closest('.linebox');
-    var sourceline = $(linebox).children('.sourceline');
-    sourceline.append(document.getElementById(data));
+function resetDrop( event, ui ) {
+    var linebox = $(this).closest('.linebox');
+    var sourceline = linebox.children('.sourceline');
+    sourceline.append(ui.draggable);
+    handleFormCheck( ui.draggable.attr('id'), sourceline.attr('id') );
 }
 
-function dropHelpTgt(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("seID");
-    var elem = (document.getElementById(data));
-    var linebox = ev.target.closest('.linebox');
-    var targetline = $(linebox).children('.targetline');
-    targetline.append(document.getElementById(data));
-}
-
-function allowDrop(ev) {
-    ev.preventDefault();
-    var seID = ev.dataTransfer.getData("seID");
-    var cropped = seID.match(/\d+/)[0];
-
-    var allowed = ['sol' + cropped, 'tal' + cropped, 'hpa' + cropped, 'rsa' + cropped];
-    var forbidden = ["tgtelem", "helpico", "resetico"];
-
-    if ($.inArray(ev.target.getAttribute("id"), allowed) == -1) {
-        ev.dataTransfer.dropEffect = "none";
+function handleFormCheck( dragID, dropID) {
+    var dropRegex = new RegExp("^tal")
+    if (dropID.match(dropRegex)) {
+        var drag_line = dragID.match(/\d+/)[0];
+        var drag_pos = pad("" + $('#' + dropID).children('.srcelem').length, 2);
+        var drag_text = $('#' + dragID).text();
+        var drag_hash = $('#' + dragID).attr('hash');
+        checkForm(drag_line, drag_pos, drag_text, drag_hash, dragID, dropID);
     }
-    else if (ev.target.getAttribute("draggable") == "true") {
-        ev.dataTransfer.dropEffect = "none"; // dropping is not allowed
+    else {
+        $('#' + dragID).removeClass('incorrect');
+        $('#' + dragID).removeClass('correct');
     }
-    else if ($.inArray(ev.target.getAttribute("class"), forbidden) > -1) {
-        ev.dataTransfer.dropEffect = "none";
+}
+
+function checkForm(line, position, form, hashval, dragID, dropID) {
+    var to_digest = line + position + form;
+    if (sha256_digest(to_digest) === hashval) {
+        $('#' + dragID).addClass('correct');
+    }
+    else {
+        $('#' + dragID).addClass('incorrect');
     }
 }
 
@@ -188,13 +172,8 @@ function setOne(ev) {
     var linebox = ev.target.closest('.linebox');
     var targetline = $(linebox).children('.targetline');
     targetline.append($(src));
-    if (ev.target.getAttribute("class") == "handle") {
-        $(ev.target).css("backgroundColor", "#005E9C");
-    }
-    else {
-        console.log(ev.target.getAttribute("class"));
-        $($(ev.target).children('.handle')[0]).css("backgroundColor", "#005E9C");
-    }
+    handleFormCheck( $(src).attr('id'), targetline.attr('id') );
+
 }
 
 function resetOne(ev) {
@@ -203,24 +182,24 @@ function resetOne(ev) {
     var linebox = ev.target.closest('.linebox');
     var sourceline = $(linebox).children('.sourceline');
     sourceline.append($(src));
-    if (ev.target.getAttribute("class") == "handle") {
-        $(ev.target).css("backgroundColor", "#005E9C");
-    }
-    else {
-        console.log(ev.target.getAttribute("class"));
-        $($(ev.target).children('.handle')[0]).css("backgroundColor", "#005E9C");
-    }
+    $(src).removeClass('incorrect');
+    $(src).removeClass('correct');
 }
 
 function resetAll(ev) {
     var linebox = ev.target.closest('.linebox');
     var sourceline = $(linebox).children('.sourceline');
-    var src_regex = new RegExp($(sourceline).attr('id') + "se", "i");
-    var srcs = $('.srcelem').filter(function () {
-        return this.id.match(src_regex);});
-    $(srcs).each(function() {
+    var targetline = $(linebox).children('.targetline');
+    targetline.children('.srcelem').each(function() {
         sourceline.append(this);
+        $(this).removeClass('incorrect');
+        $(this).removeClass('correct');
     });
+}
+
+function stopProp(ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
 }
 
 function equals(array, regex){
@@ -232,7 +211,7 @@ function equals(array, regex){
     return false;
 }
 
-function stopProp(ev) {
-    ev.preventDefault();
-    ev.stopPropagation();
+function pad (str, max) {
+    str = str.toString();
+    return str.length < max ? pad("0" + str, max) : str;
 }
