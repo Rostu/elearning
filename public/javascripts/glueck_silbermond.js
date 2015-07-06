@@ -138,8 +138,9 @@ function helpDrop( event, ui ) {
 function resetDrop( event, ui ) {
     var linebox = $(this).closest('.linebox');
     var sourceline = linebox.children('.sourceline');
-    sourceline.append(ui.draggable);
-    handleFormCheck( ui.draggable.attr('id'), sourceline.attr('id') );
+    sourceline.append(ui.draggable)
+    ui.draggable.removeClass('incorrect');
+    ui.draggable.removeClass('incorrect');
 }
 
 function handleFormCheck( dragID, dropID) {
@@ -147,7 +148,9 @@ function handleFormCheck( dragID, dropID) {
     if (dropID.match(dropRegex)) {
         var drag_line = dragID.match(/\d+/)[0];
         var drag_pos = pad("" + $('#' + dropID).children('.srcelem').length, 2);
-        var drag_text = $('#' + dragID).text();
+        var drag_text = $('#' + dragID + ' option:selected').text();
+        console.log(drag_text);
+        var drag_text = (drag_text) ? drag_text : $('#' + dragID).text();
         var drag_hash = $('#' + dragID).attr('hash');
         checkForm(drag_line, drag_pos, drag_text, drag_hash, dragID, dropID);
     }
