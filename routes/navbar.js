@@ -10,6 +10,12 @@ var sites = [
     ['energie_start','energie_Wortfeld_Solarantrieb']
 ];
 
+var ausnahmen =["anleitung","feedback","showfeedback","impressum","index","start","signup"];
+
+exports.check_ausnahmen = function(str){
+    if (ausnahmen.indexOf(str) < 0){return false }else {return true}
+}
+
 exports.getnext = function(last){
     for (i=0;i<sites.length;i++){
         for(j=0;j<sites[i].length;j++){

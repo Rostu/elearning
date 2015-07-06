@@ -10,7 +10,7 @@ block content
             p Vorläufig erscheint hier nur ein einfacher Feedback Fragebogen
         .feedback_content_area
             h3 Aufgabe: #{feed}
-            form.input-holder(action="/new_feedback" method="post")
+            form.input-holder(action="new_feedback" method="post")
                 select#seite(name="seite")
                     option(value="#{feed}") #{feed}
 

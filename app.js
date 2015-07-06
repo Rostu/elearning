@@ -18,6 +18,7 @@ var dml = require('./routes/dml');
 var dbhandler = require('./routes/dbhandler');
 var pointshandler = require('./routes/pointshandler');
 var points = require('./public/javascripts/points.json');
+var nav = require('./routes/navbar.js');
 //lockit vars
 var config = require('./config.js');
 var Lockit = require('lockit');
@@ -51,8 +52,13 @@ if ('development' == app.get('env')) {
 app.use(function(req, res, next){
     //console.log(req.path);
     var newpath = req.path;
+    /*if (!nav.check_ausnahmen(newpath)){
+        newpath = newpath.replace("/","");
+        res.locals.last = newpath;
+    }*/
     newpath = newpath.replace("/","");
     res.locals.last = newpath;
+    console.log(req.url);
     next();
 });
 app.use('/', index.get_session);

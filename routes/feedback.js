@@ -1,11 +1,11 @@
 var dbh = require('./dbhandler');
 
+
 exports.get_feedback = function(req, res){
     var lastsite = req.param("feed");
     lastsite = lastsite.replace("/","");
     res.render('feedback',{feed:lastsite});
 };
-
 
 exports.new_feedback = function(req, res){
     var seite = req.body.seite;
@@ -16,14 +16,14 @@ exports.new_feedback = function(req, res){
     //for mongodb important to check if design, aufgabe and funtion are strings to prevent injection of json objects
     if ((typeof design === "string") && (typeof aufgabe === "string")&&(typeof funktion === "string"))    {
 
-        design = design.replace(/[.,-;:_\(\)!"§$%&\[\]{}#+*']/g, '');
-        aufgabe = aufgabe.replace(/[.,-;:_\(\)!"§$%&\[\]{}#+*']/g, '');
-        funktion = funktion.replace(/[.,-;:_\(\)!"§$%&\[\]{}#+*']/g, '');
+        design = design.replace(/[-+;:_\(\)!"§$%&\[\]\{\}#*']/g, '');
+        aufgabe = aufgabe.replace(/[-+;:_\(\)!"§$%&\[\]\{\}#*']/g, '');
+        funktion = funktion.replace(/[-+;:_\(\)!"§$%&\[\]\{\}#*']/g, '');
         dbh.save_feedback(seite,design,aufgabe,funktion);
     }
-    res.redirect("/"+ seite);
-}
 
+    res.render(seite);
+}
 
 exports.show_feedback = function(req, res){
     res.render('showfeedback');
@@ -38,5 +38,5 @@ exports.get_feedback_items = function(req, res){
 };
 exports.deletefeedback = function(req, res){
     dbh.delfeedback(req.params.id);
-    res.redirect('/show_feedback');
+    res.render('showfeedback');
 };
