@@ -1,0 +1,14 @@
+extends layout
+
+if(session)
+    if(session.isAdmin == true)
+        block content
+            link(rel='stylesheet', href='stylesheets/feedback.css')
+            script(src='javascripts/showfeedback.js')
+            #wrapper
+
+    if(session.isAdmin == false)
+    block content
+        link(rel='stylesheet', href='stylesheets/feedback.css')
+            #wrapper
+                h3 Um diese Seite sehen zu können benötigen Sie mehr Rechte
