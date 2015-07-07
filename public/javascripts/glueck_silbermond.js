@@ -1,3 +1,5 @@
+
+
 $( init );
 
 function init() {
@@ -10,7 +12,7 @@ function init() {
     for (var i = $(flexy).children('.linebox').length; i >= 0; i--) {
         $(flexy).append($(flexy).children('.linebox')[Math.random() * i | 0]);
     }
-    
+
     $(".sourceline").each(function () {
         for (var i = $(this).children('.srcelem').length; i >= 0; i--) {
             $(this).append($(this).children('.srcelem')[Math.random() * i | 0]);
@@ -58,7 +60,7 @@ function init() {
     $('.resetico').click(function(event) {
         resetAll(event);
     });
-    
+
     $('.selectbuffer').each(function() {
         $(this).attr("onclick", "stopProp(event)");
         $(this).attr("oncontextmenu", "stopProp(event)");
@@ -67,7 +69,7 @@ function init() {
     //Load select data
     var dropboxes = $(".dropbox");
     var dbox_count = dropboxes.length;
- 
+
     load_dropbox_data (function (dropbox_data) {
         dropboxes.each(function () {
             var dbox = $(this);
@@ -91,7 +93,7 @@ function init() {
                         if (equals(current_forms, new RegExp('^' + dbox_name + '$', 'i'))) {
                             for (var i = 0; i < current_forms.length; i++) {
                                 var strval = ((corr_form_upper) ? current_forms[i].charAt(0).toUpperCase() + current_forms[i].slice(1) : current_forms[i]);
-    
+
                                 var opt = jQuery('<option>' + strval + '</option>');
                                 $(opt).attr('value', strval);
                                 $(opt).attr('selected', elem === current_forms[i]);
@@ -164,9 +166,10 @@ function handleFormCheck( dragID, dropID) {
 
 function checkForm(line, position, form, hashval, dragID, dropID) {
     var to_digest = line + position + form;
-    console.log(to_digest);
-    console.log(sha256_digest(to_digest));
-    if (sha256_digest(to_digest) === hashval) {
+    var shaObj = new jsSHA("SHA-256", "TEXT");
+    shaObj.update(to_digest);
+    var digested = shaObj.getHash("HEX");
+    if (digested === hashval) {
         $('#' + dragID).removeClass('incorrect');
         $('#' + dragID).addClass('correct');
         $('#' + dropID).append($('#' + dragID));
@@ -225,3 +228,4 @@ function pad (str, max) {
     str = str.toString();
     return str.length < max ? pad("0" + str, max) : str;
 }
+
