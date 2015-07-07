@@ -36,7 +36,7 @@
 * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-
+sha256_digest()
 /* SHA256 logical functions */
 function rotateRight(n,x) {
 	return ((x >>> n) | (x << (32 - n)));

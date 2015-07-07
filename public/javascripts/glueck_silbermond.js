@@ -122,7 +122,6 @@ function load_answer_data (callback) {
 }
 
 function lineDrop( event, ui ) {
-    $(this).append(ui.draggable);
     var dragID = ui.draggable.attr('id');
     var dropID = $(this).attr('id');
     handleFormCheck( dragID, dropID );
@@ -147,11 +146,14 @@ function handleFormCheck( dragID, dropID) {
     var dropRegex = new RegExp("^tal")
     if (dropID.match(dropRegex)) {
         var drag_line = dragID.match(/\d+/)[0];
-        var drag_pos = pad("" + $('#' + dropID).children('.srcelem').length, 2);
+        var drag_pos = pad("" + $('#' + dropID).children().length, 2);
         var drag_text = $('#' + dragID + ' option:selected').text();
-        console.log(drag_text);
-        var drag_text = (drag_text) ? drag_text : $('#' + dragID).text();
+        drag_text = (drag_text) ? drag_text : $('#' + dragID).text();
         var drag_hash = $('#' + dragID).attr('hash');
+        console.log(drag_line);
+        console.log(drag_pos);
+        console.log(drag_text);
+        console.log(drag_hash);
         checkForm(drag_line, drag_pos, drag_text, drag_hash, dragID, dropID);
     }
     else {
@@ -162,8 +164,13 @@ function handleFormCheck( dragID, dropID) {
 
 function checkForm(line, position, form, hashval, dragID, dropID) {
     var to_digest = line + position + form;
+    console.log(to_digest);
+    console.log(sha256_digest(to_digest));
     if (sha256_digest(to_digest) === hashval) {
+        $('#' + dragID).removeClass('incorrect');
         $('#' + dragID).addClass('correct');
+        $('#' + dropID).append($('#' + dragID));
+
     }
     else {
         $('#' + dragID).addClass('incorrect');
