@@ -39,6 +39,9 @@
         "name":"glueck_video_paraphrase", "maxpoints":10, "maxfaults":10
     },
     {
+        "name":"glueck_silbermond", "maxpoints":10, "maxfaults":10
+    },
+    {
         "name":"handy_start", "maxpoints":0, "maxfaults":0
     },
     {

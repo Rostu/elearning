@@ -29,36 +29,18 @@ function init() {
             cursor: 'move',
             stack: $('.srcelem'),
             delay: 50
-        } );
-        $(this).attr("onclick", "setOne(event)");
-        $(this).attr("oncontextmenu", "resetOne(event)");
+        });
     });
 
-    $('[class$="line"]').each(function() {
+    $('.targetline').each(function() {
         $(this).droppable({
             drop: lineDrop,
             accept: $('.srcelem'),
         });
     });
 
-    $('.helparea').each(function() {
-        $(this).droppable({
-            drop: helpDrop,
-            tolerance: "pointer",
-            accept: $('.srcelem'),
-        });
-    });
-
-    $('.resetarea').each(function() {
-        $(this).droppable({
-            drop: resetDrop,
-            tolerance: "pointer",
-            accept: $('.srcelem'),
-        });
-    });
-
-    $('.resetico').click(function(event) {
-        resetAll(event);
+    $('.helpico').click(function(event) {
+        helpClick(event);
     });
 
     $('.selectbuffer').each(function() {
@@ -96,7 +78,7 @@ function init() {
 
                                 var opt = jQuery('<option>' + strval + '</option>');
                                 $(opt).attr('value', strval);
-                                $(opt).attr('selected', elem === current_forms[i]);
+                                $(opt).prop('selected', elem === current_forms[i]);
                                 dbox.append(opt);
                             }
                             return;
@@ -106,7 +88,8 @@ function init() {
             });
         });
         dropboxes.each(function() {
-            $(this).width($(this).width() + 18  );
+            $(this).width($(this).width() + 18 );
+            $(this).prop('disabled', false);
         });
     });
 }
@@ -117,97 +100,98 @@ function load_dropbox_data (callback) {
     });
 }
 
-function load_answer_data (callback) {
-    $.getJSON("javascripts/glueck_ist_1_correct.json", function(json) {
-        callback(json);
-    });
-}
-
 function lineDrop( event, ui ) {
     var dragID = ui.draggable.attr('id');
     var dropID = $(this).attr('id');
     handleFormCheck( dragID, dropID );
 }
 
-function helpDrop( event, ui ) {
-    var linebox = $(this).closest('.linebox');
-    var targetline = linebox.children('.targetline');
-    targetline.append(ui.draggable);
-    handleFormCheck( ui.draggable.attr('id'), targetline.attr('id') );
-}
-
-function resetDrop( event, ui ) {
-    var linebox = $(this).closest('.linebox');
-    var sourceline = linebox.children('.sourceline');
-    sourceline.append(ui.draggable)
-    ui.draggable.removeClass('incorrect');
-    ui.draggable.removeClass('incorrect');
-}
-
 function handleFormCheck( dragID, dropID) {
-    var dropRegex = new RegExp("^tal")
-    if (dropID.match(dropRegex)) {
-        var drag_line = dragID.match(/\d+/)[0];
-        var drag_pos = pad("" + $('#' + dropID).children().length, 2);
-        var drag_text = $('#' + dragID + ' option:selected').text();
-        drag_text = (drag_text) ? drag_text : $('#' + dragID).text();
-        var drag_hash = $('#' + dragID).attr('hash');
-        console.log(drag_line);
-        console.log(drag_pos);
-        console.log(drag_text);
-        console.log(drag_hash);
-        checkForm(drag_line, drag_pos, drag_text, drag_hash, dragID, dropID);
-    }
-    else {
-        $('#' + dragID).removeClass('incorrect');
-        $('#' + dragID).removeClass('correct');
-    }
-}
-
-function checkForm(line, position, form, hashval, dragID, dropID) {
-    var to_digest = line + position + form;
-    var shaObj = new jsSHA("SHA-256", "TEXT");
-    shaObj.update(to_digest);
-    var digested = shaObj.getHash("HEX");
-    if (digested === hashval) {
-        $('#' + dragID).removeClass('incorrect');
-        $('#' + dragID).addClass('correct');
-        $('#' + dropID).append($('#' + dragID));
-
+    var drag_line = dragID.match(/\d+/)[0];
+    var drag_pos = pad("" + $('#' + dropID).children().length, 2);
+    var drag_text = $('#' + dragID + ' option:selected').text();
+    drag_text = (drag_text) ? drag_text : $('#' + dragID).text();
+    var drag_hash = $('#' + dragID).attr('hash');
+    var hashtest = checkForm( dragID, dropID);
+    if (hashtest) {
+        setCorrect(dragID, dropID);
     }
     else {
         $('#' + dragID).addClass('incorrect');
+        raisefaults();
     }
 }
 
-function setOne(ev) {
-    var src = ev.target.closest('.srcelem');
-    var linebox = ev.target.closest('.linebox');
-    var targetline = $(linebox).children('.targetline');
-    targetline.append($(src));
-    handleFormCheck( $(src).attr('id'), targetline.attr('id') );
-
-}
-
-function resetOne(ev) {
-    ev.preventDefault();
-    var src = ev.target.closest('.srcelem');
-    var linebox = ev.target.closest('.linebox');
-    var sourceline = $(linebox).children('.sourceline');
-    sourceline.append($(src));
-    $(src).removeClass('incorrect');
-    $(src).removeClass('correct');
-}
-
-function resetAll(ev) {
+function helpClick(ev) {
     var linebox = ev.target.closest('.linebox');
     var sourceline = $(linebox).children('.sourceline');
     var targetline = $(linebox).children('.targetline');
-    targetline.children('.srcelem').each(function() {
-        sourceline.append(this);
-        $(this).removeClass('incorrect');
-        $(this).removeClass('correct');
+
+    sourceline.children('.srcelem').each(function () {
+        var dragID = $(this).attr('id');
+        var dropID = $(targetline).attr('id');
+
+        if ($(this).find('.dropbox').length > 0) {
+            var beforeTest = $('#' + dragID + ' option:selected');
+            var found = false;
+
+            $(this).children('.selectbuffer').children('.dropbox').children().each(function () {
+                $(this).prop('selected', true);
+                if (checkForm(dragID, dropID)) {
+                    found = true;
+                    return false;
+                }
+            });
+
+            if (!found) {
+                $(beforeTest).prop('selected', true);
+            }
+        }
+        if (checkForm(dragID, dropID)) {
+            setCorrect(dragID, dropID);
+
+            $(ev.target).unbind('click');
+            $(ev.target).addClass('disabled');
+            return false;
+        }
     });
+}
+
+function checkForm(dragID, dropID) {
+    var drag_line = dragID.match(/\d+/)[0];
+    var drag_pos = pad("" + $('#' + dropID).children().length, 2);
+    var drag_text = $('#' + dragID + ' option:selected').text();
+    drag_text = (drag_text) ? drag_text : $('#' + dragID).text();
+    var drag_hash = $('#' + dragID).attr('hash');
+
+    var to_digest = drag_line + drag_pos + drag_text;
+    var shaObj = new jsSHA("SHA-256", "TEXT");
+    shaObj.update(to_digest);
+    var digested = shaObj.getHash("HEX");
+    if (digested === drag_hash) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function setCorrect(dragID, dropID) {
+    $('#' + dragID).removeClass('incorrect');
+    $('#' + dragID).addClass('correct');
+    $('#' + dropID).append($('#' + dragID));
+    $('#' + dragID).draggable('disable');
+    $($('#' + dragID).children().children('.dropbox')[0]).prop('disabled', true);
+
+    var linebox = $('#' + dragID).closest('.linebox');
+    var sourceline = $(linebox).children('.sourceline');
+    var helpico = $(linebox).find('.helpico');
+
+    if ($(sourceline).children().length == 0) {
+        raisepoints();
+        $(helpico).unbind('click');
+        $(helpico).addClass('disabled');
+    }
 }
 
 function stopProp(ev) {
