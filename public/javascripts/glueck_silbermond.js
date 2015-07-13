@@ -1,9 +1,17 @@
-
-
 $( init );
 
 function init() {
 
+    $(document).on("MaxPointsReached", function() {
+        //here you can react to the event how it is needed in your exercise 
+        alert('Gut gemacht!')
+    });
+
+    $(document).on("MaxFaultsReached", function() {
+        //here you can react to the event how it is needed in your exercise 
+        alert('Das kannst du doch besser!')
+    });
+    
     //var md5test = sha256_digest("bla");
     //console.log(md5test);
 
