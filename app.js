@@ -7,6 +7,7 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var start = require('./routes/start');
 var ubung = require('./routes/ubung');
+var feed = require('./routes/feedback');
 var http = require('http');
 var impressum = require('./routes/impressum');
 var signup = require('./routes/signup');
@@ -17,6 +18,7 @@ var dml = require('./routes/dml');
 var dbhandler = require('./routes/dbhandler');
 var pointshandler = require('./routes/pointshandler');
 var points = require('./public/javascripts/points.json');
+var nav = require('./routes/navbar.js');
 //lockit vars
 var config = require('./config.js');
 var Lockit = require('lockit');
@@ -50,8 +52,13 @@ if ('development' == app.get('env')) {
 app.use(function(req, res, next){
     //console.log(req.path);
     var newpath = req.path;
+    /*if (!nav.check_ausnahmen(newpath)){
+        newpath = newpath.replace("/","");
+        res.locals.last = newpath;
+    }*/
     newpath = newpath.replace("/","");
     res.locals.last = newpath;
+    console.log(req.url);
     next();
 });
 app.use('/', index.get_session);
@@ -73,6 +80,11 @@ app.get('/ersti_Wortschatz_erweitern', ubung.get_ersti_Wortschatz_erweitern);
 app.get('/ersti_end', ubung.get_ersti_end);
 app.get('/energie_start', ubung.get_energie_start);
 app.get('/energie_Wortfeld_Solarantrieb', ubung.get_energie_Wortfeld_Solarantrieb);
+app.get('/feedback:last?', feed.get_feedback);
+app.post('/new_feedback', feed.new_feedback);
+app.get('/show_feedback',feed.show_feedback);
+app.get('/delfeedback:id', feed.deletefeedback);
+app.get('/get_feedback_items',feed.get_feedback_items);
 app.get('/generationen_start', ubung.get_generationen_start);
 app.get('/generationen_text', ubung.get_generationen_text);
 app.get('/generationen_Textverstehen_Komposita', ubung.get_generationen_Textverstehen_Komposita);
