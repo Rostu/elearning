@@ -4,6 +4,7 @@
     margin: auto;
     background-color: rgba(0, 94, 156, 0.2);
     text-align: center;
+    padding:5px;
 }
 .feedback_content_area h3{
     font-size: 1.2em;
@@ -15,11 +16,10 @@
 
 .head{
     font-family:'Open Sans',sans-serif;
-    margin-top:5px;
     font-size: 1.2em;
     color: white;
     width: 80%;
-    padding: 5px;
+    padding:5px;
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(0, 94, 156, 0.8);
