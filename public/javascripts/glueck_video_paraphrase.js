@@ -17,6 +17,12 @@ $( init );
 function init() {
     //enable info box
     $('#info3').show();
+    $('#info1').show();
+    $("#info1").append("<a id='infolink1' class='redlink' href='#'>Hilfe??</a>");
+
+    $('#infolink1').on('click',function(){
+        toggleStartOverlay();
+    });
 
     //pointer für die Übung
     var aktuell = 0;
