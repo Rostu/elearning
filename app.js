@@ -110,6 +110,8 @@ app.get('/impressum', impressum.get_imp);
 app.get('/glueck_Memory', ubung.get_glueck_memory);
 app.get('/glueck_Textverstehen_Wortspirale', ubung.get_glueck_Textverstehen_Wortspirale);
 app.get('/neuanlegen', ubung.neu);
+app.get('/LiveTicker_start', ubung.get_LiveTicker_start);
+app.get('/LiveTicker_Aufgabe2', ubung.get_LiveTicker_Aufgabe2);
 //app.get('/points', pointshandler.get_points);
 
 app.get('/points:last?', function(req, res){

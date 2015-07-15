@@ -111,11 +111,15 @@ exports.get_handy_task1 = function(req, res){
 exports.get_handy_task2 = function(req, res){
     res.render('handy_task2');
 };
-
+exports.get_LiveTicker_start = function(req, res) {
+    res.render('LiveTicker_start');
+};
+exports.get_LiveTicker_Aufgabe2 = function(req, res) {
+    res.render('LiveTicker_Aufgabe2');
+};
 exports.get_ersti_start = function(req, res) {
     res.render('ersti_start');
 };
-
 exports.get_ersti_Textverstehen_emotionale_Woerter = function(req, res){
     res.render('ersti_Textverstehen_emotionale_Woerter');
 };
