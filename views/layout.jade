@@ -39,7 +39,7 @@ html
             #redbackground
             #specialbackground
                 if (session)
-                    if (last != "home")
+                    if (last != "home")&&(last != "impressum")&&(last != "anleitung")&&(last != "feedback")&&(last != "show_feedback")
                         #special_bar
                             #point_bars_div
                                 svg(id="point_bars")
@@ -48,6 +48,7 @@ html
                             .special_nav
                                 a#las(href="last?last="+ last)
                                 a#nex(href="next?last="+ last)
+                                a#fee(href="feedback?feed="+ last)
 
             #redstripes
                 .redstripe#info1
@@ -66,7 +67,7 @@ html
                                         li
                                             a(href = 'glueck_start') Glück
                                         li
-                                            a(href= 'handy_start') Handy
+                                            a(href= 'energie_start') Neue Energien
                                         li
                                             a(href = 'ersti_start') Ersti
                                         li
