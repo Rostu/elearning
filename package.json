@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "cookie-session": "^1.0.1",
-    "cryptojs": "^2.5.3",
     "d3": "3.4.6",
     "express": "3.5.1",
     "express-debug": "^1.1.0",
