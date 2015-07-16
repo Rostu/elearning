@@ -1,9 +1,10 @@
 .feedback_content_area{
     font-family:'Open Sans',sans-serif;
-    width: 80%;
+    width: 50%;
+    min-width: 550px;
     margin: auto;
     background-color: rgba(0, 94, 156, 0.2);
-    text-align: center;
+    text-align: left;
     padding:5px;
 }
 .feedback_content_area h3{
@@ -11,14 +12,15 @@
     color: rgba(0, 94, 156, 1);
     margin:1px;
     padding:1px;
+    text-align: center;
 }
-
 
 .head{
     font-family:'Open Sans',sans-serif;
     font-size: 1.2em;
     color: white;
-    width: 80%;
+    width: 70%;
+    min-width: 610px;
     padding:5px;
     margin-left: auto;
     margin-right: auto;
@@ -51,16 +53,17 @@ textarea {
 
 input[type="submit"]{
     font-family:'Open Sans',sans-serif;
-    width:50%;
+    width:30%;
     background:rgba(0, 94, 156, 0.8);
     border:0;
     padding:20px 5px 20px 5px;
     font-size:1.2em;
-    margin: 15px;
+    margin: 15px auto;
     color:#fff;
     cursor:pointer;
     transition:background .3s;
     -webkit-transition:background .3s;
+
 }
 input[type="submit"]:hover{
     background: rgba(0, 136, 217, 0.64);
@@ -74,10 +77,8 @@ input[type="submit"]:hover{
     padding:5px;
     color:rgba(0, 94, 156, 1);
 }
-.feedback_item h2{
-    text-align: center;
 
-}
+
 
 .feedback_item_contain{
     width:98%;
@@ -93,5 +94,4 @@ input[type="submit"]:hover{
     display:inline-block;
     font-size: 0.8em;
     text-align: right;
-
 }
