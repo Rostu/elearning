@@ -98,6 +98,10 @@ exports.get_glueck_Textverstehen_Redensarten = function(req, res){
     res.render('glueck_Textverstehen_Redensarten');
 };
 
+exports.get_glueck_silbermond = function(req, res){
+    res.render('glueck_silbermond');
+};
+
 exports.get_handy_start = function(req,res) {
     res.render('handy_start')
 };
