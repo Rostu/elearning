@@ -12,16 +12,16 @@ function init() {
         //here you can react to the event how it is needed in your exercise
         setTimeout(function() {
             alert('Gut gemacht!')
-        }, 110);        
+        }, 110);
     });
 
     $(document).on("MaxFaultsReached", function() {
         //here you can react to the event how it is needed in your exercise
         setTimeout(function() {
             alert('Das kannst du doch besser!')
-        }, 110);        
+        }, 110);
     });
-    
+
     //var md5test = sha256_digest("bla");
     //console.log(md5test);
 
@@ -188,13 +188,13 @@ function checkForm(dragID, dropID) {
     var drag_text = $('#' + dragID + ' option:selected').text();
     drag_text = (drag_text) ? drag_text : $('#' + dragID).text();
     var target_text = $('#' + dropID).children('.srcelem').text();
-    
+
     var to_digest = drag_line + drag_pos + target_text + drag_text;
 
     var shaObj = new jsSHA("SHA-256", "TEXT");
     shaObj.update(to_digest);
     var digested = shaObj.getHash("HEX");
-    
+
     if ($('#' + dragID).attr('punct') === 'true') {
         var shaObjComma = new jsSHA("SHA-256", "TEXT");
         shaObjComma.update(to_digest + ',');
@@ -204,7 +204,7 @@ function checkForm(dragID, dropID) {
     var shaObjStop = new jsSHA("SHA-256", "TEXT");
     shaObjStop.update(to_digest + '.');
     var digestedStop = shaObjStop.getHash("HEX");
-    
+
     var drag_random = $('#' + dragID).attr('random');
     var drag_hashes = solutions[drag_random];
 
@@ -233,14 +233,14 @@ function setCorrect(dragID, dropID) {
     var helpico = $(linebox).find('.helpico');
 
     var target_text = $('#' + dropID).children('.srcelem').text();
-    
+
     if ($(sourceline).children().length == 0 || target_text.match(/\.$/)) {
         raisepoints();
         $(helpico).unbind('click');
         $(helpico).addClass('disabled');
         $(sourceline).children('.srcelem').each(function () {
             fixSrcelem($(this).attr('id'), false, true);
-            $(this).draggable('disable'); 
+            $(this).draggable('disable');
         });
     }
 }
