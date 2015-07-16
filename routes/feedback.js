@@ -22,8 +22,11 @@ exports.new_feedback = function(req, res){
         anmerkung = anmerkung.replace(/[-+;:_\(\)!"§$%&\[\]\{\}#*']/g, '');
         dbh.save_feedback(seite,design,aufgabe,zusatz,feedback,anmerkung);
     }
-
-    res.render(seite);
+    if(seite){
+        res.render(seite);
+    }else{
+        res.render('showfeedback');
+    }
 }
 
 exports.show_feedback = function(req, res){
