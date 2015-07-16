@@ -1,17 +1,27 @@
 $( init );
 
+var solutions;
+
+load_solutions (function (solution_data) {
+    solutions = solution_data;
+});
+
 function init() {
 
     $(document).on("MaxPointsReached", function() {
-        //here you can react to the event how it is needed in your exercise 
-        alert('Gut gemacht!')
+        //here you can react to the event how it is needed in your exercise
+        setTimeout(function() {
+            alert('Gut gemacht!')
+        }, 110);
     });
 
     $(document).on("MaxFaultsReached", function() {
-        //here you can react to the event how it is needed in your exercise 
-        alert('Das kannst du doch besser!')
+        //here you can react to the event how it is needed in your exercise
+        setTimeout(function() {
+            alert('Das kannst du doch besser!')
+        }, 110);
     });
-    
+
     //var md5test = sha256_digest("bla");
     //console.log(md5test);
 
@@ -108,6 +118,12 @@ function load_dropbox_data (callback) {
     });
 }
 
+function load_solutions (callback) {
+    $.getJSON("javascripts/glueck_ist_1_correct.json", function(json) {
+        callback(json);
+    });
+}
+
 function lineDrop( event, ui ) {
     var dragID = ui.draggable.attr('id');
     var dropID = $(this).attr('id');
@@ -168,15 +184,36 @@ function helpClick(ev) {
 function checkForm(dragID, dropID) {
     var drag_line = dragID.match(/\d+/)[0];
     var drag_pos = pad("" + $('#' + dropID).children().length, 2);
+
     var drag_text = $('#' + dragID + ' option:selected').text();
     drag_text = (drag_text) ? drag_text : $('#' + dragID).text();
-    var drag_hash = $('#' + dragID).attr('hash');
+    var target_text = $('#' + dropID).children('.srcelem').text();
 
-    var to_digest = drag_line + drag_pos + drag_text;
+    var to_digest = drag_line + drag_pos + target_text + drag_text;
+
     var shaObj = new jsSHA("SHA-256", "TEXT");
     shaObj.update(to_digest);
     var digested = shaObj.getHash("HEX");
-    if (digested === drag_hash) {
+
+    if ($('#' + dragID).attr('punct') === 'true') {
+        var shaObjComma = new jsSHA("SHA-256", "TEXT");
+        shaObjComma.update(to_digest + ',');
+        digested = shaObjComma.getHash("HEX");
+    }
+
+    var shaObjStop = new jsSHA("SHA-256", "TEXT");
+    shaObjStop.update(to_digest + '.');
+    var digestedStop = shaObjStop.getHash("HEX");
+
+    var drag_random = $('#' + dragID).attr('random');
+    var drag_hashes = solutions[drag_random];
+
+    if (equals(drag_hashes, new RegExp('^' + digested + '$'))) {
+        fixSrcelem(dragID, false, false);
+        return true;
+    }
+    else if (equals(drag_hashes, new RegExp('^' + digestedStop + '$'))) {
+        fixSrcelem(dragID, true, false);
         return true;
     }
     else {
@@ -195,10 +232,34 @@ function setCorrect(dragID, dropID) {
     var sourceline = $(linebox).children('.sourceline');
     var helpico = $(linebox).find('.helpico');
 
-    if ($(sourceline).children().length == 0) {
+    var target_text = $('#' + dropID).children('.srcelem').text();
+
+    if ($(sourceline).children().length == 0 || target_text.match(/\.$/)) {
         raisepoints();
         $(helpico).unbind('click');
         $(helpico).addClass('disabled');
+        $(sourceline).children('.srcelem').each(function () {
+            fixSrcelem($(this).attr('id'), false, true);
+            $(this).draggable('disable');
+        });
+    }
+}
+function fixSrcelem(dragID, fullStop, disable) {
+    var selected_text;
+    if ($('#' + dragID).find('.dropbox').length > 0) {
+        selected_text = $('#' + dragID + ' option:selected').text();
+    }else{
+        selected_text = $('#' + dragID).text();
+    }
+    if (fullStop) {
+        selected_text += '.'
+    }
+    else if ($('#' + dragID).attr('punct') === "true") {
+        selected_text += ','
+    }
+    $('#' + dragID).text(selected_text);
+    if (!disable) {
+        $('#' + dragID).append(jQuery('<div class="handle"></div>'));
     }
 }
 
