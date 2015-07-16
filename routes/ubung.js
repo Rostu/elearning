@@ -1,4 +1,4 @@
-var dbhandler = require('./dbhandler');
+var dbhandler = require('./../shared/routes/dbhandler');
 var navigation = require('./navbar');
 var pointhandler = require('./pointshandler');
 

@@ -1,4 +1,4 @@
-var dbh = require('./dbhandler');
+var dbh = require('./../shared/routes/dbhandler');
 
 
 exports.get_feedback = function(req, res){
