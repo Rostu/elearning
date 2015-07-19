@@ -1,29 +1,82 @@
 $( init );
 
+//  Stores solution data globally
 var solutions;
 
-load_solutions (function (solution_data) {
-    solutions = solution_data;
-});
-
 function init() {
+    displayContents();
+    loadSolutions();
+    setupLogic();
+}
 
+function setupLogic() {
+
+    /*  Add drag-and-drop functionality  
+     */
+    $('.srcelem').each(function() {
+        $(this).draggable({
+            containment: $(this).closest('.linebox'),
+            revert: true,
+            revertDuration: 100,
+            opacity: 0.75,
+            stack: $('.srcelem'),
+            delay: 50,
+            start: function(event,ui){
+                $(this).css("cursor", "-webkit-grabbing");
+                $(this).css("cursor", "-moz-grabbing");
+            },
+            stop: function(event,ui){
+                $(this).css("cursor", "initial");
+            }
+        });
+    });
+
+    $('.targetline').each(function() {
+        $(this).droppable({
+            drop: lineDrop,
+            accept: $('.srcelem'),
+            over: function(event, ui) {
+                ui.draggable.css("cursor", "copy");
+            },
+            out: function(event, ui) {
+                ui.draggable.css("cursor", "-webkit-grabbing");
+                ui.draggable.css("cursor", "-moz-grabbing");
+            }
+        });
+    });
+
+    /*  Add help functionality
+     */
+    $('.helpico').click(function(event) {
+        helpClick(event);
+    });
+
+    /*  Add messages for task completion and maximum amount of errors  
+     */
     $(document).on("MaxPointsReached", function() {
-        //here you can react to the event how it is needed in your exercise
         setTimeout(function() {
             alert('Gut gemacht!')
         }, 110);
     });
-
     $(document).on("MaxFaultsReached", function() {
-        //here you can react to the event how it is needed in your exercise
         setTimeout(function() {
             alert('Das kannst du doch besser!')
         }, 110);
     });
+}
 
-    //var md5test = sha256_digest("bla");
-    //console.log(md5test);
+function loadSolutions() {
+    $.getJSON("javascripts/glueck_silbermond_solutions.json", function(json) {
+        solutions = json;
+    });
+}
+
+function displayContents() {
+
+    $(".dropbox").each(function() {
+        $(this).width($(this).width() + 18 );
+        $(this).prop('disabled', false);
+    });
 
     var flexy = $("#flexybox");
 
@@ -36,93 +89,53 @@ function init() {
             $(this).append($(this).children('.srcelem')[Math.random() * i | 0]);
         }
     });
-
-    //Control logic    
-    $('.srcelem').each(function() {
-        $(this).draggable( {
-            containment: $(this).closest('.linebox'),
-            revert: true,
-            revertDuration: 100,
-            opacity: 0.75,
-            cursor: 'move',
-            stack: $('.srcelem'),
-            delay: 50
-        });
-    });
-
-    $('.targetline').each(function() {
-        $(this).droppable({
-            drop: lineDrop,
-            accept: $('.srcelem'),
-        });
-    });
-
-    $('.helpico').click(function(event) {
-        helpClick(event);
-    });
-
-    $('.selectbuffer').each(function() {
-        $(this).attr("onclick", "stopProp(event)");
-        $(this).attr("oncontextmenu", "stopProp(event)");
-    });
-
-    //Load select data
-    var dropboxes = $(".dropbox");
-    var dbox_count = dropboxes.length;
-
-    load_dropbox_data (function (dropbox_data) {
-        dropboxes.each(function () {
-            var dbox = $(this);
-            var dbox_name = $(this).attr('name');
-            var dbox_id = $(this).closest('.srcelem').attr('random');
-            //console.log(dbox_name);
-            var corr_form_upper = false;
-            $.each(dropbox_data, function(elem, forms_hash) {
-                elem = elem.replace(/[\(\)\[\]]/g, '');
-                if (dbox_name === elem) {
-                    $.each(forms_hash, function (form, form_hash) {
-                        var current_forms = [];
-                        $.each(form_hash, function (f, f_h) {
-                            $.each(f_h, function (f_h_k, f_h_v) {
-                                if (f_h_v['wkl'] === 'VER' && !equals(current_forms, new RegExp('^' + f + '$'))) {
-                                    current_forms.push(f);
-                                    return;
-                                }
-                            });
-                        });
-                        if (equals(current_forms, new RegExp('^' + dbox_name + '$', 'i'))) {
-                            for (var i = 0; i < current_forms.length; i++) {
-                                var strval = ((corr_form_upper) ? current_forms[i].charAt(0).toUpperCase() + current_forms[i].slice(1) : current_forms[i]);
-
-                                var opt = jQuery('<option>' + strval + '</option>');
-                                $(opt).attr('value', strval);
-                                $(opt).prop('selected', elem === current_forms[i]);
-                                dbox.append(opt);
-                            }
-                            return;
-                        }
-                    });
-                }
-            });
-        });
-        dropboxes.each(function() {
-            $(this).width($(this).width() + 18 );
-            $(this).prop('disabled', false);
-        });
-    });
 }
 
-function load_dropbox_data (callback) {
-    $.getJSON("javascripts/glueck_ist_1.json", function(json) {
-        callback(json);
+function helpClick(ev) {
+    var linebox = ev.target.closest('.linebox');
+    var sourceline = $(linebox).children('.sourceline');
+    var targetline = $(linebox).children('.targetline');
+
+    var found = false;
+    var count_selected = 0;
+
+    sourceline.children('.srcelem').each(function () {
+        var dragID = $(this).attr('id');
+        var dropID = $(targetline).attr('id');
+
+        if ($(this).find('.dropbox').length > 0) {
+            count_selected++;
+        }
+        else if (checkForm(dragID, dropID)) {
+            found = true;
+            setCorrect(dragID, dropID);
+
+            $(ev.target).unbind('click');
+            $(ev.target).addClass('disabled');
+            return false;
+        }
     });
+
+    if (!found && count_selected > 0) {
+        $("#infolink").remove();
+        clear_help();
+        $("#info2").append("<a id='infolink' class='redlink' target='blank' href='http://www.duden.de/suchen/dudenonline/finit'>finit</a>");
+        show_help();
+    }
 }
 
-function load_solutions (callback) {
-    $.getJSON("javascripts/glueck_ist_1_correct.json", function(json) {
-        callback(json);
-    });
-}
+function clear_help(){
+    $("#info2").children().animate({color: "#A91211"}, 50);
+    $("#info2").children().hide;
+    $("#info2").animate({width: "0px", paddingRight: "12px"},100);
+};
+
+function show_help(){
+    $('.redstripe#info2').show();
+    $("#info2").animate({width: $("#info2").children('.redlink').width(), paddingRight: "20px"}, 100);
+    $("#info2").children().show;
+    $("#info2").children().animate({color: "#ffffff"}, 200);
+};
 
 function lineDrop( event, ui ) {
     var dragID = ui.draggable.attr('id');
@@ -131,80 +144,44 @@ function lineDrop( event, ui ) {
 }
 
 function handleFormCheck( dragID, dropID) {
-    var drag_line = dragID.match(/\d+/)[0];
-    var drag_pos = pad("" + $('#' + dropID).children().length, 2);
-    var drag_text = $('#' + dragID + ' option:selected').text();
-    drag_text = (drag_text) ? drag_text : $('#' + dragID).text();
-    var drag_hash = $('#' + dragID).attr('hash');
-    var hashtest = checkForm( dragID, dropID);
-    if (hashtest) {
+    if (checkForm( dragID, dropID)) {
         setCorrect(dragID, dropID);
-    }
-    else {
+    }else{
         $('#' + dragID).addClass('incorrect');
         raisefaults();
     }
-}
-
-function helpClick(ev) {
-    var linebox = ev.target.closest('.linebox');
-    var sourceline = $(linebox).children('.sourceline');
-    var targetline = $(linebox).children('.targetline');
-
-    sourceline.children('.srcelem').each(function () {
-        var dragID = $(this).attr('id');
-        var dropID = $(targetline).attr('id');
-
-        if ($(this).find('.dropbox').length > 0) {
-            var beforeTest = $('#' + dragID + ' option:selected');
-            var found = false;
-
-            $(this).children('.selectbuffer').children('.dropbox').children().each(function () {
-                $(this).prop('selected', true);
-                if (checkForm(dragID, dropID)) {
-                    found = true;
-                    return false;
-                }
-            });
-
-            if (!found) {
-                $(beforeTest).prop('selected', true);
-            }
-        }
-        if (checkForm(dragID, dropID)) {
-            setCorrect(dragID, dropID);
-
-            $(ev.target).unbind('click');
-            $(ev.target).addClass('disabled');
-            return false;
-        }
-    });
 }
 
 function checkForm(dragID, dropID) {
     var drag_line = dragID.match(/\d+/)[0];
     var drag_pos = pad("" + $('#' + dropID).children().length, 2);
 
-    var drag_text = $('#' + dragID + ' option:selected').text();
-    drag_text = (drag_text) ? drag_text : $('#' + dragID).text();
     var target_text = $('#' + dropID).children('.srcelem').text();
 
-    var to_digest = drag_line + drag_pos + target_text + drag_text;
+    //Get the text of current '.srcelem', restricted to the selected value for <select>-elements
+    var drag_text = $('#' + dragID + ' option:selected').text();
+    drag_text = (drag_text) ? drag_text : $('#' + dragID).text();
 
+    var to_digest = drag_line + drag_pos + target_text + drag_text;
+    
+    //Get the SHA-256-hash for a sentence-terminal element
+    var shaObjStop = new jsSHA("SHA-256", "TEXT");
+    shaObjStop.update(to_digest + '.');
+    var digestedStop = shaObjStop.getHash("HEX");
+
+    //Get the SHA-256-hash for a non-terminal element
     var shaObj = new jsSHA("SHA-256", "TEXT");
     shaObj.update(to_digest);
     var digested = shaObj.getHash("HEX");
 
+    //Handle commas via the 'punct'-attribute
     if ($('#' + dragID).attr('punct') === 'true') {
         var shaObjComma = new jsSHA("SHA-256", "TEXT");
         shaObjComma.update(to_digest + ',');
         digested = shaObjComma.getHash("HEX");
     }
 
-    var shaObjStop = new jsSHA("SHA-256", "TEXT");
-    shaObjStop.update(to_digest + '.');
-    var digestedStop = shaObjStop.getHash("HEX");
-
+    //Retrieve acceptable positions for the current element
     var drag_random = $('#' + dragID).attr('random');
     var drag_hashes = solutions[drag_random];
 
@@ -222,18 +199,19 @@ function checkForm(dragID, dropID) {
 }
 
 function setCorrect(dragID, dropID) {
+
+    //Handle classes indicating correctness state and disable dragging after appending
     $('#' + dragID).removeClass('incorrect');
     $('#' + dragID).addClass('correct');
     $('#' + dropID).append($('#' + dragID));
     $('#' + dragID).draggable('disable');
-    $($('#' + dragID).children().children('.dropbox')[0]).prop('disabled', true);
 
     var linebox = $('#' + dragID).closest('.linebox');
-    var sourceline = $(linebox).children('.sourceline');
     var helpico = $(linebox).find('.helpico');
-
+    var sourceline = $(linebox).children('.sourceline');
     var target_text = $('#' + dropID).children('.srcelem').text();
 
+    //Check if the current sentence has reached a complete state with the latest addition
     if ($(sourceline).children().length == 0 || target_text.match(/\.$/)) {
         raisepoints();
         $(helpico).unbind('click');
@@ -244,28 +222,33 @@ function setCorrect(dragID, dropID) {
         });
     }
 }
+
 function fixSrcelem(dragID, fullStop, disable) {
+
     var selected_text;
+
+    //Get the text of the current '.srcelem'
     if ($('#' + dragID).find('.dropbox').length > 0) {
         selected_text = $('#' + dragID + ' option:selected').text();
     }else{
         selected_text = $('#' + dragID).text();
     }
+
+    //Handle punctuation
     if (fullStop) {
         selected_text += '.'
     }
     else if ($('#' + dragID).attr('punct') === "true") {
         selected_text += ','
     }
+
+    //Replaces all children of current '.srcelem' with plain text
     $('#' + dragID).text(selected_text);
+
+    //re-add handles in order to display correctness in '.targetline', disabled elements in '.sourceline' lose '.handle'
     if (!disable) {
         $('#' + dragID).append(jQuery('<div class="handle"></div>'));
     }
-}
-
-function stopProp(ev) {
-    ev.preventDefault();
-    ev.stopPropagation();
 }
 
 function equals(array, regex){
@@ -281,4 +264,3 @@ function pad (str, max) {
     str = str.toString();
     return str.length < max ? pad("0" + str, max) : str;
 }
-

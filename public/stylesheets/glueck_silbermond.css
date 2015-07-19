@@ -2,22 +2,25 @@
 
 #flexybox {
     display: flex; /* or inline-flex */
+    
     padding: 0 10px 0 0;
+    
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
+    
     font-size: 1.3em;
+    line-height: 20px;
 }
 
 .linebox {
-    display: flex; /* or inline-flex */
-    width: 60%;
+    display: flex;
     
     margin: 10px 0 0 10px;
     padding: 0 10px 10px 0;
-
-    line-height: 18px;
+    
+    width: 60%;
 
     flex: 1 1 auto;
     align-self: auto;
@@ -26,23 +29,23 @@
     justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
+    
     background-color: aliceblue;
 }
 
 .targetline, .sourceline {
     display: flex;
-    width: 40%;
     
-    margin: 10px 0 0 10px;
+    margin: 10px 0 0 0;
     padding: 0 10px 10px 0;
 
-    line-height: 18px;
+    width: 40%;
 
     flex: 1 1 auto;
     align-self: auto;
 
     flex-flow: row wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     align-content: center;
 
@@ -50,63 +53,14 @@
 }
 
 .targetline {
-    width: 45%;
-    align-items: flex-start;
-    background-color: #7AB3E3;
-}
-
-.sourceline {
-    margin: 10px 0 0 0px;
-
-    justify-content: center;
-
-    background-color: #D5EBFD;
-}
-
-.resetarea, .helparea {
-    display: flex;
-    margin: 10px 0 0 0px;
-
-    line-height: 18px;
-
-    flex: 0 1 auto;
-    align-self: auto;
-
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-
-    background-color: green;
-}
-
-.helparea {
-    background-color: #D5EBFD;
-}
-
-.resetico, .helpico {
-    height: 40px;
-    width: 40px;
-
-    margin: 0 0 0 10px;
-    border-radius: 20px;
-
-    flex: 0 1 auto;
-    align-self: auto;
+    margin: 10px 0 0 10px;
     
-    background: #7AB3E3 url("../images/button_down2.gif") no-repeat center center;
-    background-size: 30px 30px;
-}
-
-.helpico {
-    margin: 0 10px 0 0;
-}
-
-.resetico:hover, .helpico:hover {
-    background-color: #005E9C;
-}
-
-.disabled.helpico {
-    background-color: #A6D1F5;
+    width: 45%;
+    
+    justify-content: flex-start;
+    align-items: flex-start;  
+    
+    background-color: #7AB3E3;
 }
 
 .tgtelem, .srcelem {
@@ -114,7 +68,6 @@
     padding: 10px;
 
     height: 20px;
-    line-height: 20px;
 
     flex: 0 1 auto;
     align-self: auto;
@@ -126,52 +79,55 @@
 
 .srcelem {
     display: flex;
-    flex-flow: row wrap;
+    
+    flex-flow: row wrap;    
     justify-content: flex-start;
     align-items: center;
     align-content: center;
+    
     background-color: #A6D1F5;
-    draggable: true;
-    cursor: grab;
 }
 
-.correct .handle {
-    background-color: green !important;
-}
+.srcelem {
+     cursor: -webkit-grab; cursor: -moz-grab;
+ }
 
-.incorrect .handle {
-    background-color: red !important;
-}
-
-#targetbox, #sourcebox {
+.helparea {
     display: flex;
-    width: 40%;
-
-    margin: 10px 0 0 10px;
-    padding: 0 10px 10px 0;
+    margin: 10px 0 0 0px;
 
     line-height: 18px;
 
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     align-self: auto;
-    /*order: <integer>*/
 
-    flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
-    align-content: stretch;
-
-    background-color: aliceblue;
+    align-content: center;
+    
+    background-color: #D5EBFD;
 }
 
-#targetbox {
-    padding: 0 0px 10px 0;
+.helpico {
+    margin: 0 10px 0 0;
+    border-radius: 20px;
 
-    color: white;
+    height: 40px;
+    width: 40px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+    
+    background: #7AB3E3 url("../images/button_down2.gif") no-repeat center center;
+    background-size: 30px 30px;
 }
 
-#sourcebox {
-    margin: 10px 0 0 0px;
+.helpico:hover {
+    background-color: #005E9C;
+}
+
+.disabled.helpico {
+    background-color: #A6D1F5;
 }
 
 .dropbox {
@@ -189,11 +145,6 @@
     cursor: pointer;
 }
 
-.correct .selectbuffer select.dropbox {
-    background: #7AB3E3;
-    cursor: default;
-}
-
 .handle {
     height: 16px;
     width: 16px;
@@ -208,8 +159,16 @@
     background: #005E9C;
 }
 
+.incorrect .handle {
+    background-color: red !important;
+}
+
 .ui-draggable-dragging .handle {
     background: orange !important;
+}
+
+.correct .handle {
+    background-color: green !important;
 }
 
 .ui-draggable-disabled {
