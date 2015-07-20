@@ -169,3 +169,7 @@ sio.sockets.on('connection', function (socket) {
 server.listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
 });
+
+var stanford = require('./routes/stanford');
+
+app.post('/stanford_anfrage', stanford.get_request);
