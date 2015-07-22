@@ -14,6 +14,7 @@ exports.new_feedback = function(req, res){
     var zusatz = req.body.zusatz;
     var feedback = req.body.feedback;
     var anmerkung = req.body.anmerkung;
+    console.log(req.body.seite);
 
 
     //even if classic codeinjection is not possible like in SQL-Databases we are cutting some chars just because :-)
