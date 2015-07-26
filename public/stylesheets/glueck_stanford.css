@@ -1,0 +1,66 @@
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+#flexybox {
+    display: flex; /* or inline-flex */
+
+    padding: 0 10px 0 0;
+
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+#taskbox {
+    height: 100px;
+    width: 60%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    background: aliceblue;
+}
+
+#treebox {
+    display: flex; /* or inline-flex */
+
+    padding: 0 10px 0 0;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    background: grey;
+}
+
+.tree {
+    width: 720px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+}
+
+.node {
+    cursor: pointer;
+}
+
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font: 12px sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+}
+
