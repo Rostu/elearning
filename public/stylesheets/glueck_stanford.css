@@ -11,20 +11,119 @@
     align-content: stretch;
 }
 
-#taskbox {
-    height: 100px;
-    width: 60%;
+#sentbox {
+
+    display: flex; /* or inline-flex */
+
+    margin: 10px 0 0 10px;
+    padding: 0 10px 10px 0;
+
+    width: 100%;
 
     flex: 1 1 auto;
     align-self: auto;
 
-    background: aliceblue;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    background: orange;
+}
+
+#textbox {
+
+    margin: 10px 0 0 10px;
+    padding: 10px;
+
+    width: 100%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    background: yellow;
+}
+
+.linebox {
+
+    display: flex; /* or inline-flex */
+
+    margin: 10px 0 0 10px;
+
+    width: 100%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    background: greenyellow;
+}
+
+.textarea {
+
+    padding: 10px;
+
+    width: 80%;
+    line-height: 20px;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    background: lightgoldenrodyellow;
+}
+
+.loadarea {
+
+    display: flex; /* or inline-flex */
+
+    padding: 10px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+
+    align-items: center;
+
+    background: greenyellow;
+}
+
+.loadbutton {
+
+    height: 20px;
+    width: 20px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+
+    background: green;
+    border-radius: 20px;
+}
+
+.loadbutton:hover {
+
+    background: blue !important;
+
+    cursor: pointer;
+}
+
+.linebox.active .loadbutton {
+
+    background: darkturquoise;
+}
+
+.dataarea {
+
+    display: none;
 }
 
 #treebox {
     display: flex; /* or inline-flex */
 
-    padding: 0 10px 0 0;
+    margin: 10px 0 0 10px;
+    padding: 0 10px 10px 0;
 
     flex: 1 1 auto;
     align-self: auto;
@@ -34,12 +133,10 @@
     align-items: center;
     align-content: center;
 
-    background: grey;
+    background: mediumpurple;
 }
 
 .tree {
-    width: 720px;
-
     flex: 0 1 auto;
     align-self: auto;
 }

@@ -11,11 +11,6 @@ function init() {
     var fb1 = 0;
     var fb2 = 0;
 
-    $.post( "/stanford_anfrage", { sentence: "This is cool."},function(rueckgabe){
-        console.log('rekt');
-        console.log(rueckgabe);
-    });
-
     $(".inline").each(function() {
         $(this).draggable({
             containment: '#page',
