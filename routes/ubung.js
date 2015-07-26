@@ -212,6 +212,9 @@ exports.get_zukunft_Textproduktion = function(req, res){
 exports.get_zukunft_Kreuzwortraetsel = function(req, res){
     res.render('zukunft_Kreuzwortraetsel');
 };
+exports.get_glueck_stanford = function(req, res){
+    res.render('glueck_stanford');
+};
 
 exports.get_next = function(req, res){
     var lastsite = req.param("last");
