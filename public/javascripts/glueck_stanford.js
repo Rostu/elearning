@@ -1,68 +1,102 @@
 
 $( init );
 
-function traverseParseTree(tree){
-    if(tree.children !== undefined) {
-        tree.name = tree.type;
-        $.each($(tree.children), function(index, child) {
-            tree.children[index] = traverseParseTree(child);
-        });
-    }else{
-        return {"name": tree.word};
-    }
-    return tree;
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function init() {
 
+    var hideSpinner;
+    $('#spinner').hide();
+
+    clearTimeout(hideSpinner);
+    $('#spinner').show(0, function(){
+        $('#spinner').removeClass('close');
+    });
+
+    $.getJSON("javascripts/glueck_stanford_tree_example.json", function(json) {
+        updateTree(json);
+    });
+
+    var sents = ["Glück ist, wenn man frei ist.", "Glück ist, wenn die Sonne scheint.", "Glück ist, wenn man die Augen aufmacht.", "Glück ist, dass man das Lachen nicht verliert.", "Glück ist, dass man nicht das Lachen verliert.", "Glück ist, wenn man mit sich selbst zufrieden ist.", "Glück ist, wenn man zufrieden mit sich selbst ist.", "Glück ist, wenn man zufrieden ist mit sich selbst.", "Glück ist, wenn ich etwas mit meinen Eltern machen kann.", "Glück ist, wenn ich etwas mit meinen Eltern mache.", "Glück ist, wenn ich mit meinen Eltern etwas machen kann.", "Glück ist, wenn ich mit meinen Eltern etwas mache.", "Glück ist, dass ich in Zukunft etwas aus mir machen werde.", "Glück ist, dass ich in Zukunft etwas aus mir mache.", "Glück ist, dass ich etwas aus mir machen werde in Zukunft.", "Glück ist, dass ich etwas aus mir mache in Zukunft.", "Glück ist, wenn ich jemanden habe, der mich liebt.", "Glück ist, wenn meine Tochter morgens aufwacht.", "Glück ist, wenn morgens meine Tochter aufwacht.", "Glück ist, an einem Tag wie heute hier stehen zu dürfen.", "Glück ist, an einem Tag wie heute hier zu stehen.", "Glück ist, hier an einem Tag wie heute stehen zu dürfen.", "Glück ist, hier an einem Tag wie heute zu stehen."]
+    var selection = [];
+    var random = getRandomInt(0, sents.length - 1);
+
+    for(i = 0; i < 4; i++) {
+        while ($.inArray(random, selection) > -1) {
+            var random = getRandomInt(0, sents.length - 1);
+        }
+        selection.push(random);
+        console.log(random);
+        console.log(sents[random]);
+    }
+
+    var testtext = "";
+
+    for(i = 0; i < selection.length; i++) {
+        testtext += sents[selection[i]] + ' ';
+    }
+    $('#textbox').text(testtext);
+
     $.post( "/stanford_anfrage", { sentences: $('#textbox').text() }, function(json){
+
+        $('#spinner').addClass('close');
+        hideSpinner = setTimeout(function(){
+            $('#spinner').hide();
+        }, 450);
 
         var sentences = json.document.sentences.sentence;
 
+        (function myLoop (i) {
+            setTimeout(function () {
+                var textarea = jQuery('<div/>', {
+                    id: 'ta' + pad(i, 2),
+                    class: 'textarea',
+                    text: sentences[i].parse
+                });
+                var linebox = jQuery('<div/>', {
+                    id: 'lb' + pad(i, 2),
+                    class: 'linebox',
+                });
+                var loadarea = jQuery('<div/>', {
+                    id: 'la' + pad(i, 2),
+                    class: 'loadarea',
+                });
+                var loadbutton = jQuery('<div/>', {
+                    id: 'lb' + pad(i, 2),
+                    class: 'loadbutton',
+                });
+                var dataarea = jQuery('<div/>', {
+                    id: 'da' + pad(i, 2),
+                    class: 'dataarea',
+                });
+                var treedata = jQuery('<div/>', {
+                    id: 'td' + pad(i, 2),
+                    class: 'treedata',
+                    text: JSON.stringify(sentences[i].parsedTree)
+                });
+
+                $(loadarea).append(loadbutton);
+                $(linebox).append(textarea);
+                $(linebox).append(loadarea);
+                $(linebox).hide();
+                $('#sentbox').append(linebox);
+                $(linebox).fadeIn();
+                $(dataarea).append(treedata);
+                $(linebox).append(dataarea);
+
+                $('.loadbutton').click(function(event) {
+                    loadClick(event);
+                });
+
+                if (++i < sentences.length) myLoop(i);
+            }, 50)
+        })(0);
+
         for(i = 0; i < sentences.length; i++) {
 
-            var textarea = jQuery('<div/>', {
-                id: 'ta' + pad(i, 2),
-                class: 'textarea',
-                text: sentences[i].parse
-            });
-            var linebox = jQuery('<div/>', {
-                id: 'lb' + pad(i, 2),
-                class: 'linebox',
-            });
-            var loadarea = jQuery('<div/>', {
-                id: 'la' + pad(i, 2),
-                class: 'loadarea',
-            });
-            var loadbutton = jQuery('<div/>', {
-                id: 'lb' + pad(i, 2),
-                class: 'loadbutton',
-            });
-            var dataarea = jQuery('<div/>', {
-                id: 'da' + pad(i, 2),
-                class: 'dataarea',
-            });
-            var treedata = jQuery('<div/>', {
-                id: 'td' + pad(i, 2),
-                class: 'treedata',
-                text: JSON.stringify(sentences[i].parsedTree)
-            });
-            $(loadarea).append(loadbutton);
-            $(linebox).append(textarea);
-            $(linebox).append(loadarea);
-            $('#sentbox').append(linebox);
-            $(dataarea).append(treedata);
-            $(linebox).append(dataarea);
-
-            $('.loadbutton').click(function(event) {
-                loadClick(event);
-            });
-
         }
-
-        $.getJSON("javascripts/glueck_stanford_tree_example.json", function(json) {
-            updateTree(json);
-        });
     });
 }
 
@@ -78,9 +112,9 @@ function loadClick(ev) {
 function updateTree(json) {
     $('.tree').children('svg').remove();
 
-    var margin = {top: 10, right: 0, bottom: 0, left: 10},
+    var margin = {top: 20, right: 20, bottom: 20, left: 20},
         width = 685 - margin.right - margin.left,
-        height = 685 - margin.top - margin.bottom;
+        height = 400 - margin.top - margin.bottom;
 
     var i = 0,
         duration = 250,
@@ -103,7 +137,7 @@ function updateTree(json) {
         var parse_tree = traverseParseTree(json);
 
         root = parse_tree;
-        root.x0 = height / 2;
+        root.x0 = width / 2;
         root.y0 = 0;
 
         function collapse(d) {
@@ -237,6 +271,18 @@ function updateTree(json) {
         }
         update(d);
     }
+}
+
+function traverseParseTree(tree){
+    if(tree.children !== undefined) {
+        tree.name = tree.type;
+        $.each($(tree.children), function(index, child) {
+            tree.children[index] = traverseParseTree(child);
+        });
+    }else{
+        return {"name": tree.word};
+    }
+    return tree;
 }
 
 function pad (str, max) {
