@@ -53,9 +53,9 @@ app.use(function(req, res, next){
     //console.log(req.path);
     var newpath = req.path;
     /*if (!nav.check_ausnahmen(newpath)){
-        newpath = newpath.replace("/","");
-        res.locals.last = newpath;
-    }*/
+     newpath = newpath.replace("/","");
+     res.locals.last = newpath;
+     }*/
     newpath = newpath.replace("/","");
     res.locals.last = newpath;
     console.log(req.url);
@@ -170,3 +170,13 @@ sio.sockets.on('connection', function (socket) {
 server.listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
 });
+
+app.get('/glueck_stanford', ubung.get_glueck_stanford);
+
+var stanford = require('./routes/stanford');
+
+app.post('/stanford_anfrage', stanford.get_request);
+
+var langtool = require('./routes/langtool');
+
+app.post('/langtool_anfrage', langtool.get_request);

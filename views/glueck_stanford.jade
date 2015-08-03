@@ -1,0 +1,23 @@
+extends layout
+block content
+    link(rel='stylesheet', href='stylesheets/glueck_stanford.css')
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js", charset="utf-8")
+    script(src="http://heartcode-canvasloader.googlecode.com/files/heartcode-canvasloader-min-0.9.1.js")
+    script(src='javascripts/glueck_stanford.js')
+    #Aufgabenbox
+        p Rekonstruiere die Sätze. Passe die Verben an.
+    #flexybox
+        #textbox Glück ist, wenn man frei ist. Glück ist, wenn die Sonne scheint. Glück ist, wenn man die Augen aufmacht. Glück ist, wenn meine Tochter morgens aufwacht.
+        #sentbox
+            #spinner
+                #floatingCirclesG
+                    #frotateG_01.f_circleG
+                    #frotateG_02.f_circleG
+                    #frotateG_03.f_circleG
+                    #frotateG_04.f_circleG
+                    #frotateG_05.f_circleG
+                    #frotateG_06.f_circleG
+                    #frotateG_07.f_circleG
+                    #frotateG_08.f_circleG
+        #treebox
+            .tree
