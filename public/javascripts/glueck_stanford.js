@@ -7,6 +7,14 @@ function getRandomInt(min, max) {
 
 function init() {
 
+    $.post( "/langtool_anfrage", { sentence: "my text" }, function(json){
+        console.log( json );
+    });
+
+    /*$.get( "/langtool/?language=de&text=wo+bist+du", function( data ) {
+        console.log( data );
+    });*/
+
     var hideSpinner;
     $('#spinner').hide();
 
@@ -19,7 +27,12 @@ function init() {
         updateTree(json);
     });
 
-    var sents = ["Glück ist, wenn man frei ist.", "Glück ist, wenn die Sonne scheint.", "Glück ist, wenn man die Augen aufmacht.", "Glück ist, dass man das Lachen nicht verliert.", "Glück ist, dass man nicht das Lachen verliert.", "Glück ist, wenn man mit sich selbst zufrieden ist.", "Glück ist, wenn man zufrieden mit sich selbst ist.", "Glück ist, wenn man zufrieden ist mit sich selbst.", "Glück ist, wenn ich etwas mit meinen Eltern machen kann.", "Glück ist, wenn ich etwas mit meinen Eltern mache.", "Glück ist, wenn ich mit meinen Eltern etwas machen kann.", "Glück ist, wenn ich mit meinen Eltern etwas mache.", "Glück ist, dass ich in Zukunft etwas aus mir machen werde.", "Glück ist, dass ich in Zukunft etwas aus mir mache.", "Glück ist, dass ich etwas aus mir machen werde in Zukunft.", "Glück ist, dass ich etwas aus mir mache in Zukunft.", "Glück ist, wenn ich jemanden habe, der mich liebt.", "Glück ist, wenn meine Tochter morgens aufwacht.", "Glück ist, wenn morgens meine Tochter aufwacht.", "Glück ist, an einem Tag wie heute hier stehen zu dürfen.", "Glück ist, an einem Tag wie heute hier zu stehen.", "Glück ist, hier an einem Tag wie heute stehen zu dürfen.", "Glück ist, hier an einem Tag wie heute zu stehen."]
+    var sents = [
+        "glück ist, wenn man frey ist.",
+        "Glück ist, wenn man frei ist.",
+        "Glück ist, wenn man frei ist.",
+        "Glück ist, wenn man frei ist.",
+    ];
     var selection = [];
     var random = getRandomInt(0, sents.length - 1);
 

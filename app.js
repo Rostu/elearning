@@ -61,6 +61,9 @@ app.use(function(req, res, next){
     console.log(req.url);
     next();
 });
+
+
+
 app.use('/', index.get_session);
 app.get('/', routes.index);
 app.get('/china_start', ubung.get_china_start);
@@ -174,3 +177,7 @@ server.listen(app.get('port'), function(){
 var stanford = require('./routes/stanford');
 
 app.post('/stanford_anfrage', stanford.get_request);
+
+var langtool = require('./routes/langtool');
+
+app.post('/langtool_anfrage', langtool.get_request);
