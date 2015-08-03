@@ -27,7 +27,7 @@
         "name":"glueck_Textverstehen_Redensarten", "maxpoints":6, "maxfaults":3
     },
     {
-        "name":"glueck_Memory", "maxpoints":6, "maxfaults":20
+        "name":"glueck_Memory", "maxpoints":10, "maxfaults":20
     },
     {
         "name":"glueck_Zeitstrahl", "maxpoints":5, "maxfaults":10

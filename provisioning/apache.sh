@@ -27,8 +27,8 @@ ServerName webserver
         ProxyRequests off
         ProxyPreserveHost on
 
-        ProxyPass /lernplattform-daf-cl http://localhost:3000
-        ProxyPassReverse /lernplattform-daf-cl http://localhost:3000
+        ProxyPass /lernplattform-daf-cl http://localhost:3555
+        ProxyPassReverse /lernplattform-daf-cl http://localhost:3555
 
 
 </VirtualHost>

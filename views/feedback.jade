@@ -13,12 +13,28 @@ block content
             form.input-holder(action="new_feedback" method="post")
                 select#seite(name="seite")
                     option(value="#{feed}") #{feed}
-
-                p Gibt es etwas das am Design dieser Aufgabe verändert werden sollte?
-                textarea.input-textarea#design(name='design' placeholder="Feedback zum Design")
-                p Sollte an dem Inhalt der Aufgaben estwas geändert werden?
-                textarea.input-textarea#aufgabe(name='aufgabe' placeholder="Feedback zum inhalt der Aufgabe")
-                p Gibt es etwas das am Design dieser Aufgabe verändert werden sollte?
-                textarea.input-textarea#funktion(name='funktion' placeholder="Feedback zur Funktion der Seite/Aufgabe")
+                p Wie findest du das Design dieser Übung?
+                select#design(name="design")
+                    option(value="gut") gut
+                    option(value="geht so") geht so
+                    option(value="kann man verbessern") kann man verbessern
+                //textarea.input-textarea#design(name='design' placeholder="Feedback zum Design")
+                p Wie verständlich ist die Aufgabenstellung?
+                select#aufgabe(name="aufgabe")
+                    option(value="gut verständlich") gut verständlich
+                    option(value="kann man verbessern") kann man verbessern
+                //textarea.input-textarea#aufgabe(name='aufgabe' placeholder="Feedback zum inhalt der Aufgabe")
+                p Lernpfad: Sind die Zusatzinformationen hilfreich?
+                select#zusatz(name="zusatz")
+                    option(value="sehr hilfreich") sehr hilfreich
+                    option(value="überflüssig") überflüssig
+                    option(value="nicht ausreichend") nicht ausreichend
+                //textarea.input-textarea#funktion(name='funktion' placeholder="Feedback zur Funktion der Seite/Aufgabe")
+                p Wie bewertest du das Feedback in der Aufgabe?
+                select#feedback(name="feedback")
+                    option(value="ausreichend") ausreichend
+                    option(value="nicht ausreichend") nicht ausreichend
+                p Hast du wietere Anmerkungen oder willst genauer auf eine der Fragen eingehen, dann kannst du das hier tun.
+                textarea.input-textarea#anmerkung(name='anmerkung' placeholder="Anmerkungen zu der Aufgabe")
                 input( type="submit")
 

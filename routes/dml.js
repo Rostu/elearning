@@ -1,7 +1,7 @@
 /**
  * Created by David on 05.08.2014.
  */
-var dbh = require('./dbhandler');
+var dbh = require('./../shared/routes/dbhandler');
 var io = require('socket.io')();
 var f;
 function wordinfo (a, cb) {

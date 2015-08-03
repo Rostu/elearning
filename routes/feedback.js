@@ -1,4 +1,4 @@
-var dbh = require('./dbhandler');
+var dbh = require('./../shared/routes/dbhandler');
 
 
 exports.get_feedback = function(req, res){
@@ -11,18 +11,23 @@ exports.new_feedback = function(req, res){
     var seite = req.body.seite;
     var design = req.body.design;
     var aufgabe = req.body.aufgabe;
-    var funktion = req.body.funktion;
+    var zusatz = req.body.zusatz;
+    var feedback = req.body.feedback;
+    var anmerkung = req.body.anmerkung;
+    console.log(req.body.seite);
+
+
     //even if classic codeinjection is not possible like in SQL-Databases we are cutting some chars just because :-)
     //for mongodb important to check if design, aufgabe and funtion are strings to prevent injection of json objects
-    if ((typeof design === "string") && (typeof aufgabe === "string")&&(typeof funktion === "string"))    {
-
-        design = design.replace(/[-+;:_\(\)!"§$%&\[\]\{\}#*']/g, '');
-        aufgabe = aufgabe.replace(/[-+;:_\(\)!"§$%&\[\]\{\}#*']/g, '');
-        funktion = funktion.replace(/[-+;:_\(\)!"§$%&\[\]\{\}#*']/g, '');
-        dbh.save_feedback(seite,design,aufgabe,funktion);
+    if (typeof anmerkung === "string") {
+        anmerkung = anmerkung.replace(/[-+;:_\(\)!"§$%&\[\]\{\}#*']/g, '');
+        dbh.save_feedback(seite,design,aufgabe,zusatz,feedback,anmerkung);
     }
-
-    res.render(seite);
+    if(seite){
+        res.render(seite);
+    }else{
+        res.render('showfeedback');
+    }
 }
 
 exports.show_feedback = function(req, res){

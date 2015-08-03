@@ -1,8 +1,25 @@
 #Videobox{
-    height: 500px;
-    width: 640px;
-    display: block;
+     height: 500px;
+     width: 640px;
+     display: block;
+     margin-top:30px;
+     margin-left: auto ;
+     margin-right: auto ;
+ }
+
+#overlaycontentbox h1{
+    color:#005E9C;
+    text-align: center;
+}
+.erklaerung_box{
+    width: 50%;
+    margin-left:auto;
+    margin-right:auto;
     margin-top:30px;
-    margin-left: auto ;
-    margin-right: auto ;
+    background-color: rgba(166, 209, 245, 0.68);
+    padding: 10px 50px 20px 50px;
+
+}
+#overlaycontentbox h2{
+    color:#005E9C;
 }
