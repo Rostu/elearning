@@ -7,14 +7,6 @@ function getRandomInt(min, max) {
 
 function init() {
 
-    var hideSpinner;
-    $('#spinner').hide();
-
-    clearTimeout(hideSpinner);
-    $('#spinner').show(0, function(){
-        $('#spinner').removeClass('close');
-    });
-
     $.getJSON("javascripts/glueck_stanford_tree_example.json", function(json) {
         updateTree(json);
     });
@@ -48,49 +40,24 @@ function init() {
     }, 450);
 
     (function myLoop (i) {
-        setTimeout(function () {            
-            var textarea = jQuery('<div/>', {
-                id: 'ta' + pad(i, 2),
-                class: 'textarea',
-                text: sents[selection[i]]
+        setTimeout(function () {
+
+            var line = jQuery('<div/>', {
+                id: 'll' + pad(i, 2),
+                class: 'line',
             });
-            var linebox = jQuery('<div/>', {
-                id: 'lb' + pad(i, 2),
-                class: 'linebox',
-            });
-            var loadarea = jQuery('<div/>', {
-                id: 'la' + pad(i, 2),
-                class: 'loadarea',
-            });
-            var loadbutton = jQuery('<div/>', {
-                id: 'lo' + pad(i, 2),
-                class: 'loadbutton',
-            });
+            $(line).hide();
+
             var dataarea = jQuery('<div/>', {
                 id: 'da' + pad(i, 2),
                 class: 'dataarea',
             });
-            /*var treedata = jQuery('<div/>', {
-                id: 'td' + pad(i, 2),
-                class: 'treedata',
-                text: JSON.stringify(sentences[i].parsedTree)
-            });*/
 
-            $(loadarea).append(loadbutton);
-            $(linebox).append(textarea);
-            $(linebox).append(loadarea);
-            
-            $(linebox).hide();
-            $('#sentbox').append(linebox);
-            $(linebox).fadeIn();
-
-            $('.loadbutton').click(function(event) {
-                loadClick(event);
+            var errorbox = jQuery('<div/>', {
+                id: 'eb' + pad(i, 2),
+                class: 'errorbox',
             });
-            
-            //$(dataarea).append(treedata);
-            
-            var langdata;
+
             $.post( "/langtool_anfrage", { sentence: sents[selection[i]] }, function(json){
                 var langdata = jQuery('<div/>', {
                     id: 'ld' + pad(i, 2),
@@ -98,9 +65,128 @@ function init() {
                     text: JSON.stringify(json)
                 });
                 $(dataarea).append(langdata);
-            });
 
-            $(linebox).append(dataarea);
+                if(json.matches.error) {
+                    (function errorLoop (index) {
+                        setTimeout(function () {
+                            var value = json.matches.error[index];
+
+                            var error = jQuery('<div/>', {
+                                id: 'er' + pad(i, 2) + 'ei' + pad(index, 2),
+                                class: 'error'
+                            });
+
+                            var errmsg = jQuery('<div/>', {
+                                id: 'em' + pad(i, 2) + 'ei' + pad(index, 2),
+                                class: 'errmsg',
+                                text: value.attributes.msg
+                            });
+                            var errcat = jQuery('<b/>', {
+                                text: value.attributes.category + ': '
+                            });
+                            $(errmsg).prepend(errcat);
+                            $(error).append(errmsg);
+
+                            if(value.attributes.replacements) {
+
+                                var errrep = jQuery('<div/>', {
+                                    id: 'ep' + pad(i, 2) + 'ei' + pad(index, 2),
+                                    class: 'errrep',
+                                });
+                                
+                                var reps = value.attributes.replacements.split('#');
+
+                                (function repLoop (j) {
+                                    setTimeout(function () {
+                                        var rep = jQuery('<div/>', {
+                                            id: 'er' + pad(i, 2) + 'rp' + pad(j, 2),
+                                            class: 'rep',
+                                            text: reps[j]
+                                        });
+
+                                        $(errrep).append(rep);
+                                        
+                                        if (++j < reps.length) repLoop(j);
+                                    }, 50)
+                                })(0);
+                                
+                                $(error).append(errrep);
+                            }
+                            
+                            if(value.attributes.url) {
+                                var errurl = jQuery('<div/>', {
+                                    id: 'eu' + pad(i, 2),
+                                    class: 'errurl',
+                                });
+                                var url = jQuery('<a/>', {
+                                    target: 'blank',
+                                    text: 'Mehr Informationen',
+                                    href: value.attributes.url
+                                });
+                                $(errurl).append(url);
+                                $(error).append(errurl);
+                            }
+                            
+                            var errdat = jQuery('<div/>', {
+                                id: 'ed' + pad(i, 2) + 'ei' + pad(index, 2),
+                                class: 'errdat',
+                                text: JSON.stringify(value)
+                            });
+                            $(error).append(errdat);
+
+                            $(errorbox).append(error);
+
+                            if (++index < json.matches.error.length) errorLoop(index);
+                        }, 50)
+                    })(0);
+                    $(line).append(errorbox);
+                }
+            });
+            
+            var linebox = jQuery('<div/>', {
+                id: 'lb' + pad(i, 2),
+                class: 'linebox',
+            });
+            
+            var textarea = jQuery('<div/>', {
+                id: 'ta' + pad(i, 2),
+                class: 'textarea',
+                text: sents[selection[i]]
+            });
+            
+            var loadarea = jQuery('<div/>', {
+                id: 'la' + pad(i, 2),
+                class: 'loadarea',
+            });
+            
+            var loadbutton = jQuery('<div/>', {
+                id: 'lo' + pad(i, 2),
+                class: 'loadbutton',
+            });
+            
+            /*var treedata = jQuery('<div/>', {
+                id: 'td' + pad(i, 2),
+                class: 'treedata',
+                text: JSON.stringify(sentences[i].parsedTree)
+            });*/
+
+            $(linebox).append(textarea);
+            
+            $(loadarea).append(loadbutton);
+            $('.loadbutton').click(function(event) {
+                loadClick(event);
+            });
+            $(linebox).append(loadarea);
+            $(line).prepend(linebox);            
+            
+            $('#sentbox').append(line);
+            $(line).fadeIn();           
+            
+            //$(dataarea).append(treedata);
+            
+            
+
+            $(line).append(dataarea);
 
             if (++i < selection.length) myLoop(i);
         }, 50)

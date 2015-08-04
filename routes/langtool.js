@@ -4,12 +4,11 @@ var xml2js = require('xml2js');
 exports.get_request = function(request, response) {
 
     var sentence = request.param("sentence");
-    console.log(sentence);
 
     var options = {
         host: 'localhost',
         port: 8081,
-        path: '/?language=de&text=' + encodeURIComponent(sentence),
+        path: '/?language=de-DE&text=' + encodeURIComponent(sentence),
         method: 'GET'
     };
 
