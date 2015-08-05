@@ -1,38 +1,114 @@
 
 $( init );
 
+teb_count = 0;
+
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function init() {
 
-    $.getJSON("javascripts/glueck_stanford_tree_example.json", function(json) {
-        updateTree(json);
-    });
-
     var sents = [
-        "Fügen Sie hier Ihren Text ein.",
-        "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen.",
-        "oder nutzen Sie diesen Text als Beispiel für ein Paar Fehler , die LanguageTool erkennen kann: Ihm wurde Angst und bange, als er davon hörte.",
-        "( Eine Rechtschreibprüfun findet findet übrigens auch statt."
+        "Fügen Sie hier Ihren text ein.",
+        "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen.Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen.",
+        "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen.oder nutzen Sie diesen Text als Beispiel für ein Paar Fehler , die LanguageTool erkennen kann: Ihm wurde Angst und bange, als er davon hörte.",
+        "( Eine Rechtschreibprüfun findet findet übrigens auch statt.",
+        "Fügen Sie hier Ihren text ein.Fügen Sie hier Ihren text ein."  
     ];
-    var selection = [];
-    var random = getRandomInt(0, sents.length - 1);
+    var selection = [0, 1, 2, 3, 4];
+    /*var random = getRandomInt(0, sents.length - 1);
 
     for(i = 0; i < 4; i++) {
         while ($.inArray(random, selection) > -1) {
             var random = getRandomInt(0, sents.length - 1);
         }
         selection.push(random);
-    }
-
+    }*/
+    
     var testtext = "";
 
     for(i = 0; i < selection.length; i++) {
         testtext += sents[selection[i]] + ' ';
     }
-    $('#textbox').text(testtext);
+        
+    var textlines = testtext.match( /[^\.!\?]+[\.!\?]+/g );
+    var check_end = testtext.match( /[ ]?[^\.!\?]+[\.!\?]+/g ).map(function(str) {return str.charAt(0) === ' '});
+    console.log(check_end);
+
+    for(i = 0; i < textlines.length; i++) {
+
+        var prep_text;
+        
+        if (i > 0 && !check_end[i]) {
+            
+            var split_text = textlines[i].split(/\s+/);
+
+            var enderr = jQuery('<span/>', {
+                id: 'tl' + pad(i, 2),
+                class: 'enderr',
+                text: split_text[0]
+            });            
+            $('#textboxarea').append(enderr);
+
+            prep_text = ' ' + split_text.splice(1, split_text.length).join(' ');
+            
+            var errorbox;
+            
+            if(!$('#textbox').children('.errorbox').length > 0) {
+                errorbox = jQuery('<div/>', {
+                    id: 'teb',
+                    class: 'errorbox',
+                });
+                $('#textbox').append(errorbox);
+            }else{
+                errorbox = $('#textbox').children('.errorbox')[0];
+            }
+
+            var error = jQuery('<div/>', {
+                id: 'tei' + pad(teb_count, 2),
+                class: 'error'
+            });
+
+            var errmsg = jQuery('<div/>', {
+                id: 'tem' + pad(teb_count, 2),
+                class: 'errmsg',
+                text: 'Fügen Sie zwischen Sätzen ein Leerzeichen ein'
+            });
+            var errcat = jQuery('<b/>', {
+                text: 'Sonstiges' + ': '
+            });
+            $(errmsg).prepend(errcat);
+            $(error).append(errmsg);
+
+            var errrep = jQuery('<div/>', {
+                id: 'tep' + pad(teb_count, 2),
+                class: 'errrep',
+            });
+            var rep = jQuery('<div/>', {
+                id: 'tep' + pad(teb_count, 2) + 'rp' + pad(0, 2),
+                class: 'rep',
+                text: ' ' + split_text[0]
+            });
+            $(errrep).append(rep);
+            $(error).append(errrep);
+            
+            $(errorbox).append(error);
+            
+        }else{
+            prep_text = ' ' + textlines[i];
+        }
+        
+        var textline = jQuery('<span/>', {
+            id: 'tl' + pad(i, 2),
+            class: 'textline',
+            text: prep_text
+        });
+        $('#textboxarea').append(textline);
+    }
+
+    
+    //$('#textbox').text(testtext);
 
     $('#spinner').addClass('close');
     hideSpinner = setTimeout(function(){
@@ -58,7 +134,7 @@ function init() {
                 class: 'errorbox',
             });
 
-            $.post( "/langtool_anfrage", { sentence: sents[selection[i]] }, function(json){
+            $.post( "/langtool_anfrage", { sentence: textlines[i] }, function(json){
                 var langdata = jQuery('<div/>', {
                     id: 'ld' + pad(i, 2),
                     class: 'langdata',
@@ -107,7 +183,7 @@ function init() {
                                         $(errrep).append(rep);
                                         
                                         if (++j < reps.length) repLoop(j);
-                                    }, 50)
+                                    }, 10)
                                 })(0);
                                 
                                 $(error).append(errrep);
@@ -137,7 +213,7 @@ function init() {
                             $(errorbox).append(error);
 
                             if (++index < json.matches.error.length) errorLoop(index);
-                        }, 50)
+                        }, 10)
                     })(0);
                     $(line).append(errorbox);
                 }
@@ -151,7 +227,7 @@ function init() {
             var textarea = jQuery('<div/>', {
                 id: 'ta' + pad(i, 2),
                 class: 'textarea',
-                text: sents[selection[i]]
+                text: textlines[i]
             });
             
             var loadarea = jQuery('<div/>', {
@@ -188,9 +264,13 @@ function init() {
 
             $(line).append(dataarea);
 
-            if (++i < selection.length) myLoop(i);
-        }, 50)
+            if (++i < textlines.length) myLoop(i);
+        }, 10)
     })(0);
+
+    $.getJSON("javascripts/glueck_stanford_tree_example.json", function(json) {
+        updateTree(json);
+    });    
 }
 
 function loadClick(ev) {

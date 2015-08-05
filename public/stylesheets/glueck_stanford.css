@@ -14,8 +14,27 @@
 
 #textbox {
 
+    display: flex; /* or inline-flex */
+
     margin: 10px 0 0 10px;
-    padding: 10px;
+
+    width: 80%;
+    line-height: 20px;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    background: yellowgreen;
+}
+
+#textboxarea {
+    
+    padding: 10px 0 10px 10px;
 
     width: 80%;
     line-height: 20px;
@@ -24,6 +43,35 @@
     align-self: auto;
 
     background: yellow;
+}
+
+#checkarea {
+
+    display: flex; /* or inline-flex */
+
+    padding: 10px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+
+    align-items: center;
+
+    background: greenyellow;
+}
+
+#checkbutton {
+
+    height: 20px;
+    width: 20px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+
+    background: green;
+}
+
+.enderr {    
+    background: coral;
 }
 
 #spinnerbox {
@@ -146,7 +194,7 @@
 }
 
 .rep {
-
+    
     margin: 10px 0 0 10px;
     padding: 10px;
     
@@ -154,6 +202,7 @@
     align-self: auto;
 
     background-color: lightseagreen;
+    white-space: pre;
 }
 
 .errurl {
@@ -244,6 +293,8 @@
 
     margin: 10px 0 0 10px;
     padding: 0 10px 10px 0;
+    
+    width: 80%;
 
     flex: 1 1 auto;
     align-self: auto;
