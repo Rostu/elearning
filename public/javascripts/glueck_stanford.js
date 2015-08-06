@@ -16,7 +16,7 @@ for(i = 0; i < selection.length; i++) {
 
 var sf_ws_errors = [];
 var sentences;
-var sane_sentences = [];
+var valid_sentences = [];
 
 function init() {
 
@@ -44,7 +44,7 @@ function init() {
 
 function generateSentenceSpans() {
 
-    sane_sentences = [];
+    valid_sentences = [];
 
     $.post("/stanford_anfrage", {sentences: test_text}, function (json) {
 
@@ -60,9 +60,10 @@ function generateSentenceSpans() {
         $.each(sentences, function (index, sentence) {
             var sent_start = sentence.tokens.token[0].CharacterOffsetBegin;
             var sent_end = sentence.tokens.token[sentence.tokens.token.length - 1].CharacterOffsetEnd
-            var sane_sent = test_text.substring(sent_start, sent_end);
-            sane_sentences.push(sane_sent);
-            console.log(sane_sent);
+            
+            var valid_sent = test_text.substring(sent_start, sent_end);
+            valid_sentences.push(valid_sent);
+            console.log(valid_sent);
         });
     });
 }
@@ -256,3 +257,4 @@ function pad (str, max) {
     str = str.toString();
     return str.length < max ? pad("0" + str, max) : str;
 }
+
