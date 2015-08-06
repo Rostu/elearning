@@ -1,6 +1,7 @@
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 
 #flexybox {
+
     display: flex; /* or inline-flex */
 
     padding: 0 10px 0 0;
@@ -11,14 +12,89 @@
     align-content: stretch;
 }
 
-#sentbox {
+#textbox {
 
     display: flex; /* or inline-flex */
 
     margin: 10px 0 0 10px;
+
+    width: 80%;
+    line-height: 20px;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    background: yellowgreen;
+}
+
+#textboxarea {
+
+    padding: 10px 0 10px 10px;
+
+    width: 80%;
+    line-height: 20px;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    background: yellow;
+}
+
+#checkarea {
+
+    display: flex; /* or inline-flex */
+
+    padding: 10px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+
+    align-items: center;
+
+    background: greenyellow;
+}
+
+#checkbutton {
+
+    height: 20px;
+    width: 20px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+
+    background: green;
+}
+
+.enderr {
+    background: coral;
+}
+
+#spinnerbox {
+
+    margin: 10px 0 0 10px;
+
+    width: 80%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    background: orange;
+}
+
+#sentbox {
+
+    display: flex; /* or inline-flex */
+
+    margin: 0 0 0 10px;
     padding: 0 10px 10px 0;
 
-    width: 100%;
+    width: 90%;
+    line-height: 20px;
 
     flex: 1 1 auto;
     align-self: auto;
@@ -31,24 +107,118 @@
     background: orange;
 }
 
-#textbox {
+.line {
+    display: flex; /* or inline-flex */
 
     margin: 10px 0 0 10px;
-    padding: 10px;
 
-    width: 100%;
+    width: 80%;
 
     flex: 1 1 auto;
     align-self: auto;
 
-    background: yellow;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    background: orangered;
+}
+
+.errorbox {
+    display: flex; /* or inline-flex */
+
+    padding: 0 10px 10px 0;
+
+    width: 80%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    background: darkred;
+}
+
+.error {
+
+    display: flex; /* or inline-flex */
+
+    margin: 10px 0 0 10px;
+
+    width: 80%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+
+    background: lightblue;
+}
+
+.errmsg {
+
+    padding: 10px;
+
+    width: 80%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    background: coral;
+    text-align: center;
+}
+
+.errrep {
+    display: flex;
+
+    padding: 0 10px 10px 0;
+
+    width: 80%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    background-color: #D5EBFD;
+}
+
+.rep {
+
+    margin: 10px 0 0 10px;
+    padding: 10px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+
+    background-color: lightseagreen;
+    white-space: pre;
+}
+
+.errurl {
+
+    width: 80%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    background: paleturquoise;
+    text-align: center;
 }
 
 .linebox {
 
     display: flex; /* or inline-flex */
-
-    margin: 10px 0 0 10px;
 
     width: 100%;
 
@@ -68,7 +238,6 @@
     padding: 10px;
 
     width: 80%;
-    line-height: 20px;
 
     flex: 1 1 auto;
     align-self: auto;
@@ -125,6 +294,8 @@
     margin: 10px 0 0 10px;
     padding: 0 10px 10px 0;
 
+    width: 80%;
+
     flex: 1 1 auto;
     align-self: auto;
 
@@ -164,8 +335,7 @@
 #spinner {
     margin: 10px 0 0 10px;
 
-    flex: 1 1 auto;
-    align-self: auto;
+    width: 100%;
 
     transition-duration:400ms;
     -ms-transition-duration:400ms;
@@ -353,4 +523,3 @@
         background-color:rgb(255,255,255);
     }
 }
-

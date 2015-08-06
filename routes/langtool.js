@@ -1,24 +1,35 @@
 var http = require('http');
+var xml2js = require('xml2js');
 
-exports.get_request = function(request, result) {
+exports.get_request = function(request, response) {
 
     var sentence = request.param("sentence");
-    console.log(sentence);
 
     var options = {
         host: 'localhost',
         port: 8081,
-        path: '/?language=de&text=wo+bist+du',
+        path: '/?language=de-DE&text=' + encodeURIComponent(sentence),
         method: 'GET'
     };
 
-    http.request(options, function(res) {
-        console.log('STATUS: ' + res.statusCode);
-        console.log('HEADERS: ' + JSON.stringify(res.headers));
-        res.setEncoding('utf8');
-        res.on('data', function (chunk) {
-            console.log('BODY: ' + chunk);
-            result.send(chunk);
+    http.request(options, function(langtool_res) {
+
+        langtool_res.setEncoding('utf8');
+
+        langtool_res.on('data', function (xml) {
+
+            var json;
+            var parser = new xml2js.Parser({"attrkey": "attributes"});
+
+            parser.parseString(xml, function (error, result) {
+                if(error){
+                    console.log(error);
+                }else{
+                    json = result;
+                }
+            });
+
+            response.send(json);
         });
     }).end();
 }
