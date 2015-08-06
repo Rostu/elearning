@@ -31,3 +31,25 @@
 .bold{
     font-weight: bold;
 }
+.underline:hover{
+    cursor:pointer;
+}
+p {
+    -moz-hyphens: auto;
+    -o-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.candidate:hover{
+    cursor:pointer;
+}
+.correct{
+    color: #02D64A;
+    font-size: 1.2em;
+}
+.false{
+    color: #A91211;
+    font-size: 1.2em;
+}

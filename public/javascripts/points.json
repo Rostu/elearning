@@ -84,6 +84,9 @@
         "name":"ersti_Wortschatz_erweitern", "maxpoints":9, "maxfaults":5
     },
     {
+        "name":"energie_Wortfeld_Solarantrieb_A", "maxpoints":21, "maxfaults":10
+    },
+    {
         "name":"veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen", "maxpoints":4, "maxfaults":4
     },
     {
