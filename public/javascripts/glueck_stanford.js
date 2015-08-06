@@ -1,115 +1,69 @@
-
 $( init );
 
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+var test_sentences = [
+    "Fügen Sie hier Ihren Dr. Text ein.",
+    "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen.",
+    "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. oder nutzen Sie diesen Text als Beispiel für ein Paar Fehler , die LanguageTool erkennen kann: Ihm wurde Angst und bange, als er davon hörte.",
+    "( Eine Rechtschreibprüfun findet findet übrigens auch statt.",
+    "Fügen Sie hier Ihren text ein. Fügen Sie hier Ihren text ein."
+];
+var selection = [0, 1, 2, 3, 4];
+var test_text = "";
+
+for(i = 0; i < selection.length; i++) {
+    test_text += test_sentences[selection[i]] + ' ';
 }
+
+var sf_ws_errors = [];
+var sentences;
+var sane_sentences = [];
 
 function init() {
 
-    $.post( "/langtool_anfrage", { sentence: "my text" }, function(json){
-        console.log( json );
-    });
+    $('#textboxarea').text(test_text);
 
-    /*$.get( "/langtool/?language=de&text=wo+bist+du", function( data ) {
-        console.log( data );
-    });*/
+    $.post( "/langtool_anfrage", { sentence: test_text }, function(json){
 
-    var hideSpinner;
-    $('#spinner').hide();
+        sf_ws_errors = [];
 
-    clearTimeout(hideSpinner);
-    $('#spinner').show(0, function(){
-        $('#spinner').removeClass('close');
-    });
+        $.each(json.matches.error, function(index, error) {
 
-    $.getJSON("javascripts/glueck_stanford_tree_example.json", function(json) {
-        updateTree(json);
-    });
+            if(error.attributes.msg === "Fügen Sie zwischen Sätzen ein Leerzeichen ein") {
+                sf_ws_errors.push(error);
+            }
 
-    var sents = [
-        "glück ist, wenn man frey ist.",
-        "Glück ist, wenn man frei ist.",
-        "Glück ist, wenn man frei ist.",
-        "Glück ist, wenn man frei ist.",
-    ];
-    var selection = [];
-    var random = getRandomInt(0, sents.length - 1);
+        });
 
-    for(i = 0; i < 4; i++) {
-        while ($.inArray(random, selection) > -1) {
-            var random = getRandomInt(0, sents.length - 1);
+        if(sf_ws_errors.length == 0) {
+            generateSentenceSpans();
+        }else{
+            console.log(sf_ws_errors);
         }
-        selection.push(random);
-        console.log(random);
-        console.log(sents[random]);
-    }
+    });
+}
 
-    var testtext = "";
+function generateSentenceSpans() {
 
-    for(i = 0; i < selection.length; i++) {
-        testtext += sents[selection[i]] + ' ';
-    }
-    $('#textbox').text(testtext);
+    sane_sentences = [];
 
-    $.post( "/stanford_anfrage", { sentences: $('#textbox').text() }, function(json){
+    $.post("/stanford_anfrage", {sentences: test_text}, function (json) {
 
         $('#spinner').addClass('close');
-        hideSpinner = setTimeout(function(){
+        hideSpinner = setTimeout(function () {
             $('#spinner').hide();
         }, 450);
 
-        var sentences = json.document.sentences.sentence;
+        sentences = json.document.sentences.sentence;
 
-        (function myLoop (i) {
-            setTimeout(function () {
-                var textarea = jQuery('<div/>', {
-                    id: 'ta' + pad(i, 2),
-                    class: 'textarea',
-                    text: sentences[i].parse
-                });
-                var linebox = jQuery('<div/>', {
-                    id: 'lb' + pad(i, 2),
-                    class: 'linebox',
-                });
-                var loadarea = jQuery('<div/>', {
-                    id: 'la' + pad(i, 2),
-                    class: 'loadarea',
-                });
-                var loadbutton = jQuery('<div/>', {
-                    id: 'lb' + pad(i, 2),
-                    class: 'loadbutton',
-                });
-                var dataarea = jQuery('<div/>', {
-                    id: 'da' + pad(i, 2),
-                    class: 'dataarea',
-                });
-                var treedata = jQuery('<div/>', {
-                    id: 'td' + pad(i, 2),
-                    class: 'treedata',
-                    text: JSON.stringify(sentences[i].parsedTree)
-                });
+        console.log(sentences);
 
-                $(loadarea).append(loadbutton);
-                $(linebox).append(textarea);
-                $(linebox).append(loadarea);
-                $(linebox).hide();
-                $('#sentbox').append(linebox);
-                $(linebox).fadeIn();
-                $(dataarea).append(treedata);
-                $(linebox).append(dataarea);
-
-                $('.loadbutton').click(function(event) {
-                    loadClick(event);
-                });
-
-                if (++i < sentences.length) myLoop(i);
-            }, 50)
-        })(0);
-
-        for(i = 0; i < sentences.length; i++) {
-
-        }
+        $.each(sentences, function (index, sentence) {
+            var sent_start = sentence.tokens.token[0].CharacterOffsetBegin;
+            var sent_end = sentence.tokens.token[sentence.tokens.token.length - 1].CharacterOffsetEnd
+            var sane_sent = test_text.substring(sent_start, sent_end);
+            sane_sentences.push(sane_sent);
+            console.log(sane_sent);
+        });
     });
 }
 
@@ -147,22 +101,22 @@ function updateTree(json) {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        var parse_tree = traverseParseTree(json);
+    var parse_tree = traverseParseTree(json);
 
-        root = parse_tree;
-        root.x0 = width / 2;
-        root.y0 = 0;
+    root = parse_tree;
+    root.x0 = width / 2;
+    root.y0 = 0;
 
-        function collapse(d) {
-            if (d.children) {
-                d._children = d.children;
-                d._children.forEach(collapse);
-                d.children = null;
-            }
+    function collapse(d) {
+        if (d.children) {
+            d._children = d.children;
+            d._children.forEach(collapse);
+            d.children = null;
         }
+    }
 
-        //root.children.forEach(collapse);
-        update(root);
+    //root.children.forEach(collapse);
+    update(root);
 
     function update(source) {
 
