@@ -930,6 +930,7 @@ img.uniLogo {
     margin: 10px 10px auto;
     background: #D5EBFD;
     padding-bottom: 1px;
+    min-height: 600px;
 }
 
 .panelheader {
@@ -939,7 +940,6 @@ img.uniLogo {
     z-index: 1;
     color: white;
     background: #7AB3E3;
-    cursor: pointer;
 }
 
 .panelarrow {
@@ -956,9 +956,7 @@ img.uniLogo {
 }
 
 #tasklist {
-    width: 70%;
-    margin: 0 auto;
-    position: relative;
+
 }
 
 #subjecttext {
@@ -973,7 +971,7 @@ img.uniLogo {
  }
 
 .panelcontent {
-    display: none;
+
 }
 
 .mediaelement {
@@ -987,8 +985,13 @@ img.uniLogo {
     margin: 5px 5px;
     height: 70px;
 }
-.mediaimage_mini {
-    height: 70px;
+.text_media {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    background: url("../images/media_icon_text2.png");
+    float: right;
 }
 
 .mediaimage {
@@ -998,6 +1001,7 @@ img.uniLogo {
 .task {
     margin: 10px 10px;
     text-align: center;
+    min-width: 425px;
 }
 
 .taskmedia {
@@ -1032,14 +1036,13 @@ img.uniLogo {
 
 .tasktitle {
     padding: 5px;
-    margin: 0 60px;
+    margin: 0 60px 0 0;
     height: 40px;
     line-height: 40px;
     font-weight: bold;
     text-align: center;
     background: #A1BED6;
     color: white;
-    text-align: center;
     cursor: pointer;
 }
 
@@ -1050,8 +1053,9 @@ img.uniLogo {
     font-weight: bold;
     text-align: center;
     background: #E5EFF5;
+    background: #E5EFF5 url("../images/button_right2_small.gif");
     color: #A1BED6;
-    float: left;
+    float: right;
     border-radius: 20px;
 }
 
@@ -1062,7 +1066,7 @@ img.uniLogo {
     font-weight: bold;
     text-align: center;
     background: #E5EFF5 url("../images/button_right2_small.gif");
-    float: right;
+    float: left;
     border-radius: 20px;
 }
 
@@ -1086,4 +1090,25 @@ img.uniLogo {
     margin: 10px;
     color: black;
     line-height: 30px;
+}
+
+#content{
+    width: 100%;
+}
+#content_image{
+    padding-top: 40px;
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+    float:left;
+}
+#content_image img{
+    margin: 0 auto;
+
+}
+#content_content{
+    display: inline-block;
+    width: 49%;
+    padding-top: 40px;
+
 }

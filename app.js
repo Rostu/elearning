@@ -140,6 +140,7 @@ app.get('/wertewandel_Wortbedeutung_verstehen', ubung.get_wertewandel_Wortbedeut
 app.get('/wertewandel_Textverstehen_Kernaussagen', ubung.get_wertewandel_Textverstehen_Kernaussagen);
 app.get('/wertewandel_Textproduktion_Statistische_Angaben', ubung.get_wertewandel_Textproduktion_Statistische_Angaben);
 app.get('/zukunft_start', ubung.get_zukunft_start);
+app.get('/zukunft_start2', ubung.get_zukunft_start2);
 app.get('/zukunft_Textverstehen_Wortfeld_Technik', ubung.get_zukunft_Textverstehen_Wortfeld_Technik);
 app.get('/zukunft_Wortschatz_ordnen', ubung.get_zukunft_Wortschatz_ordnen);
 app.get('/zukunft_Wortschatzerweiterung_fest_Wortverbindungen', ubung.get_zukunft_Wortschatzerweiterung_fest_Wortverbindungen);

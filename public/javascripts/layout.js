@@ -37,7 +37,7 @@ $(document).ready(function() {
     });
 
     //handle highlighting on start pages
-
+    /*
     $('.panelheader').mouseenter(function()
     {
         startPageFadeIn($(this));
@@ -47,7 +47,7 @@ $(document).ready(function() {
     {
         startPageFadeOut($(this));
     });
-
+    */
     $('.panelarrow').mouseenter(function()
     {
         $(this).css("backgroundColor", "#005E9C");
