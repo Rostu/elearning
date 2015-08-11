@@ -119,7 +119,7 @@ function helpClick(ev) {
     if (!found && count_selected > 0) {
         $("#infolink").remove();
         clear_help();
-        $("#info2").append("<a id='infolink' class='redlink' target='blank' href='http://www.duden.de/suchen/dudenonline/finit'>finit</a>");
+        $("#info2").append("<a id='infolink' class='redlink' onclick='toggleStartOverlay()' href='#'>Glück ist, ...</a>");
         show_help();
     }
 }
