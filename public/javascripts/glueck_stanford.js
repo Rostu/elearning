@@ -15,6 +15,8 @@ for(i = 0; i < selection.length; i++) {
 }
 
 var sf_ws_errors = [];
+other_errors = [];
+
 var sentences;
 var valid_sentences = [];
 
@@ -30,15 +32,19 @@ function init() {
 
             if(error.attributes.msg === "Fügen Sie zwischen Sätzen ein Leerzeichen ein") {
                 sf_ws_errors.push(error);
+            }else{
+                other_errors.push(error);
             }
 
         });
 
         if(sf_ws_errors.length == 0) {
-            generateSentenceSpans();
+            handleSentences(other_errors);
         }else{
+
             insertErrors(sf_ws_errors, $('#textboxarea'));
-            displayErrors(sf_ws_errors, $('#textbox'));
+            generateErrors(sf_ws_errors, $('#textbox'));
+
         }
     });
 }
@@ -108,7 +114,7 @@ function insertError(index, attributes, target, original, last_end) {
 
 }
 
-function displayErrors(errlist, target) {
+function generateErrors(errlist, target) {
 
     var errorbox = jQuery('<div/>', {
         id: $(target).attr('id') + 'eb',
@@ -118,12 +124,12 @@ function displayErrors(errlist, target) {
 
     $(target).append(errorbox);
 
-    $(errorbox).slideDown(15, function() {
+    $(errorbox).slideDown(25, function() {
 
         (function errorLoop (index) {
             setTimeout(function () {
 
-                displayError(index, errlist[index].attributes, errorbox);
+                generateError(index, errlist[index].attributes, errorbox);
 
                 if (++index < errlist.length) errorLoop(index);
             }, 15)
@@ -133,7 +139,7 @@ function displayErrors(errlist, target) {
 
 }
 
-function displayError(index, attributes, target) {
+function generateError(index, attributes, target) {
 
     var error = jQuery('<div/>', {
         id: $(target).attr('id') + 'er' + pad(index, 2),
@@ -182,19 +188,20 @@ function displayError(index, attributes, target) {
     }
 
     if(attributes.url) {
-        var errurl = jQuery('<div/>', {
-            class: 'errurl',
-        });
-        $(rep).hide();
-        err_info.push(errurl);
-        $(error).append(errurl);
 
         var url = jQuery('<a/>', {
             target: 'blank',
             text: 'Mehr Informationen',
             href: attributes.url
         });
+
+        var errurl = jQuery('<div/>', {
+            class: 'errurl',
+        });
         $(errurl).append(url);
+        $(errurl).hide();
+        err_info.push(errurl);
+        $(error).append(errurl);
 
     }
 
@@ -213,7 +220,7 @@ function displayError(index, attributes, target) {
         (function infoLoop (index) {
             setTimeout(function () {
 
-                $(err_info[index]).slideDown(75);
+                $(err_info[index]).slideDown(15);
 
                 if (++index < err_info.length) infoLoop(index);
             }, 15)
@@ -223,46 +230,130 @@ function displayError(index, attributes, target) {
 
 }
 
-function generateSentenceSpans() {
+function handleSentences(other_errors) {
 
-    valid_sentences = [];
+    var sent_strings = [];
 
     $.post("/stanford_anfrage", {sentences: test_text}, function (json) {
 
         $('#spinner').addClass('close');
+        $('#spinnerbox').slideUp();
         hideSpinner = setTimeout(function () {
             $('#spinner').hide();
         }, 450);
 
-        sentences = json.document.sentences.sentence;
+        var sent_data = json.document.sentences.sentence;
 
-        console.log("sentences:");
-        console.log(sentences);
+        insertSentences(sent_data, sent_strings, $('#textboxarea'));
+        generateLines(sent_data, sent_strings, other_errors, $('#sentbox'));
 
-        $('#textboxarea').text('');
-
-        $.each(sentences, function (index, sentence) {
-            var sent_start = sentence.tokens.token[0].CharacterOffsetBegin;
-            var sent_end = sentence.tokens.token[sentence.tokens.token.length - 1].CharacterOffsetEnd
-            
-            var valid_sent = test_text.substring(sent_start, sent_end);
-
-            var sent_span = jQuery('<span/>', {
-                id: 'ts' + pad(index, 2),
-                class: 'sentence',
-                text: valid_sent + ' ',
-            });
-            $(sent_span).attr('offset', sent_start);
-            $(sent_span).attr('end', sent_end);
-            $('#textboxarea').append(sent_span);
-
-
-            valid_sentences.push(valid_sent);
-        });
-
-        console.log("valid_sentences:");
-        console.log(valid_sentences);
     });
+}
+
+function generateLines(sent_data, sent_strings, other_errors, target) {
+
+    console.log(sent_strings);
+
+    (function sentLoop (index) {
+        setTimeout(function () {
+
+            var line_data = generateLine(index, sent_strings[index], target);
+            var relevant_errors = [];
+
+            $.each(other_errors, function(err_index, error) {
+                if (error.attributes.fromx - line_data.start >= 0 && error.attributes.tox - line_data.end <= 0) {
+                    relevant_errors.push(error);
+                    console.log('haha!' + index + ':' + err_index);
+                }
+            });
+
+            if(relevant_errors.length > 0) {
+                generateErrors(relevant_errors, line_data.line);
+            }
+
+            if (++index < sent_strings.length) sentLoop(index);
+        }, 15)
+    })(0);
+
+}
+
+function generateLine(index, sent_string, target) {
+
+    var loadbutton = jQuery('<div/>', {
+        id: 'lo' + pad(index, 2),
+        class: 'loadbutton',
+    });
+    $('.loadbutton').click(function(event) {
+        loadClick(event);
+    });
+
+    var loadarea = jQuery('<div/>', {
+        id: 'la' + pad(index, 2),
+        class: 'loadarea',
+    });
+    $(loadarea).append(loadbutton);
+
+    var sent_span = $('#ts' + pad(index, 2)).clone();
+    $(sent_span).attr('id', 'tsc' + pad(index, 2));
+
+    var textarea = jQuery('<div/>', {
+        id: 'ta' + pad(index, 2),
+        class: 'textarea',
+    });
+    $(textarea).append(sent_span);
+
+    /*var treedata = jQuery('<div/>', {
+     id: 'td' + pad(i, 2),
+     class: 'treedata',
+     text: JSON.stringify(sentences[i].parsedTree)
+     });*/
+
+    var linebox = jQuery('<div/>', {
+        id: 'lb' + pad(index, 2),
+        class: 'linebox',
+    });
+    $(linebox).append(textarea);
+    $(linebox).append(loadarea);
+
+    var line = jQuery('<div/>', {
+        id: 'll' + pad(index, 2),
+        class: 'line',
+    });
+    $(line).append(linebox);
+    $(line).hide();
+
+    $(target).append(line);
+
+    $(line).slideDown(25);
+
+    return {'start': $(sent_span).attr('start'), 'end': $(sent_span).attr('end'), 'line': line };
+
+}
+
+function insertSentences(sent_data, sent_strings, target) {
+
+    var original = target.text();
+    target.text('');
+
+    $.each(sent_data, function (index, sent) {
+
+        var sent_start = sent.tokens.token[0].CharacterOffsetBegin;
+        var sent_end = sent.tokens.token[sent.tokens.token.length - 1].CharacterOffsetEnd
+
+        var sent = original.substring(sent_start, sent_end);
+        sent_strings.push(sent);
+
+        var sent_span = jQuery('<span/>', {
+            id: 'ts' + pad(index, 2),
+            class: 'sent',
+            text: sent + ' ',
+        });
+        $(sent_span).attr('start', sent_start);
+        $(sent_span).attr('end', sent_end);
+        $(target).append(sent_span);
+
+    });
+
 }
 
 function loadClick(ev) {
