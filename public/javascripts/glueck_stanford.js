@@ -37,9 +37,190 @@ function init() {
         if(sf_ws_errors.length == 0) {
             generateSentenceSpans();
         }else{
-            console.log(sf_ws_errors);
+            insertErrors(sf_ws_errors, $('#textboxarea'));
+            displayErrors(sf_ws_errors, $('#textbox'));
         }
     });
+}
+
+function insertErrors(errlist, target) {
+
+    var original = $('#textboxarea').text();
+    $('#textboxarea').text('');
+
+    var last_end = 0;
+
+    (function errorLoop (index) {
+        setTimeout(function () {
+
+            insertError(index, errlist[index].attributes, target, original, last_end);
+            last_end = errlist[index].attributes.tox;
+            console.log(last_end);
+
+            if (++index < errlist.length) {
+                errorLoop(index);
+            }else{
+                var text = jQuery('<span/>', {
+                    class: 'text',
+                    text: original.substring(last_end, original.length)
+                });
+                $(target).append(text);
+            }
+        }, 0)
+    })(0);
+
+}
+
+function insertError(index, attributes, target, original, last_end) {
+
+    var err_start = attributes.fromx;
+    var err_end = attributes.tox;
+
+    var err_string = original.substring(err_start, err_end);
+
+    console.log('computed');
+    console.log(err_start - last_end);
+
+    if(err_start - last_end > 0) {
+
+        var text = jQuery('<span/>', {
+            class: 'text',
+            text: original.substring(last_end, err_start)
+        });
+        $(target).append(text);
+
+    }else{
+
+        console.log("Uh, oh! We've hit a snag!!");
+
+    }
+
+    var enderr = jQuery('<span/>', {
+        id: 'ee' + pad(index, 2),
+        class: 'enderr',
+        text: err_string
+    });
+    $(target).append(enderr);
+
+    console.log(err_start);
+    console.log(err_end);
+    console.log(err_string);
+
+}
+
+function displayErrors(errlist, target) {
+
+    var errorbox = jQuery('<div/>', {
+        id: $(target).attr('id') + 'eb',
+        class: 'errorbox',
+    });
+    $(errorbox).hide();
+
+    $(target).append(errorbox);
+
+    $(errorbox).slideDown(15, function() {
+
+        (function errorLoop (index) {
+            setTimeout(function () {
+
+                displayError(index, errlist[index].attributes, errorbox);
+
+                if (++index < errlist.length) errorLoop(index);
+            }, 15)
+        })(0);
+
+    });
+
+}
+
+function displayError(index, attributes, target) {
+
+    var error = jQuery('<div/>', {
+        id: $(target).attr('id') + 'er' + pad(index, 2),
+        class: 'error'
+    });
+    $(error).hide();
+
+    var err_info = [];
+
+    var errcat = jQuery('<b/>', {
+        text: attributes.category + ': '
+    });
+
+    var errmsg = jQuery('<div/>', {
+        class: 'errmsg',
+        text: attributes.msg
+    });
+    $(errmsg).prepend(errcat);
+    $(errmsg).hide();
+    err_info.push(errmsg);
+    $(error).append(errmsg);
+
+    if(attributes.replacements) {
+
+        var errrep = jQuery('<div/>', {
+            class: 'errrep',
+        });
+        $(errrep).hide();
+        err_info.push(errrep);
+        $(error).append(errrep);
+
+        var reps = attributes.replacements.split('#');
+
+        $.each(reps, function(rep_index, replacement){
+
+            var rep = jQuery('<div/>', {
+                id: 'er' + pad(index, 2) + 'rp' + pad(rep_index, 2),
+                class: 'rep',
+                text: replacement
+            });
+            $(rep).hide();
+            err_info.push(rep);
+            $(errrep).append(rep);
+
+        });
+    }
+
+    if(attributes.url) {
+        var errurl = jQuery('<div/>', {
+            class: 'errurl',
+        });
+        $(rep).hide();
+        err_info.push(errurl);
+        $(error).append(errurl);
+
+        var url = jQuery('<a/>', {
+            target: 'blank',
+            text: 'Mehr Informationen',
+            href: attributes.url
+        });
+        $(errurl).append(url);
+
+    }
+
+    var errdat = jQuery('<div/>', {
+        class: 'errdat',
+        text: JSON.stringify(attributes)
+    });
+    $(errdat).hide();
+    err_info.push(errdat);
+    $(error).append(errdat);
+
+    $(target).append(error);
+
+    $(error).slideDown(15, function() {
+
+        (function infoLoop (index) {
+            setTimeout(function () {
+
+                $(err_info[index]).slideDown(75);
+
+                if (++index < err_info.length) infoLoop(index);
+            }, 15)
+        })(0);
+
+    });
+
 }
 
 function generateSentenceSpans() {
@@ -55,15 +236,31 @@ function generateSentenceSpans() {
 
         sentences = json.document.sentences.sentence;
 
+        console.log("sentences:");
         console.log(sentences);
+
+        $('#textboxarea').text('');
 
         $.each(sentences, function (index, sentence) {
             var sent_start = sentence.tokens.token[0].CharacterOffsetBegin;
             var sent_end = sentence.tokens.token[sentence.tokens.token.length - 1].CharacterOffsetEnd
             var valid_sent = test_text.substring(sent_start, sent_end);
+
+            var sent_span = jQuery('<span/>', {
+                id: 'ts' + pad(index, 2),
+                class: 'sentence',
+                text: valid_sent + ' ',
+            });
+            $(sent_span).attr('offset', sent_start);
+            $(sent_span).attr('end', sent_end);
+            $('#textboxarea').append(sent_span);
+
+
             valid_sentences.push(valid_sent);
-            console.log(valid_sent);
         });
+
+        console.log("valid_sentences:");
+        console.log(valid_sentences);
     });
 }
 
