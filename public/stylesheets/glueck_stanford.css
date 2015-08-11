@@ -70,6 +70,13 @@
     background: green;
 }
 
+#checkbutton:hover {
+
+    background: blue !important;
+
+    cursor: pointer;
+}
+
 .enderr {
     background: coral;
 }
