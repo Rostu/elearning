@@ -52,6 +52,10 @@ exports.get_china_Textverstehen_Redewiedergabe = function(req, res){
 exports.get_energie_Wortfeld_Solarantrieb = function(req, res){
     res.render('energie_Wortfeld_Solarantrieb');
 };
+exports.get_energie_Wortfeld_Solarantrieb_A = function(req, res){
+    res.render('energie_Wortfeld_Solarantrieb_A');
+};
+
 exports.get_energie_start = function(req, res){
     res.render('energie_start');
 };
