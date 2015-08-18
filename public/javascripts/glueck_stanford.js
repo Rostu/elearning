@@ -42,25 +42,25 @@ function init() {
             handleSentences(other_errors);
         }else{
 
-            insertErrors(sf_ws_errors, $('#textboxarea'));
+            insertErrors(sf_ws_errors, $('#textboxarea'), 0);
             generateErrors(sf_ws_errors, $('#textbox'));
 
         }
     });
 }
 
-function insertErrors(errlist, target) {
+function insertErrors(errlist, target, offset) {
 
-    var original = $('#textboxarea').text();
-    $('#textboxarea').text('');
+    var original = target.text();
+    target.text('');
 
     var last_end = 0;
 
     (function errorLoop (index) {
         setTimeout(function () {
 
-            insertError(index, errlist[index].attributes, target, original, last_end);
-            last_end = errlist[index].attributes.tox;
+            insertError(index, errlist[index].attributes, target, original, last_end, offset);
+            last_end = errlist[index].attributes.tox - offset;
             console.log(last_end);
 
             if (++index < errlist.length) {
@@ -77,10 +77,10 @@ function insertErrors(errlist, target) {
 
 }
 
-function insertError(index, attributes, target, original, last_end) {
+function insertError(index, attributes, target, original, last_end, offset) {
 
-    var err_start = attributes.fromx;
-    var err_end = attributes.tox;
+    var err_start = attributes.fromx - offset;
+    var err_end = attributes.tox - offset;
 
     var err_string = original.substring(err_start, err_end);
 
@@ -268,6 +268,9 @@ function generateLines(sent_data, sent_strings, other_errors, target) {
             });
 
             if(relevant_errors.length > 0) {
+                var textarea = $(line_data.line).find('.textarea').first();
+                console.log(textarea);
+                insertErrors(relevant_errors, textarea, line_data.start);
                 generateErrors(relevant_errors, line_data.line);
             }
 
