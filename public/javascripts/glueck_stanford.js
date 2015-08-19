@@ -14,9 +14,6 @@ for(i = 0; i < selection.length; i++) {
     test_text += test_sentences[selection[i]] + ' ';
 }
 
-var sf_ws_errors = [];
-other_errors = [];
-
 var sentences;
 var valid_sentences = [];
 
@@ -26,20 +23,47 @@ function init() {
 
     $.post( "/langtool_anfrage", { sentence: test_text }, function(json){
 
-        sf_ws_errors = [];
+        var sf_ws_errors = [];
+        var other_errors = [];
+        var other_errors_hash = [];
+
+        var other_error_count = 0;
+        var other_error_coordinates = [];
 
         $.each(json.matches.error, function(index, error) {
 
             if(error.attributes.msg === "Fügen Sie zwischen Sätzen ein Leerzeichen ein") {
                 sf_ws_errors.push(error);
             }else{
-                other_errors.push(error);
+
+                var analysed_error = {
+                    'number': other_error_count,
+                    'coordinates': '' + error.attributes.fromx + error.attributes.tox,
+                    'length': error.attributes.tox - error.attributes.fromx,
+                    'attributes': error.attributes
+                };
+
+                console.log(analysed_error);
+
+                other_errors.push(analysed_error);
+
+                other_errors_hash[other_error_count++] = analysed_error;
+
+
             }
 
         });
 
         if(sf_ws_errors.length == 0) {
+
+            other_errors_hash.sort(function(a,b) {
+                return b.length - a.length;
+            });
+
+            console.log(other_errors_hash);
+
             handleSentences(other_errors);
+
         }else{
 
             insertErrors(sf_ws_errors, $('#textboxarea'), 0);
@@ -59,9 +83,10 @@ function insertErrors(errlist, target, offset) {
     (function errorLoop (index) {
         setTimeout(function () {
 
-            insertError(index, errlist[index].attributes, target, original, last_end, offset);
+            insertError(errlist[index], target, original, last_end, offset);
             last_end = errlist[index].attributes.tox - offset;
-            console.log(last_end);
+            ////console.log('last');
+            ////console.log(last_end);
 
             if (++index < errlist.length) {
                 errorLoop(index);
@@ -77,17 +102,17 @@ function insertErrors(errlist, target, offset) {
 
 }
 
-function insertError(index, attributes, target, original, last_end, offset) {
+function insertError(data, target, original, last_end, offset) {
 
-    var err_start = attributes.fromx - offset;
-    var err_end = attributes.tox - offset;
+    var err_start = data.attributes.fromx - offset;
+    var err_end = data.attributes.tox - offset;
 
     var err_string = original.substring(err_start, err_end);
 
-    console.log('computed');
-    console.log(err_start - last_end);
+    ////console.log('computed');
+    ////console.log(err_start - last_end);
 
-    if(err_start - last_end > 0) {
+    if(err_start - last_end >= 0) {
 
         var text = jQuery('<span/>', {
             class: 'text',
@@ -101,16 +126,23 @@ function insertError(index, attributes, target, original, last_end, offset) {
 
     }
 
-    var enderr = jQuery('<span/>', {
-        id: 'ee' + pad(index, 2),
-        class: 'enderr',
-        text: err_string
-    });
-    $(target).append(enderr);
+    if($('#' + 'esco' + data.coordinates).length == 0) {
 
-    console.log(err_start);
-    console.log(err_end);
-    console.log(err_string);
+        var enderr = jQuery('<span/>', {
+            id: 'esco' + data.coordinates,
+            class: 'err',
+            text: err_string
+        });
+        $(target).append(enderr);
+
+    }
+
+    //console.log('start');
+    //console.log(err_start);
+    //console.log('end');
+    //console.log(err_end);
+    //console.log('err');
+    //console.log(err_string);
 
 }
 
@@ -129,7 +161,7 @@ function generateErrors(errlist, target) {
         (function errorLoop (index) {
             setTimeout(function () {
 
-                generateError(index, errlist[index].attributes, errorbox);
+                generateError(errlist[index], errorbox);
 
                 if (++index < errlist.length) errorLoop(index);
             }, 15)
@@ -139,10 +171,10 @@ function generateErrors(errlist, target) {
 
 }
 
-function generateError(index, attributes, target) {
+function generateError(data, target) {
 
     var error = jQuery('<div/>', {
-        id: $(target).attr('id') + 'er' + pad(index, 2),
+        id: 'er' + pad(data.number, 2) + 'co' + data.coordinates,
         class: 'error'
     });
     $(error).hide();
@@ -150,49 +182,52 @@ function generateError(index, attributes, target) {
     var err_info = [];
 
     var errcat = jQuery('<b/>', {
-        text: attributes.category + ': '
+        text: data.attributes.category + ': '
     });
 
     var errmsg = jQuery('<div/>', {
         class: 'errmsg',
-        text: attributes.msg
+        text: data.attributes.msg
+    });
+    $(errmsg).click(function(event) {
+        errClick(event);
     });
     $(errmsg).prepend(errcat);
     $(errmsg).hide();
     err_info.push(errmsg);
     $(error).append(errmsg);
 
-    if(attributes.replacements) {
+    if(data.attributes.replacements) {
 
         var errrep = jQuery('<div/>', {
             class: 'errrep',
         });
         $(errrep).hide();
-        err_info.push(errrep);
+        //err_info.push(errrep);
         $(error).append(errrep);
 
-        var reps = attributes.replacements.split('#');
+        var reps = data.attributes.replacements.split('#');
 
         $.each(reps, function(rep_index, replacement){
 
             var rep = jQuery('<div/>', {
-                id: 'er' + pad(index, 2) + 'rp' + pad(rep_index, 2),
+                id: 'er' + pad(data.number, 2) + 'rp' + pad(rep_index, 2),
                 class: 'rep',
                 text: replacement
             });
-            $(rep).hide();
-            err_info.push(rep);
+            //$(rep).hide();
+            //err_info.push(rep);
             $(errrep).append(rep);
 
         });
     }
 
-    if(attributes.url) {
+    if(data.attributes.url) {
 
         var url = jQuery('<a/>', {
             target: 'blank',
             text: 'Mehr Informationen',
-            href: attributes.url
+            href: data.attributes.url
         });
 
         var errurl = jQuery('<div/>', {
@@ -200,17 +235,17 @@ function generateError(index, attributes, target) {
         });
         $(errurl).append(url);
         $(errurl).hide();
-        err_info.push(errurl);
+        //err_info.push(errurl);
         $(error).append(errurl);
 
     }
 
     var errdat = jQuery('<div/>', {
         class: 'errdat',
-        text: JSON.stringify(attributes)
+        text: JSON.stringify(data.attributes)
     });
     $(errdat).hide();
-    err_info.push(errdat);
+    //err_info.push(errdat);
     $(error).append(errdat);
 
     $(target).append(error);
@@ -228,6 +263,11 @@ function generateError(index, attributes, target) {
 
     });
 
+}
+
+function errClick(ev) {
+    console.log($(ev.target).closest('.error').children(':not(.errmsg)'));
+    $(ev.target).closest('.error').children(':not(.errmsg)').slideToggle(75);
 }
 
 function handleSentences(other_errors) {
@@ -252,7 +292,7 @@ function handleSentences(other_errors) {
 
 function generateLines(sent_data, sent_strings, other_errors, target) {
 
-    console.log(sent_strings);
+    //console.log(sent_strings);
 
     (function sentLoop (index) {
         setTimeout(function () {
@@ -263,13 +303,13 @@ function generateLines(sent_data, sent_strings, other_errors, target) {
             $.each(other_errors, function(err_index, error) {
                 if (error.attributes.fromx - line_data.start >= 0 && error.attributes.tox - line_data.end <= 0) {
                     relevant_errors.push(error);
-                    console.log('haha!' + index + ':' + err_index);
+                    ////console.log('haha!' + index + ':' + err_index);
                 }
             });
 
             if(relevant_errors.length > 0) {
                 var textarea = $(line_data.line).find('.textarea').first();
-                console.log(textarea);
+                //console.log(textarea);
                 insertErrors(relevant_errors, textarea, line_data.start);
                 generateErrors(relevant_errors, line_data.line);
             }
@@ -286,7 +326,7 @@ function generateLine(index, sent_string, target) {
         id: 'lo' + pad(index, 2),
         class: 'loadbutton',
     });
-    $('.loadbutton').click(function(event) {
+    $(loadbutton).click(function(event) {
         loadClick(event);
     });
 
