@@ -82,7 +82,7 @@
     cursor: pointer;
 }
 
-.enderr {
+.err {
     background: coral;
 }
 
@@ -185,6 +185,11 @@
 
     background: coral;
     text-align: center;
+}
+
+.errmsg:hover {
+    opacity: 0.75;
+    cursor: pointer;
 }
 
 .errrep {
