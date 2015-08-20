@@ -1,7 +1,7 @@
 $( init );
 
 var test_sentences = [
-    "Fügen Sie hier Ihren Dr. Text ein.",
+    "Fügen Sie hier Ihren Dr. text ein.",
     "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen.",
     "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. oder nutzen Sie diesen Text als Beispiel für ein Paar Fehler , die LanguageTool erkennen kann: Ihm wurde Angst und bange, als er davon hörte.",
     "( Eine Rechtschreibprüfun findet findet übrigens auch statt.",
@@ -112,7 +112,7 @@ function insertError(data, target, original, last_end, offset) {
     ////console.log('computed');
     ////console.log(err_start - last_end);
 
-    if(err_start - last_end >= 0) {
+    if(err_start - last_end > 0) {
 
         var text = jQuery('<span/>', {
             class: 'text',
@@ -128,12 +128,32 @@ function insertError(data, target, original, last_end, offset) {
 
     if($('#' + 'esco' + data.coordinates).length == 0) {
 
-        var enderr = jQuery('<span/>', {
+        var mistake = jQuery('<span/>', {
             id: 'esco' + data.coordinates,
-            class: 'err',
+            class: 'mistake',
+            original: err_string,
             text: err_string
         });
-        $(target).append(enderr);
+        $(mistake).hover(
+            function() {
+                $(".error[id$='co" + data.coordinates + "']").addClass( "hover" );
+            }, function() {
+                $(".error[id$='co" + data.coordinates + "']").removeClass( "hover" );
+            }
+        );
+        $(mistake).click(function() {
+            $('html, body').animate({
+                scrollTop: $(".error[id$='co" + data.coordinates + "']").offset().top
+            }, 75)
+            $(".error[id$='co" + data.coordinates + "']").children(':not(.errmsg)').slideDown(75);
+        });
+        $(target).append(mistake);
+
+        //var old_target_id = $(target).attr('id');
+        //var tbs_target_id = 'ts' + old_target_id.slice(2, old_target_id.length);
+
+        //console.log(old_target_id);
+        //console.log(tbs_target_id);
 
     }
 
@@ -177,6 +197,13 @@ function generateError(data, target) {
         id: 'er' + pad(data.number, 2) + 'co' + data.coordinates,
         class: 'error'
     });
+    $(error).hover(
+        function() {
+            $("span[id$='esco" + data.coordinates + "']").addClass( "hover" );
+        }, function() {
+            $("span[id$='esco" + data.coordinates + "']").removeClass( "hover" );
+        }
+    );
     $(error).hide();
 
     var err_info = [];
@@ -190,7 +217,7 @@ function generateError(data, target) {
         text: data.attributes.msg
     });
     $(errmsg).click(function(event) {
-        errClick(event);
+        errorClick(event);
     });
     $(errmsg).prepend(errcat);
     $(errmsg).hide();
@@ -265,8 +292,7 @@ function generateError(data, target) {
 
 }
 
-function errClick(ev) {
-    console.log($(ev.target).closest('.error').children(':not(.errmsg)'));
+function errorClick(ev) {
     $(ev.target).closest('.error').children(':not(.errmsg)').slideToggle(75);
 }
 
@@ -288,11 +314,14 @@ function handleSentences(other_errors) {
         generateLines(sent_data, sent_strings, other_errors, $('#sentbox'));
 
     });
+
 }
 
 function generateLines(sent_data, sent_strings, other_errors, target) {
 
     //console.log(sent_strings);
+
+    var testtest = 0;
 
     (function sentLoop (index) {
         setTimeout(function () {
@@ -308,14 +337,40 @@ function generateLines(sent_data, sent_strings, other_errors, target) {
             });
 
             if(relevant_errors.length > 0) {
-                var textarea = $(line_data.line).find('.textarea').first();
-                //console.log(textarea);
-                insertErrors(relevant_errors, textarea, line_data.start);
+
+                var textspan = $(line_data.line).find('.textarea').children().first();
+                insertErrors(relevant_errors, textspan, line_data.start);
+
+                /*$(".span[id^='tsc']").each(function(error_span) {
+                    $(error_span).attr('id', $(error_span).attr('id').replace('tsc', 'ta'));
+                    //console.log($(error_span).attr('id'));
+                });*/
                 generateErrors(relevant_errors, line_data.line);
+
             }
 
-            if (++index < sent_strings.length) sentLoop(index);
-        }, 15)
+
+
+            //var latest_sent = $(".sent[id^='tsc']")[index];
+            //var DOMclone = latest_sent.cloneNode(true);
+            //$(DOMclone).attr('id', $(DOMclone).attr('id').replace('tsc', 'tbsc'));
+            //var latest_sent_clone = jQuery.extend(true, var dummy, latest_sent);
+            //var latest_sent_clone = $(latest_sent).clone(true, true).appendTo('#textboxarea');
+
+            //console.log(latest_sent);
+            //test_sent_clone);
+            //$(latest_sent_clone).appendTo('#textboxarea');
+
+            if (++index < sent_strings.length) {
+                sentLoop(index);
+            }else{
+                if(testtest++ == 0) {
+                    $(".sent[id^='tsc']").each(function(){
+                        $(this).clone().attr('id',$(this).attr('id').replace('tsc', 'tbsc')).appendTo('#textboxarea');
+                    });
+                }
+            }
+        }, 0)
     })(0);
 
 }
@@ -338,6 +393,7 @@ function generateLine(index, sent_string, target) {
 
     var sent_span = $('#ts' + pad(index, 2)).clone();
     $(sent_span).attr('id', 'tsc' + pad(index, 2));
+    $(sent_span).text(sent_string);
 
     var textarea = jQuery('<div/>', {
         id: 'ta' + pad(index, 2),
@@ -381,15 +437,15 @@ function insertSentences(sent_data, sent_strings, target) {
     $.each(sent_data, function (index, sent) {
 
         var sent_start = sent.tokens.token[0].CharacterOffsetBegin;
-        var sent_end = sent.tokens.token[sent.tokens.token.length - 1].CharacterOffsetEnd
+        var sent_end = sent.tokens.token[sent.tokens.token.length - 1].CharacterOffsetEnd;
 
-        var sent = original.substring(sent_start, sent_end);
+        var sent = original.substring(sent_start, sent_end)  + ' ';
         sent_strings.push(sent);
 
         var sent_span = jQuery('<span/>', {
             id: 'ts' + pad(index, 2),
             class: 'sent',
-            text: sent + ' ',
+            text: sent,
         });
         $(sent_span).attr('start', sent_start);
         $(sent_span).attr('end', sent_end);
