@@ -82,8 +82,16 @@
     cursor: pointer;
 }
 
-.err {
+.mistake {
     background: coral;
+}
+
+.mistake:hover {
+    background: turquoise;
+}
+
+.mistake.hover {
+    background: turquoise;
 }
 
 #spinnerbox {
@@ -185,11 +193,18 @@
 
     background: coral;
     text-align: center;
+
 }
 
 .errmsg:hover {
-    opacity: 0.75;
+
+    background: turquoise;
+
     cursor: pointer;
+}
+
+.error.hover .errmsg {
+    background: turquoise;
 }
 
 .errrep {
