@@ -1,40 +1,101 @@
 $( init );
 
-var test_sentences = [
-    "Fügen Sie hier Ihren Dr. text ein.",
-    "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen.",
-    "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. oder nutzen Sie diesen Text als Beispiel für ein Paar Fehler , die LanguageTool erkennen kann: Ihm wurde Angst und bange, als er davon hörte.",
-    "( Eine Rechtschreibprüfun findet findet übrigens auch statt.",
-    "Fügen Sie hier Ihren text ein. Fügen Sie hier Ihren text ein."
-];
-var selection = [0, 1, 2, 3, 4];
-var test_text = "";
+function insertTestData() {
 
-for(i = 0; i < selection.length; i++) {
-    test_text += test_sentences[selection[i]] + ' ';
+    var test_sentences = [
+        "Fügen Sie hier Ihren Dr. text ein.",
+        "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen.",
+        "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. oder nutzen Sie diesen Text als Beispiel für ein Paar Fehler , die LanguageTool erkennen kann: Ihm wurde Angst und bange, als er davon hörte.",
+        "( Eine Rechtschreibprüfun findet findet übrigens auch statt.",
+        "Fügen Sie hier Ihren text ein. Fügen Sie hier Ihren text ein."
+    ];
+    var selection = [0, 1, 2, 3, 4];
+    var test_text = "";
+
+    for(i = 0; i < selection.length; i++) {
+        test_text += test_sentences[selection[i]] + ' ';
+    }
+
+    $('#editor').text(test_text);
+
 }
-
-var sentences;
-var valid_sentences = [];
 
 function init() {
 
-    $('#textboxarea').text(test_text);
+    initialize();
 
-    $.post( "/langtool_anfrage", { sentence: test_text }, function(json){
+    insertTestData();
 
-        var sf_ws_errors = [];
+}
+
+function initialize() {
+
+    $('#sentbox').hide();
+    $('#treebox').hide();
+
+    $('#checkbutton').click(function() {
+        checkClick();
+    });
+
+}
+
+function checkClick() {
+
+    var editor_text = $('#editor').text();
+
+    $('#sentbox').slideDown(75, function() {
+
+        $(this).find('.spinnerbox').slideDown(75, function() {
+            $(this).find('.spinner').fadeIn();
+
+            checkErrors(editor_text, function(error_data) {
+
+                console.log("gathering error data ... complete!");
+
+                if(error_data.final.length == 0) {
+
+                    /*errorData.other = errorData.other.sort(function(a,b) {
+                     return b.length - a.length;
+                     });*/
+
+                    checkSentences(editor_text, error_data.other, function() {
+
+                        $('#sentbox').find('.spinner').fadeOut(function() {
+                            $(this).closest('.spinnerbox').slideUp(75);
+                        });
+
+                    });
+
+                }else{
+
+
+
+                }
+
+            });
+
+        });
+
+    });
+
+}
+
+function checkErrors(editor_text, callback) {
+
+    $.post("/langtool_anfrage", {sentence: editor_text}, function (json) {
+
+        var final_errors = [];
         var other_errors = [];
-        var other_errors_hash = [];
 
         var other_error_count = 0;
-        var other_error_coordinates = [];
 
-        $.each(json.matches.error, function(index, error) {
+        $.each(json.matches.error, function (index, error) {
 
-            if(error.attributes.msg === "Fügen Sie zwischen Sätzen ein Leerzeichen ein") {
-                sf_ws_errors.push(error);
-            }else{
+            if (error.attributes.msg === "Fügen Sie zwischen Sätzen ein Leerzeichen ein") {
+
+                final_errors.push(error);
+
+            } else {
 
                 var analysed_error = {
                     'number': other_error_count,
@@ -42,35 +103,199 @@ function init() {
                     'length': error.attributes.tox - error.attributes.fromx,
                     'attributes': error.attributes
                 };
-
+                other_errors[other_error_count++] = analysed_error;
                 console.log(analysed_error);
-
-                other_errors.push(analysed_error);
-
-                other_errors_hash[other_error_count++] = analysed_error;
-
 
             }
 
         });
 
-        if(sf_ws_errors.length == 0) {
+        callback({final: final_errors, other: other_errors});
 
-            other_errors_hash.sort(function(a,b) {
-                return b.length - a.length;
+    });
+
+}
+
+function checkSentences(editor_text, other_errors, callback) {
+
+    $.post("/stanford_anfrage", {sentences: editor_text}, function (json) {
+
+        var sentence_data = json.document.sentences.sentence;
+        var sentences = [];
+
+        $.each(sentence_data, function (index, sentence) {
+
+            var sentence_start = sentence.tokens.token[0].CharacterOffsetBegin;
+            var sentence_end = sentence.tokens.token[sentence.tokens.token.length - 1].CharacterOffsetEnd;
+
+            var sentence_string = editor_text.substring(sentence_start, sentence_end)  + ' ';
+            sentences.push({start: sentence_start, end: sentence_end, string: sentence_string});
+
+        });
+
+        //console.log(sentence_data);
+        //console.log(sentences);
+
+        generateLines(sentence_data, sentences, other_errors, $('#sentbox'), function() {
+
+            $('#editor').text('');
+
+            $.each($(".sentence[id^='ss']"), function(index, span){
+                $(span).clone(true, true).attr('id',$(this).attr('id').replace('ss', 'tbss')).appendTo('#editor');
             });
 
-            console.log(other_errors_hash);
+            var lines = $('.line');
 
-            handleSentences(other_errors);
+            (function lineLoop (index) {
+                setTimeout(function () {
 
-        }else{
+                    $(lines[index]).slideDown(15);
 
-            insertErrors(sf_ws_errors, $('#textboxarea'), 0);
-            generateErrors(sf_ws_errors, $('#textbox'));
+                    if (++index < lines.length) {
+
+                        lineLoop(index);
+
+                    }else{
+
+                        var errorboxes = $('.errorbox');
+
+                        (function errorboxLoop (index) {
+                            setTimeout(function () {
+
+                                $(errorboxes[index]).slideDown(15);
+
+                                if (++index < errorboxes.length) {
+                                    errorboxLoop(index);
+                                }else{
+
+
+
+                                }
+
+                            }, 15)
+                        })(0);
+
+                        var errors = $('.error');
+
+                        (function errorLoop (index) {
+                            setTimeout(function () {
+
+                                $(errors[index]).slideDown(15);
+
+                                if (++index < errors.length) {
+                                    errorLoop(index);
+                                }else{
+
+
+
+                                }
+
+                            }, 15)
+                        })(0);
+
+                    }
+
+                }, 15)
+            })(0);
+        });
+
+        callback();
+
+    });
+
+}
+
+function generateLines(sentence_data, sentences, other_errors, target, callback) {
+
+    $.each(sentence_data, function (index, sentence) {
+
+        var line_data = generateLine(index, sentences[index], target);
+        var relevant_errors = [];
+
+        $.each(other_errors, function(err_index, error) {
+            if (error.attributes.fromx - line_data.start >= 0 && error.attributes.tox - line_data.end <= 0) {
+                relevant_errors.push(error);
+            }
+        });
+
+        //console.log(line_data);
+        //console.log(relevant_errors);
+
+        if(relevant_errors.length > 0) {
+
+            var sentence_span = $(line_data.line).find("span[id^='ss']");
+            console.log(sentence_span);
+            insertErrors(relevant_errors, sentence_span, line_data.start);
+            generateErrors(relevant_errors, line_data.line);
+
+            /*var sentence_span = $(line_data.line).find('.textarea').children().first();
+
+             insertErrors(relevant_errors, textspan, line_data.start);
+
+             generateErrors(relevant_errors, line_data.line);*/
 
         }
+
     });
+
+    callback();
+
+}
+
+function generateLine(index, sentence, target) {
+
+    var loadbutton = jQuery('<div/>', {
+        id: 'lo' + pad(index, 2),
+        class: 'loadbutton',
+    });
+    $(loadbutton).click(function(event) {
+        loadClick(event);
+    });
+
+    var loadarea = jQuery('<div/>', {
+        id: 'la' + pad(index, 2),
+        class: 'loadarea',
+    });
+    $(loadarea).append(loadbutton);
+
+    var sentence_span = jQuery('<span/>', {
+        id: 'ss' + pad(index, 2),
+        class: 'sentence',
+        text: sentence.string,
+    });
+    $(sentence_span).attr('start', sentence.start);
+    $(sentence_span).attr('end', sentence.end);
+
+    var textarea = jQuery('<div/>', {
+        id: 'ta' + pad(index, 2),
+        class: 'textarea',
+    });
+    $(textarea).append(sentence_span);
+
+    /*var treedata = jQuery('<div/>', {
+     id: 'td' + pad(i, 2),
+     class: 'treedata',
+     text: JSON.stringify(sentences[i].parsedTree)
+     });*/
+
+    var linebox = jQuery('<div/>', {
+        id: 'lb' + pad(index, 2),
+        class: 'linebox',
+    });
+    $(linebox).append(textarea);
+    $(linebox).append(loadarea);
+
+    var line = jQuery('<div/>', {
+        id: 'll' + pad(index, 2),
+        class: 'line',
+    });
+    $(line).append(linebox);
+    $(line).hide();
+
+    $(target).append(line);
+
+    return {start: sentence.start, end: sentence.end, line: line };
+
 }
 
 function insertErrors(errlist, target, offset) {
@@ -80,25 +305,21 @@ function insertErrors(errlist, target, offset) {
 
     var last_end = 0;
 
-    (function errorLoop (index) {
-        setTimeout(function () {
+    $.each(errlist, function(index, error) {
 
-            insertError(errlist[index], target, original, last_end, offset);
-            last_end = errlist[index].attributes.tox - offset;
-            ////console.log('last');
-            ////console.log(last_end);
+        insertError(error, target, original, last_end, offset);
+        last_end = errlist[index].attributes.tox - offset;
 
-            if (++index < errlist.length) {
-                errorLoop(index);
-            }else{
-                var text = jQuery('<span/>', {
-                    class: 'text',
-                    text: original.substring(last_end, original.length)
-                });
-                $(target).append(text);
-            }
-        }, 0)
-    })(0);
+        ////console.log('last');
+        ////console.log(last_end);
+
+    });
+
+    var text = jQuery('<span/>', {
+        class: 'text',
+        text: original.substring(last_end, original.length)
+    });
+    $(target).append(text);
 
 }
 
@@ -144,7 +365,7 @@ function insertError(data, target, original, last_end, offset) {
         $(mistake).click(function() {
             $('html, body').animate({
                 scrollTop: $(".error[id$='co" + data.coordinates + "']").offset().top
-            }, 75)
+            }, 75);
             $(".error[id$='co" + data.coordinates + "']").children(':not(.errmsg)').slideDown(75);
         });
         $(target).append(mistake);
@@ -173,20 +394,10 @@ function generateErrors(errlist, target) {
         class: 'errorbox',
     });
     $(errorbox).hide();
-
     $(target).append(errorbox);
 
-    $(errorbox).slideDown(25, function() {
-
-        (function errorLoop (index) {
-            setTimeout(function () {
-
-                generateError(errlist[index], errorbox);
-
-                if (++index < errlist.length) errorLoop(index);
-            }, 15)
-        })(0);
-
+    $.each(errlist, function(index, error) {
+        generateError(error, errorbox);
     });
 
 }
@@ -220,7 +431,7 @@ function generateError(data, target) {
         errorClick(event);
     });
     $(errmsg).prepend(errcat);
-    $(errmsg).hide();
+    //$(errmsg).hide();
     err_info.push(errmsg);
     $(error).append(errmsg);
 
@@ -277,18 +488,18 @@ function generateError(data, target) {
 
     $(target).append(error);
 
-    $(error).slideDown(15, function() {
+    /*$(error).slideDown(15, function() {
 
-        (function infoLoop (index) {
-            setTimeout(function () {
+     (function infoLoop (index) {
+     setTimeout(function () {
 
-                $(err_info[index]).slideDown(15);
+     $(err_info[index]).slideDown(15);
 
-                if (++index < err_info.length) infoLoop(index);
-            }, 15)
-        })(0);
+     if (++index < err_info.length) infoLoop(index);
+     }, 15)
+     })(0);
 
-    });
+     });*/
 
 }
 
@@ -296,28 +507,80 @@ function errorClick(ev) {
     $(ev.target).closest('.error').children(':not(.errmsg)').slideToggle(75);
 }
 
-function handleSentences(other_errors) {
+function handleSentences(editor_text, other_errors, callback) {
 
     var sent_strings = [];
 
-    $.post("/stanford_anfrage", {sentences: test_text}, function (json) {
-
-        $('#spinner').addClass('close');
-        $('#spinnerbox').slideUp();
-        hideSpinner = setTimeout(function () {
-            $('#spinner').hide();
-        }, 450);
+    $.post("/stanford_anfrage", {sentences: editor_text}, function (json) {
 
         var sent_data = json.document.sentences.sentence;
 
         insertSentences(sent_data, sent_strings, $('#textboxarea'));
         generateLines(sent_data, sent_strings, other_errors, $('#sentbox'));
 
+        callback();
+
     });
 
 }
 
-function generateLines(sent_data, sent_strings, other_errors, target) {
+function old_init() {
+
+    $('#textboxarea').text(test_text);
+
+    $.post( "/langtool_anfrage", { sentence: test_text }, function(json){
+
+        var sf_ws_errors = [];
+        var other_errors = [];
+        var other_errors_hash = [];
+
+        var other_error_count = 0;
+        var other_error_coordinates = [];
+
+        $.each(json.matches.error, function(index, error) {
+
+            if(error.attributes.msg === "Fügen Sie zwischen Sätzen ein Leerzeichen ein") {
+                sf_ws_errors.push(error);
+            }else{
+
+                var analysed_error = {
+                    'number': other_error_count,
+                    'coordinates': '' + error.attributes.fromx + error.attributes.tox,
+                    'length': error.attributes.tox - error.attributes.fromx,
+                    'attributes': error.attributes
+                };
+
+                console.log(analysed_error);
+
+                other_errors.push(analysed_error);
+                other_errors_hash[other_error_count++] = analysed_error;
+
+
+            }
+
+        });
+
+        if(sf_ws_errors.length == 0) {
+
+            other_errors_hash.sort(function(a,b) {
+                return b.length - a.length;
+            });
+
+            console.log(other_errors_hash);
+
+            handleSentences(other_errors);
+
+        }else{
+
+            insertErrors(sf_ws_errors, $('#textboxarea'), 0);
+            generateErrors(sf_ws_errors, $('#textbox'));
+
+        }
+    });
+
+}
+
+function generateLines2(sent_data, sent_strings, other_errors, target) {
 
     //console.log(sent_strings);
 
@@ -366,66 +629,13 @@ function generateLines(sent_data, sent_strings, other_errors, target) {
             }else{
                 if(testtest++ == 0) {
                     $(".sent[id^='tsc']").each(function(){
-                        $(this).clone().attr('id',$(this).attr('id').replace('tsc', 'tbsc')).appendTo('#textboxarea');
+                        $(this).clone().attr('id',$(this).attr('id').replace('ss', 'tbss')).appendTo('#editor');
+                        console.log('clone');
                     });
                 }
             }
         }, 0)
     })(0);
-
-}
-
-function generateLine(index, sent_string, target) {
-
-    var loadbutton = jQuery('<div/>', {
-        id: 'lo' + pad(index, 2),
-        class: 'loadbutton',
-    });
-    $(loadbutton).click(function(event) {
-        loadClick(event);
-    });
-
-    var loadarea = jQuery('<div/>', {
-        id: 'la' + pad(index, 2),
-        class: 'loadarea',
-    });
-    $(loadarea).append(loadbutton);
-
-    var sent_span = $('#ts' + pad(index, 2)).clone();
-    $(sent_span).attr('id', 'tsc' + pad(index, 2));
-    $(sent_span).text(sent_string);
-
-    var textarea = jQuery('<div/>', {
-        id: 'ta' + pad(index, 2),
-        class: 'textarea',
-    });
-    $(textarea).append(sent_span);
-
-    /*var treedata = jQuery('<div/>', {
-     id: 'td' + pad(i, 2),
-     class: 'treedata',
-     text: JSON.stringify(sentences[i].parsedTree)
-     });*/
-
-    var linebox = jQuery('<div/>', {
-        id: 'lb' + pad(index, 2),
-        class: 'linebox',
-    });
-    $(linebox).append(textarea);
-    $(linebox).append(loadarea);
-
-    var line = jQuery('<div/>', {
-        id: 'll' + pad(index, 2),
-        class: 'line',
-    });
-    $(line).append(linebox);
-    $(line).hide();
-
-    $(target).append(line);
-
-    $(line).slideDown(25);
-
-    return {'start': $(sent_span).attr('start'), 'end': $(sent_span).attr('end'), 'line': line };
 
 }
 
@@ -643,4 +853,31 @@ function traverseParseTree(tree){
 function pad (str, max) {
     str = str.toString();
     return str.length < max ? pad("0" + str, max) : str;
+}
+
+function getSentenceStrings(editor_text, sentence_data) {
+
+    var sentence_strings = [];
+
+    $.each(sentence_data, function (index, sentence) {
+
+        var sentence_start = sentence.tokens.token[0].CharacterOffsetBegin;
+        var sentence_end = sentence.tokens.token[sentence.tokens.token.length - 1].CharacterOffsetEnd;
+
+        var sentence_string = editor_text.substring(sentence_start, sentence_end)  + ' ';
+        sentence_strings.push(sentence_string);
+
+        /*var sentence_span = jQuery('<span/>', {
+         id: 'ts' + pad(index, 2),
+         class: 'sentence',
+         text: sentence_string,
+         });
+         $(sentence_span).attr('start', sentence_start);
+         $(sentence_span).attr('end', sentence_end);
+         $(target).append(sentence_span);*/
+
+    });
+
+    return sentence_strings;
+
 }
