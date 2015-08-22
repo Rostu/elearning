@@ -30,6 +30,7 @@ function init() {
 
 function initialize() {
 
+    $('#textoverlay').hide();
     $('#sentbox').hide();
     $('#treebox').hide();
 
@@ -42,35 +43,48 @@ function initialize() {
 function checkClick() {
 
     var editor_text = $('#editor').text();
+    $('#editor').text(editor_text);
+    console.log(editor_text);
 
-    $('#sentbox').slideDown(75, function() {
+    /*$('#editor').slideUp();
+    $('#checkarea').slideUp();*/
 
-        $(this).find('.spinnerbox').slideDown(75, function() {
-            $(this).find('.spinner').fadeIn();
+    $('#textoverlay').fadeIn(25, function() {
 
-            checkErrors(editor_text, function(error_data) {
+        $('#textbox').find('.spinnerbox').slideDown(25, function() {
 
-                console.log("gathering error data ... complete!");
+            $(this).find('.spinner').fadeIn(25);
 
-                if(error_data.final.length == 0) {
+            hideLines(function() {
 
-                    /*errorData.other = errorData.other.sort(function(a,b) {
-                     return b.length - a.length;
-                     });*/
+                $('.line').remove();
 
-                    checkSentences(editor_text, error_data.other, function() {
+                checkErrors(editor_text, function (error_data) {
 
-                        $('#sentbox').find('.spinner').fadeOut(function() {
-                            $(this).closest('.spinnerbox').slideUp(75);
+                    //console.log("gathering error data ... complete!");
+
+                    if (error_data.final.length == 0) {
+
+                        /*errorData.other = errorData.other.sort(function(a,b) {
+                         return b.length - a.length;
+                         });*/
+
+                        checkSentences(editor_text, error_data.other, function () {
+
+                            $('#textbox').find('.spinner').fadeOut(25, function () {
+                                $(this).closest('.spinnerbox').slideUp(25, function () {
+                                    $(this).closest('#textoverlay').fadeOut(25);
+                                });
+                            });
+
                         });
 
-                    });
-
-                }else{
+                    } else {
 
 
+                    }
 
-                }
+                });
 
             });
 
@@ -104,7 +118,7 @@ function checkErrors(editor_text, callback) {
                     'attributes': error.attributes
                 };
                 other_errors[other_error_count++] = analysed_error;
-                console.log(analysed_error);
+                //console.log(analysed_error);
 
             }
 
@@ -138,70 +152,108 @@ function checkSentences(editor_text, other_errors, callback) {
 
         generateLines(sentence_data, sentences, other_errors, $('#sentbox'), function() {
 
+            //clone lines and replace editor text with them
             $('#editor').text('');
 
-            $.each($(".sentence[id^='ss']"), function(index, span){
+            $.each($(".sentence[id^='ss']"), function(index, span) {
                 $(span).clone(true, true).attr('id',$(this).attr('id').replace('ss', 'tbss')).appendTo('#editor');
             });
 
-            var lines = $('.line');
+            $.each($('#textbox').find(".mistake[id^='esco']"), function(index, span) {
+                $(span).attr('id', 't' + $(this).attr('id'));
+            });
 
-            (function lineLoop (index) {
-                setTimeout(function () {
+            displayLines();
 
-                    $(lines[index]).slideDown(15);
+            callback();
 
-                    if (++index < lines.length) {
-
-                        lineLoop(index);
-
-                    }else{
-
-                        var errorboxes = $('.errorbox');
-
-                        (function errorboxLoop (index) {
-                            setTimeout(function () {
-
-                                $(errorboxes[index]).slideDown(15);
-
-                                if (++index < errorboxes.length) {
-                                    errorboxLoop(index);
-                                }else{
-
-
-
-                                }
-
-                            }, 15)
-                        })(0);
-
-                        var errors = $('.error');
-
-                        (function errorLoop (index) {
-                            setTimeout(function () {
-
-                                $(errors[index]).slideDown(15);
-
-                                if (++index < errors.length) {
-                                    errorLoop(index);
-                                }else{
-
-
-
-                                }
-
-                            }, 15)
-                        })(0);
-
-                    }
-
-                }, 15)
-            })(0);
         });
 
-        callback();
+    });
+
+}
+
+function displayLines() {
+
+    $('#sentbox').slideDown(25, function() {
+
+        var lines = $('.line');
+
+        (function lineLoop(index) {
+            setTimeout(function () {
+
+                $(lines[index]).slideDown(25);
+
+                if (++index < lines.length) {
+
+                    lineLoop(index);
+
+                } else {
+
+                    var errorboxes = $('.errorbox');
+
+                    (function errorboxLoop(index) {
+                        setTimeout(function () {
+
+                            $(errorboxes[index]).slideDown(25);
+
+                            if (++index < errorboxes.length) {
+                                errorboxLoop(index);
+                            }
+
+                        }, 25)
+                    })(0);
+
+                    var errors = $('.error');
+
+                    (function errorLoop(index) {
+                        setTimeout(function () {
+
+                            $(errors[index]).slideDown(25);
+
+                            if (++index < errors.length) {
+                                errorLoop(index);
+                            }
+
+                        }, 25)
+                    })(0);
+
+                }
+
+            }, 25)
+        })(0);
 
     });
+
+}
+
+function hideLines(callback) {
+
+    var lines = $('.line');
+
+    if (lines) {
+
+        (function lineLoop (index) {
+            setTimeout(function () {
+
+                $(lines[index]).slideUp(25);
+
+                if (++index < lines.length) {
+
+                    lineLoop(index);
+
+                }else{
+
+                    $('#sentbox').slideUp(25);
+
+                    callback();
+
+                }
+
+            }, 5)
+        })(0);
+
+    }
 
 }
 
@@ -224,7 +276,7 @@ function generateLines(sentence_data, sentences, other_errors, target, callback)
         if(relevant_errors.length > 0) {
 
             var sentence_span = $(line_data.line).find("span[id^='ss']");
-            console.log(sentence_span);
+
             insertErrors(relevant_errors, sentence_span, line_data.start);
             generateErrors(relevant_errors, line_data.line);
 
@@ -295,95 +347,6 @@ function generateLine(index, sentence, target) {
     $(target).append(line);
 
     return {start: sentence.start, end: sentence.end, line: line };
-
-}
-
-function insertErrors(errlist, target, offset) {
-
-    var original = target.text();
-    target.text('');
-
-    var last_end = 0;
-
-    $.each(errlist, function(index, error) {
-
-        insertError(error, target, original, last_end, offset);
-        last_end = errlist[index].attributes.tox - offset;
-
-        ////console.log('last');
-        ////console.log(last_end);
-
-    });
-
-    var text = jQuery('<span/>', {
-        class: 'text',
-        text: original.substring(last_end, original.length)
-    });
-    $(target).append(text);
-
-}
-
-function insertError(data, target, original, last_end, offset) {
-
-    var err_start = data.attributes.fromx - offset;
-    var err_end = data.attributes.tox - offset;
-
-    var err_string = original.substring(err_start, err_end);
-
-    ////console.log('computed');
-    ////console.log(err_start - last_end);
-
-    if(err_start - last_end > 0) {
-
-        var text = jQuery('<span/>', {
-            class: 'text',
-            text: original.substring(last_end, err_start)
-        });
-        $(target).append(text);
-
-    }else{
-
-        console.log("Uh, oh! We've hit a snag!!");
-
-    }
-
-    if($('#' + 'esco' + data.coordinates).length == 0) {
-
-        var mistake = jQuery('<span/>', {
-            id: 'esco' + data.coordinates,
-            class: 'mistake',
-            original: err_string,
-            text: err_string
-        });
-        $(mistake).hover(
-            function() {
-                $(".error[id$='co" + data.coordinates + "']").addClass( "hover" );
-            }, function() {
-                $(".error[id$='co" + data.coordinates + "']").removeClass( "hover" );
-            }
-        );
-        $(mistake).click(function() {
-            $('html, body').animate({
-                scrollTop: $(".error[id$='co" + data.coordinates + "']").offset().top
-            }, 75);
-            $(".error[id$='co" + data.coordinates + "']").children(':not(.errmsg)').slideDown(75);
-        });
-        $(target).append(mistake);
-
-        //var old_target_id = $(target).attr('id');
-        //var tbs_target_id = 'ts' + old_target_id.slice(2, old_target_id.length);
-
-        //console.log(old_target_id);
-        //console.log(tbs_target_id);
-
-    }
-
-    //console.log('start');
-    //console.log(err_start);
-    //console.log('end');
-    //console.log(err_end);
-    //console.log('err');
-    //console.log(err_string);
 
 }
 
@@ -488,181 +451,113 @@ function generateError(data, target) {
 
     $(target).append(error);
 
-    /*$(error).slideDown(15, function() {
+    /*$(error).slideDown(25, function() {
 
      (function infoLoop (index) {
      setTimeout(function () {
 
-     $(err_info[index]).slideDown(15);
+     $(err_info[index]).slideDown(25);
 
      if (++index < err_info.length) infoLoop(index);
-     }, 15)
+     }, 25)
      })(0);
 
      });*/
 
 }
 
-function errorClick(ev) {
-    $(ev.target).closest('.error').children(':not(.errmsg)').slideToggle(75);
-}
-
-function handleSentences(editor_text, other_errors, callback) {
-
-    var sent_strings = [];
-
-    $.post("/stanford_anfrage", {sentences: editor_text}, function (json) {
-
-        var sent_data = json.document.sentences.sentence;
-
-        insertSentences(sent_data, sent_strings, $('#textboxarea'));
-        generateLines(sent_data, sent_strings, other_errors, $('#sentbox'));
-
-        callback();
-
-    });
-
-}
-
-function old_init() {
-
-    $('#textboxarea').text(test_text);
-
-    $.post( "/langtool_anfrage", { sentence: test_text }, function(json){
-
-        var sf_ws_errors = [];
-        var other_errors = [];
-        var other_errors_hash = [];
-
-        var other_error_count = 0;
-        var other_error_coordinates = [];
-
-        $.each(json.matches.error, function(index, error) {
-
-            if(error.attributes.msg === "Fügen Sie zwischen Sätzen ein Leerzeichen ein") {
-                sf_ws_errors.push(error);
-            }else{
-
-                var analysed_error = {
-                    'number': other_error_count,
-                    'coordinates': '' + error.attributes.fromx + error.attributes.tox,
-                    'length': error.attributes.tox - error.attributes.fromx,
-                    'attributes': error.attributes
-                };
-
-                console.log(analysed_error);
-
-                other_errors.push(analysed_error);
-                other_errors_hash[other_error_count++] = analysed_error;
-
-
-            }
-
-        });
-
-        if(sf_ws_errors.length == 0) {
-
-            other_errors_hash.sort(function(a,b) {
-                return b.length - a.length;
-            });
-
-            console.log(other_errors_hash);
-
-            handleSentences(other_errors);
-
-        }else{
-
-            insertErrors(sf_ws_errors, $('#textboxarea'), 0);
-            generateErrors(sf_ws_errors, $('#textbox'));
-
-        }
-    });
-
-}
-
-function generateLines2(sent_data, sent_strings, other_errors, target) {
-
-    //console.log(sent_strings);
-
-    var testtest = 0;
-
-    (function sentLoop (index) {
-        setTimeout(function () {
-
-            var line_data = generateLine(index, sent_strings[index], target);
-            var relevant_errors = [];
-
-            $.each(other_errors, function(err_index, error) {
-                if (error.attributes.fromx - line_data.start >= 0 && error.attributes.tox - line_data.end <= 0) {
-                    relevant_errors.push(error);
-                    ////console.log('haha!' + index + ':' + err_index);
-                }
-            });
-
-            if(relevant_errors.length > 0) {
-
-                var textspan = $(line_data.line).find('.textarea').children().first();
-                insertErrors(relevant_errors, textspan, line_data.start);
-
-                /*$(".span[id^='tsc']").each(function(error_span) {
-                    $(error_span).attr('id', $(error_span).attr('id').replace('tsc', 'ta'));
-                    //console.log($(error_span).attr('id'));
-                });*/
-                generateErrors(relevant_errors, line_data.line);
-
-            }
-
-
-
-            //var latest_sent = $(".sent[id^='tsc']")[index];
-            //var DOMclone = latest_sent.cloneNode(true);
-            //$(DOMclone).attr('id', $(DOMclone).attr('id').replace('tsc', 'tbsc'));
-            //var latest_sent_clone = jQuery.extend(true, var dummy, latest_sent);
-            //var latest_sent_clone = $(latest_sent).clone(true, true).appendTo('#textboxarea');
-
-            //console.log(latest_sent);
-            //test_sent_clone);
-            //$(latest_sent_clone).appendTo('#textboxarea');
-
-            if (++index < sent_strings.length) {
-                sentLoop(index);
-            }else{
-                if(testtest++ == 0) {
-                    $(".sent[id^='tsc']").each(function(){
-                        $(this).clone().attr('id',$(this).attr('id').replace('ss', 'tbss')).appendTo('#editor');
-                        console.log('clone');
-                    });
-                }
-            }
-        }, 0)
-    })(0);
-
-}
-
-function insertSentences(sent_data, sent_strings, target) {
+function insertErrors(errlist, target, offset) {
 
     var original = target.text();
     target.text('');
 
-    $.each(sent_data, function (index, sent) {
+    var last_end = 0;
 
-        var sent_start = sent.tokens.token[0].CharacterOffsetBegin;
-        var sent_end = sent.tokens.token[sent.tokens.token.length - 1].CharacterOffsetEnd;
+    $.each(errlist, function(index, error) {
 
-        var sent = original.substring(sent_start, sent_end)  + ' ';
-        sent_strings.push(sent);
+        insertError(error, target, original, last_end, offset);
+        last_end = errlist[index].attributes.tox - offset;
 
-        var sent_span = jQuery('<span/>', {
-            id: 'ts' + pad(index, 2),
-            class: 'sent',
-            text: sent,
-        });
-        $(sent_span).attr('start', sent_start);
-        $(sent_span).attr('end', sent_end);
-        $(target).append(sent_span);
+        ////console.log('last');
+        ////console.log(last_end);
 
     });
 
+    var text = jQuery('<span/>', {
+        class: 'text',
+        text: original.substring(last_end, original.length)
+    });
+    $(target).append(text);
+
+}
+
+function insertError(data, target, original, last_end, offset) {
+
+    var err_start = data.attributes.fromx - offset;
+    var err_end = data.attributes.tox - offset;
+
+    var err_string = original.substring(err_start, err_end);
+
+    ////console.log('computed');
+    ////console.log(err_start - last_end);
+
+    if(err_start - last_end > 0) {
+
+        var text = jQuery('<span/>', {
+            class: 'text',
+            text: original.substring(last_end, err_start)
+        });
+        $(target).append(text);
+
+    }else{
+
+        console.log("Uh, oh! We've hit a snag!!");
+
+    }
+
+    if($('#' + 'esco' + data.coordinates).length == 0) {
+
+        var mistake = jQuery('<span/>', {
+            id: 'esco' + data.coordinates,
+            class: 'mistake',
+            original: err_string,
+            text: err_string
+        });
+        $(mistake).hover(
+            function() {
+                $(".error[id$='co" + data.coordinates + "']").addClass( "hover" );
+            }, function() {
+                $(".error[id$='co" + data.coordinates + "']").removeClass( "hover" );
+            }
+        );
+        $(mistake).click(function() {
+            $('html, body').animate({
+                scrollTop: $(".error[id$='co" + data.coordinates + "']").offset().top
+            }, 25);
+            $(".error[id$='co" + data.coordinates + "']").children(':not(.errmsg)').slideDown(25);
+        });
+        $(target).append(mistake);
+
+        //var old_target_id = $(target).attr('id');
+        //var tbs_target_id = 'ts' + old_target_id.slice(2, old_target_id.length);
+
+        //console.log(old_target_id);
+        //console.log(tbs_target_id);
+
+    }
+
+    //console.log('start');
+    //console.log(err_start);
+    //console.log('end');
+    //console.log(err_end);
+    //console.log('err');
+    //console.log(err_string);
+
+}
+
+//event handling
+function errorClick(event) {
+    $(event.target).closest('.error').children(':not(.errmsg)').slideToggle(25);
 }
 
 function loadClick(ev) {
@@ -850,34 +745,8 @@ function traverseParseTree(tree){
     return tree;
 }
 
+//helper functions
 function pad (str, max) {
     str = str.toString();
     return str.length < max ? pad("0" + str, max) : str;
-}
-
-function getSentenceStrings(editor_text, sentence_data) {
-
-    var sentence_strings = [];
-
-    $.each(sentence_data, function (index, sentence) {
-
-        var sentence_start = sentence.tokens.token[0].CharacterOffsetBegin;
-        var sentence_end = sentence.tokens.token[sentence.tokens.token.length - 1].CharacterOffsetEnd;
-
-        var sentence_string = editor_text.substring(sentence_start, sentence_end)  + ' ';
-        sentence_strings.push(sentence_string);
-
-        /*var sentence_span = jQuery('<span/>', {
-         id: 'ts' + pad(index, 2),
-         class: 'sentence',
-         text: sentence_string,
-         });
-         $(sentence_span).attr('start', sentence_start);
-         $(sentence_span).attr('end', sentence_end);
-         $(target).append(sentence_span);*/
-
-    });
-
-    return sentence_strings;
-
 }
