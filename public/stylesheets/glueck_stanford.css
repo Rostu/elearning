@@ -1,5 +1,10 @@
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 
+#Aufgabenbox {
+    color: white;
+    background: #7AB3E3;
+}
+
 #flexbox {
 
     display: flex; /* or inline-flex */
@@ -32,7 +37,7 @@
     align-items: stretch;
     align-content: stretch;
 
-    background: yellowgreen;
+    background: #A6D1F5;
 
 }
 
@@ -57,14 +62,17 @@
     align-items: stretch;
     align-content: stretch;
 
-    background: white;
+    background: #A6D1F5;
     opacity: 0.85;
 
 }
 
 #editor {
 
-    padding: 10px 0 10px 10px;
+    overflow: auto;
+
+    margin: 10px 0 10px 10px;
+    padding: 10px;
 
     width: 80%;
     line-height: 20px;
@@ -72,9 +80,12 @@
     flex: 1 1 auto;
     align-self: auto;
 
-    background: yellow;
+    background: aliceblue;
 
     white-space: pre-wrap;
+
+    -moz-appearance: textfield-multiline;
+    -webkit-appearance: textarea;
 
 }
 
@@ -82,7 +93,7 @@
     white-space: pre-wrap;
 }
 
-#checkarea {
+#checkarea, .loadarea {
 
     display: flex; /* or inline-flex */
 
@@ -93,10 +104,10 @@
 
     align-items: center;
 
-    background: greenyellow;
+    background: #A6D1F5;
 }
 
-#checkbutton {
+#checkbutton, .loadbutton {
 
     height: 20px;
     width: 20px;
@@ -104,7 +115,7 @@
     flex: 0 1 auto;
     align-self: auto;
 
-    background: green;
+    background: #005E9C;
 }
 
 #checkbutton:hover {
@@ -115,7 +126,8 @@
 }
 
 .mistake {
-    background: coral;
+    color: white;
+    background: #A91211;
 }
 
 .mistake:hover {
@@ -144,7 +156,7 @@
     align-items: stretch;
     align-content: stretch;
 
-    background: orange;
+    background: #A6D1F5;
 }
 
 .line {
@@ -162,13 +174,12 @@
     align-items: stretch;
     align-content: stretch;
 
-    background: orangered;
+    background: red;
 }
 
-.errorbox {
-    display: flex; /* or inline-flex */
+.linebox {
 
-    padding: 0 10px 10px 0;
+    display: flex; /* or inline-flex */
 
     width: 80%;
 
@@ -180,14 +191,66 @@
     align-items: stretch;
     align-content: stretch;
 
-    background: darkred;
+    background: greenyellow;
+}
+
+.textarea {
+
+    padding: 10px 12px 0;
+
+    width: 80%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    background: aliceblue;
+
+}
+
+.loadarea {
+    background: aliceblue;
+}
+
+.loadbutton:hover {
+
+    background: blue !important;
+
+    cursor: pointer;
+}
+
+.linebox.active .loadbutton {
+
+    background: darkturquoise;
+}
+
+.dataarea {
+
+    display: none;
+}
+
+.errorbox {
+    display: flex; /* or inline-flex */
+
+    padding: 0 0 0 10px;
+
+    width: 80%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    background: aliceblue;
 }
 
 .error {
 
     display: flex; /* or inline-flex */
 
-    margin: 10px 0 0 10px;
+    margin: 0 10px 10px 0;
 
     width: 80%;
 
@@ -199,7 +262,7 @@
     align-items: stretch;
     align-content: stretch;
 
-    background: lightblue;
+    background: yellow;
 }
 
 .errmsg {
@@ -211,9 +274,21 @@
     flex: 1 1 auto;
     align-self: auto;
 
-    background: coral;
+    color: white;
+    background: #A91211;
+
     text-align: center;
 
+}
+
+.errmsg.open:hover {
+    background: #A91211 url("../images/button_up2.gif") no-repeat right;
+    background-size: 40px 40px;
+}
+
+.errmsg.closed:hover {
+    background: #A91211 url("../images/button_down2.gif") no-repeat right center;
+    background-size: 40px 40px;
 }
 
 .errmsg:hover {
@@ -266,78 +341,6 @@
 
     background: paleturquoise;
     text-align: center;
-}
-
-.linebox {
-
-    display: flex; /* or inline-flex */
-
-    width: 100%;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
-
-    background: greenyellow;
-}
-
-.textarea {
-
-    padding: 10px;
-
-    width: 80%;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
-    background: lightgoldenrodyellow;
-}
-
-.loadarea {
-
-    display: flex; /* or inline-flex */
-
-    padding: 10px;
-
-    flex: 0 1 auto;
-    align-self: auto;
-
-    align-items: center;
-
-    background: greenyellow;
-}
-
-.loadbutton {
-
-    height: 20px;
-    width: 20px;
-
-    flex: 0 1 auto;
-    align-self: auto;
-
-    background: green;
-    border-radius: 20px;
-}
-
-.loadbutton:hover {
-
-    background: blue !important;
-
-    cursor: pointer;
-}
-
-.linebox.active .loadbutton {
-
-    background: darkturquoise;
-}
-
-.dataarea {
-
-    display: none;
 }
 
 #treebox {
@@ -409,7 +412,7 @@
     flex: 0 1 auto;
     align-self: auto;
 
-    background-color: #333;
+    background-color: #005E9C;
 
     -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
     animation: sk-rotateplane 1.2s infinite ease-in-out;

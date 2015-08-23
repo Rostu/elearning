@@ -367,6 +367,8 @@ function generateErrors(errlist, target) {
 
 function generateError(data, target) {
 
+    var additional = false;
+
     var error = jQuery('<div/>', {
         id: 'er' + pad(data.number, 2) + 'co' + data.coordinates,
         class: 'error'
@@ -391,7 +393,7 @@ function generateError(data, target) {
         text: data.attributes.msg
     });
     $(errmsg).click(function(event) {
-        errorClick(event);
+        errorClick(event.target);
     });
     $(errmsg).prepend(errcat);
     //$(errmsg).hide();
@@ -399,6 +401,8 @@ function generateError(data, target) {
     $(error).append(errmsg);
 
     if(data.attributes.replacements) {
+
+        additional = true;
 
         var errrep = jQuery('<div/>', {
             class: 'errrep',
@@ -425,6 +429,8 @@ function generateError(data, target) {
 
     if(data.attributes.url) {
 
+        additional = true;
+
         var url = jQuery('<a/>', {
             target: 'blank',
             text: 'Mehr Informationen',
@@ -441,13 +447,17 @@ function generateError(data, target) {
 
     }
 
-    var errdat = jQuery('<div/>', {
+    /*var errdat = jQuery('<div/>', {
         class: 'errdat',
         text: JSON.stringify(data.attributes)
     });
     $(errdat).hide();
     //err_info.push(errdat);
-    $(error).append(errdat);
+    $(error).append(errdat);*/
+
+    if(additional) {
+        $(errmsg).addClass('closed');
+    }
 
     $(target).append(error);
 
@@ -530,11 +540,11 @@ function insertError(data, target, original, last_end, offset) {
                 $(".error[id$='co" + data.coordinates + "']").removeClass( "hover" );
             }
         );
-        $(mistake).click(function() {
+        $(mistake).dblclick(function(event) {
             $('html, body').animate({
                 scrollTop: $(".error[id$='co" + data.coordinates + "']").offset().top
             }, 25);
-            $(".error[id$='co" + data.coordinates + "']").children(':not(.errmsg)').slideDown(25);
+            errorClick($(".error[id$='co" + data.coordinates + "']").find('.errmsg'));
         });
         $(target).append(mistake);
 
@@ -556,8 +566,15 @@ function insertError(data, target, original, last_end, offset) {
 }
 
 //event handling
-function errorClick(event) {
-    $(event.target).closest('.error').children(':not(.errmsg)').slideToggle(25);
+function errorClick(target) {
+    if($(target).hasClass('closed')) {
+        $(target).removeClass('closed');
+        $(target).addClass('open');
+    }else if($(target).hasClass('open')){
+        $(target).removeClass('open');
+        $(target).addClass('closed');
+    }
+    $(target).closest('.error').children(':not(.errmsg)').slideToggle(25);
 }
 
 function loadClick(ev) {
