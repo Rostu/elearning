@@ -1,4 +1,6 @@
 var dbh = require('./../shared/routes/dbhandler');
+var http = require('http');
+var request = require("request");
 
 
 exports.get_feedback = function(req, res){
@@ -45,3 +47,29 @@ exports.deletefeedback = function(req, res){
     dbh.delfeedback(req.params.id);
     res.render('showfeedback');
 };
+
+
+exports.get_correction = function(request, result) {
+
+    var sentence = request.param("sentence");
+
+    var options = {
+        host: 'localhost',
+        port: 8081,
+        path: '/?language=de&text=wo+bist+du',
+        method: 'GET'
+    };
+
+    http.request(options, function(res) {
+        console.log('STATUS: ' + res.statusCode);
+        console.log('HEADERS: ' + JSON.stringify(res.headers));
+        res.setEncoding('utf8');
+        res.on('data', function (chunk) {
+            result.send(chunk);
+        });
+
+    }).end();
+}
+
+
+

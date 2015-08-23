@@ -226,6 +226,10 @@ exports.get_zukunft_Kreuzwortraetsel = function(req, res){
     res.render('zukunft_Kreuzwortraetsel');
 };
 
+exports.get_testy = function(req, res){
+    res.render('testy');
+};
+
 exports.get_next = function(req, res){
     var lastsite = req.param("last");
     lastsite = lastsite.replace("/","");

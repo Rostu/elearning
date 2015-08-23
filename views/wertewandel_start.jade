@@ -5,60 +5,54 @@ block content
         h1 Wertewandel
     #tasks.startpanel
         div.panelheader
-            div.panelarrow
             h2 Lektionen
-        #tasklist.panelcontent
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Textverstehen: Schlüsselwörter
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='wertewandel_Textverstehen_Schluesselwoerter')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Wortbedeutung verstehen
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='wertewandel_Wortbedeutung_verstehen')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Textverstehen: Kernaussagen
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='wertewandel_Textverstehen_Kernaussagen')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Textproduktion: Statistische Angaben
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='wertewandel_Textproduktion_Statistische_Angaben')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
-    #media.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Medien
-        #mediashow.panelcontent
-            div.mediaelement
-                img.mediaimage.text_media(src='/images/media_icon_text.png')
+        #content
+            #content_image
+                img(src='images/bild.png')
+            #content_content
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='wertewandel_Textverstehen_Schluesselwoerter')
+                            div.t_title
+                                p Textverstehen: Schlüsselwörter
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='wertewandel_Wortbedeutung_verstehen')
+                            div.t_title
+                                p Wortbedeutung verstehen
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='wertewandel_Textverstehen_Kernaussagen')
+                            div.t_title
+                                p Textverstehen: Kernaussagen
+                            div.text_media.mediaelement
+                                div.task
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='wertewandel_Textproduktion_Statistische_Angaben')
+                            div.t_title
+                                p Textproduktion: Statistische Angaben
+                            div.text_media.mediaelement
+
+
 
 
 block overlay
