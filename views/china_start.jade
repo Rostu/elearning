@@ -5,50 +5,39 @@ block content
         h1 China
     #tasks.startpanel
         div.panelheader
-            div.panelarrow
             h2 Lektionen
-        #tasklist.panelcontent
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Textverstehen: Wortfeld Studium
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='china_Textverstehen_Wortfeld_Studium')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Wortschatz ordnen
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='china_Wortschatz_ordnen')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Textverstehen: Redewiedergabe
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='china_Textverstehen_Redewiedergabe')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='images/media_icon_text.png')
-    #media.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Medien
-        #mediashow.panelcontent
-            div.mediaelement
-                img.mediaimage.text_media(src='images/media_icon_text.png')
-
+        #content
+            #content_image
+                img(src='images/bild.png')
+            #content_content
+                div.task
+                    div.taskbar
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='china_Textverstehen_Wortfeld_Studium')
+                            div.t_title
+                                p Textverstehen: Wortfeld Studium
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='china_Wortschatz_ordnen')
+                            div.t_title
+                                p Wortschatz ordnen
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='china_Textverstehen_Redewiedergabe')
+                            div.t_title
+                                p Textverstehen: Redewiedergabe
+                            div.text_media.mediaelement
+                                
 block overlay
     #overlaycontentbox
         .Zeitung
