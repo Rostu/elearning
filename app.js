@@ -110,7 +110,6 @@ app.get('/handy_task2', ubung.get_handy_task2);
 app.get('/home', start.start);
 app.get('/testy', ubung.get_testy);
 app.get('/impressum', impressum.get_imp);
-app.get('/correction', feed.get_correction);
 app.get('/glueck_Memory', ubung.get_glueck_memory);
 app.get('/glueck_Textverstehen_Wortspirale', ubung.get_glueck_Textverstehen_Wortspirale);
 app.get('/neuanlegen', ubung.neu);
