@@ -1,25 +1,5 @@
 $( init );
 
-function insertTestData() {
-
-    var test_sentences = [
-        "Fügen Sie hier Ihren Dr. text ein.",
-        "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen.",
-        "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. oder nutzen Sie diesen Text als Beispiel für ein Paar Fehler , die LanguageTool erkennen kann: Ihm wurde Angst und bange, als er davon hörte.",
-        "( Eine Rechtschreibprüfun findet findet übrigens auch statt.",
-        "Fügen Sie hier Ihren text ein. Fügen Sie hier Ihren text ein."
-    ];
-    var selection = [0, 1, 2, 3, 4];
-    var test_text = "";
-
-    for(i = 0; i < selection.length; i++) {
-        test_text += test_sentences[selection[i]] + ' ';
-    }
-
-    $('#editor').text(test_text);
-
-}
-
 function init() {
 
     initialize();
@@ -40,14 +20,45 @@ function initialize() {
 
 }
 
+function insertTestData() {
+
+    var test_sentences = [
+        "Fügen Sie hier Ihren Dr. text ein.",
+        "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen.",
+        "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. oder nutzen Sie diesen Text als Beispiel für ein Paar Fehler , die LanguageTool erkennen kann: Ihm wurde Angst und bange, als er davon hörte.",
+        "( Eine Rechtschreibprüfun findet findet übrigens auch statt.",
+        "Fügen Sie hier Ihren text ein. Fügen Sie hier Ihren text ein."
+    ];
+    var selection = [0, 1, 2, 3, 4];
+    var test_text = "";
+
+    for(i = 0; i < selection.length; i++) {
+        test_text += test_sentences[selection[i]] + ' ';
+    }
+
+    $('#editor').text(test_text);
+
+}
+
 function checkClick() {
+
+    /*  get the text in the editor and and reinsert it, deleting all additional markup
+     *
+     *  TODO: smart markup removal
+     */
 
     var editor_text = $('#editor').text();
     $('#editor').text(editor_text);
-    console.log(editor_text);
 
-    /*$('#editor').slideUp();
-    $('#checkarea').slideUp();*/
+
+    var fixed_callback = function () {
+
+        $('#textbox').find('.spinner').fadeOut(25, function () {
+            $(this).closest('.spinnerbox').slideUp(25, function () {
+                $(this).closest('#textoverlay').fadeOut(25);
+            });
+        });
+    };
 
     $('#textoverlay').fadeIn(25, function() {
 
@@ -61,7 +72,11 @@ function checkClick() {
 
                 checkErrors(editor_text, function (error_data) {
 
-                    //console.log("gathering error data ... complete!");
+                    /*  filter error data in order to detect issues with sentence separation and only use
+                     *  CoreNLP if no such issues occur; otherwise, display sentence-final errors;
+                     *
+                     *  TODO: display sentence-final errors
+                     */
 
                     if (error_data.final.length == 0) {
 
@@ -69,15 +84,7 @@ function checkClick() {
                          return b.length - a.length;
                          });*/
 
-                        checkSentences(editor_text, error_data.other, function () {
-
-                            $('#textbox').find('.spinner').fadeOut(25, function () {
-                                $(this).closest('.spinnerbox').slideUp(25, function () {
-                                    $(this).closest('#textoverlay').fadeOut(25);
-                                });
-                            });
-
-                        });
+                        checkSentences(editor_text, error_data.other, fixed_callback);
 
                     } else {
 
@@ -111,6 +118,11 @@ function checkErrors(editor_text, callback) {
 
             } else {
 
+                /*  restructure error data, adding some information
+                 *
+                 *  TODO: restructure sentence-final errors, too
+                 */
+
                 var analysed_error = {
                     'number': other_error_count,
                     'coordinates': '' + error.attributes.fromx + error.attributes.tox,
@@ -137,6 +149,9 @@ function checkSentences(editor_text, other_errors, callback) {
         var sentence_data = json.document.sentences.sentence;
         var sentences = [];
 
+        /*  restructure sentence data, adding some information
+         */
+
         $.each(sentence_data, function (index, sentence) {
 
             var sentence_start = sentence.tokens.token[0].CharacterOffsetBegin;
@@ -152,7 +167,9 @@ function checkSentences(editor_text, other_errors, callback) {
 
         generateLines(sentence_data, sentences, other_errors, $('#sentbox'), function() {
 
-            //clone lines and replace editor text with them
+            /*  clone lines and replace editor text with them
+             */
+
             $('#editor').text('');
 
             $.each($(".sentence[id^='ss']"), function(index, span) {
@@ -174,6 +191,9 @@ function checkSentences(editor_text, other_errors, callback) {
 }
 
 function displayLines() {
+
+    /*  displays sentences and their errors (if any) one at a time with some delay once they are generated dynamically
+     */
 
     $('#sentbox').slideDown(25, function() {
 
@@ -229,6 +249,9 @@ function displayLines() {
 
 function hideLines(callback) {
 
+    /*  hides sentences and their errors one at a time with some delay before another check is performed
+     */
+
     var lines = $('.line');
 
     if (lines) {
@@ -259,6 +282,11 @@ function hideLines(callback) {
 
 function generateLines(sentence_data, sentences, other_errors, target, callback) {
 
+    /*  loop for dynamically generating divs for display of sentence data
+     *
+     *  TODO: improve code, variable sentence not used
+     */
+
     $.each(sentence_data, function (index, sentence) {
 
         var line_data = generateLine(index, sentences[index], target);
@@ -274,6 +302,10 @@ function generateLines(sentence_data, sentences, other_errors, target, callback)
         //console.log(relevant_errors);
 
         if(relevant_errors.length > 0) {
+
+            /*  highlight erroneous substrings by inserting coloured spans and generate divs for display of
+             *  error data if any errors are present in the current sentence
+             */
 
             var sentence_span = $(line_data.line).find("span[id^='ss']");
 
@@ -478,6 +510,11 @@ function generateError(data, target) {
 
 function insertErrors(errlist, target, offset) {
 
+    /*  insert coloured error spans based on position data provided by LanguageTool; offset is needed to compute the
+     *  correct positions for the current sentence only since the coordinates taken from the results of LanguageTool
+     *  are based on the entire text;
+     */
+
     var original = target.text();
     target.text('');
 
@@ -513,6 +550,10 @@ function insertError(data, target, original, last_end, offset) {
 
     if(err_start - last_end > 0) {
 
+        /*  insert span with pristine substring, separating the current error from the previous one if needed; the
+         *  end position of the previous error is tracked by insertErrors(...) and passed on as the parameter "last_end"
+         */
+
         var text = jQuery('<span/>', {
             class: 'text',
             text: original.substring(last_end, err_start)
@@ -526,6 +567,11 @@ function insertError(data, target, original, last_end, offset) {
     }
 
     if($('#' + 'esco' + data.coordinates).length == 0) {
+
+        /*  the insertion of coloured error spans needs to keep track of error coordinates since LanguageTool may have
+         *  several error suggestions for the same substring; if overlapping errors occur, they are linked to the same
+         *  error span;
+         */
 
         var mistake = jQuery('<span/>', {
             id: 'esco' + data.coordinates,
