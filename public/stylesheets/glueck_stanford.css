@@ -246,6 +246,10 @@
     background: aliceblue;
 }
 
+#textbox .errorbox {
+    background: #A6D1F5;
+}
+
 .error {
 
     display: flex; /* or inline-flex */
@@ -330,6 +334,8 @@
 
     background-color: lightseagreen;
     white-space: pre-wrap;
+
+    cursor: pointer;
 }
 
 .errurl {
