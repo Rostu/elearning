@@ -44,7 +44,7 @@ function checkClick() {
 
     /*  get the text in the editor and and reinsert it, deleting all additional markup
      *
-     *  TODO: smart markup removal
+     *  TODO: smart markup removal (preserving intentional line breaks)
      */
 
     var editor_text = $('#editor').text();
@@ -52,6 +52,8 @@ function checkClick() {
 
 
     var fixed_callback = function () {
+
+        displayLines();
 
         $('#textbox').find('.spinner').fadeOut(25, function () {
             $(this).closest('.spinnerbox').slideUp(25, function () {
@@ -68,14 +70,13 @@ function checkClick() {
 
             hideLines(function() {
 
+                $('.errorbox').remove();
                 $('.line').remove();
 
                 checkErrors(editor_text, function (error_data) {
 
                     /*  filter error data in order to detect issues with sentence separation and only use
                      *  CoreNLP if no such issues occur; otherwise, display sentence-final errors;
-                     *
-                     *  TODO: display sentence-final errors
                      */
 
                     if (error_data.final.length == 0) {
@@ -88,6 +89,7 @@ function checkClick() {
 
                     } else {
 
+                        handleFinalErrors(error_data.final, fixed_callback);
 
                     }
 
@@ -101,6 +103,15 @@ function checkClick() {
 
 }
 
+function handleFinalErrors(final_errors, callback) {
+
+    insertErrors(final_errors, $('#editor'), 0);
+    generateErrors(final_errors, $('#textbox'));
+
+    callback();
+
+}
+
 function checkErrors(editor_text, callback) {
 
     $.post("/langtool_anfrage", {sentence: editor_text}, function (json) {
@@ -108,28 +119,25 @@ function checkErrors(editor_text, callback) {
         var final_errors = [];
         var other_errors = [];
 
-        var other_error_count = 0;
-
         $.each(json.matches.error, function (index, error) {
+
+            /*  restructure error data, adding some information
+             */
+
+            var analysed_error = {
+                'number': index,
+                'coordinates': '' + error.attributes.fromx + error.attributes.tox,
+                'length': error.attributes.tox - error.attributes.fromx,
+                'attributes': error.attributes
+            };
 
             if (error.attributes.msg === "Fügen Sie zwischen Sätzen ein Leerzeichen ein") {
 
-                final_errors.push(error);
+                final_errors.push(analysed_error);
 
             } else {
 
-                /*  restructure error data, adding some information
-                 *
-                 *  TODO: restructure sentence-final errors, too
-                 */
-
-                var analysed_error = {
-                    'number': other_error_count,
-                    'coordinates': '' + error.attributes.fromx + error.attributes.tox,
-                    'length': error.attributes.tox - error.attributes.fromx,
-                    'attributes': error.attributes
-                };
-                other_errors[other_error_count++] = analysed_error;
+                other_errors.push(analysed_error);
                 //console.log(analysed_error);
 
             }
@@ -180,9 +188,9 @@ function checkSentences(editor_text, other_errors, callback) {
                 $(span).attr('id', 't' + $(this).attr('id'));
             });
 
-            displayLines();
-
-            callback();
+            $('#sentbox').slideDown(25, function() {
+                callback();
+            });
 
         });
 
@@ -195,55 +203,51 @@ function displayLines() {
     /*  displays sentences and their errors (if any) one at a time with some delay once they are generated dynamically
      */
 
-    $('#sentbox').slideDown(25, function() {
+    var lines = $('.line');
 
-        var lines = $('.line');
+    (function lineLoop(index) {
+        setTimeout(function () {
 
-        (function lineLoop(index) {
-            setTimeout(function () {
+            $(lines[index]).slideDown(25);
 
-                $(lines[index]).slideDown(25);
+            if (++index < lines.length) {
 
-                if (++index < lines.length) {
+                lineLoop(index);
 
-                    lineLoop(index);
+            } else {
 
-                } else {
+                var errorboxes = $('.errorbox');
 
-                    var errorboxes = $('.errorbox');
+                (function errorboxLoop(index) {
+                    setTimeout(function () {
 
-                    (function errorboxLoop(index) {
-                        setTimeout(function () {
+                        $(errorboxes[index]).slideDown(25);
 
-                            $(errorboxes[index]).slideDown(25);
+                        if (++index < errorboxes.length) {
+                            errorboxLoop(index);
+                        }
 
-                            if (++index < errorboxes.length) {
-                                errorboxLoop(index);
-                            }
+                    }, 25)
+                })(0);
 
-                        }, 25)
-                    })(0);
+                var errors = $('.error');
 
-                    var errors = $('.error');
+                (function errorLoop(index) {
+                    setTimeout(function () {
 
-                    (function errorLoop(index) {
-                        setTimeout(function () {
+                        $(errors[index]).slideDown(25);
 
-                            $(errors[index]).slideDown(25);
+                        if (++index < errors.length) {
+                            errorLoop(index);
+                        }
 
-                            if (++index < errors.length) {
-                                errorLoop(index);
-                            }
+                    }, 25)
+                })(0);
 
-                        }, 25)
-                    })(0);
+            }
 
-                }
-
-            }, 25)
-        })(0);
-
-    });
+        }, 25)
+    })(0);
 
 }
 
@@ -252,31 +256,49 @@ function hideLines(callback) {
     /*  hides sentences and their errors one at a time with some delay before another check is performed
      */
 
-    var lines = $('.line');
+    var errorboxes = $('.errorbox');
 
-    if (lines) {
+    (function errorboxLoop(index) {
+        setTimeout(function () {
 
-        (function lineLoop (index) {
-            setTimeout(function () {
+            $(errorboxes[index]).slideDown(25);
 
-                $(lines[index]).slideUp(25);
+            if (++index < errorboxes.length) {
 
-                if (++index < lines.length) {
+                errorboxLoop(index);
 
-                    lineLoop(index);
+            } else {
 
-                }else{
+                var lines = $('.line');
 
-                    $('#sentbox').slideUp(25);
+                if (lines) {
 
-                    callback();
+                    (function lineLoop (index) {
+                        setTimeout(function () {
+
+                            $(lines[index]).slideUp(25);
+
+                            if (++index < lines.length) {
+
+                                lineLoop(index);
+
+                            }else{
+
+                                $('#sentbox').slideUp(25);
+
+                                callback();
+
+                            }
+
+                        }, 5)
+                    })(0);
 
                 }
 
-            }, 5)
-        })(0);
+            }
 
-    }
+        }, 25)
+    })(0);
 
 }
 
@@ -284,7 +306,7 @@ function generateLines(sentence_data, sentences, other_errors, target, callback)
 
     /*  loop for dynamically generating divs for display of sentence data
      *
-     *  TODO: improve code, variable sentence not used
+     *  TODO: variable sentence not used yet
      */
 
     $.each(sentence_data, function (index, sentence) {
@@ -425,7 +447,7 @@ function generateError(data, target) {
         text: data.attributes.msg
     });
     $(errmsg).click(function(event) {
-        errorClick(event.target);
+        errorClick(event.target, true);
     });
     $(errmsg).prepend(errcat);
     //$(errmsg).hide();
@@ -452,6 +474,22 @@ function generateError(data, target) {
                 class: 'rep',
                 text: replacement
             });
+            $(rep).hover(
+                function() {
+                    $("span[id$='esco" + data.coordinates + "']").text($(rep).text());
+                }, function() {
+                    var reset = $("span[id$='esco" + data.coordinates + "']").attr('chosen') ?
+                        $("span[id$='esco" + data.coordinates + "']").attr('chosen') :
+                        $("span[id$='esco" + data.coordinates + "']").attr('original');
+                    $("span[id$='esco" + data.coordinates + "']").text(reset);
+                }
+            );
+            $(rep).click(
+                function() {
+                    $("span[id$='esco" + data.coordinates + "']").attr('chosen', '' + $(rep).text());
+                    $("span[id$='esco" + data.coordinates + "']").text($(rep).text());
+                }
+            );
             //$(rep).hide();
             //err_info.push(rep);
             $(errrep).append(rep);
@@ -590,7 +628,7 @@ function insertError(data, target, original, last_end, offset) {
             $('html, body').animate({
                 scrollTop: $(".error[id$='co" + data.coordinates + "']").offset().top
             }, 25);
-            errorClick($(".error[id$='co" + data.coordinates + "']").find('.errmsg'));
+            errorClick($(".error[id$='co" + data.coordinates + "']").find('.errmsg'), false);
         });
         $(target).append(mistake);
 
@@ -612,15 +650,18 @@ function insertError(data, target, original, last_end, offset) {
 }
 
 //event handling
-function errorClick(target) {
+function errorClick(target, toggle) {
     if($(target).hasClass('closed')) {
         $(target).removeClass('closed');
         $(target).addClass('open');
+        $(target).closest('.error').children(':not(.errmsg)').slideDown(25);
     }else if($(target).hasClass('open')){
-        $(target).removeClass('open');
-        $(target).addClass('closed');
+        if (toggle) {
+            $(target).removeClass('open');
+            $(target).addClass('closed');
+            $(target).closest('.error').children(':not(.errmsg)').slideUp(25);
+        }
     }
-    $(target).closest('.error').children(':not(.errmsg)').slideToggle(25);
 }
 
 function loadClick(ev) {
