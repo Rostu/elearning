@@ -285,6 +285,9 @@ body {
 .special_nav a#las:hover{background-image: url("../images/button2hover.png");}
 .special_nav a#nex{background-image: url("../images/button3.png");width: 44px;height: 44px;display: inline-block;background-size: 44px;margin: 0px auto;}
 .special_nav a#nex:hover{background-image: url("../images/button3hover.png");}
+.special_nav a#fee{background-image: url("../images/feedback.png");width: 44px;height: 44px;display: inline-block;background-size: 44px;margin: 0px auto;}
+.special_nav a#fee:hover{background-image: url("../images/feedbackhover.png");}
+
 #redstripes{margin-top: 148px;width: 100px;z-index: 1000;position: absolute;}
 .redstripe{margin-top: 15px;width: 0;padding-left: 8px;padding-right: 12px;height: 27px;background: #A91211;z-index: 1001;border-radius: 0 0 20px 0;box-shadow: 2px 2px 6px #4D4D4F;color: #A91211;white-space: nowrap;overflow: hidden;display: none;}
 .redtext{
@@ -927,6 +930,7 @@ img.uniLogo {
     margin: 10px 10px auto;
     background: #D5EBFD;
     padding-bottom: 1px;
+    min-height: 600px;
 }
 
 .panelheader {
@@ -936,7 +940,6 @@ img.uniLogo {
     z-index: 1;
     color: white;
     background: #7AB3E3;
-    cursor: pointer;
 }
 
 .panelarrow {
@@ -952,11 +955,6 @@ img.uniLogo {
     border-radius: 25px;
 }
 
-#tasklist {
-    width: 70%;
-    margin: 0 auto;
-    position: relative;
-}
 
 #subjecttext {
     padding: 0 10px;
@@ -969,24 +967,6 @@ img.uniLogo {
     padding: 5px 5px;
  }
 
-.panelcontent {
-    display: none;
-}
-
-.mediaelement {
-    display: inline-block;
-    margin: 5px 5px;
-    height: 100px;
-}
-
-.mediaelement_mini {
-    display: inline-block;
-    margin: 5px 5px;
-    height: 70px;
-}
-.mediaimage_mini {
-    height: 70px;
-}
 
 .mediaimage {
     height: 100px;
@@ -1028,29 +1008,17 @@ img.uniLogo {
 }
 
 .tasktitle {
+    display: flex;
     padding: 5px;
-    margin: 0 60px;
-    height: 40px;
+    margin: 0 60px 0 0;
     line-height: 40px;
     font-weight: bold;
     text-align: center;
     background: #A1BED6;
     color: white;
-    text-align: center;
     cursor: pointer;
 }
 
-.taskmediaicon {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-weight: bold;
-    text-align: center;
-    background: #E5EFF5;
-    color: #A1BED6;
-    float: left;
-    border-radius: 20px;
-}
 
 .taskstart {
     width: 40px;
@@ -1059,8 +1027,57 @@ img.uniLogo {
     font-weight: bold;
     text-align: center;
     background: #E5EFF5 url("../images/button_right2_small.gif");
-    float: right;
     border-radius: 20px;
+    margin-right:5px;
+}
+.text_media {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    margin-right: 5px;
+    background: url("../images/Icon_Text.png");
+    background-repeat: no-repeat;
+}
+.text_media:hover{
+    background: url("../images/Icon_Text_hover.png");
+    background-repeat: no-repeat;
+}
+.video_media {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    margin-right: 5px;
+    background: url("../images/Icon_Video.png");
+    background-repeat: no-repeat;
+}
+.video_media:hover{
+    background: url("../images/Icon_Video_hover.png");
+    background-repeat: no-repeat;
+}
+.text_audio_media {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    margin-right: 5px;
+    background: url("../images/Icon_Text_Audio.png");
+    background-repeat: no-repeat;
+}
+.text_audio_media:hover{
+    background: url("../images/Icon_Text_Audio_hover.png");
+    background-repeat: no-repeat;
+}
+
+.t_title{
+    line-height: 40px;
+
+    flex:1;
+}
+.t_title p{
+    text-align: center;
+    margin: 2px auto;
 }
 
 .tasklink {
@@ -1083,4 +1100,25 @@ img.uniLogo {
     margin: 10px;
     color: black;
     line-height: 30px;
+}
+
+#content{
+    width: 100%;
+}
+#content_image{
+    padding-top: 40px;
+    display: inline-block;
+
+    width: 45%;
+    text-align: center;
+    float:left;
+}
+#content_image img{
+    margin: 10px auto;
+
+}
+#content_content{
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
 }

@@ -9,7 +9,7 @@ exports.get_session = function(req, res, next){
     next();
 };
 
-exports.dbhandler = require("./dbhandler");
+exports.dbhandler = require("./../shared/routes/dbhandler");
 
 exports.get_testing = function(req, res){
     res.render('testing');

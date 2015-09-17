@@ -1,4 +1,4 @@
-var dbhandler = require('./dbhandler');
+var dbhandler = require('./../shared/routes/dbhandler');
 var navigation = require('./navbar');
 var pointhandler = require('./pointshandler');
 
@@ -52,6 +52,10 @@ exports.get_china_Textverstehen_Redewiedergabe = function(req, res){
 exports.get_energie_Wortfeld_Solarantrieb = function(req, res){
     res.render('energie_Wortfeld_Solarantrieb');
 };
+exports.get_energie_Wortfeld_Solarantrieb_A = function(req, res){
+    res.render('energie_Wortfeld_Solarantrieb_A');
+};
+
 exports.get_energie_start = function(req, res){
     res.render('energie_start');
 };
@@ -96,6 +100,10 @@ exports.get_glueck_video_paraphrase = function(req, res){
 
 exports.get_glueck_Textverstehen_Redensarten = function(req, res){
     res.render('glueck_Textverstehen_Redensarten');
+};
+
+exports.get_glueck_silbermond = function(req, res){
+    res.render('glueck_silbermond');
 };
 
 exports.get_handy_start = function(req,res) {
@@ -197,6 +205,11 @@ exports.get_generationen_Textverstehen_Bedeutungserschliessung = function(req, r
 exports.get_zukunft_start = function(req, res){
     res.render('zukunft_start',{last:'zukunft_start'});
 };
+
+exports.get_zukunft_start2 = function(req, res){
+    res.render('zukunft_start2',{last:'zukunft_start2'});
+};
+
 exports.get_zukunft_Textverstehen_Wortfeld_Technik = function(req, res){
     res.render('zukunft_Textverstehen_Wortfeld_Technik');
 };
@@ -211,6 +224,10 @@ exports.get_zukunft_Textproduktion = function(req, res){
 };
 exports.get_zukunft_Kreuzwortraetsel = function(req, res){
     res.render('zukunft_Kreuzwortraetsel');
+};
+
+exports.get_testy = function(req, res){
+    res.render('testy');
 };
 
 exports.get_next = function(req, res){

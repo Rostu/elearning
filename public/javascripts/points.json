@@ -27,7 +27,7 @@
         "name":"glueck_Textverstehen_Redensarten", "maxpoints":6, "maxfaults":3
     },
     {
-        "name":"glueck_Memory", "maxpoints":6, "maxfaults":20
+        "name":"glueck_Memory", "maxpoints":10, "maxfaults":20
     },
     {
         "name":"glueck_Zeitstrahl", "maxpoints":5, "maxfaults":10
@@ -43,6 +43,9 @@
     },
     {
         "name":"glueck_video_paraphrase", "maxpoints":10, "maxfaults":10
+    },
+    {
+        "name":"glueck_silbermond", "maxpoints":10, "maxfaults":10
     },
     {
         "name":"handy_start", "maxpoints":0, "maxfaults":0
@@ -79,6 +82,9 @@
     },
     {
         "name":"ersti_Wortschatz_erweitern", "maxpoints":9, "maxfaults":5
+    },
+    {
+        "name":"energie_Wortfeld_Solarantrieb_A", "maxpoints":21, "maxfaults":10
     },
     {
         "name":"veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen", "maxpoints":4, "maxfaults":4

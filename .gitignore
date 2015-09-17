@@ -1,5 +1,7 @@
 config.js
-routes/dbhandler.js
+shared/routes/dbhandler.js
+shared/routes/*
+.shared/routes/*
 node_modules/*
 *~
 tmp

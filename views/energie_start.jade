@@ -4,27 +4,34 @@ block content
         h1 Ersti
     #tasks.startpanel
         div.panelheader
-            div.panelarrow
             h2 Lektionen
-        #tasklist.panelcontent
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Wortfeld: Solarantrieb
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='energie_Wortfeld_Solarantrieb')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
+        #content
+            #content_image
+                img(src='images/bild.png')
+            #content_content
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='energie_Wortfeld_Solarantrieb')
+                            div.t_title
+                                p Wortfeld: Solarantrieb
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='energie_Wortfeld_Solarantrieb_A')
+                            div.t_title
+                                p Solarantrieb Wortsuche
+                            div.text_media.mediaelement
 
-    #media.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Medien
-        #mediashow.panelcontent
-            div.mediaelement
-                img.mediaimage.text_media(src='/images/media_icon_text.png')
+
+
+
 block overlay
     #overlaycontentbox

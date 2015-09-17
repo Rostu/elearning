@@ -7,6 +7,7 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var start = require('./routes/start');
 var ubung = require('./routes/ubung');
+var feed = require('./routes/feedback');
 var http = require('http');
 var impressum = require('./routes/impressum');
 var signup = require('./routes/signup');
@@ -14,9 +15,10 @@ var path = require('path');
 var app = express();
 var index = require('./routes/index');
 var dml = require('./routes/dml');
-var dbhandler = require('./routes/dbhandler');
+var dbhandler = require('./shared/routes/dbhandler');
 var pointshandler = require('./routes/pointshandler');
 var points = require('./public/javascripts/points.json');
+var nav = require('./routes/navbar.js');
 //lockit vars
 var config = require('./config.js');
 var Lockit = require('lockit');
@@ -50,8 +52,13 @@ if ('development' == app.get('env')) {
 app.use(function(req, res, next){
     //console.log(req.path);
     var newpath = req.path;
+    /*if (!nav.check_ausnahmen(newpath)){
+        newpath = newpath.replace("/","");
+        res.locals.last = newpath;
+    }*/
     newpath = newpath.replace("/","");
     res.locals.last = newpath;
+    console.log(req.url);
     next();
 });
 app.use('/', index.get_session);
@@ -73,6 +80,12 @@ app.get('/ersti_Wortschatz_erweitern', ubung.get_ersti_Wortschatz_erweitern);
 app.get('/ersti_end', ubung.get_ersti_end);
 app.get('/energie_start', ubung.get_energie_start);
 app.get('/energie_Wortfeld_Solarantrieb', ubung.get_energie_Wortfeld_Solarantrieb);
+app.get('/energie_Wortfeld_Solarantrieb_A', ubung.get_energie_Wortfeld_Solarantrieb_A);
+app.get('/feedback:last?', feed.get_feedback);
+app.post('/new_feedback', feed.new_feedback);
+app.get('/show_feedback',feed.show_feedback);
+app.get('/delfeedback:id', feed.deletefeedback);
+app.get('/get_feedback_items',feed.get_feedback_items);
 app.get('/generationen_start', ubung.get_generationen_start);
 app.get('/generationen_text', ubung.get_generationen_text);
 app.get('/generationen_Textverstehen_Komposita', ubung.get_generationen_Textverstehen_Komposita);
@@ -89,11 +102,13 @@ app.get('/glueck_video', ubung.get_glueck_video);
 app.get('/glueck_video_zuordnen', ubung.get_glueck_video_zuordnen);
 app.get('/glueck_video_kleeblatt', ubung.get_glueck_video_kleeblatt);
 app.get('/glueck_video_paraphrase', ubung.get_glueck_video_paraphrase);
+app.get('/glueck_silbermond', ubung.get_glueck_silbermond);
 app.get('/handy_start', ubung.get_handy_start);
 app.get('/handy_text', ubung.get_handy_text);
 app.get('/handy_task1', ubung.get_handy_task1);
 app.get('/handy_task2', ubung.get_handy_task2);
 app.get('/home', start.start);
+app.get('/testy', ubung.get_testy);
 app.get('/impressum', impressum.get_imp);
 app.get('/glueck_Memory', ubung.get_glueck_memory);
 app.get('/glueck_Textverstehen_Wortspirale', ubung.get_glueck_Textverstehen_Wortspirale);
@@ -126,6 +141,7 @@ app.get('/wertewandel_Wortbedeutung_verstehen', ubung.get_wertewandel_Wortbedeut
 app.get('/wertewandel_Textverstehen_Kernaussagen', ubung.get_wertewandel_Textverstehen_Kernaussagen);
 app.get('/wertewandel_Textproduktion_Statistische_Angaben', ubung.get_wertewandel_Textproduktion_Statistische_Angaben);
 app.get('/zukunft_start', ubung.get_zukunft_start);
+app.get('/zukunft_start2', ubung.get_zukunft_start2);
 app.get('/zukunft_Textverstehen_Wortfeld_Technik', ubung.get_zukunft_Textverstehen_Wortfeld_Technik);
 app.get('/zukunft_Wortschatz_ordnen', ubung.get_zukunft_Wortschatz_ordnen);
 app.get('/zukunft_Wortschatzerweiterung_fest_Wortverbindungen', ubung.get_zukunft_Wortschatzerweiterung_fest_Wortverbindungen);
