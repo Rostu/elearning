@@ -3,6 +3,7 @@
  */
 
 $(document).ready(function() {
+    togglestartpicture();
     $( "#point_bars" ).data( "actualp", 0 );
     $( "#point_bars" ).data( "actualf", 0 );
     //console.log($("body").data());
@@ -175,6 +176,37 @@ $(document).ready(function() {
             $(arrow).css("background-image", 'url("/images/button_down2.gif")');
         }
     }
+    function togglestartpicture(){
+        var elementExists = document.getElementById("content_image");
+        var title = $("#subjecttitle > h1").text();
+        var ArrayToLookAt = [];
+        var china=["china1.jpg","china2.jpg","china3.jpg","china4.jpg","china5.jpg"];
+        var zukunft=["zukunft1.jpg","zukunft2.jpg","zukunft3.jpg","zukunft4.jpg"];
+        var undef=[];
+        switch (title) {
+            case "Zukunft":
+                ArrayToLookAt = zukunft;
+                break;
+            case "China":
+                ArrayToLookAt = china;
+                break;
+            default:
+                ArrayToLookAt = undef;
+        }
+
+        change();
+        function change(){
+
+            var item = ArrayToLookAt[Math.floor(Math.random()*ArrayToLookAt.length)];
+            $("#content_image").css("background-image","url('../images/startpages/"+ item+"')");
+        }
+        if(elementExists != null){
+            setInterval(change,4000);
+        }else{}
+
+
+    }
+
 
     function toggleStartOverlay(){
         var startoverlaybackground = document.getElementById('startoverlaybackground');
