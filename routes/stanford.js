@@ -3,6 +3,7 @@ var NLP = require('stanford-corenlp');
 exports.get_request = function(request, result) {
 
     var sentences = request.param("sentences");
+
     var options = {
         'nlpPath': __dirname + '/corenlp',
         "version": '3.5.2',
@@ -10,7 +11,7 @@ exports.get_request = function(request, result) {
         'extra' : {
             'tokenize.language': 'de',
             'pos.model': 'edu/stanford/nlp/models/pos-tagger/german/german-hgc.tagger',
-            'parse.model': 'edu/stanford/nlp/models/lexparser/germanFactored.ser.gz'
+            'parse.model': 'edu/stanford/nlp/models/lexparser/germanSR.ser.gz'
         }
     }
 

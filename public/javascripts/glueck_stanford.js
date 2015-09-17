@@ -12,7 +12,7 @@ function initialize() {
 
     $('#textoverlay').hide();
     $('#sentbox').hide();
-    $('#treebox').hide();
+    //$('#treebox').hide();
 
     $('#checkbutton').click(function() {
         checkClick();
@@ -166,7 +166,7 @@ function checkSentences(editor_text, other_errors, callback) {
             var sentence_end = sentence.tokens.token[sentence.tokens.token.length - 1].CharacterOffsetEnd;
 
             var sentence_string = editor_text.substring(sentence_start, sentence_end)  + ' ';
-            sentences.push({start: sentence_start, end: sentence_end, string: sentence_string});
+            sentences.push({start: sentence_start, end: sentence_end, string: sentence_string, parse: sentence.parsedTree});
 
         });
 
@@ -309,9 +309,11 @@ function generateLines(sentence_data, sentences, other_errors, target, callback)
      *  TODO: variable sentence not used yet
      */
 
-    $.each(sentence_data, function (index, sentence) {
+    $.each(sentences, function (index, sentence) {
 
-        var line_data = generateLine(index, sentences[index], target);
+        console.log(sentence.parse);
+
+        var line_data = generateLine(index, sentence, target);
         var relevant_errors = [];
 
         $.each(other_errors, function(err_index, error) {
@@ -378,18 +380,25 @@ function generateLine(index, sentence, target) {
     });
     $(textarea).append(sentence_span);
 
-    /*var treedata = jQuery('<div/>', {
+    var treedata = jQuery('<div/>', {
      id: 'td' + pad(i, 2),
      class: 'treedata',
-     text: JSON.stringify(sentences[i].parsedTree)
-     });*/
+     text: JSON.stringify(sentence.parse)
+     });
+
+    var dataarea = jQuery('<div/>', {
+        id: 'da' + pad(index, 2),
+        class: 'dataarea'
+    });
+    $(dataarea).append(treedata);
 
     var linebox = jQuery('<div/>', {
         id: 'lb' + pad(index, 2),
-        class: 'linebox',
+        class: 'linebox'
     });
     $(linebox).append(textarea);
     $(linebox).append(loadarea);
+    $(linebox).append(dataarea);
 
     var line = jQuery('<div/>', {
         id: 'll' + pad(index, 2),
