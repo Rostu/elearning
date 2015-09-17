@@ -4,61 +4,48 @@ block content
         h1 Ersti
     #tasks.startpanel
         div.panelheader
-            div.panelarrow
             h2 Lektionen
-        #tasklist.panelcontent
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Textverstehen: emotionale Wörter
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='ersti_Textverstehen_emotionale_Woerter')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Textverstehen: Wortfeld Universität
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='ersti_Textverstehen_Wortfeld_Universitaet_A')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Wortschatz ordnen
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='ersti_Wortschatz_ordnen_A')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Wortschatz erweitern
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='ersti_Wortschatz_erweitern')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
+        #content
+            #content_image
+                img(src='images/bild.png')
+            #content_content
+                div.task
+                    div.taskbar
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='ersti_Textverstehen_emotionale_Woerter')
+                            div.t_title
+                                p Textverstehen: emotionale Wörter
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='ersti_Textverstehen_Wortfeld_Universitaet_A')
+                            div.t_title
+                                p Textverstehen: Wortfeld Universität
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='ersti_Wortschatz_ordnen_A')
+                            div.t_title
+                                p Wortschatz ordnen
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='ersti_Wortschatz_erweitern')
+                            div.t_title
+                                p Wortschatz erweitern
+                            div.text_media.mediaelement
 
-    #media.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Medien
-        #mediashow.panelcontent
-            div.mediaelement
-                img.mediaimage.text_media(src='/images/media_icon_text.png')
 block overlay
     #overlaycontentbox
         h1 Der erste Tag an der Universität. Ein neuer Lebensabschnitt beginnt.

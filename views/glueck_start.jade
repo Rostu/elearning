@@ -10,151 +10,132 @@ block content
         h1 Glück
     #tasks.startpanel
         div.panelheader
-            div.panelarrow
             h2 Aufgaben
-        #tasklist.panelcontent
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Textproduktion: Antonyme
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='glueck_Textproduktion_Antonyme_A')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Textverstehen: Zeitangaben
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='glueck_Textverstehen_Zeitangaben')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Zeitstrahl
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='glueck_Zeitstrahl')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Wortspirale
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='glueck_Textverstehen_Wortspirale')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Textverstehen: Redensarten
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='glueck_Textverstehen_Redensarten')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Kreuzworträtsel
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='glueck_Kreuzwortraetsel')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Memory
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='glueck_Memory')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Video
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='glueck_video')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.video_media(src='/images/media_icon_video.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Video Zuordnung
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='glueck_video_zuordnen')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.video_media(src='/images/media_icon_video.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Video Kleeblatt
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='glueck_video_kleeblatt')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.video_media(src='/images/media_icon_video.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Video Paraphrasen
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='glueck_video_paraphrase')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.video_media(src='/images/media_icon_video.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Silbermond
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='glueck_silbermond')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage_mini.text_media(src='/images/media_icon_text.png')
+        #content
+            #content_image
+                img(src='images/bild.png')
+            #content_content
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='glueck_Textproduktion_Antonyme_A')
+                            div.t_title
+                                p Textproduktion: Antonyme
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='glueck_Textverstehen_Zeitangaben')
+                            div.t_title
+                                p Textverstehen: Zeitangaben
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='glueck_Zeitstrahl')
+                            div.t_title
+                                p Zeitstrahl
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='glueck_Textverstehen_Wortspirale')
+                            div.t_title
+                                p Wortspirale
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='glueck_Textverstehen_Redensarten')
+                            div.t_title
+                                p Textverstehen: Redensarten
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='glueck_Kreuzwortraetsel')
+                            div.t_title
+                                p Kreuzworträtsel
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='glueck_Memory')
+                            div.t_title
+                                p Memory
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='glueck_video')
+                            div.t_title
+                                p Video
+                            div.video_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='glueck_video_zuordnen')
+                            div.t_title
+                                p Video Zuordnung
+                            div.video_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='glueck_video_kleeblatt')
+                            div.t_title
+                                p Video Kleeblatt
+                            div.video_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='glueck_video_paraphrase')
+                            div.t_title
+                                p Video Paraphrasen
+                            div.video_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='glueck_silbermond')
+                            div.t_title
+                                p Silbermond
+                            div.video_media.mediaelement
 
-    #media.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Medien
-        #mediashow.panelcontent
-            div.mediaelement
-                img.mediaimage.text_media(src='/images/media_icon_text.png')
-            div.mediaelement
-                img.mediaimage.video_media(src='/images/media_icon_video.png')
 
 block overlay
     #overlaycontentbox

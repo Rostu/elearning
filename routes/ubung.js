@@ -205,6 +205,11 @@ exports.get_generationen_Textverstehen_Bedeutungserschliessung = function(req, r
 exports.get_zukunft_start = function(req, res){
     res.render('zukunft_start',{last:'zukunft_start'});
 };
+
+exports.get_zukunft_start2 = function(req, res){
+    res.render('zukunft_start2',{last:'zukunft_start2'});
+};
+
 exports.get_zukunft_Textverstehen_Wortfeld_Technik = function(req, res){
     res.render('zukunft_Textverstehen_Wortfeld_Technik');
 };
@@ -219,6 +224,10 @@ exports.get_zukunft_Textproduktion = function(req, res){
 };
 exports.get_zukunft_Kreuzwortraetsel = function(req, res){
     res.render('zukunft_Kreuzwortraetsel');
+};
+
+exports.get_testy = function(req, res){
+    res.render('testy');
 };
 
 exports.get_next = function(req, res){

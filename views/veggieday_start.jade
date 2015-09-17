@@ -5,50 +5,41 @@ block content
         h1 Veggie-Day
     #tasks.startpanel
         div.panelheader
-            div.panelarrow
             h2 Lektionen
-        #tasklist.panelcontent
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Textverstehen: Schlüsselwörter in Boulevardzeitungen
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Textverstehen: Schlüsselwörter in Fachtexten 1
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage.text_media(src='/images/media_icon_text.png')
-            div.task
-                div.taskbar
-                    div.taskicon Icon
-                    div.taskpoints Points
-                    div.tasktitle Textverstehen: Schlüsselwörter in Fachtexten 1
-                        div.taskmediaicon ???
-                        div.taskstart
-                            a.tasklink(href='veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_2')
-                div.taskmedia
-                    div.mediaelement_mini
-                        img.mediaimage.text_media(src='/images/media_icon_text.png')
-    #media.startpanel
-        div.panelheader
-            div.panelarrow
-            h2 Medien
-        #mediashow.panelcontent
-            div.mediaelement
-                img.mediaimage.text_media(src='/images/media_icon_text.png')
-
+        #content
+            #content_image
+                img(src='images/bild.png')
+            #content_content
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen')
+                            div.t_title
+                                p Textverstehen: Schlüsselwörter in Boulevardzeitungen
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_1')
+                            div.t_title
+                                p Textverstehen: Schlüsselwörter in Fachtexten 1
+                            div.text_media.mediaelement
+                div.task
+                    div.taskbar
+                        //div.taskicon Icon
+                        div.taskpoints Points
+                        div.tasktitle
+                            div.taskstart
+                                a.tasklink(href='veggieday_Textverstehen_Schluesselwoerter_in_Fachtexten_2')
+                            div.t_title
+                                p Textverstehen: Schlüsselwörter in Fachtexten 2
+                            div.text_media.mediaelement
 
 block overlay
     #overlaycontentbox

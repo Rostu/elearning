@@ -37,7 +37,7 @@ $(document).ready(function() {
     });
 
     //handle highlighting on start pages
-
+    /*
     $('.panelheader').mouseenter(function()
     {
         startPageFadeIn($(this));
@@ -47,7 +47,7 @@ $(document).ready(function() {
     {
         startPageFadeOut($(this));
     });
-
+    */
     $('.panelarrow').mouseenter(function()
     {
         $(this).css("backgroundColor", "#005E9C");
@@ -57,7 +57,7 @@ $(document).ready(function() {
     {
         $(this).css("backgroundColor", "#A6D1F5");
     });
-
+    /*
     $('.tasktitle').mouseenter(function()
     {
         startPageFadeIn($(this));
@@ -67,7 +67,7 @@ $(document).ready(function() {
     {
         startPageFadeOut($(this));
     });
-
+    */
     $('.taskstart').mouseenter(function()
     {
         $(this).css("backgroundColor", "#FFFFFF");
@@ -126,12 +126,13 @@ $(document).ready(function() {
     $('.panelheader').click(function() {
         togglePanelContent($(this));
     });
-
+    /*
     $('.tasktitle').click(function() {
         var link = $(this).find('.tasklink');
         $(link)[0].click();
     });
-
+    */
+    /*
     $('.taskmediaicon').click(function(e) {
         e.stopPropagation();
         var task = $(this).closest('.task');
@@ -142,11 +143,12 @@ $(document).ready(function() {
             $(taskmedia).css('display', 'none');
         }
     });
-
+    */
+    /*
     $('.mediaelement_mini').click(function() {
         toggleStartOverlay();
     });
-
+    */
 
     $('.mediaelement').click(function() {
         toggleStartOverlay();

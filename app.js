@@ -108,6 +108,7 @@ app.get('/handy_text', ubung.get_handy_text);
 app.get('/handy_task1', ubung.get_handy_task1);
 app.get('/handy_task2', ubung.get_handy_task2);
 app.get('/home', start.start);
+app.get('/testy', ubung.get_testy);
 app.get('/impressum', impressum.get_imp);
 app.get('/glueck_Memory', ubung.get_glueck_memory);
 app.get('/glueck_Textverstehen_Wortspirale', ubung.get_glueck_Textverstehen_Wortspirale);
@@ -140,6 +141,7 @@ app.get('/wertewandel_Wortbedeutung_verstehen', ubung.get_wertewandel_Wortbedeut
 app.get('/wertewandel_Textverstehen_Kernaussagen', ubung.get_wertewandel_Textverstehen_Kernaussagen);
 app.get('/wertewandel_Textproduktion_Statistische_Angaben', ubung.get_wertewandel_Textproduktion_Statistische_Angaben);
 app.get('/zukunft_start', ubung.get_zukunft_start);
+app.get('/zukunft_start2', ubung.get_zukunft_start2);
 app.get('/zukunft_Textverstehen_Wortfeld_Technik', ubung.get_zukunft_Textverstehen_Wortfeld_Technik);
 app.get('/zukunft_Wortschatz_ordnen', ubung.get_zukunft_Wortschatz_ordnen);
 app.get('/zukunft_Wortschatzerweiterung_fest_Wortverbindungen', ubung.get_zukunft_Wortschatzerweiterung_fest_Wortverbindungen);
