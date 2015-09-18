@@ -21,6 +21,9 @@
     float: right;
     margin: 10px;
 }
+.info_image{
+    margin: 10px;
+}
 
 .underline{
     display: inline-block;
@@ -31,6 +34,11 @@
 .bold{
     font-weight: bold;
 }
+.bold:hover{
+    cursor:pointer;
+}
+
+
 .underline:hover{
     cursor:pointer;
 }
@@ -52,4 +60,16 @@ p {
 .false{
     color: #A91211;
     font-size: 1.2em;
+}
+.bold_info{
+    font-size: 1.3em;
+    width: 80%;
+    margin: auto;
+    display: none;
+}
+.bold_info h1{
+    text-align: center;
+}
+.bold_info span{
+   font-size: 5em;
 }

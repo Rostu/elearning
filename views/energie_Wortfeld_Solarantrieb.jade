@@ -2,7 +2,6 @@ extends layout
 block content
     link(rel='stylesheet', href='stylesheets/energie.css')
     script(src='javascripts/energie_Wortfeld_Solarantrieb.js')
-    script(src='javascripts/nonsense.js')
     #Aufgabenbox
         p Suche alle Wörter aus dem Text heraus, die sich auf Gefühle beziehen. Gruppiere diese dabei nach positiver und negativer Bedeutung.
     #wrapper
@@ -19,13 +18,12 @@ block content
                         | Mit der Sonne im&nbsp;
                         span.bold(inhalt='Tank' id='3') Tank
 
-                    img.textwrap2(src="images/auto_dpa_gr.jpg" width="280px" title='Mit einem solchen Solarauto werden Rennen durch die australische Wüste gefahren: Die Strecke der "World Solar Challenge" ist 3.000 Kilometer lang und führt von Darwin im Nordosten von Australien nach Adelaide im Süden. Das dauert gut dreißig Stunden. Ziemlich unbequem: Der Fahrer fährt die gesamte Strecke im Liegen')
+                    img.textwrap2(src="images/energie/auto_dpa_gr.jpg" width="280px" title='Mit einem solchen Solarauto werden Rennen durch die australische Wüste gefahren: Die Strecke der "World Solar Challenge" ist 3.000 Kilometer lang und führt von Darwin im Nordosten von Australien nach Adelaide im Süden. Das dauert gut dreißig Stunden. Ziemlich unbequem: Der Fahrer fährt die gesamte Strecke im Liegen')
                     p
                      | Es gibt
                      span.underline(inhalt='Fahrzeug') Fahrzeuge
                      | , die allein von der
-                     span.underline(inhalt='Sonnenkraft') Sonnenkraft
-                     span.underline(inhalt='antreiben') angetrieben
+                     span.bold(inhalt='Sonnenkraft' id="16") Sonnenkraft angetrieben
                      | werden. Es werden sogar Rennen veranstaltet, bei denen solche&nbsp;
                      span.bold(inhalt='Solarauto' id='4') Solarautos
                      |&nbsp;gegeneinander antreten.
@@ -62,7 +60,7 @@ block content
                     |, nur leider sind solche Solarautos ziemlich langsam, denn die Batterien sind sehr schwer und der Motor muss nicht nur das Auto und seine
                     span.underline(inhalt="Insassen") Insassen
                     |&nbsp;bewegen, sondern auch die riesigen Batterien. Auf&nbsp;
-                    span.bold(inhalt='seutschen Autobahnen' id='12') deutschen Autobahnen
+                    span.bold(inhalt='deutschen Autobahnen' id='12') deutschen Autobahnen
                     |&nbsp;hätte so ein&nbsp;
                     span.bold(inhalt='Solarschleicher' id='13') Solarschleicher
                     |&nbsp;keine Chance.
@@ -80,7 +78,7 @@ block content
                     | Batterie.
                     | Das Solartaxi ist sehr leicht und kann mit
                     span.underline(inhalt="einmalig") einmaligem
-                    span.bold(inhalt='Batterieaufaden' id='16') &nbsp;Batterieaufaden&nbsp;
+                    span.bold(inhalt='Batterie aufladen' id='16') &nbsp;Batterie aufladen&nbsp;
                     | bei einer Geschwindigkeit von 90 km/h ungefähr 100 Kilometer fahren, mit 50 km/h immerhin 200 Kilometer weit. Sechs
                     span.underline(inhalt="Quadratmeter") Quadratmeter
                     | Solarzellen reichen aus, um das Auto immer
@@ -95,3 +93,43 @@ block content
                     | sein.
                     br
                     b.autor Börni Schulz
+
+block overlay
+    #overlaycontentbox
+        .bold_info#Solarantrieb
+            h1 Solarantrieb
+            b Wortart: Substantiv
+            p
+        .bold_info#Sonnenenergie
+            h1 Sonnenenergie
+        .bold_info#Sonnenkraft
+            h1 angetrieben durch Sonnenkraft
+            b Die Antriebsenergie z.B. der Fahrzeuge, stammt aus der Sonnenstrahlung.
+            p Details: Die überwiegende Mehrheit der Solarfahrzeuge tut dies mittels Photovoltaik, das heißt, sie sind auf der Oberfläche mit Solarzellen bestückt, die die Sonnenenergie auf dem Fahrzeug in elektrischen Strom umwandeln. Als Elektromobile führen sie häufig auch einen Energiespeicher (meist Akkumulatoren) mit sich, um auch bei schlechten Lichtverhältnissen oder Bewölkung zumindest für eine begrenzte Zeit fahrtüchtig zu bleiben.
+        .bold_info#Tank
+            h1 Der Tank
+            b Nomen des Verbs&nbsp;
+            a(href='http://www.duden.de/suchen/dudenonline/tanken') tanken
+            p Technischer Ausdruck, in einem Tank wird der Kraftstoff(z.B. Benzin ) eines Fahrzeugs gespeichert.
+        .bold_info#Solarauto
+
+        .bold_info#Pfannkuchen
+            h1 Fahrende Pfannkuchen
+            b Synonym für solarangetriebene Rennwagen.
+            p Aufgrund ihrer Form, ähneln diese kaum den üblichen Rennwagen, sondern sind durch die notwendigen Solarzellen in ihrer Form ziemlich flach und werden deshalb mit einem Pfannkuchen verglichen.
+            img.info_image(src="images/energie/racecar.jpg" width="280px" title='Üblicher Rennwagen')
+            span +
+            img.info_image(src="images/energie/pancakes.jpg" width="280px" title='Pfannkuchen')
+            span =
+            img.info_image(src="images/energie/auto_dpa_gr.jpg" width="280px" title='Solarbetriebener Rennwagen')
+        .bold_info#Glaskuppel
+        .bold_info#Solarmobil
+        .bold_info#Elektromotor
+        .bold_info#Solarzellen
+        .bold_info#flott
+        .bold_info#Batteriebetrieb
+        .bold_info#Autobahnen
+        .bold_info#Solarschleicher
+        .bold_info#Solartaxi
+        .bold_info#gefaehrt
+        .bold_info#aufladen
