@@ -85,6 +85,9 @@ function checkClick() {
                          return b.length - a.length;
                          });*/
 
+                        if (error_data.other.length == 0) {
+                            //TODO: add some form of positive feedback
+                        }
                         checkSentences(editor_text, error_data.other, fixed_callback);
 
                     } else {
@@ -119,30 +122,33 @@ function checkErrors(editor_text, callback) {
         var final_errors = [];
         var other_errors = [];
 
-        $.each(json.matches.error, function (index, error) {
+        if (json.length) {
+            $.each(json.matches.error, function (index, error) {
 
-            /*  restructure error data, adding some information
-             */
+                /*  restructure error data, adding some information
+                 */
 
-            var analysed_error = {
-                'number': index,
-                'coordinates': '' + error.attributes.fromx + error.attributes.tox,
-                'length': error.attributes.tox - error.attributes.fromx,
-                'attributes': error.attributes
-            };
+                var analysed_error = {
+                    'number': index,
+                    'coordinates': '' + error.attributes.fromx + error.attributes.tox,
+                    'length': error.attributes.tox - error.attributes.fromx,
+                    'attributes': error.attributes
+                };
 
-            if (error.attributes.msg === "Fügen Sie zwischen Sätzen ein Leerzeichen ein") {
+                if (error.attributes.msg === "Fügen Sie zwischen Sätzen ein Leerzeichen ein") {
 
-                final_errors.push(analysed_error);
+                    final_errors.push(analysed_error);
 
-            } else {
+                } else {
 
-                other_errors.push(analysed_error);
-                //console.log(analysed_error);
+                    other_errors.push(analysed_error);
+                    //console.log(analysed_error);
 
-            }
+                }
 
-        });
+            });
+        }
+
 
         callback({final: final_errors, other: other_errors});
 
@@ -311,7 +317,7 @@ function generateLines(sentence_data, sentences, other_errors, target, callback)
 
     $.each(sentences, function (index, sentence) {
 
-        console.log(sentence.parse);
+        console.log(JSON.stringify(sentence.parse));
 
         var line_data = generateLine(index, sentence, target);
         var relevant_errors = [];
