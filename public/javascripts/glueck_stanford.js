@@ -166,7 +166,19 @@ function checkSentences(editor_text, other_errors, callback) {
         /*  restructure sentence data, adding some information
          */
 
+        console.log(json.document.sentences.sentence.length);
+
+        /*  allow texts comprising one sentence only; needed because the parser removes one intermediate level of
+         *  the returned data in this case
+         */
+
+        if (!json.document.sentences.sentence.length) {
+            sentence_data = [sentence_data];
+        }
+
         $.each(sentence_data, function (index, sentence) {
+
+            //console.log(sentence);
 
             var sentence_start = sentence.tokens.token[0].CharacterOffsetBegin;
             var sentence_end = sentence.tokens.token[sentence.tokens.token.length - 1].CharacterOffsetEnd;
@@ -174,7 +186,7 @@ function checkSentences(editor_text, other_errors, callback) {
             var sentence_string = editor_text.substring(sentence_start, sentence_end)  + ' ';
             sentences.push({start: sentence_start, end: sentence_end, string: sentence_string, parse: sentence.parsedTree});
 
-            console.log(sentence.parse);
+            //console.log(sentence.parse);
         });
 
         //console.log(sentence_data);
@@ -318,7 +330,7 @@ function generateLines(sentence_data, sentences, other_errors, target, callback)
 
     $.each(sentences, function (index, sentence) {
 
-        console.log(JSON.stringify(sentence.parse));
+        //console.log(JSON.stringify(sentence.parse));
 
         var line_data = generateLine(index, sentence, target);
         var relevant_errors = [];
