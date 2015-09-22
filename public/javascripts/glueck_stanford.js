@@ -122,7 +122,7 @@ function checkErrors(editor_text, callback) {
         var final_errors = [];
         var other_errors = [];
 
-        if (json.length) {
+        if (json.matches.error && json.matches.error.length > 0) {
             $.each(json.matches.error, function (index, error) {
 
                 /*  restructure error data, adding some information
@@ -174,6 +174,7 @@ function checkSentences(editor_text, other_errors, callback) {
             var sentence_string = editor_text.substring(sentence_start, sentence_end)  + ' ';
             sentences.push({start: sentence_start, end: sentence_end, string: sentence_string, parse: sentence.parsedTree});
 
+            console.log(sentence.parse);
         });
 
         //console.log(sentence_data);
