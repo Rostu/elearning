@@ -37,6 +37,7 @@ function insertTestData() {
     }
 
     $('#editor').text(test_text);
+    //console.log($('#editor').text());
 
 }
 
@@ -50,6 +51,53 @@ function checkClick() {
     var editor_text = $('#editor').text();
     $('#editor').text(editor_text);
 
+    //var editor_text = $('#editor').text();
+
+    /*var test = document.getElementById("editor").innerHTML;
+
+    console.log('innerHTML');
+    console.log(test);
+
+    var regex = /<br\s*[\/]?>/gi;
+    test = test.replace(regex, "\n");
+
+    console.log('test');
+    console.log(test);
+
+    $('#editor').html(test);
+
+    var editor_text = $('#editor').text();
+
+    console.log('editor_text');
+    console.log(editor_text);*/
+
+    //$('#editor').text(editor_text);
+
+    //$('#editor').text(editor_text);
+
+    /*var test = document.getElementById("editor");
+
+    console.log(test.innerHTML);
+
+    var regex = /<br\s*[\/]?>/gi;
+    $("#mydiv").html(str.replace(regex, "\n"));
+
+    console.log(test.innerHTML.replace('<br>', '\n'));
+
+    test.innerHTML = test.innerHTML.replace('<br>', '\n');
+
+    var editor_text = test.textContent || $('#editor').innerText;
+
+    //console.log(test);
+
+    console.log(test.textContent);
+    console.log(test.innerText);
+
+    //$('#editor').textContent || $('#editor').innerText;
+
+    $('#editor').text(editor_text);
+
+    //console.log($('#editor').html());*/
 
     var fixed_callback = function () {
 
@@ -166,7 +214,7 @@ function checkSentences(editor_text, other_errors, callback) {
         /*  restructure sentence data, adding some information
          */
 
-        console.log(json.document.sentences.sentence.length);
+        //console.log(json.document.sentences.sentence.length);
 
         /*  allow texts comprising one sentence only; needed because the parser removes one intermediate level of
          *  the returned data in this case
@@ -178,7 +226,7 @@ function checkSentences(editor_text, other_errors, callback) {
 
         $.each(sentence_data, function (index, sentence) {
 
-            //console.log(sentence);
+            console.log(sentence);
 
             var sentence_start = sentence.tokens.token[0].CharacterOffsetBegin;
             var sentence_end = sentence.tokens.token[sentence.tokens.token.length - 1].CharacterOffsetEnd;
@@ -187,6 +235,7 @@ function checkSentences(editor_text, other_errors, callback) {
             sentences.push({start: sentence_start, end: sentence_end, string: sentence_string, parse: sentence.parsedTree});
 
             //console.log(sentence.parse);
+
         });
 
         //console.log(sentence_data);
@@ -882,3 +931,15 @@ function pad (str, max) {
     str = str.toString();
     return str.length < max ? pad("0" + str, max) : str;
 }
+
+$.fn.getPreText = function () {
+    var ce = $("<pre />").html(this.html());
+    if ($.browser.webkit)
+        ce.find("div").replaceWith(function() { return "\n" + this.innerHTML; });
+    if ($.browser.msie)
+        ce.find("p").replaceWith(function() { return this.innerHTML + "<br>"; });
+    if ($.browser.mozilla || $.browser.opera || $.browser.msie)
+        ce.find("br").replaceWith("\n");
+
+    return ce.text();
+};
