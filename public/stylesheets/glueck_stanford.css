@@ -93,6 +93,10 @@
     white-space: pre-wrap;
 }
 
+.text {
+    white-space: pre-wrap;
+}
+
 #checkarea, .loadarea {
 
     display: flex; /* or inline-flex */
