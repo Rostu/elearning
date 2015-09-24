@@ -19,48 +19,54 @@ $(document).ready(function() {
                 $(".bold_info#Tank").toggle();
                 break;
             case "4":
-                ArrayToLookAt = energie;
+                $(".bold_info#Fahrzeuge").toggle();
                 break;
             case "5":
-                ArrayToLookAt = energie;
-                break;
-            case "6":
-                ArrayToLookAt = energie;
-                break;
-            case "7":
-                ArrayToLookAt = energie;
-                break;
-            case "8":
-                ArrayToLookAt = energie;
-                break;
-            case "9":
-                ArrayToLookAt = energie;
-                break;
-            case "10":
-                ArrayToLookAt = energie;
-                break;
-            case "11":
-                ArrayToLookAt = energie;
-                break;
-            case "12":
-                ArrayToLookAt = energie;
-                break;
-            case "13":
-                ArrayToLookAt = energie;
-                break;
-            case "14":
-                ArrayToLookAt = energie;
-                break;
-            case "15":
-                ArrayToLookAt = energie;
-                break;
-            case "16":
                 $(".bold_info#Sonnenkraft").toggle();
                 break;
+            case "6":
+                $(".bold_info#Solarauto").toggle();
+                break;
+            case "7":
+                $(".bold_info#Pfannkuchen").toggle();
+                break;
+            case "8":
+                $(".bold_info#Glaskuppel").toggle();
+                break;
+            case "9":
+                $(".bold_info#Solarmobil").toggle();
+                break;
+            case "10":
+                $(".bold_info#Elektromotor").toggle();
+                break;
+            case "11":
+                $(".bold_info#Solarzellen").toggle();
+                break;
+            case "12":
+                $(".bold_info#flott").toggle();
+                break;
+            case "13":
+                $(".bold_info#Batteriebetrieb").toggle();
+                break;
+            case "14":
+                $(".bold_info#Kofferraum").toggle();
+                break;
+            case "15":
+                $(".bold_info#prima").toggle();
+                break;
+            case "16":
+                $(".bold_info#Solarschleicher").toggle();
+                break;
             case "17":
-                ArrayToLookAt = energie;
+                $(".bold_info#Solartaxi").toggle();
+                break;
+            case "19":
+                $(".bold_info#aufladen").toggle();
+                break;
+            case "18":
+                $(".bold_info#gefaehrt").toggle();
                 break;
         }
-        console.log(this.id);
+
     });
 });
