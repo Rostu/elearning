@@ -15,7 +15,6 @@
     "lockit": "^1.0.0",
     "mongoose": "4.1.9",
     "socket.io": "^1.3.5",
-    "lockit-mongodb-adapter": "0.4.4",
     "socket.io-client": "*",
     "video.js": "^4.12.6",
     "videojs-youtube": "^1.2.10"
