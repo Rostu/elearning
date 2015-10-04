@@ -227,6 +227,8 @@ function checkSentences(editor_text, other_errors, callback) {
         $.each(sentence_data, function (index, sentence) {
 
             console.log(sentence);
+            console.log(JSON.stringify(sentence.parsedTree));
+
 
             var sentence_start = sentence.tokens.token[0].CharacterOffsetBegin;
             var sentence_end = sentence.tokens.token[sentence.tokens.token.length - 1].CharacterOffsetEnd;
@@ -380,29 +382,17 @@ function generateLines(sentence_data, sentences, other_errors, target, callback)
     $.each(sentences, function (index, sentence) {
 
         var parse = $.extend(true, {}, sentence.parse);
-        var prunes = [];
+        var prunes = prune_tree(enhance_tree(parse, 0));
         var subtrees = [];
 
-        collect_prunes(parse, prunes, 0);
-        prunes.unshift(parse);
-        //console.log(prunes);
-
-        $.each(prunes, function(index, prune) {
+        /*$.each(prunes, function(index, prune) {
             console.log(print_tree(prune));
-        });
+        });*/
 
         $.each(prunes, function(index, prune) {
-
             $.each(get_subtree_hashes(prune), function(index, sthp) {
                 subtrees.push(sthp);
-                //console.log(print_tree(sthp));
             });
-
-
-
-            //subtrees.push(get_subtree_hashes(prune));
-            //console.log(subtrees);
-            //[].concat.apply([], subtrees);
         });
 
         $.each(subtrees, function(index, st) {
@@ -962,21 +952,62 @@ function pad (str, max) {
 
 function print_tree(tree) {
 
-    var output = [];
-    //'[' + tree["level"] + ':' + tree["count"] + ']' +
-    var info = "[" + tree["level"] + ":" + tree["count"] + ']' + tree["type"];
-    output.push(info);
+    var   output = ['[' + tree["level"] + ':' + tree["count"] + ':' + tree["depth"] + ']' + tree["type"]];
 
     if (tree["children"]) {
         $.each(tree["children"], function(index, child) {
             output.push(print_tree(child));
         });
         return ["(", output.join(""), ")"].join("");
-
     } else {
         return ["(", output.join(""), ")"].join("");
     }
 
+}
+
+function enhance_tree(tree, level) {
+
+    tree["level"] = level++;
+    tree["count"] = 0;
+    tree["depth"] = 0;
+
+    if (tree["children"]) {
+        $.each(tree["children"], function (index, child) {
+            if (child["children"]) {
+
+                var callback = enhance_tree(child, level);
+                callback["count"] = index
+
+                if (child["depth"] + 1 > tree["depth"]) {
+                    tree["depth"] = child["depth"] + 1;
+                }
+            } else {
+                delete tree["children"];
+                tree["word"] = tree["type"];
+            }
+        });
+    }
+    return tree;
+}
+
+function prune_tree(tree) {
+
+    var output = [];
+
+    if (tree["children"]) {
+
+        output.push(tree);
+
+        $.each(tree["children"], function (index, child) {
+            output = output.concat(prune_tree(child));
+        });
+
+        return output;
+
+    } else {
+        var output_arr = [];
+        return output_arr;
+    }
 }
 
 function collect_prunes(tree, prunes, level) {
@@ -1011,13 +1042,9 @@ function collect_prunes(tree, prunes, level) {
 }
 
 function get_subtree_hashes(tree) {
+
     var base = $.extend(true, {}, tree);
-    //console.log("output");
-    //console.log(output);
     delete base["children"];
-    //console.log(print_tree(output));
-    //info = '[' + tree["level"] + ':' + tree["count"] + ']' + tree["type"]
-    //output << info
 
     if (tree["children"]) {
 
@@ -1025,43 +1052,23 @@ function get_subtree_hashes(tree) {
 
         $.each(tree["children"], function (index, child) {
             var callback = get_subtree_hashes(child);
-            //console.log("callback");
-            //console.log(callback);
             collection[index] = callback;
         });
 
         var cartesian_product = cartesianProduct(collection);
-        //console.log("cartesian");
-        //console.log(JSON.stringify(cartesian_product));
-
         cartesian_product = cartesian_product.map(function(cp) {
-
-            //console.log("cp");
-            //console.log(cp);
-
             var new_op = $.extend(true, {}, base);
             new_op["children"] = cp;
-
-
-            //console.log(print_tree(new_op));
             return new_op;
         });
 
         cartesian_product.push(base);
-
         return cartesian_product;
 
     } else {
-
-
-
         var output_arr = [];
         output_arr.push(base);
-
-        //console.log(JSON.stringify([].push(output)));
-
         return output_arr;
-
     }
 
 }
