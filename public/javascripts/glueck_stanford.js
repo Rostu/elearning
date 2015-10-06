@@ -226,8 +226,8 @@ function checkSentences(editor_text, other_errors, callback) {
 
         $.each(sentence_data, function (index, sentence) {
 
-            console.log(sentence);
-            console.log(JSON.stringify(sentence.parsedTree));
+            //console.log(sentence);
+            //console.log(JSON.stringify(sentence.parsedTree));
 
 
             var sentence_start = sentence.tokens.token[0].CharacterOffsetBegin;
@@ -382,22 +382,7 @@ function generateLines(sentence_data, sentences, other_errors, target, callback)
     $.each(sentences, function (index, sentence) {
 
         var parse = $.extend(true, {}, sentence.parse);
-        var prunes = prune_tree(enhance_tree(parse, 0));
-        var subtrees = [];
-
-        /*$.each(prunes, function(index, prune) {
-            console.log(print_tree(prune));
-        });*/
-
-        $.each(prunes, function(index, prune) {
-            $.each(get_subtree_hashes(prune), function(index, sthp) {
-                subtrees.push(sthp);
-            });
-        });
-
-        $.each(subtrees, function(index, st) {
-            console.log(print_tree(st));
-        });
+        translation_test(parse);
 
         var line_data = generateLine(index, sentence, target);
         var relevant_errors = [];
@@ -407,9 +392,6 @@ function generateLines(sentence_data, sentences, other_errors, target, callback)
                 relevant_errors.push(error);
             }
         });
-
-        //console.log(line_data);
-        //console.log(relevant_errors);
 
         if(relevant_errors.length > 0) {
 
@@ -950,44 +932,65 @@ function pad (str, max) {
     return str.length < max ? pad("0" + str, max) : str;
 }
 
-function print_tree(tree) {
+function translation_test(parse) {
 
-    var   output = ['[' + tree["level"] + ':' + tree["count"] + ':' + tree["depth"] + ']' + tree["type"]];
+    var output = {};
 
-    if (tree["children"]) {
-        $.each(tree["children"], function(index, child) {
-            output.push(print_tree(child));
+    var pruned_enhanced_parse = enhance_tree(prune_leaves(parse), 0);
+    //console.log(get_root_string(pruned_enhanced_parse));
+
+    var prunes = prune_tree(pruned_enhanced_parse);
+    prunes.sort(dynamic_sort("depth"));
+
+    $.each(prunes, function(index, prune) {
+
+        var key_string = get_prune_string(prune);
+
+        output[key_string] = {};
+        output[key_string]["prune"] = prune;
+        //output[key_string]["prune"] = print_tree(prune);
+        output[key_string]["subset_trees"] = [];
+
+        var subtree_hashes = get_subtree_hashes(prune);
+
+        $.each(subtree_hashes, function(index, sthp) {
+            enhance_tree(sthp, sthp["level"]);
         });
-        return ["(", output.join(""), ")"].join("");
-    } else {
-        return ["(", output.join(""), ")"].join("");
-    }
 
-}
+        subtree_hashes.sort(dynamic_sort("desc"));
+        subtree_hashes.sort(dynamic_sort("depth"));
 
-function enhance_tree(tree, level) {
+        $.each(subtree_hashes, function(index, sthp) {
 
-    tree["level"] = level++;
-    tree["count"] = 0;
-    tree["depth"] = 0;
+            output[key_string]["subset_trees"].push(sthp);
+            //output[key_string]["subset_trees"].push(print_tree(sthp));
+            //console.log(print_tree(sthp));
 
-    if (tree["children"]) {
-        $.each(tree["children"], function (index, child) {
-            if (child["children"]) {
-
-                var callback = enhance_tree(child, level);
-                callback["count"] = index
-
-                if (child["depth"] + 1 > tree["depth"]) {
-                    tree["depth"] = child["depth"] + 1;
-                }
-            } else {
-                delete tree["children"];
-                tree["word"] = tree["type"];
-            }
         });
-    }
-    return tree;
+     });
+
+    console.log(JSON.stringify(output));
+
+         /*$.each(get_subtree_hashes(prune), function(index, sthp) {
+     subtrees.push(sthp);
+     });
+     });
+
+     $.each(subtrees, function(index, st) {
+     console.log(print_tree(st));
+     });
+
+     var line_data = generateLine(index, sentence, target);
+     var relevant_errors = [];
+
+     $.each(other_errors, function(err_index, error) {
+     if (error.attributes.fromx - line_data.start >= 0 && error.attributes.tox - line_data.end <= 0) {
+     relevant_errors.push(error);
+     }
+     });
+
+     //console.log(line_data);
+     //console.log(relevant_errors);*/
 }
 
 function prune_tree(tree) {
@@ -1005,39 +1008,7 @@ function prune_tree(tree) {
         return output;
 
     } else {
-        var output_arr = [];
-        return output_arr;
-    }
-}
-
-function collect_prunes(tree, prunes, level) {
-
-    tree["level"] = "" + level++;
-    tree["count"] = "0";
-
-    if (tree["children"]) {
-
-        var count = 0;
-
-        $.each(tree["children"], function (index, child) {
-            if (child["children"]) {
-                var callback = collect_prunes(child, prunes, level);
-                callback["count"] = "" + count;
-
-                if (callback["children"]) {
-                    //console.log("SUBTREE\t" + level + "\t" + print_tree(callback));
-                    prunes.unshift(callback)
-                } else {
-                    //console.log("LEAF\t" + level + "\t" + child["type"]);
-                }
-            } else {
-                //console.log("WORD\t" + level + "\t" + child["word"]);
-                delete tree["children"];
-                tree["word"] = tree["type"];
-            }
-            count += 1
-        });
-        return tree;
+        return output;
     }
 }
 
@@ -1055,7 +1026,7 @@ function get_subtree_hashes(tree) {
             collection[index] = callback;
         });
 
-        var cartesian_product = cartesianProduct(collection);
+        var cartesian_product = cartesianProduct_old(collection);
         cartesian_product = cartesian_product.map(function(cp) {
             var new_op = $.extend(true, {}, base);
             new_op["children"] = cp;
@@ -1066,11 +1037,107 @@ function get_subtree_hashes(tree) {
         return cartesian_product;
 
     } else {
-        var output_arr = [];
-        output_arr.push(base);
-        return output_arr;
+        var output = [];
+        output.push(base);
+        return output;
     }
 
+}
+
+function enhance_tree(tree, level) {
+
+    tree["level"] = level++;
+    if (!tree["count"]) {
+        tree["count"] = 0;
+    }
+    tree["depth"] = 0;
+    tree["desc"] = 0;
+
+    if (tree["children"]) {
+        tree["desc"] = tree["children"].length;
+        $.each(tree["children"], function (index, child) {
+            var callback = enhance_tree(child, level);
+            callback["count"] = index;
+            tree["desc"] += child["desc"];
+            if (child["depth"] + 1 > tree["depth"]) {
+                tree["depth"] = child["depth"] + 1;
+            }
+        });
+    }
+    return tree;
+}
+
+function prune_leaves(tree) {
+    if (tree["children"]) {
+        $.each(tree["children"], function (index, child) {
+            if (child["children"]) {
+                var callback = prune_leaves(child);
+            } else {
+                if (child["word"]) {
+                    delete tree["children"];
+                }
+            }
+        });
+    }
+    return tree;
+}
+
+function print_tree(tree) {
+
+    var output = [];
+    output.push(get_root_string(tree));
+
+    if (tree["children"]) {
+        $.each(tree["children"], function(index, child) {
+            output.push(print_tree(child));
+        });
+        return ["(", output.join(""), ")"].join("");
+    } else {
+        return ["(", output.join(""), ")"].join("");
+    }
+
+}
+
+function get_root_string(tree) {
+
+    output = [];
+
+    output.push("[");
+    output.push(tree["level"]);
+    output.push(":");
+    output.push(tree["count"]);
+    output.push("]");
+
+    output.push("{");
+    output.push(tree["depth"]);
+    output.push("}");
+
+    output.push("<");
+    output.push(tree["desc"]);
+    output.push(">");
+
+    output.push(tree["type"]);
+
+    return output.join("");
+}
+
+function get_prune_string(tree) {
+
+    output = [];
+
+    output.push("[");
+    output.push(tree["level"]);
+    output.push(":");
+    output.push(tree["count"]);
+    output.push("]");
+
+    output.push("{");
+    output.push(tree["depth"]);
+    output.push("}");
+
+    output.push(tree["type"]);
+
+    return output.join("");
 }
 
 function cartesianProduct(a) { // a = array of array
@@ -1101,6 +1168,18 @@ function cartesianProduct_old(two_dim_arr) {
             o.push([head[0][i]]);
     }
     return o;
+}
+
+function dynamic_sort(property) {
+    var sortOrder = 1;
+    if(property[0] === "-") {
+        sortOrder = -1;
+        property = property.substr(1);
+    }
+    return function (a,b) {
+        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        return result * sortOrder;
+    }
 }
 
 $.fn.getPreText = function () {
