@@ -88,7 +88,7 @@ $(document).ready(function() {
         {
             removeNoticeIfPresent();
             //change the color of the token and their border to green
-            ui.draggable.css("color", "#02D64A");
+            ui.draggable.css("background-color", "#02D64A");
             ui.draggable.css("border", "solid 1px #02D64A");
             //delete the helper and remove the draggable option from the token and add the correct text to the box
             ui.helper.fadeOut();
@@ -101,7 +101,7 @@ $(document).ready(function() {
         }else{
             //raise faults change color of token to red
             raisefaults();
-            ui.draggable.css("color", "#A91211");
+            ui.draggable.css("background-color", "#A91211");
             ui.draggable.css("border", "solid 1px #A91211");
             removeNoticeIfPresent();
             $('#info3').append("<p>Das war nicht richtig. Probier es ruhig noch einmal.</p>");
