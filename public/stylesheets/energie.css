@@ -107,7 +107,7 @@ p {
     padding-bottom: 20px;
 }
 #Vorgabe1,#Vorgabe2{
-    display: table-cell;
+    display: table-row;
     width: 50%;
 }
 
@@ -125,7 +125,8 @@ p {
 }
 
 .token {
-    color: #0083cb;
+    color: white;
+    background-color: #0083cb;
     font-weight: bold;
     padding: 5px;
     float: left;
@@ -133,6 +134,10 @@ p {
     flex-direction: column;
     margin: 2px;
     border: 1px solid #0083cb;
+}
+
+.korrekt{
+    background-color: #0083cb;
 }
 .ui-draggable:hover{
     cursor:pointer;
