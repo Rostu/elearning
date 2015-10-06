@@ -3,6 +3,7 @@
  */
 
 $(document).ready(function() {
+    togglestartpicture();
     $( "#point_bars" ).data( "actualp", 0 );
     $( "#point_bars" ).data( "actualf", 0 );
     //console.log($("body").data());
@@ -176,6 +177,64 @@ $(document).ready(function() {
         }
     }
 
+    //Funktion prüft ob es sich um eine startseite handelt, und welche
+    //Danach werden per Zufallsgenerator alle 4 sekunden die entsprechenden Bilder aus der startseite ausgetauscht
+    function togglestartpicture(){
+        var elementExists = document.getElementById("content_image");
+        var title = $("#subjecttitle > h1").text();
+        var ArrayToLookAt = [];
+        var china=["china1.jpg","china2.jpg","china3.jpg","china4.jpg","china5.jpg","china6.jpg","china7.jpg"];
+        var energie=["energie1.jpg","energie2.jpg","energie3.jpg","energie4.jpg","energie5.jpg","energie6.jpg"];
+        var ersti=["ersti1.jpg","ersti2.jpg","ersti3.jpg","ersti4.jpg"];
+        var generationen=["generationen1.jpg","generationen2.jpg","generationen3.jpg","generationen4.jpg"];
+        var glueck=["glueck1.jpg","glueck2.jpg","glueck3.jpg","glueck4.jpg","glueck5.jpg"];
+        var veggie=["veggie1.jpg","veggie2.jpg","veggie3.jpg","veggie4.jpg","veggie5.jpg"];
+        var zukunft=["zukunft1.jpg","zukunft2.jpg","zukunft3.jpg","zukunft4.jpg"];
+        var wertewandel=[];
+        var undef=[];
+
+        switch (title) {
+            case "Zukunft":
+                ArrayToLookAt = zukunft;
+                break;
+            case "China":
+                ArrayToLookAt = china;
+                break;
+            case "Glück":
+                ArrayToLookAt = glueck;
+                break;
+            case "Neue Energien":
+                ArrayToLookAt = energie;
+                break;
+            case "Ersti":
+                ArrayToLookAt = ersti;
+                break;
+            case "Veggie-Day":
+                ArrayToLookAt = veggie;
+                break;
+            case "Wertewandel":
+                ArrayToLookAt = wertewandel;
+                break;
+            case "Generationen":
+                ArrayToLookAt = generationen;
+                break;
+            default:
+                ArrayToLookAt = undef;
+        }
+
+        change();
+        function change(){
+
+            var item = ArrayToLookAt[Math.floor(Math.random()*ArrayToLookAt.length)];
+            $("#content_image").css("background-image","url('../images/startpages/"+ item+"')");
+        }
+        if(elementExists != null){
+            setInterval(change,4000);
+        }else{}
+
+
+    }
+
     function toggleStartOverlay(){
         var startoverlaybackground = document.getElementById('startoverlaybackground');
         var startoverlaybluebar = document.getElementById('startoverlaybluebar');
@@ -197,8 +256,6 @@ $(document).ready(function() {
     }
 
     //functions for the point visualization--------------------------------
-
-
 
     var maxp = 0;
     var maxf = 0;

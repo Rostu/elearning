@@ -1,0 +1,46 @@
+extends layout
+block content
+    link(rel='stylesheet', href='stylesheets/energie.css')
+    script(src='javascripts/energie_Wortfeld_Solarantrieb_B.js')
+    #Aufgabenbox
+        b Aufgabenstellung:
+        p
+        | Entscheide in der folgenden Aufgabe, ob die Begriffe eine allgemeine, eine&nbsp;
+        span.bold(inhalt='metaphorisch' id='1') metaphorische (bildliche)&nbsp;
+        | Bedeutung tragen oder ob es sich um Fahrzeuge mit besonderen Eigenschaften handelt. Sortiere die folgenden
+        | Substantive in die unten abgebildete Tabelle ein, indem du sie an die entsprechenden Stellen ziehst. Hinter den
+        | Begriffen fndest du in Klammern jeweils die unterschiedliche Pluralbildung der einzelnen Begriffe.
+    #wrapper
+        .Vorgabe
+            #Vorgabe1
+                h2 Begriffe aus dem Text 'Solarantrieb – Sonnenenergie für Autos':
+                br
+            #Vorgabe2
+                h2 Weitere Begriffe
+                br
+                br
+        #Loesung
+            #allgemein.Antwort(int="1")
+                h3 Allgemeine Bedeutung
+            #metapher.Antwort(int="2")
+                h3 Metaphorische Bedeutung
+            #besonders.Antwort(int="3")
+                h3 Auto mit besonderer Eigenschaft
+                p (z.B. für einen bestimmten Zweck, mit einem bestmmten Antrieb)
+
+
+
+
+block overlay
+    #overlaycontentbox
+        .bold_info#metapher
+            h1 Metapher
+            b Eine Metapher ist etwas bildlich gemeintes, eine Bedeutungsübertragung
+            br
+            b Beispiel:
+            p Ein kleines Boot kann man metaphotisch als Nussschale bezeichnen.
+            img.info_image(src="images/energie/small_boats.jpg" width="280px" title='kleine Boote')
+            span +
+            img.info_image(src="images/energie/nutshell_small.jpg" width="280px" title='Nuss')
+            span =
+            img.info_image(src="images/energie/nussschale.jpg" width="280px" title='Nussschale')

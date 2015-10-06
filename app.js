@@ -81,6 +81,7 @@ app.get('/ersti_end', ubung.get_ersti_end);
 app.get('/energie_start', ubung.get_energie_start);
 app.get('/energie_Wortfeld_Solarantrieb', ubung.get_energie_Wortfeld_Solarantrieb);
 app.get('/energie_Wortfeld_Solarantrieb_A', ubung.get_energie_Wortfeld_Solarantrieb_A);
+app.get('/energie_Wortfeld_Solarantrieb_B', ubung.get_energie_Wortfeld_Solarantrieb_B);
 app.get('/feedback:last?', feed.get_feedback);
 app.post('/new_feedback', feed.new_feedback);
 app.get('/show_feedback',feed.show_feedback);

@@ -7,7 +7,10 @@
     color: black;
     -webkit-box-shadow: 0 2px 5px darkgray;
     -moz-box-shadow: 0 2px 5px darkgray;
-    box-shadow: 0 2px 5px darkgray; }
+    box-shadow: 0 2px 5px darkgray;
+    cursor:pointer;
+}
+
 
 .token {
     color: #0083cb;
@@ -46,6 +49,10 @@
  }
 .Antwort.ui-droppable.ui-state-hover{
     background-color: rgba(0, 131, 203, 0.34);
+}
+
+.ui-draggable:hover{
+    cursor:pointer;
 }
 
 .Box{

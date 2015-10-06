@@ -21,6 +21,9 @@
     float: right;
     margin: 10px;
 }
+.info_image{
+    margin: 10px;
+}
 
 .underline{
     display: inline-block;
@@ -31,6 +34,11 @@
 .bold{
     font-weight: bold;
 }
+.bold:hover{
+    cursor:pointer;
+}
+
+
 .underline:hover{
     cursor:pointer;
 }
@@ -52,4 +60,85 @@ p {
 .false{
     color: #A91211;
     font-size: 1.2em;
+}
+.bold_info{
+    font-size: 1.3em;
+    width: 80%;
+    margin: auto;
+    display: none;
+}
+.bold_info h1{
+    text-align: center;
+}
+.bold_info span{
+   font-size: 5em;
+}
+
+#Loesung{
+    height: 400px;
+    display: table;
+    width: 100%;
+
+}
+
+.Antwort{
+    display: table-cell;
+    width:33%;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.Antwort.ui-droppable{
+    display: table-cell;
+    width: 30%;
+    height: 500px;
+    text-align: center;
+}
+.Antwort.ui-droppable.ui-state-hover{
+    background-color: rgba(0, 131, 203, 0.34);
+}
+.Vorgabe{
+    font-size: 1.1em;
+    display: table;
+    width: 90%;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+#Vorgabe1,#Vorgabe2{
+    display: table-cell;
+    width: 50%;
+}
+
+.draggie.ui-draggable-dragging {
+
+    font-size: 1em;
+    padding: 3px;
+    margin: 3px;
+    background: lightgoldenrodyellow;
+    color: black;
+    -webkit-box-shadow: 0 2px 5px darkgray;
+    -moz-box-shadow: 0 2px 5px darkgray;
+    box-shadow: 0 2px 5px darkgray;
+    cursor:pointer;
+}
+
+.token {
+    color: #0083cb;
+    font-weight: bold;
+    padding: 5px;
+    float: left;
+    /*display: inline-flex;*/
+    flex-direction: column;
+    margin: 2px;
+    border: 1px solid #0083cb;
+}
+.ui-draggable:hover{
+    cursor:pointer;
+}
+
+.Vorgabe h2{
+    color: #0083cb;
+
 }
