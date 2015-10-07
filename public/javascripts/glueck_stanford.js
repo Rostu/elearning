@@ -227,7 +227,7 @@ function checkSentences(editor_text, other_errors, callback) {
         $.each(sentence_data, function (index, sentence) {
 
             //console.log(sentence);
-            //console.log(JSON.stringify(sentence.parsedTree));
+            console.log(JSON.stringify(sentence.parsedTree));
 
 
             var sentence_start = sentence.tokens.token[0].CharacterOffsetBegin;
@@ -969,7 +969,7 @@ function translation_test(parse) {
         });
      });
 
-    console.log(JSON.stringify(output));
+    //console.log(JSON.stringify(output));
 
          /*$.each(get_subtree_hashes(prune), function(index, sthp) {
      subtrees.push(sthp);
