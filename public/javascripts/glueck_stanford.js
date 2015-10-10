@@ -1,5 +1,7 @@
 $( init );
 
+glueck_stanford_levelcount = {};
+
 function init() {
 
     initialize();
@@ -944,13 +946,14 @@ function translation_test(parse) {
 
     $.each(prunes, function(index, prune) {
 
-        var key_string = get_prune_string(prune);
+        var key_string = get_root_string(prune, true, false);
 
         output[key_string] = {};
-        output[key_string]["prune"] = prune;
-        //output[key_string]["prune"] = print_tree(prune);
-        output[key_string]["subset_trees"] = [];
+        //output[key_string]["prune"] = prune;
+        output[key_string]["prune"] = print_tree(prune, true, true);
+        console.log(print_tree(prune, true, true));
 
+        output[key_string]["subset_trees"] = [];
         var subtree_hashes = get_subtree_hashes(prune);
 
         $.each(subtree_hashes, function(index, sthp) {
@@ -962,9 +965,9 @@ function translation_test(parse) {
 
         $.each(subtree_hashes, function(index, sthp) {
 
-            output[key_string]["subset_trees"].push(sthp);
-            //output[key_string]["subset_trees"].push(print_tree(sthp));
-            //console.log(print_tree(sthp));
+            //output[key_string]["subset_trees"].push(sthp);
+            output[key_string]["subset_trees"].push(print_tree(sthp, true, true));
+            console.log(print_tree(sthp, true, true));
 
         });
      });
@@ -1004,9 +1007,7 @@ function prune_tree(tree) {
         $.each(tree["children"], function (index, child) {
             output = output.concat(prune_tree(child));
         });
-
         return output;
-
     } else {
         return output;
     }
@@ -1046,22 +1047,35 @@ function get_subtree_hashes(tree) {
 
 function enhance_tree(tree, level) {
 
-    tree["level"] = level++;
+    if (!glueck_stanford_levelcount["level"]) {
+        glueck_stanford_levelcount["level"] = 0;
+    }
+
+    tree["level"] = level;
     if (!tree["count"]) {
-        tree["count"] = 0;
+        tree["count"] = glueck_stanford_levelcount["level"];
+    }
+    if (!tree["index"]) {
+        tree["index"] = 0;
     }
     tree["depth"] = 0;
     tree["desc"] = 0;
 
     if (tree["children"]) {
+
+        level += 1;
         tree["desc"] = tree["children"].length;
+
         $.each(tree["children"], function (index, child) {
+
             var callback = enhance_tree(child, level);
-            callback["count"] = index;
-            tree["desc"] += child["desc"];
+            glueck_stanford_levelcount["level"] += 1;
+
+            callback["index"] = index;
             if (child["depth"] + 1 > tree["depth"]) {
                 tree["depth"] = child["depth"] + 1;
             }
+            tree["desc"] += child["desc"];
         });
     }
     return tree;
@@ -1082,14 +1096,14 @@ function prune_leaves(tree) {
     return tree;
 }
 
-function print_tree(tree) {
+function print_tree(tree, with_depth, with_desc) {
 
     var output = [];
-    output.push(get_root_string(tree));
+    output.push(get_root_string(tree, with_depth, with_desc));
 
     if (tree["children"]) {
         $.each(tree["children"], function(index, child) {
-            output.push(print_tree(child));
+            output.push(print_tree(child, with_depth, with_desc));
         });
         return ["(", output.join(""), ")"].join("");
     } else {
@@ -1098,45 +1112,29 @@ function print_tree(tree) {
 
 }
 
-function get_root_string(tree) {
+function get_root_string(tree, with_depth, with_desc) {
 
     output = [];
 
     output.push("[");
     output.push(tree["level"]);
     output.push(":");
-    output.push(tree["count"]);
+    output.push(tree["index"]);
     output.push("]");
 
-    output.push("{");
-    output.push(tree["depth"]);
-    output.push("}");
+    if (with_depth) {
+        output.push("{");
+        output.push(tree["depth"]);
+        output.push("}");
+    }
 
-    output.push("<");
-    output.push(tree["desc"]);
-    output.push(">");
-
-    output.push(tree["type"]);
-
-    return output.join("");
-}
-
-function get_prune_string(tree) {
-
-    output = [];
-
-    output.push("[");
-    output.push(tree["level"]);
-    output.push(":");
-    output.push(tree["count"]);
-    output.push("]");
-
-    output.push("{");
-    output.push(tree["depth"]);
-    output.push("}");
+    if (with_desc) {
+        output.push("<");
+        output.push(tree["desc"]);
+        output.push(">");
+    }
 
     output.push(tree["type"]);
-
     return output.join("");
 }
 
