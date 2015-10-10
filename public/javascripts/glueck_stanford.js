@@ -384,7 +384,9 @@ function generateLines(sentence_data, sentences, other_errors, target, callback)
     $.each(sentences, function (index, sentence) {
 
         var parse = $.extend(true, {}, sentence.parse);
-        translation_test(parse);
+        //translation_test(parse);
+
+        validate_parse(parse);
 
         var line_data = generateLine(index, sentence, target);
         var relevant_errors = [];
@@ -994,6 +996,112 @@ function translation_test(parse) {
 
      //console.log(line_data);
      //console.log(relevant_errors);*/
+}
+
+function get_comparison_data(enhanced_pruned_tree_clone, callback) {
+
+    var data = {};
+
+    data["prunes"] = prune_tree(enhanced_pruned_tree_clone);
+    data["prunes"].sort(dynamic_sort("depth"));
+
+    data["subtrees"] = $.map(data["prunes"], function(prune, prune_index) {
+        var sth_array = $.map(get_subtree_hashes(prune), function( sth, sth_index) {
+            return enhance_tree(sth, sth["level"]);
+        });
+        sth_array.sort(dynamic_sort("desc")).sort(dynamic_sort("depth"));
+        /*$.each(sth_array, function(index, sth) {
+            console.log(print_tree(sth));
+        });*/
+        return sth_array;
+    });
+
+    callback(data);
+}
+
+function validate_parse(tree) {
+
+    glueck_stanford_levelcount = {};
+
+    var pruned_input_clone = prune_leaves($.extend(true, {}, tree));
+    var enhanced_pruned_tree_clone = enhance_tree(pruned_input_clone, 0);
+
+    get_comparison_data(enhanced_pruned_tree_clone, function(input_data) {
+
+        $.getJSON("javascripts/glueck_stanford_model_trees.json", function(model_trees) {
+
+            var model_depths = $.map(model_trees, function(tree, tree_index) {
+                return tree["depth"];
+            });
+            console.log(model_depths);
+
+            var relevant_indexes = $.map(model_depths, function (depth, index) {
+                if (depth == enhanced_pruned_tree_clone["depth"]) {
+                    return index;
+                }
+            });
+
+            if (relevant_indexes.length == 0) {
+
+                if (enhanced_pruned_tree_clone["depth"] < model_depths.min) {
+                    console.log("Du hast keinen gültigen Nebensatz gebildet. Überprüfe, ob deine Eingabe die Definitionseinleitung mit einem vollständigen Konditional-, Infinitiv- oder Objektsatz ergänzt.");
+                } else {
+                    if (enhanced_pruned_tree_clone["depth"] > model_depths.max) {
+                        console.log("Dein Nebensatz ist zu komplex. Versuche es mit einer vereinfachten Variante deiner Eingabe, indem du z.B. Attribute oder Relativsätze weglässt.");
+                    } else {
+
+                    }
+                }
+            } else {
+                console.log("relevant_indexes: " + JSON.stringify(relevant_indexes));
+
+                $.getJSON("javascripts/glueck_stanford_model_prunes.json", function(model_prunes) {
+
+                    relevant_indexes = relevant_indexes.filter(function (tree_index) {
+
+                        console.log("-x- processing tree #" + tree_index + ":");
+
+                        var model_prune_root_strings = $.map(model_prunes[tree_index], function (prune, prune_index) {
+                            return get_root_string(prune, true, false);
+                        });
+                        console.log("-|- model_prunes:" + JSON.stringify(model_prune_root_strings));
+
+                        var input_prune_root_strings = $.map(input_data["prunes"], function (prune, prune_index) {
+                            return get_root_string(prune, true, false);
+                        });
+                        console.log("-|- input_prunes:" + JSON.stringify(input_prune_root_strings));
+
+                        var prune_diff = model_prune_root_strings.filter(function(mprs) {
+                            return input_prune_root_strings.indexOf(mprs) < 0;
+                        });
+                        console.log("-|- prune_diff: " + JSON.stringify(prune_diff));
+
+                        return prune_diff.length == 0;
+
+                    });
+
+                    console.log("relevant_indexes: " + JSON.stringify(relevant_indexes));
+
+                });
+            }
+
+            //console.log(model_trees.length);
+        });
+
+
+
+        //console.log(input_data["prunes"].length);
+    });
+
+    /*
+    var input_depths = $.map( model_trees, function( tree, tree_index ) {
+        return tree["depth"];
+    });
+    console.log(input_depths.inspect);
+    console.log(input_clone["depth"]);
+
+    relevant_indexes = input_depths.each_index.select{ |i| input_depths[i] == input_clone["depth"] }
+    */
 }
 
 function prune_tree(tree) {
