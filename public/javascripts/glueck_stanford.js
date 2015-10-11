@@ -1013,7 +1013,7 @@ function get_comparison_data(enhanced_pruned_tree_clone, callback) {
         /*$.each(sth_array, function(index, sth) {
             console.log(print_tree(sth));
         });*/
-        return sth_array;
+        return [sth_array];
     });
 
     callback(data);
@@ -1071,8 +1071,13 @@ function validate_parse(tree) {
                         });
                         console.log("-|- input_prunes:" + JSON.stringify(input_prune_root_strings));
 
-                        var prune_diff = model_prune_root_strings.filter(function(mprs) {
-                            return input_prune_root_strings.indexOf(mprs) < 0;
+                        var to_diff = [model_prune_root_strings, input_prune_root_strings]
+                        to_diff.sort(function(a, b){
+                            return a.length - b.length;
+                        });
+
+                        var prune_diff = to_diff[1].filter(function(mprs) {
+                            return to_diff[0].indexOf(mprs) < 0;
                         });
                         console.log("-|- prune_diff: " + JSON.stringify(prune_diff));
 
@@ -1082,15 +1087,65 @@ function validate_parse(tree) {
 
                     console.log("relevant_indexes: " + JSON.stringify(relevant_indexes));
 
+                    if (relevant_indexes.length == 0) {
+                        console.log("--- Deine Nebensatzkonstruktion stimmt leider nicht mit den Vorlagen überein, die du in der vorherigen Aufgabe kennengelernt hast.");
+                    } else {
+                        $.getJSON("javascripts/glueck_stanford_model_subtrees.json", function (model_subtrees) {
+                            relevant_indexes = relevant_indexes.filter(function (tree_index) {
+
+                                var index_status = true;
+                                console.log("--- -x- processing tree \##{tree_index}:");
+
+                                var shallow_prune_indexes = $.map(model_prunes[tree_index], function (prune, prune_index) {
+                                    if (model_prunes[tree_index][prune_index]["depth"] == 1) {
+                                        return prune_index;
+                                    }
+                                });
+                                console.log("--- -|- shallow_prune_indexes: " + JSON.stringify(shallow_prune_indexes));
+
+                                $.each(model_prunes[tree_index], function (prune_index, prune) {
+                                    $.each(model_subtrees[tree_index][prune_index], function (sth_index, sth) {
+
+                                        console.log("--- -|x " + print_tree(sth, true, false));
+                                        console.log("--- -|x " + print_tree(input_data["subtrees"][prune_index][sth_index], true, false));
+
+                                        if (print_tree(sth, true, true) === (print_tree(input_data["subtrees"][prune_index][sth_index], true, true))) {
+                                            console.log("--- -|| Comparison is fine!");
+                                        } else {
+                                            var relevant_shallow_prunes = shallow_prune_indexes.filter(function (prune_index) {
+
+                                                var prune_root_str = get_root_string(model_prunes[tree_index][prune_index], true, false);
+
+                                                console.log("--- -|x prune_root_str:" + prune_root_str);
+                                                return print_tree(sth, true, false).indexOf(prune_root_str) > -1;
+                                            });
+
+                                            console.log("--- -|| relevant_shallow_prunes: " + JSON.stringify(relevant_shallow_prunes));
+
+                                            if (relevant_shallow_prunes && relevant_shallow_prunes.length == 0) {
+                                                console.log("--- -|| No exception!");
+                                                index_status = false;
+                                            } else {
+                                                console.log("--- -|| Exception!");
+                                            }
+                                        }
+                                    });
+                                });
+                                return index_status;
+                            });
+
+                            console.log("--- --- relevant_indexes: " + JSON.stringify(relevant_indexes));
+
+                            if (relevant_indexes.length == 0) {
+                                console.log("--- --- Deine Nebensatzkonstruktion stimmt leider nicht mit den Vorlagen überein, die du in der vorherigen Aufgabe kennengelernt hast.");
+                            }else {
+                                console.log("Sentence is fine!");
+                            }
+                        });
+                    }
                 });
             }
-
-            //console.log(model_trees.length);
         });
-
-
-
-        //console.log(input_data["prunes"].length);
     });
 
     /*
