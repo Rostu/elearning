@@ -41,6 +41,38 @@
 
 }
 
+#editorarea {
+
+    display: flex; /* or inline-flex */
+
+    width: 80%;
+    line-height: 20px;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+}
+
+#startphrase {
+
+    margin: 10px 0 10px 10px;
+    padding: 10px;
+
+    line-height: 20px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+
+    color: white;
+    background: #7AB3E3;
+
+}
+
 #textoverlay {
 
     display: flex; /* or inline-flex */
@@ -71,7 +103,7 @@
 
     overflow: auto;
 
-    margin: 10px 0 10px 10px;
+    margin: 10px 0 10px 0px;
     padding: 10px;
 
     width: 80%;

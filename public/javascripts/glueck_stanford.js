@@ -1,6 +1,7 @@
 $( init );
 
 glueck_stanford_levelcount = {};
+glueck_definition_trees_enabled = true;
 
 function init() {
 
@@ -25,13 +26,14 @@ function initialize() {
 function insertTestData() {
 
     var test_sentences = [
-        "Fügen Sie hier Ihren Dr. text ein.",
+        "wenn die Sonne scheint."
+        /*"Fügen Sie hier Ihren Dr. text ein.",
         "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen.",
         "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. oder nutzen Sie diesen Text als Beispiel für ein Paar Fehler , die LanguageTool erkennen kann: Ihm wurde Angst und bange, als er davon hörte.",
         "( Eine Rechtschreibprüfun findet findet übrigens auch statt.",
-        "Fügen Sie hier Ihren text ein. Fügen Sie hier Ihren text ein."
+        "Fügen Sie hier Ihren text ein. Fügen Sie hier Ihren text ein."*/
     ];
-    var selection = [0, 1, 2, 3, 4];
+    var selection = [0/*, 1, 2, 3, 4*/];
     var test_text = "";
 
     for(i = 0; i < selection.length; i++) {
