@@ -48,6 +48,72 @@ function insertTestData() {
 function checkClick() {
 
     /*  get the text in the editor and and reinsert it, deleting all additional markup
+     */
+
+    var editor_text = "Glück ist, " + $('#editor').text();
+    $('#editor').text($('#editor').text());
+
+    var fixed_callback = function () {
+
+        displayLines();
+
+        $('#textbox').find('.spinner').fadeOut(25, function () {
+            $(this).closest('.spinnerbox').slideUp(25, function () {
+                $(this).closest('#textoverlay').fadeOut(25);
+            });
+        });
+    };
+
+    $('#textbox').find('.explanation').slideUp(75, function () {
+
+        $('#textoverlay').fadeIn(25, function() {
+
+            $('#textbox').find('.spinnerbox').slideDown(25, function() {
+
+                $(this).find('.spinner').fadeIn(25);
+
+                hideLines(function() {
+
+                    $('.errorbox').remove();
+                    $('.line').remove();
+
+                    checkErrors(editor_text, function (error_data) {
+
+                        /*  filter error data in order to detect issues with sentence separation and only use
+                         *  CoreNLP if no such issues occur; otherwise, display sentence-final errors;
+                         */
+
+                        if (error_data.final.length == 0) {
+
+                            /*errorData.other = errorData.other.sort(function(a,b) {
+                             return b.length - a.length;
+                             });*/
+
+                            if (error_data.other.length == 0) {
+                                //TODO: add some form of positive feedback
+                            }
+                            checkSentences(editor_text, error_data.other, fixed_callback);
+
+                        } else {
+
+                            handleFinalErrors(error_data.final, fixed_callback);
+
+                        }
+
+                    });
+
+                });
+
+            });
+
+        });
+
+    });
+}
+
+function checkClick_old() {
+
+    /*  get the text in the editor and and reinsert it, deleting all additional markup
      *
      *  TODO: smart markup removal (preserving intentional line breaks)
      */
@@ -757,7 +823,7 @@ function loadClick(ev) {
 }
 
 function updateTree(json) {
-    $('.tree').children('svg').remove();
+    $('#tree').children('svg').remove();
 
     var margin = {top: 20, right: 20, bottom: 20, left: 20},
         width = 685 - margin.right - margin.left,
@@ -775,7 +841,7 @@ function updateTree(json) {
             return [d.x, d.y];
         });
 
-    var svg = d3.select(".tree").append("svg")
+    var svg = d3.select("#tree").append("svg")
         .attr("width", width + margin.right + margin.left)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
