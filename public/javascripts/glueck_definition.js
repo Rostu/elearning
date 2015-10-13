@@ -1,6 +1,7 @@
 $( init );
 
 glueck_definition_trees_enabled = true;
+glueck_definition_editor_text = "";
 
 function init() {
 
@@ -12,7 +13,7 @@ function init() {
         checkClick();
     });
 
-    insertTestData();
+    //insertTestData();
 
 }
 
@@ -38,54 +39,6 @@ function insertTestData() {
 
 }
 
-function checkClick() {
-
-    /*  get the text in the editor and and reinsert it, deleting all additional markup
-     */
-
-    var editor_text = "Glück ist, " + $('#editor').text().trim();
-    $('#editor').text($('#editor').text().trim());
-
-    startCheckUI(function() {
-
-        checkForErrors(editor_text, function (error_data) {
-
-            /*  filter error data in order to detect issues with sentence separation and only use
-             *  CoreNLP if no such issues occur; otherwise, display sentence-final errors;
-             */
-
-            if (error_data.length == 0) {
-                //TODO: add some form of positive feedback
-                stopCheckUI(function () {
-                    $('#editorarea').addClass('correct');
-                    $('#editorarea').effect("highlight", {color: '#A8D54D'}, function () {
-                        $('#editorarea').effect("highlight", {color: '#A8D54D'}, function () {
-                            $('#editorarea').removeClass('correct');
-
-
-                        });
-                    });
-                });
-            } else {
-
-                insertErrorSpans(error_data, $('#editor'), 11);
-                generateErrorBoxes(error_data, $('#textbox'));
-
-                stopCheckUI(function() {
-
-                    $('#editorarea').addClass('incorrect');
-
-                    $('#editorarea').effect("highlight", {color: '#FF7F7F'}, function() {
-                        $('#editorarea').effect("highlight", {color: '#FF7F7F'});
-                    });
-
-                    displayErrors($('#textbox'));
-                });
-            }
-        });
-    });
-}
-
 function checkForErrors(editor_text, callback) {
 
     var errors = [];
@@ -93,58 +46,136 @@ function checkForErrors(editor_text, callback) {
     var msg = "";
     var base_error = {};
 
-    if (!endsWith(editor_text, ".")) {
+    $.post("/stanford_anfrage_parse", {text: editor_text}, function (parse_json) {
 
-        msg = "Achte bitte darauf, dass deine Eingabe das Satzende mit einem Punkt kennzeichnet.";
-        base_error = generateBaseError(msg, editor_text.length);
-        errors.push(analyseError(0, base_error));
+        console.log("stanford");
 
-        callback(errors);
-    }
+        var sentence_data = parse_json.document.sentences.sentence;
 
-    if(editor_text.split(/\s+/).length > 30) {
+        if (!sentence_data.length) {
+            sentence_data = [sentence_data];
+        }
 
-        msg = "Achte bitte darauf, dass dein Satz nicht zu viele Wörter enthält. Beschränke dich bitte auf kurze Sätze.";
-        base_error = generateBaseError(msg, editor_text.length);
-        errors.push(analyseError(0, base_error));
+        console.log(sentence_data.length);
 
-        callback(errors);
+        if (sentence_data.length > 1) {
 
-    }
+            var error_offset = sentence_data[0].tokens.token[sentence_data[0].tokens.token.length - 1].CharacterOffsetEnd;
 
-    } else {
+            msg = "Bitte gib nur einen einzelnen Satz ein.";
+            base_error = generateBaseError(msg, error_offset, editor_text.length, []);
+            errors.push(analyseError(0, base_error));
 
-        $.post("/langtool_anfrage", {sentence: editor_text}, function (json) {
+            callback(errors);
 
-            if (json.matches.error && json.matches.error.length > 0) {
-                $.each(json.matches.error, function (index, error) {
+        } else {
+
+            var words = editor_text.split(/\s+/);
+
+            if (words.length > 30) {
+
+                var exceeding = words.slice(30, words.length).join(" ");
+
+                msg = "Achte bitte darauf, dass dein Satz nicht zu viele Wörter enthält. Versuche es mit einem kürzeren Satz erneut.";
+                base_error = generateBaseError(msg, editor_text.lastIndexOf(exceeding), editor_text.length, []);
+                errors.push(analyseError(0, base_error));
+
+            }
+
+            if (!endsWith(editor_text, ".")) {
+
+                $('#editor').text($('#editor').text() + ' ');
+
+                msg = "Achte bitte darauf, dass deine Eingabe das Satzende mit einem Punkt markiert.";
+                base_error = generateBaseError(msg, editor_text.length, editor_text.length + 1, ["."]);
+                errors.push(analyseError(0, base_error));
+
+            }
+
+            console.log("#1 errors: " + errors.length);
+
+            if (errors.length == 0) {
+
+                $.post("/langtool_anfrage", {sentence: editor_text}, function (json) {
+
+                    console.log("langtool");
+
+                    if (json.matches.error && json.matches.error.length > 0) {
+                        $.each(json.matches.error, function (index, error) {
 
 
+                            if (error.attributes.fromx > 10) {
+                                var analysed_error = analyseError(index, error);
+                                errors.push(analysed_error);
+                            }
+                        });
+                    }
 
-                    if (error.attributes.fromx > 10) {
-                        var analysed_error = analyseError(index, error);
-                        errors.push(analysed_error);
+                    console.log("#2 errors: " + errors.length);
+
+                    if (errors.length == 0) {
+
+                        validate_parse(sentence_data[0].parsedTree, function(validation_msg) {
+
+                            console.log("validate");
+
+                            if (validation_msg) {
+
+                                console.log("sent if");
+
+                                msg = validation_msg;
+                                console.log(msg);
+
+                                base_error = generateBaseError(msg, editor_text.length, editor_text.length, []);
+                                errors.push(analyseError(0, base_error));
+
+                            } else {
+
+                                console.log("sent else");
+
+                                var sentence_start = sentence_data[0].tokens.token[0].CharacterOffsetBegin;
+                                var sentence_end = sentence_data[0].tokens.token[sentence_data[0].tokens.token.length - 1].CharacterOffsetEnd;
+                                var sentence_string = editor_text.substring(sentence_start, sentence_end);
+
+                                var sentence = {start: sentence_start, end: sentence_end, string: sentence_string, parse: sentence_data[0].parsedTree};
+
+                                var index = $('#sentbox').find('.line').length;
+
+                                generateLine(index, sentence, $('#sentbox'));
+
+                            }
+                            callback(errors);
+                        });
+
+                    } else {
+                        callback(errors);
                     }
                 });
+
+            } else {
+                callback(errors);
             }
-            callback(errors);
-        });
-    }
+        }
+    });
 }
 
-function generateBaseError(msg, text_length) {
+function generateBaseError(msg, fromx, tox, reps) {
 
     /*  mocking up the structure of an error yielded by LanguageTool
      */
 
     var base_error = {attributes:
-    {
-        category: "Sonstiges",
-        msg: msg,
-        fromx: text_length,
-        tox: text_length
-    }
+        {
+            category: "Sonstiges",
+            msg: msg,
+            fromx: fromx,
+            tox: tox
+        }
     };
+
+    if (reps.length > 0) {
+        base_error.attributes.replacements = reps.join("#");
+    }
 
     return base_error;
 
@@ -165,53 +196,112 @@ function analyseError(index, error) {
 
 }
 
-function analyseSentence(editor_text, errors, callback) {
 
-    $.post("/stanford_anfrage", {sentences: editor_text}, function (json) {
 
-        var sentence_data = json.document.sentences.sentence;
-        var sentences = [];
+function insertErrorSpans(errlist, target, offset) {
 
-        /*  allow texts comprising one sentence only; needed because the parser removes one intermediate level of
-         *  the returned data in this case
-         */
+    /*  insert coloured error spans based on position data provided by LanguageTool; offset is needed to compute the
+     *  correct positions for the current sentence only since the coordinates taken from the results of LanguageTool
+     *  are based on the entire text;
+     */
 
-        if (!json.document.sentences.sentence.length) {
-            sentence_data = [sentence_data];
-        }
+    var original = target.text();
+    target.text('');
 
-        /*  restructure sentence data, adding some information
-         */
+    var last_end = 0;
 
-        $.each(sentence_data, function (index, sentence) {
+    $.each(errlist, function(index, error) {
 
-            var sentence_start = sentence.tokens.token[0].CharacterOffsetBegin;
-            var sentence_end = sentence.tokens.token[sentence.tokens.token.length - 1].CharacterOffsetEnd;
+        insertErrorSpan(error, target, original, last_end, offset);
+        last_end = errlist[index].attributes.tox - offset;
 
-            var sentence_string = editor_text.substring(sentence_start, sentence_end)  + ' ';
-            sentences.push({start: sentence_start, end: sentence_end, string: sentence_string, parse: sentence.parsedTree});
+        ////console.log('last');
+        ////console.log(last_end);
 
-            console.log(sentences);
-
-        });
-
-        /*  highlight erroneous substrings by inserting coloured spans and generate divs for display of
-         *  error data if any errors are present in the current sentence
-         */
-
-        insertErrors(errors, $('#editor'), 11);
-        generateErrors(errors, $('#textbox'));
-
-        /*var sentence_span = $(line_data.line).find('.textarea').children().first();
-
-         insertErrors(relevant_errors, textspan, line_data.start);
-
-         generateErrors(relevant_errors, line_data.line);*/
-
-        callback();
     });
 
+    var text = jQuery('<span/>', {
+        class: 'text',
+        text: original.substring(last_end, original.length)
+    });
+    $(target).append(text);
+
 }
+
+function insertErrorSpan(data, target, original, last_end, offset) {
+
+    var err_start = data.attributes.fromx - offset;
+    var err_end = data.attributes.tox - offset;
+
+    var err_string = original.substring(err_start, err_end);
+
+    ////console.log('computed');
+    ////console.log(err_start - last_end);
+
+    if(err_start - last_end > 0) {
+
+        /*  insert span with pristine substring, separating the current error from the previous one if needed; the
+         *  end position of the previous error is tracked by insertErrors(...) and passed on as the parameter "last_end"
+         */
+
+        var text = jQuery('<span/>', {
+            class: 'text',
+            text: original.substring(last_end, err_start)
+        });
+        $(target).append(text);
+
+    }else{
+
+        console.log("Uh, oh! We've hit a snag!!");
+
+    }
+
+    if($('#' + 'esco' + data.coordinates).length == 0) {
+
+        /*  the insertion of coloured error spans needs to keep track of error coordinates since LanguageTool may have
+         *  several error suggestions for the same substring; if overlapping errors occur, they are linked to the same
+         *  error span;
+         */
+
+        var mistake = jQuery('<span/>', {
+            id: 'esco' + data.coordinates,
+            class: 'mistake',
+            original: err_string,
+            text: err_string
+        });
+        $(mistake).hover(
+            function() {
+                $(".error[id$='co" + data.coordinates + "']").addClass( "hover" );
+            }, function() {
+                $(".error[id$='co" + data.coordinates + "']").removeClass( "hover" );
+            }
+        );
+        $(mistake).dblclick(function(event) {
+            $('html, body').animate({
+                scrollTop: $(".error[id$='co" + data.coordinates + "']").offset().top
+            }, 25);
+            errorClick($(".error[id$='co" + data.coordinates + "']").find('.errmsg'), false);
+        });
+        $(target).append(mistake);
+
+        //var old_target_id = $(target).attr('id');
+        //var tbs_target_id = 'ts' + old_target_id.slice(2, old_target_id.length);
+
+        //console.log(old_target_id);
+        //console.log(tbs_target_id);
+
+    }
+
+    //console.log('start');
+    //console.log(err_start);
+    //console.log('end');
+    //console.log(err_end);
+    //console.log('err');
+    //console.log(err_string);
+
+}
+
+
 
 function generateErrorBoxes(errlist, target) {
 
@@ -355,106 +445,66 @@ function generateErrorBox(data, target) {
 
 }
 
-function insertErrorSpans(errlist, target, offset) {
+function generateLine(index, sentence, target) {
 
-    /*  insert coloured error spans based on position data provided by LanguageTool; offset is needed to compute the
-     *  correct positions for the current sentence only since the coordinates taken from the results of LanguageTool
-     *  are based on the entire text;
-     */
-
-    var original = target.text();
-    target.text('');
-
-    var last_end = 0;
-
-    $.each(errlist, function(index, error) {
-
-        insertErrorSpan(error, target, original, last_end, offset);
-        last_end = errlist[index].attributes.tox - offset;
-
-        ////console.log('last');
-        ////console.log(last_end);
-
+    var loadbutton = jQuery('<div/>', {
+        id: 'lo' + pad(index, 2),
+        class: 'loadbutton',
+    });
+    $(loadbutton).click(function(event) {
+        loadClick(event);
     });
 
-    var text = jQuery('<span/>', {
-        class: 'text',
-        text: original.substring(last_end, original.length)
+    var loadarea = jQuery('<div/>', {
+        id: 'la' + pad(index, 2),
+        class: 'loadarea',
     });
-    $(target).append(text);
+    $(loadarea).append(loadbutton);
 
-}
+    var sentence_span = jQuery('<span/>', {
+        id: 'ss' + pad(index, 2),
+        class: 'sentence',
+        text: sentence.string,
+    });
+    $(sentence_span).attr('start', sentence.start);
+    $(sentence_span).attr('end', sentence.end);
 
-function insertErrorSpan(data, target, original, last_end, offset) {
+    var textarea = jQuery('<div/>', {
+        id: 'ta' + pad(index, 2),
+        class: 'textarea',
+    });
+    $(textarea).append(sentence_span);
 
-    var err_start = data.attributes.fromx - offset;
-    var err_end = data.attributes.tox - offset;
+    var treedata = jQuery('<div/>', {
+        id: 'td' + pad(index, 2),
+        class: 'treedata',
+        text: JSON.stringify(sentence.parse)
+    });
 
-    var err_string = original.substring(err_start, err_end);
+    var dataarea = jQuery('<div/>', {
+        id: 'da' + pad(index, 2),
+        class: 'dataarea'
+    });
+    $(dataarea).append(treedata);
 
-    ////console.log('computed');
-    ////console.log(err_start - last_end);
+    var linebox = jQuery('<div/>', {
+        id: 'lb' + pad(index, 2),
+        class: 'linebox'
+    });
+    $(linebox).append(textarea);
+    $(linebox).append(loadarea);
+    $(linebox).append(dataarea);
 
-    if(err_start - last_end > 0) {
+    var line = jQuery('<div/>', {
+        id: 'll' + pad(index, 2),
+        class: 'line',
+    });
+    $(line).append(linebox);
+    $(line).hide();
 
-        /*  insert span with pristine substring, separating the current error from the previous one if needed; the
-         *  end position of the previous error is tracked by insertErrors(...) and passed on as the parameter "last_end"
-         */
+    $(target).prepend(line);
 
-        var text = jQuery('<span/>', {
-            class: 'text',
-            text: original.substring(last_end, err_start)
-        });
-        $(target).append(text);
-
-    }else{
-
-        console.log("Uh, oh! We've hit a snag!!");
-
-    }
-
-    if($('#' + 'esco' + data.coordinates).length == 0) {
-
-        /*  the insertion of coloured error spans needs to keep track of error coordinates since LanguageTool may have
-         *  several error suggestions for the same substring; if overlapping errors occur, they are linked to the same
-         *  error span;
-         */
-
-        var mistake = jQuery('<span/>', {
-            id: 'esco' + data.coordinates,
-            class: 'mistake',
-            original: err_string,
-            text: err_string
-        });
-        $(mistake).hover(
-            function() {
-                $(".error[id$='co" + data.coordinates + "']").addClass( "hover" );
-            }, function() {
-                $(".error[id$='co" + data.coordinates + "']").removeClass( "hover" );
-            }
-        );
-        $(mistake).dblclick(function(event) {
-            $('html, body').animate({
-                scrollTop: $(".error[id$='co" + data.coordinates + "']").offset().top
-            }, 25);
-            errorClick($(".error[id$='co" + data.coordinates + "']").find('.errmsg'), false);
-        });
-        $(target).append(mistake);
-
-        //var old_target_id = $(target).attr('id');
-        //var tbs_target_id = 'ts' + old_target_id.slice(2, old_target_id.length);
-
-        //console.log(old_target_id);
-        //console.log(tbs_target_id);
-
-    }
-
-    //console.log('start');
-    //console.log(err_start);
-    //console.log('end');
-    //console.log(err_end);
-    //console.log('err');
-    //console.log(err_string);
+    return {start: sentence.start, end: sentence.end, line: line };
 
 }
 

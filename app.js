@@ -106,7 +106,7 @@ app.get('/glueck_video_zuordnen', ubung.get_glueck_video_zuordnen);
 app.get('/glueck_video_kleeblatt', ubung.get_glueck_video_kleeblatt);
 app.get('/glueck_video_paraphrase', ubung.get_glueck_video_paraphrase);
 app.get('/glueck_silbermond', ubung.get_glueck_silbermond);
-app.get('/glueck_stanford', ubung.get_glueck_stanford);
+app.get('/glueck_definition', ubung.get_glueck_definition);
 app.get('/handy_start', ubung.get_handy_start);
 app.get('/handy_text', ubung.get_handy_text);
 app.get('/handy_task1', ubung.get_handy_task1);
@@ -180,7 +180,8 @@ server.listen(app.get('port'), function(){
 
 var stanford = require('./routes/stanford');
 
-app.post('/stanford_anfrage', stanford.get_request);
+app.post('/stanford_anfrage_parse', stanford.get_parse);
+app.post('/stanford_anfrage_ssplit', stanford.get_ssplit);
 
 var langtool = require('./routes/langtool');
 

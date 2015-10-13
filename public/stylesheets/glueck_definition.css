@@ -54,6 +54,12 @@
 
 }
 
+#sentbox {
+
+    padding-bottom: 10px;
+
+}
+
 #textoverlay {
 
     display: flex; /* or inline-flex */
@@ -80,16 +86,6 @@
 
 }
 
-#sentboxheader {
-
-    padding: 5px;
-
-    width: 80%;
-
-    flex: 1 1 auto;
-    align-self: auto;
-}
-
 .explanation {
 
     margin: 10px 0;
@@ -101,7 +97,7 @@
     align-self: auto;
 
     color: white;
-    background: #A1BED6;
+    background: #7AB3E3;
 
 }
 
@@ -284,14 +280,13 @@
 
     align-items: center;
 
-    background: #A6D1F5;
 }
 
 #checkarea {
 
     padding: 0px;
 
-    background: #005E9C;
+    background: #A6D1F5;
 }
 
 #checkbutton, .loadbutton {
@@ -344,7 +339,7 @@
 .line {
     display: flex; /* or inline-flex */
 
-    margin: 0 10px 10px 10px;
+    margin: 10px 10px 0 10px;
 
     width: 80%;
 
@@ -356,7 +351,13 @@
     align-items: stretch;
     align-content: stretch;
 
-    background: red;
+    background: aliceblue;
+}
+
+.line.correct {
+
+    background: #6B9713;
+
 }
 
 .linebox {
@@ -373,7 +374,6 @@
     align-items: stretch;
     align-content: stretch;
 
-    background: greenyellow;
 }
 
 .textarea {
@@ -385,24 +385,18 @@
     flex: 1 1 auto;
     align-self: auto;
 
-    background: aliceblue;
-
-}
-
-.loadarea {
-    background: aliceblue;
 }
 
 .loadbutton:hover {
 
-    background: blue !important;
+    background: #0999F6 !important;
 
     cursor: pointer;
 }
 
 .linebox.active .loadbutton {
 
-    background: darkturquoise;
+    background: #00DE73;
 }
 
 .dataarea {

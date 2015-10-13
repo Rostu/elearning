@@ -1,16 +1,3 @@
-function loadClick(ev) {
-
-    $('#tree').slideDown(75);
-    $('#treebox').find('.explanation').slideUp(75);
-
-    $('.linebox').removeClass('active');
-    var linebox = ev.target.closest('.linebox');
-    $(linebox).addClass('active');
-
-    var treedata = $(linebox).children('.dataarea').children('.treedata')[0];
-    updateTree(JSON.parse($(treedata).text()));
-}
-
 function updateTree(json) {
     $('#tree').children('svg').remove();
 

@@ -1,67 +1,5 @@
 glueck_definition_levelcount = {};
 
-function translation_test(parse) {
-
-    var output = {};
-
-    var pruned_enhanced_parse = enhance_tree(prune_leaves(parse), 0);
-    //console.log(get_root_string(pruned_enhanced_parse));
-
-    var prunes = prune_tree(pruned_enhanced_parse);
-    prunes.sort(dynamic_sort("depth"));
-
-    $.each(prunes, function(index, prune) {
-
-        var key_string = get_root_string(prune, true, false);
-
-        output[key_string] = {};
-        //output[key_string]["prune"] = prune;
-        output[key_string]["prune"] = print_tree(prune, true, true);
-        console.log(print_tree(prune, true, true));
-
-        output[key_string]["subset_trees"] = [];
-        var subtree_hashes = get_subtree_hashes(prune);
-
-        $.each(subtree_hashes, function(index, sthp) {
-            enhance_tree(sthp, sthp["level"]);
-        });
-
-        subtree_hashes.sort(dynamic_sort("desc"));
-        subtree_hashes.sort(dynamic_sort("depth"));
-
-        $.each(subtree_hashes, function(index, sthp) {
-
-            //output[key_string]["subset_trees"].push(sthp);
-            output[key_string]["subset_trees"].push(print_tree(sthp, true, true));
-            console.log(print_tree(sthp, true, true));
-
-        });
-    });
-
-    //console.log(JSON.stringify(output));
-
-    /*$.each(get_subtree_hashes(prune), function(index, sthp) {
-     subtrees.push(sthp);
-     });
-     });
-
-     $.each(subtrees, function(index, st) {
-     console.log(print_tree(st));
-     });
-
-     var line_data = generateLine(index, sentence, target);
-     var relevant_errors = [];
-
-     $.each(other_errors, function(err_index, error) {
-     if (error.attributes.fromx - line_data.start >= 0 && error.attributes.tox - line_data.end <= 0) {
-     relevant_errors.push(error);
-     }
-     });
-
-     //console.log(line_data);
-     //console.log(relevant_errors);*/
-}
-
 function get_comparison_data(enhanced_pruned_tree_clone, callback) {
 
     var data = {};
@@ -83,21 +21,28 @@ function get_comparison_data(enhanced_pruned_tree_clone, callback) {
     callback(data);
 }
 
-function validate_parse(tree) {
+function validate_parse(tree, callback) {
 
-    glueck_stanford_levelcount = {};
+    console.log("valenter");
+
+    console.log(JSON.stringify(tree));
+
+    glueck_definition_levelcount = {};
 
     var pruned_input_clone = prune_leaves($.extend(true, {}, tree));
     var enhanced_pruned_tree_clone = enhance_tree(pruned_input_clone, 0);
 
     get_comparison_data(enhanced_pruned_tree_clone, function(input_data) {
 
+        console.log(JSON.stringify(input_data));
+
         $.getJSON("javascripts/glueck_definition_model_trees.json", function(model_trees) {
+
+            console.log("glueck_definition_model_trees");
 
             var model_depths = $.map(model_trees, function(tree, tree_index) {
                 return tree["depth"];
             });
-            console.log(model_depths);
 
             var relevant_indexes = $.map(model_depths, function (depth, index) {
                 if (depth == enhanced_pruned_tree_clone["depth"]) {
@@ -107,19 +52,21 @@ function validate_parse(tree) {
 
             if (relevant_indexes.length == 0) {
 
-                if (enhanced_pruned_tree_clone["depth"] < model_depths.min) {
-                    console.log("Du hast keinen gültigen Nebensatz gebildet. Überprüfe, ob deine Eingabe die Definitionseinleitung mit einem vollständigen Konditional-, Infinitiv- oder Objektsatz ergänzt.");
-                } else {
-                    if (enhanced_pruned_tree_clone["depth"] > model_depths.max) {
-                        console.log("Dein Nebensatz ist zu komplex. Versuche es mit einer vereinfachten Variante deiner Eingabe, indem du z.B. Attribute oder Relativsätze weglässt.");
-                    } else {
+                console.log("no indexes");
 
+                if (enhanced_pruned_tree_clone["depth"] < Math.min.apply(Math, model_depths)) {
+                    callback("Du hast keinen gültigen Nebensatz gebildet. Überprüfe, ob deine Eingabe die Definitionseinleitung mit einem vollständigen Konditional-, Infinitiv- oder Objektsatz ergänzt.");
+                } else {
+                    if (enhanced_pruned_tree_clone["depth"] > Math.max.apply(Math, model_depths)) {
+                        callback("Dein Nebensatz ist zu komplex. Versuche es mit einer vereinfachten Variante deiner Eingabe, indem du z.B. Attribute oder Relativsätze weglässt.");
                     }
                 }
             } else {
                 console.log("relevant_indexes: " + JSON.stringify(relevant_indexes));
 
                 $.getJSON("javascripts/glueck_definition_model_prunes.json", function(model_prunes) {
+
+                    console.log("glueck_definition_model_prunes");
 
                     relevant_indexes = relevant_indexes.filter(function (tree_index) {
 
@@ -152,9 +99,12 @@ function validate_parse(tree) {
                     console.log("relevant_indexes: " + JSON.stringify(relevant_indexes));
 
                     if (relevant_indexes.length == 0) {
-                        console.log("--- Deine Nebensatzkonstruktion stimmt leider nicht mit den Vorlagen überein, die du in der vorherigen Aufgabe kennengelernt hast.");
+                        callback("Nebensatzkonstruktion stimmt leider nicht mit den Vorlagen überein, die du in der vorherigen Aufgabe kennengelernt hast.");
                     } else {
                         $.getJSON("javascripts/glueck_definition_model_subtrees.json", function (model_subtrees) {
+
+                            console.log("glueck_definition_model_subtrees");
+
                             relevant_indexes = relevant_indexes.filter(function (tree_index) {
 
                                 var index_status = true;
@@ -201,8 +151,9 @@ function validate_parse(tree) {
                             console.log("--- --- relevant_indexes: " + JSON.stringify(relevant_indexes));
 
                             if (relevant_indexes.length == 0) {
-                                console.log("--- --- Deine Nebensatzkonstruktion stimmt leider nicht mit den Vorlagen überein, die du in der vorherigen Aufgabe kennengelernt hast.");
+                                callback("Deine Nebensatzkonstruktion stimmt leider nicht mit den Vorlagen überein, die du in der vorherigen Aufgabe kennengelernt hast.");
                             }else {
+                                callback();
                                 console.log("Sentence is fine!");
                             }
                         });
@@ -211,16 +162,6 @@ function validate_parse(tree) {
             }
         });
     });
-
-    /*
-     var input_depths = $.map( model_trees, function( tree, tree_index ) {
-     return tree["depth"];
-     });
-     console.log(input_depths.inspect);
-     console.log(input_clone["depth"]);
-
-     relevant_indexes = input_depths.each_index.select{ |i| input_depths[i] == input_clone["depth"] }
-     */
 }
 
 function prune_tree(tree) {
@@ -274,13 +215,13 @@ function get_subtree_hashes(tree) {
 
 function enhance_tree(tree, level) {
 
-    if (!glueck_stanford_levelcount["level"]) {
-        glueck_stanford_levelcount["level"] = 0;
+    if (!glueck_definition_levelcount["level"]) {
+        glueck_definition_levelcount["level"] = 0;
     }
 
     tree["level"] = level;
     if (!tree["count"]) {
-        tree["count"] = glueck_stanford_levelcount["level"];
+        tree["count"] = glueck_definition_levelcount["level"];
     }
     if (!tree["index"]) {
         tree["index"] = 0;
@@ -296,7 +237,7 @@ function enhance_tree(tree, level) {
         $.each(tree["children"], function (index, child) {
 
             var callback = enhance_tree(child, level);
-            glueck_stanford_levelcount["level"] += 1;
+            glueck_definition_levelcount["level"] += 1;
 
             callback["index"] = index;
             if (child["depth"] + 1 > tree["depth"]) {
