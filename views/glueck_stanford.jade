@@ -1,8 +1,11 @@
 extends layout
 block content
-    link(rel='stylesheet', href='stylesheets/glueck_stanford.css')
+    link(rel='stylesheet', href='stylesheets/glueck_definition.css')
     script(src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js", charset="utf-8")
-    script(src='javascripts/glueck_stanford.js')
+    script(src='javascripts/glueck_definition.js')
+    script(src='javascripts/glueck_definition_comparison.js')
+    script(src='javascripts/glueck_definition_trees.js')
+    script(src='javascripts/glueck_definition_ui.js')
     #Aufgabenbox
         p Rekonstruiere die Sätze. Passe die Verben an.
     #flexbox
@@ -16,8 +19,9 @@ block content
                 #editor(contenteditable=true)
                 #checkarea
                     #checkbutton
-            .explanation.textbox Wähle einen Satz über das blaue Quadrat auf der rechten Seite aus, um dir hier seine Struktur anzusehen.
+            .explanation.textbox Lasse deinen Satz überprüfen, indem du auf das blaue Viereck auf der rechten Seite klickst.
         #sentbox
+            #sentboxheader
         #treebox
             .explanation.treebox Wähle einen Satz über das blaue Quadrat auf der rechten Seite aus, um dir hier seine Struktur anzusehen.
             #tree

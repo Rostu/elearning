@@ -9,7 +9,7 @@
 
     display: flex; /* or inline-flex */
 
-    padding: 0 10px 0 0;
+    padding: 0 10px;
 
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -18,26 +18,11 @@
 
 }
 
-.explanation {
-
-    margin: 10px 0;
-    padding: 10px;
-
-    line-height: 20px;
-
-    flex: 0 1 auto;
-    align-self: auto;
-
-    color: white;
-    background: #A1BED6;
-
-}
-
-#textbox, #treebox {
+#textbox, #treebox, #sentbox {
 
     display: flex;
 
-    margin: 10px 0 0 10px;
+    margin-top: 10px;
 
     width: 80%;
     line-height: 20px;
@@ -54,9 +39,7 @@
 
 }
 
-#textbox {
-
-    position: relative;
+#textbox, #sentbox {
 
     align-items: stretch;
     align-content: stretch;
@@ -65,55 +48,9 @@
 
 }
 
-#tree {
-    flex: 0 1 auto;
-    align-self: auto;
-}
+#textbox {
 
-#editorarea {
-
-    display: flex;
-
-    padding: 10px 0;
-
-    width: 80%;
-    line-height: 20px;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
-
-    background: #7AB3E3;
-
-}
-
-#startarea {
-
-    display: flex;
-
-    padding: 10px;
-
-    flex: 0 1 auto;
-    align-self: auto;
-
-    align-items: center;
-
-    background: #7AB3E3;
-
-}
-
-#startphrase {
-
-    line-height: 20px;
-
-    flex: 0 1 auto;
-    align-self: auto;
-
-    color: white;
+    position: relative;
 
 }
 
@@ -143,6 +80,141 @@
 
 }
 
+#sentboxheader {
+
+    padding: 5px;
+
+    width: 80%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+}
+
+.explanation {
+
+    margin: 10px 0;
+    padding: 10px;
+
+    line-height: 20px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+
+    color: white;
+    background: #A1BED6;
+
+}
+
+.spinnerbox {
+
+    display: flex; /* or inline-flex */
+
+    width: 80%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    align-items: center;
+
+}
+
+.spinner {
+
+    display: none;
+
+    margin: auto;
+
+    width: 40px;
+    height: 40px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+
+    background-color: #005E9C;
+
+    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+    animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+    0% { -webkit-transform: perspective(120px) }
+    50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+    100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+    } 50% {
+          transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+          -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+      } 100% {
+            transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+            -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        }
+}
+
+#editorarea {
+
+    display: flex;
+
+    padding: 10px;
+
+    width: 80%;
+    line-height: 20px;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    background: #0183D8;
+
+}
+
+#editorarea.incorrect {
+
+    background: #D32424;
+
+}
+
+#editorarea.correct {
+
+    background: #6B9713;
+
+}
+
+#startarea {
+
+    display: flex;
+
+    flex: 0 1 auto;
+    align-self: auto;
+
+    align-items: center;
+
+    background: #005E9C;
+}
+
+#startphrase {
+
+    padding: 10px;
+
+    line-height: 20px;
+
+    flex: 0 1 auto;
+    align-self: auto;
+
+    color: white;
+    background: #005E9C;
+
+
+}
+
 #editor {
 
     overflow: auto;
@@ -164,12 +236,41 @@
 
 }
 
-.sentence {
-    white-space: pre-wrap;
+.errorbox {
+    display: flex;
+
+    padding: 0 10px 10px 0;
+
+    width: 80%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    background: #FFA9A9;
 }
 
-.text {
-    white-space: pre-wrap;
+.error {
+
+    display: flex;
+
+    margin: 10px 0 0 10px;
+
+    width: 80%;
+
+    flex: 1 1 auto;
+    align-self: auto;
+
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+
+    background: yellow;
 }
 
 #checkarea, .loadarea {
@@ -188,7 +289,9 @@
 
 #checkarea {
 
-    background: #7AB3E3;
+    padding: 0px;
+
+    background: #005E9C;
 }
 
 #checkbutton, .loadbutton {
@@ -202,51 +305,46 @@
     background: #005E9C;
 }
 
+#checkbutton {
+
+    height: 100%;
+    width: 40px;
+
+}
+
 #checkbutton:hover {
 
-    background: blue !important;
+    background: #0999F6 !important;
 
     cursor: pointer;
 }
 
+.sentence {
+    white-space: pre-wrap;
+}
+
+.text {
+    white-space: pre-wrap;
+}
+
 .mistake {
     color: white;
-    background: #A91211;
+    background: #D32424;
 }
 
 .mistake:hover {
-    background: turquoise;
+    background: #E45252;
 }
 
 .mistake.hover {
-    background: turquoise;
+    background: #A8D54D;
 }
 
-#sentbox {
-
-    display: flex; /* or inline-flex */
-
-    margin: 10px 0 0 10px;
-    padding: 0 10px 10px 0;
-
-    width: 90%;
-    line-height: 20px;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
-
-    background: #A6D1F5;
-}
 
 .line {
     display: flex; /* or inline-flex */
 
-    margin: 10px 0 0 10px;
+    margin: 0 10px 10px 10px;
 
     width: 80%;
 
@@ -310,47 +408,7 @@
 .dataarea {
 
     display: none;
-}
 
-.errorbox {
-    display: flex; /* or inline-flex */
-
-    padding: 0 0 0 10px;
-
-    width: 80%;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
-
-    background: aliceblue;
-}
-
-#textbox .errorbox {
-    background: #A6D1F5;
-}
-
-.error {
-
-    display: flex; /* or inline-flex */
-
-    margin: 0 10px 10px 0;
-
-    width: 80%;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: stretch;
-
-    background: yellow;
 }
 
 .errmsg {
@@ -369,25 +427,24 @@
 
 }
 
-.errmsg.open:hover {
-    background: #A91211 url("../images/button_up2.gif") no-repeat right;
+.errmsg.open:hover, .errmsg.closed:hover {
+    background: #D32424 url("../images/arrow_up.png") no-repeat right center;
     background-size: 40px 40px;
-}
-
-.errmsg.closed:hover {
-    background: #A91211 url("../images/button_down2.gif") no-repeat right center;
-    background-size: 40px 40px;
-}
-
-.errmsg:hover {
-
-    background: turquoise;
 
     cursor: pointer;
 }
 
+.errmsg.closed:hover {
+    background: #D32424 url("../images/arrow_down.png") no-repeat right center;
+    background-size: 40px 40px;
+}
+
+.errmsg:hover {
+    background: #D32424;
+}
+
 .error.hover .errmsg {
-    background: turquoise;
+    background: #D32424;
 }
 
 .errrep {
@@ -405,7 +462,7 @@
     align-items: center;
     align-content: center;
 
-    background-color: #D5EBFD;
+    background-color: #FFE8E8;
 }
 
 .rep {
@@ -416,10 +473,16 @@
     flex: 0 1 auto;
     align-self: auto;
 
-    background-color: lightseagreen;
+    background-color: #A8D54D;
     white-space: pre-wrap;
 
     cursor: pointer;
+}
+
+.rep:hover {
+
+    background: #8EC029;
+
 }
 
 .errurl {
@@ -429,8 +492,13 @@
     flex: 1 1 auto;
     align-self: auto;
 
-    background: paleturquoise;
+    background: #FFCBCB;
     text-align: center;
+}
+
+#tree {
+    flex: 0 1 auto;
+    align-self: auto;
 }
 
 .node {
@@ -451,54 +519,4 @@
     fill: none;
     stroke: darkgrey;
     stroke-width: 1.5px;
-}
-
-.spinnerbox {
-
-    display: flex; /* or inline-flex */
-
-    width: 80%;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
-    align-items: center;
-
-}
-
-.spinner {
-
-    display: none;
-
-    margin: auto;
-
-    width: 40px;
-    height: 40px;
-
-    flex: 0 1 auto;
-    align-self: auto;
-
-    background-color: #005E9C;
-
-    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
-    animation: sk-rotateplane 1.2s infinite ease-in-out;
-}
-
-@-webkit-keyframes sk-rotateplane {
-    0% { -webkit-transform: perspective(120px) }
-    50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-    100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
-}
-
-@keyframes sk-rotateplane {
-    0% {
-        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
-    } 50% {
-          transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-          -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
-      } 100% {
-            transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-            -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-        }
 }
