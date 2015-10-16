@@ -220,6 +220,10 @@ function setCorrect(dragID, dropID) {
             fixSrcelem($(this).attr('id'), false, true);
             $(this).draggable('disable');
         });
+    } else {
+        $(sourceline).find('.srcelem').each(function() {
+            $(this).removeClass('incorrect');
+        });
     }
 }
 

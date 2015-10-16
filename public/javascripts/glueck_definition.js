@@ -9,6 +9,14 @@ function init() {
     $('#sentbox').hide();
     $('#treebox').hide();
 
+    $('#editor').keydown(function(event) {
+        editorEnterDown(event);
+    });
+
+    $('#editor').keyup(function(event) {
+        editorEnterUp(event);
+    });
+
     $('#checkbutton').click(function() {
         checkClick();
     });
@@ -48,7 +56,7 @@ function checkForErrors(editor_text, callback) {
 
     $.post("/stanford_anfrage_parse", {text: editor_text}, function (parse_json) {
 
-        console.log("stanford");
+        console.log(JSON.stringify(parse_json));
 
         var sentence_data = parse_json.document.sentences.sentence;
 

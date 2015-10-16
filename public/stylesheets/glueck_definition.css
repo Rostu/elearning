@@ -188,12 +188,15 @@
 
     display: flex;
 
+    margin-right: 10px;
+
     flex: 0 1 auto;
     align-self: auto;
 
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 
-    background: #005E9C;
+    background: aliceblue;
 }
 
 #startphrase {
@@ -204,10 +207,6 @@
 
     flex: 0 1 auto;
     align-self: auto;
-
-    color: white;
-    background: #005E9C;
-
 
 }
 
@@ -284,9 +283,12 @@
 
 #checkarea {
 
-    padding: 0px;
+    padding: 10px;
 
-    background: #A6D1F5;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    background: aliceblue;
 }
 
 #checkbutton, .loadbutton {
@@ -298,13 +300,6 @@
     align-self: auto;
 
     background: #005E9C;
-}
-
-#checkbutton {
-
-    height: 100%;
-    width: 40px;
-
 }
 
 #checkbutton:hover {
