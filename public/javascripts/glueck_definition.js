@@ -1,7 +1,6 @@
 $( init );
 
 glueck_definition_trees_enabled = true;
-glueck_definition_editor_text = "";
 
 function init() {
 
@@ -12,17 +11,13 @@ function init() {
     $('#editor').keydown(function(event) {
         editorEnterDown(event);
     });
-
     $('#editor').keyup(function(event) {
         editorEnterUp(event);
     });
-
     $('#checkbutton').click(function() {
         checkClick();
     });
-
     //insertTestData();
-
 }
 
 function insertTestData() {
@@ -49,6 +44,15 @@ function insertTestData() {
 
 function checkForErrors(editor_text, callback) {
 
+    /*  check input text; only compare with model sentences if:
+     *      - text ends with a full stop,
+     *      - texts comprises only one sentence,
+     *      - that sentence does not exceed a certain length,
+     *      - LanguageTool does not yield any errors.
+     *
+     *  TODO: Sanitize, parameterise sentence length
+     */
+
     var errors = [];
 
     var msg = "";
@@ -56,17 +60,11 @@ function checkForErrors(editor_text, callback) {
 
     $.post("/stanford_anfrage_parse", {text: editor_text}, function (parse_json) {
 
-        console.log(JSON.stringify(parse_json));
+        //console.log(JSON.stringify(parse_json));
 
         var sentence_data = parse_json.document.sentences.sentence;
 
-        if (!sentence_data.length) {
-            sentence_data = [sentence_data];
-        }
-
-        console.log(sentence_data.length);
-
-        if (sentence_data.length > 1) {
+        if (sentence_data.length) {
 
             var error_offset = sentence_data[0].tokens.token[sentence_data[0].tokens.token.length - 1].CharacterOffsetEnd;
 
@@ -77,7 +75,7 @@ function checkForErrors(editor_text, callback) {
             callback(errors);
 
         } else {
-
+            sentence_data = [sentence_data];
             var words = editor_text.split(/\s+/);
 
             if (words.length > 30) {
@@ -106,7 +104,7 @@ function checkForErrors(editor_text, callback) {
 
                 $.post("/langtool_anfrage", {sentence: editor_text}, function (json) {
 
-                    console.log("langtool");
+                    //console.log("langtool");
 
                     if (json.matches.error && json.matches.error.length > 0) {
                         $.each(json.matches.error, function (index, error) {
@@ -119,27 +117,27 @@ function checkForErrors(editor_text, callback) {
                         });
                     }
 
-                    console.log("#2 errors: " + errors.length);
+                    //console.log("#2 errors: " + errors.length);
 
                     if (errors.length == 0) {
 
-                        validate_parse(sentence_data[0].parsedTree, function(validation_msg) {
+                        validateParse(sentence_data[0].parsedTree, function(validation_msg) {
 
-                            console.log("validate");
+                            //console.log("validate");
 
                             if (validation_msg) {
 
-                                console.log("sent if");
+                                //console.log("sent if");
 
                                 msg = validation_msg;
-                                console.log(msg);
+                                //console.log(msg);
 
                                 base_error = generateBaseError(msg, editor_text.length, editor_text.length, []);
                                 errors.push(analyseError(0, base_error));
 
                             } else {
 
-                                console.log("sent else");
+                                //console.log("sent else");
 
                                 var sentence_start = sentence_data[0].tokens.token[0].CharacterOffsetBegin;
                                 var sentence_end = sentence_data[0].tokens.token[sentence_data[0].tokens.token.length - 1].CharacterOffsetEnd;
@@ -154,18 +152,18 @@ function checkForErrors(editor_text, callback) {
                             }
                             callback(errors);
                         });
-
                     } else {
                         callback(errors);
                     }
                 });
-
             } else {
                 callback(errors);
             }
         }
     });
 }
+
+
 
 function generateBaseError(msg, fromx, tox, reps) {
 
@@ -249,7 +247,7 @@ function insertErrorSpan(data, target, original, last_end, offset) {
     if(err_start - last_end > 0) {
 
         /*  insert span with pristine substring, separating the current error from the previous one if needed; the
-         *  end position of the previous error is tracked by insertErrors(...) and passed on as the parameter "last_end"
+         *  end position of the previous error is tracked by insertErrorSpans(...) and passed on as the parameter "last_end"
          */
 
         var text = jQuery('<span/>', {
@@ -515,6 +513,8 @@ function generateLine(index, sentence, target) {
     return {start: sentence.start, end: sentence.end, line: line };
 
 }
+
+
 
 //helper functions
 function pad (str, max) {

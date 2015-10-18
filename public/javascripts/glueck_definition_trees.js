@@ -1,4 +1,8 @@
 function updateTree(json) {
+
+    /*  taken and adapted from examples of D3 library for displaying tree structures
+     */
+
     $('#tree').children('svg').remove();
 
     var margin = {top: 20, right: 20, bottom: 20, left: 20},
@@ -163,6 +167,9 @@ function updateTree(json) {
 
 }
 
+
+
+//helper functions
 function traverseParseTree(tree){
     if(tree.children !== undefined) {
         tree.name = tree.type;

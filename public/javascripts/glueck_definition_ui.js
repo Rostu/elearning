@@ -77,14 +77,12 @@ function checkClick() {
 
         checkForErrors(editor_text, function (error_data) {
 
-            /*  filter error data in order to detect issues with sentence separation and only use
-             *  CoreNLP if no such issues occur; otherwise, display sentence-final errors;
+            /*  display error data if any are yielded or accept input sentence
              */
 
-            console.log(error_data.length);
+            //console.log(error_data.length);
 
             if (error_data.length == 0) {
-                //TODO: add some form of positive feedback
                 stopCheckUI(function () {
                     displayLines();
                     $('#editorarea').addClass('correct');
@@ -191,9 +189,9 @@ function displayErrors(target) {
 
 }
 
-//############################################
-//helper functions
 
+
+//helper functions
 function placeCaretAtEnd(el) {
     el.focus();
     if (typeof window.getSelection != "undefined"

@@ -1,19 +1,22 @@
 glueck_definition_levelcount = {};
 
-function get_comparison_data(enhanced_pruned_tree_clone, callback) {
+function getComparisonData(enhanced_pruned_tree_clone, callback) {
+
+    /*  acquire data from input parse for comparison with model data
+     */
 
     var data = {};
 
-    data["prunes"] = prune_tree(enhanced_pruned_tree_clone);
-    data["prunes"].sort(dynamic_sort("depth"));
+    data["subtrees"] = getSubtrees(enhanced_pruned_tree_clone);
+    data["subtrees"].sort(dynamicSort("depth"));
 
-    data["subtrees"] = $.map(data["prunes"], function(prune, prune_index) {
-        var sth_array = $.map(get_subtree_hashes(prune), function( sth, sth_index) {
-            return enhance_tree(sth, sth["level"]);
+    data["subset_trees"] = $.map(data["subtrees"], function(prune, prune_index) {
+        var sth_array = $.map(getSubsetTrees(prune), function( sth, sth_index) {
+            return enhanceTree(sth, sth["level"]);
         });
-        sth_array.sort(dynamic_sort("desc")).sort(dynamic_sort("depth"));
+        sth_array.sort(dynamicSort("desc")).sort(dynamicSort("depth"));
         /*$.each(sth_array, function(index, sth) {
-         console.log(print_tree(sth));
+         console.log(printTree(sth));
          });*/
         return [sth_array];
     });
@@ -21,7 +24,10 @@ function get_comparison_data(enhanced_pruned_tree_clone, callback) {
     callback(data);
 }
 
-function validate_parse(tree, callback) {
+function validateParse(tree, callback) {
+
+    /*  validate parse by comparing it with the model data
+     */
 
     console.log("valenter");
 
@@ -29,12 +35,15 @@ function validate_parse(tree, callback) {
 
     glueck_definition_levelcount = {};
 
-    var pruned_input_clone = prune_leaves($.extend(true, {}, tree));
-    var enhanced_pruned_tree_clone = enhance_tree(pruned_input_clone, 0);
+    var pruned_input_clone = pruneLeaves($.extend(true, {}, tree));
+    var enhanced_pruned_tree_clone = enhanceTree(pruned_input_clone, 0);
 
-    get_comparison_data(enhanced_pruned_tree_clone, function(input_data) {
+    getComparisonData(enhanced_pruned_tree_clone, function(input_data) {
 
-        console.log(JSON.stringify(input_data));
+        //console.log(JSON.stringify(input_data));
+
+        /*  compare tree depths first and store relevant indexes
+         */
 
         $.getJSON("javascripts/glueck_definition_model_trees.json", function(model_trees) {
 
@@ -62,37 +71,42 @@ function validate_parse(tree, callback) {
                     }
                 }
             } else {
+
+
                 console.log("relevant_indexes: " + JSON.stringify(relevant_indexes));
 
-                $.getJSON("javascripts/glueck_definition_model_prunes.json", function(model_prunes) {
+                /*  compare subtrees and store remaining relevant indexes
+                 */
 
-                    console.log("glueck_definition_model_prunes");
+                $.getJSON("javascripts/glueck_definition_model_subtrees.json", function(model_subtrees) {
+
+                    console.log("glueck_definition_model_subtrees");
 
                     relevant_indexes = relevant_indexes.filter(function (tree_index) {
 
                         console.log("-x- processing tree #" + tree_index + ":");
 
-                        var model_prune_root_strings = $.map(model_prunes[tree_index], function (prune, prune_index) {
-                            return get_root_string(prune, true, false);
+                        var model_subtree_root_strings = $.map(model_subtrees[tree_index], function (subtree, subtree_index) {
+                            return getRootString(subtree, true, false);
                         });
-                        console.log("-|- model_prunes:" + JSON.stringify(model_prune_root_strings));
+                        console.log("-|- model_subtrees:" + JSON.stringify(model_subtree_root_strings));
 
-                        var input_prune_root_strings = $.map(input_data["prunes"], function (prune, prune_index) {
-                            return get_root_string(prune, true, false);
+                        var input_subtree_root_strings = $.map(input_data["subtrees"], function (subtree, subtree_index) {
+                            return getRootString(subtree, true, false);
                         });
-                        console.log("-|- input_prunes:" + JSON.stringify(input_prune_root_strings));
+                        console.log("-|- input_subtrees:" + JSON.stringify(input_subtree_root_strings));
 
-                        var to_diff = [model_prune_root_strings, input_prune_root_strings]
+                        var to_diff = [model_subtree_root_strings, input_subtree_root_strings]
                         to_diff.sort(function(a, b){
                             return a.length - b.length;
                         });
 
-                        var prune_diff = to_diff[1].filter(function(mprs) {
+                        var subtree_diff = to_diff[1].filter(function(mprs) {
                             return to_diff[0].indexOf(mprs) < 0;
                         });
-                        console.log("-|- prune_diff: " + JSON.stringify(prune_diff));
+                        console.log("-|- subtree_diff: " + JSON.stringify(subtree_diff));
 
-                        return prune_diff.length == 0;
+                        return subtree_diff.length == 0;
 
                     });
 
@@ -101,7 +115,12 @@ function validate_parse(tree, callback) {
                     if (relevant_indexes.length == 0) {
                         callback("Nebensatzkonstruktion stimmt leider nicht mit den Vorlagen überein, die du in der vorherigen Aufgabe kennengelernt hast.");
                     } else {
-                        $.getJSON("javascripts/glueck_definition_model_subtrees.json", function (model_subtrees) {
+
+                        /*  compare subset_trees and store remaining relevant indexes,
+                         *  only allowing deviations where shallow subset trees allow it
+                         */
+
+                        $.getJSON("javascripts/glueck_definition_model_subset_trees.json", function (model_subset_trees) {
 
                             console.log("glueck_definition_model_subtrees");
 
@@ -110,33 +129,33 @@ function validate_parse(tree, callback) {
                                 var index_status = true;
                                 console.log("--- -x- processing tree \##{tree_index}:");
 
-                                var shallow_prune_indexes = $.map(model_prunes[tree_index], function (prune, prune_index) {
-                                    if (model_prunes[tree_index][prune_index]["depth"] == 1) {
-                                        return prune_index;
+                                var shallow_subtree_indexes = $.map(model_subtrees[tree_index], function (subtree, subtree_index) {
+                                    if (model_subtrees[tree_index][subtree_index]["depth"] == 1) {
+                                        return subtree_index;
                                     }
                                 });
-                                console.log("--- -|- shallow_prune_indexes: " + JSON.stringify(shallow_prune_indexes));
+                                console.log("--- -|- shallow_subtree_indexes: " + JSON.stringify(shallow_subtree_indexes));
 
-                                $.each(model_prunes[tree_index], function (prune_index, prune) {
-                                    $.each(model_subtrees[tree_index][prune_index], function (sth_index, sth) {
+                                $.each(model_subtrees[tree_index], function (subtree_index, subtree) {
+                                    $.each(model_subset_trees[tree_index][subtree_index], function (sst_index, sst) {
 
-                                        console.log("--- -|x " + print_tree(sth, true, false));
-                                        console.log("--- -|x " + print_tree(input_data["subtrees"][prune_index][sth_index], true, false));
+                                        console.log("--- -|x " + printTree(sst, true, false));
+                                        console.log("--- -|x " + printTree(input_data["subset_trees"][subtree_index][sst_index], true, false));
 
-                                        if (print_tree(sth, true, true) === (print_tree(input_data["subtrees"][prune_index][sth_index], true, true))) {
+                                        if (printTree(sst, true, true) === (printTree(input_data["subset_trees"][subtree_index][sst_index], true, true))) {
                                             console.log("--- -|| Comparison is fine!");
                                         } else {
-                                            var relevant_shallow_prunes = shallow_prune_indexes.filter(function (prune_index) {
+                                            var relevant_shallow_subtrees = shallow_subtree_indexes.filter(function (subtree_index) {
 
-                                                var prune_root_str = get_root_string(model_prunes[tree_index][prune_index], true, false);
+                                                var subtree_root_str = getRootString(model_subtrees[tree_index][subtree_index], true, false);
 
-                                                console.log("--- -|x prune_root_str:" + prune_root_str);
-                                                return print_tree(sth, true, false).indexOf(prune_root_str) > -1;
+                                                console.log("--- -|x subtree_root_str:" + subtree_root_str);
+                                                return printTree(sst, true, false).indexOf(subtree_root_str) > -1;
                                             });
 
-                                            console.log("--- -|| relevant_shallow_prunes: " + JSON.stringify(relevant_shallow_prunes));
+                                            console.log("--- -|| relevant_shallow_subtrees: " + JSON.stringify(relevant_shallow_subtrees));
 
-                                            if (relevant_shallow_prunes && relevant_shallow_prunes.length == 0) {
+                                            if (relevant_shallow_subtrees && relevant_shallow_subtrees.length == 0) {
                                                 console.log("--- -|| No exception!");
                                                 index_status = false;
                                             } else {
@@ -164,7 +183,12 @@ function validate_parse(tree, callback) {
     });
 }
 
-function prune_tree(tree) {
+
+
+function getSubtrees(tree) {
+
+    /*  collect every node with all of its descendants if it has any
+     */
 
     var output = [];
 
@@ -173,7 +197,7 @@ function prune_tree(tree) {
         output.push(tree);
 
         $.each(tree["children"], function (index, child) {
-            output = output.concat(prune_tree(child));
+            output = output.concat(getSubtrees(child));
         });
         return output;
     } else {
@@ -181,7 +205,11 @@ function prune_tree(tree) {
     }
 }
 
-function get_subtree_hashes(tree) {
+function getSubsetTrees(tree) {
+
+    /*  recursively collecting all subset trees by generating
+     *  all possible inspection variants of descendants
+     */
 
     var base = $.extend(true, {}, tree);
     delete base["children"];
@@ -190,20 +218,37 @@ function get_subtree_hashes(tree) {
 
         var collection = [];
 
+        /*  divide: for current node:
+         *      - get variants of children
+         */
         $.each(tree["children"], function (index, child) {
-            var callback = get_subtree_hashes(child);
+            var callback = getSubsetTrees(child);
             collection[index] = callback;
         });
 
-        var cartesian_product = cartesianProduct_old(collection);
-        cartesian_product = cartesian_product.map(function(cp) {
+        /*  divide: for current node:
+         *      - set current node as the parent of these combinations
+         */
+        var cartesian = cartesianProduct(collection);
+
+        /*  conquer:
+         *      - get all unique combinations of these variants
+         */
+        cartesian = cartesian.map(function(cp) {
             var new_op = $.extend(true, {}, base);
             new_op["children"] = cp;
             return new_op;
         });
 
-        cartesian_product.push(base);
-        return cartesian_product;
+        /*  conquer:
+         *      - add current node with 'collapsed' descendants
+         */
+        cartesian.push(base);
+        /*  conquer:
+         *      - pass these variants on to the children-variant collection
+         *        of the next ancestor
+         */
+        return cartesian;
 
     } else {
         var output = [];
@@ -213,7 +258,15 @@ function get_subtree_hashes(tree) {
 
 }
 
-function enhance_tree(tree, level) {
+function enhanceTree(tree, level) {
+
+    /*  add several indexes to each node for sake of comparison:
+     *      - level
+     *      - horizontal index/position on tree level
+     *      - child index(relative to parent node)
+     *      - depth of subtree belonging to current node
+     *      - number of descendants
+     */
 
     if (!glueck_definition_levelcount["level"]) {
         glueck_definition_levelcount["level"] = 0;
@@ -236,7 +289,7 @@ function enhance_tree(tree, level) {
 
         $.each(tree["children"], function (index, child) {
 
-            var callback = enhance_tree(child, level);
+            var callback = enhanceTree(child, level);
             glueck_definition_levelcount["level"] += 1;
 
             callback["index"] = index;
@@ -249,11 +302,15 @@ function enhance_tree(tree, level) {
     return tree;
 }
 
-function prune_leaves(tree) {
+function pruneLeaves(tree) {
+
+    /*  cut off word level from tree
+     */
+
     if (tree["children"]) {
         $.each(tree["children"], function (index, child) {
             if (child["children"]) {
-                var callback = prune_leaves(child);
+                var callback = pruneLeaves(child);
             } else {
                 if (child["word"]) {
                     delete tree["children"];
@@ -264,14 +321,14 @@ function prune_leaves(tree) {
     return tree;
 }
 
-function print_tree(tree, with_depth, with_desc) {
+function printTree(tree, with_depth, with_desc) {
 
     var output = [];
-    output.push(get_root_string(tree, with_depth, with_desc));
+    output.push(getRootString(tree, with_depth, with_desc));
 
     if (tree["children"]) {
         $.each(tree["children"], function(index, child) {
-            output.push(print_tree(child, with_depth, with_desc));
+            output.push(printTree(child, with_depth, with_desc));
         });
         return ["(", output.join(""), ")"].join("");
     } else {
@@ -280,7 +337,7 @@ function print_tree(tree, with_depth, with_desc) {
 
 }
 
-function get_root_string(tree, with_depth, with_desc) {
+function getRootString(tree, with_depth, with_desc) {
 
     output = [];
 
@@ -309,23 +366,7 @@ function get_root_string(tree, with_depth, with_desc) {
 
 
 //helper functions
-
-function cartesianProduct(a) { // a = array of array
-    var i, j, l, m, a1, o = [];
-    if (!a || a.length == 0) return a;
-
-    a1 = a.splice(0,1);
-    a = cartesianProduct(a);
-    for (i = 0, l = a1[0].length; i < l; i++) {
-        if (a && a.length) for (j = 0, m = a.length; j < m; j++)
-            o.push([a1[0][i]].concat(a[j]));
-        else
-            o.push([a1[0][i]]);
-    }
-    return o;
-}
-
-function cartesianProduct_old(two_dim_arr) {
+function cartesianProduct(two_dim_arr) {
     var i, j, l, m, head, o = [];
     if (!two_dim_arr || two_dim_arr.length == 0) return two_dim_arr;
 
@@ -340,14 +381,14 @@ function cartesianProduct_old(two_dim_arr) {
     return o;
 }
 
-function dynamic_sort(property) {
-    var sortOrder = 1;
+function dynamicSort(property) {
+    var sort_order = 1;
     if(property[0] === "-") {
-        sortOrder = -1;
+        sort_order = -1;
         property = property.substr(1);
     }
     return function (a,b) {
         var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
-        return result * sortOrder;
+        return result * sort_order;
     }
 }
