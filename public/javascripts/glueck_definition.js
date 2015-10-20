@@ -2,6 +2,7 @@ $( init );
 
 glueck_definition_trees_enabled = true;
 
+
 function init() {
 
     $('#textoverlay').hide();
@@ -50,129 +51,186 @@ function checkForErrors(editor_text, callback) {
      *      - that sentence does not exceed a certain length,
      *      - LanguageTool does not yield any errors.
      *
-     *  TODO: Sanitize, parameterise sentence length
      */
 
-    var errors = [];
+    var errors = [],
 
-    var msg = "";
-    var base_error = {};
+        category = "",
+        message = "",
+        base_error = {},
 
-    $.post("/stanford_anfrage_parse", {text: editor_text}, function (parse_json) {
+        sanitise = XRegExp("[^\\s\\pL\\.,\\-]+", 'g'),
+        match;
 
-        //console.log(JSON.stringify(parse_json));
+    while ((match = sanitise.exec(editor_text)) != null) {
 
-        var sentence_data = parse_json.document.sentences.sentence;
+        category = "Ungültige Zeichen";
+        message = "Bitte verwende nur Buchstaben, Kommata und Punkte für deine Eingabe.";
+        base_error = generateBaseError(category, message, match.index, match.index + match[0].length, []);
+        errors.push(analyseError(errors.length, base_error));
 
-        if (sentence_data.length) {
+        console.log("match found at " + match.index);
+        console.log(JSON.stringify(match[0].length));
+        console.log(JSON.stringify(match));
+    }
 
-            var error_offset = sentence_data[0].tokens.token[sentence_data[0].tokens.token.length - 1].CharacterOffsetEnd;
+    if (errors.length > 0) {
+        callback(errors);
+    } else {
 
-            msg = "Bitte gib nur einen einzelnen Satz ein.";
-            base_error = generateBaseError(msg, error_offset, editor_text.length, []);
-            errors.push(analyseError(0, base_error));
+        var correct_sentences = $('#sentbox').find('.textarea');
 
-            callback(errors);
+        if (correct_sentences.length > 0) {
 
-        } else {
-            sentence_data = [sentence_data];
-            var words = editor_text.split(/\s+/);
+            correct_sentences = $.map(correct_sentences, function(correct, tree_index) {
+                return $(correct).text();
+            });
 
-            if (words.length > 30) {
+            $.each(correct_sentences, function(index, correct) {
+                console.log(correct);
+            });
 
-                var exceeding = words.slice(30, words.length).join(" ");
+            if ($.inArray(editor_text, correct_sentences) > -1) {
 
-                msg = "Achte bitte darauf, dass dein Satz nicht zu viele Wörter enthält. Versuche es mit einem kürzeren Satz erneut.";
-                base_error = generateBaseError(msg, editor_text.lastIndexOf(exceeding), editor_text.length, []);
-                errors.push(analyseError(0, base_error));
+                category = "Wiederholung";
+                message = "Du hast Glück schon einmal genau so definiert. Denke dir bitte einen neuen Satz aus.";
+                base_error = generateBaseError(category, message, 11, editor_text.length, []);
+                errors.push(analyseError(errors.length, base_error));
 
+                highlightRepetition($.inArray(editor_text, correct_sentences));
             }
 
-            if (!endsWith(editor_text, ".")) {
-
-                $('#editor').text($('#editor').text() + ' ');
-
-                msg = "Achte bitte darauf, dass deine Eingabe das Satzende mit einem Punkt markiert.";
-                base_error = generateBaseError(msg, editor_text.length, editor_text.length + 1, ["."]);
-                errors.push(analyseError(0, base_error));
-
-            }
-
-            console.log("#1 errors: " + errors.length);
-
-            if (errors.length == 0) {
-
-                $.post("/langtool_anfrage", {sentence: editor_text}, function (json) {
-
-                    //console.log("langtool");
-
-                    if (json.matches.error && json.matches.error.length > 0) {
-                        $.each(json.matches.error, function (index, error) {
-
-
-                            if (error.attributes.fromx > 10) {
-                                var analysed_error = analyseError(index, error);
-                                errors.push(analysed_error);
-                            }
-                        });
-                    }
-
-                    //console.log("#2 errors: " + errors.length);
-
-                    if (errors.length == 0) {
-
-                        validateParse(sentence_data[0].parsedTree, function(validation_msg) {
-
-                            //console.log("validate");
-
-                            if (validation_msg) {
-
-                                //console.log("sent if");
-
-                                msg = validation_msg;
-                                //console.log(msg);
-
-                                base_error = generateBaseError(msg, editor_text.length, editor_text.length, []);
-                                errors.push(analyseError(0, base_error));
-
-                            } else {
-
-                                //console.log("sent else");
-
-                                var sentence_start = sentence_data[0].tokens.token[0].CharacterOffsetBegin;
-                                var sentence_end = sentence_data[0].tokens.token[sentence_data[0].tokens.token.length - 1].CharacterOffsetEnd;
-                                var sentence_string = editor_text.substring(sentence_start, sentence_end);
-
-                                var sentence = {start: sentence_start, end: sentence_end, string: sentence_string, parse: sentence_data[0].parsedTree};
-
-                                var index = $('#sentbox').find('.line').length;
-
-                                generateLine(index, sentence, $('#sentbox'));
-
-                            }
-                            callback(errors);
-                        });
-                    } else {
-                        callback(errors);
-                    }
-                });
-            } else {
-                callback(errors);
-            }
         }
-    });
+
+        console.log("sentences: " + correct_sentences.length);
+
+        if (errors.length > 0) {
+            callback(errors);
+        } else {
+            $.post("/stanford_anfrage_parse", {text: editor_text}, function (parse_json) {
+
+                //console.log(JSON.stringify(parse_json));
+
+                var sentence_data = parse_json.document.sentences.sentence;
+
+                if (sentence_data.length) {
+
+                    var error_offset = sentence_data[0].tokens.token[sentence_data[0].tokens.token.length - 1].CharacterOffsetEnd;
+
+                    category = "Satzanzahl";
+                    message = "Bitte gib nur einen einzelnen Satz ein.";
+                    base_error = generateBaseError(category, message, error_offset, editor_text.length, []);
+                    errors.push(analyseError(errors.length, base_error));
+
+                    callback(errors);
+
+                } else {
+                    sentence_data = [sentence_data];
+                    var words = editor_text.split(/\s+/);
+
+                    if (words.length > 30) {
+
+                        var exceeding = words.slice(30, words.length).join(" ");
+
+                        category = "Satzlänge";
+                        message = "Achte bitte darauf, dass dein Satz nicht zu viele Wörter enthält. Versuche es mit einem kürzeren Satz erneut.";
+                        base_error = generateBaseError(category, message, editor_text.lastIndexOf(exceeding), editor_text.length, []);
+                        errors.push(analyseError(errors.length, base_error));
+
+                    }
+
+                    if (!endsWith(editor_text, ".")) {
+
+                        $('#editor').text($('#editor').text() + ' ');
+
+                        category = "Zeichensetzung";
+                        message = "Achte bitte darauf, dass deine Eingabe das Satzende mit einem Punkt markiert.";
+                        base_error = generateBaseError(category, message, editor_text.length, editor_text.length + 1, ["."]);
+                        errors.push(analyseError(errors.length, base_error));
+
+                    }
+
+                    console.log("#1 errors: " + errors.length);
+
+                    if (errors.length > 0) {
+                        callback(errors);
+                    } else {
+                        $.post("/langtool_anfrage", {sentence: editor_text}, function (json) {
+
+                            //console.log("langtool");
+
+                            if (json.matches.error && json.matches.error.length > 0) {
+                                $.each(json.matches.error, function (index, error) {
+
+
+                                    if (error.attributes.fromx > 10) {
+                                        var analysed_error = analyseError(index, error);
+                                        errors.push(analysed_error);
+                                    }
+                                });
+                            }
+
+                            //console.log("#2 errors: " + errors.length);
+
+                            if (errors.length > 0) {
+                                callback(errors);
+                            } else {
+                                validateParse(sentence_data[0].parsedTree, function (validation_msg) {
+
+                                    //console.log("validate");
+
+                                    if (validation_msg) {
+
+                                        //console.log("sent if");
+
+                                        category = "Satzbau";
+                                        message = validation_msg;
+                                        //console.log(message);
+
+                                        base_error = generateBaseError(category, message, editor_text.length, editor_text.length, []);
+                                        errors.push(analyseError(errors.length, base_error));
+
+                                    } else {
+
+                                        //console.log("sent else");
+
+                                        var sentence_start = sentence_data[0].tokens.token[0].CharacterOffsetBegin;
+                                        var sentence_end = sentence_data[0].tokens.token[sentence_data[0].tokens.token.length - 1].CharacterOffsetEnd;
+                                        var sentence_string = editor_text.substring(sentence_start, sentence_end);
+
+                                        var sentence = {
+                                            start: sentence_start,
+                                            end: sentence_end,
+                                            string: sentence_string,
+                                            parse: sentence_data[0].parsedTree
+                                        };
+
+                                        var index = $('#sentbox').find('.line').length;
+
+                                        generateLine(index, sentence, $('#sentbox'));
+
+                                    }
+                                    callback(errors);
+                                });
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    }
 }
 
 
 
-function generateBaseError(msg, fromx, tox, reps) {
+function generateBaseError(ctg, msg, fromx, tox, reps) {
 
     /*  mocking up the structure of an error yielded by LanguageTool
      */
 
     var base_error = {attributes:
         {
-            category: "Sonstiges",
+            category: ctg,
             msg: msg,
             fromx: fromx,
             tox: tox

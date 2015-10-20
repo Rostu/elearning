@@ -82,19 +82,8 @@ function checkClick() {
 
             //console.log(error_data.length);
 
-            if (error_data.length == 0) {
-                stopCheckUI(function () {
-                    displayLines();
-                    $('#editorarea').addClass('correct');
-                    $('#editorarea').effect("highlight", {color: '#A8D54D'}, function () {
-                        $('#editorarea').effect("highlight", {color: '#A8D54D'}, function () {
-                            $('#editorarea').removeClass('correct');
-                            $('#editor').text('');
-                        });
-                    });
-                });
-            } else {
-
+            if (error_data.length > 0) {
+                raisefaults();
                 insertErrorSpans(error_data, $('#editor'), 11);
                 generateErrorBoxes(error_data, $('#textbox'));
 
@@ -105,6 +94,18 @@ function checkClick() {
                     });
                     displayErrors($('#textbox'));
                     placeCaretAtEnd($('#editor')[0]);
+                });
+            } else {
+                raisepoints();
+                stopCheckUI(function () {
+                    displayLines();
+                    $('#editorarea').addClass('correct');
+                    $('#editorarea').effect("highlight", {color: '#A8D54D'}, function () {
+                        $('#editorarea').effect("highlight", {color: '#A8D54D'}, function () {
+                            $('#editorarea').removeClass('correct');
+                            $('#editor').text('');
+                        });
+                    });
                 });
             }
         });
@@ -138,6 +139,18 @@ function loadClick(ev) {
 
     var treedata = $(linebox).children('.dataarea').children('.treedata')[0];
     updateTree(JSON.parse($(treedata).text()));
+}
+
+function highlightRepetition(index) {
+
+    var lines = $('#sentbox').find('.line');
+
+    $(lines[index]).addClass('incorrect');
+    $(lines[index]).effect("highlight", {color: '#FF7F7F'}, function () {
+        $(lines[index]).effect("highlight", {color: '#FF7F7F'}, function () {
+            $(lines[index]).removeClass('incorrect');
+        });
+    });
 }
 
 function displayLines() {
