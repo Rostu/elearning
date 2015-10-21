@@ -344,7 +344,7 @@ function insertErrorSpan(data, target, original, last_end, offset) {
             $('html, body').animate({
                 scrollTop: $(".error[id$='co" + data.coordinates + "']").offset().top
             }, 25);
-            errorClick($(".error[id$='co" + data.coordinates + "']").find('.errmsg'), false);
+            errorClick($(".error[id$='co" + data.coordinates + "']").find('.errtitle'), false);
         });
         $(target).append(mistake);
 
@@ -367,7 +367,7 @@ function insertErrorSpan(data, target, original, last_end, offset) {
 
 
 
-function generateErrorBoxes(errlist, target) {
+function generateErrorBox(errlist, target) {
 
     var errorbox = jQuery('<div/>', {
         id: $(target).attr('id') + 'eb',
@@ -377,18 +377,18 @@ function generateErrorBoxes(errlist, target) {
     $(target).append(errorbox);
 
     $.each(errlist, function(index, error) {
-        generateErrorBox(error, errorbox);
+        generateError(error, errorbox);
     });
 
 }
 
-function generateErrorBox(data, target) {
+function generateError(data, target) {
 
     var additional = false;
 
     var error = jQuery('<div/>', {
         id: 'er' + pad(data.number, 2) + 'co' + data.coordinates,
-        class: 'error'
+        class: 'error new'
     });
     $(error).hover(
         function() {
@@ -401,21 +401,48 @@ function generateErrorBox(data, target) {
 
     var err_info = [];
 
-    var errcat = jQuery('<b/>', {
-        text: data.attributes.category + ': '
+    var errtitle = jQuery('<div/>', {
+        class: 'errtitle',
     });
+
+    var errstatus = jQuery('<div/>', {
+        class: 'errstatus',
+    });
+    $(errstatus).click(function(event) {
+        errorClick($(errtitle), true);
+    });
+    $(errtitle).append(errstatus);
 
     var errmsg = jQuery('<div/>', {
         class: 'errmsg',
         text: data.attributes.msg
     });
     $(errmsg).click(function(event) {
-        errorClick(event.target, true);
+        errorClick($(errtitle), true);
+    });
+
+    var errcat = jQuery('<b/>', {
+        text: data.attributes.category + ': '
     });
     $(errmsg).prepend(errcat);
-    //$(errmsg).hide();
-    err_info.push(errmsg);
-    $(error).append(errmsg);
+    $(errtitle).append(errmsg);
+
+    var errarea = jQuery('<div/>', {
+        class: 'errarea',
+    });
+    $(errarea).click(function(event) {
+        errorClick($(errtitle), true);
+    });
+    $(errarea).hide();
+
+    var errtriangle = jQuery('<div/>', {
+        class: 'errtriangle',
+    });
+    $(errarea).append(errtriangle);
+    $(errtitle).append(errarea);
+
+    err_info.push(errtitle);
+    $(error).append(errtitle);
 
     if(data.attributes.replacements) {
 
@@ -449,6 +476,8 @@ function generateErrorBox(data, target) {
             );
             $(rep).click(
                 function() {
+                    $(error).removeClass('new');
+                    $(error).addClass('modified');
                     $("span[id$='esco" + data.coordinates + "']").attr('chosen', '' + $(rep).text());
                     $("span[id$='esco" + data.coordinates + "']").text($(rep).text());
                 }
@@ -489,7 +518,8 @@ function generateErrorBox(data, target) {
     $(error).append(errdat);*/
 
     if(additional) {
-        $(errmsg).addClass('closed');
+        $(errarea).show();
+        $(errtitle).addClass('closed');
     }
 
     $(target).append(error);

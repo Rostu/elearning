@@ -85,7 +85,7 @@ function checkClick() {
             if (error_data.length > 0) {
                 raisefaults();
                 insertErrorSpans(error_data, $('#editor'), 11);
-                generateErrorBoxes(error_data, $('#textbox'));
+                generateErrorBox(error_data, $('#textbox'));
 
                 stopCheckUI(function() {
                     $('#editorarea').addClass('incorrect');
@@ -117,12 +117,12 @@ function errorClick(target, toggle) {
     if($(target).hasClass('closed')) {
         $(target).removeClass('closed');
         $(target).addClass('open');
-        $(target).closest('.error').children(':not(.errmsg)').slideDown(25);
+        $(target).closest('.error').children(':not(.errtitle)').slideDown(25);
     }else if($(target).hasClass('open')){
         if (toggle) {
             $(target).removeClass('open');
             $(target).addClass('closed');
-            $(target).closest('.error').children(':not(.errmsg)').slideUp(25);
+            $(target).closest('.error').children(':not(.errtitle)').slideUp(25);
         }
     }
 
