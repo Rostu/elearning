@@ -19,6 +19,9 @@ function init() {
         checkClick();
     });
     placeCaretAtEnd(document.getElementById('editor'));
+    document.getElementById("editor").addEventListener("input", function() {
+        updateErrorSpans();
+    }, false);
     //insertTestData();
 }
 
@@ -345,7 +348,7 @@ function insertErrorSpan(data, target, original, last_end, offset) {
             $('html, body').animate({
                 scrollTop: $(".error[id$='co" + data.coordinates + "']").offset().top
             }, 25);
-            errorClick($(".error[id$='co" + data.coordinates + "']").find('.errtitle'), false);
+            errorClick($(".error[id$='co" + data.coordinates + "']"), false);
         });
         $(target).append(mistake);
 
@@ -410,7 +413,7 @@ function generateError(data, target) {
         class: 'errstatus flexitem',
     });
     $(errstatus).click(function(event) {
-        errorClick($(errtitle), true);
+        errorClick($(error), true);
     });
     $(errtitle).append(errstatus);
 
@@ -419,7 +422,7 @@ function generateError(data, target) {
         text: data.attributes.msg
     });
     $(errmsg).click(function(event) {
-        errorClick($(errtitle), true);
+        errorClick($(error), true);
     });
 
     var errcat = jQuery('<b/>', {
@@ -432,7 +435,7 @@ function generateError(data, target) {
         class: 'errarea flexcontainer flexitem',
     });
     $(errarea).click(function(event) {
-        errorClick($(errtitle), true);
+        errorClick($(error), true);
     });
     $(errarea).hide();
 
@@ -520,7 +523,7 @@ function generateError(data, target) {
 
     if(additional) {
         $(errarea).show();
-        $(errtitle).addClass('closed');
+        $(error).addClass('closed');
     }
 
     $(target).append(error);

@@ -1,5 +1,60 @@
 glueck_definition_editor_unlocked = true;
 
+function updateErrorSpans() {
+
+    /*  check all spans associated with errors for changes; mark errors as modified or deleted where appropriate
+     */
+
+    var errors = $('.error');
+
+    var spans = $.map(errors, function(error, index) {
+        var coordinates_index = $(error).attr('id').indexOf('co');
+        var coordinates = $(error).attr('id').slice(coordinates_index, $(error).attr('id').length);
+        var span = $("span[id$='" + coordinates + "']");
+        console.log(span.length);
+        if (span.length > 0) {
+            return span;
+        } else {
+            markDeleted(error);
+        }
+    });
+
+    //var spans = $('.mistake');
+
+    $.each(spans, function(index, span) {
+
+        var original = $(span).attr('chosen') ?
+            $(span).attr('chosen') :
+            $(span).attr('original');
+
+        if ($(span).text() !== original) {
+
+            var coordinates_index = $(span).attr('id').indexOf('co');
+            var coordinates = $(span).attr('id').slice(coordinates_index, $(span).attr('id').length);
+            var error = $(".error[id$='" + coordinates + "']");
+
+            if ($(span).text().length == 0) {
+                markDeleted(error);
+                $(span).remove();
+            } else {
+                $(span).attr('chosen', $(span).text());
+                $(error).removeClass('new');
+                $(error).addClass('modified');
+            }
+        }
+    });
+}
+
+function markDeleted(error) {
+    $(error).removeClass('new');
+    $(error).removeClass('modified');
+    $(error).children(':not(.errtitle)').slideUp(25);
+    $(error).find('.errarea').hide();
+    $(error).removeClass('closed');
+    $(error).removeClass('open');
+    $(error).addClass('deleted');
+}
+
 function startCheckUI(callback) {
 
     glueck_definition_editor_unlocked = false;

@@ -71,6 +71,8 @@
 #editor {
     overflow: auto;
 
+    width: 50%;
+
     margin-left: 10px;
     padding: 10px 0 10px 10px;
 
@@ -198,6 +200,8 @@
 }
 
 .error {
+    width: 80%;
+
     justify-content: center;
 }
 
@@ -206,12 +210,21 @@
 }
 
 .errtitle {
+
     width: 50%;
 
     text-align: center;
 
     color: white;
     background: #A91211;
+}
+
+.error.deleted .errtitle {
+    background: #A95611;
+}
+
+.error.modified .errtitle {
+    background: #D37324;
 }
 
 .errtitle.open:hover, .errtitle.closed:hover {
@@ -222,16 +235,16 @@
     background: #D32424;
 }
 
-.errtitle.open:hover, .errtitle.closed:hover {
+.error.open:hover, .error.closed:hover {
     cursor: pointer;
 }
 
-.errtitle.open:hover .errtriangle {
+.error.open:hover .errtriangle {
     background: url("../images/arrow_up.png") no-repeat center center;
     background-size: 35px 35px;
 }
 
-.errtitle.closed:hover .errtriangle {
+.error.closed:hover .errtriangle {
     background: url("../images/arrow_down.png") no-repeat center center;
     background-size: 35px 35px;
 }
@@ -259,7 +272,7 @@
 }
 
 .error.deleted .errstatus:before {
-    content: "GELÖSCHT";
+    content: "ENTFERNT";
 }
 
 .errrep {
