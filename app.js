@@ -23,6 +23,10 @@ var nav = require('./routes/navbar.js');
 var config = require('./config.js');
 var Lockit = require('lockit');
 var cookieSession = require('cookie-session');
+//dev-corenlp
+var stanford = require('./routes/stanford');
+stanford.startUp();
+var langtool = require('./routes/langtool');
 
 // all environments
 app.set('port', process.env.PORT || 3555);
@@ -61,8 +65,6 @@ app.use(function(req, res, next){
     console.log(req.url);
     next();
 });
-
-
 
 app.use('/', index.get_session);
 app.get('/', routes.index);
@@ -126,6 +128,7 @@ app.get('/points:last?', function(req, res){
     });
     res.json(site);
 });
+
 app.get('/signup', signup.get_signup);
 app.get('/anleitung', ubung.get_anleitung);
 app.get('/users', user.list);
@@ -160,6 +163,10 @@ app.get('/dml', function(req, res) {
     dml.validate(query, res);
 });
 
+app.post('/stanford_anfrage_parse', stanford.get_parse);
+app.post('/langtool_anfrage', langtool.get_request);
+
+
 var server = http.createServer(app);
 var io = require('socket.io');
 
@@ -177,13 +184,3 @@ sio.sockets.on('connection', function (socket) {
 server.listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
 });
-
-var stanford = require('./routes/stanford');
-
-app.post('/stanford_anfrage_parse', stanford.get_parse);
-app.post('/stanford_anfrage_ssplit', stanford.get_ssplit);
-
-var langtool = require('./routes/langtool');
-
-app.post('/langtool_anfrage', langtool.get_request);
-

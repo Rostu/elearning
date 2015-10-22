@@ -18,6 +18,7 @@ function init() {
     $('#checkbutton').click(function() {
         checkClick();
     });
+    placeCaretAtEnd(document.getElementById('editor'));
     //insertTestData();
 }
 
@@ -160,14 +161,14 @@ function checkForErrors(editor_text, callback) {
                             //console.log("langtool");
 
                             if (json.matches.error && json.matches.error.length > 0) {
+
                                 $.each(json.matches.error, function (index, error) {
-
-
                                     if (error.attributes.fromx > 10) {
                                         var analysed_error = analyseError(index, error);
                                         errors.push(analysed_error);
                                     }
                                 });
+
                             }
 
                             //console.log("#2 errors: " + errors.length);
@@ -371,7 +372,7 @@ function generateErrorBox(errlist, target) {
 
     var errorbox = jQuery('<div/>', {
         id: $(target).attr('id') + 'eb',
-        class: 'errorbox',
+        class: 'errorbox flexcontainer flexitem',
     });
     $(errorbox).hide();
     $(target).append(errorbox);
@@ -388,7 +389,7 @@ function generateError(data, target) {
 
     var error = jQuery('<div/>', {
         id: 'er' + pad(data.number, 2) + 'co' + data.coordinates,
-        class: 'error new'
+        class: 'error flexcontainer flexitem new'
     });
     $(error).hover(
         function() {
@@ -402,11 +403,11 @@ function generateError(data, target) {
     var err_info = [];
 
     var errtitle = jQuery('<div/>', {
-        class: 'errtitle',
+        class: 'errtitle flexcontainer flexitem',
     });
 
     var errstatus = jQuery('<div/>', {
-        class: 'errstatus',
+        class: 'errstatus flexitem',
     });
     $(errstatus).click(function(event) {
         errorClick($(errtitle), true);
@@ -414,7 +415,7 @@ function generateError(data, target) {
     $(errtitle).append(errstatus);
 
     var errmsg = jQuery('<div/>', {
-        class: 'errmsg',
+        class: 'errmsg flexitem',
         text: data.attributes.msg
     });
     $(errmsg).click(function(event) {
@@ -428,7 +429,7 @@ function generateError(data, target) {
     $(errtitle).append(errmsg);
 
     var errarea = jQuery('<div/>', {
-        class: 'errarea',
+        class: 'errarea flexcontainer flexitem',
     });
     $(errarea).click(function(event) {
         errorClick($(errtitle), true);
@@ -436,7 +437,7 @@ function generateError(data, target) {
     $(errarea).hide();
 
     var errtriangle = jQuery('<div/>', {
-        class: 'errtriangle',
+        class: 'errtriangle flexitem',
     });
     $(errarea).append(errtriangle);
     $(errtitle).append(errarea);
@@ -449,7 +450,7 @@ function generateError(data, target) {
         additional = true;
 
         var errrep = jQuery('<div/>', {
-            class: 'errrep',
+            class: 'errrep flexcontainer flexitem',
         });
         $(errrep).hide();
         //err_info.push(errrep);
@@ -461,7 +462,7 @@ function generateError(data, target) {
 
             var rep = jQuery('<div/>', {
                 id: 'er' + pad(data.number, 2) + 'rp' + pad(rep_index, 2),
-                class: 'rep',
+                class: 'rep flexitem',
                 text: replacement
             });
             $(rep).hover(
@@ -500,7 +501,7 @@ function generateError(data, target) {
         });
 
         var errurl = jQuery('<div/>', {
-            class: 'errurl',
+            class: 'errurl flexitem',
         });
         $(errurl).append(url);
         $(errurl).hide();
@@ -541,19 +542,20 @@ function generateError(data, target) {
 
 function generateLine(index, sentence, target) {
 
-    var loadbutton = jQuery('<div/>', {
-        id: 'lo' + pad(index, 2),
-        class: 'loadbutton',
-    });
-    $(loadbutton).click(function(event) {
-        loadClick(event);
+    var line = jQuery('<div/>', {
+        id: 'll' + pad(index, 2),
+        class: 'line flexcontainer flexitem',
     });
 
-    var loadarea = jQuery('<div/>', {
-        id: 'la' + pad(index, 2),
-        class: 'loadarea',
+    var linebox = jQuery('<div/>', {
+        id: 'lb' + pad(index, 2),
+        class: 'linebox flexcontainer flexitem'
     });
-    $(loadarea).append(loadbutton);
+
+    var textarea = jQuery('<div/>', {
+        id: 'ta' + pad(index, 2),
+        class: 'textarea flexitem',
+    });
 
     var sentence_span = jQuery('<span/>', {
         id: 'ss' + pad(index, 2),
@@ -562,37 +564,37 @@ function generateLine(index, sentence, target) {
     });
     $(sentence_span).attr('start', sentence.start);
     $(sentence_span).attr('end', sentence.end);
-
-    var textarea = jQuery('<div/>', {
-        id: 'ta' + pad(index, 2),
-        class: 'textarea',
-    });
     $(textarea).append(sentence_span);
+    $(linebox).append(textarea);
+
+    var loadarea = jQuery('<div/>', {
+        id: 'la' + pad(index, 2),
+        class: 'loadarea flexcontainer flexitem',
+    });
+
+    var loadbutton = jQuery('<div/>', {
+        id: 'lo' + pad(index, 2),
+        class: 'loadbutton flexitem',
+    });
+    $(loadbutton).click(function(event) {
+        loadClick(event);
+    });
+    $(loadarea).append(loadbutton);
+    $(linebox).append(loadarea);
+
+    var dataarea = jQuery('<div/>', {
+        id: 'da' + pad(index, 2),
+        class: 'dataarea'
+    });
 
     var treedata = jQuery('<div/>', {
         id: 'td' + pad(index, 2),
         class: 'treedata',
         text: JSON.stringify(sentence.parse)
     });
-
-    var dataarea = jQuery('<div/>', {
-        id: 'da' + pad(index, 2),
-        class: 'dataarea'
-    });
     $(dataarea).append(treedata);
-
-    var linebox = jQuery('<div/>', {
-        id: 'lb' + pad(index, 2),
-        class: 'linebox'
-    });
-    $(linebox).append(textarea);
-    $(linebox).append(loadarea);
     $(linebox).append(dataarea);
 
-    var line = jQuery('<div/>', {
-        id: 'll' + pad(index, 2),
-        class: 'line',
-    });
     $(line).append(linebox);
     $(line).hide();
 

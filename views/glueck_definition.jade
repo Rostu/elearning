@@ -12,19 +12,19 @@ block content
             | Verfasse 5 eigene Definitionen von Glück. Trage dazu einzeln 5 kurze Sätze in das Eingabefeld ein.
             | Verwende die Nebensatzkonstruktionen, die du in der vorherigen Übung kennengelernt hast.
 
-    #flexbox
-        #textbox
-            #textoverlay
-                .spinnerbox
-                    .spinner
-            #editorarea
-                #startarea
-                    #startphrase Glück ist,
-                #editor(contenteditable=true)
-                #checkarea
-                    #checkbutton
-            .explanation.textbox Gib den Nebensatz für deine Definition von Glück in das weiße Textfeld ein. Lasse deinen Satz überprüfen, indem du auf das blaue Viereck auf der rechten Seite klickst.
-        #sentbox
-        #treebox
-            .explanation.treebox Wähle einen Satz über die grünen Quadrate auf der rechten Seite aus, um dir hier seine Struktur anzusehen.
+    #definition.flexcontainer
+        #textbox.flexcontainer.flexitem
+            #textoverlay.flexcontainer.flexitem
+                .spinnerbox.flexcontainer.flexitem
+                    .spinner.flexitem
+            #editorarea.flexcontainer.flexitem
+                #startarea.flexcontainer.flexitem
+                    #startphrase.flexitem Glück ist,
+                #editor.flexitem(contenteditable=true)
+                #checkarea.flexcontainer.flexitem
+                    #checkbutton.flexitem
+            .explanation.flexitem.textbox Gib den Nebensatz für deine Definition von Glück in das weiße Textfeld ein. Lasse deinen Satz überprüfen, indem du auf das blaue Viereck auf der rechten Seite klickst.
+        #sentbox.flexcontainer.flexitem
+        #treebox.flexcontainer.flexitem
+            .explanation.flexitem.treebox Wähle einen Satz über die grünen Quadrate auf der rechten Seite aus, um dir hier seine Struktur anzusehen.
             #tree

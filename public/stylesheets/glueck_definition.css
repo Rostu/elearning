@@ -5,97 +5,59 @@
     background: #7AB3E3;
 }
 
-#flexbox {
-
+.flexcontainer {
     display: flex;
 
-    padding-right: 10px;
+    padding: 0 10px 10px 0;
 
     flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
-
 }
 
-#textbox, #treebox, #sentbox {
-
-    display: flex;
-
+.flexitem {
     margin: 10px 0 0 10px;
 
-    width: 80%;
-    line-height: 20px;
-
     flex: 1 1 auto;
-    align-self: auto;
-
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-
-    background: #A6D1F5;
-
 }
 
-#textbox, #sentbox {
+.explanation {
+    margin: 10px;
+    padding: 10px;
 
-    align-items: stretch;
-    align-content: stretch;
+    text-align: center;
 
+    flex: 0 1 auto;
+
+    color: white;
+    background: #7AB3E3;
+}
+
+#definition {
+    padding: 0 10px 0 0;
+
+    line-height: 20px;
+}
+
+#textbox, #editorarea, #treebox, #sentbox {
+
+    width: 80%;
+
+    background: #A6D1F5;
+}
+
+#textbox, #treebox {
+    padding: 0;
+
+    justify-content: center;
 }
 
 #textbox {
-
     position: relative;
-
-}
-
-#sentbox {
-
-    padding-bottom: 10px;
-
 }
 
 #editorarea {
-    display: flex;
-
-    padding: 10px;
-
-    width: 80%;
-    line-height: 20px;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
+    margin: 0;
 
     background: #0183D8;
-}
-
-#startarea, #checkarea, .loadarea, .errarea {
-    display: flex;
-
-    padding: 10px;
-
-    flex: 0 1 auto;
-    align-self: auto;
-
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: center;
-}
-
-#startarea, #checkarea {
-    background: aliceblue;
-}
-
-.errarea {
-    padding: 10px 10px 10px 0;
 }
 
 #editorarea.incorrect, .line.incorrect  {
@@ -106,26 +68,11 @@
     background: #6B9713;
 }
 
-#startphrase, #checkbutton, .loadbutton, .errtriangle {
-    flex: 0 1 auto;
-    align-self: auto;
-}
-
-#startphrase {
-    line-height: 20px;
-}
-
 #editor {
     overflow: auto;
 
     margin-left: 10px;
     padding: 10px 0 10px 10px;
-
-    width: 70%;
-    line-height: 20px;
-
-    flex: 1 1 auto;
-    align-self: auto;
 
     background: aliceblue;
 
@@ -152,135 +99,23 @@
     background: #A8D54D;
 }
 
-.linebox, .line, .errorbox, .error, .errtitle {
-    display: flex;
+#startarea, #checkarea, .loadarea, .errarea {
+    flex: 0 1 auto;
 
-    width: 80%;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
+    align-items: flex-start;
+    align-content: center;
 }
 
-.line {
-    margin: 10px 10px 0 10px;
-
+#startarea, #checkarea {
     background: aliceblue;
 }
 
-.errorbox {
-    padding: 0 10px 10px 0;
-
-    background: #FFA9A9;
+#checkarea {
+    margin-left: 0;
 }
 
-.error {
-    margin: 10px 0 0 10px;
-
-    justify-content: center;
-}
-
-.error.hover .errtitle {
-    background: #D32424;
-}
-
-.errtitle {
-    color: white;
-    background: #A91211;
-
-    text-align: center;
-}
-
-.errtitle.open:hover, .errtitle.closed:hover {
-    cursor: pointer;
-}
-
-.errtitle:hover {
-    background: #D32424;
-}
-
-.errstatus {
-    padding: 10px 0 10px 10px;
-
-    flex: 0 1 auto;
-    align-self: auto;
-
-    font-weight: bold;
-}
-
-.error.new .errstatus:before {
-    content: "NEU";
-}
-
-.error.modified .errstatus:before {
-    content: "BEARBEITET";
-}
-
-.error.deleted .errstatus:before {
-    content: "GELÖSCHT";
-}
-
-.errmsg {
-
-    padding: 10px;
-
-    width: 70%;
-
-    flex: 1 1 auto;
-    align-self: auto;
-}
-
-.errrep {
-    display: flex;
-
-    padding: 0 10px 10px 0;
-
-    width: 80%;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-
-    background-color: #FFE8E8;
-}
-
-.rep {
-
-    margin: 10px 0 0 10px;
-    padding: 10px;
-
-    flex: 0 1 auto;
-    align-self: auto;
-
-    background-color: #A8D54D;
-    white-space: pre-wrap;
-
-    cursor: pointer;
-}
-
-.rep:hover {
-
-    background: #8EC029;
-
-}
-
-.errurl {
-
-    width: 80%;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
-    background: #FFCBCB;
-    text-align: center;
+.loadarea, .errarea {
+    margin: 0;
 }
 
 #checkbutton, .loadbutton, .errtriangle {
@@ -322,13 +157,20 @@
     background-size: 35px 35px;
 }
 
+.line {
+    padding: 0;
+
+    background: aliceblue;
+}
+
+.linebox {
+    margin: 0;
+    padding: 0;
+}
+
 .textarea {
-    padding: 10px 0 0 10px;
-
-    width: 80%;
-
-    flex: 1 1 auto;
-    align-self: auto;
+    padding: 0 0 10px 0;
+    width: 50%;
 }
 
 .sentence {
@@ -339,63 +181,140 @@
     display: none;
 }
 
-.explanation {
+.errorbox {
+    background: #FFA9A9;
+}
 
-    margin: 10px;
-    padding: 10px;
+#textboxeb {
+    margin: 0;
+}
 
-    line-height: 20px;
+.error, .errtitle {
+    padding: 0;
+}
+
+.errtitle, .errstatus, .errmsg, .errrep, .errurl {
+    margin: 0;
+}
+
+.error {
+    justify-content: center;
+}
+
+.error.hover .errtitle {
+    background: #D32424;
+}
+
+.errtitle {
+    width: 50%;
+
     text-align: center;
 
-    flex: 0 1 auto;
-    align-self: auto;
-
     color: white;
-    background: #7AB3E3;
+    background: #A91211;
+}
 
+.errtitle.open:hover, .errtitle.closed:hover {
+    cursor: pointer;
+}
+
+.errtitle:hover {
+    background: #D32424;
+}
+
+.errtitle.open:hover, .errtitle.closed:hover {
+    cursor: pointer;
+}
+
+.errtitle.open:hover .errtriangle {
+    background: url("../images/arrow_up.png") no-repeat center center;
+    background-size: 35px 35px;
+}
+
+.errtitle.closed:hover .errtriangle {
+    background: url("../images/arrow_down.png") no-repeat center center;
+    background-size: 35px 35px;
+}
+
+.errstatus {
+    padding: 10px;
+
+    flex: 0 1 auto;
+
+    font-weight: bold;
+}
+
+.errmsg {
+    padding: 10px;
+
+    width: 50%;
+}
+
+.error.new .errstatus:before {
+    content: "NEU";
+}
+
+.error.modified .errstatus:before {
+    content: "BEARBEITET";
+}
+
+.error.deleted .errstatus:before {
+    content: "GELÖSCHT";
+}
+
+.errrep {
+    width: 80%;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    background-color: #FFE8E8;
+}
+
+.rep {
+    padding: 10px;
+
+    flex: 0 1 auto;
+
+    background-color: #A8D54D;
+    white-space: pre-wrap;
+
+    cursor: pointer;
+}
+
+.rep:hover {
+    background: #8EC029;
+}
+
+.errurl {
+    width: 80%;
+
+    text-align: center;
+
+    background: #FFCBCB;
 }
 
 #textoverlay {
-
-    display: flex;
-
     position: absolute;
     top: 0;
     left: 0;
 
     margin: auto;
+    padding: 0;
 
     width: 100%;
     height: 100%;
 
-    flex: 1 1 auto;
-    align-self: auto;
-
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
-
     background: #A6D1F5;
     opacity: 0.85;
-
 }
 
 .spinnerbox {
-
-    display: flex;
-
-    width: 80%;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
     align-items: center;
-
 }
 
 .spinner {
-
     display: none;
 
     margin: auto;
@@ -404,7 +323,6 @@
     height: 40px;
 
     flex: 0 1 auto;
-    align-self: auto;
 
     background-color: #005E9C;
 
@@ -455,3 +373,4 @@
     stroke: darkgrey;
     stroke-width: 1.5px;
 }
+

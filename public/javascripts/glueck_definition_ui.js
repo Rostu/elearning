@@ -93,7 +93,7 @@ function checkClick() {
                         $('#editorarea').effect("highlight", {color: '#FF7F7F'});
                     });
                     displayErrors($('#textbox'));
-                    placeCaretAtEnd($('#editor')[0]);
+                    placeCaretAtEnd(document.getElementById('editor'));
                 });
             } else {
                 raisepoints();
