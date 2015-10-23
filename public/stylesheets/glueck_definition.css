@@ -71,7 +71,7 @@
 #editor {
     overflow: auto;
 
-    width: 50%;
+    width: 60%;
 
     margin-left: 10px;
     padding: 10px 0 10px 10px;
@@ -162,6 +162,8 @@
 .line {
     padding: 0;
 
+    width: 60%;
+
     background: aliceblue;
 }
 
@@ -172,7 +174,7 @@
 
 .textarea {
     padding: 0 0 10px 0;
-    width: 50%;
+    width: 60%;
 }
 
 .sentence {
@@ -211,7 +213,7 @@
 
 .errtitle {
 
-    width: 50%;
+    width: 60%;
 
     text-align: center;
 
@@ -219,23 +221,23 @@
     background: #A91211;
 }
 
-.error.deleted .errtitle {
+/*.error.deleted .errtitle {
     background: #A95611;
 }
 
 .error.modified .errtitle {
     background: #D37324;
-}
+}*/
 
-.errtitle.open:hover, .errtitle.closed:hover {
+/*.errtitle.open:hover, .errtitle.closed:hover {
     cursor: pointer;
-}
+}*/
 
 .errtitle:hover {
     background: #D32424;
 }
 
-.error.open:hover, .error.closed:hover {
+.error.open:hover .errtitle, .error.closed:hover .errtitle {
     cursor: pointer;
 }
 
@@ -260,7 +262,7 @@
 .errmsg {
     padding: 10px;
 
-    width: 50%;
+    width: 60%;
 }
 
 .error.new .errstatus:before {

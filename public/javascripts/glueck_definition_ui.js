@@ -11,15 +11,12 @@ function updateErrorSpans() {
         var coordinates_index = $(error).attr('id').indexOf('co');
         var coordinates = $(error).attr('id').slice(coordinates_index, $(error).attr('id').length);
         var span = $("span[id$='" + coordinates + "']");
-        console.log(span.length);
         if (span.length > 0) {
             return span;
         } else {
             markDeleted(error);
         }
     });
-
-    //var spans = $('.mistake');
 
     $.each(spans, function(index, span) {
 
@@ -45,25 +42,15 @@ function updateErrorSpans() {
     });
 }
 
-function markDeleted(error) {
-    $(error).removeClass('new');
-    $(error).removeClass('modified');
-    $(error).children(':not(.errtitle)').slideUp(25);
-    $(error).find('.errarea').hide();
-    $(error).removeClass('closed');
-    $(error).removeClass('open');
-    $(error).addClass('deleted');
-}
-
 function startCheckUI(callback) {
 
     glueck_definition_editor_unlocked = false;
 
+    $('#tree').slideUp(75);
     $('#treebox').find('.explanation').slideDown(75);
     $('#textbox').find('.explanation').slideUp(75);
 
     $('.linebox').removeClass('active');
-    $('#tree').slideUp(75);
     $('#editorarea').removeClass('incorrect');
     $('.errorbox').slideUp(75, function() {
         $('.errorbox').remove();
@@ -276,4 +263,14 @@ function placeCaretAtEnd(el) {
         textRange.collapse(false);
         textRange.select();
     }
+}
+
+function markDeleted(error) {
+    $(error).removeClass('new');
+    $(error).removeClass('modified');
+    $(error).children(':not(.errtitle)').slideUp(25);
+    $(error).find('.errarea').hide();
+    $(error).removeClass('closed');
+    $(error).removeClass('open');
+    $(error).addClass('deleted');
 }

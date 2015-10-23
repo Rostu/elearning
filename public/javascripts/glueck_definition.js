@@ -90,10 +90,6 @@ function checkForErrors(editor_text, callback) {
                 return $(correct).text();
             });
 
-            $.each(correct_sentences, function(index, correct) {
-                console.log(correct);
-            });
-
             if ($.inArray(editor_text, correct_sentences) > -1) {
 
                 category = "Wiederholung";
@@ -105,8 +101,6 @@ function checkForErrors(editor_text, callback) {
             }
 
         }
-
-        console.log("sentences: " + correct_sentences.length);
 
         if (errors.length > 0) {
             callback(errors);
@@ -153,8 +147,6 @@ function checkForErrors(editor_text, callback) {
                         errors.push(analyseError(errors.length, base_error));
 
                     }
-
-                    console.log("#1 errors: " + errors.length);
 
                     if (errors.length > 0) {
                         callback(errors);
@@ -254,8 +246,18 @@ function analyseError(index, error) {
     /*  restructure error data, adding some information
      */
 
+    if (endsWith(error.attributes.context.slice(error.attributes.fromx, error.attributes.tox), '.')) {
+        error.attributes.tox = error.attributes.tox - 1;
+        error.attributes.errorlength = error.attributes.errorlength - 1;
+    }
+
+    console.log(JSON.stringify(error.attributes));
+    console.log(JSON.stringify(error.attributes.context.slice(error.attributes.fromx, error.attributes.tox)));
+    console.log(JSON.stringify(error.attributes.context.length));
+
     var analysed_error = {
         'number': index,
+        'length': error.attributes.tox - error.attributes.fromx,
         'coordinates': '' + error.attributes.fromx + error.attributes.tox,
         'attributes': error.attributes
     };
@@ -273,10 +275,45 @@ function insertErrorSpans(errlist, target, offset) {
      *  are based on the entire text;
      */
 
+    /*
+    text text text text.
+     */
+
     var original = target.text();
     target.text('');
 
     var last_end = 0;
+
+    var spantree = {},
+        items = [];
+
+    var errlist_length = $.extend(true, [], errlist);
+    errlist_length = errlist_length.sort(dynamicSort('length'));
+
+    $.each(errlist_length, function(c, container) {
+
+        spantree[container.number] = [];
+
+        //console.log(container.attributes.fromx);
+        //console.log(container.attributes.tox);
+        console.log(container.length);
+
+        $.each(errlist_length, function(i, item) {
+
+            if (c != i
+                && items.indexOf(item.number) < 0
+                && item.attributes.fromx >= container.attributes.fromx
+                && item.attributes.tox <= container.attributes.tox) {
+                spantree[container.number].push(item.number);
+                items.push(item.number);
+            }
+
+        });
+
+    });
+
+    console.log(JSON.stringify(items));
+    console.log(JSON.stringify(spantree));
 
     $.each(errlist, function(index, error) {
 
@@ -317,10 +354,6 @@ function insertErrorSpan(data, target, original, last_end, offset) {
             text: original.substring(last_end, err_start)
         });
         $(target).append(text);
-
-    }else{
-
-        console.log("Uh, oh! We've hit a snag!!");
 
     }
 
