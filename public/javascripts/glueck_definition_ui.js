@@ -125,8 +125,10 @@ function checkClick() {
             //console.log(error_data.length);
 
             if (error_data.length > 0) {
+
                 raisefaults();
-                insertErrorSpans(error_data, $('#editor'), 11);
+
+                insertErrorSpans(error_data, $('#editor'), 11, editor_text.length);
                 generateErrorBox(error_data, $('#textbox'));
 
                 stopCheckUI(function() {
@@ -138,7 +140,9 @@ function checkClick() {
                     placeCaretAtEnd(document.getElementById('editor'));
                 });
             } else {
+
                 raisepoints();
+
                 stopCheckUI(function () {
                     displayLines();
                     $('#editorarea').addClass('correct');

@@ -70,7 +70,7 @@ function checkForErrors(editor_text, callback) {
 
         category = "Ungültige Zeichen";
         message = "Bitte verwende nur Buchstaben, Kommata und Punkte für deine Eingabe.";
-        base_error = generateBaseError(category, message, match.index, match.index + match[0].length, []);
+        base_error = generateBaseError(category, message, match.index, match.index + match[0].length, [], editor_text);
         errors.push(analyseError(errors.length, base_error));
 
         console.log("match found at " + match.index);
@@ -94,7 +94,7 @@ function checkForErrors(editor_text, callback) {
 
                 category = "Wiederholung";
                 message = "Du hast Glück schon einmal genau so definiert. Denke dir bitte einen neuen Satz aus.";
-                base_error = generateBaseError(category, message, 11, editor_text.length, []);
+                base_error = generateBaseError(category, message, 11, editor_text.length, [], editor_text);
                 errors.push(analyseError(errors.length, base_error));
 
                 highlightRepetition($.inArray(editor_text, correct_sentences));
@@ -117,7 +117,7 @@ function checkForErrors(editor_text, callback) {
 
                     category = "Satzanzahl";
                     message = "Bitte gib nur einen einzelnen Satz ein.";
-                    base_error = generateBaseError(category, message, error_offset, editor_text.length, []);
+                    base_error = generateBaseError(category, message, error_offset, editor_text.length, [], editor_text);
                     errors.push(analyseError(errors.length, base_error));
 
                     callback(errors);
@@ -132,7 +132,7 @@ function checkForErrors(editor_text, callback) {
 
                         category = "Satzlänge";
                         message = "Achte bitte darauf, dass dein Satz nicht zu viele Wörter enthält. Versuche es mit einem kürzeren Satz erneut.";
-                        base_error = generateBaseError(category, message, editor_text.lastIndexOf(exceeding), editor_text.length, []);
+                        base_error = generateBaseError(category, message, editor_text.lastIndexOf(exceeding), editor_text.length, [], editor_text);
                         errors.push(analyseError(errors.length, base_error));
 
                     }
@@ -143,7 +143,7 @@ function checkForErrors(editor_text, callback) {
 
                         category = "Zeichensetzung";
                         message = "Achte bitte darauf, dass deine Eingabe das Satzende mit einem Punkt markiert.";
-                        base_error = generateBaseError(category, message, editor_text.length, editor_text.length + 1, ["."]);
+                        base_error = generateBaseError(category, message, editor_text.length, editor_text.length + 1, ["."], editor_text);
                         errors.push(analyseError(errors.length, base_error));
 
                     }
@@ -183,7 +183,7 @@ function checkForErrors(editor_text, callback) {
                                         message = validation_msg;
                                         //console.log(message);
 
-                                        base_error = generateBaseError(category, message, editor_text.length, editor_text.length, []);
+                                        base_error = generateBaseError(category, message, editor_text.length, editor_text.length, [], editor_text);
                                         errors.push(analyseError(errors.length, base_error));
 
                                     } else {
@@ -219,7 +219,7 @@ function checkForErrors(editor_text, callback) {
 
 
 
-function generateBaseError(ctg, msg, fromx, tox, reps) {
+function generateBaseError(ctg, msg, fromx, tox, reps, context) {
 
     /*  mocking up the structure of an error yielded by LanguageTool
      */
@@ -229,7 +229,8 @@ function generateBaseError(ctg, msg, fromx, tox, reps) {
             category: ctg,
             msg: msg,
             fromx: fromx,
-            tox: tox
+            tox: tox,
+            context: context
         }
     };
 
@@ -251,27 +252,175 @@ function analyseError(index, error) {
         error.attributes.errorlength = error.attributes.errorlength - 1;
     }
 
-    console.log(JSON.stringify(error.attributes));
-    console.log(JSON.stringify(error.attributes.context.slice(error.attributes.fromx, error.attributes.tox)));
-    console.log(JSON.stringify(error.attributes.context.length));
-
     var analysed_error = {
         'number': index,
-        'length': error.attributes.tox - error.attributes.fromx,
-        'coordinates': '' + error.attributes.fromx + error.attributes.tox,
-        'attributes': error.attributes
     };
+
+    $.each(error.attributes, function(key, value) {
+        if (key === 'errorlength') {
+            value = value - 0;
+        }
+        analysed_error[key] = value;
+    });
 
     return analysed_error;
 
 }
 
 
+function generateSpanTrees(errors) {
 
-function insertErrorSpans(errlist, target, offset) {
+    var span_subtrees = {},
+        items = [];
+
+    var errors_length_asc = $.extend(true, [], errors);
+    errors_length_asc = errors_length_asc.sort(dynamicSort('errorlength'));
+
+    $.each(errors_length_asc, function(c, container) {
+
+        span_subtrees[container.number] = [];
+
+        $.each(errors_length_asc, function(i, item) {
+
+            if (c != i
+                && items.indexOf(item.number) < 0
+                && item.fromx >= container.fromx
+                && item.tox <= container.tox) {
+                span_subtrees[container.number].push(item.number);
+                items.push(item.number);
+            }
+
+        });
+
+    });
+    console.log('items: ' + JSON.stringify(items));
+    console.log('span_subtrees: ' + JSON.stringify(span_subtrees));
+
+
+
+    var error_numbers = [];
+
+    for (var key in span_subtrees) {
+        error_numbers.push(key - 0);
+    }
+    console.log('error_numbers: ' + JSON.stringify(error_numbers));
+
+
+
+    var roots = error_numbers.filter(function(i) {
+        return items.indexOf(i) < 0;
+    });
+    console.log('roots: ' + JSON.stringify(roots));
+
+
+
+    var span_trees = [];
+
+    $.each(roots, function(index, root) {
+        span_trees.push(generateSpanTree(root, errors, span_subtrees));
+    });
+
+    return span_trees;
+}
+
+function generateSpanTree(index, errors, span_subtrees) {
+
+    if(span_subtrees[index].length > 0) {
+
+        var mistake = {
+            type: 'mistake',
+                index: index,
+                start: errors[index].fromx,
+                end: errors[index].tox,
+                children: []
+        };
+        $.each(span_subtrees[index], function(i, child) {
+            mistake.children.push(generateSpanTree(child, errors, span_subtrees));
+        });
+        /*
+        mistake.start = mistake.children[0].start;
+        mistake.end = mistake.children[mistake.children.length - 1].end;
+        */
+    } else {
+        var mistake = {
+            type: 'mistake',
+            index: index,
+            start: errors[index].fromx,
+            end: errors[index].tox,
+        };
+    }
+    return mistake;
+}
+
+function generateText(start, end) {
+    var text = {
+        type: 'text',
+        start: start,
+        end: end
+    };
+    return text;
+}
+
+function insertTexts(mistakes, last_end, end) {
+
+    var mistakes_and_text = [];
+
+    $.each(mistakes, function(index, mistake){
+        console.log('mistake: ' + JSON.stringify(mistake));
+        console.log('last_end: ' + last_end);
+        if(mistake.start < last_end && mistake.children[0].start >= last_end) {
+            mistake.start = mistake.children[0].start;
+        }
+        if(mistake.start > last_end) {
+            mistakes_and_text.push(generateText(last_end, mistake.start));
+        }
+        if(mistake.children) {
+            mistake.children = insertTexts(mistake.children, mistake.start, mistake.end);
+        }
+        mistakes_and_text.push(mistake);
+        last_end = mistake.end;
+    });
+    if(last_end < end) {
+        mistakes_and_text.push(generateText(last_end, end));
+    }
+
+    return mistakes_and_text;
+}
+
+function insertErrorSpans(errors, target, offset, end) {
 
     /*  insert coloured error spans based on position data provided by LanguageTool; offset is needed to compute the
-     *  correct positions for the current sentence only since the coordinates taken from the results of LanguageTool
+     *  correct span positions for the current target only because the coordinates taken from the results of LanguageTool
+     *  are based on the entire text;
+     */
+
+    /*
+     text text text text.
+     */
+
+    var original_text = target.text();
+    target.text('');
+
+
+    var span_trees = generateSpanTrees(errors);
+    console.log('span_trees: ' + JSON.stringify(span_trees));
+
+
+
+    var mistakes_and_text = insertTexts(span_trees, offset, end);
+    console.log('mistakes_and_text: ' + JSON.stringify(mistakes_and_text));
+
+    var content = compileTargetContent(errors, mistakes_and_text, original_text, offset);
+    console.log(content);
+
+    $(target).append(content);
+}
+
+
+function insertErrorSpans_old(errlist, containers, items, span_subtrees, target, offset) {
+
+    /*  insert coloured error spans based on position data provided by LanguageTool; offset is needed to compute the
+     *  correct span positions for the current target only because the coordinates taken from the results of LanguageTool
      *  are based on the entire text;
      */
 
@@ -284,45 +433,50 @@ function insertErrorSpans(errlist, target, offset) {
 
     var last_end = 0;
 
-    var spantree = {},
-        items = [];
-
-    var errlist_length = $.extend(true, [], errlist);
-    errlist_length = errlist_length.sort(dynamicSort('length'));
-
-    $.each(errlist_length, function(c, container) {
-
-        spantree[container.number] = [];
-
-        //console.log(container.attributes.fromx);
-        //console.log(container.attributes.tox);
-        console.log(container.length);
-
-        $.each(errlist_length, function(i, item) {
-
-            if (c != i
-                && items.indexOf(item.number) < 0
-                && item.attributes.fromx >= container.attributes.fromx
-                && item.attributes.tox <= container.attributes.tox) {
-                spantree[container.number].push(item.number);
-                items.push(item.number);
-            }
-
-        });
-
-    });
-
-    console.log(JSON.stringify(items));
-    console.log(JSON.stringify(spantree));
+    var new_containers = {};
 
     $.each(errlist, function(index, error) {
 
-        insertErrorSpan(error, target, original, last_end, offset);
-        last_end = errlist[index].attributes.tox - offset;
+        if (items.indexOf(index) < 0) {
 
-        ////console.log('last');
-        ////console.log(last_end);
+            containers[index] = insertErrorSpan(error, target, original, last_end, offset);
+            new_containers[index] = containers[index];
+            last_end = errlist[index].tox - offset;
 
+            ////console.log('last');
+            ////console.log(last_end);
+        }
+
+    });
+
+    var new_container_keys = [];
+
+    for (var key in new_containers) {
+        new_container_keys.push(key);
+    }
+
+    items = arrayUnique(items.concat(new_container_keys));
+    console.log('items with roots: ' + items);
+
+    $.each(new_containers, function(key, value) {
+
+        if (span_subtrees[key].length > 0) {
+            items = items.filter(function(i) {
+                return span_subtrees[key].indexOf(i) < 0;
+            });
+            console.log('items without root\'s children: ' + items);
+
+            if (items.length < errlist.length) {
+
+                console.log('key: ' + key);
+                console.log('value: ' + value);
+                console.log('offset: ' + errlist[key].fromx);
+
+                insertErrorSpans(errlist, containers, items, span_subtrees, value, errlist[key].fromx);
+            } else {
+                return;
+            }
+        }
     });
 
     var text = jQuery('<span/>', {
@@ -333,15 +487,69 @@ function insertErrorSpans(errlist, target, offset) {
 
 }
 
+function compileTargetContent(errors, mistakes_and_text, original_text, offset) {
+
+    var contents = [];
+
+    $.each(mistakes_and_text, function(index, mnt){
+        if(mnt.children) {
+            var mistake = generateMistake(errors, original_text, mnt, offset);
+            $(mistake).text('');
+            $.each(compileTargetContent(errors, mnt.children, original_text, offset), function(index, item) {
+                mistake.append(item);
+            });
+            contents.push(mistake);
+        } else {
+            if(mnt.type === 'text') {
+
+                var text = jQuery('<span/>', {
+                    class: 'text',
+                    text: original_text.substring(mnt.start - offset, mnt.end - offset)
+                });
+                contents.push(text);
+
+            } else {
+
+
+                contents.push(generateMistake(errors, original_text, mnt, offset));
+            }
+        }
+    });
+    return contents;
+}
+
+function generateMistake(errors, original_text, mnt, offset) {
+    var err_string = original_text.substring(mnt.start - offset, mnt.end - offset);
+    var err_coordinates = '' + errors[mnt.index].fromx + errors[mnt.index].tox;
+
+    var mistake = jQuery('<span/>', {
+        id: 'esco' + err_coordinates,
+        class: 'mistake',
+        original: err_string,
+        text: err_string
+    });
+    $(mistake).hover(
+        function() {
+            $(".error[id$='co" + err_coordinates + "']").addClass( "hover" );
+        }, function() {
+            $(".error[id$='co" + err_coordinates + "']").removeClass( "hover" );
+        }
+    );
+    $(mistake).dblclick(function(event) {
+        $('html, body').animate({
+            scrollTop: $(".error[id$='co" + err_coordinates + "']").offset().top
+        }, 25);
+        errorClick($(".error[id$='co" + err_coordinates + "']"), false);
+    });
+    return mistake;
+}
+
 function insertErrorSpan(data, target, original, last_end, offset) {
 
-    var err_start = data.attributes.fromx - offset;
-    var err_end = data.attributes.tox - offset;
-
+    var err_start = data.fromx - offset;
+    var err_end = data.tox - offset;
+    var err_coordinates = '' + data.fromx + data.tox;
     var err_string = original.substring(err_start, err_end);
-
-    ////console.log('computed');
-    ////console.log(err_start - last_end);
 
     if(err_start - last_end > 0) {
 
@@ -357,7 +565,7 @@ function insertErrorSpan(data, target, original, last_end, offset) {
 
     }
 
-    if($('#' + 'esco' + data.coordinates).length == 0) {
+    if($('#' + 'esco' + err_coordinates).length == 0) {
 
         /*  the insertion of coloured error spans needs to keep track of error coordinates since LanguageTool may have
          *  several error suggestions for the same substring; if overlapping errors occur, they are linked to the same
@@ -365,41 +573,31 @@ function insertErrorSpan(data, target, original, last_end, offset) {
          */
 
         var mistake = jQuery('<span/>', {
-            id: 'esco' + data.coordinates,
+            id: 'esco' + err_coordinates,
             class: 'mistake',
             original: err_string,
             text: err_string
         });
         $(mistake).hover(
             function() {
-                $(".error[id$='co" + data.coordinates + "']").addClass( "hover" );
+                $(".error[id$='co" + err_coordinates + "']").addClass( "hover" );
             }, function() {
-                $(".error[id$='co" + data.coordinates + "']").removeClass( "hover" );
+                $(".error[id$='co" + err_coordinates + "']").removeClass( "hover" );
             }
         );
         $(mistake).dblclick(function(event) {
             $('html, body').animate({
-                scrollTop: $(".error[id$='co" + data.coordinates + "']").offset().top
+                scrollTop: $(".error[id$='co" + err_coordinates + "']").offset().top
             }, 25);
-            errorClick($(".error[id$='co" + data.coordinates + "']"), false);
+            errorClick($(".error[id$='co" + err_coordinates + "']"), false);
         });
         $(target).append(mistake);
 
-        //var old_target_id = $(target).attr('id');
-        //var tbs_target_id = 'ts' + old_target_id.slice(2, old_target_id.length);
+        return mistake;
 
-        //console.log(old_target_id);
-        //console.log(tbs_target_id);
-
+    } else {
+        return $('#' + 'esco' + err_coordinates);
     }
-
-    //console.log('start');
-    //console.log(err_start);
-    //console.log('end');
-    //console.log(err_end);
-    //console.log('err');
-    //console.log(err_string);
-
 }
 
 
@@ -422,16 +620,17 @@ function generateErrorBox(errlist, target) {
 function generateError(data, target) {
 
     var additional = false;
+    var err_coordinates = '' + data.fromx + data.tox;
 
     var error = jQuery('<div/>', {
-        id: 'er' + pad(data.number, 2) + 'co' + data.coordinates,
+        id: 'er' + pad(data.number, 2) + 'co' + err_coordinates,
         class: 'error flexcontainer flexitem new'
     });
     $(error).hover(
         function() {
-            $("span[id$='esco" + data.coordinates + "']").addClass('hover');
+            $("span[id$='esco" + err_coordinates + "']").addClass('hover');
         }, function() {
-            $("span[id$='esco" + data.coordinates + "']").removeClass('hover');
+            $("span[id$='esco" + err_coordinates + "']").removeClass('hover');
         }
     );
     $(error).hide();
@@ -452,14 +651,14 @@ function generateError(data, target) {
 
     var errmsg = jQuery('<div/>', {
         class: 'errmsg flexitem',
-        text: data.attributes.msg
+        text: data.msg
     });
     $(errmsg).click(function(event) {
         errorClick($(error), true);
     });
 
     var errcat = jQuery('<b/>', {
-        text: data.attributes.category + ': '
+        text: data.category + ': '
     });
     $(errmsg).prepend(errcat);
     $(errtitle).append(errmsg);
@@ -481,7 +680,7 @@ function generateError(data, target) {
     err_info.push(errtitle);
     $(error).append(errtitle);
 
-    if(data.attributes.replacements) {
+    if(data.replacements) {
 
         additional = true;
 
@@ -492,7 +691,7 @@ function generateError(data, target) {
         //err_info.push(errrep);
         $(error).append(errrep);
 
-        var reps = data.attributes.replacements.split('#');
+        var reps = data.replacements.split('#');
 
         $.each(reps, function(rep_index, replacement){
 
@@ -503,20 +702,20 @@ function generateError(data, target) {
             });
             $(rep).hover(
                 function() {
-                    $("span[id$='esco" + data.coordinates + "']").text($(rep).text());
+                    $("span[id$='esco" + err_coordinates + "']").text($(rep).text());
                 }, function() {
-                    var reset = $("span[id$='esco" + data.coordinates + "']").attr('chosen') ?
-                        $("span[id$='esco" + data.coordinates + "']").attr('chosen') :
-                        $("span[id$='esco" + data.coordinates + "']").attr('original');
-                    $("span[id$='esco" + data.coordinates + "']").text(reset);
+                    var reset = $("span[id$='esco" + err_coordinates + "']").attr('chosen') ?
+                        $("span[id$='esco" + err_coordinates + "']").attr('chosen') :
+                        $("span[id$='esco" + err_coordinates + "']").attr('original');
+                    $("span[id$='esco" + err_coordinates + "']").text(reset);
                 }
             );
             $(rep).click(
                 function() {
                     $(error).removeClass('new');
                     $(error).addClass('modified');
-                    $("span[id$='esco" + data.coordinates + "']").attr('chosen', '' + $(rep).text());
-                    $("span[id$='esco" + data.coordinates + "']").text($(rep).text());
+                    $("span[id$='esco" + err_coordinates + "']").attr('chosen', '' + $(rep).text());
+                    $("span[id$='esco" + err_coordinates + "']").text($(rep).text());
                 }
             );
             //$(rep).hide();
@@ -526,14 +725,14 @@ function generateError(data, target) {
         });
     }
 
-    if(data.attributes.url) {
+    if(data.url) {
 
         additional = true;
 
         var url = jQuery('<a/>', {
             target: 'blank',
             text: 'Mehr Informationen',
-            href: data.attributes.url
+            href: data.url
         });
 
         var errurl = jQuery('<div/>', {
@@ -650,4 +849,16 @@ function pad (str, max) {
 
 function endsWith(str, suffix) {
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
+function arrayUnique(array) {
+    var a = array.concat();
+    for(var i=0; i<a.length; ++i) {
+        for(var j=i+1; j<a.length; ++j) {
+            if(a[i] === a[j])
+                a.splice(j--, 1);
+        }
+    }
+
+    return a;
 }
