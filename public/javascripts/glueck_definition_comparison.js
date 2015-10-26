@@ -15,9 +15,7 @@ function getComparisonData(enhanced_pruned_tree_clone, callback) {
             return enhanceTree(sth, sth["level"]);
         });
         sth_array.sort(dynamicSort("desc")).sort(dynamicSort("depth"));
-        /*$.each(sth_array, function(index, sth) {
-         console.log(printTree(sth));
-         });*/
+
         return [sth_array];
     });
 
@@ -39,8 +37,6 @@ function validateParse(tree, callback) {
     var enhanced_pruned_tree_clone = enhanceTree(pruned_input_clone, 0);
 
     getComparisonData(enhanced_pruned_tree_clone, function(input_data) {
-
-        //console.log(JSON.stringify(input_data));
 
         /*  compare tree depths first and store relevant indexes
          */

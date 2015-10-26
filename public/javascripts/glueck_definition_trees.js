@@ -27,9 +27,7 @@ function updateTree(json) {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    var parse_tree = traverseParseTree(json);
-
-    root = parse_tree;
+    root = traverseParseTree(json);
     root.x0 = width / 2;
     root.y0 = 0;
 
@@ -40,8 +38,6 @@ function updateTree(json) {
             d.children = null;
         }
     }
-
-    //root.children.forEach(collapse);
     update(root);
 
     function update(source) {
@@ -153,7 +149,7 @@ function updateTree(json) {
         });
     }
 
-// Toggle children on click.
+    // Toggle children on click.
     function click(d) {
         if (d.children) {
             d._children = d.children;

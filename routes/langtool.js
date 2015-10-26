@@ -5,9 +5,6 @@ exports.get_request = function(request, response) {
 
     var sentence = request.param("sentence");
 
-    console.log(sentence);
-    console.log(encodeURIComponent(sentence));
-
     var options = {
         host: 'localhost',
         port: 8081,
