@@ -498,6 +498,7 @@ function compileTargetContent(errors, mistakes_and_text, original_text, offset) 
             $.each(compileTargetContent(errors, mnt.children, original_text, offset), function(index, item) {
                 mistake.append(item);
             });
+            $(mistake).data('original',$(mistake).html());
             contents.push(mistake);
         } else {
             if(mnt.type === 'text') {
@@ -525,9 +526,9 @@ function generateMistake(errors, original_text, mnt, offset) {
     var mistake = jQuery('<span/>', {
         id: 'esco' + err_coordinates,
         class: 'mistake',
-        original: err_string,
         text: err_string
     });
+    $(mistake).data('original',$(mistake).html());
     $(mistake).hover(
         function() {
             $(".error[id$='co" + err_coordinates + "']").addClass( "hover" );
@@ -578,6 +579,7 @@ function insertErrorSpan(data, target, original, last_end, offset) {
             original: err_string,
             text: err_string
         });
+
         $(mistake).hover(
             function() {
                 $(".error[id$='co" + err_coordinates + "']").addClass( "hover" );
@@ -706,8 +708,8 @@ function generateError(data, target) {
                 }, function() {
                     var reset = $("span[id$='esco" + err_coordinates + "']").attr('chosen') ?
                         $("span[id$='esco" + err_coordinates + "']").attr('chosen') :
-                        $("span[id$='esco" + err_coordinates + "']").attr('original');
-                    $("span[id$='esco" + err_coordinates + "']").text(reset);
+                        $("span[id$='esco" + err_coordinates + "']").data('original');
+                    $("span[id$='esco" + err_coordinates + "']").html(reset);
                 }
             );
             $(rep).click(

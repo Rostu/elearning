@@ -25,14 +25,27 @@ exports.startUp = function() {
 
 exports.get_parse = function(request, result) {
 
-    var sentences = request.param("text");
+    var text = request.param("text");
 
-    stanford_coreNLP.process(sentences, function(error, output) {
-        //console.log(err,JSON.stringify(result));
-        if(error){
-            console.log(error);
-        } else {
-            result.send(output);
-        }
+    waitForLoading(function() {
+        stanford_coreNLP.process(text, function (error, output) {
+            if (error) {
+                console.log(error);
+            } else {
+                result.send(output);
+            }
+        });
     });
 };
+
+function waitForLoading(callback) {
+    if(!stanford_coreNLP.pipeline) {
+        setTimeout(function() {
+            console.log("Waiting for pipeline to load ...");
+            waitForLoading(callback);
+        }, 5000);
+        return;
+    } else {
+        callback();
+    }
+}

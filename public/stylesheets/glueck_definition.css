@@ -89,16 +89,16 @@
 }
 
 .mistake {
-    color: white;
-    background: #D32424;
+
+    background: rgba(211, 36, 36, 0.15);
 }
 
 .mistake:hover {
-    background: #E45252;
+    background: rgba(228, 82, 82, 0.3);
 }
 
 .mistake.hover {
-    background: #A8D54D;
+    background: rgba(168, 213, 77, 0.75);
 }
 
 #startarea, #checkarea, .loadarea, .errarea {
