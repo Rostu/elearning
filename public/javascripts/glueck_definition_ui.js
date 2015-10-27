@@ -22,7 +22,7 @@ function updateErrorSpans() {
 
         var original = $(span).attr('chosen') ?
             $(span).attr('chosen') :
-            $(span).attr('original');
+            $(span).data('text');
 
         if ($(span).text() !== original) {
 
@@ -34,6 +34,9 @@ function updateErrorSpans() {
                 markDeleted(error);
                 $(span).remove();
             } else {
+
+                console.log(original);
+
                 $(span).attr('chosen', $(span).text());
                 $(error).removeClass('new');
                 $(error).addClass('modified');
@@ -112,8 +115,10 @@ function checkClick() {
     /*  get the text in the editor and and reinsert it, deleting all additional markup
      */
 
-    var editor_text = "Glück ist, " + $('#editor').text().trim();
-    $('#editor').text($('#editor').text().trim());
+    var editor = $('#editor');
+
+    var editor_text = "Glück ist, " + editor.text().trim();
+    editor.text(editor.text().trim());
 
     startCheckUI(function() {
 
@@ -122,7 +127,7 @@ function checkClick() {
             /*  display error data if any are yielded or accept input sentence
              */
 
-            //console.log(error_data.length);
+            var editorarea = $('#editorarea');
 
             if (error_data.length > 0) {
 
@@ -132,9 +137,9 @@ function checkClick() {
                 generateErrorBox(error_data, $('#textbox'));
 
                 stopCheckUI(function() {
-                    $('#editorarea').addClass('incorrect');
-                    $('#editorarea').effect("highlight", {color: '#FF7F7F'}, function() {
-                        $('#editorarea').effect("highlight", {color: '#FF7F7F'});
+                    editorarea.addClass('incorrect');
+                    editorarea.effect("highlight", {color: '#FF7F7F'}, function() {
+                        editorarea.effect("highlight", {color: '#FF7F7F'});
                     });
                     displayErrors($('#textbox'));
                     placeCaretAtEnd(document.getElementById('editor'));
@@ -145,10 +150,10 @@ function checkClick() {
 
                 stopCheckUI(function () {
                     displayLines();
-                    $('#editorarea').addClass('correct');
-                    $('#editorarea').effect("highlight", {color: '#A8D54D'}, function () {
-                        $('#editorarea').effect("highlight", {color: '#A8D54D'}, function () {
-                            $('#editorarea').removeClass('correct');
+                    editorarea.addClass('correct');
+                    editorarea.effect("highlight", {color: '#A8D54D'}, function () {
+                        editorarea.effect("highlight", {color: '#A8D54D'}, function () {
+                            editorarea.removeClass('correct');
                             $('#editor').text('');
                         });
                     });
@@ -201,11 +206,13 @@ function highlightRepetition(index) {
 
 function displayLines() {
 
-    $('#sentbox').slideDown(25, function() {
+    var sentbox = $('#sentbox');
+
+    sentbox.slideDown(25, function() {
         $('#treebox').slideDown(25);
     });
 
-    var lines = $('#sentbox').find('.line');
+    var lines = sentbox.find('.line');
 
     (function lineLoop(index) {
         setTimeout(function () {

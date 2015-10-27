@@ -18,9 +18,7 @@ function insertTestData() {
     for(i = 0; i < selection.length; i++) {
         test_text += test_sentences[selection[i]];
     }
-
     $('#editor').text(test_text);
-
 }
 
 function init() {
@@ -30,6 +28,29 @@ function init() {
     $('#treebox').hide();
 
     var editor_div = $('#editor');
+
+    document.getElementById('editor').addEventListener("paste", function(event) {
+
+        if (!event) {
+            event = window.event;
+        }
+        var keyCode = event.which || event.keyCode;
+
+        if (!(keyCode === 13 && !event.shiftKey)) {
+            event.preventDefault();
+
+            if (event.clipboardData) {
+                content = (event.originalEvent || event).clipboardData.getData('text/plain');
+
+                document.execCommand('insertText', false, content);
+            }
+            else if (window.clipboardData) {
+                content = window.clipboardData.getData('Text');
+
+                document.selection.createRange().pasteHTML(content);
+            }
+        }
+    });
 
     editor_div.keydown(function(event) {
         editorEnterDown(event);
@@ -180,31 +201,30 @@ function compileTargetContent(errors, mistakes_and_text, original_text, offset) 
 
     var contents = [];
 
-    $.each(mistakes_and_text, function(index, mnt){
+    $.each(mistakes_and_text, function(index, mnt) {
 
-        if(mnt.children) {
+        if (mnt.type === 'text') {
+
+            var text = jQuery('<span/>', {
+                class: 'text',
+                text: original_text.substring(mnt.start - offset, mnt.end - offset)
+            });
+
+            contents.push(text);
+
+        } else {
 
             var mistake = generateMistake(errors, original_text, mnt, offset);
-            $(mistake).text('');
-            $.each(compileTargetContent(errors, mnt.children, original_text, offset), function(index, item) {
-                mistake.append(item);
-            });
-            $(mistake).data('original',$(mistake).html());
 
-            contents.push(mistake);
-        } else {
-            if(mnt.type === 'text') {
-
-                var text = jQuery('<span/>', {
-                    class: 'text',
-                    text: original_text.substring(mnt.start - offset, mnt.end - offset)
+            if (mnt.children) {
+                $(mistake).text('');
+                $.each(compileTargetContent(errors, mnt.children, original_text, offset), function (index, item) {
+                    mistake.append(item);
                 });
-
-                contents.push(text);
-
-            } else {
-                contents.push(generateMistake(errors, original_text, mnt, offset));
             }
+            $(mistake).data('original', $(mistake).html());
+            $(mistake).data('text', $(mistake).text());
+            contents.push(mistake);
         }
     });
     return contents;
@@ -228,11 +248,14 @@ function generateMistake(errors, original_text, mnt, offset) {
             $(".error[id$='co" + err_coordinates + "']").removeClass( "hover" );
         }
     );
+
     $(mistake).dblclick(function(event) {
+        event.preventDefault();
+        var relevant_error = $(".error[id$='co" + err_coordinates + "']");
         $('html, body').animate({
-            scrollTop: $(".error[id$='co" + err_coordinates + "']").offset().top
+            scrollTop: relevant_error.offset().top
         }, 25);
-        errorClick($(".error[id$='co" + err_coordinates + "']"), false);
+        errorClick(relevant_error, false);
     });
     return mistake;
 }
@@ -280,6 +303,7 @@ function generateError(data, target) {
         class: 'errstatus flexitem'
     });
     $(errstatus).click(function(event) {
+        event.preventDefault();
         errorClick($(error), true);
     });
     $(errtitle).append(errstatus);
@@ -289,6 +313,7 @@ function generateError(data, target) {
         text: data.msg
     });
     $(errmsg).click(function(event) {
+        event.preventDefault();
         errorClick($(error), true);
     });
 
@@ -302,6 +327,7 @@ function generateError(data, target) {
         class: 'errarea flexcontainer flexitem'
     });
     $(errarea).click(function(event) {
+        event.preventDefault();
         errorClick($(error), true);
     });
     $(errarea).hide();
@@ -338,18 +364,22 @@ function generateError(data, target) {
                 function() {
                     $("span[id$='esco" + err_coordinates + "']").text($(rep).text());
                 }, function() {
-                    var reset = $("span[id$='esco" + err_coordinates + "']").attr('chosen') ?
-                        $("span[id$='esco" + err_coordinates + "']").attr('chosen') :
-                        $("span[id$='esco" + err_coordinates + "']").data('original');
-                    $("span[id$='esco" + err_coordinates + "']").html(reset);
+                    var relevant_span = $("span[id$='esco" + err_coordinates + "']");
+                    var reset = relevant_span.attr('chosen') ?
+                        relevant_span.attr('chosen') :
+                        relevant_span.data('original');
+                    relevant_span.html(reset);
                 }
             );
             $(rep).click(
                 function() {
                     $(error).removeClass('new');
                     $(error).addClass('modified');
-                    $("span[id$='esco" + err_coordinates + "']").attr('chosen', '' + $(rep).text());
-                    $("span[id$='esco" + err_coordinates + "']").text($(rep).text());
+
+                    var relevant_span = $("span[id$='esco" + err_coordinates + "']");
+
+                    relevant_span.attr('chosen', '' + $(rep).text());
+                    relevant_span.text($(rep).text());
                 }
             );
             $(errrep).append(rep);
@@ -443,8 +473,9 @@ function generateLine(index, sentence, target) {
 
     $(target).prepend(line);
 
-    return {start: sentence.start, end: sentence.end, line: line };
+    console.log("generated line");
 
+    return {start: sentence.start, end: sentence.end, line: line };
 }
 
 

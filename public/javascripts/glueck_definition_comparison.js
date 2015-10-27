@@ -56,9 +56,6 @@ function validateParse(tree, callback) {
             });
 
             if (relevant_indexes.length == 0) {
-
-                console.log("no indexes");
-
                 if (enhanced_pruned_tree_clone["depth"] < Math.min.apply(Math, model_depths)) {
                     callback("Du hast keinen gültigen Nebensatz gebildet. Überprüfe, ob deine Eingabe die Definitionseinleitung mit einem vollständigen Konditional-, Infinitiv- oder Objektsatz ergänzt.");
                 } else {
@@ -218,8 +215,7 @@ function getSubsetTrees(tree) {
          *      - get variants of children
          */
         $.each(tree["children"], function (index, child) {
-            var callback = getSubsetTrees(child);
-            collection[index] = callback;
+            collection[index] = getSubsetTrees(child);
         });
 
         /*  divide: for current node:
@@ -335,7 +331,7 @@ function printTree(tree, with_depth, with_desc) {
 
 function getRootString(tree, with_depth, with_desc) {
 
-    output = [];
+    var output = [];
 
     output.push("[");
     output.push(tree["level"]);

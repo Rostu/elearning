@@ -16,10 +16,11 @@ function checkForErrors(editor_text, callback) {
     if (errors.length > 0) {
         callback(errors);
     } else {
-        var correct_sentences = $('#sentbox').find('.textarea');
+        var sentbox = $('#sentbox');
+        var correct_sentences = sentbox.find('.textarea');
 
         if (correct_sentences.length > 0) {
-            errors = excludeDuplicates(correct_sentences);
+            errors = excludeDuplicates(editor_text, correct_sentences);
         }
         if (errors.length > 0) {
             callback(errors);
@@ -75,9 +76,8 @@ function checkForErrors(editor_text, callback) {
                                         parse: sentence_data[0].parsedTree
                                     };
 
-                                    var index = $('#sentbox').find('.line').length;
-
-                                    generateLine(index, sentence, $('#sentbox'));
+                                    var index = sentbox.find('.line').length;
+                                    generateLine(index, sentence, sentbox);
                                 }
                                 callback(errors);
                             });
@@ -156,7 +156,7 @@ function validateSentence(editor_text, sentence_data) {
 
         if (!endsWith(editor_text, ".")) {
 
-            $('#editor').text($('#editor').text() + ' ');
+            $('#editor').text($(this).text() + ' ');
 
             base_error = generateBaseError(
                 "Zeichensetzung",
@@ -205,7 +205,7 @@ function analyseError(index, error) {
     }
 
     var analysed_error = {
-        'number': index,
+        'number': index
     };
 
     $.each(error.attributes, function(key, value) {
