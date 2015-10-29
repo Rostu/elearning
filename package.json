@@ -19,7 +19,9 @@
     "socket.io": "^1.3.5",
     "socket.io-client": "*",
     "video.js": "^4.12.6",
-    "videojs-youtube": "^1.2.10"
+    "videojs-youtube": "^1.2.10",
+    "xml2js": "latest",
+    "stanford-corenlp": "cmich/node-stanford-corenlp#feature/async-extra-options"
   },
   "description": "Studienprojekt im Rahmen der Veranstaltung E-Learning",
   "main": "app.js",
