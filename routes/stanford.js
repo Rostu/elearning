@@ -7,7 +7,7 @@ var stanford_corenlp_options = {
     'extra' : {
         'tokenize.language': 'de',
         'pos.model': 'edu/stanford/nlp/models/pos-tagger/german/german-hgc.tagger',
-        'parse.model': 'edu/stanford/nlp/models/lexparser/germanSR.ser.gz'
+        'parse.model': 'edu/stanford/nlp/models/srparser/germanSR.ser.gz'
     }
 };
 
