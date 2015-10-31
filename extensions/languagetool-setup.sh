@@ -1,15 +1,20 @@
 #!/usr/bin/env bash
 set -eu
 
+user=${1?missing argument: no user specified}
+
+current="$(dirname $(which $0))"
+if [ ! -d "${current}}" ]; then current="$PWD"; fi
+
 home="languagetool"
 package="languagetool-standalone/target"
 version=$(sed -ne '/<\/languagetool\.version>/ { s/<[^>]*>\(.*\)<\/languagetool\.version>/\1/; p }' ${home}"/pom.xml" | tr -d '[[:space:]]')
-folder=LanguageTool-"${version}"
+folder="LanguageTool-${version}"
 server="${home}"/"${package}"/"${folder}"/"${folder}"
 
 if [ -d "$server" ]; then
   # remove old symlink to the LanguageTool server folder if it exists
-  if [ -e languagetool-server ]; then 
+  if [ -e languagetool-server ]; then
     rm languagetool-server
   fi
   # create a new symlink to the LanguageTool server folder
@@ -19,3 +24,5 @@ else
   exit 1
 fi
 
+sed -i "s:server-directory:${current}/${server}:g" languagetool-init
+sed -i "s:server-user:${user}:g" languagetool-init
