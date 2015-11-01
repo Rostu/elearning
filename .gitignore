@@ -10,3 +10,5 @@ Cheffile.lock
 cookbooks
 .idea
 extensions/languagetool-server
+extensions/CoreNLP
+extensions/languagetool
