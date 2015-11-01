@@ -12,3 +12,4 @@ cookbooks
 extensions/languagetool-server
 extensions/CoreNLP
 extensions/languagetool
+extensions/languagetool-init

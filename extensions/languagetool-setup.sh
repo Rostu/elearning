@@ -7,6 +7,8 @@ git clone https://github.com/languagetool-org/languagetool.git
 
 (cd languagetool; ./build.sh languagetool-standalone package -DskipTests)
 
+cp languagetool-init.example languagetool-init
+
 current="$(dirname $(which $0))"
 if [ ! -d "${current}}" ]; then current="$PWD"; fi
 
