@@ -1,14 +1,14 @@
 # Extensions Setup
 ## Prerequisites
 
-1. Install Oracle Java 1.8.
+1) Install Oracle Java 1.8.
 ```bash
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java8-installer
 ```
 
-2. Installation: Maven
+2) Installation: Maven
 
 ```bash
 sudo apt-get install maven
@@ -19,7 +19,7 @@ cd path/to/elearning
 cd extensions
 ```
 
-1. Build & Setup: LanguageTool Standalone
+1) Build & Setup: LanguageTool Standalone
 
 Note: Pass the correct `username` as an argument.
 
