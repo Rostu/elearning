@@ -55,6 +55,9 @@ exports.get_energie_Wortfeld_Solarantrieb = function(req, res){
 exports.get_energie_Wortfeld_Solarantrieb_A = function(req, res){
     res.render('energie_Wortfeld_Solarantrieb_A');
 };
+exports.get_energie_Wortfeld_Solarantrieb_B = function(req, res){
+    res.render('energie_Wortfeld_Solarantrieb_B');
+};
 
 exports.get_energie_start = function(req, res){
     res.render('energie_start');
