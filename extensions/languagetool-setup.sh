@@ -3,7 +3,7 @@ set -eu
 
 user=${1?missing argument: no user specified}
 
-# git clone https://github.com/languagetool-org/languagetool.git
+git clone https://github.com/languagetool-org/languagetool.git
 
 (cd languagetool; ./build.sh languagetool-standalone package -DskipTests)
 
