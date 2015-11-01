@@ -3,9 +3,9 @@
 
 1. Install Oracle Java 1.8.
 ```bash
-sudo add-apt-repository -y ppa:webupd8team/java
+sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q oracle-java8-installer
+sudo apt-get install oracle-java8-installer
 ```
 
 2. Installation: Maven
