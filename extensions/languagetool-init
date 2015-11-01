@@ -9,9 +9,9 @@
 # Description:       Enable service provided by daemon.
 ### END INIT INFO
 
-dir="server-directory"
+dir="/home/cmich/lernen/elearning/extensions/languagetool/languagetool-standalone/target/LanguageTool-3.2-SNAPSHOT/LanguageTool-3.2-SNAPSHOT"
 cmd="java -cp languagetool-server.jar org.languagetool.server.HTTPServer --port 8081"
-user="server-user"
+user="cmich"
 
 name=`basename $0`
 pid_file="/var/run/$name.pid"

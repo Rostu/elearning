@@ -3,6 +3,10 @@ set -eu
 
 user=${1?missing argument: no user specified}
 
+# git clone https://github.com/languagetool-org/languagetool.git
+
+(cd languagetool; ./build.sh languagetool-standalone package -DskipTests)
+
 current="$(dirname $(which $0))"
 if [ ! -d "${current}}" ]; then current="$PWD"; fi
 

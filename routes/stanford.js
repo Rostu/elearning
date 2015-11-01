@@ -1,7 +1,7 @@
 var NLP = require('stanford-corenlp');
 
 var stanford_corenlp_options = {
-    'nlpPath': __dirname + '/../extensions/corenlp',
+    'nlpPath': __dirname + '/../extensions/CoreNLP',
     "version": '3.5.2',
     annotators: ['tokenize', 'ssplit', 'pos', 'lemma', 'parse'],
     'extra' : {
