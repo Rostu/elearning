@@ -105,8 +105,8 @@ exports.get_glueck_Textverstehen_Redensarten = function(req, res){
     res.render('glueck_Textverstehen_Redensarten');
 };
 
-exports.get_glueck_silbermond = function(req, res){
-    res.render('glueck_silbermond');
+exports.get_glueck_satzpuzzle = function(req, res){
+    res.render('glueck_satzpuzzle');
 };
 
 exports.get_handy_start = function(req,res) {

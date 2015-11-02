@@ -1,7 +1,7 @@
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 
 #flexybox {
-    display: flex; /* or inline-flex */
+    display: flex;
 
     padding: 0 10px 0 0;
 
@@ -118,7 +118,7 @@
     flex: 0 1 auto;
     align-self: auto;
 
-    background: #7AB3E3 url("../images/button_down2.gif") no-repeat center center;
+    background: #7AB3E3 url("../images/help_joker.png") no-repeat center center;
     background-size: 30px 30px;
 }
 
@@ -126,11 +126,15 @@
     background-color: #005E9C;
 }
 
+.linebox.correct .helpico {
+    background: green !important;
+}
+
 .disabled.helpico {
     background-color: #A6D1F5;
 }
 
-.dropbox {
+.selectbox {
     -webkit-appearance: none;  /*REMOVES DEFAULT CHROME & SAFARI STYLE*/
     -moz-appearance: none;  /*REMOVES DEFAULT FIREFOX STYLE*/
     border: 0 !important;  /*REMOVES BORDER*/
@@ -138,7 +142,7 @@
     height: 30px;
     border-radius: 2px;
     background: #7AB3E3 url("../images/button_down2.gif") no-repeat right center;
-    background-size: 24px 18px; /*TO ACCOUNT FOR @2X IMAGE FOR RETINA */
+    background-size: 24px 18px;
     color: #fff;
     font-size: 1.1em;
 
@@ -159,7 +163,7 @@
     background: #005E9C;
 }
 
-.incorrect .handle {
+.srcelem.incorrect .handle {
     background-color: red !important;
 }
 
@@ -167,7 +171,7 @@
     background: orange !important;
 }
 
-.correct .handle {
+.srcelem.correct .handle {
     background-color: green !important;
 }
 
