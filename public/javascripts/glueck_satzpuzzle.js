@@ -73,7 +73,6 @@ function setupLogic() {
                 alert('Gut gemacht!');
             }, 110);
         }
-
     });
     $(document).on("MaxFaultsReached", function() {
         if (!glueck_satzpuzzle_maxfaults) {

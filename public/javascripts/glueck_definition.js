@@ -1,27 +1,11 @@
 $( init );
 
-glueck_definition_trees_enabled = true;
-
-function insertTestData() {
-
-    var test_sentences = [
-        "wenn die Sonne scheint."
-        /*"Fügen Sie hier Ihren Dr. text ein.",
-         "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen.",
-         "Klicken Sie nach der Prüfung auf die farbig unterlegten Textstellen. oder nutzen Sie diesen Text als Beispiel für ein Paar Fehler , die LanguageTool erkennen kann: Ihm wurde Angst und bange, als er davon hörte.",
-         "( Eine Rechtschreibprüfun findet findet übrigens auch statt.",
-         "Fügen Sie hier Ihren text ein. Fügen Sie hier Ihren text ein."*/
-    ];
-    var selection = [0/*, 1, 2, 3, 4*/];
-    var test_text = "";
-
-    for(i = 0; i < selection.length; i++) {
-        test_text += test_sentences[selection[i]];
-    }
-    $('#editor').text(test_text);
-}
+var glueck_definition_trees_enabled = true;
+var glueck_definition_maxfaults;
 
 function init() {
+
+    glueck_definition_maxfaults = false;
 
     $('#textoverlay').hide();
     $('#sentbox').hide();
@@ -65,7 +49,32 @@ function init() {
     document.getElementById("editor").addEventListener("input", function() {
         updateErrorSpans();
     }, false);
-    //insertTestData();
+
+    /*  Add messages for task completion and maximum amount of errors
+     */
+    $(document).on("MaxPointsReached", function() {
+        $('#textbox').slideUp(75, function() {
+            $(this).remove();
+            if (glueck_definition_maxfaults) {
+                setTimeout(function() {
+                    addLink();
+                    alert('Geschafft! Aber du hast leider mindestens 10 Fehler gemacht. Schaue dir über den Infolink auf der linken Seite noch einmal die Bildung von geeigneten Nebensätzen zur Definition von Glück an.');
+                }, 500);
+            } else {
+                setTimeout(function() {
+                    alert('Gut gemacht!');
+                }, 500);
+            }
+        });
+    });
+    $(document).on("MaxFaultsReached", function() {
+        if (!glueck_definition_maxfaults) {
+            setTimeout(function() {
+                alert('Das kannst du doch besser!');
+            }, 500);
+            glueck_definition_maxfaults = true;
+        }
+    });
 }
 
 function insertErrorSpans(errors, target, offset, end) {
@@ -472,8 +481,6 @@ function generateLine(index, sentence, target) {
     $(line).hide();
 
     $(target).prepend(line);
-
-    console.log("generated line");
 
     return {start: sentence.start, end: sentence.end, line: line };
 }

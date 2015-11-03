@@ -285,3 +285,25 @@ function markDeleted(error) {
     $(error).removeClass('open');
     $(error).addClass('deleted');
 }
+
+function addLink() {
+    $("#infolink").remove();
+    clear_help();
+    $("#info2").append("<a id='infolink' class='redlink' onclick='toggleStartOverlay()' href='#'>Glück ist, ...</a>");
+    show_help();
+}
+
+function clear_help() {
+    var info2 = $("#info2");
+    $(info2).children().animate({color: "#A91211"}, 50);
+    $(info2).children().hide();
+    $(info2).animate({width: "0px", paddingRight: "12px"},100);
+}
+
+function show_help() {
+    var info2 = $("#info2");
+    $(info2).show();
+    $(info2).animate({width: $(info2).children('.redlink').width(), paddingRight: "20px"}, 100);
+    $(info2).children().show();
+    $(info2).children().animate({color: "#ffffff"}, 200);
+}

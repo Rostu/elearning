@@ -27,6 +27,112 @@ function validateParse(tree, callback) {
     /*  validate parse by comparing it with the model data
      */
 
+    glueck_definition_levelcount = {};
+
+    var pruned_input_clone = pruneLeaves($.extend(true, {}, tree));
+    var enhanced_pruned_tree_clone = enhanceTree(pruned_input_clone, 0);
+
+    getComparisonData(enhanced_pruned_tree_clone, function(input_data) {
+        /*  compare tree depths first and store relevant indexes
+         */
+        $.getJSON("javascripts/glueck_definition_model_trees.json", function(model_trees) {
+
+            var model_depths = $.map(model_trees, function(tree, tree_index) {
+                return tree["depth"];
+            });
+
+            var relevant_indexes = $.map(model_depths, function (depth, index) {
+                if (depth == enhanced_pruned_tree_clone["depth"]) {
+                    return index;
+                }
+            });
+
+            if (relevant_indexes.length == 0) {
+                if (enhanced_pruned_tree_clone["depth"] < Math.min.apply(Math, model_depths)) {
+                    callback("Du hast keinen gültigen Nebensatz gebildet. Überprüfe, ob deine Eingabe die Definitionseinleitung mit einem vollständigen Konditional-, Infinitiv- oder Objektsatz ergänzt.");
+                } else {
+                    if (enhanced_pruned_tree_clone["depth"] > Math.max.apply(Math, model_depths)) {
+                        callback("Dein Nebensatz ist zu komplex. Versuche es mit einer vereinfachten Variante deiner Eingabe, indem du z.B. Attribute oder Relativsätze weglässt.");
+                    }
+                }
+            } else {
+                /*  compare subtrees and store remaining relevant indexes
+                 */
+                $.getJSON("javascripts/glueck_definition_model_subtrees.json", function(model_subtrees) {
+
+                    relevant_indexes = relevant_indexes.filter(function (tree_index) {
+
+                        var model_subtree_root_strings = $.map(model_subtrees[tree_index], function (subtree, subtree_index) {
+                            return getRootString(subtree, true, false);
+                        });
+
+                        var input_subtree_root_strings = $.map(input_data["subtrees"], function (subtree, subtree_index) {
+                            return getRootString(subtree, true, false);
+                        });
+
+                        var to_diff = [model_subtree_root_strings, input_subtree_root_strings]
+                        to_diff.sort(function(a, b){
+                            return a.length - b.length;
+                        });
+
+                        var subtree_diff = to_diff[1].filter(function(mprs) {
+                            return to_diff[0].indexOf(mprs) < 0;
+                        });
+                        return subtree_diff.length == 0;
+                    });
+                    if (relevant_indexes.length == 0) {
+                        callback("Nebensatzkonstruktion stimmt leider nicht mit den Vorlagen überein, die du in der vorherigen Aufgabe kennengelernt hast.");
+                    } else {
+                        /*  compare subset_trees and store remaining relevant indexes,
+                         *  only allowing deviations where shallow subset trees allow it
+                         */
+                        $.getJSON("javascripts/glueck_definition_model_subset_trees.json", function (model_subset_trees) {
+
+                            relevant_indexes = relevant_indexes.filter(function (tree_index) {
+
+                                var index_status = true;
+
+                                var shallow_subtree_indexes = $.map(model_subtrees[tree_index], function (subtree, subtree_index) {
+                                    if (model_subtrees[tree_index][subtree_index]["depth"] == 1) {
+                                        return subtree_index;
+                                    }
+                                });
+
+                                $.each(model_subtrees[tree_index], function (subtree_index, subtree) {
+                                    $.each(model_subset_trees[tree_index][subtree_index], function (sst_index, sst) {
+
+                                        if (!(printTree(sst, true, true) === (printTree(input_data["subset_trees"][subtree_index][sst_index], true, true)))) {
+                                            var relevant_shallow_subtrees = shallow_subtree_indexes.filter(function (subtree_index) {
+                                                var subtree_root_str = getRootString(model_subtrees[tree_index][subtree_index], true, false);
+                                                return printTree(sst, true, false).indexOf(subtree_root_str) > -1;
+                                            });
+                                            if (relevant_shallow_subtrees && relevant_shallow_subtrees.length == 0) {
+                                                index_status = false;
+                                            }
+                                        }
+                                    });
+                                });
+                                return index_status;
+                            });
+
+                            if (relevant_indexes.length == 0) {
+                                callback("Deine Nebensatzkonstruktion stimmt leider nicht mit den Vorlagen überein, die du in der vorherigen Aufgabe kennengelernt hast.");
+                            }else {
+                                callback();
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    });
+}
+
+function validateParseWithLogs(tree, callback) {
+
+    /*  validate parse by comparing it with the model data
+     */
+
     console.log("valenter");
 
     console.log(JSON.stringify(tree));
@@ -175,8 +281,6 @@ function validateParse(tree, callback) {
         });
     });
 }
-
-
 
 function getSubtrees(tree) {
 

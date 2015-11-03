@@ -155,9 +155,10 @@ function validateSentence(editor_text, sentence_data) {
         }
 
         if (!endsWith(editor_text, ".")) {
-
-            $('#editor').text($(this).text() + ' ');
-
+            
+            var editor = $('#editor');
+            $(editor).text($(editor).text() + ' ');
+            
             base_error = generateBaseError(
                 "Zeichensetzung",
                 "Achte bitte darauf, dass deine Eingabe das Satzende mit einem Punkt markiert.",
