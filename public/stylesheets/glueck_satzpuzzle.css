@@ -1,5 +1,19 @@
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 
+.overlay-content {
+    padding: 10px;
+
+    font-size: 1.3em;
+
+    background: aliceblue;
+}
+
+.examples {
+    padding: 10px;
+
+    background: #A6D1F5;
+}
+
 #flexybox {
     display: flex;
 

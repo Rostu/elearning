@@ -5,6 +5,40 @@
     background: #7AB3E3;
 }
 
+.overlay-content {
+    padding: 10px;
+
+    font-size: 1.3em;
+
+    background: aliceblue;
+}
+
+.examples {
+    padding: 10px;
+
+    background: #A6D1F5;
+}
+
+.tablesource {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+
+.tree-help table {
+    margin: auto;
+
+    border: medium solid #000;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    empty-cells: show;
+}
+
+.tree-help td, th {
+    border: 1px solid;
+    padding: 0.0417in;
+}
+
 .flexcontainer {
     display: flex;
 

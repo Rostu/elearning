@@ -35,7 +35,8 @@ function setupLogic() {
                 $(this).css("cursor", "-moz-grabbing");
             },
             stop: function(event,ui){
-                $(this).css("cursor", "initial");
+                $(this).css("cursor", "-webkit-grab");
+                $(this).css("cursor", "-moz-grab");
             }
         });
     });

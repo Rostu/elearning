@@ -1,4 +1,6 @@
-glueck_definition_editor_unlocked = true;
+var glueck_definition_trees_enabled;
+var glueck_definition_tree_help;
+var glueck_definition_editor_unlocked;
 
 function updateErrorSpans() {
 
@@ -210,6 +212,10 @@ function displayLines() {
 
     sentbox.slideDown(25, function() {
         $('#treebox').slideDown(25);
+        if (!glueck_definition_tree_help) {
+            addLink($("#info2"), generateLink("Tagset der Syntaxbäume", "tree-help"));
+        }
+        glueck_definition_tree_help = true;
     });
 
     var lines = sentbox.find('.line');
@@ -286,24 +292,22 @@ function markDeleted(error) {
     $(error).addClass('deleted');
 }
 
-function addLink() {
-    $("#infolink").remove();
-    clear_help();
-    $("#info2").append("<a id='infolink' class='redlink' onclick='toggleStartOverlay()' href='#'>Glück ist, ...</a>");
-    show_help();
+function addLink(info, link) {
+    info.children("#infolink").remove();
+    clear_help(info);
+    info.append(link);
+    show_help(info);
 }
 
-function clear_help() {
-    var info2 = $("#info2");
-    $(info2).children().animate({color: "#A91211"}, 50);
-    $(info2).children().hide();
-    $(info2).animate({width: "0px", paddingRight: "12px"},100);
+function clear_help(info) {
+    info.children().animate({color: "#A91211"}, 50);
+    info.children().hide();
+    info.animate({width: "0px", paddingRight: "12px"},100);
 }
 
-function show_help() {
-    var info2 = $("#info2");
-    $(info2).show();
-    $(info2).animate({width: $(info2).children('.redlink').width(), paddingRight: "20px"}, 100);
-    $(info2).children().show();
-    $(info2).children().animate({color: "#ffffff"}, 200);
+function show_help(info) {
+    info.show();
+    info.animate({width: info.children('.redlink').width(), paddingRight: "20px"}, 100);
+    info.children().show();
+    info.children().animate({color: "#ffffff"}, 200);
 }

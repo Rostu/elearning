@@ -1,11 +1,14 @@
 $( init );
 
-var glueck_definition_trees_enabled = true;
 var glueck_definition_maxfaults;
 
 function init() {
 
     glueck_definition_maxfaults = false;
+    glueck_definition_tree_help = false;
+
+    glueck_definition_trees_enabled = true;
+    glueck_definition_editor_unlocked = true;
 
     $('#textoverlay').hide();
     $('#sentbox').hide();
@@ -57,7 +60,7 @@ function init() {
             $(this).remove();
             if (glueck_definition_maxfaults) {
                 setTimeout(function() {
-                    addLink();
+                    addLink($("#info2"), generateLink("Glück ist, ...", "define-help"));
                     alert('Geschafft! Aber du hast leider mindestens 10 Fehler gemacht. Schaue dir über den Infolink auf der linken Seite noch einmal die Bildung von geeigneten Nebensätzen zur Definition von Glück an.');
                 }, 500);
             } else {
@@ -483,6 +486,21 @@ function generateLine(index, sentence, target) {
     $(target).prepend(line);
 
     return {start: sentence.start, end: sentence.end, line: line };
+}
+
+function generateLink(text, class_str) {
+    var link = jQuery('<a/>', {
+        id: 'infolink',
+        class: 'redlink',
+        text: text,
+        href: '#'
+    });
+    $(link).click(function(event) {
+        $(".overlay-content").hide();
+        $("." + class_str).show();
+        toggleStartOverlay();
+    });
+    return link;
 }
 
 
