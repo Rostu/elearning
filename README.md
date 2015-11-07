@@ -4,6 +4,12 @@
 
 * Install `Vagrant`: https://www.vagrantup.com/downloads.html
 
+* Before running the following, you have to consider, that the vm need around 2GB of ram. Actually if you are low on ram it can run with a minimal ram of 1.7GB. You can configure the ram size of the vm using the virtualbox GUI after the setup or by uncommenting the following lines in the Vagrantfile:
+``` bash
+config.vm.provider :virtualbox do |vb|
+  vb.customize ['modifyvm', :id,'--memory', '2048']
+end
+```
 * Start the VM.
 ``` bash
 $ sudo aptitude install nfs-kernel-server
