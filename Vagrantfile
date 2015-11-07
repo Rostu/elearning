@@ -23,14 +23,25 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "chef_solo" do |chef|
     #chef.cookbooks_path = ['provisioning/cookbooks']
-
+    chef.json = {
+      "java" => {
+    	"install_flavor" => "oracle",
+    	"jdk_version" => "8",
+    	"oracle" => {
+      	  "accept_oracle_download_terms" => true
+    	}
+      }
+    }	
     chef.add_recipe 'git'
     chef.add_recipe 'nodejs'
     chef.add_recipe 'mongodb'
+    chef.add_recipe 'java' 
+    chef.add_recipe 'maven'
   end
 
   config.vm.provision 'shell' do |chef|
     chef.path = 'provisioning/apache.sh'
+    chef.path = 'provisioning/extensions.sh'
   end
 
 end
