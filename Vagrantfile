@@ -8,8 +8,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "ubuntu/precise64"
-
   config.vm.hostname = 'webserver'
+  #minimal needed Ram size is around 1.700mb
+  #You can configure the size using virtualbox GUI or by uncommenting the next line
+  #config.vm.provider :virtualbox do |vb|
+  #            vb.customize ['modifyvm', :id,'--memory', '2048']
+  #        end
 
   config.vm.network "forwarded_port", guest: 3555, host: 3000
   config.vm.network 'forwarded_port', guest: 80, host: 8080
