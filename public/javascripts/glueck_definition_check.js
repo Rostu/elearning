@@ -82,7 +82,7 @@ function checkForErrors(editor_text, callback) {
                                     var base_error = generateBaseError(
                                         "Satzbau",
                                         validation_msg,
-                                        11, editor_text.length, [], editor_text);
+                                        11, editor_text.length + 1, [], editor_text);
                                     errors.push(analyseError(errors.length, base_error));
                                 } else {
 
