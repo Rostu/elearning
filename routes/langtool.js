@@ -1,35 +1,36 @@
 var http = require('http');
 var xml2js = require('xml2js');
 
-exports.get_request = function(request, response) {
+exports.get_errors = function(request, response) {
 
-    var sentence = request.param("sentence");
+    var text = request.param("text");
 
     var options = {
         host: 'localhost',
         port: 8081,
-        path: '/?language=de-DE&text=' + encodeURIComponent(sentence),
+        path: '/?language=de-DE&text=' + encodeURIComponent(text),
         method: 'GET'
     };
 
-    http.request(options, function(langtool_res) {
+    var http_req = http.request(options, function(langtool_res) {
 
         langtool_res.setEncoding('utf8');
 
         langtool_res.on('data', function (xml) {
 
-            var json;
-            var parser = new xml2js.Parser({"attrkey": "attributes"});
+            var xml_parser = new xml2js.Parser({"attrkey": "attributes"});
 
-            parser.parseString(xml, function (error, result) {
-                if(error){
-                    console.log(error);
-                }else{
-                    json = result;
-                }
+            xml_parser.parseString(xml, function (error, output) {
+                response.send(output);
             });
-
-            response.send(json);
         });
-    }).end();
-}
+    });
+
+    http_req.on('error', function(error) {
+        console.log("An error occurred during your LanguageTool request. Error data:");
+        console.log(error);
+        response.send(JSON.parse("{}"));
+    });
+
+    http_req.end();
+};

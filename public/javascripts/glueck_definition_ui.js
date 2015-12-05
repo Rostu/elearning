@@ -36,9 +36,6 @@ function updateErrorSpans() {
                 markDeleted(error);
                 $(span).remove();
             } else {
-
-                console.log(original);
-
                 $(span).attr('chosen', $(span).text());
                 $(error).removeClass('new');
                 $(error).addClass('modified');

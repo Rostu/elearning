@@ -25,7 +25,7 @@ var Lockit = require('lockit');
 var cookieSession = require('cookie-session');
 //dev-corenlp
 var stanford = require('./routes/stanford');
-stanford.startUp();
+stanford.startup();
 var langtool = require('./routes/langtool');
 
 // all environments
@@ -165,7 +165,7 @@ app.get('/dml', function(req, res) {
 });
 
 app.post('/stanford_anfrage_parse', stanford.get_parse);
-app.post('/langtool_anfrage', langtool.get_request);
+app.post('/langtool_anfrage', langtool.get_errors);
 
 
 var server = http.createServer(app);

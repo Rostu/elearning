@@ -27,9 +27,20 @@ function checkForErrors(editor_text, callback) {
         } else {
             $.post("/stanford_anfrage_parse", {text: editor_text}, function (parse_json) {
 
-                var sentence_data = parse_json.document.sentences.sentence;
+                if (!parse_json.document) {
+                    var base_error = generateBaseError(
+                        "Serverfehler",
+                        "Bei der Anfrage an den Parser ist ein Fehler aufgetreten. Bitte entschuldige den Fehler und " +
+                        "suche dir vorrübergehend eine andere Übungsaufgabe aus. Der Fehlerbericht wurde bereits weitergeleitet.",
+                        11, editor_text.length + 1, [], editor_text);
+                    errors.push(analyseError(errors.length, base_error));
+                } else {
 
-                errors = validateSentence(editor_text, sentence_data);
+                    var sentence_data = parse_json.document.sentences.sentence;
+
+                    errors = validateSentence(editor_text, sentence_data);
+
+                }
 
                 if (errors.length > 0) {
                     callback(errors);
@@ -40,16 +51,26 @@ function checkForErrors(editor_text, callback) {
                      */
                     sentence_data = [sentence_data];
 
-                    $.post("/langtool_anfrage", {sentence: editor_text}, function (json) {
+                    $.post("/langtool_anfrage", {text: editor_text}, function (json) {
 
-                        if (json.matches.error && json.matches.error.length > 0) {
+                        if (!json.matches) {
+                            var base_error = generateBaseError(
+                                "Serverfehler",
+                                "Bei der Anfrage an die Rechtschreib- und Grammatikkorrektur ist ein Fehler " +
+                                "aufgetreten. Bitte entschuldige den Fehler und suche dir vorrübergehend eine andere " +
+                                "Übungsaufgabe aus. Der Fehlerbericht wurde bereits weitergeleitet.",
+                                11, editor_text.length + 1, [], editor_text);
+                            errors.push(analyseError(errors.length, base_error));
+                        } else {
+                            if (json.matches.error && json.matches.error.length > 0) {
 
-                            $.each(json.matches.error, function (index, error) {
-                                if (error.attributes.fromx > 10) {
-                                    var analysed_error = analyseError(index, error);
-                                    errors.push(analysed_error);
-                                }
-                            });
+                                $.each(json.matches.error, function (index, error) {
+                                    if (error.attributes.fromx > 10) {
+                                        var analysed_error = analyseError(index, error);
+                                        errors.push(analysed_error);
+                                    }
+                                });
+                            }
                         }
 
                         if (errors.length > 0) {
@@ -58,10 +79,10 @@ function checkForErrors(editor_text, callback) {
                             validateParse(sentence_data[0].parsedTree, function (validation_msg) {
 
                                 if (validation_msg) {
-                                    base_error = generateBaseError(
+                                    var base_error = generateBaseError(
                                         "Satzbau",
                                         validation_msg,
-                                        editor_text.length, editor_text.length, [], editor_text);
+                                        11, editor_text.length, [], editor_text);
                                     errors.push(analyseError(errors.length, base_error));
                                 } else {
 
@@ -82,6 +103,7 @@ function checkForErrors(editor_text, callback) {
                                 callback(errors);
                             });
                         }
+
                     });
                 }
             });
@@ -117,7 +139,7 @@ function excludeDuplicates(editor_text, correct_sentences) {
         var base_error = generateBaseError(
             "Wiederholung",
             "Du hast Glück schon einmal genau so definiert. Denke dir bitte einen neuen Satz aus.",
-            11, editor_text.length, [], editor_text);
+            11, editor_text.length + 1, [], editor_text);
         errors.push(analyseError(errors.length, base_error));
         highlightRepetition($.inArray(editor_text, correct_sentences));
     }
@@ -136,7 +158,7 @@ function validateSentence(editor_text, sentence_data) {
         base_error = generateBaseError(
             "Satzanzahl",
             "Bitte gib nur einen einzelnen Satz ein.",
-            error_offset, editor_text.length, [], editor_text);
+            error_offset, editor_text.length + 1, [], editor_text);
         errors.push(analyseError(errors.length, base_error));
 
         return errors;

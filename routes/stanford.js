@@ -13,9 +13,10 @@ var stanford_corenlp_options = {
 
 var stanford_coreNLP;
 
-exports.startUp = function() {
+exports.startup = function() {
     stanford_coreNLP = new NLP.StanfordNLP(stanford_corenlp_options, function (error) {
         if(error){
+            console.log("An error occurred during CoreNLP startup. Error data:");
             console.log(error);
         }else{
             console.log("Stanford CoreNLP started successfully.");
@@ -23,29 +24,27 @@ exports.startUp = function() {
     });
 };
 
-exports.get_parse = function(request, result) {
-
-    var text = request.param("text");
-
+exports.get_parse = function(request, response) {
     waitForLoading(function() {
-        stanford_coreNLP.process(text, function (error, output) {
+        stanford_coreNLP.process(request.param("text"), function (error, output) {
             if (error) {
+                console.log("An error occurred during your parser request. Error data:");
                 console.log(error);
+                response.send(JSON.parse("{}"));
             } else {
-                result.send(output);
+                response.send(output);
             }
         });
     });
 };
 
 function waitForLoading(callback) {
-    if(!stanford_coreNLP.pipeline) {
-        setTimeout(function() {
+    if (stanford_coreNLP.pipeline) {
+        callback();
+    } else {
+        setTimeout(function () {
             console.log("Waiting for pipeline to load ...");
             waitForLoading(callback);
         }, 5000);
-        return;
-    } else {
-        callback();
     }
 }
