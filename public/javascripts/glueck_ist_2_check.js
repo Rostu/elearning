@@ -76,7 +76,7 @@ function checkForErrors(editor_text, callback) {
                         if (errors.length > 0) {
                             callback(errors);
                         } else {
-                            validateParse(sentence_data[0].parsedTree, function (validation_msg) {
+                            validateParseWithLogs(sentence_data[0].parsedTree, function (validation_msg) {
 
                                 if (validation_msg) {
                                     var base_error = generateBaseError(
@@ -84,6 +84,7 @@ function checkForErrors(editor_text, callback) {
                                         validation_msg,
                                         11, editor_text.length + 1, [], editor_text);
                                     errors.push(analyseError(errors.length, base_error));
+                                    addLink($("#info1"), generateLink("Glück ist, ... (Hilfe)", "define-help"));
                                 } else {
 
                                     var sentence_start = sentence_data[0].tokens.token[0].CharacterOffsetBegin;
@@ -120,7 +121,7 @@ function validateCharacters(editor_text) {
     while ((match = sanitise.exec(editor_text)) != null) {
         var base_error = generateBaseError(
             "Ungültige Zeichen",
-            "Bitte verwende nur Buchstaben, Kommata und Punkte für deine Eingabe.",
+            "Bitte verwende nur Buchstaben, Bindestriche, Kommata und Punkte für deine Eingabe.",
             match.index, match.index + match[0].length, [], editor_text);
         errors.push(analyseError(errors.length, base_error));
     }

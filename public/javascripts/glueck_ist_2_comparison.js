@@ -1,5 +1,3 @@
-glueck_definition_levelcount = {};
-
 function getComparisonData(enhanced_pruned_tree_clone, callback) {
 
     /*  acquire data from input parse for comparison with model data
@@ -12,7 +10,7 @@ function getComparisonData(enhanced_pruned_tree_clone, callback) {
 
     data["subset_trees"] = $.map(data["subtrees"], function(prune, prune_index) {
         var sth_array = $.map(getSubsetTrees(prune), function( sth, sth_index) {
-            return enhanceTree(sth, sth["level"]);
+            return enhanceTree(sth, sth["level"], {});
         });
         sth_array.sort(dynamicSort("desc")).sort(dynamicSort("depth"));
 
@@ -30,12 +28,12 @@ function validateParse(tree, callback) {
     glueck_definition_levelcount = {};
 
     var pruned_input_clone = pruneLeaves($.extend(true, {}, tree));
-    var enhanced_pruned_tree_clone = enhanceTree(pruned_input_clone, 0);
+    var enhanced_pruned_tree_clone = enhanceTree(pruned_input_clone, 0, {});
 
     getComparisonData(enhanced_pruned_tree_clone, function(input_data) {
         /*  compare tree depths first and store relevant indexes
          */
-        $.getJSON("javascripts/glueck_definition_model_trees.json", function(model_trees) {
+        $.getJSON("javascripts/javascripts/glueck_ist_2_trees.json", function(model_trees) {
 
             var model_depths = $.map(model_trees, function(tree, tree_index) {
                 return tree["depth"];
@@ -58,7 +56,7 @@ function validateParse(tree, callback) {
             } else {
                 /*  compare subtrees and store remaining relevant indexes
                  */
-                $.getJSON("javascripts/glueck_definition_model_subtrees.json", function(model_subtrees) {
+                $.getJSON("javascripts/glueck_ist_2_subtrees.json", function(model_subtrees) {
 
                     relevant_indexes = relevant_indexes.filter(function (tree_index) {
 
@@ -81,12 +79,12 @@ function validateParse(tree, callback) {
                         return subtree_diff.length == 0;
                     });
                     if (relevant_indexes.length == 0) {
-                        callback("Nebensatzkonstruktion stimmt leider nicht mit den Vorlagen überein, die du in der vorherigen Aufgabe kennengelernt hast.");
+                        callback("Deine Nebensatzkonstruktion stimmt leider nicht mit den Vorlagen überein, die du in der vorherigen Aufgabe kennengelernt hast.");
                     } else {
                         /*  compare subset_trees and store remaining relevant indexes,
                          *  only allowing deviations where shallow subset trees allow it
                          */
-                        $.getJSON("javascripts/glueck_definition_model_subset_trees.json", function (model_subset_trees) {
+                        $.getJSON("javascripts/glueck_ist_2_subset_trees.json", function (model_subset_trees) {
 
                             relevant_indexes = relevant_indexes.filter(function (tree_index) {
 
@@ -137,19 +135,17 @@ function validateParseWithLogs(tree, callback) {
 
     console.log(JSON.stringify(tree));
 
-    glueck_definition_levelcount = {};
-
     var pruned_input_clone = pruneLeaves($.extend(true, {}, tree));
-    var enhanced_pruned_tree_clone = enhanceTree(pruned_input_clone, 0);
+    var enhanced_pruned_tree_clone = enhanceTree(pruned_input_clone, 0, {});
 
     getComparisonData(enhanced_pruned_tree_clone, function(input_data) {
 
         /*  compare tree depths first and store relevant indexes
          */
 
-        $.getJSON("javascripts/glueck_definition_model_trees.json", function(model_trees) {
+        $.getJSON("javascripts/glueck_ist_2_trees.json", function(model_trees) {
 
-            console.log("glueck_definition_model_trees");
+            console.log("glueck_ist_2_trees");
 
             var model_depths = $.map(model_trees, function(tree, tree_index) {
                 return tree["depth"];
@@ -177,9 +173,9 @@ function validateParseWithLogs(tree, callback) {
                 /*  compare subtrees and store remaining relevant indexes
                  */
 
-                $.getJSON("javascripts/glueck_definition_model_subtrees.json", function(model_subtrees) {
+                $.getJSON("javascripts/glueck_ist_2_subtrees.json", function(model_subtrees) {
 
-                    console.log("glueck_definition_model_subtrees");
+                    console.log("glueck_ist_2_subtrees");
 
                     relevant_indexes = relevant_indexes.filter(function (tree_index) {
 
@@ -212,16 +208,16 @@ function validateParseWithLogs(tree, callback) {
                     console.log("relevant_indexes: " + JSON.stringify(relevant_indexes));
 
                     if (relevant_indexes.length == 0) {
-                        callback("Nebensatzkonstruktion stimmt leider nicht mit den Vorlagen überein, die du in der vorherigen Aufgabe kennengelernt hast.");
+                        callback("Deine Nebensatzkonstruktion stimmt leider nicht mit den Vorlagen überein, die du in der vorherigen Aufgabe kennengelernt hast.");
                     } else {
 
                         /*  compare subset_trees and store remaining relevant indexes,
                          *  only allowing deviations where shallow subset trees allow it
                          */
 
-                        $.getJSON("javascripts/glueck_definition_model_subset_trees.json", function (model_subset_trees) {
+                        $.getJSON("javascripts/glueck_ist_2_subset_trees.json", function (model_subset_trees) {
 
-                            console.log("glueck_definition_model_subtrees");
+                            console.log("glueck_ist_2_subtrees");
 
                             relevant_indexes = relevant_indexes.filter(function (tree_index) {
 
@@ -354,7 +350,7 @@ function getSubsetTrees(tree) {
 
 }
 
-function enhanceTree(tree, level) {
+function enhanceTree(tree, level, count_hash) {
 
     /*  add several indexes to each node for sake of comparison:
      *      - level
@@ -364,16 +360,13 @@ function enhanceTree(tree, level) {
      *      - number of descendants
      */
 
-    if (!glueck_definition_levelcount["level"]) {
-        glueck_definition_levelcount["level"] = 0;
+    if (!count_hash[level]) {
+        count_hash[level] = 0;
     }
 
     tree["level"] = level;
     if (!tree["count"]) {
-        tree["count"] = glueck_definition_levelcount["level"];
-    }
-    if (!tree["index"]) {
-        tree["index"] = 0;
+        tree["count"] = count_hash[level];
     }
     tree["depth"] = 0;
     tree["desc"] = 0;
@@ -385,10 +378,9 @@ function enhanceTree(tree, level) {
 
         $.each(tree["children"], function (index, child) {
 
-            var callback = enhanceTree(child, level);
-            glueck_definition_levelcount["level"] += 1;
+            var callback = enhanceTree(child, level, count_hash);
+            count_hash[level] += 1;
 
-            callback["index"] = index;
             if (child["depth"] + 1 > tree["depth"]) {
                 tree["depth"] = child["depth"] + 1;
             }
@@ -440,7 +432,7 @@ function getRootString(tree, with_depth, with_desc) {
     output.push("[");
     output.push(tree["level"]);
     output.push(":");
-    output.push(tree["index"]);
+    output.push(tree["count"]);
     output.push("]");
 
     if (with_depth) {

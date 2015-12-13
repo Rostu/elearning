@@ -4,16 +4,14 @@ var glueck_satzpuzzle_solutions;
 var glueck_satzpuzzle_maxfaults;
 
 function init() {
-    console.log(glueck_satzpuzzle_maxfaults);
-
     displayContents();
     loadSolutions();
     setupLogic();
-    var glueck_satzpuzzle_maxfaults = false;
+    glueck_satzpuzzle_maxfaults = false;
 }
 
 function loadSolutions() {
-    $.getJSON("javascripts/glueck_satzpuzzle_solutions.json", function(json) {
+    $.getJSON("javascripts/glueck_ist_1_solutions.json", function(json) {
         glueck_satzpuzzle_solutions = json;
     });
 }
@@ -123,34 +121,32 @@ function checkForm(dragID, dropID) {
     shaObjStop.update(to_digest + '.');
     var digestedStop = shaObjStop.getHash("HEX");
 
-    /*  Get the SHA-256-hash for a non-terminal element
+    /*  Handle commas via the 'punct'-attribute
+     */
+    if ($(drag).attr('punct') === 'true') {
+        to_digest = to_digest + ',';
+    }
+
+    console.log(to_digest);
+
+    /*  Get the SHA-256-hash for unmodified element
      */
     var shaObj = new jsSHA("SHA-256", "TEXT");
     shaObj.update(to_digest);
     var digested = shaObj.getHash("HEX");
 
-    /*  Handle commas via the 'punct'-attribute
-     */
-    if ($(drag).attr('punct') === 'true') {
-        var shaObjComma = new jsSHA("SHA-256", "TEXT");
-        shaObjComma.update(to_digest + ',');
-        digested = shaObjComma.getHash("HEX");
-    }
-
     /*  Retrieve acceptable positions for the current element
      */
-    var drag_random = $(drag).attr('random');
-    var drag_hashes = glueck_satzpuzzle_solutions[drag_random];
+    var drag_comparison = $(drag).attr('comparison');
+    var drag_hashes = glueck_satzpuzzle_solutions[drag_comparison];
 
-    if (equals(drag_hashes, new RegExp('^' + digested + '$'))) {
-        fixSrcelem(dragID, false, false);
+    var unmodified = equals(drag_hashes, new RegExp('^' + digested + '$'));
+    var fullStop = equals(drag_hashes, new RegExp('^' + digestedStop + '$'));
+
+    if (unmodified || fullStop) {
+        fixSrcelem(dragID, fullStop, false);
         return true;
-    }
-    else if (equals(drag_hashes, new RegExp('^' + digestedStop + '$'))) {
-        fixSrcelem(dragID, true, false);
-        return true;
-    }
-    else {
+    } else {
         return false;
     }
 }
@@ -183,9 +179,19 @@ function helpClick(ev) {
         }
     });
 
-    /*  Display info link on the left if the next correct element is a verb form
+    /*  Display hint in the linebox and info link on the left if the next correct element is a verb form
      */
     if (!found && count_selected > 0) {
+
+        var tooltipbox = $(linebox).find('.tooltipbox');
+        $(tooltipbox).children().slideDown(75);
+        $(tooltipbox).slideDown(75, function () {
+            setTimeout(function () {
+                $(tooltipbox).children().slideUp(75);
+                $(tooltipbox).slideUp(75);
+            }, 10000);
+        });
+
         addLink();
     }
 }

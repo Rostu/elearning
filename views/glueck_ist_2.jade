@@ -1,0 +1,459 @@
+extends layout
+block content
+    link(rel='stylesheet', href='stylesheets/glueck_ist_2.css')
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js", charset="utf-8")
+    script(src='javascripts/glueck_ist_2.js')
+    script(src='javascripts/glueck_ist_2_check.js')
+    script(src='javascripts/glueck_ist_2_comparison.js')
+    script(src='javascripts/glueck_ist_2_d3.js')
+    script(src='javascripts/glueck_ist_2_ui.js')
+    script(src='javascripts/xregexp-all.js')
+    #Aufgabenbox
+        p
+            | Verfasse 4 eigene Definitionen von Glück. Vervollständige den Satz "Glück ist, ..." über das weiße Eingabefeld.
+            | Verwende die Nebensatzkonstruktionen, die du in der vorherigen Übung kennengelernt hast.
+
+    #definition.flexcontainer
+        #textbox.flexcontainer.flexitem
+            #textoverlay.flexcontainer.flexitem
+                .spinnerbox.flexcontainer.flexitem
+                    .spinner.flexitem
+            #editorarea.flexcontainer.flexitem
+                #startarea.flexcontainer.flexitem
+                    #startphrase.flexitem Glück ist,
+                #editor.flexitem(contenteditable=true)
+                #checkarea.flexcontainer.flexitem
+                    #checkbutton.flexitem
+            .explanation.flexitem.textbox Gib den Nebensatz für deine Definition von Glück in das weiße Textfeld ein. Lass deinen Satz überprüfen, indem du auf das blaue Viereck auf der rechten Seite klickst.
+        #sentbox.flexcontainer.flexitem
+        #treebox.flexcontainer.flexitem
+            .explanation.flexitem.treebox Wähle einen Satz über die grünen Quadrate auf der rechten Seite aus, um dir hier seine Struktur anzusehen.
+            #tree
+
+block overlay
+    .overlay-content.define-help
+        h1 Der Bedingungssatz (Der Konditionalsatz)
+        p Bedingungssätze sind die typischen „Wenn-dann-Sätze“ oder „Bedingung-Folge-Sätze“. Der Bedingungssatz besteht aus einem Hauptsatz oder bedingter Satz und einem Nebensatz oder bedingender Satz.
+
+        .examples
+            span Falls euer Zug verspätet ist, werden wir im Restaurant auf euch warten.
+            br
+            span Du wirst bald wieder gesund sein, wenn du gut für dich sorgst.
+            br
+            span Die Therapie sollte auch die Familie einbeziehen, sofern das möglich ist.
+            br
+            span Errätst du die Zahlen richtig, gewinnst du den Hauptpreis.
+
+        h2 Form:
+        p Ein Bedingungssatz ist
+            ul
+                li ein eingeleiteter Nebensatz, der durch eine konditionale Konjunktion eingeleitet wird, oder
+                li ein uneingeleiteter Nebensatz.
+        h2 Bedeutung:
+        p Bedingungssätze sind Adverbialsätze, die eine Bedingung oder Voraussetzung formulieren.
+
+        br
+        h2 Eingeleiteter Bedingungssatz
+        p
+            | Bedingungssätze können durch bestimmte Konjunktionen eingeleitet werden.
+            br
+        p
+            b Konjunktionen: 
+            | wenn, falls, sofern
+
+        .examples
+            span Falls dein Zug verspätet ist, (so/dann) werden wir im Restaurant auf dich warten.
+            br
+            span Die Party findet im Garten statt, wenn die Wetterverhältnisse es zulassen.
+            br
+            span Sofern ihr mir zugehört habt, wisst ihr, was ihr tun müsst.
+
+        h2 Uneingeleiteter Bedingungssatz
+        p Bedingungssätze können ohne Bedeutungsunterschied auch ohne Konjunktion gebildet werden:
+
+        .examples
+            span Ist dein Zug verspätet, (so/dann) werden wir im Restaurant auf dich warten.
+            br
+            span Lassen die Wetterverhältnisse es zu, findet die Party im Garten statt.
+
+        p Uneingeleitete Bedingungssätze können nur vor dem Hauptsatz stehen.
+
+        h2 Irrealer Bedingungssatz mit Konjunktiv
+        .examples
+            span Die Party fände im Garten statt, wenn es nicht regnen würde.
+            br
+            span Hättest du die Zahlen richtig erraten, (dann) hättest du den Hauptpreis gewonnen.
+
+        br
+        h1 Der Objektsatz
+        p
+            span Objektsätze sind Nebensätze, die im übergeordneten Hauptsatz die Funktion eines Objekts haben.
+            br
+            span Objektsätze können die folgende Form haben:
+
+        h2 Mit dass eingeleiteter Nebensatz (dass-Satz)
+        .examples
+            span Wir verstehen (es), dass ihr uns nicht begleiten könnt.
+            br
+            span Sie ärgert sich (darüber), dass sie den Zug verpasst hat.
+
+        h2 Mit ob eingeleiteter Nebensatz (ob-Satz)
+        .examples
+            span Sie wissen nicht, ob wir auch eingeladen sind.
+            br
+            span Ich zweifle, ob ich die Einladung annehmen soll.
+
+        h2 Mit Fragewort eingeleiteter Nebensatz (w-Satz)
+        .examples
+            span Sie fragte mich, welches Kleid sie anziehen soll.
+            br
+            span Ich wundere mich (darüber), warum du erst so spät kommst.
+
+        h2 Infinitivkonstruktion
+        .examples
+            span Wir bedauern (es), sie enttäuschen zu müssen.
+            br
+            span Sie freuten sich (darüber), ihre Freunde zu sehen.
+
+        h2 Uneingeleiteter Nebensatz
+        .examples
+            span Er sagt, er habe keine Zeit.
+            br
+            span Wird hofften, ihr würdet auch kommen.
+
+        h2 Mit wie eingeleiteter Nebensatz
+        .examples
+            span Sie fühlte, wie ihre Kräfte nachließen.
+
+        h2 Akkusativ mit Infinitiv
+        .examples
+            span Er hörte ihn die Treppe hinaufkommen.
+
+        br
+        h1 Die Infinitivkonstruktion als Subjekt- und Objektsatz
+
+        .examples
+            span Es freut mich, dir hier zu begegnen.
+            br
+            span Ich befürchte, sie beleidigt zu haben.
+
+        h2 Form:
+        p Wenn eine Infinitivkonstruktion Subjektsatz oder Objektsatz ist, ist sie uneingeleitet. Der Infinitiv mit zusteht an letzter Stelle. Abhängig vom Verb kann oder muss der Infinitiv durch Objekte und Adverbialbestimmungen erweitert sein.
+        h2 Bedeutung:
+        p Die Verbindung zwischen einem Hauptsatz und einer uneingeleiteten Infinitivkonstruktion hat keine Bedeutung. Uneingeleitete Infinitivkonstruktionen sind Subjektsätze oder Objektsätze und als solche Inhaltssätze.
+
+    .overlay-content.tree-help
+        table
+            tbody
+                tr
+                    th Tag
+                    th Beschreibung
+                    th Beispiele
+                tr
+                    td ADJA
+                    td attributives Adjektiv
+                    td [das] gro&szlig;e [Haus]
+                tr
+                    td ADJD
+                    td adverbiales oder pr&auml;dikatives Adjektiv
+                    td [er f&auml;hrt] schnell, [er ist] schnell
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td ADV
+                    td Adverb
+                    td schon, bald, doch
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td APPR
+                    td Pr&auml;position; Zirkumposition links
+                    td in [der Stadt], ohne [mich]
+                tr
+                    td APPRART
+                    td Pr&auml;position mit Artikel
+                    td im [Haus], zur [Sache]
+                tr
+                    td APPO
+                    td Postposition
+                    td [ihm] zufolge, [der Sache] wegen
+                tr
+                    td APZR
+                    td Zirkumposition rechts
+                    td [von jetzt] an
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td ART
+                    td bestimmter oder unbestimmter Artikel
+                    td der, die, das, ein, eine
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td CARD
+                    td Kardinalzahl
+                    td zwei [M&auml;nner], [im Jahre] 1994
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td FM
+                    td Fremdsprachliches Material
+                    td [Er hat das mit &grave;&grave;] A big fish [&apos;&apos; &uuml;bersetzt]
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td ITJ
+                    td Interjektion
+                    td mhm, ach, tja
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td KOUI
+                    td unterordnende Konjunktion mit &grave;&grave;zu&apos;&apos; und Infinitiv
+                    td um [zu leben], anstatt [zu fragen]
+                tr
+                    td KOUS
+                    td unterordnende Konjunktion mit Satz
+                    td weil, dass, damit, wenn, ob
+                tr
+                    td KON
+                    td nebenordnende Konjunktion
+                    td und, oder, aber
+                tr
+                    td KOKOM
+                    td Vergleichskonjunktion
+                    td als, wie
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td NN
+                    td normales Nomen
+                    td Tisch, Herr, [das] Reisen
+                tr
+                    td NE
+                    td Eigennamen
+                    td Hans, Hamburg, HSV
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td PDS
+                    td substituierendes Demonstrativpronomen
+                    td dieser, jener
+                tr
+                    td PDAT
+                    td attribuierendes Demonstrativpronomen
+                    td jener [Mensch]
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td PIS
+                    td substituierendes Indefinitpronomen
+                    td keiner, viele, man, niemand
+                tr
+                    td PIAT
+                    td attribuierendes Indefinitpronomen ohne Determiner
+                    td kein [Mensch], irgendein [Glas]
+                tr
+                    td PIDAT
+                    td attribuierendes Indefinitpronomen mit Determiner
+                    td [ein] wenig [Wasser], [die] beiden [Br&uuml;der]
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td PPER
+                    td irreflexives Personalpronomen
+                    td ich, er, ihm, mich, dir
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td PPOSS
+                    td substituierendes Possessivpronomen
+                    td meins, deiner
+                tr
+                    td PPOSAT
+                    td attribuierendes Possessivpronomen
+                    td mein [Buch], deine [Mutter]
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td PRELS
+                    td substituierendes Relativpronomen
+                    td [der Hund ,] der
+                tr
+                    td PRELAT
+                    td attribuierendes Relativpronomen
+                    td [der Mann ,] dessen [Hund]
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td PRF
+                    td reflexives Personalpronomen
+                    td sich, einander, dich, mir
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td PWS
+                    td substituierendes Interrogativpronomen
+                    td wer, was
+                tr
+                    td PWAT
+                    td attribuierendes Interrogativpronomen
+                    td welche[Farbe], wessen [Hut]
+                tr
+                    td PWAV
+                    td adverbiales Interrogativ- oder Relativpronomen
+                    td warum, wo, wann, wor&uuml;ber, wobei
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td PAV
+                    td Pronominaladverb
+                    td daf&uuml;r, dabei, deswegen, trotzdem
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td PTKZU
+                    td &grave;&grave;zu&apos;&apos; vor Infinitiv
+                    td zu [gehen]
+                tr
+                    td PTKNEG
+                    td Negationspartikel
+                    td nicht
+                tr
+                    td PTKVZ
+                    td abgetrennter Verbzusatz
+                    td [er kommt] an, [er f&auml;hrt] rad
+                tr
+                    td PTKANT
+                    td Antwortpartikel
+                    td ja, nein, danke, bitte
+                tr
+                    td PTKA
+                    td Partikel bei Adjektiv oder Adverb
+                    td am [sch&ouml;nsten], zu [schnell]
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td TRUNC
+                    td Kompositions-Erstglied
+                    td An- [und Abreise]
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td VVFIN
+                    td finites Verb, voll
+                    td [du] gehst, [wir] kommen [an]
+                tr
+                    td VVIMP
+                    td Imperativ, voll
+                    td komm [!]
+                tr
+                    td VVINF
+                    td Infinitiv, voll
+                    td gehen, ankommen
+                tr
+                    td VVIZU
+                    td Infinitiv mit &grave;&grave;zu&apos;&apos;, voll
+                    td anzukommen, loszulassen
+                tr
+                    td VVPP
+                    td Partizip Perfekt, voll
+                    td gegangen, angekommen
+                tr
+                    td VAFIN
+                    td finites Verb, aux
+                    td [du] bist, [wir] werden
+                tr
+                    td VAIMP
+                    td Imperativ, aux
+                    td sei [ruhig !]
+                tr
+                    td VAINF
+                    td Infinitiv, aux
+                    td werden, sein
+                tr
+                    td VAPP
+                    td Partizip Perfekt, aux
+                    td gewesen
+                tr
+                    td VMFIN
+                    td finites Verb, modal
+                    td d&uuml;rfen
+                tr
+                    td VMINF
+                    td Infinitiv, modal
+                    td wollen
+                tr
+                    td VMPP
+                    td Partizip Perfekt, modal
+                    td gekonnt, [er hat gehen] k&ouml;nnen
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td XY
+                    td Nichtwort, Sonderzeichen enthaltend
+                    td 3:7, H2O, D2XW3
+                tr
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    td $,
+                    td Komma
+                    td ,
+                tr
+                    td $.
+                    td Satzbeendende Interpunktion
+                    td . ? ! ; :
+                tr
+                    td $(
+                    td sonstige Satzzeichen; satzintern
+                    td - [,]()
+
+
+        .tablesource
+            p Quellen:
+            p
+                a(href="http://homepage.rub.de/Stephen.Berman/Korpuslinguistik/Tagsets-STTS.html", target="_blank") Stuttgart-Tübingen-Tagset im DWDS
+            p
+                a(href="http://www.ims.uni-stuttgart.de/forschung/ressourcen/lexika/TagSets/stts-table.html", target="_blank") Institut für Maschinelle Sprachverarbeitung der Universität Stuttgart

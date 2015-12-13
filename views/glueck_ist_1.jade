@@ -1,0 +1,599 @@
+extends layout
+block content
+    link(rel='stylesheet', href='stylesheets/glueck_ist_1.css')
+    script(src='javascripts/sha256.js')
+    script(src='javascripts/glueck_ist_1.js')
+    script(src='javascripts/glueck_ist_1_ui.js')
+    #Aufgabenbox
+        p Rekonstruiere die Sätze und wähle bei den Verben die richtige Form aus. Bei manchen Sätzen können auch Puzzleteile übrig bleiben. Über den Knopf mit dem Fragezeichen auf der rechten Seite kannst du dir für jeden Satz einmal einen Tipp dazu geben lassen, wie es weitergeht.
+    #satzpuzzle.flexcontainer
+        .linebox.flexcontainer.flexitem#lib09
+            .targetline.flexcontainer.flexitem#tal09
+                .tgtelem.flexitem Glück ist,
+            .sourceline.flexcontainer.flexitem#sol09
+                .srcelem.flexcontainer.flexitem#sol09src01(comparison="bcfd75467a5d657f1322a92963c937b3752a5842a76e750303939a534dc860f5" punct="false") morgens
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol09src02(comparison="ca917cbd64cd43a4ffee4b0abdc2de85136c272761de4c38973dccffef1067dd" punct="false") meine
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol09src03(comparison="1e4ada79c5872a9020c198403af055858a8b0924b45d4bc5e32ec64708464618" punct="false")
+                    select.selectbox(name="aufwachen")
+                        option(value="Aufwachen") Aufwachen
+                        option(value="aufgewacht") aufgewacht
+                        option(value="aufwache") aufwache
+                        option(selected value="aufwachen") aufwachen
+                        option(value="aufwachend") aufwachend
+                        option(value="aufwachest") aufwachest
+                        option(value="aufwachet") aufwachet
+                        option(value="aufwachst") aufwachst
+                        option(value="aufwacht") aufwacht
+                        option(value="aufwachte") aufwachte
+                        option(value="aufwachten") aufwachten
+                        option(value="aufwachtest") aufwachtest
+                        option(value="aufwachtet") aufwachtet
+                        option(value="aufzuwachen") aufzuwachen
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol09src04(comparison="60ae664ce3353b660693b8510231090760ba2fab9f98821861a2f4d5cf507062" punct="false") Tochter
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol09src05(comparison="03c3d43d11963ecc4873f0c3e736a217c985a10569863ad3ff4f57bb2dc65d18" punct="false") wenn
+                    .handle
+            .helparea.flexcontainer.flexitem#hpa09
+                .helpico.flexitem
+            .tooltipbox.flexcontainer.flexitem#ttb09
+                .tooltip.flexitem
+                    | Hier fehlt ein Verb. Versuche, die korrekte Verbform mithilfe der&nbsp;
+                    a(onclick='toggleStartOverlay()', href='#') Kurzgrammatik
+                    |  selbst herauszufinden.
+        .linebox.flexcontainer.flexitem#lib06
+            .targetline.flexcontainer.flexitem#tal06
+                .tgtelem.flexitem Glück ist,
+            .sourceline.flexcontainer.flexitem#sol06
+                .srcelem.flexcontainer.flexitem#sol06src01(comparison="8f83ff0052aedeea36cbfe7b617e6529f3912121b0228a70fd6a1a8c5ef55b31" punct="false") Eltern
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol06src02(comparison="252b2772e8ac5fcecea2b597fd6189143776e9f0a545dfe46c68541ec4cf4a07" punct="false") etwas
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol06src03(comparison="9bb0c693c2199a7bbd081b8de2d75bfb798ab1f7078527b4efc699ffd2dffcbb" punct="false") wenn
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol06src04(comparison="f5e853681de5c7050c49b52f819649acd5b5fffa3565e3becb8ef6c4fc14699e" punct="false") mit
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol06src05(comparison="900b98486bfe87620b68b1881007cc5f79629334491b723c86622f8524477b7d" punct="false")
+                    select.selectbox(name="können")
+                        option(value="gekonnt") gekonnt
+                        option(value="kann") kann
+                        option(value="kannst") kannst
+                        option(value="konnte") konnte
+                        option(value="konnten") konnten
+                        option(value="konntest") konntest
+                        option(value="konntet") konntet
+                        option(value="könne") könne
+                        option(selected value="können") können
+                        option(value="könnest") könnest
+                        option(value="könnet") könnet
+                        option(value="könnt") könnt
+                        option(value="könnte") könnte
+                        option(value="könnten") könnten
+                        option(value="könntest") könntest
+                        option(value="könntet") könntet
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol06src06(comparison="0e00e952525a4f4cf7fc8899611e9fc1b8311bbaf8844c727bf822a01eb65dd3" punct="false") ich
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol06src07(comparison="d832bcdc0bd5401de352057cbdf156e2d6c6641fd75dff1c6f4769826f6781a8" punct="false") meinen
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol06src08(comparison="f39a7a1558aa2f39d92e1def4f82bdd499385355109ddba6f3dfc39d35dac96e" punct="false")
+                    select.selectbox(name="machen")
+                        option(value="gemacht") gemacht
+                        option(value="mache") mache
+                        option(selected value="machen") machen
+                        option(value="machend") machend
+                        option(value="machest") machest
+                        option(value="machet") machet
+                        option(value="machst") machst
+                        option(value="macht") macht
+                        option(value="machte") machte
+                        option(value="machten") machten
+                        option(value="machtest") machtest
+                        option(value="machtet") machtet
+                    .handle
+            .helparea.flexcontainer.flexitem#hpa06
+                .helpico.flexitem
+            .tooltipbox.flexcontainer.flexitem#ttb06
+                .tooltip.flexitem
+                    | Hier fehlt ein Verb. Versuche, die korrekte Verbform mithilfe der&nbsp;
+                    a(onclick='toggleStartOverlay()', href='#') Kurzgrammatik
+                    |  selbst herauszufinden.
+        .linebox.flexcontainer.flexitem#lib04
+            .targetline.flexcontainer.flexitem#tal04
+                .tgtelem.flexitem Glück ist,
+            .sourceline.flexcontainer.flexitem#sol04
+                .srcelem.flexcontainer.flexitem#sol04src01(comparison="29b25fa48c25c5683bbc45d08b830f2faa25588b1f196211988309cb53da3a70" punct="false") dass
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol04src02(comparison="573dd1ebe7e45dd60e9f037a0130b57d33392071b12f1458172cf7368cc28224" punct="false") das
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol04src03(comparison="e8f5536565ce2d9139e1b7987151c885953c8ba56503ceb26e2f66c8b035ff03" punct="false") nicht
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol04src04(comparison="9b6fa7be2a927e3a21b890a2bce86bab5df384eca83a676da0112b865a26281d" punct="false") Lachen
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol04src05(comparison="c531e362bf767bf5e4357c160ee5de4e6bed8077ba049ce3be1e87ef0274d0f1" punct="false")
+                    select.selectbox(name="verlieren")
+                        option(value="verliere") verliere
+                        option(selected value="verlieren") verlieren
+                        option(value="verlierend") verlierend
+                        option(value="verlierest") verlierest
+                        option(value="verlieret") verlieret
+                        option(value="verlierst") verlierst
+                        option(value="verliert") verliert
+                        option(value="verlor") verlor
+                        option(value="verloren") verloren
+                        option(value="verlorst") verlorst
+                        option(value="verlort") verlort
+                        option(value="verlöre") verlöre
+                        option(value="verlören") verlören
+                        option(value="verlörest") verlörest
+                        option(value="verlöret") verlöret
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol04src06(comparison="05920cb72d67cd29b83ddd14f0ca5e1de3869c710dac1a8862415787b6115fea" punct="false") man
+                    .handle
+            .helparea.flexcontainer.flexitem#hpa04
+                .helpico.flexitem
+            .tooltipbox.flexcontainer.flexitem#ttb04
+                .tooltip.flexitem
+                    | Hier fehlt ein Verb. Versuche, die korrekte Verbform mithilfe der&nbsp;
+                    a(onclick='toggleStartOverlay()', href='#') Kurzgrammatik
+                    |  selbst herauszufinden.
+        .linebox.flexcontainer.flexitem#lib05
+            .targetline.flexcontainer.flexitem#tal05
+                .tgtelem.flexitem Glück ist,
+            .sourceline.flexcontainer.flexitem#sol05
+                .srcelem.flexcontainer.flexitem#sol05src01(comparison="b3ccb352ca3f29b0968e6fd50c99dc0381f126dcd6daf5b7d3629579b3c299d8" punct="false") mit
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol05src02(comparison="c5bbcc3061f2116ee3d5fc6d7420b1be3ea635fbe6e46e2f1519f94e109826c1" punct="false") sich
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol05src03(comparison="b5e644e9a034f1e660bf624fdf30e8367d372ebde72cac0a13e335c258cc1be6" punct="false") wenn
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol05src04(comparison="15844ac4e3da76fbb867793265a293be3eedad0519e0961534423110b289d117" punct="false") selbst
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol05src05(comparison="3f2cdd3055a6f4f43255cbdb7e64fefb97f81e49c63f1ef71dd71fbafdcc0b93" punct="false") man
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol05src06(comparison="efec634dc7144c272d7e8dfc50d918e785090b3da149321e582b7cfdc4cf89bf" punct="false")
+                    select.selectbox(name="sein")
+                        option(value="bin") bin
+                        option(value="bist") bist
+                        option(value="gewesen") gewesen
+                        option(value="ist") ist
+                        option(value="sei") sei
+                        option(value="seid") seid
+                        option(value="seien") seien
+                        option(value="seiend") seiend
+                        option(value="seiest") seiest
+                        option(value="seiet") seiet
+                        option(selected value="sein") sein
+                        option(value="seist") seist
+                        option(value="sind") sind
+                        option(value="war") war
+                        option(value="waren") waren
+                        option(value="warst") warst
+                        option(value="wart") wart
+                        option(value="wäre") wäre
+                        option(value="wären") wären
+                        option(value="wärest") wärest
+                        option(value="wäret") wäret
+                        option(value="wärst") wärst
+                        option(value="wärt") wärt
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol05src07(comparison="b00a51f5aa99b4bce372d125b2c2de9b12fbfc2a1d719395e80e7e8b423d5a2c" punct="false") zufrieden
+                    .handle
+            .helparea.flexcontainer.flexitem#hpa05
+                .helpico.flexitem
+            .tooltipbox.flexcontainer.flexitem#ttb05
+                .tooltip.flexitem
+                    | Hier fehlt ein Verb. Versuche, die korrekte Verbform mithilfe der&nbsp;
+                    a(onclick='toggleStartOverlay()', href='#') Kurzgrammatik
+                    |  selbst herauszufinden.
+        .linebox.flexcontainer.flexitem#lib02
+            .targetline.flexcontainer.flexitem#tal02
+                .tgtelem.flexitem Glück ist,
+            .sourceline.flexcontainer.flexitem#sol02
+                .srcelem.flexcontainer.flexitem#sol02src01(comparison="624413dc534af12a85d19174b4fc82a65b8dc1040a5b52bb796ef75597b8f48a" punct="false") Sonne
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol02src02(comparison="d4852d285d749020bfd72e0461bdd390e7ef3f5754c2d624aeeaa366b0c7ccfa" punct="false") wenn
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol02src03(comparison="d104e2f04e8a42dde2bddb103ca2f088a921a27d1625b11ae1244b194f7c26d2" punct="false") die
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol02src04(comparison="e4b0b1e631d5e5e3cd6ca9e8a1749dc74113f881c8e25134db96108f87c00e16" punct="false")
+                    select.selectbox(name="scheinen")
+                        option(value="geschienen") geschienen
+                        option(value="scheine") scheine
+                        option(selected value="scheinen") scheinen
+                        option(value="scheinend") scheinend
+                        option(value="scheinest") scheinest
+                        option(value="scheinet") scheinet
+                        option(value="scheinst") scheinst
+                        option(value="scheint") scheint
+                        option(value="schien") schien
+                        option(value="schiene") schiene
+                        option(value="schienen") schienen
+                        option(value="schienest") schienest
+                        option(value="schienet") schienet
+                        option(value="schienst") schienst
+                        option(value="schient") schient
+                    .handle
+            .helparea.flexcontainer.flexitem#hpa02
+                .helpico.flexitem
+            .tooltipbox.flexcontainer.flexitem#ttb02
+                .tooltip.flexitem
+                    | Hier fehlt ein Verb. Versuche, die korrekte Verbform mithilfe der&nbsp;
+                    a(onclick='toggleStartOverlay()', href='#') Kurzgrammatik
+                    |  selbst herauszufinden.
+        .linebox.flexcontainer.flexitem#lib08
+            .targetline.flexcontainer.flexitem#tal08
+                .tgtelem.flexitem Glück ist,
+            .sourceline.flexcontainer.flexitem#sol08
+                .srcelem.flexcontainer.flexitem#sol08src01(comparison="d69c76b66aad9569a8137d911c694b0c93271f658c6be1354746b98ef0e79604" punct="false") wenn
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol08src02(comparison="ccc7e090d33ac500b4770ec7b219c0aa31bb9a5c9a099e10476b782e6e70d92b" punct="false")
+                    select.selectbox(name="lieben")
+                        option(value="geliebt") geliebt
+                        option(value="lieb") lieb
+                        option(value="liebe") liebe
+                        option(selected value="lieben") lieben
+                        option(value="liebend") liebend
+                        option(value="liebest") liebest
+                        option(value="liebet") liebet
+                        option(value="liebst") liebst
+                        option(value="liebt") liebt
+                        option(value="liebte") liebte
+                        option(value="liebten") liebten
+                        option(value="liebtest") liebtest
+                        option(value="liebtet") liebtet
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol08src03(comparison="9a7948f2f1c2ec5084f08d27a0c395712883d6c44ab4e30a92492fc5c2093bcd" punct="true")
+                    select.selectbox(name="haben")
+                        option(value="gehabt") gehabt
+                        option(value="habe") habe
+                        option(selected value="haben") haben
+                        option(value="habend") habend
+                        option(value="habest") habest
+                        option(value="habet") habet
+                        option(value="habt") habt
+                        option(value="hast") hast
+                        option(value="hat") hat
+                        option(value="hatte") hatte
+                        option(value="hatten") hatten
+                        option(value="hattest") hattest
+                        option(value="hattet") hattet
+                        option(value="hätte") hätte
+                        option(value="hätten") hätten
+                        option(value="hättest") hättest
+                        option(value="hättet") hättet
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol08src04(comparison="139f36312c66091e338a2d3b1d93e6995795ea096124eb2f36af897996adeda4" punct="false") ich
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol08src05(comparison="247a1b13bd99ebabc076f1b9d8f77469391bf7ae368606a052e4e553fed1c03b" punct="false") jemanden
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol08src06(comparison="4ca59d2c3b42fd45a3b011af6d59e4e18e664d8a2c9347548f6bd80b329fc439" punct="false") mich
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol08src07(comparison="6d45c83013fa523bc54762141dd195a9c549f2b34944b676e97be3b747d3ad1b" punct="false") der
+                    .handle
+            .helparea.flexcontainer.flexitem#hpa08
+                .helpico.flexitem
+            .tooltipbox.flexcontainer.flexitem#ttb08
+                .tooltip.flexitem
+                    | Hier fehlt ein Verb. Versuche, die korrekte Verbform mithilfe der&nbsp;
+                    a(onclick='toggleStartOverlay()', href='#') Kurzgrammatik
+                    |  selbst herauszufinden.
+        .linebox.flexcontainer.flexitem#lib10
+            .targetline.flexcontainer.flexitem#tal10
+                .tgtelem.flexitem Glück ist,
+            .sourceline.flexcontainer.flexitem#sol10
+                .srcelem.flexcontainer.flexitem#sol10src01(comparison="f38d03bef9004e7f8158089f677db73c340b4fba03a3c436be1a47a9d3c1a11e" punct="false") wie
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol10src02(comparison="bf4608d146c6908d8264d249cc057f2a69876e3c8366ea2e253d763d71821027" punct="false")
+                    select.selectbox(name="dürfen")
+                        option(value="darf") darf
+                        option(value="darfst") darfst
+                        option(value="durfte") durfte
+                        option(value="durften") durften
+                        option(value="durftest") durftest
+                        option(value="durftet") durftet
+                        option(value="dürfe") dürfe
+                        option(selected value="dürfen") dürfen
+                        option(value="dürfest") dürfest
+                        option(value="dürfet") dürfet
+                        option(value="dürft") dürft
+                        option(value="dürfte") dürfte
+                        option(value="dürften") dürften
+                        option(value="dürftest") dürftest
+                        option(value="dürftet") dürftet
+                        option(value="gedurft") gedurft
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol10src03(comparison="c129fd925d9fd8d96873b104939651683edc69d5b37dbbf300038aaac37a77fe" punct="false") an
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol10src04(comparison="f54e5c065c08f0bc57bc79a0550f98c41a34e1127120d68f96d59a88ff4f8b74" punct="false") heute
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol10src05(comparison="3e03befbc2c725dd12f3ce58b5a182465713136e9ba1ab07ea7bd4462d1044d3" punct="false") zu
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol10src06(comparison="723c3a33f34d8e9153e032434c0e424015354bf1b52dbccc4e3d77211ed07702" punct="false") Tag
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol10src07(comparison="823bee45852b17146daa80e123dd6a7c5dfaf64a05416504f539e7081af3f62e" punct="false")
+                    select.selectbox(name="stehen")
+                        option(value="gestanden") gestanden
+                        option(value="stand") stand
+                        option(value="standen") standen
+                        option(value="standest") standest
+                        option(value="standet") standet
+                        option(value="stehe") stehe
+                        option(selected value="stehen") stehen
+                        option(value="stehend") stehend
+                        option(value="stehest") stehest
+                        option(value="stehet") stehet
+                        option(value="stehst") stehst
+                        option(value="steht") steht
+                        option(value="stünde") stünde
+                        option(value="stünden") stünden
+                        option(value="stündest") stündest
+                        option(value="stündet") stündet
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol10src08(comparison="a569b304a8963158d52d16039bbc20a2f023f16878843e0bcfc35aea5887c198" punct="false") hier
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol10src09(comparison="4a60062e89f0c49d8f9280b33c37e5a99a0343636c68ba026462d0bd6127a9b0" punct="false") einem
+                    .handle
+            .helparea.flexcontainer.flexitem#hpa10
+                .helpico.flexitem
+            .tooltipbox.flexcontainer.flexitem#ttb10
+                .tooltip.flexitem
+                    | Hier fehlt ein Verb. Versuche, die korrekte Verbform mithilfe der&nbsp;
+                    a(onclick='toggleStartOverlay()', href='#') Kurzgrammatik
+                    |  selbst herauszufinden.
+        .linebox.flexcontainer.flexitem#lib07
+            .targetline.flexcontainer.flexitem#tal07
+                .tgtelem.flexitem Glück ist,
+            .sourceline.flexcontainer.flexitem#sol07
+                .srcelem.flexcontainer.flexitem#sol07src01(comparison="960b931c054344cb733a1f9dcb2d15b8281490a021be73b79ea4f895231aa69a" punct="false") etwas
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol07src02(comparison="5c46d8adf1e4ec1d97bd27b68f8b1fbbaea63c30bcd544cf24dcf5bedb476303" punct="false") aus
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol07src03(comparison="05bd72eed84c6013776a3fa11f6b5686acc6340aae971c3c0703c920bada6e8d" punct="false") ich
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol07src04(comparison="d93178a7b997a260ebc62a1bb5a1e80e59efcf12ed7b455a0b0f90b384441789" punct="false") dass
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol07src05(comparison="1ff2f8ec2e1deba3e6d5316744ff3bd7ab916d0cd65f4467b330e0e06d83b87e" punct="false") mir
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol07src06(comparison="0e8b9399f19c9d40065884239d2d167df597a0cadf013536cffb665e0aaebf17" punct="false") in
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol07src07(comparison="69606d7e78786cb03d502364e3d14619f4ffe968f165c7d6412f9c30caa881ac" punct="false")
+                    select.selectbox(name="machen")
+                        option(value="gemacht") gemacht
+                        option(value="mache") mache
+                        option(selected value="machen") machen
+                        option(value="machend") machend
+                        option(value="machest") machest
+                        option(value="machet") machet
+                        option(value="machst") machst
+                        option(value="macht") macht
+                        option(value="machte") machte
+                        option(value="machten") machten
+                        option(value="machtest") machtest
+                        option(value="machtet") machtet
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol07src08(comparison="33d9a1ed396998bd3d6e817691fa9a85c0bc0f40e5de3fc6c9d3216a9aa90405" punct="false") Zukunft
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol07src09(comparison="1340faae21776a22a0311c3468aab6cbb8334745ec4a079e097648af798ca468" punct="false")
+                    select.selectbox(name="werden")
+                        option(value="geworden") geworden
+                        option(value="werde") werde
+                        option(selected value="werden") werden
+                        option(value="werdend") werdend
+                        option(value="werdest") werdest
+                        option(value="werdet") werdet
+                        option(value="wird") wird
+                        option(value="wirst") wirst
+                        option(value="worden") worden
+                        option(value="wurde") wurde
+                        option(value="wurden") wurden
+                        option(value="wurdest") wurdest
+                        option(value="wurdet") wurdet
+                        option(value="würde") würde
+                        option(value="würden") würden
+                        option(value="würdest") würdest
+                        option(value="würdet") würdet
+                    .handle
+            .helparea.flexcontainer.flexitem#hpa07
+                .helpico.flexitem
+            .tooltipbox.flexcontainer.flexitem#ttb07
+                .tooltip.flexitem
+                    | Hier fehlt ein Verb. Versuche, die korrekte Verbform mithilfe der&nbsp;
+                    a(onclick='toggleStartOverlay()', href='#') Kurzgrammatik
+                    |  selbst herauszufinden.
+        .linebox.flexcontainer.flexitem#lib01
+            .targetline.flexcontainer.flexitem#tal01
+                .tgtelem.flexitem Glück ist,
+            .sourceline.flexcontainer.flexitem#sol01
+                .srcelem.flexcontainer.flexitem#sol01src01(comparison="f446cc0ddf50f3d9c7c69789d5e5e33acaecd3a18b54facfeb2aec539cde5fa9" punct="false") man
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol01src02(comparison="a8c259dfd9884519b2645f90f6b79290dc5109db8cb7fc09b78966815f4b7077" punct="false") frei
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol01src03(comparison="a8e9c5696f8c929906d9392aba501bf1f64f01bfcbdc04d41b4682f1f7443e90" punct="false") wenn
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol01src04(comparison="01a6bc60dfe4613eb920329801ceb4a21a427c150d4a2000383b04af6b25712c" punct="false")
+                    select.selectbox(name="sein")
+                        option(value="bin") bin
+                        option(value="bist") bist
+                        option(value="gewesen") gewesen
+                        option(value="ist") ist
+                        option(value="sei") sei
+                        option(value="seid") seid
+                        option(value="seien") seien
+                        option(value="seiend") seiend
+                        option(value="seiest") seiest
+                        option(value="seiet") seiet
+                        option(selected value="sein") sein
+                        option(value="seist") seist
+                        option(value="sind") sind
+                        option(value="war") war
+                        option(value="waren") waren
+                        option(value="warst") warst
+                        option(value="wart") wart
+                        option(value="wäre") wäre
+                        option(value="wären") wären
+                        option(value="wärest") wärest
+                        option(value="wäret") wäret
+                        option(value="wärst") wärst
+                        option(value="wärt") wärt
+                    .handle
+            .helparea.flexcontainer.flexitem#hpa01
+                .helpico.flexitem
+            .tooltipbox.flexcontainer.flexitem#ttb01
+                .tooltip.flexitem
+                    | Hier fehlt ein Verb. Versuche, die korrekte Verbform mithilfe der&nbsp;
+                    a(onclick='toggleStartOverlay()', href='#') Kurzgrammatik
+                    |  selbst herauszufinden.
+        .linebox.flexcontainer.flexitem#lib03
+            .targetline.flexcontainer.flexitem#tal03
+                .tgtelem.flexitem Glück ist,
+            .sourceline.flexcontainer.flexitem#sol03
+                .srcelem.flexcontainer.flexitem#sol03src01(comparison="52b81fee4692b75c83380c526c1a3b2ab45bd188854c4aa0d4169afcd2684b0f" punct="false")
+                    select.selectbox(name="aufmachen")
+                        option(value="Aufmachen") Aufmachen
+                        option(value="aufgemacht") aufgemacht
+                        option(value="aufmache") aufmache
+                        option(selected value="aufmachen") aufmachen
+                        option(value="aufmachend") aufmachend
+                        option(value="aufmachest") aufmachest
+                        option(value="aufmachet") aufmachet
+                        option(value="aufmachst") aufmachst
+                        option(value="aufmacht") aufmacht
+                        option(value="aufmachte") aufmachte
+                        option(value="aufmachten") aufmachten
+                        option(value="aufmachtest") aufmachtest
+                        option(value="aufmachtet") aufmachtet
+                        option(value="aufzumachen") aufzumachen
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol03src02(comparison="6d51576a9d888e7fc2caa490d62830ae516e9950f67862057eca8686bbd59363" punct="false") man
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol03src03(comparison="c40cefc5713052d485e663e8fc61d1fc490102b87b7ce9368c19f328215bd2d4" punct="false") Augen
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol03src04(comparison="c88e8338c52b862df99ba123fc09f880df63f384731b92fc0cd62e37a4369f1b" punct="false") wenn
+                    .handle
+                .srcelem.flexcontainer.flexitem#sol03src05(comparison="ca0dae6640a93bfb9e43a7a8c5f324546863d83db791c71c0233ce32dd515000" punct="false") die
+                    .handle
+            .helparea.flexcontainer.flexitem#hpa03
+                .helpico.flexitem
+            .tooltipbox.flexcontainer.flexitem#ttb03
+                .tooltip.flexitem
+                    | Hier fehlt ein Verb. Versuche, die korrekte Verbform mithilfe der&nbsp;
+                    a(onclick='toggleStartOverlay()', href='#') Kurzgrammatik
+                    |  selbst herauszufinden.
+
+
+block overlay
+    .overlay-content.define-help
+        h1 Der Bedingungssatz (Der Konditionalsatz)
+        p Bedingungssätze sind die typischen „Wenn-dann-Sätze“ oder „Bedingung-Folge-Sätze“. Der Bedingungssatz besteht aus einem Hauptsatz oder bedingter Satz und einem Nebensatz oder bedingender Satz.
+
+        .examples
+            span Falls euer Zug verspätet ist, werden wir im Restaurant auf euch warten.
+            br
+            span Du wirst bald wieder gesund sein, wenn du gut für dich sorgst.
+            br
+            span Die Therapie sollte auch die Familie einbeziehen, sofern das möglich ist.
+            br
+            span Errätst du die Zahlen richtig, gewinnst du den Hauptpreis.
+
+        h2 Form:
+        p Ein Bedingungssatz ist
+            ul
+                li ein eingeleiteter Nebensatz, der durch eine konditionale Konjunktion eingeleitet wird, oder
+                li ein uneingeleiteter Nebensatz.
+        h2 Bedeutung:
+        p Bedingungssätze sind Adverbialsätze, die eine Bedingung oder Voraussetzung formulieren.
+
+        br
+        h2 Eingeleiteter Bedingungssatz
+        p
+            | Bedingungssätze können durch bestimmte Konjunktionen eingeleitet werden.
+            br
+        p
+            b Konjunktionen: 
+            | wenn, falls, sofern
+
+        .examples
+            span Falls dein Zug verspätet ist, (so/dann) werden wir im Restaurant auf dich warten.
+            br
+            span Die Party findet im Garten statt, wenn die Wetterverhältnisse es zulassen.
+            br
+            span Sofern ihr mir zugehört habt, wisst ihr, was ihr tun müsst.
+
+        h2 Uneingeleiteter Bedingungssatz
+        p Bedingungssätze können ohne Bedeutungsunterschied auch ohne Konjunktion gebildet werden:
+
+        .examples
+            span Ist dein Zug verspätet, (so/dann) werden wir im Restaurant auf dich warten.
+            br
+            span Lassen die Wetterverhältnisse es zu, findet die Party im Garten statt.
+
+        p Uneingeleitete Bedingungssätze können nur vor dem Hauptsatz stehen.
+
+        h2 Irrealer Bedingungssatz mit Konjunktiv
+        .examples
+            span Die Party fände im Garten statt, wenn es nicht regnen würde.
+            br
+            span Hättest du die Zahlen richtig erraten, (dann) hättest du den Hauptpreis gewonnen.
+
+        br
+        h1 Der Objektsatz
+        p
+            span Objektsätze sind Nebensätze, die im übergeordneten Hauptsatz die Funktion eines Objekts haben.
+            br
+            span Objektsätze können die folgende Form haben:
+
+        h2 Mit dass eingeleiteter Nebensatz (dass-Satz)
+        .examples
+            span Wir verstehen (es), dass ihr uns nicht begleiten könnt.
+            br
+            span Sie ärgert sich (darüber), dass sie den Zug verpasst hat.
+
+        h2 Mit ob eingeleiteter Nebensatz (ob-Satz)
+        .examples
+            span Sie wissen nicht, ob wir auch eingeladen sind.
+            br
+            span Ich zweifle, ob ich die Einladung annehmen soll.
+
+        h2 Mit Fragewort eingeleiteter Nebensatz (w-Satz)
+        .examples
+            span Sie fragte mich, welches Kleid sie anziehen soll.
+            br
+            span Ich wundere mich (darüber), warum du erst so spät kommst.
+
+        h2 Infinitivkonstruktion
+        .examples
+            span Wir bedauern (es), sie enttäuschen zu müssen.
+            br
+            span Sie freuten sich (darüber), ihre Freunde zu sehen.
+
+        h2 Uneingeleiteter Nebensatz
+        .examples
+            span Er sagt, er habe keine Zeit.
+            br
+            span Wird hofften, ihr würdet auch kommen.
+
+        h2 Mit wie eingeleiteter Nebensatz
+        .examples
+            span Sie fühlte, wie ihre Kräfte nachließen.
+
+        h2 Akkusativ mit Infinitiv
+        .examples
+            span Er hörte ihn die Treppe hinaufkommen.
+
+        br
+        h1 Die Infinitivkonstruktion als Subjekt- und Objektsatz
+
+        .examples
+            span Es freut mich, dir hier zu begegnen.
+            br
+            span Ich befürchte, sie beleidigt zu haben.
+
+        h2 Form:
+        p Wenn eine Infinitivkonstruktion Subjektsatz oder Objektsatz ist, ist sie uneingeleitet. Der Infinitiv mit zusteht an letzter Stelle. Abhängig vom Verb kann oder muss der Infinitiv durch Objekte und Adverbialbestimmungen erweitert sein.
+        h2 Bedeutung:
+        p Die Verbindung zwischen einem Hauptsatz und einer uneingeleiteten Infinitivkonstruktion hat keine Bedeutung. Uneingeleitete Infinitivkonstruktionen sind Subjektsätze oder Objektsätze und als solche Inhaltssätze.
+
+

@@ -1,5 +1,10 @@
 function displayContents() {
 
+    /*  Hide verb hints
+     */
+    $('.tooltip').hide();
+    $('.tooltipbox').hide();
+
     /*  Reset lineboxes
      */
     $('.linebox').removeClass('correct');
@@ -23,12 +28,12 @@ function displayContents() {
         });
     });
 
-    var flexy = $("#flexybox");
+    var satzpuzzle = $("#satzpuzzle");
     
     /*  Shuffle sentences
      */
-    for (var i = $(flexy).children('.linebox').length; i >= 0; i--) {
-        $(flexy).append($(flexy).children('.linebox')[Math.random() * i | 0]);
+    for (var i = $(satzpuzzle).children('.linebox').length; i >= 0; i--) {
+        $(satzpuzzle).append($(satzpuzzle).children('.linebox')[Math.random() * i | 0]);
     }
 
     /*  Shuffle puzzle elements
@@ -114,7 +119,7 @@ function fixSrcelem(dragID, fullStop, disable) {
 function addLink() {
     $("#infolink").remove();
     clear_help();
-    $("#info2").append("<a id='infolink' class='redlink' onclick='toggleStartOverlay()' href='#'>Glück ist, ...</a>");
+    $("#info2").append("<a id='infolink' class='redlink' onclick='toggleStartOverlay()' href='#'>Glück ist, ... (Hilfe)</a>");
     show_help();
 }
 

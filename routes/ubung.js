@@ -105,8 +105,8 @@ exports.get_glueck_Textverstehen_Redensarten = function(req, res){
     res.render('glueck_Textverstehen_Redensarten');
 };
 
-exports.get_glueck_satzpuzzle = function(req, res){
-    res.render('glueck_satzpuzzle');
+exports.get_glueck_ist_1 = function(req, res){
+    res.render('glueck_ist_1');
 };
 
 exports.get_handy_start = function(req,res) {
@@ -228,8 +228,8 @@ exports.get_zukunft_Textproduktion = function(req, res){
 exports.get_zukunft_Kreuzwortraetsel = function(req, res){
     res.render('zukunft_Kreuzwortraetsel');
 };
-exports.get_glueck_definition = function(req, res){
-    res.render('glueck_definition');
+exports.get_glueck_ist_2 = function(req, res){
+    res.render('glueck_ist_2');
 };
 
 exports.get_testy = function(req, res){

@@ -14,108 +14,113 @@
     background: #A6D1F5;
 }
 
-#flexybox {
+.flexcontainer {
     display: flex;
 
-    padding: 0 10px 0 0;
+    padding: 0 10px 10px 0;
 
     flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
+}
+
+.flexitem {
+    margin: 10px 0 0 10px;
+
+    flex: 1 1 auto;
+}
+
+#satzpuzzle {
+    padding: 0 10px 0 0;
 
     font-size: 1.3em;
     line-height: 20px;
 }
 
 .linebox {
-    display: flex;
-
-    margin: 10px 0 0 10px;
-    padding: 0 10px 10px 0;
-
     width: 60%;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
 
     background-color: aliceblue;
 }
 
 .targetline, .sourceline {
-    display: flex;
-
-    margin: 10px 0 0 0;
-    padding: 0 10px 10px 0;
-
-    width: 40%;
-
-    flex: 1 1 auto;
-    align-self: auto;
-
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-
-    background-color: #D5EBFD;
-}
-
-.targetline {
-    margin: 10px 0 0 10px;
-
     width: 45%;
 
-    justify-content: flex-start;
-    align-items: flex-start;
+    align-content: center;
 
     background-color: #7AB3E3;
 }
 
+.sourceline {
+    margin: 10px 0 0 0;
+    padding: 0 0 10px 0;
+
+    width: 40%;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: #D5EBFD;
+}
+
 .tgtelem, .srcelem {
-    margin: 10px 0 0 10px;
-    padding: 10px;
+    padding: 10px 0 10px 10px;
 
     height: 20px;
 
     flex: 0 1 auto;
-    align-self: auto;
-}
-
-.tgtelem {
-    padding: 10px 0 10px 10px;
 }
 
 .srcelem {
-    display: flex;
+    padding: 10px;
 
-    flex-flow: row wrap;
-    justify-content: flex-start;
     align-items: center;
     align-content: center;
 
     background-color: #A6D1F5;
 }
 
-.srcelem {
-    cursor: -webkit-grab; cursor: -moz-grab;
+.selectbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0 !important;
+    height: 30px;
+    border-radius: 2px;
+    background: #7AB3E3 url("../images/button_down2.gif") no-repeat right center;
+    background-size: 24px 18px;
+    color: #fff;
+    font-size: 1.1em;
+
+    cursor: pointer;
+}
+
+.tooltipbox {
+    padding: 0;
+
+    justify-content: center;
+}
+
+.tooltip {
+    margin: 0;
+    padding: 10px;
+
+    text-align: center;
+
+    flex: 0 1 auto;
+
+    color: white;
+    background: #A91211;
+}
+
+.tooltip a {
+    color: white;
 }
 
 .helparea {
-    display: flex;
     margin: 10px 0 0 0px;
 
     line-height: 18px;
 
     flex: 0 1 auto;
-    align-self: auto;
 
-    justify-content: flex-start;
     align-items: center;
     align-content: center;
 
@@ -123,14 +128,12 @@
 }
 
 .helpico {
-    margin: 0 10px 0 0;
     border-radius: 20px;
 
     height: 40px;
     width: 40px;
 
     flex: 0 1 auto;
-    align-self: auto;
 
     background: #7AB3E3 url("../images/help_joker.png") no-repeat center center;
     background-size: 30px 30px;
@@ -138,6 +141,8 @@
 
 .helpico:hover {
     background-color: #005E9C;
+
+    cursor: pointer;
 }
 
 .linebox.correct .helpico {
@@ -148,19 +153,10 @@
     background-color: #A6D1F5;
 }
 
-.selectbox {
-    -webkit-appearance: none;  /*REMOVES DEFAULT CHROME & SAFARI STYLE*/
-    -moz-appearance: none;  /*REMOVES DEFAULT FIREFOX STYLE*/
-    border: 0 !important;  /*REMOVES BORDER*/
-    /*width: 24px;*/
-    height: 30px;
-    border-radius: 2px;
-    background: #7AB3E3 url("../images/button_down2.gif") no-repeat right center;
-    background-size: 24px 18px;
-    color: #fff;
-    font-size: 1.1em;
+.disabled.helpico:hover {
+    background-color: #A6D1F5;
 
-    cursor: pointer;
+    cursor: default;
 }
 
 .handle {
@@ -190,5 +186,9 @@
 }
 
 .ui-draggable-disabled {
-    cursor: default;
+    cursor: default !important;
+}
+
+.ui-draggable {
+    cursor: -webkit-grab; cursor: -moz-grab;
 }

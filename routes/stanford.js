@@ -1,13 +1,13 @@
 var NLP = require('stanford-corenlp');
 
 var stanford_corenlp_options = {
-    'nlpPath': __dirname + '/../extensions/CoreNLP',
+    "nlpPath": __dirname + '/../extensions/CoreNLP',
     "version": '3.5.2',
-    annotators: ['tokenize', 'ssplit', 'pos', 'lemma', 'parse'],
-    'extra' : {
-        'tokenize.language': 'de',
-        'pos.model': 'edu/stanford/nlp/models/pos-tagger/german/german-hgc.tagger',
-        'parse.model': 'edu/stanford/nlp/models/srparser/germanSR.ser.gz'
+    "annotators": ['tokenize', 'ssplit', 'pos', 'lemma', 'parse'],
+    "extra": {
+        "tokenize.language": 'de',
+        "pos.model": 'edu/stanford/nlp/models/pos-tagger/german/german-hgc.tagger',
+        "parse.model": 'edu/stanford/nlp/models/srparser/germanSR.ser.gz'
     }
 };
 

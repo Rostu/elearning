@@ -45,10 +45,10 @@
         "name":"glueck_video_paraphrase", "maxpoints":10, "maxfaults":10
     },
     {
-        "name":"glueck_satzpuzzle", "maxpoints":10, "maxfaults":10
+        "name":"glueck_ist_1", "maxpoints":10, "maxfaults":10
     },
     {
-        "name":"glueck_definition", "maxpoints":5, "maxfaults":15
+        "name":"glueck_ist_2", "maxpoints":4, "maxfaults":20
     },
     {
         "name":"handy_start", "maxpoints":0, "maxfaults":0
