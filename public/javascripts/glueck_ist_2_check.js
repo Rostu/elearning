@@ -166,14 +166,16 @@ function validateSentence(editor_text, sentence_data) {
     } else {
         var words = editor_text.split(/\s+/);
 
-        if (words.length > 20) {
+        var length_limit = 20;
 
-            var exceeding = words.slice(30, words.length).join(" ");
+        if (words.length > length_limit) {
+
+            var exceeding = words.slice(length_limit, words.length).join(" ");
 
             base_error = generateBaseError(
                 "Satzlänge",
                 "Achte bitte darauf, dass dein Satz nicht zu viele Wörter enthält. Versuche es mit einem kürzeren Satz erneut.",
-                editor_text.lastIndexOf(exceeding), editor_text.length, [], "", editor_text);
+                editor_text.lastIndexOf(exceeding), editor_text.length + 1, [], "", editor_text);
             errors.push(restructureError(errors.length, base_error));
         }
 
