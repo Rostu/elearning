@@ -1,49 +1,3 @@
-var glueck_definition_trees_enabled;
-var glueck_definition_tree_help;
-var glueck_definition_editor_unlocked;
-
-function updateErrorSpans() {
-
-    /*  check all spans associated with errors for changes; mark errors as modified or deleted where appropriate
-     */
-
-    var errors = $('.error');
-
-    var spans = $.map(errors, function(error, index) {
-        var coordinates_index = $(error).attr('id').indexOf('co');
-        var coordinates = $(error).attr('id').slice(coordinates_index, $(error).attr('id').length);
-        var span = $("span[id$='" + coordinates + "']");
-        if (span.length > 0) {
-            return span;
-        } else {
-            markDeleted(error);
-        }
-    });
-
-    $.each(spans, function(index, span) {
-
-        var original = $(span).attr('chosen') ?
-            $(span).attr('chosen') :
-            $(span).data('text');
-
-        if ($(span).text() !== original) {
-
-            var coordinates_index = $(span).attr('id').indexOf('co');
-            var coordinates = $(span).attr('id').slice(coordinates_index, $(span).attr('id').length);
-            var error = $(".error[id$='" + coordinates + "']");
-
-            if ($(span).text().length == 0) {
-                markDeleted(error);
-                $(span).remove();
-            } else {
-                $(span).attr('chosen', $(span).text());
-                $(error).removeClass('new');
-                $(error).addClass('modified');
-            }
-        }
-    });
-}
-
 function startCheckUI(callback) {
 
     glueck_definition_editor_unlocked = false;
@@ -78,117 +32,6 @@ function stopCheckUI(callback) {
         });
     });
 
-}
-
-function editorEnterDown(event) {
-
-    if (!event) {
-        event = window.event;
-    }
-    var keyCode = event.which || event.keyCode,
-        target = event.target || event.srcElement;
-
-    if (keyCode === 13 && !event.shiftKey) {
-        event.preventDefault();
-    }
-}
-
-function editorEnterUp(event) {
-
-    if (!event) {
-        event = window.event;
-    }
-    var keyCode = event.which || event.keyCode,
-        target = event.target || event.srcElement;
-
-    if (keyCode === 13 && !event.shiftKey) {
-        event.preventDefault();
-        if (glueck_definition_editor_unlocked) {
-            checkClick();
-        }
-    }
-}
-
-function checkClick() {
-
-    /*  get the text in the editor and and reinsert it, deleting all additional markup
-     */
-
-    var editor = $('#editor');
-
-    var editor_text = "Glück ist, " + editor.text().trim();
-    editor.text(editor.text().trim());
-
-    startCheckUI(function() {
-
-        checkForErrors(editor_text, function (error_data) {
-
-            /*  display error data if any are yielded or accept input sentence
-             */
-
-            var editorarea = $('#editorarea');
-
-            if (error_data.length > 0) {
-
-                raisefaults();
-
-                insertErrorSpans(error_data, $('#editor'), 11, editor_text.length);
-                generateErrorBox(error_data, $('#textbox'));
-
-                stopCheckUI(function() {
-                    editorarea.addClass('incorrect');
-                    editorarea.effect("highlight", {color: '#FF7F7F'}, function() {
-                        editorarea.effect("highlight", {color: '#FF7F7F'});
-                    });
-                    displayErrors($('#textbox'));
-                    placeCaretAtEnd(document.getElementById('editor'));
-                });
-            } else {
-
-                raisepoints();
-
-                stopCheckUI(function () {
-                    displayLines();
-                    editorarea.addClass('correct');
-                    editorarea.effect("highlight", {color: '#A8D54D'}, function () {
-                        editorarea.effect("highlight", {color: '#A8D54D'}, function () {
-                            editorarea.removeClass('correct');
-                            $('#editor').text('');
-                        });
-                    });
-                });
-            }
-        });
-    });
-}
-
-function errorClick(target, toggle) {
-
-    if($(target).hasClass('closed')) {
-        $(target).removeClass('closed');
-        $(target).addClass('open');
-        $(target).closest('.error').children(':not(.errtitle)').slideDown(25);
-    }else if($(target).hasClass('open')){
-        if (toggle) {
-            $(target).removeClass('open');
-            $(target).addClass('closed');
-            $(target).closest('.error').children(':not(.errtitle)').slideUp(25);
-        }
-    }
-
-}
-
-function loadClick(ev) {
-
-    $('#tree').slideDown(75);
-    $('#treebox').find('.explanation').slideUp(75);
-
-    $('.linebox').removeClass('active');
-    var linebox = ev.target.closest('.linebox');
-    $(linebox).addClass('active');
-
-    var treedata = $(linebox).children('.dataarea').children('.treedata')[0];
-    updateTree(JSON.parse($(treedata).text()));
 }
 
 function highlightRepetition(index) {
@@ -261,6 +104,8 @@ function displayErrors(target) {
 
 
 //helper functions
+
+//source: http://stackoverflow.com/questions/4233265/contenteditable-set-caret-at-the-end-of-the-text-cross-browser
 function placeCaretAtEnd(el) {
     el.focus();
     if (typeof window.getSelection != "undefined"

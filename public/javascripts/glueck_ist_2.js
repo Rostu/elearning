@@ -1,13 +1,13 @@
 $( init );
 
 var glueck_definition_maxfaults;
+var glueck_definition_tree_help;
+var glueck_definition_editor_unlocked;
 
 function init() {
 
     glueck_definition_maxfaults = false;
     glueck_definition_tree_help = false;
-
-    glueck_definition_trees_enabled = true;
     glueck_definition_editor_unlocked = true;
 
     $('#textoverlay').hide();
@@ -24,6 +24,11 @@ function init() {
         var keyCode = event.which || event.keyCode;
 
         if (!(keyCode === 13 && !event.shiftKey)) {
+
+            /*  prevent pasting content which is marked up; adapted from:
+             *  source: http://stackoverflow.com/questions/12027137/javascript-trick-for-paste-as-plain-text-in-execcommand/19327995#19327995
+             */
+
             event.preventDefault();
 
             if (event.clipboardData) {
@@ -80,352 +85,168 @@ function init() {
     });
 }
 
-function insertErrorSpans(errors, target, offset, end) {
+function editorEnterDown(event) {
 
-    /*  insert coloured error spans based on position data provided by LanguageTool; offset is needed to compute the
-     *  correct span positions for the current target only because the coordinates taken from the results of LanguageTool
-     *  are based on the entire text;
-     */
-
-    var original_text = target.text();
-    target.text('');
-
-    var span_trees = generateSpanTrees(errors);
-    var mistakes_and_text = insertTexts(span_trees, offset, end);
-    var content = compileTargetContent(errors, mistakes_and_text, original_text, offset);
-
-    $(target).append(content);
-}
-
-function generateSpanTrees(errors) {
-
-    /*  find errors occurring inside each other and generate a corresponding structure for the error spans recursively
-     *  with the help of the function "generateSpanTree"; the hash "span_children" serves as the basis for the recursive
-     *  generation;
-     */
-
-    var span_children = {},
-        items = [];
-
-    var errors_length_asc = $.extend(true, [], errors);
-    errors_length_asc = errors_length_asc.sort(dynamicSort('errorlength'));
-
-    $.each(errors_length_asc, function(c, container) {
-
-        span_children[container.number] = [];
-
-        $.each(errors_length_asc, function(i, item) {
-            if (c != i
-                && items.indexOf(item.number) < 0
-                && item.fromx >= container.fromx
-                && item.tox <= container.tox) {
-                span_children[container.number].push(item.number);
-                items.push(item.number);
-            }
-        });
-    });
-
-    var error_numbers = [];
-
-    for (var key in span_children) {
-        error_numbers.push(key - 0);
+    if (!event) {
+        event = window.event;
     }
+    var keyCode = event.which || event.keyCode,
+        target = event.target || event.srcElement;
 
-    var roots = error_numbers.filter(function(i) {
-        return items.indexOf(i) < 0;
-    });
-
-    var span_trees = [];
-
-    $.each(roots, function(index, root) {
-        span_trees.push(generateSpanTree(root, errors, span_children));
-    });
-
-    return span_trees;
-}
-
-function generateSpanTree(index, errors, span_children) {
-
-    var mistake = {
-        type: 'mistake',
-        index: index,
-        start: errors[index].fromx,
-        end: errors[index].tox
-    };
-
-    if(span_children[index].length > 0) {
-
-        mistake.children = [];
-        $.each(span_children[index], function(i, child) {
-            mistake.children.push(generateSpanTree(child, errors, span_children));
-        });
+    if (keyCode === 13 && !event.shiftKey) {
+        event.preventDefault();
     }
-    return mistake;
 }
 
-function insertTexts(mistakes, last_end, end) {
+function editorEnterUp(event) {
 
-    /*  takes care of filling in the gaps between the start and the end of the input string as well as between and
-     *  within the mistake spans;
+    if (!event) {
+        event = window.event;
+    }
+    var keyCode = event.which || event.keyCode,
+        target = event.target || event.srcElement;
+
+    if (keyCode === 13 && !event.shiftKey) {
+        event.preventDefault();
+        if (glueck_definition_editor_unlocked) {
+            checkClick();
+        }
+    }
+}
+
+function updateErrorSpans() {
+
+    /*  check all spans associated with errors for changes; mark errors as modified or deleted where appropriate
      */
 
-    var mistakes_and_text = [];
+    var errors = $('.error');
 
-    $.each(mistakes, function(index, mistake){
-        if(mistake.start < last_end) {
-            if(mistake.children) {
-                if (mistake.children[0].start >= last_end) {
-                    mistake.start = mistake.children[0].start;
-                }
-            } else {
-                mistake.start = last_end;
-            }
-        }
-        if(mistake.start > last_end) {
-            mistakes_and_text.push(generateText(last_end, mistake.start));
-        }
-        if(mistake.children) {
-            mistake.children = insertTexts(mistake.children, mistake.start, mistake.end);
-        }
-        mistakes_and_text.push(mistake);
-        last_end = mistake.end;
-    });
-    if(last_end < end) {
-        mistakes_and_text.push(generateText(last_end, end));
-    }
-
-    return mistakes_and_text;
-}
-
-function generateText(start, end) {
-    var text = {
-        type: 'text',
-        start: start,
-        end: end
-    };
-    return text;
-}
-
-function compileTargetContent(errors, mistakes_and_text, original_text, offset) {
-
-    /*  turns the generated span structure into actual html content
-     */
-
-    var contents = [];
-
-    $.each(mistakes_and_text, function(index, mnt) {
-
-        if (mnt.type === 'text') {
-
-            var text = jQuery('<span/>', {
-                class: 'text',
-                text: original_text.substring(mnt.start - offset, mnt.end - offset)
-            });
-
-            contents.push(text);
-
+    var spans = $.map(errors, function(error, index) {
+        var coordinates_index = $(error).attr('id').indexOf('co');
+        var coordinates = $(error).attr('id').slice(coordinates_index, $(error).attr('id').length);
+        var span = $("span[id$='" + coordinates + "']");
+        if (span.length > 0) {
+            return span;
         } else {
+            markDeleted(error);
+        }
+    });
 
-            var mistake = generateMistake(errors, original_text, mnt, offset);
+    $.each(spans, function(index, span) {
 
-            if (mnt.children) {
-                $(mistake).text('');
-                $.each(compileTargetContent(errors, mnt.children, original_text, offset), function (index, item) {
-                    mistake.append(item);
+        var original = $(span).attr('chosen') ?
+            $(span).attr('chosen') :
+            $(span).data('text');
+
+        if ($(span).text() !== original) {
+
+            var coordinates_index = $(span).attr('id').indexOf('co');
+            var coordinates = $(span).attr('id').slice(coordinates_index, $(span).attr('id').length);
+            var error = $(".error[id$='" + coordinates + "']");
+
+            if ($(span).text().length == 0) {
+                markDeleted(error);
+                $(span).remove();
+            } else {
+                $(span).attr('chosen', $(span).text());
+                $(error).removeClass('new');
+                $(error).addClass('modified');
+            }
+        }
+    });
+}
+
+function checkClick() {
+
+    /*  get the text in the editor and reinsert it, deleting all additional markup
+     */
+
+    var editor = $('#editor');
+
+    var editor_text = "Glück ist, " + editor.text().trim();
+    editor.text(editor.text().trim());
+
+    startCheckUI(function() {
+
+        checkForErrors(editor_text, function (error_data) {
+
+            /*  display error data if any are yielded or accept input sentence
+             */
+
+            var editorarea = $('#editorarea');
+
+            if (error_data.length > 0) {
+
+                raisefaults();
+
+                insertErrorSpans(error_data, $('#editor'), 11, editor_text.length);
+                generateErrorBox(error_data, $('#textbox'));
+
+                stopCheckUI(function() {
+                    editorarea.addClass('incorrect');
+                    editorarea.effect("highlight", {color: '#FF7F7F'}, function() {
+                        editorarea.effect("highlight", {color: '#FF7F7F'});
+                    });
+                    displayErrors($('#textbox'));
+                    placeCaretAtEnd(document.getElementById('editor'));
+                });
+            } else {
+
+                raisepoints();
+
+                stopCheckUI(function () {
+                    displayLines();
+                    editorarea.addClass('correct');
+                    editorarea.effect("highlight", {color: '#A8D54D'}, function () {
+                        editorarea.effect("highlight", {color: '#A8D54D'}, function () {
+                            editorarea.removeClass('correct');
+                            $('#editor').text('');
+                        });
+                    });
                 });
             }
-            $(mistake).data('original', $(mistake).html());
-            $(mistake).data('text', $(mistake).text());
-            contents.push(mistake);
-        }
+        });
     });
-    return contents;
 }
 
-function generateMistake(errors, original_text, mnt, offset) {
+function errorClick(target, toggle) {
 
-    var err_string = original_text.substring(mnt.start - offset, mnt.end - offset);
-    var err_coordinates = '' + errors[mnt.index].fromx + errors[mnt.index].tox;
+    /*  handles opening and closing errors
+     */
 
-    var mistake = jQuery('<span/>', {
-        id: 'esco' + err_coordinates,
-        class: 'mistake',
-        text: err_string
-    });
-    $(mistake).data('original',$(mistake).html());
-    $(mistake).hover(
-        function() {
-            $(".error[id$='co" + err_coordinates + "']").addClass( "hover" );
-        }, function() {
-            $(".error[id$='co" + err_coordinates + "']").removeClass( "hover" );
+    if($(target).hasClass('closed')) {
+        $(target).removeClass('closed');
+        $(target).addClass('open');
+        $(target).closest('.error').children(':not(.errtitle)').slideDown(25);
+    }else if($(target).hasClass('open')){
+        if (toggle) {
+            $(target).removeClass('open');
+            $(target).addClass('closed');
+            $(target).closest('.error').children(':not(.errtitle)').slideUp(25);
         }
-    );
-
-    $(mistake).dblclick(function(event) {
-        event.preventDefault();
-        var relevant_error = $(".error[id$='co" + err_coordinates + "']");
-        $('html, body').animate({
-            scrollTop: relevant_error.offset().top
-        }, 25);
-        errorClick(relevant_error, false);
-    });
-    return mistake;
+    }
 }
 
-function generateErrorBox(errlist, target) {
+function loadTreeClick(ev) {
 
-    var errorbox = jQuery('<div/>', {
-        id: $(target).attr('id') + 'eb',
-        class: 'errorbox flexcontainer flexitem'
-    });
-    $(errorbox).hide();
-    $(target).append(errorbox);
+    /*  handles treebox display
+     */
 
-    $.each(errlist, function(index, error) {
-        generateError(error, errorbox);
-    });
+    $('#tree').slideDown(75);
+    $('#treebox').find('.explanation').slideUp(75);
 
-}
+    $('.linebox').removeClass('active');
+    var linebox = ev.target.closest('.linebox');
+    $(linebox).addClass('active');
 
-function generateError(data, target) {
-
-    var additional = false;
-    var err_coordinates = '' + data.fromx + data.tox;
-
-    var error = jQuery('<div/>', {
-        id: 'er' + pad(data.number, 2) + 'co' + err_coordinates,
-        class: 'error flexcontainer flexitem new'
-    });
-    $(error).hover(
-        function() {
-            $("span[id$='esco" + err_coordinates + "']").addClass('hover');
-        }, function() {
-            $("span[id$='esco" + err_coordinates + "']").removeClass('hover');
-        }
-    );
-    $(error).hide();
-
-    var err_info = [];
-
-    var errtitle = jQuery('<div/>', {
-        class: 'errtitle flexcontainer flexitem'
-    });
-
-    var errstatus = jQuery('<div/>', {
-        class: 'errstatus flexitem'
-    });
-    $(errstatus).click(function(event) {
-        event.preventDefault();
-        errorClick($(error), true);
-    });
-    $(errtitle).append(errstatus);
-
-    var errmsg = jQuery('<div/>', {
-        class: 'errmsg flexitem',
-        text: data.msg
-    });
-    $(errmsg).click(function(event) {
-        event.preventDefault();
-        errorClick($(error), true);
-    });
-
-    var errcat = jQuery('<b/>', {
-        text: data.category + ': '
-    });
-    $(errmsg).prepend(errcat);
-    $(errtitle).append(errmsg);
-
-    var errarea = jQuery('<div/>', {
-        class: 'errarea flexcontainer flexitem'
-    });
-    $(errarea).click(function(event) {
-        event.preventDefault();
-        errorClick($(error), true);
-    });
-    $(errarea).hide();
-
-    var errtriangle = jQuery('<div/>', {
-        class: 'errtriangle flexitem'
-    });
-    $(errarea).append(errtriangle);
-    $(errtitle).append(errarea);
-
-    err_info.push(errtitle);
-    $(error).append(errtitle);
-
-    if(data.replacements) {
-
-        additional = true;
-
-        var errrep = jQuery('<div/>', {
-            class: 'errrep flexcontainer flexitem'
-        });
-        $(errrep).hide();
-        $(error).append(errrep);
-
-        var reps = data.replacements.split('#');
-
-        $.each(reps, function(rep_index, replacement){
-
-            var rep = jQuery('<div/>', {
-                id: 'er' + pad(data.number, 2) + 'rp' + pad(rep_index, 2),
-                class: 'rep flexitem',
-                text: replacement
-            });
-            $(rep).hover(
-                function() {
-                    $("span[id$='esco" + err_coordinates + "']").text($(rep).text());
-                }, function() {
-                    var relevant_span = $("span[id$='esco" + err_coordinates + "']");
-                    var reset = relevant_span.attr('chosen') ?
-                        relevant_span.attr('chosen') :
-                        relevant_span.data('original');
-                    relevant_span.html(reset);
-                }
-            );
-            $(rep).click(
-                function() {
-                    $(error).removeClass('new');
-                    $(error).addClass('modified');
-
-                    var relevant_span = $("span[id$='esco" + err_coordinates + "']");
-
-                    relevant_span.attr('chosen', '' + $(rep).text());
-                    relevant_span.text($(rep).text());
-                }
-            );
-            $(errrep).append(rep);
-        });
-    }
-
-    if(data.url) {
-
-        additional = true;
-
-        var url = jQuery('<a/>', {
-            target: 'blank',
-            text: 'Mehr Informationen',
-            href: data.url
-        });
-
-        var errurl = jQuery('<div/>', {
-            class: 'errurl flexitem'
-        });
-        $(errurl).append(url);
-        $(errurl).hide();
-        $(error).append(errurl);
-
-    }
-
-    if(additional) {
-        $(errarea).show();
-        $(error).addClass('closed');
-    }
-
-    $(target).append(error);
+    var treedata = $(linebox).children('.dataarea').children('.treedata')[0];
+    updateTree(JSON.parse($(treedata).text()));
 }
 
 function generateLine(index, sentence, target) {
+
+    /*  creates div for accepted sentence and adds it to target
+     */
 
     var line = jQuery('<div/>', {
         id: 'll' + pad(index, 2),
@@ -462,7 +283,7 @@ function generateLine(index, sentence, target) {
         class: 'loadbutton flexitem'
     });
     $(loadbutton).click(function(event) {
-        loadClick(event);
+        loadTreeClick(event);
     });
     $(loadarea).append(loadbutton);
     $(linebox).append(loadarea);
@@ -503,25 +324,8 @@ function generateLink(text, class_str) {
     return link;
 }
 
-
-
 //helper functions
 function pad (str, max) {
     str = str.toString();
     return str.length < max ? pad("0" + str, max) : str;
-}
-
-function endsWith(str, suffix) {
-    return str.indexOf(suffix, str.length - suffix.length) !== -1;
-}
-
-function arrayUnique(array) {
-    var a = array.concat();
-    for(var i=0; i<a.length; ++i) {
-        for(var j=i+1; j<a.length; ++j) {
-            if(a[i] === a[j])
-                a.splice(j--, 1);
-        }
-    }
-    return a;
 }

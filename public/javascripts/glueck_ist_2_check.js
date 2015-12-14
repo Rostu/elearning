@@ -1,7 +1,7 @@
 function checkForErrors(editor_text, callback) {
 
     /*  check input text; only compare with model sentences if:
-     *      - text contains letter, comma, full-stop, hyphen characters only
+     *      - text contains letter, comma, full-stop, and hyphen characters only
      *      - text ends with a full stop,
      *      - texts comprises only one sentence,
      *      - that sentence does not exceed a certain length,
@@ -32,8 +32,8 @@ function checkForErrors(editor_text, callback) {
                         "Serverfehler",
                         "Bei der Anfrage an den Parser ist ein Fehler aufgetreten. Bitte entschuldige den Fehler und " +
                         "suche dir vorrübergehend eine andere Übungsaufgabe aus. Der Fehlerbericht wurde bereits weitergeleitet.",
-                        11, editor_text.length + 1, [], editor_text);
-                    errors.push(analyseError(errors.length, base_error));
+                        11, editor_text.length + 1, [], "", editor_text);
+                    errors.push(restructureError(errors.length, base_error));
                 } else {
 
                     var sentence_data = parse_json.document.sentences.sentence;
@@ -59,14 +59,14 @@ function checkForErrors(editor_text, callback) {
                                 "Bei der Anfrage an die Rechtschreib- und Grammatikkorrektur ist ein Fehler " +
                                 "aufgetreten. Bitte entschuldige den Fehler und suche dir vorrübergehend eine andere " +
                                 "Übungsaufgabe aus. Der Fehlerbericht wurde bereits weitergeleitet.",
-                                11, editor_text.length + 1, [], editor_text);
-                            errors.push(analyseError(errors.length, base_error));
+                                11, editor_text.length + 1, [], "", editor_text);
+                            errors.push(restructureError(errors.length, base_error));
                         } else {
                             if (json.matches.error && json.matches.error.length > 0) {
 
                                 $.each(json.matches.error, function (index, error) {
                                     if (error.attributes.fromx > 10) {
-                                        var analysed_error = analyseError(index, error);
+                                        var analysed_error = restructureError(index, error);
                                         errors.push(analysed_error);
                                     }
                                 });
@@ -82,8 +82,8 @@ function checkForErrors(editor_text, callback) {
                                     var base_error = generateBaseError(
                                         "Satzbau",
                                         validation_msg,
-                                        11, editor_text.length + 1, [], editor_text);
-                                    errors.push(analyseError(errors.length, base_error));
+                                        11, editor_text.length + 1, [], "", editor_text);
+                                    errors.push(restructureError(errors.length, base_error));
                                     addLink($("#info1"), generateLink("Glück ist, ... (Hilfe)", "define-help"));
                                 } else {
 
@@ -122,8 +122,8 @@ function validateCharacters(editor_text) {
         var base_error = generateBaseError(
             "Ungültige Zeichen",
             "Bitte verwende nur Buchstaben, Bindestriche, Kommata und Punkte für deine Eingabe.",
-            match.index, match.index + match[0].length, [], editor_text);
-        errors.push(analyseError(errors.length, base_error));
+            match.index, match.index + match[0].length, [], "", editor_text);
+        errors.push(restructureError(errors.length, base_error));
     }
     return errors;
 }
@@ -140,8 +140,8 @@ function excludeDuplicates(editor_text, correct_sentences) {
         var base_error = generateBaseError(
             "Wiederholung",
             "Du hast Glück schon einmal genau so definiert. Denke dir bitte einen neuen Satz aus.",
-            11, editor_text.length + 1, [], editor_text);
-        errors.push(analyseError(errors.length, base_error));
+            11, editor_text.length + 1, [], "", editor_text);
+        errors.push(restructureError(errors.length, base_error));
         highlightRepetition($.inArray(editor_text, correct_sentences));
     }
     return errors;
@@ -159,22 +159,22 @@ function validateSentence(editor_text, sentence_data) {
         base_error = generateBaseError(
             "Satzanzahl",
             "Bitte gib nur einen einzelnen Satz ein.",
-            error_offset, editor_text.length + 1, [], editor_text);
-        errors.push(analyseError(errors.length, base_error));
+            error_offset, editor_text.length + 1, [], "", editor_text);
+        errors.push(restructureError(errors.length, base_error));
 
         return errors;
     } else {
         var words = editor_text.split(/\s+/);
 
-        if (words.length > 30) {
+        if (words.length > 20) {
 
             var exceeding = words.slice(30, words.length).join(" ");
 
             base_error = generateBaseError(
                 "Satzlänge",
                 "Achte bitte darauf, dass dein Satz nicht zu viele Wörter enthält. Versuche es mit einem kürzeren Satz erneut.",
-                editor_text.lastIndexOf(exceeding), editor_text.length, [], editor_text);
-            errors.push(analyseError(errors.length, base_error));
+                editor_text.lastIndexOf(exceeding), editor_text.length, [], "", editor_text);
+            errors.push(restructureError(errors.length, base_error));
         }
 
         if (!endsWith(editor_text, ".")) {
@@ -185,8 +185,8 @@ function validateSentence(editor_text, sentence_data) {
             base_error = generateBaseError(
                 "Zeichensetzung",
                 "Achte bitte darauf, dass deine Eingabe das Satzende mit einem Punkt markiert.",
-                editor_text.length, editor_text.length + 1, ["."], editor_text);
-            errors.push(analyseError(errors.length, base_error));
+                editor_text.length, editor_text.length + 1, ["."], "", editor_text);
+            errors.push(restructureError(errors.length, base_error));
         }
         return errors;
     }
@@ -195,50 +195,6 @@ function validateSentence(editor_text, sentence_data) {
 
 
 //helper functions
-function generateBaseError(ctg, msg, fromx, tox, reps, context) {
-
-    /*  mocking up the structure of an error yielded by LanguageTool
-     */
-
-    var base_error = {attributes:
-    {
-        category: ctg,
-        msg: msg,
-        fromx: fromx,
-        tox: tox,
-        context: context
-    }
-    };
-
-    if (reps.length > 0) {
-        base_error.attributes.replacements = reps.join("#");
-    }
-
-    return base_error;
-
-}
-
-function analyseError(index, error) {
-
-    /*  restructure error data, adding some information
-     */
-
-    if (endsWith(error.attributes.context.slice(error.attributes.fromx, error.attributes.tox), '.')) {
-        error.attributes.tox = error.attributes.tox - 1;
-        error.attributes.errorlength = error.attributes.errorlength - 1;
-    }
-
-    var analysed_error = {
-        'number': index
-    };
-
-    $.each(error.attributes, function(key, value) {
-        if (key === 'errorlength') {
-            value = value - 0;
-        }
-        analysed_error[key] = value;
-    });
-
-    return analysed_error;
-
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }

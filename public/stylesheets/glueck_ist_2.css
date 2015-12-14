@@ -36,6 +36,8 @@
 }
 
 .flexcontainer {
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
     display: flex;
 
     padding: 0 10px 10px 0;
@@ -46,6 +48,8 @@
 .flexitem {
     margin: 10px 0 0 10px;
 
+    -webkit-flex: 1 1 auto;          /* Chrome */
+    -ms-flex: 1 1 auto;              /* IE 10 */
     flex: 1 1 auto;
 }
 
@@ -55,6 +59,8 @@
 
     text-align: center;
 
+    -webkit-flex: 0 1 auto;          /* Chrome */
+    -ms-flex: 0 1 auto;              /* IE 10 */
     flex: 0 1 auto;
 
     color: white;
@@ -133,6 +139,8 @@
 }
 
 #startarea, #checkarea, .loadarea, .errarea {
+    -webkit-flex: 0 1 auto;          /* Chrome */
+    -ms-flex: 0 1 auto;              /* IE 10 */
     flex: 0 1 auto;
 
     align-items: flex-start;
@@ -285,6 +293,8 @@
 .errstatus {
     padding: 10px;
 
+    -webkit-flex: 0 1 auto;          /* Chrome */
+    -ms-flex: 0 1 auto;              /* IE 10 */
     flex: 0 1 auto;
 
     font-weight: bold;
@@ -321,6 +331,8 @@
 .rep {
     padding: 10px;
 
+    -webkit-flex: 0 1 auto;          /* Chrome */
+    -ms-flex: 0 1 auto;              /* IE 10 */
     flex: 0 1 auto;
 
     background-color: #A8D54D;
@@ -368,6 +380,8 @@
     width: 40px;
     height: 40px;
 
+    -webkit-flex: 0 1 auto;          /* Chrome */
+    -ms-flex: 0 1 auto;              /* IE 10 */
     flex: 0 1 auto;
 
     background-color: #005E9C;
@@ -396,6 +410,8 @@
 }
 
 #tree {
+    -webkit-flex: 0 1 auto;          /* Chrome */
+    -ms-flex: 0 1 auto;              /* IE 10 */
     flex: 0 1 auto;
     align-self: auto;
 }

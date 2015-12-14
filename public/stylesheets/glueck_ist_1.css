@@ -15,6 +15,8 @@
 }
 
 .flexcontainer {
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
     display: flex;
 
     padding: 0 10px 10px 0;
@@ -25,6 +27,8 @@
 .flexitem {
     margin: 10px 0 0 10px;
 
+    -webkit-flex: 1 1 auto;          /* Chrome */
+    -ms-flex: 1 1 auto;              /* IE 10 */
     flex: 1 1 auto;
 }
 
@@ -66,6 +70,8 @@
 
     height: 20px;
 
+    -webkit-flex: 0 1 auto;          /* Chrome */
+    -ms-flex: 0 1 auto;              /* IE 10 */
     flex: 0 1 auto;
 }
 
@@ -104,6 +110,8 @@
 
     text-align: center;
 
+    -webkit-flex: 0 1 auto;          /* Chrome */
+    -ms-flex: 0 1 auto;              /* IE 10 */
     flex: 0 1 auto;
 
     color: white;
@@ -119,6 +127,8 @@
 
     line-height: 18px;
 
+    -webkit-flex: 0 1 auto;          /* Chrome */
+    -ms-flex: 0 1 auto;              /* IE 10 */
     flex: 0 1 auto;
 
     align-items: center;
@@ -133,6 +143,8 @@
     height: 40px;
     width: 40px;
 
+    -webkit-flex: 0 1 auto;          /* Chrome */
+    -ms-flex: 0 1 auto;              /* IE 10 */
     flex: 0 1 auto;
 
     background: #7AB3E3 url("../images/help_joker.png") no-repeat center center;

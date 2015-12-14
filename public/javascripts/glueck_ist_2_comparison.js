@@ -191,7 +191,7 @@ function validateParseWithLogs(tree, callback) {
                         });
                         console.log("-|- input_subtrees:" + JSON.stringify(input_subtree_root_strings));
 
-                        var to_diff = [model_subtree_root_strings, input_subtree_root_strings]
+                        var to_diff = [model_subtree_root_strings, input_subtree_root_strings];
                         to_diff.sort(function(a, b){
                             return a.length - b.length;
                         });
@@ -217,7 +217,7 @@ function validateParseWithLogs(tree, callback) {
 
                         $.getJSON("javascripts/glueck_ist_2_subset_trees.json", function (model_subset_trees) {
 
-                            console.log("glueck_ist_2_subtrees");
+                            console.log("glueck_ist_2_subset_trees");
 
                             relevant_indexes = relevant_indexes.filter(function (tree_index) {
 
@@ -454,21 +454,23 @@ function getRootString(tree, with_depth, with_desc) {
 
 
 //helper functions
-function cartesianProduct(two_dim_arr) {
-    var i, j, l, m, head, o = [];
-    if (!two_dim_arr || two_dim_arr.length == 0) return two_dim_arr;
+//source: http://stackoverflow.com/questions/12303989/cartesian-product-of-multiple-arrays-in-javascript/29585704#29585704
+function cartesianProduct(a) { // a = array of array
+    var i, j, l, m, a1, o = [];
+    if (!a || a.length == 0) return a;
 
-    head = two_dim_arr.splice(0,1);
-    two_dim_arr = cartesianProduct(two_dim_arr);
-    for (i = 0, l = head[0].length; i < l; i++) {
-        if (two_dim_arr && two_dim_arr.length) for (j = 0, m = two_dim_arr.length; j < m; j++)
-            o.push([head[0][i]].concat(two_dim_arr[j]));
+    a1 = a.splice(0,1);
+    a = cartesianProduct(a);
+    for (i = 0, l = a1[0].length; i < l; i++) {
+        if (a && a.length) for (j = 0, m = a.length; j < m; j++)
+            o.push([a1[0][i]].concat(a[j]));
         else
-            o.push([head[0][i]]);
+            o.push([a1[0][i]]);
     }
     return o;
 }
 
+//source: http://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value-in-javascript/4760279#4760279
 function dynamicSort(property) {
     var sort_order = 1;
     if(property[0] === "-") {

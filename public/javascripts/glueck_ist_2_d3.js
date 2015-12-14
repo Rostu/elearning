@@ -1,6 +1,7 @@
 function updateTree(json) {
 
-    /*  taken and adapted from examples of D3 library for displaying tree structures
+    /*  taken and adapted from example of D3 library for displaying tree structures
+     *  source: http://bl.ocks.org/mbostock/4339083
      */
 
     $('#tree').children('svg').remove();
@@ -167,6 +168,10 @@ function updateTree(json) {
 
 //helper functions
 function traverseParseTree(tree){
+
+    /*  recursively restructures parsedTree for proper display
+     */
+
     if(tree.children !== undefined) {
         tree.name = tree.type;
         $.each($(tree.children), function(index, child) {
