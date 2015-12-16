@@ -233,6 +233,10 @@ exports.get_testy = function(req, res){
     res.render('testy');
 };
 
+exports.get_Begriffe_aus_Text = function(req, res){
+    res.render('Begriffe_aus_Text');
+};
+
 exports.get_next = function(req, res){
     var lastsite = req.param("last");
     lastsite = lastsite.replace("/","");

@@ -114,6 +114,8 @@ app.get('/impressum', impressum.get_imp);
 app.get('/glueck_Memory', ubung.get_glueck_memory);
 app.get('/glueck_Textverstehen_Wortspirale', ubung.get_glueck_Textverstehen_Wortspirale);
 app.get('/neuanlegen', ubung.neu);
+app.get('/Begriffe_aus_Text', ubung.get_Begriffe_aus_Text);
+
 //app.get('/points', pointshandler.get_points);
 
 app.get('/points:last?', function(req, res){
