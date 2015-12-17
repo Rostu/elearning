@@ -76,7 +76,7 @@ function checkForErrors(editor_text, callback) {
                         if (errors.length > 0) {
                             callback(errors);
                         } else {
-                            validateParseWithLogs(sentence_data[0].parsedTree, function (validation_msg) {
+                            validateParse(sentence_data[0].parsedTree, function (validation_msg) {
 
                                 if (validation_msg) {
                                     var base_error = generateBaseError(

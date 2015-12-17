@@ -29,7 +29,7 @@ function displayContents() {
     });
 
     var satzpuzzle = $("#satzpuzzle");
-    
+
     /*  Shuffle sentences
      */
     for (var i = $(satzpuzzle).children('.linebox').length; i >= 0; i--) {

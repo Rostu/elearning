@@ -25,15 +25,13 @@ function validateParse(tree, callback) {
     /*  validate parse by comparing it with the model data
      */
 
-    glueck_definition_levelcount = {};
-
     var pruned_input_clone = pruneLeaves($.extend(true, {}, tree));
     var enhanced_pruned_tree_clone = enhanceTree(pruned_input_clone, 0, {});
 
     getComparisonData(enhanced_pruned_tree_clone, function(input_data) {
         /*  compare tree depths first and store relevant indexes
          */
-        $.getJSON("javascripts/javascripts/glueck_ist_2_trees.json", function(model_trees) {
+        $.getJSON("javascripts/glueck_ist_2_trees.json", function(model_trees) {
 
             var model_depths = $.map(model_trees, function(tree, tree_index) {
                 return tree["depth"];
@@ -68,7 +66,7 @@ function validateParse(tree, callback) {
                             return getRootString(subtree, true, false);
                         });
 
-                        var to_diff = [model_subtree_root_strings, input_subtree_root_strings]
+                        var to_diff = [model_subtree_root_strings, input_subtree_root_strings];
                         to_diff.sort(function(a, b){
                             return a.length - b.length;
                         });
