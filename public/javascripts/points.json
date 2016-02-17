@@ -15,6 +15,18 @@
         "name":"glueck_Textproduktion_Antonyme_B", "maxpoints":12, "maxfaults":12
     },
     {
+        "name":"Begriffe_aus_Text", "maxpoints":45, "maxfaults":45
+    },
+    {
+        "name":"liveticker_basketball_synonyme", "maxpoints":4, "maxfaults":12
+    },
+    {
+        "name":"BaBa_Textproduktion", "maxpoints":9, "maxfaults":70
+    },
+    {
+        "name":"BaBa_Komposita_a", "maxpoints":6, "maxfaults":30
+    },
+    {
         "name":"glueck_video", "maxpoints":0, "maxfaults":0
     },
     {

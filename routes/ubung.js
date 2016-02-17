@@ -184,6 +184,9 @@ exports.get_ersti_end = function(req,res) {
 exports.get_veggieday_start = function(req, res){
     res.render('veggieday_start');
 };
+exports.get_liveticker_fussball_redewendungen = function(req, res){
+    res.render('liveticker_fussball_redewendungen');
+};
 exports.get_veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen = function(req, res){
     res.render('veggieday_Textverstehen_Schluesselwoerter_in_Boulevardzeitungen');
 };
@@ -256,6 +259,27 @@ exports.get_zukunft_Kreuzwortraetsel = function(req, res){
 exports.get_testy = function(req, res){
     res.render('testy');
 };
+
+exports.get_Begriffe_aus_Text = function(req, res){
+    res.render('Begriffe_aus_Text');
+};
+
+exports.get_Textverstehen_FuBa = function(req, res){
+    res.render('Textverstehen_FuBa');
+};
+
+exports.get_BaBa_Textproduktion = function(req, res){
+    res.render('BaBa_Textproduktion');
+}
+
+exports.get_liveticker_basketball_synonyme = function(req, res){
+    res.render('liveticker_basketball_synonyme');
+}
+
+exports.get_BaBa_Komposita_a = function(req, res){
+    res.render('BaBa_Komposita_a');
+}
+
 
 exports.get_next = function(req, res){
     var lastsite = req.param("last");
