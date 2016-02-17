@@ -1,0 +1,26 @@
+extends layout
+block content
+    #content_background
+        link(rel='stylesheet', href='stylesheets/NeueEnergien_Aufgabe_3.css')
+        script( src='javascripts/NeueEnergien_Aufgabe_3.js')
+        #Aufgabenbox
+            h3 Ordne die Wörter, die du gefunden hast den angegebenen Kategorien zu, indem du die Wörter in die passende Spalte ziehst.
+            p Nicht alle Wörter können einer Kategorie zugeordnet werden.
+            | Lass  diese einfach im Kasten stehen.
+            | Wenn du auf TIPP klickst, bekommst du angezeigt, wie viele Wörter in die jeweilige Spalte gehören.
+            | Wenn du fertig bist, klicke auf „Kontrolle“.
+
+        #wrapper
+            #Vorgabe
+
+            #Loesung
+                #Energiequelle.Antwort(int="1")
+                    h3 Energiequelle
+                        .Frage#Frage1 ?
+                #Energieform.Antwort(int="2")
+                    h3 Energieform
+                        .Frage#Frage2 ?
+                #Eigenschaften.Antwort(int="3")
+                    h3 Eigenschaften
+                        .Frage#Frage3 ?
+

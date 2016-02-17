@@ -1,1 +1,136 @@
+.Textbox {
+    webkit-box-shadow: 0px 2px 5px darkgrey;
+    moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background-color: #E5EFF5;
+    display: table-cell;
+    vertical-align: top;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 15px;
+    width: 40%;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+.Bilderbox {
+    webkit-box-shadow: 0px 2px 5px darkgrey;
+    moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background-color: #E5EFF5;
+    display: table-cell;
+    vertical-align: top;
+    padding: 10px;
+    margin: 15px;
+    width: 40%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.subTextBox {
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    user-select: none;
+    position: relative;
+    cursor: auto;
+}
+
+.textContainer {
+    display:inline-box;
+    margin: 5px auto;
+    padding: 5px;
+    width: 40%;
+}
+
+.Bild {
+    vertical-align: top;
+    padding: 10px;
+    width: 90%;
+    margin-left: 15px;
+    float: left;
+}
+
+.Bild.border {
+    border-style: solid;
+    border-color: #0b97c4;
+    border-width: 2px;
+
+}
+
+.textToken {
+    webkit-box-shadow: 0 2px 5px darkgray;
+    moz-box-shadow: 0 2px 5px darkgray;
+    box-shadow: 0 2px 5px darkgray;
+    background: #0083cb;
+    color: white;
+    font-weight: bold;
+    padding-top:40px;
+    padding: 5px;
+    /*display: inline-flex;*/
+    flex-direction: column;
+    margin: 10px;
+    border-radius: 10%;
+    display: inline;
+}
+
+.zuordnungsBox {
+    webkit-box-shadow: 0 2px 5px darkgray;
+    moz-box-shadow: 0 2px 5px darkgray;
+    box-shadow: 0 2px 5px darkgray;
+    background: #0083cb;
+    color: white;
+    font-weight: bold;
+    padding-top: 40px;
+    padding: 5px;
+    margin-left: 20px;
+    margin-right: 10px;
+    /*display: inline-flex;*/
+    border-radius: 10%;
+    display: inline-block;
+    width: 150px;
+    height: 20px;
+}
+
+.zuordnungsBox p {
+    align: left;
+    padding-bottom: 10px;
+    margin-top: 3px;
+}
+
+.ui-draggable:hover{
+    cursor: pointer;
+}
+
+.Korrekt {
+    -webkit-box-shadow: 0 2px 5px darkgray;
+    -moz-box-shadow: 0 2px 5px darkgray;
+    box-shadow: 0 2px 5px darkgray;
+    background: #02D64A;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    float: left;
+    /*display: inline-flex;*/
+    flex-direction: column;
+    margin: 10px;
+    border-radius: 10%;
+    display: inline-block;
+}
+
+.Falsch {
+    -webkit-box-shadow: 0 2px 5px darkgray;
+    -moz-box-shadow: 0 2px 5px darkgray;
+    box-shadow: 0 2px 5px darkgray;
+    background: #A91211;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    float: left;
+    /*display: inline-flex;*/
+    flex-direction: column;
+    margin: 10px;
+    border-radius: 10%;
+    display: inline-block;
+}
