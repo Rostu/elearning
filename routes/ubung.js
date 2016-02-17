@@ -11,6 +11,10 @@ exports.neu = function(req, res){
     res.render('neuanlegen');
 };
 
+exports.get_Begriffe_aus_Text = function(req, res) {
+    res.render('Begriffe_aus_Text');
+}
+
 exports.createUebung = function(req, res){
     var satz = req.body.inhalt.split("|");
 
@@ -38,6 +42,18 @@ exports.get_glueck_memory = function(req, res){
 exports.get_glueck_Textverstehen_Wortspirale = function(req, res){
     res.render('glueck_Textverstehen_Wortspirale');
 };
+
+exports.get_Textverstehen_Fussball = function(req, res){
+    res.render('Textverstehen_Fussball');
+}
+
+exports.get_fuba_Polyseme = function(req, res){
+    res.render('fuba_Polyseme');
+}
+
+exports.get_fuba_Komposita = function(req, res){
+    res.render('fuba_Komposita');
+}
 
 exports.get_china_Textverstehen_Wortfeld_Studium = function(req, res){
     res.render('china_Textverstehen_Wortfeld_Studium');
@@ -69,6 +85,14 @@ exports.get_glueck_start = function(req, res){
 
 exports.get_glueck_Textproduktion_Antonyme_A = function(req, res){
     res.render('glueck_Textproduktion_Antonyme_A');
+};
+
+exports.get_fuba_Textproduktion = function(req, res){
+    res.render('fuba_Textproduktion');
+};
+
+exports.get_liveticker_fussball_redewendungen = function(req, res){
+    res.render('liveticker_fussball_redewendungen');
 };
 
 exports.get_glueck_Textproduktion_Antonyme_B = function(req, res) {

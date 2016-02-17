@@ -63,6 +63,12 @@ app.use(function(req, res, next){
 });
 app.use('/', index.get_session);
 app.get('/', routes.index);
+app.get('/Begriffe_aus_Text', ubung.get_Begriffe_aus_Text);
+app.get('/fuba_Textproduktion', ubung.get_fuba_Textproduktion);
+app.get('/liveticker_fussball_redewendungen', ubung.get_liveticker_fussball_redewendungen);
+app.get('/Textverstehen_Fussball', ubung.get_Textverstehen_Fussball);
+app.get('/fuba_Polyseme', ubung.get_fuba_Polyseme);
+app.get('/fuba_Komposita', ubung.get_fuba_Komposita);
 app.get('/china_start', ubung.get_china_start);
 app.get('/china_Textverstehen_Wortfeld_Studium', ubung.get_china_Textverstehen_Wortfeld_Studium);
 app.get('/china_Wortschatz_ordnen', ubung.get_china_Wortschatz_ordnen);
