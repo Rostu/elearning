@@ -1,31 +1,71 @@
 /**
- * Created by MeLex on 14.01.2016.
+ * Created by Juliane on 14.01.2016.
  */
 $(document).ready(function() {
     $('#info3').show();
-
-    var testarray = ["gerne Wurst essen", "nur vegetarisch essen", "Wurst ist ungesund", "oft mit dem Zug fahren", "gut Karten spielen können", "immer den Weg zum Bahnhof finden", "eine schmutziger Hand haben", "ein guter Handwerker sein", "gerne Handball spielen", "gute Augen haben", "eine Brille tragen", "gut Fußball spielen können"];
-    var array = ["um alles spielen","die Initiative übernehmen","selbst über eine Sache entscheiden zu können","etwas gut erkennen"];
-    var infos =["Auseinanderschneiden bedeutet etwas mit einer Schere oder Ähnlichem im konkreten Wortsinn zu trennen; 'Lebenswelten' ist ein abstrakter Begriff, also nichts, was sich auseinanderschneiden lässt.",
-        "auseinanderklaffen lässt sich in auseinander + klaffen zerteilen. 'auseinander' bedeutet sich entfernen von jemandem oder etwas, also das Gegenteil von 'sich annähern'",
-        "Wenn ich mich nicht ins Zeug lege, dann ruhe ich mich aus. Ausruhen ist das Gegenteil von ins Zeug legen.",
-        "hier wurdest du aufs Glatteis geführt: Anziehen hat nichts mit 'ins Zeug legen' zu tun. Man kann beispielsweise Kleidung anziehen.",
-        "Das bedeutet sich verformen oder krümmen, bzw. verändern.",
-        "Schießen ist ein Verb mit der Bedeutung jmd. töten, feuern, knallen und passt somit von der Wortbedeutung nicht zum Satz.",
-        "Wenn man etwas (PC) von einer Stelle weg an eine andere verlagert (Garage). Hier ist nicht das 'verlagern' gemeint sondern das 'zur Ruhe kommen'.",
-        "einen Abstellplatz für den PC bezeichnet das Gegenteil von  'Jugendlichen vor dem PC platzieren.'",
-        "'konstant' würde zwar zu Stehvermögen passen. Dennoch ist dieses Wort in Verbindung mit 'Reichtum' darauf bezogen, dass man dauerhaft Vermögenswerte oder Besitz ansammelt. Reichtum ist kein Mittel zur Erlernung von Disziplin und Erfolg.",
-        "aufrechtes Stehen bezieht sich eher auf den physischen Aspekt und ist ebenso kein Mittel zur Erlernung von Disziplin und Erfolg.",
-        "'reinigen' bedeutet etwas säubern bzw. Schmutz oder Flecken von etwas entfernen.",
-        "'streicheln' bezeichnet ein Verb 'mit leichten, gleitenden Bewegungen der Hand sanft, liebkosend berühren'"
+// falsche Antworten
+    var testarray = [
+        //Case 1
+        "gerne Wurst essen",
+        "nur vegetarisch essen",
+        "Wurst ist ungesund",
+        //Case 3
+        "oft mit dem Zug fahren",
+        "gut Karten spielen können",
+        "immer den Weg zum Bahnhof finden",
+        //Case 2
+        "eine schmutzige Hand haben",
+        "ein guter Handwerker sein",
+        "gerne Handball spielen",
+        //Case 4
+        "gute Augaben haben",
+        "eine Brille tragen",
+        "gut Fußball spielen können"
     ];
+    // korrekten Antworten
+    var array = [
+        "um alles spielen", //Case 1
+        "die Initiative übernehmen",                 //Case 3
+        "selbst über eine Sache entscheiden können",            //Case 2
+        "etwas gut erkennen"               //Case 4
+    ];
+
+    // Kommentare
+    var infos =[
+        //Case 1
+        "gerne Wurst essen",
+        "nur vegetarisch essen",
+        "Wurst ist ungesund",
+        //Case 3
+        "oft mit dem Zug fahren",
+        "gut Karten spielen können",
+        "immer den Weg zum Bahnhof finden",
+        //Case 2
+        "eine schmutzige Hand haben",
+        "ein guter Handwerker sein",
+        "gerne Handball spielen",
+        //Case 4
+        "gute Augaben haben",
+        "eine Brille tragen",
+        "gut Fußball spielen können"
+    ];
+
+    var error_case1 = 'Deine Antwort ist leider nicht richtig. Schau dir diese noch einmal an. Tipp: Bayer Leverkusen spielt gegen den AS Monaco. In diesem Spiel  „geht es um die Wurst“.Bayer spielt um alles. Sie müssen das Spiel gewinnen.';
+    var error_case2 = 'Deine Antwort ist leider nicht richtig. Schau dir diese noch einmal an. Tipp: Gewinnt Bayer Leverkusendas Spiel, werden sie Gruppensieger. Sie müssen nicht auf andere Mannschaften schauen und haben alles in eigener Hand.';
+    var error_case3 = 'Deine Antwort ist leider nicht richtig. Schau dir diese noch einmal an. Tipp: Obwohl Bayer Leverkusen öfter im Ballbesitz ist, lässt AS Monaco nicht zu, dass sie das Spiel bestimmen.';
+    var error_case4 = 'Deine Antwort ist leider nicht richtig. Schau dir diese noch einmal an. Tipp: Ein Spieler sieht seinen Mitspieler. Er hat ein Auge auf ihn und legt ihm den Ball auf.';
     var j = 0;
+    var vier_richtige = 0;
+
     var shiftarray = testarray.slice();
     $('.mco').toArray().map(function(e) {
         var b = [];
+
         b.push(array.shift());
         b.push(shiftarray.shift());
         b.push(shiftarray.shift());
+        b.push(shiftarray.shift());
+
         b = shuffle(b);
         var app = $(e);
         for (var i = 0; i < b.length; i++) {
@@ -34,6 +74,7 @@ $(document).ready(function() {
             app.append("<br/>");
             j++;
         }
+        j++;
     });
 
     function createInput(mco, i) {
@@ -49,12 +90,46 @@ $(document).ready(function() {
             if ($.inArray(txt, testarray)>-1) {
                 markfalse($(this));
                 raisefaults();
-                makeNotice(infos[$.inArray(txt,testarray)]);
-            } else {
+                //Case 1
+                if(infos[$.inArray(txt,testarray)] === 'gerne Wurst essen' ||
+                    infos[$.inArray(txt,testarray)] === 'nur vegetarisch essen' ||
+                    infos[$.inArray(txt,testarray)] === 'Wurst ist ungesund' ){
+                    makeNotice(error_case1);
+                }
+                //Case 3
+                else
+                if(infos[$.inArray(txt,testarray)] === 'oft mit dem Zug fahren' ||
+                    infos[$.inArray(txt,testarray)] === 'gut Karten spielen können' ||
+                    infos[$.inArray(txt,testarray)] === 'immer den Weg zum Bahnhof finden'){
+                    makeNotice(error_case3);
+                }
+                //Case 2
+                else
+                if(infos[$.inArray(txt,testarray)] === 'eine schmutzige Hand haben' ||
+                    infos[$.inArray(txt,testarray)] === 'ein guter Handwerker sein' ||
+                    infos[$.inArray(txt,testarray)] === 'gerne Handball spielen'){
+                    makeNotice(error_case2);
+                }
+                //Case 4
+                else
+                if(infos[$.inArray(txt,testarray)] === 'gute Augen haben' ||
+                    infos[$.inArray(txt,testarray)] === 'eine Brille tragen' ||
+                    infos[$.inArray(txt,testarray)] === 'gut Fußball spielen können'){
+                    makeNotice(error_case4);
+                }
+            }
+            else {
                 removeNoticeIfPresent();
                 marktrue($(this));
                 disableall(this.name);
                 raisepoints();
+                vier_richtige++;
+                if(vier_richtige === 4){
+                    makeNotice('Super! Du hast alles richtig gemacht! Auf zur nächsten Aufgabe!');
+                }
+                else {
+                    makeNotice('Prima!');
+                }
             }
         }
     });
@@ -81,7 +156,7 @@ $(document).ready(function() {
         if ($('.wrong').toArray().length == 0) {
             alert("Gut gemacht! Weiter so!");
             // TODO neue seite laden
-            //document.location.href = "generationen_ende";
+
         }
     });
 
@@ -96,6 +171,13 @@ $(document).ready(function() {
         if (elem.hasClass("wrong")) elem.removeClass("wrong");
         elem.addClass("right");
     }
+
 });
+
+function showTicker(bild) {
+    var element = jQuery('<div>', { html: "<img src='"+bild+"'></div>"});
+    $('#overlaycontentbox').html(element);
+    toggleStartOverlay();
+};
 
 

@@ -181,5 +181,8 @@
     },
     {
         "name":"fuba_Komposita", "maxpoints":11, "maxfaults":25
+    },
+    {
+        "name":"liveticker_fussball_redewendungen", "maxpoints":4, "maxfaults":60
     }
 ]}

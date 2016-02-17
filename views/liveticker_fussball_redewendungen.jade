@@ -5,6 +5,9 @@
    Created by julianebredack on 20.01.16.
 
 extends layout
+block overlay
+    #overlaycontentbox
+        p Test
 block content
     link(rel='stylesheet', href='stylesheets/liveticker_fussball_redewendungen.css')
     script(src='javascripts/liveticker_fussball_redewendungen.js')
@@ -13,7 +16,7 @@ block content
     #wrapper
         #Textbox
             .mco#m1
-                <a href="images/liveticker/Liveticker_Fussball_Aufgabe3_1.png">
+                <a href= "javascript:void(0);" onClick = "showTicker('images/liveticker/Liveticker_Fussball_Aufgabe3_1.png')">
                 img.textwrap1(src="images/liveticker/zumText_Button.png")
                 </a>
                 img.bild1(src="images/liveticker/Aufgabe6_Fussball_1.png")
@@ -21,7 +24,7 @@ block content
                 .task es geht um die wurst </b>
 
             .mco#m2
-                <a href="images/liveticker/Liveticker_Fussball_Aufgabe3_3.png">
+                <a href= "javascript:void(0);" onClick = "showTicker('images/liveticker/Liveticker_Fussball_Aufgabe3_3.png')">
                 img.textwrap1(src="images/liveticker/zumText_Button.png")
                 </a>
                 img.bild3(src="images/liveticker/Aufgabe6_Fussball_3.png")
@@ -31,7 +34,7 @@ block content
             #Space
         #Textbox
             .mco#m3
-                <a href="images/liveticker/Liveticker_Fussball_Aufgabe3_2.png">
+                <a href= "javascript:void(0);" onClick = "showTicker('images/liveticker/Liveticker_Fussball_Aufgabe3_2.png')">
                 img.textwrap1(src="images/liveticker/zumText_Button.png")
                 </a>
                 img.bild2(src="images/liveticker/Aufgabe6_Fussball_2.png")
@@ -39,7 +42,7 @@ block content
                 .task etwas in eigener Hand haben </b>
 
             .mco#m4
-                <a href="images/liveticker/Liveticker_Fussball_Aufgabe3_4.png">
+                <a href= "javascript:void(0);" onClick = "showTicker('images/liveticker/Liveticker_Fussball_Aufgabe3_4.png')">
                 img.textwrap1(src="images/liveticker/zumText_Button.png")
                 </a>
                 img.bild4(src="images/liveticker/Aufgabe6_Fussball_4.png")
