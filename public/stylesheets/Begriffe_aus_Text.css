@@ -1,1 +1,124 @@
 
+form{
+    background:#f0f0f0;
+    padding:6% 4%;
+}
+
+#Textbox {
+    width: 60%;
+    display: table-cell;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(239, 239, 239, 0.59);
+    margin: 10px;
+    color: black;
+    line-height: 160%;
+}
+
+.inline {
+    display: inline-block;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+#cont{
+    display: table;
+    margin: 5px;
+}
+#Antwortbox {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background-color: rgba(0, 131, 198, 0.39);
+    display: table-cell;
+    width: 35%;
+}
+
+#Platzhalter {
+    padding: 10px;
+    display: table-cell;
+    width: 2%; }
+
+.draggie.ui-draggable-dragging {
+    color: #000000;
+    font-size: 2em;
+    padding: 5px;
+    margin: 10px;
+    background: rgba(250, 250, 210, 0.62);
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey; }
+
+.token {
+    background: rgba(239, 239, 239, 0.59);
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 10px; }
+.token a{
+    font-weight: bold;
+    color: #ECECEC;
+}
+
+.button:hover {
+    background-color: #99ff66; }
+
+.button {
+    color: red; }
+
+#balken_aussen {
+    display: inline-block;
+    width: 216px;
+    height: 17px;
+    background: white;
+    padding: 1px;
+    margin:0 auto;
+    float: left;
+}
+
+#balken_innen1 {
+    background: lawngreen;
+    display: inline-block;
+    width: 0px;
+    height: 15px;
+    float: left;
+}
+
+#balken_innen2 {
+    background: red;
+    display: inline-block;
+    height: 15px;
+    width: 0px;
+    float: left;
+}
+
+#arrow {
+    position: fixed;
+    top: 10%;
+    left: 34%;
+    opacity: 0;
+}
+.Zeitung {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    width: 100%;
+    padding: 10px;
+    margin:10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../images/newspaper2.jpg");
+    color: #000000;
+}
+.Zeitung img{
+    border: 0.5px solid black;
+}
+.textwrap1{
+    float: left;
+    margin: 10px;
+}
+.textwrap2{
+    float: right;
+    margin: 10px;
+}
+

@@ -1,8 +1,696 @@
 extends layout
 block content
-	#content_background
-		link(rel='stylesheet', href='stylesheets/Begriffe_aus_Text.css')
-		script( src='javascripts/Begriffe_aus_Text.js')
-		#Aufgabenbox
-			p Hier kommt der Aufgabentext hin
-		#wrapper
+    link(rel='stylesheet', href='stylesheets/Begriffe_aus_Text.css')
+    script( src='javascripts/Begriffe_aus_Text.js')
+
+    #content_background
+        #Aufgabenbox
+            p Erweitere deinen Wortschatz um einige Sportbegriffe. Suche aus dem Text alle Wörter, die mit Sport und Basketball zu tun haben und ziehe sie auf die rechte Seite.
+        #cont
+            #Textbox
+                .Zeitung
+
+                    h2 Bayern München - Brose Baskets
+                    <b>Ticker-Kommentator: Bernd Schroller</b>
+                    br
+                    br
+                    p
+                    |Die
+                    .inline(id=35) Bayern
+                    |zeigten in dieser
+                    .inline(id=0) Spielzeit
+                    |häufig zwei
+                    .inline(id=36) Gesichter.
+                    |Zuhause wow,
+                    .inline(id=1) auswärts
+                    |eher mau. Aber da die
+                    .inline(id=37) Auswärtsschwäche
+                    |scheinbar pünktlich zu den
+                    .inline(id=2) Playoffs
+                    |abgelegt wurde, kann ja fast nichts mehr schiefgehen. Seit 15
+                    .inline(id=4) Spielen
+                    |sind die Münchner in eigener
+                    .inline(id=37) Halle
+                    |ungeschlagen, darüber hinaus wurden
+                    |bislang drei der vier
+                    .inline(id=3) Saisonspiele
+                    |gegen
+                    .inline(id=38) Bamberg
+                    |gewonnen.
+                    br
+                    br
+                    #Ticker
+                        table
+                            tr
+                                td(style='width:200px')
+                                    <b> Anpfiff</b>
+                                td
+                                    p
+                                    |Das
+                                    .inline(id=4) Spiel
+                                    | läuft. Oder auch nicht, denn bevor ein
+                                    .inline(id=5) Spieler
+                                    | die
+                                    .inline(id=39) Kontrolle
+                                    | über den
+                                    .inline(id=6) Ball
+                                    | bekommt,
+                                    .inline(id=7) foult
+                                    | Hamann.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 1.
+                                    .inline(id=11) Viertel
+                                    |10:00 </b>
+                                td
+                                    p
+                                    |Geburtstagskind Renfroe bedient Ford, der aus der
+                                    .inline(id=8) Distanz
+                                    |die ersten
+                                    .inline(id=9) Punkte
+                                    |des
+                                    .inline(id=40) Abends
+                                    |markiert.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 1.
+                                    .inline(id=11) Viertel
+                                    |7:01</b>
+                                td
+                                    p
+                                    .inline(id=38) Bamberg
+                                    |ist hier auf
+                                    .inline(id=41) Wiedergutmachungskurs
+                                    |, München ist überhaupt noch nicht im
+                                    .inline(id=4) Spiel.
+                                    |Goldsberry legt den nächsten
+                                    .inline(id=10) Dreier
+                                    |nach. Im Moment hat nur der
+                                    .inline(id=42) Gästeblock
+                                    |Grund zum
+                                    .inline(id=43) Jubel
+                                    |.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 1.
+                                    .inline(id=11) Viertel
+                                    |4:44</b>
+                                td
+                                    p
+                                    |Troutman
+                                    .inline(id=12) verwandelt
+                                    |beide
+                                    .inline(id=13) Freiwürfe.
+                                    |Im Anschluss bekommt Rice seine erste
+                                    .inline(id=44) Zeit
+                                    |auf dem
+                                    .inline(id=14) Parkett.
+                                    |Er war im ersten
+                                    .inline(id=4) Spiel
+                                    |der überragende Münchner, auch weil
+                                    .inline(id=38) Bamberg
+                                    |den
+                                    .inline(id=15) Ball
+                                    |häufig vom
+                                    .inline(id=16) Einwurf
+                                    |weg
+                                    .inline(id=45) verloren
+                                    |hat.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 1.
+                                    .inline(id=11) Viertel
+                                    |3:29</b>
+                                td
+                                    p
+                                    |Benzing nutzt gegen Jacobsen seine
+                                    .inline(id=46) Körpergröße
+                                    |und
+                                    .inline(id=59) trifft
+                                    |von Außen. Die
+                                    .inline(id=35) Bayern
+                                    |sind wieder auf zwei
+                                    .inline(id=9) Punkte
+                                    |dran. 
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 1.
+                                    .inline(id=11) Viertel
+                                    |2:58</b>
+                                td
+                                    p
+                                    |Die
+                                    .inline(id=35) Bayern
+                                    |können im ersten
+                                    .inline(id=11) Viertel
+                                    |die Distanzwürfe der
+                                    .inline(id=38) Bamberger
+                                    |nicht wirklich unterbinden.
+                                    |Jacobsen gelingt schon der fünfte
+                                    .inline(id=58) Gäste-
+                                    .inline(id=10) Dreier.
+                                    |Die
+                                    .inline(id=35) Bayern
+                                    |haben im ersten
+                                    .inline(id=11) Viertel
+                                    |noch nicht einmal den
+                                    .inline(id=47) Versuch
+                                    |aus der
+                                    .inline(id=8) Distanz
+                                    |unternommen.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 1.
+                                    .inline(id=11) Viertel
+                                    |0:00</b>
+                                td
+                                    p
+                                    |Rice spielt den
+                                    .inline(id=48) perfekten
+                                    .inline(id=17) Pass
+                                    |auf Roberts, der unterm
+                                    .inline(id=18) Brett
+                                    |die
+                                    .inline(id=9) Punkte
+                                    |macht und auch noch zum
+                                    .inline(id=16) Extrawurf
+                                    |antreten darf.
+                                    |Der geht aber nur an den
+                                    .inline(id=19) Ring
+                                    |. So steht es nach zehn
+                                    .inline(id=49) Minuten
+                                    |21:23.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 2.
+                                    .inline(id=11) Viertel
+                                    |10:00</b>
+                                td
+                                    p
+                                    |Das zweite
+                                    .inline(id=11) Viertel
+                                    |läuft.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 2.
+                                    .inline(id=11) Viertel
+                                    |9:17</b>
+                                td
+                                    p
+                                    |Troutman misslingt zunächst der
+                                    .inline(id=10) Notdreier
+                                    |, aber Roberts holt sich den
+                                    .inline(id=20) Rebound
+                                    |. Das
+                                    .inline(id=4) Spiel
+                                    |wird neu aufgebaut, Thomas
+                                    .inline(id=21) gleicht
+                                    |zum ersten Mal in dieser
+                                    .inline(id=50) Partie
+                                    .inline(id=21) aus
+                                    |.
+                                    br
+                                    br
+                            tr
+                                td
+
+                                    <b> 2.
+                                    .inline(id=11) Viertel
+                                    |8:45</b>
+                                td
+                                    p
+                                    |Greene unterläuft nach nur 75 Sekunden das fünfte Teamfoul der
+                                    .inline(id=35) Bayern
+                                    |in diesem
+                                    .inline(id=11) Viertel
+                                    |.
+                                    .inline(id=38) Bamberg
+                                    |wird in diesem
+                                    .inline(id=51) Abschnitt
+                                    |das ein oder andere Mal noch an die
+                                    .inline(id=22) Linie
+                                    |dürfen. Schmidt gelingen zunächst die ersten beiden
+                                    .inline(id=13) Freiwürfe
+                                    |.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 2.
+                                    .inline(id=11) Viertel
+                                    |7:58</b>
+                                td
+                                    p
+                                    |Svetislav Pesic ist überhaupt nicht zufrieden mit seinem
+                                    .inline(id=23) Team
+                                    |in diesem
+                                    .inline(id=51) Abschnitt
+                                    |. Er nimmt seine zweite
+                                    .inline(id=24) Auszeit
+                                    |.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 2.
+                                    .inline(id=11) Viertel
+                                    |6:14</b>
+                                td
+                                    p
+                                    |Jagla vergibt etwas leichtfertig die mögliche
+                                    .inline(id=52) Führung
+                                    |. Renfroe holt sich den
+                                    .inline(id=20) Rebound
+                                    |und leitet den
+                                    .inline(id=25) Fastbreak
+                                    |ein, den Jacobsen vorn zum 28:31
+                                    .inline(id=53) abschließt
+                                    |.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 2.
+                                    .inline(id=11) Viertel
+                                    |3:59</b>
+                                td
+                                    p
+                                    |Roberts wird beim
+                                    .inline(id=26) Korbleger
+                                    |noch
+                                    .inline(id=7) gefoult
+                                    |. Sein
+                                    .inline(id=9) Extrapunkt
+                                    |bringt die
+                                    .inline(id=54) Hausherren
+                                    |wieder auf einen
+                                    .inline(id=9) Punkt
+                                    |heran.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 2.
+                                    .inline(id=11) Viertel
+                                    |1:50</b>
+                                td
+                                    p
+                                    |Renfroe macht hier bislang ein bärenstarkes
+                                    .inline(id=4) Spiel
+                                    |. Wieder ein herrlicher
+                                    .inline(id=17) Pass
+                                    |durch die
+                                    .inline(id=27) Zone
+                                    |auf Neumann, der nur noch danke sagen muss.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 2.
+                                    .inline(id=11) Viertel
+                                    |0:00</b>
+                                td
+                                    p
+                                    |Gavel saß zunächst nur auf der
+                                    .inline(id=28) Bank
+                                    |, ihm fehlen ganz sicher die Kräfte, um hier die gewohnten
+                                    .inline(id=49) Minuten
+                                    |auf dem
+                                    .inline(id=14) Parkett
+                                    |zu stehen. Nun gelingt ihm mit der
+                                    .inline(id=29) Sirene
+                                    |noch ein letzter
+                                    .inline(id=30) Korb
+                                    |. Damit führt
+                                    .inline(id=38) Bamberg
+                                    |zur
+                                    .inline(id=31) Pause
+                                    |mit 40:48.
+                                    br
+                                    br
+                            tr
+                                td
+                                    h3 Halbzeit
+                                td
+                                    p
+                                    |Das
+                                    .inline(id=4) Spiel
+                                    |hatte in den ersten 20
+                                    .inline(id=49) Minuten
+                                    |noch nicht ganz die
+                                    .inline(id=57) Klasse
+                                    |der ersten
+                                    .inline(id=50) Partie
+                                    |.
+                                    |Aber die Franken haben sich vom Schock der Heimniederlage gut erholt und hier ein guten Start hingelegt.
+                                    |Zwar erholten sich die
+                                    .inline(id=35) Bayern
+                                    |vom anfänglichen 2:10-Rückstand schnell, aber die
+                                    .inline(id=54) Hausherren
+                                    |gingen in der ersten Halbzeit nicht einmal in
+                                    .inline(id=52) Führung
+                                    |.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 3.
+                                    .inline(id=11) Viertel
+                                    |10:00</b>
+                                td
+                                    p
+                                    |Die
+                                    .inline(id=5) Spieler
+                                    |sind zurück auf dem
+                                    .inline(id=14) Parkett
+                                    |. Das dritte
+                                    .inline(id=11) Viertel
+                                    |kann beginnen.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 3.
+                                    .inline(id=11) Viertel
+                                    |9:07</b>
+                                td
+                                    p
+                                    |Ford beginnt die zweite Hälfte mit zwei Fehlversuchen aus der
+                                    .inline(id=8) Distanz
+                                    |. Wir warten noch auf die ersten
+                                    .inline(id=9) Punkte
+                                    |nach der
+                                    .inline(id=31) Pause
+                                    |.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 3.
+                                    .inline(id=11) Viertel
+                                    |8:36</b>
+
+                                td
+                                    p
+                                    |Renfroe macht es dann besser, er wird aber von der
+                                    .inline(id=32) Defense
+                                    |der
+                                    .inline(id=35) Bayern
+                                    |auch nicht ernsthaft am Abschluss gehindert.
+                                    .inline(id=38) Bamberg
+                                    |führt erstmals zweistellig.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 3.
+                                    .inline(id=11) Viertel
+                                    |7:07</b>
+                                td
+                                    p
+                                    |Homan ist bekanntlich nicht der beste
+                                    .inline(id=16) Freiwerfer.
+                                    |Auch jetzt lässt er einen Versuch liegen.
+                                    |Der zweite bringt
+                                    .inline(id=35) Bayern
+                                    |immerhin wieder auf acht
+                                    .inline(id=9) Punkte
+                                    |heran.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 3.
+                                    .inline(id=11) Viertel
+                                    |5:25</b>
+                                td
+                                    p
+                                    |Natürlich ist Gavel noch nicht wieder bei 100 Prozent. Das geht drei Tage nach einer Krankheit mit Fieber um die 40 Grad auch gar nicht.
+                                    |Aber der
+                                    .inline(id=50) Guard
+                                    |ist trotzdem enorm wichtig. Und das zeigt er immer wieder, sein
+                                    .inline(id=10) Dreier
+                                    |lässt den Auswärtsblock jubeln.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 3.
+                                    .inline(id=11) Viertel
+                                    |3:50</b>
+                                td
+                                    p
+                                    .inline(id=35) Bayern
+                                    |ist sowohl bei den Zweier-, als auch bei den
+                                    .inline(id=10) Dreierversuchen
+                                    |unter 50 Prozent.
+                                    .inline(id=38) Bamberg
+                                    |jeweils knapp drüber. Das ist heute genau der Unterschied. Das
+                                    .inline(id=4) Spiel
+                                    |ist im dritten
+                                    .inline(id=11) Viertel
+                                    |reichlich zerfahren.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 3.
+                                    .inline(id=11) Viertel
+                                    |2:30</b>
+                                td
+                                    p
+                                    |Benzing macht von außen noch ein Schritt in Richtung
+                                    .inline(id=30) Korb
+                                    |. So werden es nur zwei
+                                    .inline(id=9) Punkte
+                                    |,aber immerhin ist es mal wieder ein
+                                    .inline(id=30) Korb
+                                    |aus dem
+                                    .inline(id=4) Spiel
+                                    |heraus.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 3.
+                                    .inline(id=11) Viertel
+                                    |0:55</b>
+                                td
+                                    p
+                                    |Die
+                                    .inline(id=35) Bayern
+                                    |haben die letzten
+                                    .inline(id=49) Minuten
+                                    |in der
+                                    .inline(id=32) Defense
+                                    |auf
+                                    .inline(id=27) Zone
+                                    |umgestellt und
+                                    .inline(id=38) Bamberg
+                                    |damit aus dem
+                                    .inline(id=4) Spiel
+                                    |gebracht. Roberts bringt die
+                                    .inline(id=54) Hausherren
+                                    |von der
+                                    .inline(id=22) Linie
+                                    |auf acht
+                                    .inline(id=9) Punkte
+                                    |heran.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 3.
+                                    .inline(id=11) Viertel
+                                    |0:00</b>
+                                td
+                                    p
+                                    .inline(id=38) Bamberg
+                                    |führt nach dem dritten
+                                    .inline(id=11) Viertel
+                                    |mit 57:65.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 4.
+                                    .inline(id=11) Viertel
+                                    |10:00</b>
+                                td
+                                    p
+                                    |Das
+                                    .inline(id=33) Schlussviertel
+                                    |läuft.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 4.
+                                    .inline(id=11) Viertel
+                                    |8:45</b>
+                                td
+                                    p
+                                    |Es deutet sich ein
+                                    .inline(id=55) Krimi
+                                    |im
+                                    .inline(id=33) Schlussviertel
+                                    |an. Rice wird in der
+                                    .inline(id=27) Zone
+                                    |beim
+                                    .inline(id=16) Wurf
+                                    .inline(id=7) gefoult
+                                    |. Die beiden
+                                    .inline(id=13) Freiwürfe
+                                    |lässt er sich nicht nehmen und
+                                    .inline(id=56) verkürzt
+                                    |auf 64:67.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 4.
+                                    .inline(id=11) Viertel
+                                    |6:50</b>
+                                td
+                                    p
+                                    .inline(id=10) Dreier
+                                    |auf
+                                    .inline(id=10) Dreier
+                                    |. Zunächst zeigt Rice seine
+                                    .inline(id=57) Klasse
+                                    |, aber dem will Jacobsen nicht nachstehen. Die
+                                    .inline(id=58) Gäste
+                                    |führen mit 69:75.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 4.
+                                    .inline(id=11) Viertel
+                                    |4:58</b>
+                                td
+                                    p
+                                    |Allmählich läuft Rice heiß. Muss er aber auch, ansonsten wird
+                                    .inline(id=35) Bayern
+                                    |hier das
+                                    .inline(id=34) Heimspiel
+                                    .inline(id=45) verlieren
+                                    |. Sein
+                                    .inline(id=30) Korb
+                                    |im Nachfassen ist bereits sein zwölfter
+                                    .inline(id=9) Punkt
+                                    |.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 4.
+                                    .inline(id=11) Viertel
+                                    |3:09</b>
+                                td
+                                    p
+                                    |Gavel
+                                    .inline(id=59) trifft
+                                    |aus der
+                                    .inline(id=8) Distanz
+                                    |und wird dabei noch
+                                    .inline(id=7) gefoult
+                                    |. So darf er von der
+                                    .inline(id=22) Linie
+                                    |sogar noch den Extrapunkt nachlegen. Das sieht man auch nicht jeden Tag. Und 15
+                                    .inline(id=9) Punkte
+                                    |für einen
+                                    .inline(id=60) Mann
+                                    |, der vor zwei Tagen noch das Bett hüten musste, sind auch nicht schlecht.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 4.
+                                    .inline(id=11) Viertel
+                                    |1:39</b>
+                                td
+                                    p
+                                    |Renfroe setzt sich in der
+                                    .inline(id=27) Zone
+                                    |durch und
+                                    .inline(id=59) trifft
+                                    |zum 77:88. Die
+                                    .inline(id=35) Bayern
+                                    |nehmen noch einmal die
+                                    .inline(id=24) Auszeit
+                                    |.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 4.
+                                    .inline(id=11) Viertel
+                                    |0:50</b>
+                                td
+                                    p
+                                    |Pesic ist sehr erregt über ein nicht gegebenes
+                                    .inline(id=7) Foul
+                                    |und fuchtelt wild vor dem
+                                    .inline(id=61) Schiedsrichtergespann
+                                    |herum. Dafür gibt es ein technisches
+                                    .inline(id=7) Foul
+                                    |.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 4.
+                                    .inline(id=11) Viertel
+                                    |0:22</b>
+                                td
+                                    p
+                                    |Rice vergibt den
+                                    .inline(id=16) Wurf
+                                    |und die
+                                    .inline(id=35) Bayern
+                                    |geben sich auf. Renfroe
+                                    .inline(id=59) trifft
+                                    |zum 83:93.
+                                    br
+                                    br
+                            tr
+                                td
+                                    <b> 4.
+                                    .inline(id=11) Viertel
+                                    |0:00 </b>
+                                td
+                                    p
+                                    |Aus.
+                                    .inline(id=38) Bamberg
+                                    .inline(id=62) gewinnt
+                                    | mit 83:93
+                                    br
+                                    br
+                            tr
+                                td
+
+                                td
+                                    <button id="Ergebnis">Überprüfen: 0 Punkte</button>
+
+
+
+            #Platzhalter
+            #Antwortbox
+

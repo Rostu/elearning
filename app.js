@@ -109,12 +109,17 @@ app.get('/handy_text', ubung.get_handy_text);
 app.get('/handy_task1', ubung.get_handy_task1);
 app.get('/handy_task2', ubung.get_handy_task2);
 app.get('/home', start.start);
+app.get('/liveticker_fussball_redewendungen', ubung.get_liveticker_fussball_redewendungen);
 app.get('/testy', ubung.get_testy);
 app.get('/impressum', impressum.get_imp);
 app.get('/glueck_Memory', ubung.get_glueck_memory);
 app.get('/glueck_Textverstehen_Wortspirale', ubung.get_glueck_Textverstehen_Wortspirale);
 app.get('/neuanlegen', ubung.neu);
 app.get('/Begriffe_aus_Text', ubung.get_Begriffe_aus_Text);
+app.get('/Textverstehen_FuBa', ubung.get_Textverstehen_FuBa);
+app.get('/BaBa_Textproduktion', ubung.get_BaBa_Textproduktion);
+app.get('/liveticker_basketball_synonyme', ubung.get_liveticker_basketball_synonyme);
+app.get('/BaBa_Komposita_a', ubung.get_BaBa_Komposita_a);
 
 //app.get('/points', pointshandler.get_points);
 

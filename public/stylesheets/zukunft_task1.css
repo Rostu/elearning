@@ -36,7 +36,8 @@ form{
 #Platzhalter {
     padding: 10px;
     display: table-cell;
-    width: 2%; }
+    width: 2%;
+}
 
 .draggie.ui-draggable-dragging {
     color: #000000;
