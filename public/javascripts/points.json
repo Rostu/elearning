@@ -172,5 +172,14 @@
     },
     {
         "name":"glueck_Textverstehen_Wortspirale", "maxpoints":23, "maxfaults":10
+    },
+    {
+        "name":"fuba_Textproduktion", "maxpoints":7, "maxfaults":25
+    },
+    {
+        "name":"Textverstehen_Fussball", "maxpoints":70, "maxfaults":44
+    },
+    {
+        "name":"fuba_Komposita", "maxpoints":11, "maxfaults":25
     }
 ]}

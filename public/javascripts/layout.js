@@ -191,6 +191,7 @@ $(document).ready(function() {
         var veggie=["veggie1.jpg","veggie2.jpg","veggie3.jpg","veggie4.jpg","veggie5.jpg"];
         var zukunft=["zukunft1.jpg","zukunft2.jpg","zukunft3.jpg","zukunft4.jpg"];
         var wertewandel=[];
+        var fußball=[];
         var undef=[];
 
         switch (title) {
@@ -218,6 +219,8 @@ $(document).ready(function() {
             case "Generationen":
                 ArrayToLookAt = generationen;
                 break;
+            case "Fußball":
+                ArrayToLookAt = fußball;
             default:
                 ArrayToLookAt = undef;
         }

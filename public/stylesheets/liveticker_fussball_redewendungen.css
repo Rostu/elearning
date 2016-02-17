@@ -329,10 +329,10 @@ a {
 .bild1 {
 
     /*display: block;
-     margin-left: auto;
-     margin-right: auto;
-     hight: 40px;
-     width: 55px;*/
+    margin-left: auto;
+    margin-right: auto;
+    hight: 40px;
+    width: 55px;*/
     position: relative;
     top: 40px;
     left: 0px;
@@ -345,7 +345,7 @@ a {
     position: relative;
     top: 40px;
     left: 0px;
-    width: 135px;
+    width: 125px;
     heigth: 115px;
 }
 
@@ -353,7 +353,7 @@ a {
     position: relative;
     top: 40px;
     left: 0px;
-    width: 160px;
+    width: 150px;
     heigth: 170px;
 }
 
@@ -362,6 +362,6 @@ a {
     position: relative;
     top: 40px;
     left: 0px;
-    width: 145px;
+    width: 135px;
     heigth: 130px;
 }
