@@ -280,12 +280,19 @@ $(document).ready(function() {
         vis.append("path").attr("d", arc4).attr("transform", "translate(50,60)").style("fill", "rgba(169, 18, 17, 0.20)");
         vis.append("path").attr("d", arc1).attr("transform", "translate(50,60)").attr("id", "pointspath").style("fill", "#005E9C");
         vis.append("path").attr("d", arc2).attr("transform", "translate(50,60)").attr("id", "faultspath").style("fill", "#A91211");
+        if (data.maxpoints > 0) {
+            vis.append("text").attr("x", 35).attr("y",65).text($("#point_bars").data("actualp")).attr("class", "pointstext").attr("id", "pointstext");
+            vis.append("text").attr("x", 50).attr("y",70).text("/").attr("class", "pointstext");
+            vis.append("text").attr("x", 55).attr("y",75).text(data.maxpoints).attr("class", "pointstext");
+        }
+
     });
 
     function updatepoints(){
         var actualp = $("#point_bars").data("actualp");
         var newarc = d3.svg.arc().innerRadius(40).outerRadius(50).startAngle(myScalePoints(0)).endAngle(myScalePoints(actualp));
         d3.select("#pointspath").attr("d",newarc);
+        d3.select("#pointstext").text(actualp);
     }
     function updatefaults(){
         var actualf = $("#point_bars").data("actualf");

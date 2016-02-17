@@ -63,6 +63,11 @@ app.use(function(req, res, next){
 });
 app.use('/', index.get_session);
 app.get('/', routes.index);
+app.get('/Alternative_Energien_Wortfeld', ubung.get_AlernativeEnergien_Wortfeld);
+app.get('/Alternative_Energien_Wortschatz', ubung.get_AlernativeEnergien_Wortschatz);
+app.get('/Alternative_Energien_Textstruktur', ubung.get_AlernativeEnergien_Textstruktur);
+app.get('/Alternative_Energien_Wortbildung', ubung.get_AlernativeEnergien_Wortbildung);
+app.get('/Alternative_Energien_Komposita', ubung.get_AlernativeEnergien_Komposita);
 app.get('/china_start', ubung.get_china_start);
 app.get('/china_Textverstehen_Wortfeld_Studium', ubung.get_china_Textverstehen_Wortfeld_Studium);
 app.get('/china_Wortschatz_ordnen', ubung.get_china_Wortschatz_ordnen);

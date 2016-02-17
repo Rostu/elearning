@@ -39,6 +39,26 @@ exports.get_glueck_Textverstehen_Wortspirale = function(req, res){
     res.render('glueck_Textverstehen_Wortspirale');
 };
 
+exports.get_AlernativeEnergien_Wortfeld = function(req, res){
+    res.render('Alternative_Energien_Wortfeld');
+};
+
+exports.get_AlernativeEnergien_Wortschatz = function(req, res){
+    res.render('Alternative_Energien_Wortschatz');
+};
+
+exports.get_AlernativeEnergien_Textstruktur = function(req, res){
+    res.render('Alternative_Energien_Textstruktur');
+};
+
+exports.get_AlernativeEnergien_Wortbildung = function(req, res){
+    res.render('Alternative_Energien_Wortbildung');
+};
+
+exports.get_AlernativeEnergien_Komposita = function(req, res){
+    res.render('Alternative_Energien_Komposita');
+};
+
 exports.get_china_Textverstehen_Wortfeld_Studium = function(req, res){
     res.render('china_Textverstehen_Wortfeld_Studium');
 };

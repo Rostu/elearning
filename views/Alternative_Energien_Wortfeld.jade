@@ -1,0 +1,150 @@
+extends layout
+block overlay
+    #overlaycontentbox
+        p Test
+block content
+    link(rel='stylesheet', href='stylesheets/alternativeEnergien_Wortfeld.css')
+    script( src='javascripts/alternativeEnergien_Textverstehen_Wortfeld.js')
+
+    #content_background
+        #Aufgabenbox
+            p Suche im Text nach Wörtern aus dem Wortfeld „erneuerbare Energien“. Ziehe hierfür die jeweiligen Wörter aus dem Text in die Box rechts.
+
+        #cont
+            #Textbox
+                .Zeitung
+                    h1
+                        | Welche
+                        .inline(id=0) alternativen Energien
+                        | gibt es?
+
+                    b
+                        | Der heutige
+                        .inline(id=1) Bedarf
+                        | an Strom wird hauptsächlich durch die Nutzung von Energien gedeckt, die nicht erneuerbar sind. Solche
+                        .inline(id=3) Energieressourcen
+                        | sind z.B. Kohle, Holz oder Atomenergie. Die Nutzung nicht erneuerbarer Energieformen führt letztendlich zum Versiegen der momentan genutzten
+                        .inline(id=3) Ressourcen.
+                        | Dabei gibt es genug Möglichkeiten
+                        .inline(id=0) alternative Energien
+                        | zu verwenden.
+
+
+                    p
+                        .inline(id=0) Alternative Energien
+                        | sind
+                        .inline(id=4) Energiequellen,
+                        | die nach menschlichen Maßstäben
+                        .inline(id=17) unerschöpflich
+                        | sind. Zu den heute bestehenden
+                        .inline(id=0) alternativen Energien
+                        | zählen die
+                        .inline(id=5) Solarenergie,
+                        | die
+                        .inline(id=6) Wasserkraft
+                        | und die
+                        .inline(id=7) Windkraft.
+                        | Eine Form der
+                        .inline(id=0) alternativen Energien
+                        | ist die
+                        .inline(id=8) Photovoltaik,
+                        | besser bekannt unter der Bezeichnung
+                        .inline(id=9) Sonnenenergie.
+                        | Durch
+                        .inline(id=10) Sonneneinstrahlung
+                        | werden Elektronen freigesetzt und dadurch kann
+                        .inline(id=11) elektrische Energie
+                        | gewonnen werden.
+
+                    p
+                        .inline(id=9) Sonnenenergie
+                        | hat viele Vorteile: Im Vergleich zur
+                        .inline(id=2) herkömmlichen Energieerzeugung
+                        | ist sie wesentlich
+                        .inline(id=18) umweltfreundlicher,
+                        | sie wird
+                        .inline(id=19) staatlich gefördert
+                        | und eine
+                        .inline(id=20) Investition
+                        | in diese Form der
+                        .inline(id=28) Energiegewinnung
+                        | kann bei der Steuererklärung geltend gemacht werden. Allerdings ist die
+                        .inline(id=10) Sonneneinstrahlung
+                        | sehr
+                        .inline(id=21) wetter-, tages- und jahreszeitenabhängig.
+                    p
+                        .inline(id=7) Windkraft
+                        | ist eine weitere Möglichkeit, Strom
+                        .inline(id=22) umweltschonend
+                        | durch
+                        .inline(id=0) alternative Energien
+                        | zu gewinnen. Hier wird
+                        .inline(id=23) Strom erzeugt,
+                        | indem die
+                        .inline(id=12) kinetische Energie
+                        | des Windes in
+                        .inline(id=11) elektrische Energie
+                        .inline(id=26) umgewandelt
+                        | wird. Große Rotorblätter werden durch die
+                        .inline(id=23) Windströmung
+                        | bewegt und die
+                        .inline(id=13) Rotationsenergie
+                        | an einen
+                        .inline(id=24) Generator
+                        | weitergegeben. Der
+                        .inline(id=24) Generator
+                        | sorgt schließlich für die
+                        .inline(id=27) Umwandlung.
+
+                    p
+                        | Eine weitere Form
+                        .inline(id=0) alternativer Energien
+                        | ist die
+                        .inline(id=6) Wasserkraft.
+                        | Die
+                        .inline(id=14) Strömungsenergie
+                        | von fließendem Wasser wird durch
+                        .inline(id=25) Turbinen
+                        | in
+                        .inline(id=11) elektrische Energie
+                        .inline(id=26) umgewandelt.
+                        | Bei dieser Form der
+                        .inline(id=28) Energiegewinnung
+                        | gibt es unterschiedliche Arten
+                        .inline(id=29) energieerzeugender Betriebe.
+                        .inline(id=15) Laufwasserkraftwerke
+                        | sind zwar
+                        .inline(id=30) teuer,
+                        | haben aber eine
+                        .inline(id=31) lange Nutzungsphase.
+                        | Sie werden auch als
+                        .inline(id=32) Niederdruckanlagen
+                        | bezeichnet und sind sehr
+                        .inline(id=18) umweltfreundlich.
+                        .inline(id=16) Speicherkraftwerke
+                        | haben den Vorteil, dass Wasser
+                        .inline(id=33) gespeichert
+                        | und als
+                        .inline(id=34) Reserve
+                        | für die
+                        .inline(id=35) Spitzenlastzeiten
+                        | genutzt werden kann.
+                button(class="help").
+                    Hilfe
+            #Platzhalter
+            #Antwortbox
+
+    //#Field
+        span#balken
+            #balken_aussen
+                #balken_innen1
+                #balken_innen2
+        span#hilfe
+            a HILFE
+            span.help#hmenu
+                p#infotext Wortfelder und ihre Grenzen sind oft nicht eindeutig. Versuche es zunächst mit Wörtern, bei denen du dir sehr sicher bist, dass sie zum Wortfeld "Technik" gehören.
+        span#check
+        span#weiter
+            a(href='zukunft_task1') WEITER
+
+

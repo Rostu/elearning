@@ -1,0 +1,41 @@
+extends layout
+block content
+    link(rel='stylesheet', href='stylesheets/alternativeEnergien_wortschatz.css')
+    script(src='javascripts/alternativeEnergien_Wortschatz.js')
+    #Aufgabenbox
+        b Aufgabe 1:
+        p Welchen argumentativen Wortschatz findest du in den folgenden Sätzen? Markiere ihn mit der Maus indem du auf die jeweiligen Wörter klickst.
+    #cont
+        #Textbox
+            .Zeitung
+                p
+                    |Sonnenenergie&nbsp;
+                    span.candidate(id="0") hat viele Vorteile
+                    | &nbsp;:
+                    br
+                    span.candidate(id="1") Im Vergleich
+                    | &nbsp;zur herkömmlichen Energieerzeugung ist sie wesentlich umweltfreundlicher, …
+                p
+                    span.candidate(id="2") Allerdings
+                    | &nbsp;ist die Sonneneinstrahlung sehr wetter-, tages- und  jahreszeitenabhängig.
+                p
+                    |Laufwasserkraftwerke sind&nbsp;
+                    span.candidate(id="3") zwar
+                    | &nbsp;teuer, haben&nbsp;
+                    span.candidate(id="4") aber
+                    | &nbsp;eine lange Nutzungsphase.
+                p
+                    |Speicherkraftwerke&nbsp;
+                    span.candidate(id="5") haben den Vorteil
+                    | &nbsp;, dass Wasser gespeichert und als Reserve für die Spitzenlastzeiten genutzt werden kann.
+    .hidden
+        #Aufgabenbox
+            b Aufgabe 2:
+            p Ordne den markierten Wortschatz den folgenden Kategorien zu. Ziehe ihn dazu in die entsprechende Spalte der Tabelle.
+    .hidden
+        #cont
+            #Antwortbox
+                |Semantische Besonderheit
+            #Platzhalter
+            #Antwortbox2
+                | Konjunktionen

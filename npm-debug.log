@@ -1,0 +1,3156 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\Zusatzprogramme\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\Zusatzprogramme\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@3.3.6
+3 info using node@v5.0.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData lockit-mongodb-adapter
+20 silly mapToRegistry name lockit-mongodb-adapter
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/lockit-mongodb-adapter
+24 verbose request uri https://registry.npmjs.org/lockit-mongodb-adapter
+25 verbose request no auth needed
+26 info attempt registry request try #1 at 10:56:15
+27 verbose request id a0064f56610307cf
+28 http request GET https://registry.npmjs.org/lockit-mongodb-adapter
+29 http 200 https://registry.npmjs.org/lockit-mongodb-adapter
+30 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+30 verbose headers   etag: '"43JQ6DKNUV7D8UELWW1BC2QHK"',
+30 verbose headers   'content-type': 'application/json',
+30 verbose headers   'cache-control': 'max-age=300',
+30 verbose headers   'content-length': '16098',
+30 verbose headers   'accept-ranges': 'bytes',
+30 verbose headers   date: 'Wed, 16 Dec 2015 09:56:14 GMT',
+30 verbose headers   via: '1.1 varnish',
+30 verbose headers   age: '0',
+30 verbose headers   connection: 'keep-alive',
+30 verbose headers   'x-served-by': 'cache-fra1248-FRA',
+30 verbose headers   'x-cache': 'MISS',
+30 verbose headers   'x-cache-hits': '0',
+30 verbose headers   'x-timer': 'S1450259773.621307,VS0,VE745',
+30 verbose headers   vary: 'Accept' }
+31 silly get cb [ 200,
+31 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+31 silly get     etag: '"43JQ6DKNUV7D8UELWW1BC2QHK"',
+31 silly get     'content-type': 'application/json',
+31 silly get     'cache-control': 'max-age=300',
+31 silly get     'content-length': '16098',
+31 silly get     'accept-ranges': 'bytes',
+31 silly get     date: 'Wed, 16 Dec 2015 09:56:14 GMT',
+31 silly get     via: '1.1 varnish',
+31 silly get     age: '0',
+31 silly get     connection: 'keep-alive',
+31 silly get     'x-served-by': 'cache-fra1248-FRA',
+31 silly get     'x-cache': 'MISS',
+31 silly get     'x-cache-hits': '0',
+31 silly get     'x-timer': 'S1450259773.621307,VS0,VE745',
+31 silly get     vary: 'Accept' } ]
+32 verbose get saving lockit-mongodb-adapter to C:\Users\Stephan\AppData\Roaming\npm-cache\registry.npmjs.org\lockit-mongodb-adapter\.cache.json
+33 silly resolveWithNewModule lockit-mongodb-adapter@0.4.4 checking installable status
+34 silly cache add args [ 'lockit-mongodb-adapter@0.4.4', null ]
+35 verbose cache add spec lockit-mongodb-adapter@0.4.4
+36 silly cache add parsed spec Result {
+36 silly cache add   raw: 'lockit-mongodb-adapter@0.4.4',
+36 silly cache add   scope: null,
+36 silly cache add   name: 'lockit-mongodb-adapter',
+36 silly cache add   rawSpec: '0.4.4',
+36 silly cache add   spec: '0.4.4',
+36 silly cache add   type: 'version' }
+37 silly addNamed lockit-mongodb-adapter@0.4.4
+38 verbose addNamed "0.4.4" is a plain semver version for lockit-mongodb-adapter
+39 silly mapToRegistry name lockit-mongodb-adapter
+40 silly mapToRegistry using default registry
+41 silly mapToRegistry registry https://registry.npmjs.org/
+42 silly mapToRegistry uri https://registry.npmjs.org/lockit-mongodb-adapter
+43 verbose addNameVersion registry:https://registry.npmjs.org/lockit-mongodb-adapter not in flight; fetching
+44 verbose get https://registry.npmjs.org/lockit-mongodb-adapter not expired, no request
+45 silly mapToRegistry name lockit-mongodb-adapter
+46 silly mapToRegistry using default registry
+47 silly mapToRegistry registry https://registry.npmjs.org/
+48 silly mapToRegistry uri https://registry.npmjs.org/lockit-mongodb-adapter
+49 verbose addRemoteTarball https://registry.npmjs.org/lockit-mongodb-adapter/-/lockit-mongodb-adapter-0.4.4.tgz not in flight; adding
+50 verbose addRemoteTarball [ 'https://registry.npmjs.org/lockit-mongodb-adapter/-/lockit-mongodb-adapter-0.4.4.tgz',
+50 verbose addRemoteTarball   '671b6bd8a0911c645f6a65d8a74f06441fe832ba' ]
+51 info retry fetch attempt 1 at 10:56:16
+52 info attempt registry request try #1 at 10:56:16
+53 http fetch GET https://registry.npmjs.org/lockit-mongodb-adapter/-/lockit-mongodb-adapter-0.4.4.tgz
+54 http fetch 200 https://registry.npmjs.org/lockit-mongodb-adapter/-/lockit-mongodb-adapter-0.4.4.tgz
+55 silly fetchAndShaCheck shasum 671b6bd8a0911c645f6a65d8a74f06441fe832ba
+56 verbose addTmpTarball C:\Users\Stephan\AppData\Local\Temp\npm-7072-91ba953c\registry.npmjs.org\lockit-mongodb-adapter\-\lockit-mongodb-adapter-0.4.4.tgz not in flight; adding
+57 verbose addTmpTarball already have metadata; skipping unpack for lockit-mongodb-adapter@0.4.4
+58 silly cache afterAdd lockit-mongodb-adapter@0.4.4
+59 verbose afterAdd C:\Users\Stephan\AppData\Roaming\npm-cache\lockit-mongodb-adapter\0.4.4\package\package.json not in flight; writing
+60 verbose afterAdd C:\Users\Stephan\AppData\Roaming\npm-cache\lockit-mongodb-adapter\0.4.4\package\package.json written
+61 silly loadAllDepsIntoIdealTree Finishing
+62 silly idealTree:prePrune E-learning@0.0.1
+62 silly idealTree:prePrune ├── acorn-globals@1.0.9
+62 silly idealTree:prePrune ├── acorn@2.6.4
+62 silly idealTree:prePrune ├── align-text@0.1.3
+62 silly idealTree:prePrune ├── amdefine@1.0.0
+62 silly idealTree:prePrune ├── ansi-regex@2.0.0
+62 silly idealTree:prePrune ├── ansi-styles@2.1.0
+62 silly idealTree:prePrune ├── asap@1.0.0
+62 silly idealTree:prePrune ├── asn1@0.2.3
+62 silly idealTree:prePrune ├── assert-plus@0.1.5
+62 silly idealTree:prePrune ├── async@1.5.0
+62 silly idealTree:prePrune ├── autosize@3.0.14
+62 silly idealTree:prePrune ├── aws-sign2@0.6.0
+62 silly idealTree:prePrune ├── balanced-match@0.3.0
+62 silly idealTree:prePrune ├── basic-auth-connect@1.0.0
+62 silly idealTree:prePrune ├── batch@0.5.0
+62 silly idealTree:prePrune ├── bl@1.0.0
+62 silly idealTree:prePrune ├── boom@2.10.1
+62 silly idealTree:prePrune ├── brace-expansion@1.1.2
+62 silly idealTree:prePrune ├── bson@0.4.20
+62 silly idealTree:prePrune ├── buffer-crc32@0.2.1
+62 silly idealTree:prePrune ├── bytes@0.2.1
+62 silly idealTree:prePrune ├── camelcase@1.2.1
+62 silly idealTree:prePrune ├── caseless@0.11.0
+62 silly idealTree:prePrune ├── center-align@0.1.2
+62 silly idealTree:prePrune ├── chalk@1.1.1
+62 silly idealTree:prePrune ├── character-parser@1.0.2
+62 silly idealTree:prePrune ├─┬ clean-css@3.4.8
+62 silly idealTree:prePrune │ └── commander@2.8.1
+62 silly idealTree:prePrune ├─┬ cliui@2.1.0
+62 silly idealTree:prePrune │ └── wordwrap@0.0.2
+62 silly idealTree:prePrune ├── combined-stream@1.0.5
+62 silly idealTree:prePrune ├── commander@2.9.0
+62 silly idealTree:prePrune ├── compressible@1.0.0
+62 silly idealTree:prePrune ├── compression@1.0.0
+62 silly idealTree:prePrune ├── concat-map@0.0.1
+62 silly idealTree:prePrune ├── connect-timeout@1.0.0
+62 silly idealTree:prePrune ├─┬ connect@2.14.1
+62 silly idealTree:prePrune │ └── qs@0.6.6
+62 silly idealTree:prePrune ├─┬ connectr@0.0.6
+62 silly idealTree:prePrune │ └── debug@0.7.4
+62 silly idealTree:prePrune ├── constantinople@3.0.2
+62 silly idealTree:prePrune ├─┬ cookie-parser@1.0.1
+62 silly idealTree:prePrune │ └── cookie@0.1.0
+62 silly idealTree:prePrune ├─┬ cookie-session@1.2.0
+62 silly idealTree:prePrune │ ├─┬ cookies@0.5.0
+62 silly idealTree:prePrune │ │ └── keygrip@1.0.1
+62 silly idealTree:prePrune │ ├─┬ debug@2.2.0
+62 silly idealTree:prePrune │ │ └── ms@0.7.1
+62 silly idealTree:prePrune │ └── on-headers@1.0.1
+62 silly idealTree:prePrune ├── cookie-signature@1.0.3
+62 silly idealTree:prePrune ├── cookie@0.1.1
+62 silly idealTree:prePrune ├── core-util-is@1.0.2
+62 silly idealTree:prePrune ├── couch-pwd@0.0.1
+62 silly idealTree:prePrune ├── cryptiles@2.0.5
+62 silly idealTree:prePrune ├── css-parse@1.0.4
+62 silly idealTree:prePrune ├── css-stringify@1.0.5
+62 silly idealTree:prePrune ├── css@1.0.8
+62 silly idealTree:prePrune ├── csurf@1.0.0
+62 silly idealTree:prePrune ├─┬ d3@3.4.6
+62 silly idealTree:prePrune │ └─┬ jsdom@0.5.7
+62 silly idealTree:prePrune │   ├─┬ contextify@0.1.15
+62 silly idealTree:prePrune │   │ ├── bindings@1.2.1
+62 silly idealTree:prePrune │   │ └── nan@2.1.0
+62 silly idealTree:prePrune │   ├── cssom@0.2.5
+62 silly idealTree:prePrune │   ├─┬ cssstyle@0.2.30
+62 silly idealTree:prePrune │   │ └── cssom@0.3.0
+62 silly idealTree:prePrune │   ├── htmlparser@1.7.7
+62 silly idealTree:prePrune │   └── nwmatcher@1.3.7
+62 silly idealTree:prePrune ├── dashdash@1.10.1
+62 silly idealTree:prePrune ├── debug@0.8.1
+62 silly idealTree:prePrune ├── decamelize@1.1.1
+62 silly idealTree:prePrune ├── delayed-stream@1.0.0
+62 silly idealTree:prePrune ├── ecc-jsbn@0.1.1
+62 silly idealTree:prePrune ├── errorhandler@1.0.0
+62 silly idealTree:prePrune ├── es6-promise@2.1.1
+62 silly idealTree:prePrune ├── escape-string-regexp@1.0.3
+62 silly idealTree:prePrune ├─┬ express-debug@1.1.1
+62 silly idealTree:prePrune │ ├── commander@0.6.1
+62 silly idealTree:prePrune │ ├── jade@0.29.0
+62 silly idealTree:prePrune │ └── xtend@2.0.3
+62 silly idealTree:prePrune ├─┬ express-session@1.0.2
+62 silly idealTree:prePrune │ ├── cookie@0.1.0
+62 silly idealTree:prePrune │ └── debug@0.7.4
+62 silly idealTree:prePrune ├─┬ express@3.5.1
+62 silly idealTree:prePrune │ └── commander@1.3.2
+62 silly idealTree:prePrune ├── extend@3.0.0
+62 silly idealTree:prePrune ├── extsprintf@1.0.2
+62 silly idealTree:prePrune ├── find-java-home@0.1.2
+62 silly idealTree:prePrune ├── forever-agent@0.6.1
+62 silly idealTree:prePrune ├── form-data@1.0.0-rc3
+62 silly idealTree:prePrune ├── fresh@0.2.2
+62 silly idealTree:prePrune ├── generate-function@2.0.0
+62 silly idealTree:prePrune ├── generate-object-property@1.2.0
+62 silly idealTree:prePrune ├─┬ glob@5.0.5
+62 silly idealTree:prePrune │ └── minimatch@2.0.10
+62 silly idealTree:prePrune ├── graceful-readlink@1.0.1
+62 silly idealTree:prePrune ├── har-validator@2.0.3
+62 silly idealTree:prePrune ├── has-ansi@2.0.0
+62 silly idealTree:prePrune ├── hawk@3.1.2
+62 silly idealTree:prePrune ├── hoek@2.16.3
+62 silly idealTree:prePrune ├── http-signature@1.1.0
+62 silly idealTree:prePrune ├── inflight@1.0.4
+62 silly idealTree:prePrune ├── inherits@2.0.1
+62 silly idealTree:prePrune ├── is-buffer@1.1.0
+62 silly idealTree:prePrune ├── is-my-json-valid@2.12.3
+62 silly idealTree:prePrune ├── is-promise@1.0.1
+62 silly idealTree:prePrune ├── is-property@1.0.2
+62 silly idealTree:prePrune ├── is-typedarray@1.0.0
+62 silly idealTree:prePrune ├── isarray@0.0.1
+62 silly idealTree:prePrune ├── isstream@0.1.2
+62 silly idealTree:prePrune ├─┬ jade@1.11.0
+62 silly idealTree:prePrune │ ├── character-parser@1.2.1
+62 silly idealTree:prePrune │ ├── commander@2.6.0
+62 silly idealTree:prePrune │ ├── mkdirp@0.5.1
+62 silly idealTree:prePrune │ ├── source-map@0.1.43
+62 silly idealTree:prePrune │ └─┬ transformers@2.1.0
+62 silly idealTree:prePrune │   └── uglify-js@2.2.5
+62 silly idealTree:prePrune ├─┬ java@0.5.5
+62 silly idealTree:prePrune │ ├── async@0.9.0
+62 silly idealTree:prePrune │ └── lodash@3.7.0
+62 silly idealTree:prePrune ├── jodid25519@1.0.2
+62 silly idealTree:prePrune ├── jsbn@0.1.0
+62 silly idealTree:prePrune ├── json-schema@0.2.2
+62 silly idealTree:prePrune ├── json-stringify-safe@5.0.1
+62 silly idealTree:prePrune ├── jsonpointer@2.0.0
+62 silly idealTree:prePrune ├── jsprim@1.2.2
+62 silly idealTree:prePrune ├─┬ jstransformer@0.0.2
+62 silly idealTree:prePrune │ ├── is-promise@2.1.0
+62 silly idealTree:prePrune │ └── promise@6.1.0
+62 silly idealTree:prePrune ├─┬ kerberos@0.0.17
+62 silly idealTree:prePrune │ └── nan@2.0.9
+62 silly idealTree:prePrune ├── keypress@0.1.0
+62 silly idealTree:prePrune ├── kind-of@2.0.1
+62 silly idealTree:prePrune ├── lazy-cache@0.2.7
+62 silly idealTree:prePrune ├── lockit-mongodb-adapter@0.4.4
+62 silly idealTree:prePrune ├─┬ lockit@1.0.0
+62 silly idealTree:prePrune │ ├─┬ chalk@0.4.0
+62 silly idealTree:prePrune │ │ ├── ansi-styles@1.0.0
+62 silly idealTree:prePrune │ │ ├── has-color@0.1.7
+62 silly idealTree:prePrune │ │ └── strip-ansi@0.1.1
+62 silly idealTree:prePrune │ ├── debug@0.7.4
+62 silly idealTree:prePrune │ ├─┬ express@4.0.0
+62 silly idealTree:prePrune │ │ ├─┬ accepts@1.0.0
+62 silly idealTree:prePrune │ │ │ ├── mime@1.2.11
+62 silly idealTree:prePrune │ │ │ └── negotiator@0.3.0
+62 silly idealTree:prePrune │ │ ├── buffer-crc32@0.2.1
+62 silly idealTree:prePrune │ │ ├── cookie-signature@1.0.3
+62 silly idealTree:prePrune │ │ ├── cookie@0.1.0
+62 silly idealTree:prePrune │ │ ├── escape-html@1.0.1
+62 silly idealTree:prePrune │ │ ├── fresh@0.2.2
+62 silly idealTree:prePrune │ │ ├── merge-descriptors@0.0.2
+62 silly idealTree:prePrune │ │ ├── methods@0.1.0
+62 silly idealTree:prePrune │ │ ├── parseurl@1.0.1
+62 silly idealTree:prePrune │ │ ├── path-to-regexp@0.1.2
+62 silly idealTree:prePrune │ │ ├── qs@0.6.6
+62 silly idealTree:prePrune │ │ ├── range-parser@1.0.0
+62 silly idealTree:prePrune │ │ ├─┬ send@0.2.0
+62 silly idealTree:prePrune │ │ │ └── mime@1.2.11
+62 silly idealTree:prePrune │ │ ├─┬ serve-static@1.0.1
+62 silly idealTree:prePrune │ │ │ └─┬ send@0.1.4
+62 silly idealTree:prePrune │ │ │   ├── fresh@0.2.0
+62 silly idealTree:prePrune │ │ │   ├── mime@1.2.11
+62 silly idealTree:prePrune │ │ │   └── range-parser@0.0.4
+62 silly idealTree:prePrune │ │ ├─┬ type-is@1.0.0
+62 silly idealTree:prePrune │ │ │ └── mime@1.2.11
+62 silly idealTree:prePrune │ │ └── utils-merge@1.0.0
+62 silly idealTree:prePrune │ ├─┬ lockit-delete-account@1.0.0
+62 silly idealTree:prePrune │ │ └── couch-pwd@0.0.1
+62 silly idealTree:prePrune │ ├─┬ lockit-forgot-password@1.0.0
+62 silly idealTree:prePrune │ │ ├── couch-pwd@0.0.1
+62 silly idealTree:prePrune │ │ ├─┬ lockit-sendmail@0.1.2
+62 silly idealTree:prePrune │ │ │ ├── ejs@0.8.8
+62 silly idealTree:prePrune │ │ │ └─┬ nodemailer@0.5.15
+62 silly idealTree:prePrune │ │ │   ├── directmail@0.1.6
+62 silly idealTree:prePrune │ │ │   ├── he@0.3.6
+62 silly idealTree:prePrune │ │ │   ├─┬ mailcomposer@0.2.9
+62 silly idealTree:prePrune │ │ │   │ ├── dkim-signer@0.1.0
+62 silly idealTree:prePrune │ │ │   │ ├─┬ follow-redirects@0.0.3
+62 silly idealTree:prePrune │ │ │   │ │ └── underscore@1.8.3
+62 silly idealTree:prePrune │ │ │   │ ├── mime@1.2.11
+62 silly idealTree:prePrune │ │ │   │ ├─┬ mimelib@0.2.14
+62 silly idealTree:prePrune │ │ │   │ │ ├── addressparser@0.2.1
+62 silly idealTree:prePrune │ │ │   │ │ └─┬ encoding@0.1.7
+62 silly idealTree:prePrune │ │ │   │ │   └── iconv-lite@0.2.11
+62 silly idealTree:prePrune │ │ │   │ └── punycode@1.2.4
+62 silly idealTree:prePrune │ │ │   ├── public-address@0.1.0
+62 silly idealTree:prePrune │ │ │   ├─┬ readable-stream@1.0.27-1
+62 silly idealTree:prePrune │ │ │   │ ├── core-util-is@1.0.1
+62 silly idealTree:prePrune │ │ │   │ ├── inherits@2.0.1
+62 silly idealTree:prePrune │ │ │   │ ├── isarray@0.0.1
+62 silly idealTree:prePrune │ │ │   │ └── string_decoder@0.10.31
+62 silly idealTree:prePrune │ │ │   └─┬ simplesmtp@0.3.27
+62 silly idealTree:prePrune │ │ │     ├── rai@0.1.10
+62 silly idealTree:prePrune │ │ │     └── xoauth2@0.1.8
+62 silly idealTree:prePrune │ │ ├─┬ lockit-template-blank@0.0.1
+62 silly idealTree:prePrune │ │ │ └── ejs@0.8.8
+62 silly idealTree:prePrune │ │ ├── moment@2.5.1
+62 silly idealTree:prePrune │ │ ├── ms@0.6.2
+62 silly idealTree:prePrune │ │ └── node-uuid@1.4.1
+62 silly idealTree:prePrune │ ├─┬ lockit-login@1.0.0
+62 silly idealTree:prePrune │ │ ├── couch-pwd@0.0.1
+62 silly idealTree:prePrune │ │ ├── moment@2.4.0
+62 silly idealTree:prePrune │ │ └── ms@0.6.2
+62 silly idealTree:prePrune │ ├─┬ lockit-signup@1.0.0
+62 silly idealTree:prePrune │ │ ├─┬ lockit-sendmail@0.1.2
+62 silly idealTree:prePrune │ │ │ ├── ejs@0.8.8
+62 silly idealTree:prePrune │ │ │ └─┬ nodemailer@0.5.15
+62 silly idealTree:prePrune │ │ │   ├── directmail@0.1.6
+62 silly idealTree:prePrune │ │ │   ├── he@0.3.6
+62 silly idealTree:prePrune │ │ │   ├─┬ mailcomposer@0.2.9
+62 silly idealTree:prePrune │ │ │   │ ├── dkim-signer@0.1.0
+62 silly idealTree:prePrune │ │ │   │ ├─┬ follow-redirects@0.0.3
+62 silly idealTree:prePrune │ │ │   │ │ └── underscore@1.8.3
+62 silly idealTree:prePrune │ │ │   │ ├── mime@1.2.11
+62 silly idealTree:prePrune │ │ │   │ ├─┬ mimelib@0.2.14
+62 silly idealTree:prePrune │ │ │   │ │ ├── addressparser@0.2.1
+62 silly idealTree:prePrune │ │ │   │ │ └─┬ encoding@0.1.7
+62 silly idealTree:prePrune │ │ │   │ │   └── iconv-lite@0.2.11
+62 silly idealTree:prePrune │ │ │   │ └── punycode@1.2.4
+62 silly idealTree:prePrune │ │ │   ├── public-address@0.1.0
+62 silly idealTree:prePrune │ │ │   ├─┬ readable-stream@1.0.27-1
+62 silly idealTree:prePrune │ │ │   │ ├── core-util-is@1.0.1
+62 silly idealTree:prePrune │ │ │   │ ├── inherits@2.0.1
+62 silly idealTree:prePrune │ │ │   │ ├── isarray@0.0.1
+62 silly idealTree:prePrune │ │ │   │ └── string_decoder@0.10.31
+62 silly idealTree:prePrune │ │ │   └─┬ simplesmtp@0.3.27
+62 silly idealTree:prePrune │ │ │     ├── rai@0.1.10
+62 silly idealTree:prePrune │ │ │     └── xoauth2@0.1.8
+62 silly idealTree:prePrune │ │ ├─┬ lockit-template-blank@0.0.1
+62 silly idealTree:prePrune │ │ │ └── ejs@0.8.8
+62 silly idealTree:prePrune │ │ ├── moment@2.5.1
+62 silly idealTree:prePrune │ │ ├── ms@0.6.2
+62 silly idealTree:prePrune │ │ └── node-uuid@1.4.1
+62 silly idealTree:prePrune │ ├─┬ lockit-sql-adapter@0.5.0
+62 silly idealTree:prePrune │ │ ├── couch-pwd@0.0.1
+62 silly idealTree:prePrune │ │ ├── moment@2.5.1
+62 silly idealTree:prePrune │ │ ├── ms@0.6.2
+62 silly idealTree:prePrune │ │ ├─┬ sequelize@2.0.0-dev11
+62 silly idealTree:prePrune │ │ │ ├── bluebird@1.0.8
+62 silly idealTree:prePrune │ │ │ ├─┬ circular-json@0.1.6
+62 silly idealTree:prePrune │ │ │ │ └── wru@0.2.7
+62 silly idealTree:prePrune │ │ │ ├── commander@2.1.0
+62 silly idealTree:prePrune │ │ │ ├── dottie@0.2.1
+62 silly idealTree:prePrune │ │ │ ├── generic-pool@2.0.4
+62 silly idealTree:prePrune │ │ │ ├── lingo@0.0.5
+62 silly idealTree:prePrune │ │ │ ├── lodash@2.4.1
+62 silly idealTree:prePrune │ │ │ ├── node-uuid@1.4.1
+62 silly idealTree:prePrune │ │ │ ├─┬ sql@0.35.0
+62 silly idealTree:prePrune │ │ │ │ ├── lodash@1.3.1
+62 silly idealTree:prePrune │ │ │ │ └── sliced@0.0.5
+62 silly idealTree:prePrune │ │ │ ├── toposort-class@0.3.0
+62 silly idealTree:prePrune │ │ │ ├── underscore.string@2.3.3
+62 silly idealTree:prePrune │ │ │ └── validator@3.2.1
+62 silly idealTree:prePrune │ │ └── uuid@1.4.1
+62 silly idealTree:prePrune │ ├── lockit-utils@0.3.0
+62 silly idealTree:prePrune │ ├─┬ nano@4.6.1
+62 silly idealTree:prePrune │ │ ├── errs@0.2.4
+62 silly idealTree:prePrune │ │ ├─┬ follow@0.10.4
+62 silly idealTree:prePrune │ │ │ ├── browser-request@0.3.1
+62 silly idealTree:prePrune │ │ │ └─┬ request@2.30.0
+62 silly idealTree:prePrune │ │ │   ├── aws-sign2@0.5.0
+62 silly idealTree:prePrune │ │ │   ├── forever-agent@0.5.2
+62 silly idealTree:prePrune │ │ │   ├─┬ form-data@0.1.2
+62 silly idealTree:prePrune │ │ │   │ ├── async@0.2.10
+62 silly idealTree:prePrune │ │ │   │ └─┬ combined-stream@0.0.4
+62 silly idealTree:prePrune │ │ │   │   └── delayed-stream@0.0.5
+62 silly idealTree:prePrune │ │ │   ├─┬ hawk@1.0.0
+62 silly idealTree:prePrune │ │ │   │ ├── boom@0.4.2
+62 silly idealTree:prePrune │ │ │   │ ├── cryptiles@0.2.2
+62 silly idealTree:prePrune │ │ │   │ ├── hoek@0.9.1
+62 silly idealTree:prePrune │ │ │   │ └── sntp@0.2.4
+62 silly idealTree:prePrune │ │ │   ├─┬ http-signature@0.10.0
+62 silly idealTree:prePrune │ │ │   │ ├── asn1@0.1.11
+62 silly idealTree:prePrune │ │ │   │ ├── assert-plus@0.1.2
+62 silly idealTree:prePrune │ │ │   │ └── ctype@0.5.2
+62 silly idealTree:prePrune │ │ │   ├── json-stringify-safe@5.0.0
+62 silly idealTree:prePrune │ │ │   ├── mime@1.2.11
+62 silly idealTree:prePrune │ │ │   ├── node-uuid@1.4.1
+62 silly idealTree:prePrune │ │ │   ├── oauth-sign@0.3.0
+62 silly idealTree:prePrune │ │ │   ├── qs@0.6.6
+62 silly idealTree:prePrune │ │ │   ├─┬ tough-cookie@0.9.15
+62 silly idealTree:prePrune │ │ │   │ └── punycode@1.2.4
+62 silly idealTree:prePrune │ │ │   └── tunnel-agent@0.3.0
+62 silly idealTree:prePrune │ │ ├─┬ request@2.33.0
+62 silly idealTree:prePrune │ │ │ ├── aws-sign2@0.5.0
+62 silly idealTree:prePrune │ │ │ ├── forever-agent@0.5.2
+62 silly idealTree:prePrune │ │ │ ├─┬ form-data@0.1.2
+62 silly idealTree:prePrune │ │ │ │ ├── async@0.2.10
+62 silly idealTree:prePrune │ │ │ │ └─┬ combined-stream@0.0.4
+62 silly idealTree:prePrune │ │ │ │   └── delayed-stream@0.0.5
+62 silly idealTree:prePrune │ │ │ ├─┬ hawk@1.0.0
+62 silly idealTree:prePrune │ │ │ │ ├── boom@0.4.2
+62 silly idealTree:prePrune │ │ │ │ ├── cryptiles@0.2.2
+62 silly idealTree:prePrune │ │ │ │ ├── hoek@0.9.1
+62 silly idealTree:prePrune │ │ │ │ └── sntp@0.2.4
+62 silly idealTree:prePrune │ │ │ ├─┬ http-signature@0.10.0
+62 silly idealTree:prePrune │ │ │ │ ├── asn1@0.1.11
+62 silly idealTree:prePrune │ │ │ │ ├── assert-plus@0.1.2
+62 silly idealTree:prePrune │ │ │ │ └── ctype@0.5.2
+62 silly idealTree:prePrune │ │ │ ├── json-stringify-safe@5.0.0
+62 silly idealTree:prePrune │ │ │ ├── mime@1.2.11
+62 silly idealTree:prePrune │ │ │ ├── node-uuid@1.4.1
+62 silly idealTree:prePrune │ │ │ ├── oauth-sign@0.3.0
+62 silly idealTree:prePrune │ │ │ ├── qs@0.6.6
+62 silly idealTree:prePrune │ │ │ ├─┬ tough-cookie@0.12.1
+62 silly idealTree:prePrune │ │ │ │ └── punycode@1.2.4
+62 silly idealTree:prePrune │ │ │ └── tunnel-agent@0.3.0
+62 silly idealTree:prePrune │ │ └── underscore@1.5.2
+62 silly idealTree:prePrune │ ├─┬ node.extend@1.0.10
+62 silly idealTree:prePrune │ │ └── is@0.3.0
+62 silly idealTree:prePrune │ └─┬ sqlite3@2.2.3
+62 silly idealTree:prePrune │   └─┬ node-pre-gyp@0.5.9
+62 silly idealTree:prePrune │     ├── mkdirp@0.3.5
+62 silly idealTree:prePrune │     ├─┬ nopt@2.2.0
+62 silly idealTree:prePrune │     │ └── abbrev@1.0.4
+62 silly idealTree:prePrune │     ├─┬ npmlog@0.0.6
+62 silly idealTree:prePrune │     │ └── ansi@0.2.1
+62 silly idealTree:prePrune │     ├─┬ rc@0.3.4
+62 silly idealTree:prePrune │     │ ├── deep-extend@0.2.8
+62 silly idealTree:prePrune │     │ ├── ini@1.1.0
+62 silly idealTree:prePrune │     │ └── minimist@0.0.8
+62 silly idealTree:prePrune │     ├─┬ request@2.34.0
+62 silly idealTree:prePrune │     │ ├── aws-sign2@0.5.0
+62 silly idealTree:prePrune │     │ ├── forever-agent@0.5.2
+62 silly idealTree:prePrune │     │ ├─┬ form-data@0.1.2
+62 silly idealTree:prePrune │     │ │ ├── async@0.2.10
+62 silly idealTree:prePrune │     │ │ └─┬ combined-stream@0.0.4
+62 silly idealTree:prePrune │     │ │   └── delayed-stream@0.0.5
+62 silly idealTree:prePrune │     │ ├─┬ hawk@1.0.0
+62 silly idealTree:prePrune │     │ │ ├── boom@0.4.2
+62 silly idealTree:prePrune │     │ │ ├── cryptiles@0.2.2
+62 silly idealTree:prePrune │     │ │ ├── hoek@0.9.1
+62 silly idealTree:prePrune │     │ │ └── sntp@0.2.4
+62 silly idealTree:prePrune │     │ ├─┬ http-signature@0.10.0
+62 silly idealTree:prePrune │     │ │ ├── asn1@0.1.11
+62 silly idealTree:prePrune │     │ │ ├── assert-plus@0.1.2
+62 silly idealTree:prePrune │     │ │ └── ctype@0.5.2
+62 silly idealTree:prePrune │     │ ├── json-stringify-safe@5.0.0
+62 silly idealTree:prePrune │     │ ├── mime@1.2.11
+62 silly idealTree:prePrune │     │ ├── node-uuid@1.4.1
+62 silly idealTree:prePrune │     │ ├── oauth-sign@0.3.0
+62 silly idealTree:prePrune │     │ ├── qs@0.6.6
+62 silly idealTree:prePrune │     │ ├─┬ tough-cookie@0.12.1
+62 silly idealTree:prePrune │     │ │ └── punycode@1.2.4
+62 silly idealTree:prePrune │     │ └── tunnel-agent@0.3.0
+62 silly idealTree:prePrune │     ├── rimraf@2.2.6
+62 silly idealTree:prePrune │     ├── semver@2.2.1
+62 silly idealTree:prePrune │     ├─┬ tar-pack@2.0.0
+62 silly idealTree:prePrune │     │ ├── debug@0.7.4
+62 silly idealTree:prePrune │     │ ├─┬ fstream-ignore@0.0.7
+62 silly idealTree:prePrune │     │ │ ├── inherits@2.0.1
+62 silly idealTree:prePrune │     │ │ └─┬ minimatch@0.2.14
+62 silly idealTree:prePrune │     │ │   ├── lru-cache@2.5.0
+62 silly idealTree:prePrune │     │ │   └── sigmund@1.0.0
+62 silly idealTree:prePrune │     │ ├─┬ fstream@0.1.25
+62 silly idealTree:prePrune │     │ │ ├── graceful-fs@2.0.3
+62 silly idealTree:prePrune │     │ │ └── inherits@2.0.1
+62 silly idealTree:prePrune │     │ ├── graceful-fs@1.2.3
+62 silly idealTree:prePrune │     │ ├── once@1.1.1
+62 silly idealTree:prePrune │     │ ├── readable-stream@1.0.33
+62 silly idealTree:prePrune │     │ └── uid-number@0.0.3
+62 silly idealTree:prePrune │     └─┬ tar@0.1.19
+62 silly idealTree:prePrune │       ├── block-stream@0.0.7
+62 silly idealTree:prePrune │       ├─┬ fstream@0.1.25
+62 silly idealTree:prePrune │       │ └── graceful-fs@2.0.3
+62 silly idealTree:prePrune │       └── inherits@2.0.1
+62 silly idealTree:prePrune ├── lodash@3.10.1
+62 silly idealTree:prePrune ├── longest@1.0.1
+62 silly idealTree:prePrune ├── merge-descriptors@0.0.2
+62 silly idealTree:prePrune ├── method-override@1.0.0
+62 silly idealTree:prePrune ├── methods@0.1.0
+62 silly idealTree:prePrune ├── mime-db@1.20.0
+62 silly idealTree:prePrune ├── mime-types@2.1.8
+62 silly idealTree:prePrune ├── mime@1.2.11
+62 silly idealTree:prePrune ├── minimatch@3.0.0
+62 silly idealTree:prePrune ├── minimist@0.0.8
+62 silly idealTree:prePrune ├── mkdirp@0.3.5
+62 silly idealTree:prePrune ├── moment@2.10.6
+62 silly idealTree:prePrune ├── mongodb-core@1.2.28
+62 silly idealTree:prePrune ├─┬ mongodb@2.0.52
+62 silly idealTree:prePrune │ └── readable-stream@1.0.31
+62 silly idealTree:prePrune ├─┬ mongoose@4.1.9
+62 silly idealTree:prePrune │ ├── async@0.9.0
+62 silly idealTree:prePrune │ ├── bson@0.4.20
+62 silly idealTree:prePrune │ ├── hooks-fixed@1.1.0
+62 silly idealTree:prePrune │ ├── kareem@1.0.1
+62 silly idealTree:prePrune │ ├─┬ mongodb@2.0.42
+62 silly idealTree:prePrune │ │ ├── es6-promise@2.1.1
+62 silly idealTree:prePrune │ │ ├─┬ mongodb-core@1.2.10
+62 silly idealTree:prePrune │ │ │ └─┬ kerberos@0.0.17
+62 silly idealTree:prePrune │ │ │   └── nan@2.0.9
+62 silly idealTree:prePrune │ │ └─┬ readable-stream@1.0.31
+62 silly idealTree:prePrune │ │   ├── core-util-is@1.0.2
+62 silly idealTree:prePrune │ │   ├── inherits@2.0.1
+62 silly idealTree:prePrune │ │   ├── isarray@0.0.1
+62 silly idealTree:prePrune │ │   └── string_decoder@0.10.31
+62 silly idealTree:prePrune │ ├── mpath@0.1.1
+62 silly idealTree:prePrune │ ├── mpromise@0.5.4
+62 silly idealTree:prePrune │ ├─┬ mquery@1.6.3
+62 silly idealTree:prePrune │ │ ├── bluebird@2.9.26
+62 silly idealTree:prePrune │ │ └─┬ debug@2.2.0
+62 silly idealTree:prePrune │ │   └── ms@0.7.1
+62 silly idealTree:prePrune │ ├── ms@0.1.0
+62 silly idealTree:prePrune │ ├── muri@1.0.0
+62 silly idealTree:prePrune │ ├── regexp-clone@0.0.1
+62 silly idealTree:prePrune │ └── sliced@0.0.5
+62 silly idealTree:prePrune ├── monocle@0.1.50
+62 silly idealTree:prePrune ├── morgan@1.0.0
+62 silly idealTree:prePrune ├── ms@0.7.1
+62 silly idealTree:prePrune ├─┬ multiparty@2.2.0
+62 silly idealTree:prePrune │ └── readable-stream@1.1.13
+62 silly idealTree:prePrune ├── nan@1.7.0
+62 silly idealTree:prePrune ├── negotiator@0.3.0
+62 silly idealTree:prePrune ├── node-uuid@1.4.7
+62 silly idealTree:prePrune ├── oauth-sign@0.8.0
+62 silly idealTree:prePrune ├── once@1.3.3
+62 silly idealTree:prePrune ├── optimist@0.3.7
+62 silly idealTree:prePrune ├── path-is-absolute@1.0.0
+62 silly idealTree:prePrune ├── pause@0.0.1
+62 silly idealTree:prePrune ├── pinkie-promise@2.0.0
+62 silly idealTree:prePrune ├── pinkie@2.0.1
+62 silly idealTree:prePrune ├── process-nextick-args@1.0.6
+62 silly idealTree:prePrune ├── promise@2.0.0
+62 silly idealTree:prePrune ├── qs@5.2.0
+62 silly idealTree:prePrune ├── range-parser@1.0.0
+62 silly idealTree:prePrune ├── raw-body@1.1.3
+62 silly idealTree:prePrune ├── readable-stream@2.0.4
+62 silly idealTree:prePrune ├── readdirp@0.2.5
+62 silly idealTree:prePrune ├── repeat-string@1.5.2
+62 silly idealTree:prePrune ├── request@2.67.0
+62 silly idealTree:prePrune ├── response-time@1.0.0
+62 silly idealTree:prePrune ├── right-align@0.1.3
+62 silly idealTree:prePrune ├── sax@1.1.4
+62 silly idealTree:prePrune ├── send@0.2.0
+62 silly idealTree:prePrune ├─┬ serve-index@1.0.1
+62 silly idealTree:prePrune │ └── negotiator@0.4.2
+62 silly idealTree:prePrune ├── serve-static@1.0.2
+62 silly idealTree:prePrune ├── sntp@1.0.9
+62 silly idealTree:prePrune ├─┬ socket.io-client@1.3.7
+62 silly idealTree:prePrune │ ├── backo2@1.0.2
+62 silly idealTree:prePrune │ ├── component-bind@1.0.0
+62 silly idealTree:prePrune │ ├── component-emitter@1.1.2
+62 silly idealTree:prePrune │ ├── debug@0.7.4
+62 silly idealTree:prePrune │ ├─┬ engine.io-client@1.5.4
+62 silly idealTree:prePrune │ │ ├── component-inherit@0.0.3
+62 silly idealTree:prePrune │ │ ├─┬ debug@1.0.4
+62 silly idealTree:prePrune │ │ │ └── ms@0.6.2
+62 silly idealTree:prePrune │ │ ├─┬ engine.io-parser@1.2.2
+62 silly idealTree:prePrune │ │ │ ├── after@0.8.1
+62 silly idealTree:prePrune │ │ │ ├── arraybuffer.slice@0.0.6
+62 silly idealTree:prePrune │ │ │ ├── base64-arraybuffer@0.1.2
+62 silly idealTree:prePrune │ │ │ ├── blob@0.0.4
+62 silly idealTree:prePrune │ │ │ └── utf8@2.1.0
+62 silly idealTree:prePrune │ │ ├─┬ has-cors@1.0.3
+62 silly idealTree:prePrune │ │ │ └── global@2.0.1
+62 silly idealTree:prePrune │ │ ├─┬ parsejson@0.0.1
+62 silly idealTree:prePrune │ │ │ └─┬ better-assert@1.0.2
+62 silly idealTree:prePrune │ │ │   └── callsite@1.0.0
+62 silly idealTree:prePrune │ │ ├─┬ parseqs@0.0.2
+62 silly idealTree:prePrune │ │ │ └─┬ better-assert@1.0.2
+62 silly idealTree:prePrune │ │ │   └── callsite@1.0.0
+62 silly idealTree:prePrune │ │ ├─┬ parseuri@0.0.4
+62 silly idealTree:prePrune │ │ │ └─┬ better-assert@1.0.2
+62 silly idealTree:prePrune │ │ │   └── callsite@1.0.0
+62 silly idealTree:prePrune │ │ ├─┬ ws@0.8.0
+62 silly idealTree:prePrune │ │ │ ├─┬ bufferutil@1.2.1
+62 silly idealTree:prePrune │ │ │ │ ├── bindings@1.2.1
+62 silly idealTree:prePrune │ │ │ │ └── nan@2.1.0
+62 silly idealTree:prePrune │ │ │ ├── options@0.0.6
+62 silly idealTree:prePrune │ │ │ ├── ultron@1.0.2
+62 silly idealTree:prePrune │ │ │ └─┬ utf-8-validate@1.2.1
+62 silly idealTree:prePrune │ │ │   ├── bindings@1.2.1
+62 silly idealTree:prePrune │ │ │   └── nan@2.1.0
+62 silly idealTree:prePrune │ │ └── xmlhttprequest@1.5.0
+62 silly idealTree:prePrune │ ├─┬ has-binary@0.1.6
+62 silly idealTree:prePrune │ │ └── isarray@0.0.1
+62 silly idealTree:prePrune │ ├── indexof@0.0.1
+62 silly idealTree:prePrune │ ├── object-component@0.0.3
+62 silly idealTree:prePrune │ ├─┬ parseuri@0.0.2
+62 silly idealTree:prePrune │ │ └─┬ better-assert@1.0.2
+62 silly idealTree:prePrune │ │   └── callsite@1.0.0
+62 silly idealTree:prePrune │ ├─┬ socket.io-parser@2.2.4
+62 silly idealTree:prePrune │ │ ├── benchmark@1.0.0
+62 silly idealTree:prePrune │ │ ├── isarray@0.0.1
+62 silly idealTree:prePrune │ │ └── json3@3.2.6
+62 silly idealTree:prePrune │ └── to-array@0.1.3
+62 silly idealTree:prePrune ├─┬ socket.io@1.3.7
+62 silly idealTree:prePrune │ ├─┬ debug@2.1.0
+62 silly idealTree:prePrune │ │ └── ms@0.6.2
+62 silly idealTree:prePrune │ ├─┬ engine.io@1.5.4
+62 silly idealTree:prePrune │ │ ├── base64id@0.1.0
+62 silly idealTree:prePrune │ │ ├─┬ debug@1.0.3
+62 silly idealTree:prePrune │ │ │ └── ms@0.6.2
+62 silly idealTree:prePrune │ │ ├─┬ engine.io-parser@1.2.2
+62 silly idealTree:prePrune │ │ │ ├── after@0.8.1
+62 silly idealTree:prePrune │ │ │ ├── arraybuffer.slice@0.0.6
+62 silly idealTree:prePrune │ │ │ ├── base64-arraybuffer@0.1.2
+62 silly idealTree:prePrune │ │ │ ├── blob@0.0.4
+62 silly idealTree:prePrune │ │ │ ├─┬ has-binary@0.1.6
+62 silly idealTree:prePrune │ │ │ │ └── isarray@0.0.1
+62 silly idealTree:prePrune │ │ │ └── utf8@2.1.0
+62 silly idealTree:prePrune │ │ └─┬ ws@0.8.0
+62 silly idealTree:prePrune │ │   ├─┬ bufferutil@1.2.1
+62 silly idealTree:prePrune │ │   │ ├── bindings@1.2.1
+62 silly idealTree:prePrune │ │   │ └── nan@2.1.0
+62 silly idealTree:prePrune │ │   ├── options@0.0.6
+62 silly idealTree:prePrune │ │   ├── ultron@1.0.2
+62 silly idealTree:prePrune │ │   └─┬ utf-8-validate@1.2.1
+62 silly idealTree:prePrune │ │     ├── bindings@1.2.1
+62 silly idealTree:prePrune │ │     └── nan@2.1.0
+62 silly idealTree:prePrune │ ├─┬ has-binary-data@0.1.3
+62 silly idealTree:prePrune │ │ └── isarray@0.0.1
+62 silly idealTree:prePrune │ ├─┬ socket.io-adapter@0.3.1
+62 silly idealTree:prePrune │ │ ├─┬ debug@1.0.2
+62 silly idealTree:prePrune │ │ │ └── ms@0.6.2
+62 silly idealTree:prePrune │ │ ├── object-keys@1.0.1
+62 silly idealTree:prePrune │ │ └─┬ socket.io-parser@2.2.2
+62 silly idealTree:prePrune │ │   ├── benchmark@1.0.0
+62 silly idealTree:prePrune │ │   ├── component-emitter@1.1.2
+62 silly idealTree:prePrune │ │   ├── debug@0.7.4
+62 silly idealTree:prePrune │ │   ├── isarray@0.0.1
+62 silly idealTree:prePrune │ │   └── json3@3.2.6
+62 silly idealTree:prePrune │ └─┬ socket.io-parser@2.2.4
+62 silly idealTree:prePrune │   ├── benchmark@1.0.0
+62 silly idealTree:prePrune │   ├── component-emitter@1.1.2
+62 silly idealTree:prePrune │   ├── debug@0.7.4
+62 silly idealTree:prePrune │   ├── isarray@0.0.1
+62 silly idealTree:prePrune │   └── json3@3.2.6
+62 silly idealTree:prePrune ├── source-map@0.4.4
+62 silly idealTree:prePrune ├─┬ sshpk@1.7.1
+62 silly idealTree:prePrune │ └── assert-plus@0.2.0
+62 silly idealTree:prePrune ├── stanford-corenlp@0.3.5
+62 silly idealTree:prePrune ├── static-favicon@1.0.0
+62 silly idealTree:prePrune ├─┬ stream-counter@0.2.0
+62 silly idealTree:prePrune │ └── readable-stream@1.1.13
+62 silly idealTree:prePrune ├── string_decoder@0.10.31
+62 silly idealTree:prePrune ├── stringstream@0.0.5
+62 silly idealTree:prePrune ├── strip-ansi@3.0.0
+62 silly idealTree:prePrune ├── supports-color@2.0.0
+62 silly idealTree:prePrune ├── tough-cookie@2.2.1
+62 silly idealTree:prePrune ├── transformers@1.8.3
+62 silly idealTree:prePrune ├── tunnel-agent@0.4.2
+62 silly idealTree:prePrune ├── tweetnacl@0.13.2
+62 silly idealTree:prePrune ├─┬ uglify-js@2.6.1
+62 silly idealTree:prePrune │ ├── async@0.2.10
+62 silly idealTree:prePrune │ └── source-map@0.5.3
+62 silly idealTree:prePrune ├── uglify-to-browserify@1.0.2
+62 silly idealTree:prePrune ├── uid2@0.0.3
+62 silly idealTree:prePrune ├── util-deprecate@1.0.2
+62 silly idealTree:prePrune ├── utils-merge@1.0.0
+62 silly idealTree:prePrune ├── verror@1.3.6
+62 silly idealTree:prePrune ├── vhost@1.0.0
+62 silly idealTree:prePrune ├─┬ video.js@4.12.15
+62 silly idealTree:prePrune │ ├── videojs-swf@4.7.5
+62 silly idealTree:prePrune │ └── vtt.js@0.12.1
+62 silly idealTree:prePrune ├── videojs-youtube@1.2.13
+62 silly idealTree:prePrune ├── void-elements@2.0.1
+62 silly idealTree:prePrune ├── which@1.0.9
+62 silly idealTree:prePrune ├── window-size@0.1.0
+62 silly idealTree:prePrune ├─┬ with@4.0.3
+62 silly idealTree:prePrune │ └── acorn@1.2.2
+62 silly idealTree:prePrune ├── wordwrap@0.0.3
+62 silly idealTree:prePrune ├── wrappy@1.0.1
+62 silly idealTree:prePrune ├── xml2js@0.4.15
+62 silly idealTree:prePrune ├── xmlbuilder@4.1.0
+62 silly idealTree:prePrune ├── xtend@4.0.1
+62 silly idealTree:prePrune └── yargs@3.10.0
+63 silly loadIdealTree Finishing
+64 silly currentTree E-learning@0.0.1
+64 silly currentTree ├── acorn-globals@1.0.9
+64 silly currentTree ├── acorn@2.6.4
+64 silly currentTree ├── align-text@0.1.3
+64 silly currentTree ├── amdefine@1.0.0
+64 silly currentTree ├── ansi-regex@2.0.0
+64 silly currentTree ├── ansi-styles@2.1.0
+64 silly currentTree ├── asap@1.0.0
+64 silly currentTree ├── asn1@0.2.3
+64 silly currentTree ├── assert-plus@0.1.5
+64 silly currentTree ├── async@1.5.0
+64 silly currentTree ├── autosize@3.0.14
+64 silly currentTree ├── aws-sign2@0.6.0
+64 silly currentTree ├── balanced-match@0.3.0
+64 silly currentTree ├── basic-auth-connect@1.0.0
+64 silly currentTree ├── batch@0.5.0
+64 silly currentTree ├── bl@1.0.0
+64 silly currentTree ├── boom@2.10.1
+64 silly currentTree ├── brace-expansion@1.1.2
+64 silly currentTree ├── bson@0.4.20
+64 silly currentTree ├── buffer-crc32@0.2.1
+64 silly currentTree ├── bytes@0.2.1
+64 silly currentTree ├── camelcase@1.2.1
+64 silly currentTree ├── caseless@0.11.0
+64 silly currentTree ├── center-align@0.1.2
+64 silly currentTree ├── chalk@1.1.1
+64 silly currentTree ├── character-parser@1.0.2
+64 silly currentTree ├─┬ clean-css@3.4.8
+64 silly currentTree │ └── commander@2.8.1
+64 silly currentTree ├─┬ cliui@2.1.0
+64 silly currentTree │ └── wordwrap@0.0.2
+64 silly currentTree ├── combined-stream@1.0.5
+64 silly currentTree ├── commander@2.9.0
+64 silly currentTree ├── compressible@1.0.0
+64 silly currentTree ├── compression@1.0.0
+64 silly currentTree ├── concat-map@0.0.1
+64 silly currentTree ├── connect-timeout@1.0.0
+64 silly currentTree ├─┬ connect@2.14.1
+64 silly currentTree │ └── qs@0.6.6
+64 silly currentTree ├─┬ connectr@0.0.6
+64 silly currentTree │ └── debug@0.7.4
+64 silly currentTree ├── constantinople@3.0.2
+64 silly currentTree ├─┬ cookie-parser@1.0.1
+64 silly currentTree │ └── cookie@0.1.0
+64 silly currentTree ├─┬ cookie-session@1.2.0
+64 silly currentTree │ ├─┬ cookies@0.5.0
+64 silly currentTree │ │ └── keygrip@1.0.1
+64 silly currentTree │ ├─┬ debug@2.2.0
+64 silly currentTree │ │ └── ms@0.7.1
+64 silly currentTree │ └── on-headers@1.0.1
+64 silly currentTree ├── cookie-signature@1.0.3
+64 silly currentTree ├── cookie@0.1.1
+64 silly currentTree ├── core-util-is@1.0.2
+64 silly currentTree ├── couch-pwd@0.0.1
+64 silly currentTree ├── cryptiles@2.0.5
+64 silly currentTree ├── css-parse@1.0.4
+64 silly currentTree ├── css-stringify@1.0.5
+64 silly currentTree ├── css@1.0.8
+64 silly currentTree ├── csurf@1.0.0
+64 silly currentTree ├─┬ d3@3.4.6
+64 silly currentTree │ └─┬ jsdom@0.5.7
+64 silly currentTree │   ├─┬ contextify@0.1.15
+64 silly currentTree │   │ ├── bindings@1.2.1
+64 silly currentTree │   │ └── nan@2.1.0
+64 silly currentTree │   ├── cssom@0.2.5
+64 silly currentTree │   ├─┬ cssstyle@0.2.30
+64 silly currentTree │   │ └── cssom@0.3.0
+64 silly currentTree │   ├── htmlparser@1.7.7
+64 silly currentTree │   └── nwmatcher@1.3.7
+64 silly currentTree ├── dashdash@1.10.1
+64 silly currentTree ├── debug@0.8.1
+64 silly currentTree ├── decamelize@1.1.1
+64 silly currentTree ├── delayed-stream@1.0.0
+64 silly currentTree ├── ecc-jsbn@0.1.1
+64 silly currentTree ├── errorhandler@1.0.0
+64 silly currentTree ├── es6-promise@2.1.1
+64 silly currentTree ├── escape-string-regexp@1.0.3
+64 silly currentTree ├─┬ express-debug@1.1.1
+64 silly currentTree │ ├── commander@0.6.1
+64 silly currentTree │ ├── jade@0.29.0
+64 silly currentTree │ └── xtend@2.0.3
+64 silly currentTree ├─┬ express-session@1.0.2
+64 silly currentTree │ ├── cookie@0.1.0
+64 silly currentTree │ └── debug@0.7.4
+64 silly currentTree ├─┬ express@3.5.1
+64 silly currentTree │ └── commander@1.3.2
+64 silly currentTree ├── extend@3.0.0
+64 silly currentTree ├── extsprintf@1.0.2
+64 silly currentTree ├── find-java-home@0.1.2
+64 silly currentTree ├── forever-agent@0.6.1
+64 silly currentTree ├── form-data@1.0.0-rc3
+64 silly currentTree ├── fresh@0.2.2
+64 silly currentTree ├── generate-function@2.0.0
+64 silly currentTree ├── generate-object-property@1.2.0
+64 silly currentTree ├─┬ glob@5.0.5
+64 silly currentTree │ └── minimatch@2.0.10
+64 silly currentTree ├── graceful-readlink@1.0.1
+64 silly currentTree ├── har-validator@2.0.3
+64 silly currentTree ├── has-ansi@2.0.0
+64 silly currentTree ├── hawk@3.1.2
+64 silly currentTree ├── hoek@2.16.3
+64 silly currentTree ├── http-signature@1.1.0
+64 silly currentTree ├── inflight@1.0.4
+64 silly currentTree ├── inherits@2.0.1
+64 silly currentTree ├── is-buffer@1.1.0
+64 silly currentTree ├── is-my-json-valid@2.12.3
+64 silly currentTree ├── is-promise@1.0.1
+64 silly currentTree ├── is-property@1.0.2
+64 silly currentTree ├── is-typedarray@1.0.0
+64 silly currentTree ├── isarray@0.0.1
+64 silly currentTree ├── isstream@0.1.2
+64 silly currentTree ├─┬ jade@1.11.0
+64 silly currentTree │ ├── character-parser@1.2.1
+64 silly currentTree │ ├── commander@2.6.0
+64 silly currentTree │ ├── mkdirp@0.5.1
+64 silly currentTree │ ├── source-map@0.1.43
+64 silly currentTree │ └─┬ transformers@2.1.0
+64 silly currentTree │   └── uglify-js@2.2.5
+64 silly currentTree ├─┬ java@0.5.5
+64 silly currentTree │ ├── async@0.9.0
+64 silly currentTree │ └── lodash@3.7.0
+64 silly currentTree ├── jodid25519@1.0.2
+64 silly currentTree ├── jsbn@0.1.0
+64 silly currentTree ├── json-schema@0.2.2
+64 silly currentTree ├── json-stringify-safe@5.0.1
+64 silly currentTree ├── jsonpointer@2.0.0
+64 silly currentTree ├── jsprim@1.2.2
+64 silly currentTree ├─┬ jstransformer@0.0.2
+64 silly currentTree │ ├── is-promise@2.1.0
+64 silly currentTree │ └── promise@6.1.0
+64 silly currentTree ├─┬ kerberos@0.0.17
+64 silly currentTree │ └── nan@2.0.9
+64 silly currentTree ├── keypress@0.1.0
+64 silly currentTree ├── kind-of@2.0.1
+64 silly currentTree ├── lazy-cache@0.2.7
+64 silly currentTree ├─┬ lockit@1.0.0
+64 silly currentTree │ ├─┬ chalk@0.4.0
+64 silly currentTree │ │ ├── ansi-styles@1.0.0
+64 silly currentTree │ │ ├── has-color@0.1.7
+64 silly currentTree │ │ └── strip-ansi@0.1.1
+64 silly currentTree │ ├── debug@0.7.4
+64 silly currentTree │ ├─┬ express@4.0.0
+64 silly currentTree │ │ ├─┬ accepts@1.0.0
+64 silly currentTree │ │ │ ├── mime@1.2.11
+64 silly currentTree │ │ │ └── negotiator@0.3.0
+64 silly currentTree │ │ ├── buffer-crc32@0.2.1
+64 silly currentTree │ │ ├── cookie-signature@1.0.3
+64 silly currentTree │ │ ├── cookie@0.1.0
+64 silly currentTree │ │ ├── escape-html@1.0.1
+64 silly currentTree │ │ ├── fresh@0.2.2
+64 silly currentTree │ │ ├── merge-descriptors@0.0.2
+64 silly currentTree │ │ ├── methods@0.1.0
+64 silly currentTree │ │ ├── parseurl@1.0.1
+64 silly currentTree │ │ ├── path-to-regexp@0.1.2
+64 silly currentTree │ │ ├── qs@0.6.6
+64 silly currentTree │ │ ├── range-parser@1.0.0
+64 silly currentTree │ │ ├─┬ send@0.2.0
+64 silly currentTree │ │ │ └── mime@1.2.11
+64 silly currentTree │ │ ├─┬ serve-static@1.0.1
+64 silly currentTree │ │ │ └─┬ send@0.1.4
+64 silly currentTree │ │ │   ├── fresh@0.2.0
+64 silly currentTree │ │ │   ├── mime@1.2.11
+64 silly currentTree │ │ │   └── range-parser@0.0.4
+64 silly currentTree │ │ ├─┬ type-is@1.0.0
+64 silly currentTree │ │ │ └── mime@1.2.11
+64 silly currentTree │ │ └── utils-merge@1.0.0
+64 silly currentTree │ ├─┬ lockit-delete-account@1.0.0
+64 silly currentTree │ │ └── couch-pwd@0.0.1
+64 silly currentTree │ ├─┬ lockit-forgot-password@1.0.0
+64 silly currentTree │ │ ├── couch-pwd@0.0.1
+64 silly currentTree │ │ ├─┬ lockit-sendmail@0.1.2
+64 silly currentTree │ │ │ ├── ejs@0.8.8
+64 silly currentTree │ │ │ └─┬ nodemailer@0.5.15
+64 silly currentTree │ │ │   ├── directmail@0.1.6
+64 silly currentTree │ │ │   ├── he@0.3.6
+64 silly currentTree │ │ │   ├─┬ mailcomposer@0.2.9
+64 silly currentTree │ │ │   │ ├── dkim-signer@0.1.0
+64 silly currentTree │ │ │   │ ├─┬ follow-redirects@0.0.3
+64 silly currentTree │ │ │   │ │ └── underscore@1.8.3
+64 silly currentTree │ │ │   │ ├── mime@1.2.11
+64 silly currentTree │ │ │   │ ├─┬ mimelib@0.2.14
+64 silly currentTree │ │ │   │ │ ├── addressparser@0.2.1
+64 silly currentTree │ │ │   │ │ └─┬ encoding@0.1.7
+64 silly currentTree │ │ │   │ │   └── iconv-lite@0.2.11
+64 silly currentTree │ │ │   │ └── punycode@1.2.4
+64 silly currentTree │ │ │   ├── public-address@0.1.0
+64 silly currentTree │ │ │   ├─┬ readable-stream@1.0.27-1
+64 silly currentTree │ │ │   │ ├── core-util-is@1.0.1
+64 silly currentTree │ │ │   │ ├── inherits@2.0.1
+64 silly currentTree │ │ │   │ ├── isarray@0.0.1
+64 silly currentTree │ │ │   │ └── string_decoder@0.10.31
+64 silly currentTree │ │ │   └─┬ simplesmtp@0.3.27
+64 silly currentTree │ │ │     ├── rai@0.1.10
+64 silly currentTree │ │ │     └── xoauth2@0.1.8
+64 silly currentTree │ │ ├─┬ lockit-template-blank@0.0.1
+64 silly currentTree │ │ │ └── ejs@0.8.8
+64 silly currentTree │ │ ├── moment@2.5.1
+64 silly currentTree │ │ ├── ms@0.6.2
+64 silly currentTree │ │ └── node-uuid@1.4.1
+64 silly currentTree │ ├─┬ lockit-login@1.0.0
+64 silly currentTree │ │ ├── couch-pwd@0.0.1
+64 silly currentTree │ │ ├── moment@2.4.0
+64 silly currentTree │ │ └── ms@0.6.2
+64 silly currentTree │ ├─┬ lockit-signup@1.0.0
+64 silly currentTree │ │ ├─┬ lockit-sendmail@0.1.2
+64 silly currentTree │ │ │ ├── ejs@0.8.8
+64 silly currentTree │ │ │ └─┬ nodemailer@0.5.15
+64 silly currentTree │ │ │   ├── directmail@0.1.6
+64 silly currentTree │ │ │   ├── he@0.3.6
+64 silly currentTree │ │ │   ├─┬ mailcomposer@0.2.9
+64 silly currentTree │ │ │   │ ├── dkim-signer@0.1.0
+64 silly currentTree │ │ │   │ ├─┬ follow-redirects@0.0.3
+64 silly currentTree │ │ │   │ │ └── underscore@1.8.3
+64 silly currentTree │ │ │   │ ├── mime@1.2.11
+64 silly currentTree │ │ │   │ ├─┬ mimelib@0.2.14
+64 silly currentTree │ │ │   │ │ ├── addressparser@0.2.1
+64 silly currentTree │ │ │   │ │ └─┬ encoding@0.1.7
+64 silly currentTree │ │ │   │ │   └── iconv-lite@0.2.11
+64 silly currentTree │ │ │   │ └── punycode@1.2.4
+64 silly currentTree │ │ │   ├── public-address@0.1.0
+64 silly currentTree │ │ │   ├─┬ readable-stream@1.0.27-1
+64 silly currentTree │ │ │   │ ├── core-util-is@1.0.1
+64 silly currentTree │ │ │   │ ├── inherits@2.0.1
+64 silly currentTree │ │ │   │ ├── isarray@0.0.1
+64 silly currentTree │ │ │   │ └── string_decoder@0.10.31
+64 silly currentTree │ │ │   └─┬ simplesmtp@0.3.27
+64 silly currentTree │ │ │     ├── rai@0.1.10
+64 silly currentTree │ │ │     └── xoauth2@0.1.8
+64 silly currentTree │ │ ├─┬ lockit-template-blank@0.0.1
+64 silly currentTree │ │ │ └── ejs@0.8.8
+64 silly currentTree │ │ ├── moment@2.5.1
+64 silly currentTree │ │ ├── ms@0.6.2
+64 silly currentTree │ │ └── node-uuid@1.4.1
+64 silly currentTree │ ├─┬ lockit-sql-adapter@0.5.0
+64 silly currentTree │ │ ├── couch-pwd@0.0.1
+64 silly currentTree │ │ ├── moment@2.5.1
+64 silly currentTree │ │ ├── ms@0.6.2
+64 silly currentTree │ │ ├─┬ sequelize@2.0.0-dev11
+64 silly currentTree │ │ │ ├── bluebird@1.0.8
+64 silly currentTree │ │ │ ├─┬ circular-json@0.1.6
+64 silly currentTree │ │ │ │ └── wru@0.2.7
+64 silly currentTree │ │ │ ├── commander@2.1.0
+64 silly currentTree │ │ │ ├── dottie@0.2.1
+64 silly currentTree │ │ │ ├── generic-pool@2.0.4
+64 silly currentTree │ │ │ ├── lingo@0.0.5
+64 silly currentTree │ │ │ ├── lodash@2.4.1
+64 silly currentTree │ │ │ ├── node-uuid@1.4.1
+64 silly currentTree │ │ │ ├─┬ sql@0.35.0
+64 silly currentTree │ │ │ │ ├── lodash@1.3.1
+64 silly currentTree │ │ │ │ └── sliced@0.0.5
+64 silly currentTree │ │ │ ├── toposort-class@0.3.0
+64 silly currentTree │ │ │ ├── underscore.string@2.3.3
+64 silly currentTree │ │ │ └── validator@3.2.1
+64 silly currentTree │ │ └── uuid@1.4.1
+64 silly currentTree │ ├── lockit-utils@0.3.0
+64 silly currentTree │ ├─┬ nano@4.6.1
+64 silly currentTree │ │ ├── errs@0.2.4
+64 silly currentTree │ │ ├─┬ follow@0.10.4
+64 silly currentTree │ │ │ ├── browser-request@0.3.1
+64 silly currentTree │ │ │ └─┬ request@2.30.0
+64 silly currentTree │ │ │   ├── aws-sign2@0.5.0
+64 silly currentTree │ │ │   ├── forever-agent@0.5.2
+64 silly currentTree │ │ │   ├─┬ form-data@0.1.2
+64 silly currentTree │ │ │   │ ├── async@0.2.10
+64 silly currentTree │ │ │   │ └─┬ combined-stream@0.0.4
+64 silly currentTree │ │ │   │   └── delayed-stream@0.0.5
+64 silly currentTree │ │ │   ├─┬ hawk@1.0.0
+64 silly currentTree │ │ │   │ ├── boom@0.4.2
+64 silly currentTree │ │ │   │ ├── cryptiles@0.2.2
+64 silly currentTree │ │ │   │ ├── hoek@0.9.1
+64 silly currentTree │ │ │   │ └── sntp@0.2.4
+64 silly currentTree │ │ │   ├─┬ http-signature@0.10.0
+64 silly currentTree │ │ │   │ ├── asn1@0.1.11
+64 silly currentTree │ │ │   │ ├── assert-plus@0.1.2
+64 silly currentTree │ │ │   │ └── ctype@0.5.2
+64 silly currentTree │ │ │   ├── json-stringify-safe@5.0.0
+64 silly currentTree │ │ │   ├── mime@1.2.11
+64 silly currentTree │ │ │   ├── node-uuid@1.4.1
+64 silly currentTree │ │ │   ├── oauth-sign@0.3.0
+64 silly currentTree │ │ │   ├── qs@0.6.6
+64 silly currentTree │ │ │   ├─┬ tough-cookie@0.9.15
+64 silly currentTree │ │ │   │ └── punycode@1.2.4
+64 silly currentTree │ │ │   └── tunnel-agent@0.3.0
+64 silly currentTree │ │ ├─┬ request@2.33.0
+64 silly currentTree │ │ │ ├── aws-sign2@0.5.0
+64 silly currentTree │ │ │ ├── forever-agent@0.5.2
+64 silly currentTree │ │ │ ├─┬ form-data@0.1.2
+64 silly currentTree │ │ │ │ ├── async@0.2.10
+64 silly currentTree │ │ │ │ └─┬ combined-stream@0.0.4
+64 silly currentTree │ │ │ │   └── delayed-stream@0.0.5
+64 silly currentTree │ │ │ ├─┬ hawk@1.0.0
+64 silly currentTree │ │ │ │ ├── boom@0.4.2
+64 silly currentTree │ │ │ │ ├── cryptiles@0.2.2
+64 silly currentTree │ │ │ │ ├── hoek@0.9.1
+64 silly currentTree │ │ │ │ └── sntp@0.2.4
+64 silly currentTree │ │ │ ├─┬ http-signature@0.10.0
+64 silly currentTree │ │ │ │ ├── asn1@0.1.11
+64 silly currentTree │ │ │ │ ├── assert-plus@0.1.2
+64 silly currentTree │ │ │ │ └── ctype@0.5.2
+64 silly currentTree │ │ │ ├── json-stringify-safe@5.0.0
+64 silly currentTree │ │ │ ├── mime@1.2.11
+64 silly currentTree │ │ │ ├── node-uuid@1.4.1
+64 silly currentTree │ │ │ ├── oauth-sign@0.3.0
+64 silly currentTree │ │ │ ├── qs@0.6.6
+64 silly currentTree │ │ │ ├─┬ tough-cookie@0.12.1
+64 silly currentTree │ │ │ │ └── punycode@1.2.4
+64 silly currentTree │ │ │ └── tunnel-agent@0.3.0
+64 silly currentTree │ │ └── underscore@1.5.2
+64 silly currentTree │ ├─┬ node.extend@1.0.10
+64 silly currentTree │ │ └── is@0.3.0
+64 silly currentTree │ └─┬ sqlite3@2.2.3
+64 silly currentTree │   └─┬ node-pre-gyp@0.5.9
+64 silly currentTree │     ├── mkdirp@0.3.5
+64 silly currentTree │     ├─┬ nopt@2.2.0
+64 silly currentTree │     │ └── abbrev@1.0.4
+64 silly currentTree │     ├─┬ npmlog@0.0.6
+64 silly currentTree │     │ └── ansi@0.2.1
+64 silly currentTree │     ├─┬ rc@0.3.4
+64 silly currentTree │     │ ├── deep-extend@0.2.8
+64 silly currentTree │     │ ├── ini@1.1.0
+64 silly currentTree │     │ └── minimist@0.0.8
+64 silly currentTree │     ├─┬ request@2.34.0
+64 silly currentTree │     │ ├── aws-sign2@0.5.0
+64 silly currentTree │     │ ├── forever-agent@0.5.2
+64 silly currentTree │     │ ├─┬ form-data@0.1.2
+64 silly currentTree │     │ │ ├── async@0.2.10
+64 silly currentTree │     │ │ └─┬ combined-stream@0.0.4
+64 silly currentTree │     │ │   └── delayed-stream@0.0.5
+64 silly currentTree │     │ ├─┬ hawk@1.0.0
+64 silly currentTree │     │ │ ├── boom@0.4.2
+64 silly currentTree │     │ │ ├── cryptiles@0.2.2
+64 silly currentTree │     │ │ ├── hoek@0.9.1
+64 silly currentTree │     │ │ └── sntp@0.2.4
+64 silly currentTree │     │ ├─┬ http-signature@0.10.0
+64 silly currentTree │     │ │ ├── asn1@0.1.11
+64 silly currentTree │     │ │ ├── assert-plus@0.1.2
+64 silly currentTree │     │ │ └── ctype@0.5.2
+64 silly currentTree │     │ ├── json-stringify-safe@5.0.0
+64 silly currentTree │     │ ├── mime@1.2.11
+64 silly currentTree │     │ ├── node-uuid@1.4.1
+64 silly currentTree │     │ ├── oauth-sign@0.3.0
+64 silly currentTree │     │ ├── qs@0.6.6
+64 silly currentTree │     │ ├─┬ tough-cookie@0.12.1
+64 silly currentTree │     │ │ └── punycode@1.2.4
+64 silly currentTree │     │ └── tunnel-agent@0.3.0
+64 silly currentTree │     ├── rimraf@2.2.6
+64 silly currentTree │     ├── semver@2.2.1
+64 silly currentTree │     ├─┬ tar-pack@2.0.0
+64 silly currentTree │     │ ├── debug@0.7.4
+64 silly currentTree │     │ ├─┬ fstream-ignore@0.0.7
+64 silly currentTree │     │ │ ├── inherits@2.0.1
+64 silly currentTree │     │ │ └─┬ minimatch@0.2.14
+64 silly currentTree │     │ │   ├── lru-cache@2.5.0
+64 silly currentTree │     │ │   └── sigmund@1.0.0
+64 silly currentTree │     │ ├─┬ fstream@0.1.25
+64 silly currentTree │     │ │ ├── graceful-fs@2.0.3
+64 silly currentTree │     │ │ └── inherits@2.0.1
+64 silly currentTree │     │ ├── graceful-fs@1.2.3
+64 silly currentTree │     │ ├── once@1.1.1
+64 silly currentTree │     │ ├── readable-stream@1.0.33
+64 silly currentTree │     │ └── uid-number@0.0.3
+64 silly currentTree │     └─┬ tar@0.1.19
+64 silly currentTree │       ├── block-stream@0.0.7
+64 silly currentTree │       ├─┬ fstream@0.1.25
+64 silly currentTree │       │ └── graceful-fs@2.0.3
+64 silly currentTree │       └── inherits@2.0.1
+64 silly currentTree ├── lodash@3.10.1
+64 silly currentTree ├── longest@1.0.1
+64 silly currentTree ├── merge-descriptors@0.0.2
+64 silly currentTree ├── method-override@1.0.0
+64 silly currentTree ├── methods@0.1.0
+64 silly currentTree ├── mime-db@1.20.0
+64 silly currentTree ├── mime-types@2.1.8
+64 silly currentTree ├── mime@1.2.11
+64 silly currentTree ├── minimatch@3.0.0
+64 silly currentTree ├── minimist@0.0.8
+64 silly currentTree ├── mkdirp@0.3.5
+64 silly currentTree ├── moment@2.10.6
+64 silly currentTree ├── mongodb-core@1.2.28
+64 silly currentTree ├─┬ mongodb@2.0.52
+64 silly currentTree │ └── readable-stream@1.0.31
+64 silly currentTree ├─┬ mongoose@4.1.9
+64 silly currentTree │ ├── async@0.9.0
+64 silly currentTree │ ├── bson@0.4.20
+64 silly currentTree │ ├── hooks-fixed@1.1.0
+64 silly currentTree │ ├── kareem@1.0.1
+64 silly currentTree │ ├─┬ mongodb@2.0.42
+64 silly currentTree │ │ ├── es6-promise@2.1.1
+64 silly currentTree │ │ ├─┬ mongodb-core@1.2.10
+64 silly currentTree │ │ │ └─┬ kerberos@0.0.17
+64 silly currentTree │ │ │   └── nan@2.0.9
+64 silly currentTree │ │ └─┬ readable-stream@1.0.31
+64 silly currentTree │ │   ├── core-util-is@1.0.2
+64 silly currentTree │ │   ├── inherits@2.0.1
+64 silly currentTree │ │   ├── isarray@0.0.1
+64 silly currentTree │ │   └── string_decoder@0.10.31
+64 silly currentTree │ ├── mpath@0.1.1
+64 silly currentTree │ ├── mpromise@0.5.4
+64 silly currentTree │ ├─┬ mquery@1.6.3
+64 silly currentTree │ │ ├── bluebird@2.9.26
+64 silly currentTree │ │ └─┬ debug@2.2.0
+64 silly currentTree │ │   └── ms@0.7.1
+64 silly currentTree │ ├── ms@0.1.0
+64 silly currentTree │ ├── muri@1.0.0
+64 silly currentTree │ ├── regexp-clone@0.0.1
+64 silly currentTree │ └── sliced@0.0.5
+64 silly currentTree ├── monocle@0.1.50
+64 silly currentTree ├── morgan@1.0.0
+64 silly currentTree ├── ms@0.7.1
+64 silly currentTree ├─┬ multiparty@2.2.0
+64 silly currentTree │ └── readable-stream@1.1.13
+64 silly currentTree ├── nan@1.7.0
+64 silly currentTree ├── negotiator@0.3.0
+64 silly currentTree ├── node-uuid@1.4.7
+64 silly currentTree ├── oauth-sign@0.8.0
+64 silly currentTree ├── once@1.3.3
+64 silly currentTree ├── optimist@0.3.7
+64 silly currentTree ├── path-is-absolute@1.0.0
+64 silly currentTree ├── pause@0.0.1
+64 silly currentTree ├── pinkie-promise@2.0.0
+64 silly currentTree ├── pinkie@2.0.1
+64 silly currentTree ├── process-nextick-args@1.0.6
+64 silly currentTree ├── promise@2.0.0
+64 silly currentTree ├── qs@5.2.0
+64 silly currentTree ├── range-parser@1.0.0
+64 silly currentTree ├── raw-body@1.1.3
+64 silly currentTree ├── readable-stream@2.0.4
+64 silly currentTree ├── readdirp@0.2.5
+64 silly currentTree ├── repeat-string@1.5.2
+64 silly currentTree ├── request@2.67.0
+64 silly currentTree ├── response-time@1.0.0
+64 silly currentTree ├── right-align@0.1.3
+64 silly currentTree ├── sax@1.1.4
+64 silly currentTree ├── send@0.2.0
+64 silly currentTree ├─┬ serve-index@1.0.1
+64 silly currentTree │ └── negotiator@0.4.2
+64 silly currentTree ├── serve-static@1.0.2
+64 silly currentTree ├── sntp@1.0.9
+64 silly currentTree ├─┬ socket.io-client@1.3.7
+64 silly currentTree │ ├── backo2@1.0.2
+64 silly currentTree │ ├── component-bind@1.0.0
+64 silly currentTree │ ├── component-emitter@1.1.2
+64 silly currentTree │ ├── debug@0.7.4
+64 silly currentTree │ ├─┬ engine.io-client@1.5.4
+64 silly currentTree │ │ ├── component-inherit@0.0.3
+64 silly currentTree │ │ ├─┬ debug@1.0.4
+64 silly currentTree │ │ │ └── ms@0.6.2
+64 silly currentTree │ │ ├─┬ engine.io-parser@1.2.2
+64 silly currentTree │ │ │ ├── after@0.8.1
+64 silly currentTree │ │ │ ├── arraybuffer.slice@0.0.6
+64 silly currentTree │ │ │ ├── base64-arraybuffer@0.1.2
+64 silly currentTree │ │ │ ├── blob@0.0.4
+64 silly currentTree │ │ │ └── utf8@2.1.0
+64 silly currentTree │ │ ├─┬ has-cors@1.0.3
+64 silly currentTree │ │ │ └── global@2.0.1
+64 silly currentTree │ │ ├─┬ parsejson@0.0.1
+64 silly currentTree │ │ │ └─┬ better-assert@1.0.2
+64 silly currentTree │ │ │   └── callsite@1.0.0
+64 silly currentTree │ │ ├─┬ parseqs@0.0.2
+64 silly currentTree │ │ │ └─┬ better-assert@1.0.2
+64 silly currentTree │ │ │   └── callsite@1.0.0
+64 silly currentTree │ │ ├─┬ parseuri@0.0.4
+64 silly currentTree │ │ │ └─┬ better-assert@1.0.2
+64 silly currentTree │ │ │   └── callsite@1.0.0
+64 silly currentTree │ │ ├─┬ ws@0.8.0
+64 silly currentTree │ │ │ ├─┬ bufferutil@1.2.1
+64 silly currentTree │ │ │ │ ├── bindings@1.2.1
+64 silly currentTree │ │ │ │ └── nan@2.1.0
+64 silly currentTree │ │ │ ├── options@0.0.6
+64 silly currentTree │ │ │ ├── ultron@1.0.2
+64 silly currentTree │ │ │ └─┬ utf-8-validate@1.2.1
+64 silly currentTree │ │ │   ├── bindings@1.2.1
+64 silly currentTree │ │ │   └── nan@2.1.0
+64 silly currentTree │ │ └── xmlhttprequest@1.5.0
+64 silly currentTree │ ├─┬ has-binary@0.1.6
+64 silly currentTree │ │ └── isarray@0.0.1
+64 silly currentTree │ ├── indexof@0.0.1
+64 silly currentTree │ ├── object-component@0.0.3
+64 silly currentTree │ ├─┬ parseuri@0.0.2
+64 silly currentTree │ │ └─┬ better-assert@1.0.2
+64 silly currentTree │ │   └── callsite@1.0.0
+64 silly currentTree │ ├─┬ socket.io-parser@2.2.4
+64 silly currentTree │ │ ├── benchmark@1.0.0
+64 silly currentTree │ │ ├── isarray@0.0.1
+64 silly currentTree │ │ └── json3@3.2.6
+64 silly currentTree │ └── to-array@0.1.3
+64 silly currentTree ├─┬ socket.io@1.3.7
+64 silly currentTree │ ├─┬ debug@2.1.0
+64 silly currentTree │ │ └── ms@0.6.2
+64 silly currentTree │ ├─┬ engine.io@1.5.4
+64 silly currentTree │ │ ├── base64id@0.1.0
+64 silly currentTree │ │ ├─┬ debug@1.0.3
+64 silly currentTree │ │ │ └── ms@0.6.2
+64 silly currentTree │ │ ├─┬ engine.io-parser@1.2.2
+64 silly currentTree │ │ │ ├── after@0.8.1
+64 silly currentTree │ │ │ ├── arraybuffer.slice@0.0.6
+64 silly currentTree │ │ │ ├── base64-arraybuffer@0.1.2
+64 silly currentTree │ │ │ ├── blob@0.0.4
+64 silly currentTree │ │ │ ├─┬ has-binary@0.1.6
+64 silly currentTree │ │ │ │ └── isarray@0.0.1
+64 silly currentTree │ │ │ └── utf8@2.1.0
+64 silly currentTree │ │ └─┬ ws@0.8.0
+64 silly currentTree │ │   ├─┬ bufferutil@1.2.1
+64 silly currentTree │ │   │ ├── bindings@1.2.1
+64 silly currentTree │ │   │ └── nan@2.1.0
+64 silly currentTree │ │   ├── options@0.0.6
+64 silly currentTree │ │   ├── ultron@1.0.2
+64 silly currentTree │ │   └─┬ utf-8-validate@1.2.1
+64 silly currentTree │ │     ├── bindings@1.2.1
+64 silly currentTree │ │     └── nan@2.1.0
+64 silly currentTree │ ├─┬ has-binary-data@0.1.3
+64 silly currentTree │ │ └── isarray@0.0.1
+64 silly currentTree │ ├─┬ socket.io-adapter@0.3.1
+64 silly currentTree │ │ ├─┬ debug@1.0.2
+64 silly currentTree │ │ │ └── ms@0.6.2
+64 silly currentTree │ │ ├── object-keys@1.0.1
+64 silly currentTree │ │ └─┬ socket.io-parser@2.2.2
+64 silly currentTree │ │   ├── benchmark@1.0.0
+64 silly currentTree │ │   ├── component-emitter@1.1.2
+64 silly currentTree │ │   ├── debug@0.7.4
+64 silly currentTree │ │   ├── isarray@0.0.1
+64 silly currentTree │ │   └── json3@3.2.6
+64 silly currentTree │ └─┬ socket.io-parser@2.2.4
+64 silly currentTree │   ├── benchmark@1.0.0
+64 silly currentTree │   ├── component-emitter@1.1.2
+64 silly currentTree │   ├── debug@0.7.4
+64 silly currentTree │   ├── isarray@0.0.1
+64 silly currentTree │   └── json3@3.2.6
+64 silly currentTree ├── source-map@0.4.4
+64 silly currentTree ├─┬ sshpk@1.7.1
+64 silly currentTree │ └── assert-plus@0.2.0
+64 silly currentTree ├── stanford-corenlp@0.3.5
+64 silly currentTree ├── static-favicon@1.0.0
+64 silly currentTree ├─┬ stream-counter@0.2.0
+64 silly currentTree │ └── readable-stream@1.1.13
+64 silly currentTree ├── string_decoder@0.10.31
+64 silly currentTree ├── stringstream@0.0.5
+64 silly currentTree ├── strip-ansi@3.0.0
+64 silly currentTree ├── supports-color@2.0.0
+64 silly currentTree ├── tough-cookie@2.2.1
+64 silly currentTree ├── transformers@1.8.3
+64 silly currentTree ├── tunnel-agent@0.4.2
+64 silly currentTree ├── tweetnacl@0.13.2
+64 silly currentTree ├─┬ uglify-js@2.6.1
+64 silly currentTree │ ├── async@0.2.10
+64 silly currentTree │ └── source-map@0.5.3
+64 silly currentTree ├── uglify-to-browserify@1.0.2
+64 silly currentTree ├── uid2@0.0.3
+64 silly currentTree ├── util-deprecate@1.0.2
+64 silly currentTree ├── utils-merge@1.0.0
+64 silly currentTree ├── verror@1.3.6
+64 silly currentTree ├── vhost@1.0.0
+64 silly currentTree ├─┬ video.js@4.12.15
+64 silly currentTree │ ├── videojs-swf@4.7.5
+64 silly currentTree │ └── vtt.js@0.12.1
+64 silly currentTree ├── videojs-youtube@1.2.13
+64 silly currentTree ├── void-elements@2.0.1
+64 silly currentTree ├── which@1.0.9
+64 silly currentTree ├── window-size@0.1.0
+64 silly currentTree ├─┬ with@4.0.3
+64 silly currentTree │ └── acorn@1.2.2
+64 silly currentTree ├── wordwrap@0.0.3
+64 silly currentTree ├── wrappy@1.0.1
+64 silly currentTree ├── xml2js@0.4.15
+64 silly currentTree ├── xmlbuilder@4.1.0
+64 silly currentTree ├── xtend@4.0.1
+64 silly currentTree └── yargs@3.10.0
+65 silly idealTree E-learning@0.0.1
+65 silly idealTree ├── acorn-globals@1.0.9
+65 silly idealTree ├── acorn@2.6.4
+65 silly idealTree ├── align-text@0.1.3
+65 silly idealTree ├── amdefine@1.0.0
+65 silly idealTree ├── ansi-regex@2.0.0
+65 silly idealTree ├── ansi-styles@2.1.0
+65 silly idealTree ├── asap@1.0.0
+65 silly idealTree ├── asn1@0.2.3
+65 silly idealTree ├── assert-plus@0.1.5
+65 silly idealTree ├── async@1.5.0
+65 silly idealTree ├── autosize@3.0.14
+65 silly idealTree ├── aws-sign2@0.6.0
+65 silly idealTree ├── balanced-match@0.3.0
+65 silly idealTree ├── basic-auth-connect@1.0.0
+65 silly idealTree ├── batch@0.5.0
+65 silly idealTree ├── bl@1.0.0
+65 silly idealTree ├── boom@2.10.1
+65 silly idealTree ├── brace-expansion@1.1.2
+65 silly idealTree ├── bson@0.4.20
+65 silly idealTree ├── buffer-crc32@0.2.1
+65 silly idealTree ├── bytes@0.2.1
+65 silly idealTree ├── camelcase@1.2.1
+65 silly idealTree ├── caseless@0.11.0
+65 silly idealTree ├── center-align@0.1.2
+65 silly idealTree ├── chalk@1.1.1
+65 silly idealTree ├── character-parser@1.0.2
+65 silly idealTree ├─┬ clean-css@3.4.8
+65 silly idealTree │ └── commander@2.8.1
+65 silly idealTree ├─┬ cliui@2.1.0
+65 silly idealTree │ └── wordwrap@0.0.2
+65 silly idealTree ├── combined-stream@1.0.5
+65 silly idealTree ├── commander@2.9.0
+65 silly idealTree ├── compressible@1.0.0
+65 silly idealTree ├── compression@1.0.0
+65 silly idealTree ├── concat-map@0.0.1
+65 silly idealTree ├── connect-timeout@1.0.0
+65 silly idealTree ├─┬ connect@2.14.1
+65 silly idealTree │ └── qs@0.6.6
+65 silly idealTree ├─┬ connectr@0.0.6
+65 silly idealTree │ └── debug@0.7.4
+65 silly idealTree ├── constantinople@3.0.2
+65 silly idealTree ├─┬ cookie-parser@1.0.1
+65 silly idealTree │ └── cookie@0.1.0
+65 silly idealTree ├─┬ cookie-session@1.2.0
+65 silly idealTree │ ├─┬ cookies@0.5.0
+65 silly idealTree │ │ └── keygrip@1.0.1
+65 silly idealTree │ ├─┬ debug@2.2.0
+65 silly idealTree │ │ └── ms@0.7.1
+65 silly idealTree │ └── on-headers@1.0.1
+65 silly idealTree ├── cookie-signature@1.0.3
+65 silly idealTree ├── cookie@0.1.1
+65 silly idealTree ├── core-util-is@1.0.2
+65 silly idealTree ├── couch-pwd@0.0.1
+65 silly idealTree ├── cryptiles@2.0.5
+65 silly idealTree ├── css-parse@1.0.4
+65 silly idealTree ├── css-stringify@1.0.5
+65 silly idealTree ├── css@1.0.8
+65 silly idealTree ├── csurf@1.0.0
+65 silly idealTree ├─┬ d3@3.4.6
+65 silly idealTree │ └─┬ jsdom@0.5.7
+65 silly idealTree │   ├─┬ contextify@0.1.15
+65 silly idealTree │   │ ├── bindings@1.2.1
+65 silly idealTree │   │ └── nan@2.1.0
+65 silly idealTree │   ├── cssom@0.2.5
+65 silly idealTree │   ├─┬ cssstyle@0.2.30
+65 silly idealTree │   │ └── cssom@0.3.0
+65 silly idealTree │   ├── htmlparser@1.7.7
+65 silly idealTree │   └── nwmatcher@1.3.7
+65 silly idealTree ├── dashdash@1.10.1
+65 silly idealTree ├── debug@0.8.1
+65 silly idealTree ├── decamelize@1.1.1
+65 silly idealTree ├── delayed-stream@1.0.0
+65 silly idealTree ├── ecc-jsbn@0.1.1
+65 silly idealTree ├── errorhandler@1.0.0
+65 silly idealTree ├── es6-promise@2.1.1
+65 silly idealTree ├── escape-string-regexp@1.0.3
+65 silly idealTree ├─┬ express-debug@1.1.1
+65 silly idealTree │ ├── commander@0.6.1
+65 silly idealTree │ ├── jade@0.29.0
+65 silly idealTree │ └── xtend@2.0.3
+65 silly idealTree ├─┬ express-session@1.0.2
+65 silly idealTree │ ├── cookie@0.1.0
+65 silly idealTree │ └── debug@0.7.4
+65 silly idealTree ├─┬ express@3.5.1
+65 silly idealTree │ └── commander@1.3.2
+65 silly idealTree ├── extend@3.0.0
+65 silly idealTree ├── extsprintf@1.0.2
+65 silly idealTree ├── find-java-home@0.1.2
+65 silly idealTree ├── forever-agent@0.6.1
+65 silly idealTree ├── form-data@1.0.0-rc3
+65 silly idealTree ├── fresh@0.2.2
+65 silly idealTree ├── generate-function@2.0.0
+65 silly idealTree ├── generate-object-property@1.2.0
+65 silly idealTree ├─┬ glob@5.0.5
+65 silly idealTree │ └── minimatch@2.0.10
+65 silly idealTree ├── graceful-readlink@1.0.1
+65 silly idealTree ├── har-validator@2.0.3
+65 silly idealTree ├── has-ansi@2.0.0
+65 silly idealTree ├── hawk@3.1.2
+65 silly idealTree ├── hoek@2.16.3
+65 silly idealTree ├── http-signature@1.1.0
+65 silly idealTree ├── inflight@1.0.4
+65 silly idealTree ├── inherits@2.0.1
+65 silly idealTree ├── is-buffer@1.1.0
+65 silly idealTree ├── is-my-json-valid@2.12.3
+65 silly idealTree ├── is-promise@1.0.1
+65 silly idealTree ├── is-property@1.0.2
+65 silly idealTree ├── is-typedarray@1.0.0
+65 silly idealTree ├── isarray@0.0.1
+65 silly idealTree ├── isstream@0.1.2
+65 silly idealTree ├─┬ jade@1.11.0
+65 silly idealTree │ ├── character-parser@1.2.1
+65 silly idealTree │ ├── commander@2.6.0
+65 silly idealTree │ ├── mkdirp@0.5.1
+65 silly idealTree │ ├── source-map@0.1.43
+65 silly idealTree │ └─┬ transformers@2.1.0
+65 silly idealTree │   └── uglify-js@2.2.5
+65 silly idealTree ├─┬ java@0.5.5
+65 silly idealTree │ ├── async@0.9.0
+65 silly idealTree │ └── lodash@3.7.0
+65 silly idealTree ├── jodid25519@1.0.2
+65 silly idealTree ├── jsbn@0.1.0
+65 silly idealTree ├── json-schema@0.2.2
+65 silly idealTree ├── json-stringify-safe@5.0.1
+65 silly idealTree ├── jsonpointer@2.0.0
+65 silly idealTree ├── jsprim@1.2.2
+65 silly idealTree ├─┬ jstransformer@0.0.2
+65 silly idealTree │ ├── is-promise@2.1.0
+65 silly idealTree │ └── promise@6.1.0
+65 silly idealTree ├─┬ kerberos@0.0.17
+65 silly idealTree │ └── nan@2.0.9
+65 silly idealTree ├── keypress@0.1.0
+65 silly idealTree ├── kind-of@2.0.1
+65 silly idealTree ├── lazy-cache@0.2.7
+65 silly idealTree ├── lockit-mongodb-adapter@0.4.4
+65 silly idealTree ├─┬ lockit@1.0.0
+65 silly idealTree │ ├─┬ chalk@0.4.0
+65 silly idealTree │ │ ├── ansi-styles@1.0.0
+65 silly idealTree │ │ ├── has-color@0.1.7
+65 silly idealTree │ │ └── strip-ansi@0.1.1
+65 silly idealTree │ ├── debug@0.7.4
+65 silly idealTree │ ├─┬ express@4.0.0
+65 silly idealTree │ │ ├─┬ accepts@1.0.0
+65 silly idealTree │ │ │ ├── mime@1.2.11
+65 silly idealTree │ │ │ └── negotiator@0.3.0
+65 silly idealTree │ │ ├── buffer-crc32@0.2.1
+65 silly idealTree │ │ ├── cookie-signature@1.0.3
+65 silly idealTree │ │ ├── cookie@0.1.0
+65 silly idealTree │ │ ├── escape-html@1.0.1
+65 silly idealTree │ │ ├── fresh@0.2.2
+65 silly idealTree │ │ ├── merge-descriptors@0.0.2
+65 silly idealTree │ │ ├── methods@0.1.0
+65 silly idealTree │ │ ├── parseurl@1.0.1
+65 silly idealTree │ │ ├── path-to-regexp@0.1.2
+65 silly idealTree │ │ ├── qs@0.6.6
+65 silly idealTree │ │ ├── range-parser@1.0.0
+65 silly idealTree │ │ ├─┬ send@0.2.0
+65 silly idealTree │ │ │ └── mime@1.2.11
+65 silly idealTree │ │ ├─┬ serve-static@1.0.1
+65 silly idealTree │ │ │ └─┬ send@0.1.4
+65 silly idealTree │ │ │   ├── fresh@0.2.0
+65 silly idealTree │ │ │   ├── mime@1.2.11
+65 silly idealTree │ │ │   └── range-parser@0.0.4
+65 silly idealTree │ │ ├─┬ type-is@1.0.0
+65 silly idealTree │ │ │ └── mime@1.2.11
+65 silly idealTree │ │ └── utils-merge@1.0.0
+65 silly idealTree │ ├─┬ lockit-delete-account@1.0.0
+65 silly idealTree │ │ └── couch-pwd@0.0.1
+65 silly idealTree │ ├─┬ lockit-forgot-password@1.0.0
+65 silly idealTree │ │ ├── couch-pwd@0.0.1
+65 silly idealTree │ │ ├─┬ lockit-sendmail@0.1.2
+65 silly idealTree │ │ │ ├── ejs@0.8.8
+65 silly idealTree │ │ │ └─┬ nodemailer@0.5.15
+65 silly idealTree │ │ │   ├── directmail@0.1.6
+65 silly idealTree │ │ │   ├── he@0.3.6
+65 silly idealTree │ │ │   ├─┬ mailcomposer@0.2.9
+65 silly idealTree │ │ │   │ ├── dkim-signer@0.1.0
+65 silly idealTree │ │ │   │ ├─┬ follow-redirects@0.0.3
+65 silly idealTree │ │ │   │ │ └── underscore@1.8.3
+65 silly idealTree │ │ │   │ ├── mime@1.2.11
+65 silly idealTree │ │ │   │ ├─┬ mimelib@0.2.14
+65 silly idealTree │ │ │   │ │ ├── addressparser@0.2.1
+65 silly idealTree │ │ │   │ │ └─┬ encoding@0.1.7
+65 silly idealTree │ │ │   │ │   └── iconv-lite@0.2.11
+65 silly idealTree │ │ │   │ └── punycode@1.2.4
+65 silly idealTree │ │ │   ├── public-address@0.1.0
+65 silly idealTree │ │ │   ├─┬ readable-stream@1.0.27-1
+65 silly idealTree │ │ │   │ ├── core-util-is@1.0.1
+65 silly idealTree │ │ │   │ ├── inherits@2.0.1
+65 silly idealTree │ │ │   │ ├── isarray@0.0.1
+65 silly idealTree │ │ │   │ └── string_decoder@0.10.31
+65 silly idealTree │ │ │   └─┬ simplesmtp@0.3.27
+65 silly idealTree │ │ │     ├── rai@0.1.10
+65 silly idealTree │ │ │     └── xoauth2@0.1.8
+65 silly idealTree │ │ ├─┬ lockit-template-blank@0.0.1
+65 silly idealTree │ │ │ └── ejs@0.8.8
+65 silly idealTree │ │ ├── moment@2.5.1
+65 silly idealTree │ │ ├── ms@0.6.2
+65 silly idealTree │ │ └── node-uuid@1.4.1
+65 silly idealTree │ ├─┬ lockit-login@1.0.0
+65 silly idealTree │ │ ├── couch-pwd@0.0.1
+65 silly idealTree │ │ ├── moment@2.4.0
+65 silly idealTree │ │ └── ms@0.6.2
+65 silly idealTree │ ├─┬ lockit-signup@1.0.0
+65 silly idealTree │ │ ├─┬ lockit-sendmail@0.1.2
+65 silly idealTree │ │ │ ├── ejs@0.8.8
+65 silly idealTree │ │ │ └─┬ nodemailer@0.5.15
+65 silly idealTree │ │ │   ├── directmail@0.1.6
+65 silly idealTree │ │ │   ├── he@0.3.6
+65 silly idealTree │ │ │   ├─┬ mailcomposer@0.2.9
+65 silly idealTree │ │ │   │ ├── dkim-signer@0.1.0
+65 silly idealTree │ │ │   │ ├─┬ follow-redirects@0.0.3
+65 silly idealTree │ │ │   │ │ └── underscore@1.8.3
+65 silly idealTree │ │ │   │ ├── mime@1.2.11
+65 silly idealTree │ │ │   │ ├─┬ mimelib@0.2.14
+65 silly idealTree │ │ │   │ │ ├── addressparser@0.2.1
+65 silly idealTree │ │ │   │ │ └─┬ encoding@0.1.7
+65 silly idealTree │ │ │   │ │   └── iconv-lite@0.2.11
+65 silly idealTree │ │ │   │ └── punycode@1.2.4
+65 silly idealTree │ │ │   ├── public-address@0.1.0
+65 silly idealTree │ │ │   ├─┬ readable-stream@1.0.27-1
+65 silly idealTree │ │ │   │ ├── core-util-is@1.0.1
+65 silly idealTree │ │ │   │ ├── inherits@2.0.1
+65 silly idealTree │ │ │   │ ├── isarray@0.0.1
+65 silly idealTree │ │ │   │ └── string_decoder@0.10.31
+65 silly idealTree │ │ │   └─┬ simplesmtp@0.3.27
+65 silly idealTree │ │ │     ├── rai@0.1.10
+65 silly idealTree │ │ │     └── xoauth2@0.1.8
+65 silly idealTree │ │ ├─┬ lockit-template-blank@0.0.1
+65 silly idealTree │ │ │ └── ejs@0.8.8
+65 silly idealTree │ │ ├── moment@2.5.1
+65 silly idealTree │ │ ├── ms@0.6.2
+65 silly idealTree │ │ └── node-uuid@1.4.1
+65 silly idealTree │ ├─┬ lockit-sql-adapter@0.5.0
+65 silly idealTree │ │ ├── couch-pwd@0.0.1
+65 silly idealTree │ │ ├── moment@2.5.1
+65 silly idealTree │ │ ├── ms@0.6.2
+65 silly idealTree │ │ ├─┬ sequelize@2.0.0-dev11
+65 silly idealTree │ │ │ ├── bluebird@1.0.8
+65 silly idealTree │ │ │ ├─┬ circular-json@0.1.6
+65 silly idealTree │ │ │ │ └── wru@0.2.7
+65 silly idealTree │ │ │ ├── commander@2.1.0
+65 silly idealTree │ │ │ ├── dottie@0.2.1
+65 silly idealTree │ │ │ ├── generic-pool@2.0.4
+65 silly idealTree │ │ │ ├── lingo@0.0.5
+65 silly idealTree │ │ │ ├── lodash@2.4.1
+65 silly idealTree │ │ │ ├── node-uuid@1.4.1
+65 silly idealTree │ │ │ ├─┬ sql@0.35.0
+65 silly idealTree │ │ │ │ ├── lodash@1.3.1
+65 silly idealTree │ │ │ │ └── sliced@0.0.5
+65 silly idealTree │ │ │ ├── toposort-class@0.3.0
+65 silly idealTree │ │ │ ├── underscore.string@2.3.3
+65 silly idealTree │ │ │ └── validator@3.2.1
+65 silly idealTree │ │ └── uuid@1.4.1
+65 silly idealTree │ ├── lockit-utils@0.3.0
+65 silly idealTree │ ├─┬ nano@4.6.1
+65 silly idealTree │ │ ├── errs@0.2.4
+65 silly idealTree │ │ ├─┬ follow@0.10.4
+65 silly idealTree │ │ │ ├── browser-request@0.3.1
+65 silly idealTree │ │ │ └─┬ request@2.30.0
+65 silly idealTree │ │ │   ├── aws-sign2@0.5.0
+65 silly idealTree │ │ │   ├── forever-agent@0.5.2
+65 silly idealTree │ │ │   ├─┬ form-data@0.1.2
+65 silly idealTree │ │ │   │ ├── async@0.2.10
+65 silly idealTree │ │ │   │ └─┬ combined-stream@0.0.4
+65 silly idealTree │ │ │   │   └── delayed-stream@0.0.5
+65 silly idealTree │ │ │   ├─┬ hawk@1.0.0
+65 silly idealTree │ │ │   │ ├── boom@0.4.2
+65 silly idealTree │ │ │   │ ├── cryptiles@0.2.2
+65 silly idealTree │ │ │   │ ├── hoek@0.9.1
+65 silly idealTree │ │ │   │ └── sntp@0.2.4
+65 silly idealTree │ │ │   ├─┬ http-signature@0.10.0
+65 silly idealTree │ │ │   │ ├── asn1@0.1.11
+65 silly idealTree │ │ │   │ ├── assert-plus@0.1.2
+65 silly idealTree │ │ │   │ └── ctype@0.5.2
+65 silly idealTree │ │ │   ├── json-stringify-safe@5.0.0
+65 silly idealTree │ │ │   ├── mime@1.2.11
+65 silly idealTree │ │ │   ├── node-uuid@1.4.1
+65 silly idealTree │ │ │   ├── oauth-sign@0.3.0
+65 silly idealTree │ │ │   ├── qs@0.6.6
+65 silly idealTree │ │ │   ├─┬ tough-cookie@0.9.15
+65 silly idealTree │ │ │   │ └── punycode@1.2.4
+65 silly idealTree │ │ │   └── tunnel-agent@0.3.0
+65 silly idealTree │ │ ├─┬ request@2.33.0
+65 silly idealTree │ │ │ ├── aws-sign2@0.5.0
+65 silly idealTree │ │ │ ├── forever-agent@0.5.2
+65 silly idealTree │ │ │ ├─┬ form-data@0.1.2
+65 silly idealTree │ │ │ │ ├── async@0.2.10
+65 silly idealTree │ │ │ │ └─┬ combined-stream@0.0.4
+65 silly idealTree │ │ │ │   └── delayed-stream@0.0.5
+65 silly idealTree │ │ │ ├─┬ hawk@1.0.0
+65 silly idealTree │ │ │ │ ├── boom@0.4.2
+65 silly idealTree │ │ │ │ ├── cryptiles@0.2.2
+65 silly idealTree │ │ │ │ ├── hoek@0.9.1
+65 silly idealTree │ │ │ │ └── sntp@0.2.4
+65 silly idealTree │ │ │ ├─┬ http-signature@0.10.0
+65 silly idealTree │ │ │ │ ├── asn1@0.1.11
+65 silly idealTree │ │ │ │ ├── assert-plus@0.1.2
+65 silly idealTree │ │ │ │ └── ctype@0.5.2
+65 silly idealTree │ │ │ ├── json-stringify-safe@5.0.0
+65 silly idealTree │ │ │ ├── mime@1.2.11
+65 silly idealTree │ │ │ ├── node-uuid@1.4.1
+65 silly idealTree │ │ │ ├── oauth-sign@0.3.0
+65 silly idealTree │ │ │ ├── qs@0.6.6
+65 silly idealTree │ │ │ ├─┬ tough-cookie@0.12.1
+65 silly idealTree │ │ │ │ └── punycode@1.2.4
+65 silly idealTree │ │ │ └── tunnel-agent@0.3.0
+65 silly idealTree │ │ └── underscore@1.5.2
+65 silly idealTree │ ├─┬ node.extend@1.0.10
+65 silly idealTree │ │ └── is@0.3.0
+65 silly idealTree │ └─┬ sqlite3@2.2.3
+65 silly idealTree │   └─┬ node-pre-gyp@0.5.9
+65 silly idealTree │     ├── mkdirp@0.3.5
+65 silly idealTree │     ├─┬ nopt@2.2.0
+65 silly idealTree │     │ └── abbrev@1.0.4
+65 silly idealTree │     ├─┬ npmlog@0.0.6
+65 silly idealTree │     │ └── ansi@0.2.1
+65 silly idealTree │     ├─┬ rc@0.3.4
+65 silly idealTree │     │ ├── deep-extend@0.2.8
+65 silly idealTree │     │ ├── ini@1.1.0
+65 silly idealTree │     │ └── minimist@0.0.8
+65 silly idealTree │     ├─┬ request@2.34.0
+65 silly idealTree │     │ ├── aws-sign2@0.5.0
+65 silly idealTree │     │ ├── forever-agent@0.5.2
+65 silly idealTree │     │ ├─┬ form-data@0.1.2
+65 silly idealTree │     │ │ ├── async@0.2.10
+65 silly idealTree │     │ │ └─┬ combined-stream@0.0.4
+65 silly idealTree │     │ │   └── delayed-stream@0.0.5
+65 silly idealTree │     │ ├─┬ hawk@1.0.0
+65 silly idealTree │     │ │ ├── boom@0.4.2
+65 silly idealTree │     │ │ ├── cryptiles@0.2.2
+65 silly idealTree │     │ │ ├── hoek@0.9.1
+65 silly idealTree │     │ │ └── sntp@0.2.4
+65 silly idealTree │     │ ├─┬ http-signature@0.10.0
+65 silly idealTree │     │ │ ├── asn1@0.1.11
+65 silly idealTree │     │ │ ├── assert-plus@0.1.2
+65 silly idealTree │     │ │ └── ctype@0.5.2
+65 silly idealTree │     │ ├── json-stringify-safe@5.0.0
+65 silly idealTree │     │ ├── mime@1.2.11
+65 silly idealTree │     │ ├── node-uuid@1.4.1
+65 silly idealTree │     │ ├── oauth-sign@0.3.0
+65 silly idealTree │     │ ├── qs@0.6.6
+65 silly idealTree │     │ ├─┬ tough-cookie@0.12.1
+65 silly idealTree │     │ │ └── punycode@1.2.4
+65 silly idealTree │     │ └── tunnel-agent@0.3.0
+65 silly idealTree │     ├── rimraf@2.2.6
+65 silly idealTree │     ├── semver@2.2.1
+65 silly idealTree │     ├─┬ tar-pack@2.0.0
+65 silly idealTree │     │ ├── debug@0.7.4
+65 silly idealTree │     │ ├─┬ fstream-ignore@0.0.7
+65 silly idealTree │     │ │ ├── inherits@2.0.1
+65 silly idealTree │     │ │ └─┬ minimatch@0.2.14
+65 silly idealTree │     │ │   ├── lru-cache@2.5.0
+65 silly idealTree │     │ │   └── sigmund@1.0.0
+65 silly idealTree │     │ ├─┬ fstream@0.1.25
+65 silly idealTree │     │ │ ├── graceful-fs@2.0.3
+65 silly idealTree │     │ │ └── inherits@2.0.1
+65 silly idealTree │     │ ├── graceful-fs@1.2.3
+65 silly idealTree │     │ ├── once@1.1.1
+65 silly idealTree │     │ ├── readable-stream@1.0.33
+65 silly idealTree │     │ └── uid-number@0.0.3
+65 silly idealTree │     └─┬ tar@0.1.19
+65 silly idealTree │       ├── block-stream@0.0.7
+65 silly idealTree │       ├─┬ fstream@0.1.25
+65 silly idealTree │       │ └── graceful-fs@2.0.3
+65 silly idealTree │       └── inherits@2.0.1
+65 silly idealTree ├── lodash@3.10.1
+65 silly idealTree ├── longest@1.0.1
+65 silly idealTree ├── merge-descriptors@0.0.2
+65 silly idealTree ├── method-override@1.0.0
+65 silly idealTree ├── methods@0.1.0
+65 silly idealTree ├── mime-db@1.20.0
+65 silly idealTree ├── mime-types@2.1.8
+65 silly idealTree ├── mime@1.2.11
+65 silly idealTree ├── minimatch@3.0.0
+65 silly idealTree ├── minimist@0.0.8
+65 silly idealTree ├── mkdirp@0.3.5
+65 silly idealTree ├── moment@2.10.6
+65 silly idealTree ├── mongodb-core@1.2.28
+65 silly idealTree ├─┬ mongodb@2.0.52
+65 silly idealTree │ └── readable-stream@1.0.31
+65 silly idealTree ├─┬ mongoose@4.1.9
+65 silly idealTree │ ├── async@0.9.0
+65 silly idealTree │ ├── bson@0.4.20
+65 silly idealTree │ ├── hooks-fixed@1.1.0
+65 silly idealTree │ ├── kareem@1.0.1
+65 silly idealTree │ ├─┬ mongodb@2.0.42
+65 silly idealTree │ │ ├── es6-promise@2.1.1
+65 silly idealTree │ │ ├─┬ mongodb-core@1.2.10
+65 silly idealTree │ │ │ └─┬ kerberos@0.0.17
+65 silly idealTree │ │ │   └── nan@2.0.9
+65 silly idealTree │ │ └─┬ readable-stream@1.0.31
+65 silly idealTree │ │   ├── core-util-is@1.0.2
+65 silly idealTree │ │   ├── inherits@2.0.1
+65 silly idealTree │ │   ├── isarray@0.0.1
+65 silly idealTree │ │   └── string_decoder@0.10.31
+65 silly idealTree │ ├── mpath@0.1.1
+65 silly idealTree │ ├── mpromise@0.5.4
+65 silly idealTree │ ├─┬ mquery@1.6.3
+65 silly idealTree │ │ ├── bluebird@2.9.26
+65 silly idealTree │ │ └─┬ debug@2.2.0
+65 silly idealTree │ │   └── ms@0.7.1
+65 silly idealTree │ ├── ms@0.1.0
+65 silly idealTree │ ├── muri@1.0.0
+65 silly idealTree │ ├── regexp-clone@0.0.1
+65 silly idealTree │ └── sliced@0.0.5
+65 silly idealTree ├── monocle@0.1.50
+65 silly idealTree ├── morgan@1.0.0
+65 silly idealTree ├── ms@0.7.1
+65 silly idealTree ├─┬ multiparty@2.2.0
+65 silly idealTree │ └── readable-stream@1.1.13
+65 silly idealTree ├── nan@1.7.0
+65 silly idealTree ├── negotiator@0.3.0
+65 silly idealTree ├── node-uuid@1.4.7
+65 silly idealTree ├── oauth-sign@0.8.0
+65 silly idealTree ├── once@1.3.3
+65 silly idealTree ├── optimist@0.3.7
+65 silly idealTree ├── path-is-absolute@1.0.0
+65 silly idealTree ├── pause@0.0.1
+65 silly idealTree ├── pinkie-promise@2.0.0
+65 silly idealTree ├── pinkie@2.0.1
+65 silly idealTree ├── process-nextick-args@1.0.6
+65 silly idealTree ├── promise@2.0.0
+65 silly idealTree ├── qs@5.2.0
+65 silly idealTree ├── range-parser@1.0.0
+65 silly idealTree ├── raw-body@1.1.3
+65 silly idealTree ├── readable-stream@2.0.4
+65 silly idealTree ├── readdirp@0.2.5
+65 silly idealTree ├── repeat-string@1.5.2
+65 silly idealTree ├── request@2.67.0
+65 silly idealTree ├── response-time@1.0.0
+65 silly idealTree ├── right-align@0.1.3
+65 silly idealTree ├── sax@1.1.4
+65 silly idealTree ├── send@0.2.0
+65 silly idealTree ├─┬ serve-index@1.0.1
+65 silly idealTree │ └── negotiator@0.4.2
+65 silly idealTree ├── serve-static@1.0.2
+65 silly idealTree ├── sntp@1.0.9
+65 silly idealTree ├─┬ socket.io-client@1.3.7
+65 silly idealTree │ ├── backo2@1.0.2
+65 silly idealTree │ ├── component-bind@1.0.0
+65 silly idealTree │ ├── component-emitter@1.1.2
+65 silly idealTree │ ├── debug@0.7.4
+65 silly idealTree │ ├─┬ engine.io-client@1.5.4
+65 silly idealTree │ │ ├── component-inherit@0.0.3
+65 silly idealTree │ │ ├─┬ debug@1.0.4
+65 silly idealTree │ │ │ └── ms@0.6.2
+65 silly idealTree │ │ ├─┬ engine.io-parser@1.2.2
+65 silly idealTree │ │ │ ├── after@0.8.1
+65 silly idealTree │ │ │ ├── arraybuffer.slice@0.0.6
+65 silly idealTree │ │ │ ├── base64-arraybuffer@0.1.2
+65 silly idealTree │ │ │ ├── blob@0.0.4
+65 silly idealTree │ │ │ └── utf8@2.1.0
+65 silly idealTree │ │ ├─┬ has-cors@1.0.3
+65 silly idealTree │ │ │ └── global@2.0.1
+65 silly idealTree │ │ ├─┬ parsejson@0.0.1
+65 silly idealTree │ │ │ └─┬ better-assert@1.0.2
+65 silly idealTree │ │ │   └── callsite@1.0.0
+65 silly idealTree │ │ ├─┬ parseqs@0.0.2
+65 silly idealTree │ │ │ └─┬ better-assert@1.0.2
+65 silly idealTree │ │ │   └── callsite@1.0.0
+65 silly idealTree │ │ ├─┬ parseuri@0.0.4
+65 silly idealTree │ │ │ └─┬ better-assert@1.0.2
+65 silly idealTree │ │ │   └── callsite@1.0.0
+65 silly idealTree │ │ ├─┬ ws@0.8.0
+65 silly idealTree │ │ │ ├─┬ bufferutil@1.2.1
+65 silly idealTree │ │ │ │ ├── bindings@1.2.1
+65 silly idealTree │ │ │ │ └── nan@2.1.0
+65 silly idealTree │ │ │ ├── options@0.0.6
+65 silly idealTree │ │ │ ├── ultron@1.0.2
+65 silly idealTree │ │ │ └─┬ utf-8-validate@1.2.1
+65 silly idealTree │ │ │   ├── bindings@1.2.1
+65 silly idealTree │ │ │   └── nan@2.1.0
+65 silly idealTree │ │ └── xmlhttprequest@1.5.0
+65 silly idealTree │ ├─┬ has-binary@0.1.6
+65 silly idealTree │ │ └── isarray@0.0.1
+65 silly idealTree │ ├── indexof@0.0.1
+65 silly idealTree │ ├── object-component@0.0.3
+65 silly idealTree │ ├─┬ parseuri@0.0.2
+65 silly idealTree │ │ └─┬ better-assert@1.0.2
+65 silly idealTree │ │   └── callsite@1.0.0
+65 silly idealTree │ ├─┬ socket.io-parser@2.2.4
+65 silly idealTree │ │ ├── benchmark@1.0.0
+65 silly idealTree │ │ ├── isarray@0.0.1
+65 silly idealTree │ │ └── json3@3.2.6
+65 silly idealTree │ └── to-array@0.1.3
+65 silly idealTree ├─┬ socket.io@1.3.7
+65 silly idealTree │ ├─┬ debug@2.1.0
+65 silly idealTree │ │ └── ms@0.6.2
+65 silly idealTree │ ├─┬ engine.io@1.5.4
+65 silly idealTree │ │ ├── base64id@0.1.0
+65 silly idealTree │ │ ├─┬ debug@1.0.3
+65 silly idealTree │ │ │ └── ms@0.6.2
+65 silly idealTree │ │ ├─┬ engine.io-parser@1.2.2
+65 silly idealTree │ │ │ ├── after@0.8.1
+65 silly idealTree │ │ │ ├── arraybuffer.slice@0.0.6
+65 silly idealTree │ │ │ ├── base64-arraybuffer@0.1.2
+65 silly idealTree │ │ │ ├── blob@0.0.4
+65 silly idealTree │ │ │ ├─┬ has-binary@0.1.6
+65 silly idealTree │ │ │ │ └── isarray@0.0.1
+65 silly idealTree │ │ │ └── utf8@2.1.0
+65 silly idealTree │ │ └─┬ ws@0.8.0
+65 silly idealTree │ │   ├─┬ bufferutil@1.2.1
+65 silly idealTree │ │   │ ├── bindings@1.2.1
+65 silly idealTree │ │   │ └── nan@2.1.0
+65 silly idealTree │ │   ├── options@0.0.6
+65 silly idealTree │ │   ├── ultron@1.0.2
+65 silly idealTree │ │   └─┬ utf-8-validate@1.2.1
+65 silly idealTree │ │     ├── bindings@1.2.1
+65 silly idealTree │ │     └── nan@2.1.0
+65 silly idealTree │ ├─┬ has-binary-data@0.1.3
+65 silly idealTree │ │ └── isarray@0.0.1
+65 silly idealTree │ ├─┬ socket.io-adapter@0.3.1
+65 silly idealTree │ │ ├─┬ debug@1.0.2
+65 silly idealTree │ │ │ └── ms@0.6.2
+65 silly idealTree │ │ ├── object-keys@1.0.1
+65 silly idealTree │ │ └─┬ socket.io-parser@2.2.2
+65 silly idealTree │ │   ├── benchmark@1.0.0
+65 silly idealTree │ │   ├── component-emitter@1.1.2
+65 silly idealTree │ │   ├── debug@0.7.4
+65 silly idealTree │ │   ├── isarray@0.0.1
+65 silly idealTree │ │   └── json3@3.2.6
+65 silly idealTree │ └─┬ socket.io-parser@2.2.4
+65 silly idealTree │   ├── benchmark@1.0.0
+65 silly idealTree │   ├── component-emitter@1.1.2
+65 silly idealTree │   ├── debug@0.7.4
+65 silly idealTree │   ├── isarray@0.0.1
+65 silly idealTree │   └── json3@3.2.6
+65 silly idealTree ├── source-map@0.4.4
+65 silly idealTree ├─┬ sshpk@1.7.1
+65 silly idealTree │ └── assert-plus@0.2.0
+65 silly idealTree ├── stanford-corenlp@0.3.5
+65 silly idealTree ├── static-favicon@1.0.0
+65 silly idealTree ├─┬ stream-counter@0.2.0
+65 silly idealTree │ └── readable-stream@1.1.13
+65 silly idealTree ├── string_decoder@0.10.31
+65 silly idealTree ├── stringstream@0.0.5
+65 silly idealTree ├── strip-ansi@3.0.0
+65 silly idealTree ├── supports-color@2.0.0
+65 silly idealTree ├── tough-cookie@2.2.1
+65 silly idealTree ├── transformers@1.8.3
+65 silly idealTree ├── tunnel-agent@0.4.2
+65 silly idealTree ├── tweetnacl@0.13.2
+65 silly idealTree ├─┬ uglify-js@2.6.1
+65 silly idealTree │ ├── async@0.2.10
+65 silly idealTree │ └── source-map@0.5.3
+65 silly idealTree ├── uglify-to-browserify@1.0.2
+65 silly idealTree ├── uid2@0.0.3
+65 silly idealTree ├── util-deprecate@1.0.2
+65 silly idealTree ├── utils-merge@1.0.0
+65 silly idealTree ├── verror@1.3.6
+65 silly idealTree ├── vhost@1.0.0
+65 silly idealTree ├─┬ video.js@4.12.15
+65 silly idealTree │ ├── videojs-swf@4.7.5
+65 silly idealTree │ └── vtt.js@0.12.1
+65 silly idealTree ├── videojs-youtube@1.2.13
+65 silly idealTree ├── void-elements@2.0.1
+65 silly idealTree ├── which@1.0.9
+65 silly idealTree ├── window-size@0.1.0
+65 silly idealTree ├─┬ with@4.0.3
+65 silly idealTree │ └── acorn@1.2.2
+65 silly idealTree ├── wordwrap@0.0.3
+65 silly idealTree ├── wrappy@1.0.1
+65 silly idealTree ├── xml2js@0.4.15
+65 silly idealTree ├── xmlbuilder@4.1.0
+65 silly idealTree ├── xtend@4.0.1
+65 silly idealTree └── yargs@3.10.0
+66 silly generateActionsToTake Starting
+67 silly install generateActionsToTake
+68 silly generateActionsToTake Finishing
+69 silly diffTrees action count 1
+70 silly diffTrees add lockit-mongodb-adapter@0.4.4
+71 silly decomposeActions action count 8
+72 silly decomposeActions fetch lockit-mongodb-adapter@0.4.4
+73 silly decomposeActions extract lockit-mongodb-adapter@0.4.4
+74 silly decomposeActions preinstall lockit-mongodb-adapter@0.4.4
+75 silly decomposeActions build lockit-mongodb-adapter@0.4.4
+76 silly decomposeActions install lockit-mongodb-adapter@0.4.4
+77 silly decomposeActions postinstall lockit-mongodb-adapter@0.4.4
+78 silly decomposeActions test lockit-mongodb-adapter@0.4.4
+79 silly decomposeActions finalize lockit-mongodb-adapter@0.4.4
+80 silly executeActions Starting
+81 silly install executeActions
+82 silly doSerial global-install 0
+83 silly doParallel fetch 1
+84 verbose lock using C:\Users\Stephan\AppData\Roaming\npm-cache\_locks\staging-194a1b88429e1214.lock for C:\elearning\node_modules\.staging
+85 silly doParallel extract 1
+86 silly extract lockit-mongodb-adapter
+87 verbose unbuild node_modules\.staging\lockit-mongodb-adapter-79ac6fb3cee39a44fb7fdf49fb251bb7
+88 silly gentlyRm C:\elearning\node_modules\.staging\lockit-mongodb-adapter-79ac6fb3cee39a44fb7fdf49fb251bb7 is being purged from base C:\elearning
+89 verbose gentlyRm don't care about contents; nuking C:\elearning\node_modules\.staging\lockit-mongodb-adapter-79ac6fb3cee39a44fb7fdf49fb251bb7
+90 verbose tar unpack C:\Users\Stephan\AppData\Roaming\npm-cache\lockit-mongodb-adapter\0.4.4\package.tgz
+91 verbose tar unpacking to C:\elearning\node_modules\.staging\lockit-mongodb-adapter-79ac6fb3cee39a44fb7fdf49fb251bb7
+92 silly gentlyRm C:\elearning\node_modules\.staging\lockit-mongodb-adapter-79ac6fb3cee39a44fb7fdf49fb251bb7 is being purged
+93 verbose gentlyRm don't care about contents; nuking C:\elearning\node_modules\.staging\lockit-mongodb-adapter-79ac6fb3cee39a44fb7fdf49fb251bb7
+94 silly gunzTarPerm modes [ '777', '666' ]
+95 silly gunzTarPerm extractEntry package.json
+96 silly gunzTarPerm modified mode [ 'package.json', 436, 438 ]
+97 silly gunzTarPerm extractEntry .npmignore
+98 silly gunzTarPerm modified mode [ '.npmignore', 436, 438 ]
+99 silly gunzTarPerm extractEntry README.md
+100 silly gunzTarPerm modified mode [ 'README.md', 436, 438 ]
+101 silly gunzTarPerm extractEntry index.js
+102 silly gunzTarPerm modified mode [ 'index.js', 436, 438 ]
+103 silly gunzTarPerm extractEntry History.md
+104 silly gunzTarPerm modified mode [ 'History.md', 436, 438 ]
+105 silly gunzTarPerm extractEntry Makefile
+106 silly gunzTarPerm modified mode [ 'Makefile', 436, 438 ]
+107 silly gunzTarPerm extractEntry .eslintrc
+108 silly gunzTarPerm modified mode [ '.eslintrc', 436, 438 ]
+109 silly gunzTarPerm extractEntry .travis.yml
+110 silly gunzTarPerm modified mode [ '.travis.yml', 436, 438 ]
+111 silly doParallel preinstall 1
+112 silly preinstall lockit-mongodb-adapter C:\elearning\node_modules\.staging\lockit-mongodb-adapter-79ac6fb3cee39a44fb7fdf49fb251bb7
+113 info lifecycle lockit-mongodb-adapter@0.4.4~preinstall: lockit-mongodb-adapter@0.4.4
+114 silly lifecycle lockit-mongodb-adapter@0.4.4~preinstall: no script for preinstall, continuing
+115 silly doReverseSerial remove 0
+116 silly doSerial move 0
+117 silly doSerial finalize 1
+118 silly finalize C:\elearning\node_modules\lockit-mongodb-adapter
+119 silly doSerial build 1
+120 silly build lockit-mongodb-adapter
+121 info linkStuff lockit-mongodb-adapter@0.4.4
+122 silly linkStuff lockit-mongodb-adapter@0.4.4 has C:\elearning\node_modules as its parent node_modules
+123 verbose linkBins lockit-mongodb-adapter@0.4.4
+124 verbose linkMans lockit-mongodb-adapter@0.4.4
+125 verbose rebuildBundles lockit-mongodb-adapter@0.4.4
+126 silly doSerial global-link 0
+127 silly doParallel update-linked 0
+128 silly doSerial install 1
+129 silly install lockit-mongodb-adapter C:\elearning\node_modules\.staging\lockit-mongodb-adapter-79ac6fb3cee39a44fb7fdf49fb251bb7
+130 info lifecycle lockit-mongodb-adapter@0.4.4~install: lockit-mongodb-adapter@0.4.4
+131 silly lifecycle lockit-mongodb-adapter@0.4.4~install: no script for install, continuing
+132 silly doSerial postinstall 1
+133 silly postinstall lockit-mongodb-adapter C:\elearning\node_modules\.staging\lockit-mongodb-adapter-79ac6fb3cee39a44fb7fdf49fb251bb7
+134 info lifecycle lockit-mongodb-adapter@0.4.4~postinstall: lockit-mongodb-adapter@0.4.4
+135 silly lifecycle lockit-mongodb-adapter@0.4.4~postinstall: no script for postinstall, continuing
+136 verbose unlock done using C:\Users\Stephan\AppData\Roaming\npm-cache\_locks\staging-194a1b88429e1214.lock for C:\elearning\node_modules\.staging
+137 silly executeActions Finishing
+138 silly rollbackFailedOptional Starting
+139 silly rollbackFailedOptional Finishing
+140 silly runTopLevelLifecycles Starting
+141 silly install runTopLevelLifecycles
+142 silly preinstall E-learning C:\elearning\E-learning-991591547750d51e2c320e613b3af4be
+143 info lifecycle E-learning@0.0.1~preinstall: E-learning@0.0.1
+144 silly lifecycle E-learning@0.0.1~preinstall: no script for preinstall, continuing
+145 silly build E-learning
+146 info linkStuff E-learning@0.0.1
+147 silly linkStuff E-learning@0.0.1 has C:\ as its parent node_modules
+148 verbose linkBins E-learning@0.0.1
+149 verbose linkMans E-learning@0.0.1
+150 verbose rebuildBundles E-learning@0.0.1
+151 verbose rebuildBundles [ '.bin',
+151 verbose rebuildBundles   'acorn',
+151 verbose rebuildBundles   'acorn-globals',
+151 verbose rebuildBundles   'align-text',
+151 verbose rebuildBundles   'amdefine',
+151 verbose rebuildBundles   'ansi-regex',
+151 verbose rebuildBundles   'ansi-styles',
+151 verbose rebuildBundles   'asap',
+151 verbose rebuildBundles   'asn1',
+151 verbose rebuildBundles   'assert-plus',
+151 verbose rebuildBundles   'async',
+151 verbose rebuildBundles   'autosize',
+151 verbose rebuildBundles   'aws-sign2',
+151 verbose rebuildBundles   'balanced-match',
+151 verbose rebuildBundles   'basic-auth-connect',
+151 verbose rebuildBundles   'batch',
+151 verbose rebuildBundles   'bl',
+151 verbose rebuildBundles   'boom',
+151 verbose rebuildBundles   'brace-expansion',
+151 verbose rebuildBundles   'bson',
+151 verbose rebuildBundles   'buffer-crc32',
+151 verbose rebuildBundles   'bytes',
+151 verbose rebuildBundles   'camelcase',
+151 verbose rebuildBundles   'caseless',
+151 verbose rebuildBundles   'center-align',
+151 verbose rebuildBundles   'chalk',
+151 verbose rebuildBundles   'character-parser',
+151 verbose rebuildBundles   'clean-css',
+151 verbose rebuildBundles   'cliui',
+151 verbose rebuildBundles   'combined-stream',
+151 verbose rebuildBundles   'commander',
+151 verbose rebuildBundles   'compressible',
+151 verbose rebuildBundles   'compression',
+151 verbose rebuildBundles   'concat-map',
+151 verbose rebuildBundles   'connect',
+151 verbose rebuildBundles   'connect-timeout',
+151 verbose rebuildBundles   'connectr',
+151 verbose rebuildBundles   'constantinople',
+151 verbose rebuildBundles   'cookie',
+151 verbose rebuildBundles   'cookie-parser',
+151 verbose rebuildBundles   'cookie-session',
+151 verbose rebuildBundles   'cookie-signature',
+151 verbose rebuildBundles   'core-util-is',
+151 verbose rebuildBundles   'couch-pwd',
+151 verbose rebuildBundles   'cryptiles',
+151 verbose rebuildBundles   'css',
+151 verbose rebuildBundles   'css-parse',
+151 verbose rebuildBundles   'css-stringify',
+151 verbose rebuildBundles   'csurf',
+151 verbose rebuildBundles   'd3',
+151 verbose rebuildBundles   'dashdash',
+151 verbose rebuildBundles   'debug',
+151 verbose rebuildBundles   'decamelize',
+151 verbose rebuildBundles   'delayed-stream',
+151 verbose rebuildBundles   'ecc-jsbn',
+151 verbose rebuildBundles   'errorhandler',
+151 verbose rebuildBundles   'es6-promise',
+151 verbose rebuildBundles   'escape-string-regexp',
+151 verbose rebuildBundles   'express',
+151 verbose rebuildBundles   'express-debug',
+151 verbose rebuildBundles   'express-session',
+151 verbose rebuildBundles   'extend',
+151 verbose rebuildBundles   'extsprintf',
+151 verbose rebuildBundles   'find-java-home',
+151 verbose rebuildBundles   'forever-agent',
+151 verbose rebuildBundles   'form-data',
+151 verbose rebuildBundles   'fresh',
+151 verbose rebuildBundles   'generate-function',
+151 verbose rebuildBundles   'generate-object-property',
+151 verbose rebuildBundles   'glob',
+151 verbose rebuildBundles   'graceful-readlink',
+151 verbose rebuildBundles   'har-validator',
+151 verbose rebuildBundles   'has-ansi',
+151 verbose rebuildBundles   'hawk',
+151 verbose rebuildBundles   'hoek',
+151 verbose rebuildBundles   'http-signature',
+151 verbose rebuildBundles   'inflight',
+151 verbose rebuildBundles   'inherits',
+151 verbose rebuildBundles   'is-buffer',
+151 verbose rebuildBundles   'is-my-json-valid',
+151 verbose rebuildBundles   'is-promise',
+151 verbose rebuildBundles   'is-property',
+151 verbose rebuildBundles   'is-typedarray',
+151 verbose rebuildBundles   'isarray',
+151 verbose rebuildBundles   'isstream',
+151 verbose rebuildBundles   'jade',
+151 verbose rebuildBundles   'java',
+151 verbose rebuildBundles   'jodid25519',
+151 verbose rebuildBundles   'jsbn',
+151 verbose rebuildBundles   'json-schema',
+151 verbose rebuildBundles   'json-stringify-safe',
+151 verbose rebuildBundles   'jsonpointer',
+151 verbose rebuildBundles   'jsprim',
+151 verbose rebuildBundles   'jstransformer',
+151 verbose rebuildBundles   'kerberos',
+151 verbose rebuildBundles   'keypress',
+151 verbose rebuildBundles   'kind-of',
+151 verbose rebuildBundles   'lazy-cache',
+151 verbose rebuildBundles   'lockit',
+151 verbose rebuildBundles   'lockit-mongodb-adapter',
+151 verbose rebuildBundles   'lodash',
+151 verbose rebuildBundles   'longest',
+151 verbose rebuildBundles   'merge-descriptors',
+151 verbose rebuildBundles   'method-override',
+151 verbose rebuildBundles   'methods',
+151 verbose rebuildBundles   'mime',
+151 verbose rebuildBundles   'mime-db',
+151 verbose rebuildBundles   'mime-types',
+151 verbose rebuildBundles   'minimatch',
+151 verbose rebuildBundles   'minimist',
+151 verbose rebuildBundles   'mkdirp',
+151 verbose rebuildBundles   'moment',
+151 verbose rebuildBundles   'mongodb',
+151 verbose rebuildBundles   'mongodb-core',
+151 verbose rebuildBundles   'mongoose',
+151 verbose rebuildBundles   'monocle',
+151 verbose rebuildBundles   'morgan',
+151 verbose rebuildBundles   'ms',
+151 verbose rebuildBundles   'multiparty',
+151 verbose rebuildBundles   'nan',
+151 verbose rebuildBundles   'negotiator',
+151 verbose rebuildBundles   'node-uuid',
+151 verbose rebuildBundles   'oauth-sign',
+151 verbose rebuildBundles   'once',
+151 verbose rebuildBundles   'optimist',
+151 verbose rebuildBundles   'path-is-absolute',
+151 verbose rebuildBundles   'pause',
+151 verbose rebuildBundles   'pinkie',
+151 verbose rebuildBundles   'pinkie-promise',
+151 verbose rebuildBundles   'process-nextick-args',
+151 verbose rebuildBundles   'promise',
+151 verbose rebuildBundles   'qs',
+151 verbose rebuildBundles   'range-parser',
+151 verbose rebuildBundles   'raw-body',
+151 verbose rebuildBundles   'readable-stream',
+151 verbose rebuildBundles   'readdirp',
+151 verbose rebuildBundles   'repeat-string',
+151 verbose rebuildBundles   'request',
+151 verbose rebuildBundles   'response-time',
+151 verbose rebuildBundles   'right-align',
+151 verbose rebuildBundles   'sax',
+151 verbose rebuildBundles   'send',
+151 verbose rebuildBundles   'serve-index',
+151 verbose rebuildBundles   'serve-static',
+151 verbose rebuildBundles   'sntp',
+151 verbose rebuildBundles   'socket.io',
+151 verbose rebuildBundles   'socket.io-client',
+151 verbose rebuildBundles   'source-map',
+151 verbose rebuildBundles   'sshpk',
+151 verbose rebuildBundles   'stanford-corenlp',
+151 verbose rebuildBundles   'static-favicon',
+151 verbose rebuildBundles   'stream-counter',
+151 verbose rebuildBundles   'string_decoder',
+151 verbose rebuildBundles   'stringstream',
+151 verbose rebuildBundles   'strip-ansi',
+151 verbose rebuildBundles   'supports-color',
+151 verbose rebuildBundles   'tough-cookie',
+151 verbose rebuildBundles   'transformers',
+151 verbose rebuildBundles   'tunnel-agent',
+151 verbose rebuildBundles   'tweetnacl',
+151 verbose rebuildBundles   'uglify-js',
+151 verbose rebuildBundles   'uglify-to-browserify',
+151 verbose rebuildBundles   'uid2',
+151 verbose rebuildBundles   'util-deprecate',
+151 verbose rebuildBundles   'utils-merge',
+151 verbose rebuildBundles   'verror',
+151 verbose rebuildBundles   'vhost',
+151 verbose rebuildBundles   'video.js',
+151 verbose rebuildBundles   'videojs-youtube',
+151 verbose rebuildBundles   'void-elements',
+151 verbose rebuildBundles   'which',
+151 verbose rebuildBundles   'window-size',
+151 verbose rebuildBundles   'with',
+151 verbose rebuildBundles   'wordwrap',
+151 verbose rebuildBundles   'wrappy',
+151 verbose rebuildBundles   'xml2js',
+151 verbose rebuildBundles   'xmlbuilder',
+151 verbose rebuildBundles   'xtend',
+151 verbose rebuildBundles   'yargs' ]
+152 verbose rebuild bundle C:\elearning\node_modules\acorn
+153 info build C:\elearning\node_modules\acorn
+154 info lifecycle acorn@2.6.4~preinstall: acorn@2.6.4
+155 silly lifecycle acorn@2.6.4~preinstall: no script for preinstall, continuing
+156 info linkStuff acorn@2.6.4
+157 silly linkStuff acorn@2.6.4 has C:\elearning\node_modules as its parent node_modules
+158 verbose linkBins acorn@2.6.4
+159 verbose link bins [ { acorn: './bin/acorn' },
+159 verbose link bins   'C:\\elearning\\node_modules\\.bin',
+159 verbose link bins   false ]
+160 verbose linkMans acorn@2.6.4
+161 verbose rebuildBundles acorn@2.6.4
+162 info lifecycle acorn@2.6.4~install: acorn@2.6.4
+163 silly lifecycle acorn@2.6.4~install: no script for install, continuing
+164 info lifecycle acorn@2.6.4~postinstall: acorn@2.6.4
+165 silly lifecycle acorn@2.6.4~postinstall: no script for postinstall, continuing
+166 verbose rebuild bundle C:\elearning\node_modules\acorn-globals
+167 info build C:\elearning\node_modules\acorn-globals
+168 info lifecycle acorn-globals@1.0.9~preinstall: acorn-globals@1.0.9
+169 silly lifecycle acorn-globals@1.0.9~preinstall: no script for preinstall, continuing
+170 info linkStuff acorn-globals@1.0.9
+171 silly linkStuff acorn-globals@1.0.9 has C:\elearning\node_modules as its parent node_modules
+172 verbose linkBins acorn-globals@1.0.9
+173 verbose linkMans acorn-globals@1.0.9
+174 verbose rebuildBundles acorn-globals@1.0.9
+175 info lifecycle acorn-globals@1.0.9~install: acorn-globals@1.0.9
+176 silly lifecycle acorn-globals@1.0.9~install: no script for install, continuing
+177 info lifecycle acorn-globals@1.0.9~postinstall: acorn-globals@1.0.9
+178 silly lifecycle acorn-globals@1.0.9~postinstall: no script for postinstall, continuing
+179 verbose rebuild bundle C:\elearning\node_modules\align-text
+180 info build C:\elearning\node_modules\align-text
+181 info lifecycle align-text@0.1.3~preinstall: align-text@0.1.3
+182 silly lifecycle align-text@0.1.3~preinstall: no script for preinstall, continuing
+183 info linkStuff align-text@0.1.3
+184 silly linkStuff align-text@0.1.3 has C:\elearning\node_modules as its parent node_modules
+185 verbose linkBins align-text@0.1.3
+186 verbose linkMans align-text@0.1.3
+187 verbose rebuildBundles align-text@0.1.3
+188 info lifecycle align-text@0.1.3~install: align-text@0.1.3
+189 silly lifecycle align-text@0.1.3~install: no script for install, continuing
+190 info lifecycle align-text@0.1.3~postinstall: align-text@0.1.3
+191 silly lifecycle align-text@0.1.3~postinstall: no script for postinstall, continuing
+192 verbose rebuild bundle C:\elearning\node_modules\amdefine
+193 info build C:\elearning\node_modules\amdefine
+194 info lifecycle amdefine@1.0.0~preinstall: amdefine@1.0.0
+195 silly lifecycle amdefine@1.0.0~preinstall: no script for preinstall, continuing
+196 info linkStuff amdefine@1.0.0
+197 silly linkStuff amdefine@1.0.0 has C:\elearning\node_modules as its parent node_modules
+198 verbose linkBins amdefine@1.0.0
+199 verbose linkMans amdefine@1.0.0
+200 verbose rebuildBundles amdefine@1.0.0
+201 info lifecycle amdefine@1.0.0~install: amdefine@1.0.0
+202 silly lifecycle amdefine@1.0.0~install: no script for install, continuing
+203 info lifecycle amdefine@1.0.0~postinstall: amdefine@1.0.0
+204 silly lifecycle amdefine@1.0.0~postinstall: no script for postinstall, continuing
+205 verbose rebuild bundle C:\elearning\node_modules\ansi-regex
+206 info build C:\elearning\node_modules\ansi-regex
+207 info lifecycle ansi-regex@2.0.0~preinstall: ansi-regex@2.0.0
+208 silly lifecycle ansi-regex@2.0.0~preinstall: no script for preinstall, continuing
+209 info linkStuff ansi-regex@2.0.0
+210 silly linkStuff ansi-regex@2.0.0 has C:\elearning\node_modules as its parent node_modules
+211 verbose linkBins ansi-regex@2.0.0
+212 verbose linkMans ansi-regex@2.0.0
+213 verbose rebuildBundles ansi-regex@2.0.0
+214 info lifecycle ansi-regex@2.0.0~install: ansi-regex@2.0.0
+215 silly lifecycle ansi-regex@2.0.0~install: no script for install, continuing
+216 info lifecycle ansi-regex@2.0.0~postinstall: ansi-regex@2.0.0
+217 silly lifecycle ansi-regex@2.0.0~postinstall: no script for postinstall, continuing
+218 verbose rebuild bundle C:\elearning\node_modules\ansi-styles
+219 info build C:\elearning\node_modules\ansi-styles
+220 info lifecycle ansi-styles@2.1.0~preinstall: ansi-styles@2.1.0
+221 silly lifecycle ansi-styles@2.1.0~preinstall: no script for preinstall, continuing
+222 info linkStuff ansi-styles@2.1.0
+223 silly linkStuff ansi-styles@2.1.0 has C:\elearning\node_modules as its parent node_modules
+224 verbose linkBins ansi-styles@2.1.0
+225 verbose linkMans ansi-styles@2.1.0
+226 verbose rebuildBundles ansi-styles@2.1.0
+227 info lifecycle ansi-styles@2.1.0~install: ansi-styles@2.1.0
+228 silly lifecycle ansi-styles@2.1.0~install: no script for install, continuing
+229 info lifecycle ansi-styles@2.1.0~postinstall: ansi-styles@2.1.0
+230 silly lifecycle ansi-styles@2.1.0~postinstall: no script for postinstall, continuing
+231 verbose rebuild bundle C:\elearning\node_modules\asap
+232 info build C:\elearning\node_modules\asap
+233 info lifecycle asap@1.0.0~preinstall: asap@1.0.0
+234 silly lifecycle asap@1.0.0~preinstall: no script for preinstall, continuing
+235 info linkStuff asap@1.0.0
+236 silly linkStuff asap@1.0.0 has C:\elearning\node_modules as its parent node_modules
+237 verbose linkBins asap@1.0.0
+238 verbose linkMans asap@1.0.0
+239 verbose rebuildBundles asap@1.0.0
+240 info lifecycle asap@1.0.0~install: asap@1.0.0
+241 silly lifecycle asap@1.0.0~install: no script for install, continuing
+242 info lifecycle asap@1.0.0~postinstall: asap@1.0.0
+243 silly lifecycle asap@1.0.0~postinstall: no script for postinstall, continuing
+244 verbose rebuild bundle C:\elearning\node_modules\asn1
+245 info build C:\elearning\node_modules\asn1
+246 info lifecycle asn1@0.2.3~preinstall: asn1@0.2.3
+247 silly lifecycle asn1@0.2.3~preinstall: no script for preinstall, continuing
+248 info linkStuff asn1@0.2.3
+249 silly linkStuff asn1@0.2.3 has C:\elearning\node_modules as its parent node_modules
+250 verbose linkBins asn1@0.2.3
+251 verbose linkMans asn1@0.2.3
+252 verbose rebuildBundles asn1@0.2.3
+253 info lifecycle asn1@0.2.3~install: asn1@0.2.3
+254 silly lifecycle asn1@0.2.3~install: no script for install, continuing
+255 info lifecycle asn1@0.2.3~postinstall: asn1@0.2.3
+256 silly lifecycle asn1@0.2.3~postinstall: no script for postinstall, continuing
+257 verbose rebuild bundle C:\elearning\node_modules\assert-plus
+258 info build C:\elearning\node_modules\assert-plus
+259 info lifecycle assert-plus@0.1.5~preinstall: assert-plus@0.1.5
+260 silly lifecycle assert-plus@0.1.5~preinstall: no script for preinstall, continuing
+261 info linkStuff assert-plus@0.1.5
+262 silly linkStuff assert-plus@0.1.5 has C:\elearning\node_modules as its parent node_modules
+263 verbose linkBins assert-plus@0.1.5
+264 verbose linkMans assert-plus@0.1.5
+265 verbose rebuildBundles assert-plus@0.1.5
+266 info lifecycle assert-plus@0.1.5~install: assert-plus@0.1.5
+267 silly lifecycle assert-plus@0.1.5~install: no script for install, continuing
+268 info lifecycle assert-plus@0.1.5~postinstall: assert-plus@0.1.5
+269 silly lifecycle assert-plus@0.1.5~postinstall: no script for postinstall, continuing
+270 verbose rebuild bundle C:\elearning\node_modules\async
+271 info build C:\elearning\node_modules\async
+272 info lifecycle async@1.5.0~preinstall: async@1.5.0
+273 silly lifecycle async@1.5.0~preinstall: no script for preinstall, continuing
+274 info linkStuff async@1.5.0
+275 silly linkStuff async@1.5.0 has C:\elearning\node_modules as its parent node_modules
+276 verbose linkBins async@1.5.0
+277 verbose linkMans async@1.5.0
+278 verbose rebuildBundles async@1.5.0
+279 info lifecycle async@1.5.0~install: async@1.5.0
+280 silly lifecycle async@1.5.0~install: no script for install, continuing
+281 info lifecycle async@1.5.0~postinstall: async@1.5.0
+282 silly lifecycle async@1.5.0~postinstall: no script for postinstall, continuing
+283 verbose rebuild bundle C:\elearning\node_modules\aws-sign2
+284 info build C:\elearning\node_modules\aws-sign2
+285 info lifecycle aws-sign2@0.6.0~preinstall: aws-sign2@0.6.0
+286 silly lifecycle aws-sign2@0.6.0~preinstall: no script for preinstall, continuing
+287 info linkStuff aws-sign2@0.6.0
+288 silly linkStuff aws-sign2@0.6.0 has C:\elearning\node_modules as its parent node_modules
+289 verbose linkBins aws-sign2@0.6.0
+290 verbose linkMans aws-sign2@0.6.0
+291 verbose rebuildBundles aws-sign2@0.6.0
+292 info lifecycle aws-sign2@0.6.0~install: aws-sign2@0.6.0
+293 silly lifecycle aws-sign2@0.6.0~install: no script for install, continuing
+294 info lifecycle aws-sign2@0.6.0~postinstall: aws-sign2@0.6.0
+295 silly lifecycle aws-sign2@0.6.0~postinstall: no script for postinstall, continuing
+296 verbose rebuild bundle C:\elearning\node_modules\balanced-match
+297 info build C:\elearning\node_modules\balanced-match
+298 info lifecycle balanced-match@0.3.0~preinstall: balanced-match@0.3.0
+299 silly lifecycle balanced-match@0.3.0~preinstall: no script for preinstall, continuing
+300 info linkStuff balanced-match@0.3.0
+301 silly linkStuff balanced-match@0.3.0 has C:\elearning\node_modules as its parent node_modules
+302 verbose linkBins balanced-match@0.3.0
+303 verbose linkMans balanced-match@0.3.0
+304 verbose rebuildBundles balanced-match@0.3.0
+305 info lifecycle balanced-match@0.3.0~install: balanced-match@0.3.0
+306 silly lifecycle balanced-match@0.3.0~install: no script for install, continuing
+307 info lifecycle balanced-match@0.3.0~postinstall: balanced-match@0.3.0
+308 silly lifecycle balanced-match@0.3.0~postinstall: no script for postinstall, continuing
+309 verbose rebuild bundle C:\elearning\node_modules\basic-auth-connect
+310 info build C:\elearning\node_modules\basic-auth-connect
+311 info lifecycle basic-auth-connect@1.0.0~preinstall: basic-auth-connect@1.0.0
+312 silly lifecycle basic-auth-connect@1.0.0~preinstall: no script for preinstall, continuing
+313 info linkStuff basic-auth-connect@1.0.0
+314 silly linkStuff basic-auth-connect@1.0.0 has C:\elearning\node_modules as its parent node_modules
+315 verbose linkBins basic-auth-connect@1.0.0
+316 verbose linkMans basic-auth-connect@1.0.0
+317 verbose rebuildBundles basic-auth-connect@1.0.0
+318 info lifecycle basic-auth-connect@1.0.0~install: basic-auth-connect@1.0.0
+319 silly lifecycle basic-auth-connect@1.0.0~install: no script for install, continuing
+320 info lifecycle basic-auth-connect@1.0.0~postinstall: basic-auth-connect@1.0.0
+321 silly lifecycle basic-auth-connect@1.0.0~postinstall: no script for postinstall, continuing
+322 verbose rebuild bundle C:\elearning\node_modules\batch
+323 info build C:\elearning\node_modules\batch
+324 info lifecycle batch@0.5.0~preinstall: batch@0.5.0
+325 silly lifecycle batch@0.5.0~preinstall: no script for preinstall, continuing
+326 info linkStuff batch@0.5.0
+327 silly linkStuff batch@0.5.0 has C:\elearning\node_modules as its parent node_modules
+328 verbose linkBins batch@0.5.0
+329 verbose linkMans batch@0.5.0
+330 verbose rebuildBundles batch@0.5.0
+331 info lifecycle batch@0.5.0~install: batch@0.5.0
+332 silly lifecycle batch@0.5.0~install: no script for install, continuing
+333 info lifecycle batch@0.5.0~postinstall: batch@0.5.0
+334 silly lifecycle batch@0.5.0~postinstall: no script for postinstall, continuing
+335 verbose rebuild bundle C:\elearning\node_modules\bl
+336 info build C:\elearning\node_modules\bl
+337 info lifecycle bl@1.0.0~preinstall: bl@1.0.0
+338 silly lifecycle bl@1.0.0~preinstall: no script for preinstall, continuing
+339 info linkStuff bl@1.0.0
+340 silly linkStuff bl@1.0.0 has C:\elearning\node_modules as its parent node_modules
+341 verbose linkBins bl@1.0.0
+342 verbose linkMans bl@1.0.0
+343 verbose rebuildBundles bl@1.0.0
+344 info lifecycle bl@1.0.0~install: bl@1.0.0
+345 silly lifecycle bl@1.0.0~install: no script for install, continuing
+346 info lifecycle bl@1.0.0~postinstall: bl@1.0.0
+347 silly lifecycle bl@1.0.0~postinstall: no script for postinstall, continuing
+348 verbose rebuild bundle C:\elearning\node_modules\boom
+349 info build C:\elearning\node_modules\boom
+350 info lifecycle boom@2.10.1~preinstall: boom@2.10.1
+351 silly lifecycle boom@2.10.1~preinstall: no script for preinstall, continuing
+352 info linkStuff boom@2.10.1
+353 silly linkStuff boom@2.10.1 has C:\elearning\node_modules as its parent node_modules
+354 verbose linkBins boom@2.10.1
+355 verbose linkMans boom@2.10.1
+356 verbose rebuildBundles boom@2.10.1
+357 info lifecycle boom@2.10.1~install: boom@2.10.1
+358 silly lifecycle boom@2.10.1~install: no script for install, continuing
+359 info lifecycle boom@2.10.1~postinstall: boom@2.10.1
+360 silly lifecycle boom@2.10.1~postinstall: no script for postinstall, continuing
+361 verbose rebuild bundle C:\elearning\node_modules\brace-expansion
+362 info build C:\elearning\node_modules\brace-expansion
+363 info lifecycle brace-expansion@1.1.2~preinstall: brace-expansion@1.1.2
+364 silly lifecycle brace-expansion@1.1.2~preinstall: no script for preinstall, continuing
+365 info linkStuff brace-expansion@1.1.2
+366 silly linkStuff brace-expansion@1.1.2 has C:\elearning\node_modules as its parent node_modules
+367 verbose linkBins brace-expansion@1.1.2
+368 verbose linkMans brace-expansion@1.1.2
+369 verbose rebuildBundles brace-expansion@1.1.2
+370 info lifecycle brace-expansion@1.1.2~install: brace-expansion@1.1.2
+371 silly lifecycle brace-expansion@1.1.2~install: no script for install, continuing
+372 info lifecycle brace-expansion@1.1.2~postinstall: brace-expansion@1.1.2
+373 silly lifecycle brace-expansion@1.1.2~postinstall: no script for postinstall, continuing
+374 verbose rebuild bundle C:\elearning\node_modules\bson
+375 info build C:\elearning\node_modules\bson
+376 info lifecycle bson@0.4.20~preinstall: bson@0.4.20
+377 silly lifecycle bson@0.4.20~preinstall: no script for preinstall, continuing
+378 info linkStuff bson@0.4.20
+379 silly linkStuff bson@0.4.20 has C:\elearning\node_modules as its parent node_modules
+380 verbose linkBins bson@0.4.20
+381 verbose linkMans bson@0.4.20
+382 verbose rebuildBundles bson@0.4.20
+383 info lifecycle bson@0.4.20~install: bson@0.4.20
+384 silly lifecycle bson@0.4.20~install: no script for install, continuing
+385 info lifecycle bson@0.4.20~postinstall: bson@0.4.20
+386 silly lifecycle bson@0.4.20~postinstall: no script for postinstall, continuing
+387 verbose rebuild bundle C:\elearning\node_modules\buffer-crc32
+388 info build C:\elearning\node_modules\buffer-crc32
+389 info lifecycle buffer-crc32@0.2.1~preinstall: buffer-crc32@0.2.1
+390 silly lifecycle buffer-crc32@0.2.1~preinstall: no script for preinstall, continuing
+391 info linkStuff buffer-crc32@0.2.1
+392 silly linkStuff buffer-crc32@0.2.1 has C:\elearning\node_modules as its parent node_modules
+393 verbose linkBins buffer-crc32@0.2.1
+394 verbose linkMans buffer-crc32@0.2.1
+395 verbose rebuildBundles buffer-crc32@0.2.1
+396 info lifecycle buffer-crc32@0.2.1~install: buffer-crc32@0.2.1
+397 silly lifecycle buffer-crc32@0.2.1~install: no script for install, continuing
+398 info lifecycle buffer-crc32@0.2.1~postinstall: buffer-crc32@0.2.1
+399 silly lifecycle buffer-crc32@0.2.1~postinstall: no script for postinstall, continuing
+400 verbose rebuild bundle C:\elearning\node_modules\bytes
+401 info build C:\elearning\node_modules\bytes
+402 info lifecycle bytes@0.2.1~preinstall: bytes@0.2.1
+403 silly lifecycle bytes@0.2.1~preinstall: no script for preinstall, continuing
+404 info linkStuff bytes@0.2.1
+405 silly linkStuff bytes@0.2.1 has C:\elearning\node_modules as its parent node_modules
+406 verbose linkBins bytes@0.2.1
+407 verbose linkMans bytes@0.2.1
+408 verbose rebuildBundles bytes@0.2.1
+409 info lifecycle bytes@0.2.1~install: bytes@0.2.1
+410 silly lifecycle bytes@0.2.1~install: no script for install, continuing
+411 info lifecycle bytes@0.2.1~postinstall: bytes@0.2.1
+412 silly lifecycle bytes@0.2.1~postinstall: no script for postinstall, continuing
+413 verbose rebuild bundle C:\elearning\node_modules\camelcase
+414 info build C:\elearning\node_modules\camelcase
+415 info lifecycle camelcase@1.2.1~preinstall: camelcase@1.2.1
+416 silly lifecycle camelcase@1.2.1~preinstall: no script for preinstall, continuing
+417 info linkStuff camelcase@1.2.1
+418 silly linkStuff camelcase@1.2.1 has C:\elearning\node_modules as its parent node_modules
+419 verbose linkBins camelcase@1.2.1
+420 verbose linkMans camelcase@1.2.1
+421 verbose rebuildBundles camelcase@1.2.1
+422 info lifecycle camelcase@1.2.1~install: camelcase@1.2.1
+423 silly lifecycle camelcase@1.2.1~install: no script for install, continuing
+424 info lifecycle camelcase@1.2.1~postinstall: camelcase@1.2.1
+425 silly lifecycle camelcase@1.2.1~postinstall: no script for postinstall, continuing
+426 verbose rebuild bundle C:\elearning\node_modules\caseless
+427 info build C:\elearning\node_modules\caseless
+428 info lifecycle caseless@0.11.0~preinstall: caseless@0.11.0
+429 silly lifecycle caseless@0.11.0~preinstall: no script for preinstall, continuing
+430 info linkStuff caseless@0.11.0
+431 silly linkStuff caseless@0.11.0 has C:\elearning\node_modules as its parent node_modules
+432 verbose linkBins caseless@0.11.0
+433 verbose linkMans caseless@0.11.0
+434 verbose rebuildBundles caseless@0.11.0
+435 info lifecycle caseless@0.11.0~install: caseless@0.11.0
+436 silly lifecycle caseless@0.11.0~install: no script for install, continuing
+437 info lifecycle caseless@0.11.0~postinstall: caseless@0.11.0
+438 silly lifecycle caseless@0.11.0~postinstall: no script for postinstall, continuing
+439 verbose rebuild bundle C:\elearning\node_modules\center-align
+440 info build C:\elearning\node_modules\center-align
+441 info lifecycle center-align@0.1.2~preinstall: center-align@0.1.2
+442 silly lifecycle center-align@0.1.2~preinstall: no script for preinstall, continuing
+443 info linkStuff center-align@0.1.2
+444 silly linkStuff center-align@0.1.2 has C:\elearning\node_modules as its parent node_modules
+445 verbose linkBins center-align@0.1.2
+446 verbose linkMans center-align@0.1.2
+447 verbose rebuildBundles center-align@0.1.2
+448 info lifecycle center-align@0.1.2~install: center-align@0.1.2
+449 silly lifecycle center-align@0.1.2~install: no script for install, continuing
+450 info lifecycle center-align@0.1.2~postinstall: center-align@0.1.2
+451 silly lifecycle center-align@0.1.2~postinstall: no script for postinstall, continuing
+452 verbose rebuild bundle C:\elearning\node_modules\chalk
+453 info build C:\elearning\node_modules\chalk
+454 info lifecycle chalk@1.1.1~preinstall: chalk@1.1.1
+455 silly lifecycle chalk@1.1.1~preinstall: no script for preinstall, continuing
+456 info linkStuff chalk@1.1.1
+457 silly linkStuff chalk@1.1.1 has C:\elearning\node_modules as its parent node_modules
+458 verbose linkBins chalk@1.1.1
+459 verbose linkMans chalk@1.1.1
+460 verbose rebuildBundles chalk@1.1.1
+461 info lifecycle chalk@1.1.1~install: chalk@1.1.1
+462 silly lifecycle chalk@1.1.1~install: no script for install, continuing
+463 info lifecycle chalk@1.1.1~postinstall: chalk@1.1.1
+464 silly lifecycle chalk@1.1.1~postinstall: no script for postinstall, continuing
+465 verbose rebuild bundle C:\elearning\node_modules\character-parser
+466 info build C:\elearning\node_modules\character-parser
+467 info lifecycle character-parser@1.0.2~preinstall: character-parser@1.0.2
+468 silly lifecycle character-parser@1.0.2~preinstall: no script for preinstall, continuing
+469 info linkStuff character-parser@1.0.2
+470 silly linkStuff character-parser@1.0.2 has C:\elearning\node_modules as its parent node_modules
+471 verbose linkBins character-parser@1.0.2
+472 verbose linkMans character-parser@1.0.2
+473 verbose rebuildBundles character-parser@1.0.2
+474 info lifecycle character-parser@1.0.2~install: character-parser@1.0.2
+475 silly lifecycle character-parser@1.0.2~install: no script for install, continuing
+476 info lifecycle character-parser@1.0.2~postinstall: character-parser@1.0.2
+477 silly lifecycle character-parser@1.0.2~postinstall: no script for postinstall, continuing
+478 verbose rebuild bundle C:\elearning\node_modules\clean-css
+479 info build C:\elearning\node_modules\clean-css
+480 info lifecycle clean-css@3.4.8~preinstall: clean-css@3.4.8
+481 silly lifecycle clean-css@3.4.8~preinstall: no script for preinstall, continuing
+482 info linkStuff clean-css@3.4.8
+483 silly linkStuff clean-css@3.4.8 has C:\elearning\node_modules as its parent node_modules
+484 verbose linkBins clean-css@3.4.8
+485 verbose link bins [ { cleancss: './bin/cleancss' },
+485 verbose link bins   'C:\\elearning\\node_modules\\.bin',
+485 verbose link bins   false ]
+486 verbose linkMans clean-css@3.4.8
+487 verbose rebuildBundles clean-css@3.4.8
+488 verbose rebuildBundles [ 'commander' ]
+489 info lifecycle clean-css@3.4.8~install: clean-css@3.4.8
+490 silly lifecycle clean-css@3.4.8~install: no script for install, continuing
+491 info lifecycle clean-css@3.4.8~postinstall: clean-css@3.4.8
+492 silly lifecycle clean-css@3.4.8~postinstall: no script for postinstall, continuing
+493 verbose rebuild bundle C:\elearning\node_modules\cliui
+494 info build C:\elearning\node_modules\cliui
+495 info lifecycle cliui@2.1.0~preinstall: cliui@2.1.0
+496 silly lifecycle cliui@2.1.0~preinstall: no script for preinstall, continuing
+497 info linkStuff cliui@2.1.0
+498 silly linkStuff cliui@2.1.0 has C:\elearning\node_modules as its parent node_modules
+499 verbose linkBins cliui@2.1.0
+500 verbose linkMans cliui@2.1.0
+501 verbose rebuildBundles cliui@2.1.0
+502 verbose rebuildBundles [ 'wordwrap' ]
+503 info lifecycle cliui@2.1.0~install: cliui@2.1.0
+504 silly lifecycle cliui@2.1.0~install: no script for install, continuing
+505 info lifecycle cliui@2.1.0~postinstall: cliui@2.1.0
+506 silly lifecycle cliui@2.1.0~postinstall: no script for postinstall, continuing
+507 verbose rebuild bundle C:\elearning\node_modules\combined-stream
+508 info build C:\elearning\node_modules\combined-stream
+509 info lifecycle combined-stream@1.0.5~preinstall: combined-stream@1.0.5
+510 silly lifecycle combined-stream@1.0.5~preinstall: no script for preinstall, continuing
+511 info linkStuff combined-stream@1.0.5
+512 silly linkStuff combined-stream@1.0.5 has C:\elearning\node_modules as its parent node_modules
+513 verbose linkBins combined-stream@1.0.5
+514 verbose linkMans combined-stream@1.0.5
+515 verbose rebuildBundles combined-stream@1.0.5
+516 info lifecycle combined-stream@1.0.5~install: combined-stream@1.0.5
+517 silly lifecycle combined-stream@1.0.5~install: no script for install, continuing
+518 info lifecycle combined-stream@1.0.5~postinstall: combined-stream@1.0.5
+519 silly lifecycle combined-stream@1.0.5~postinstall: no script for postinstall, continuing
+520 verbose rebuild bundle C:\elearning\node_modules\commander
+521 info build C:\elearning\node_modules\commander
+522 info lifecycle commander@2.9.0~preinstall: commander@2.9.0
+523 silly lifecycle commander@2.9.0~preinstall: no script for preinstall, continuing
+524 info linkStuff commander@2.9.0
+525 silly linkStuff commander@2.9.0 has C:\elearning\node_modules as its parent node_modules
+526 verbose linkBins commander@2.9.0
+527 verbose linkMans commander@2.9.0
+528 verbose rebuildBundles commander@2.9.0
+529 info lifecycle commander@2.9.0~install: commander@2.9.0
+530 silly lifecycle commander@2.9.0~install: no script for install, continuing
+531 info lifecycle commander@2.9.0~postinstall: commander@2.9.0
+532 silly lifecycle commander@2.9.0~postinstall: no script for postinstall, continuing
+533 verbose rebuild bundle C:\elearning\node_modules\compressible
+534 info build C:\elearning\node_modules\compressible
+535 info lifecycle compressible@1.0.0~preinstall: compressible@1.0.0
+536 silly lifecycle compressible@1.0.0~preinstall: no script for preinstall, continuing
+537 info linkStuff compressible@1.0.0
+538 silly linkStuff compressible@1.0.0 has C:\elearning\node_modules as its parent node_modules
+539 verbose linkBins compressible@1.0.0
+540 verbose linkMans compressible@1.0.0
+541 verbose rebuildBundles compressible@1.0.0
+542 info lifecycle compressible@1.0.0~install: compressible@1.0.0
+543 silly lifecycle compressible@1.0.0~install: no script for install, continuing
+544 info lifecycle compressible@1.0.0~postinstall: compressible@1.0.0
+545 silly lifecycle compressible@1.0.0~postinstall: no script for postinstall, continuing
+546 verbose rebuild bundle C:\elearning\node_modules\compression
+547 info build C:\elearning\node_modules\compression
+548 info lifecycle compression@1.0.0~preinstall: compression@1.0.0
+549 silly lifecycle compression@1.0.0~preinstall: no script for preinstall, continuing
+550 info linkStuff compression@1.0.0
+551 silly linkStuff compression@1.0.0 has C:\elearning\node_modules as its parent node_modules
+552 verbose linkBins compression@1.0.0
+553 verbose linkMans compression@1.0.0
+554 verbose rebuildBundles compression@1.0.0
+555 info lifecycle compression@1.0.0~install: compression@1.0.0
+556 silly lifecycle compression@1.0.0~install: no script for install, continuing
+557 info lifecycle compression@1.0.0~postinstall: compression@1.0.0
+558 silly lifecycle compression@1.0.0~postinstall: no script for postinstall, continuing
+559 verbose rebuild bundle C:\elearning\node_modules\concat-map
+560 info build C:\elearning\node_modules\concat-map
+561 info lifecycle concat-map@0.0.1~preinstall: concat-map@0.0.1
+562 silly lifecycle concat-map@0.0.1~preinstall: no script for preinstall, continuing
+563 info linkStuff concat-map@0.0.1
+564 silly linkStuff concat-map@0.0.1 has C:\elearning\node_modules as its parent node_modules
+565 verbose linkBins concat-map@0.0.1
+566 verbose linkMans concat-map@0.0.1
+567 verbose rebuildBundles concat-map@0.0.1
+568 info lifecycle concat-map@0.0.1~install: concat-map@0.0.1
+569 silly lifecycle concat-map@0.0.1~install: no script for install, continuing
+570 info lifecycle concat-map@0.0.1~postinstall: concat-map@0.0.1
+571 silly lifecycle concat-map@0.0.1~postinstall: no script for postinstall, continuing
+572 verbose rebuild bundle C:\elearning\node_modules\connect
+573 info build C:\elearning\node_modules\connect
+574 info lifecycle connect@2.14.1~preinstall: connect@2.14.1
+575 silly lifecycle connect@2.14.1~preinstall: no script for preinstall, continuing
+576 info linkStuff connect@2.14.1
+577 silly linkStuff connect@2.14.1 has C:\elearning\node_modules as its parent node_modules
+578 verbose linkBins connect@2.14.1
+579 verbose linkMans connect@2.14.1
+580 verbose rebuildBundles connect@2.14.1
+581 verbose rebuildBundles [ 'qs' ]
+582 info lifecycle connect@2.14.1~install: connect@2.14.1
+583 silly lifecycle connect@2.14.1~install: no script for install, continuing
+584 info lifecycle connect@2.14.1~postinstall: connect@2.14.1
+585 silly lifecycle connect@2.14.1~postinstall: no script for postinstall, continuing
+586 verbose rebuild bundle C:\elearning\node_modules\connect-timeout
+587 info build C:\elearning\node_modules\connect-timeout
+588 info lifecycle connect-timeout@1.0.0~preinstall: connect-timeout@1.0.0
+589 silly lifecycle connect-timeout@1.0.0~preinstall: no script for preinstall, continuing
+590 info linkStuff connect-timeout@1.0.0
+591 silly linkStuff connect-timeout@1.0.0 has C:\elearning\node_modules as its parent node_modules
+592 verbose linkBins connect-timeout@1.0.0
+593 verbose linkMans connect-timeout@1.0.0
+594 verbose rebuildBundles connect-timeout@1.0.0
+595 info lifecycle connect-timeout@1.0.0~install: connect-timeout@1.0.0
+596 silly lifecycle connect-timeout@1.0.0~install: no script for install, continuing
+597 info lifecycle connect-timeout@1.0.0~postinstall: connect-timeout@1.0.0
+598 silly lifecycle connect-timeout@1.0.0~postinstall: no script for postinstall, continuing
+599 verbose rebuild bundle C:\elearning\node_modules\connectr
+600 info build C:\elearning\node_modules\connectr
+601 info lifecycle connectr@0.0.6~preinstall: connectr@0.0.6
+602 silly lifecycle connectr@0.0.6~preinstall: no script for preinstall, continuing
+603 info linkStuff connectr@0.0.6
+604 silly linkStuff connectr@0.0.6 has C:\elearning\node_modules as its parent node_modules
+605 verbose linkBins connectr@0.0.6
+606 verbose linkMans connectr@0.0.6
+607 verbose rebuildBundles connectr@0.0.6
+608 verbose rebuildBundles [ 'debug' ]
+609 info lifecycle connectr@0.0.6~install: connectr@0.0.6
+610 silly lifecycle connectr@0.0.6~install: no script for install, continuing
+611 info lifecycle connectr@0.0.6~postinstall: connectr@0.0.6
+612 silly lifecycle connectr@0.0.6~postinstall: no script for postinstall, continuing
+613 verbose rebuild bundle C:\elearning\node_modules\constantinople
+614 info build C:\elearning\node_modules\constantinople
+615 info lifecycle constantinople@3.0.2~preinstall: constantinople@3.0.2
+616 silly lifecycle constantinople@3.0.2~preinstall: no script for preinstall, continuing
+617 info linkStuff constantinople@3.0.2
+618 silly linkStuff constantinople@3.0.2 has C:\elearning\node_modules as its parent node_modules
+619 verbose linkBins constantinople@3.0.2
+620 verbose linkMans constantinople@3.0.2
+621 verbose rebuildBundles constantinople@3.0.2
+622 info lifecycle constantinople@3.0.2~install: constantinople@3.0.2
+623 silly lifecycle constantinople@3.0.2~install: no script for install, continuing
+624 info lifecycle constantinople@3.0.2~postinstall: constantinople@3.0.2
+625 silly lifecycle constantinople@3.0.2~postinstall: no script for postinstall, continuing
+626 verbose rebuild bundle C:\elearning\node_modules\cookie
+627 info build C:\elearning\node_modules\cookie
+628 info lifecycle cookie@0.1.1~preinstall: cookie@0.1.1
+629 silly lifecycle cookie@0.1.1~preinstall: no script for preinstall, continuing
+630 info linkStuff cookie@0.1.1
+631 silly linkStuff cookie@0.1.1 has C:\elearning\node_modules as its parent node_modules
+632 verbose linkBins cookie@0.1.1
+633 verbose linkMans cookie@0.1.1
+634 verbose rebuildBundles cookie@0.1.1
+635 info lifecycle cookie@0.1.1~install: cookie@0.1.1
+636 silly lifecycle cookie@0.1.1~install: no script for install, continuing
+637 info lifecycle cookie@0.1.1~postinstall: cookie@0.1.1
+638 silly lifecycle cookie@0.1.1~postinstall: no script for postinstall, continuing
+639 verbose rebuild bundle C:\elearning\node_modules\cookie-parser
+640 info build C:\elearning\node_modules\cookie-parser
+641 info lifecycle cookie-parser@1.0.1~preinstall: cookie-parser@1.0.1
+642 silly lifecycle cookie-parser@1.0.1~preinstall: no script for preinstall, continuing
+643 info linkStuff cookie-parser@1.0.1
+644 silly linkStuff cookie-parser@1.0.1 has C:\elearning\node_modules as its parent node_modules
+645 verbose linkBins cookie-parser@1.0.1
+646 verbose linkMans cookie-parser@1.0.1
+647 verbose rebuildBundles cookie-parser@1.0.1
+648 verbose rebuildBundles [ 'cookie' ]
+649 info lifecycle cookie-parser@1.0.1~install: cookie-parser@1.0.1
+650 silly lifecycle cookie-parser@1.0.1~install: no script for install, continuing
+651 info lifecycle cookie-parser@1.0.1~postinstall: cookie-parser@1.0.1
+652 silly lifecycle cookie-parser@1.0.1~postinstall: no script for postinstall, continuing
+653 verbose rebuild bundle C:\elearning\node_modules\cookie-signature
+654 info build C:\elearning\node_modules\cookie-signature
+655 info lifecycle cookie-signature@1.0.3~preinstall: cookie-signature@1.0.3
+656 silly lifecycle cookie-signature@1.0.3~preinstall: no script for preinstall, continuing
+657 info linkStuff cookie-signature@1.0.3
+658 silly linkStuff cookie-signature@1.0.3 has C:\elearning\node_modules as its parent node_modules
+659 verbose linkBins cookie-signature@1.0.3
+660 verbose linkMans cookie-signature@1.0.3
+661 verbose rebuildBundles cookie-signature@1.0.3
+662 info lifecycle cookie-signature@1.0.3~install: cookie-signature@1.0.3
+663 silly lifecycle cookie-signature@1.0.3~install: no script for install, continuing
+664 info lifecycle cookie-signature@1.0.3~postinstall: cookie-signature@1.0.3
+665 silly lifecycle cookie-signature@1.0.3~postinstall: no script for postinstall, continuing
+666 verbose rebuild bundle C:\elearning\node_modules\core-util-is
+667 info build C:\elearning\node_modules\core-util-is
+668 info lifecycle core-util-is@1.0.2~preinstall: core-util-is@1.0.2
+669 silly lifecycle core-util-is@1.0.2~preinstall: no script for preinstall, continuing
+670 info linkStuff core-util-is@1.0.2
+671 silly linkStuff core-util-is@1.0.2 has C:\elearning\node_modules as its parent node_modules
+672 verbose linkBins core-util-is@1.0.2
+673 verbose linkMans core-util-is@1.0.2
+674 verbose rebuildBundles core-util-is@1.0.2
+675 info lifecycle core-util-is@1.0.2~install: core-util-is@1.0.2
+676 silly lifecycle core-util-is@1.0.2~install: no script for install, continuing
+677 info lifecycle core-util-is@1.0.2~postinstall: core-util-is@1.0.2
+678 silly lifecycle core-util-is@1.0.2~postinstall: no script for postinstall, continuing
+679 verbose rebuild bundle C:\elearning\node_modules\couch-pwd
+680 info build C:\elearning\node_modules\couch-pwd
+681 info lifecycle couch-pwd@0.0.1~preinstall: couch-pwd@0.0.1
+682 silly lifecycle couch-pwd@0.0.1~preinstall: no script for preinstall, continuing
+683 info linkStuff couch-pwd@0.0.1
+684 silly linkStuff couch-pwd@0.0.1 has C:\elearning\node_modules as its parent node_modules
+685 verbose linkBins couch-pwd@0.0.1
+686 verbose linkMans couch-pwd@0.0.1
+687 verbose rebuildBundles couch-pwd@0.0.1
+688 info lifecycle couch-pwd@0.0.1~install: couch-pwd@0.0.1
+689 silly lifecycle couch-pwd@0.0.1~install: no script for install, continuing
+690 info lifecycle couch-pwd@0.0.1~postinstall: couch-pwd@0.0.1
+691 silly lifecycle couch-pwd@0.0.1~postinstall: no script for postinstall, continuing
+692 verbose rebuild bundle C:\elearning\node_modules\cryptiles
+693 info build C:\elearning\node_modules\cryptiles
+694 info lifecycle cryptiles@2.0.5~preinstall: cryptiles@2.0.5
+695 silly lifecycle cryptiles@2.0.5~preinstall: no script for preinstall, continuing
+696 info linkStuff cryptiles@2.0.5
+697 silly linkStuff cryptiles@2.0.5 has C:\elearning\node_modules as its parent node_modules
+698 verbose linkBins cryptiles@2.0.5
+699 verbose linkMans cryptiles@2.0.5
+700 verbose rebuildBundles cryptiles@2.0.5
+701 info lifecycle cryptiles@2.0.5~install: cryptiles@2.0.5
+702 silly lifecycle cryptiles@2.0.5~install: no script for install, continuing
+703 info lifecycle cryptiles@2.0.5~postinstall: cryptiles@2.0.5
+704 silly lifecycle cryptiles@2.0.5~postinstall: no script for postinstall, continuing
+705 verbose rebuild bundle C:\elearning\node_modules\css
+706 info build C:\elearning\node_modules\css
+707 info lifecycle css@1.0.8~preinstall: css@1.0.8
+708 silly lifecycle css@1.0.8~preinstall: no script for preinstall, continuing
+709 info linkStuff css@1.0.8
+710 silly linkStuff css@1.0.8 has C:\elearning\node_modules as its parent node_modules
+711 verbose linkBins css@1.0.8
+712 verbose linkMans css@1.0.8
+713 verbose rebuildBundles css@1.0.8
+714 info lifecycle css@1.0.8~install: css@1.0.8
+715 silly lifecycle css@1.0.8~install: no script for install, continuing
+716 info lifecycle css@1.0.8~postinstall: css@1.0.8
+717 silly lifecycle css@1.0.8~postinstall: no script for postinstall, continuing
+718 verbose rebuild bundle C:\elearning\node_modules\css-parse
+719 info build C:\elearning\node_modules\css-parse
+720 info lifecycle css-parse@1.0.4~preinstall: css-parse@1.0.4
+721 silly lifecycle css-parse@1.0.4~preinstall: no script for preinstall, continuing
+722 info linkStuff css-parse@1.0.4
+723 silly linkStuff css-parse@1.0.4 has C:\elearning\node_modules as its parent node_modules
+724 verbose linkBins css-parse@1.0.4
+725 verbose linkMans css-parse@1.0.4
+726 verbose rebuildBundles css-parse@1.0.4
+727 info lifecycle css-parse@1.0.4~install: css-parse@1.0.4
+728 silly lifecycle css-parse@1.0.4~install: no script for install, continuing
+729 info lifecycle css-parse@1.0.4~postinstall: css-parse@1.0.4
+730 silly lifecycle css-parse@1.0.4~postinstall: no script for postinstall, continuing
+731 verbose rebuild bundle C:\elearning\node_modules\css-stringify
+732 info build C:\elearning\node_modules\css-stringify
+733 info lifecycle css-stringify@1.0.5~preinstall: css-stringify@1.0.5
+734 silly lifecycle css-stringify@1.0.5~preinstall: no script for preinstall, continuing
+735 info linkStuff css-stringify@1.0.5
+736 silly linkStuff css-stringify@1.0.5 has C:\elearning\node_modules as its parent node_modules
+737 verbose linkBins css-stringify@1.0.5
+738 verbose linkMans css-stringify@1.0.5
+739 verbose rebuildBundles css-stringify@1.0.5
+740 info lifecycle css-stringify@1.0.5~install: css-stringify@1.0.5
+741 silly lifecycle css-stringify@1.0.5~install: no script for install, continuing
+742 info lifecycle css-stringify@1.0.5~postinstall: css-stringify@1.0.5
+743 silly lifecycle css-stringify@1.0.5~postinstall: no script for postinstall, continuing
+744 verbose rebuild bundle C:\elearning\node_modules\csurf
+745 info build C:\elearning\node_modules\csurf
+746 info lifecycle csurf@1.0.0~preinstall: csurf@1.0.0
+747 silly lifecycle csurf@1.0.0~preinstall: no script for preinstall, continuing
+748 info linkStuff csurf@1.0.0
+749 silly linkStuff csurf@1.0.0 has C:\elearning\node_modules as its parent node_modules
+750 verbose linkBins csurf@1.0.0
+751 verbose linkMans csurf@1.0.0
+752 verbose rebuildBundles csurf@1.0.0
+753 info lifecycle csurf@1.0.0~install: csurf@1.0.0
+754 silly lifecycle csurf@1.0.0~install: no script for install, continuing
+755 info lifecycle csurf@1.0.0~postinstall: csurf@1.0.0
+756 silly lifecycle csurf@1.0.0~postinstall: no script for postinstall, continuing
+757 verbose rebuild bundle C:\elearning\node_modules\dashdash
+758 info build C:\elearning\node_modules\dashdash
+759 info lifecycle dashdash@1.10.1~preinstall: dashdash@1.10.1
+760 silly lifecycle dashdash@1.10.1~preinstall: no script for preinstall, continuing
+761 info linkStuff dashdash@1.10.1
+762 silly linkStuff dashdash@1.10.1 has C:\elearning\node_modules as its parent node_modules
+763 verbose linkBins dashdash@1.10.1
+764 verbose linkMans dashdash@1.10.1
+765 verbose rebuildBundles dashdash@1.10.1
+766 info lifecycle dashdash@1.10.1~install: dashdash@1.10.1
+767 silly lifecycle dashdash@1.10.1~install: no script for install, continuing
+768 info lifecycle dashdash@1.10.1~postinstall: dashdash@1.10.1
+769 silly lifecycle dashdash@1.10.1~postinstall: no script for postinstall, continuing
+770 verbose rebuild bundle C:\elearning\node_modules\debug
+771 info build C:\elearning\node_modules\debug
+772 info lifecycle debug@0.8.1~preinstall: debug@0.8.1
+773 silly lifecycle debug@0.8.1~preinstall: no script for preinstall, continuing
+774 info linkStuff debug@0.8.1
+775 silly linkStuff debug@0.8.1 has C:\elearning\node_modules as its parent node_modules
+776 verbose linkBins debug@0.8.1
+777 verbose linkMans debug@0.8.1
+778 verbose rebuildBundles debug@0.8.1
+779 info lifecycle debug@0.8.1~install: debug@0.8.1
+780 silly lifecycle debug@0.8.1~install: no script for install, continuing
+781 info lifecycle debug@0.8.1~postinstall: debug@0.8.1
+782 silly lifecycle debug@0.8.1~postinstall: no script for postinstall, continuing
+783 verbose rebuild bundle C:\elearning\node_modules\decamelize
+784 info build C:\elearning\node_modules\decamelize
+785 info lifecycle decamelize@1.1.1~preinstall: decamelize@1.1.1
+786 silly lifecycle decamelize@1.1.1~preinstall: no script for preinstall, continuing
+787 info linkStuff decamelize@1.1.1
+788 silly linkStuff decamelize@1.1.1 has C:\elearning\node_modules as its parent node_modules
+789 verbose linkBins decamelize@1.1.1
+790 verbose linkMans decamelize@1.1.1
+791 verbose rebuildBundles decamelize@1.1.1
+792 info lifecycle decamelize@1.1.1~install: decamelize@1.1.1
+793 silly lifecycle decamelize@1.1.1~install: no script for install, continuing
+794 info lifecycle decamelize@1.1.1~postinstall: decamelize@1.1.1
+795 silly lifecycle decamelize@1.1.1~postinstall: no script for postinstall, continuing
+796 verbose rebuild bundle C:\elearning\node_modules\delayed-stream
+797 info build C:\elearning\node_modules\delayed-stream
+798 info lifecycle delayed-stream@1.0.0~preinstall: delayed-stream@1.0.0
+799 silly lifecycle delayed-stream@1.0.0~preinstall: no script for preinstall, continuing
+800 info linkStuff delayed-stream@1.0.0
+801 silly linkStuff delayed-stream@1.0.0 has C:\elearning\node_modules as its parent node_modules
+802 verbose linkBins delayed-stream@1.0.0
+803 verbose linkMans delayed-stream@1.0.0
+804 verbose rebuildBundles delayed-stream@1.0.0
+805 info lifecycle delayed-stream@1.0.0~install: delayed-stream@1.0.0
+806 silly lifecycle delayed-stream@1.0.0~install: no script for install, continuing
+807 info lifecycle delayed-stream@1.0.0~postinstall: delayed-stream@1.0.0
+808 silly lifecycle delayed-stream@1.0.0~postinstall: no script for postinstall, continuing
+809 verbose rebuild bundle C:\elearning\node_modules\ecc-jsbn
+810 info build C:\elearning\node_modules\ecc-jsbn
+811 info lifecycle ecc-jsbn@0.1.1~preinstall: ecc-jsbn@0.1.1
+812 silly lifecycle ecc-jsbn@0.1.1~preinstall: no script for preinstall, continuing
+813 info linkStuff ecc-jsbn@0.1.1
+814 silly linkStuff ecc-jsbn@0.1.1 has C:\elearning\node_modules as its parent node_modules
+815 verbose linkBins ecc-jsbn@0.1.1
+816 verbose linkMans ecc-jsbn@0.1.1
+817 verbose rebuildBundles ecc-jsbn@0.1.1
+818 info lifecycle ecc-jsbn@0.1.1~install: ecc-jsbn@0.1.1
+819 silly lifecycle ecc-jsbn@0.1.1~install: no script for install, continuing
+820 info lifecycle ecc-jsbn@0.1.1~postinstall: ecc-jsbn@0.1.1
+821 silly lifecycle ecc-jsbn@0.1.1~postinstall: no script for postinstall, continuing
+822 verbose rebuild bundle C:\elearning\node_modules\errorhandler
+823 info build C:\elearning\node_modules\errorhandler
+824 info lifecycle errorhandler@1.0.0~preinstall: errorhandler@1.0.0
+825 silly lifecycle errorhandler@1.0.0~preinstall: no script for preinstall, continuing
+826 info linkStuff errorhandler@1.0.0
+827 silly linkStuff errorhandler@1.0.0 has C:\elearning\node_modules as its parent node_modules
+828 verbose linkBins errorhandler@1.0.0
+829 verbose linkMans errorhandler@1.0.0
+830 verbose rebuildBundles errorhandler@1.0.0
+831 info lifecycle errorhandler@1.0.0~install: errorhandler@1.0.0
+832 silly lifecycle errorhandler@1.0.0~install: no script for install, continuing
+833 info lifecycle errorhandler@1.0.0~postinstall: errorhandler@1.0.0
+834 silly lifecycle errorhandler@1.0.0~postinstall: no script for postinstall, continuing
+835 verbose rebuild bundle C:\elearning\node_modules\es6-promise
+836 info build C:\elearning\node_modules\es6-promise
+837 info lifecycle es6-promise@2.1.1~preinstall: es6-promise@2.1.1
+838 silly lifecycle es6-promise@2.1.1~preinstall: no script for preinstall, continuing
+839 info linkStuff es6-promise@2.1.1
+840 silly linkStuff es6-promise@2.1.1 has C:\elearning\node_modules as its parent node_modules
+841 verbose linkBins es6-promise@2.1.1
+842 verbose linkMans es6-promise@2.1.1
+843 verbose rebuildBundles es6-promise@2.1.1
+844 info lifecycle es6-promise@2.1.1~install: es6-promise@2.1.1
+845 silly lifecycle es6-promise@2.1.1~install: no script for install, continuing
+846 info lifecycle es6-promise@2.1.1~postinstall: es6-promise@2.1.1
+847 silly lifecycle es6-promise@2.1.1~postinstall: no script for postinstall, continuing
+848 verbose rebuild bundle C:\elearning\node_modules\escape-string-regexp
+849 info build C:\elearning\node_modules\escape-string-regexp
+850 info lifecycle escape-string-regexp@1.0.3~preinstall: escape-string-regexp@1.0.3
+851 silly lifecycle escape-string-regexp@1.0.3~preinstall: no script for preinstall, continuing
+852 info linkStuff escape-string-regexp@1.0.3
+853 silly linkStuff escape-string-regexp@1.0.3 has C:\elearning\node_modules as its parent node_modules
+854 verbose linkBins escape-string-regexp@1.0.3
+855 verbose linkMans escape-string-regexp@1.0.3
+856 verbose rebuildBundles escape-string-regexp@1.0.3
+857 info lifecycle escape-string-regexp@1.0.3~install: escape-string-regexp@1.0.3
+858 silly lifecycle escape-string-regexp@1.0.3~install: no script for install, continuing
+859 info lifecycle escape-string-regexp@1.0.3~postinstall: escape-string-regexp@1.0.3
+860 silly lifecycle escape-string-regexp@1.0.3~postinstall: no script for postinstall, continuing
+861 verbose rebuild bundle C:\elearning\node_modules\express-session
+862 info build C:\elearning\node_modules\express-session
+863 info lifecycle express-session@1.0.2~preinstall: express-session@1.0.2
+864 silly lifecycle express-session@1.0.2~preinstall: no script for preinstall, continuing
+865 info linkStuff express-session@1.0.2
+866 silly linkStuff express-session@1.0.2 has C:\elearning\node_modules as its parent node_modules
+867 verbose linkBins express-session@1.0.2
+868 verbose linkMans express-session@1.0.2
+869 verbose rebuildBundles express-session@1.0.2
+870 verbose rebuildBundles [ 'cookie', 'debug' ]
+871 info lifecycle express-session@1.0.2~install: express-session@1.0.2
+872 silly lifecycle express-session@1.0.2~install: no script for install, continuing
+873 info lifecycle express-session@1.0.2~postinstall: express-session@1.0.2
+874 silly lifecycle express-session@1.0.2~postinstall: no script for postinstall, continuing
+875 verbose rebuild bundle C:\elearning\node_modules\extend
+876 info build C:\elearning\node_modules\extend
+877 info lifecycle extend@3.0.0~preinstall: extend@3.0.0
+878 silly lifecycle extend@3.0.0~preinstall: no script for preinstall, continuing
+879 info linkStuff extend@3.0.0
+880 silly linkStuff extend@3.0.0 has C:\elearning\node_modules as its parent node_modules
+881 verbose linkBins extend@3.0.0
+882 verbose linkMans extend@3.0.0
+883 verbose rebuildBundles extend@3.0.0
+884 info lifecycle extend@3.0.0~install: extend@3.0.0
+885 silly lifecycle extend@3.0.0~install: no script for install, continuing
+886 info lifecycle extend@3.0.0~postinstall: extend@3.0.0
+887 silly lifecycle extend@3.0.0~postinstall: no script for postinstall, continuing
+888 verbose rebuild bundle C:\elearning\node_modules\extsprintf
+889 info build C:\elearning\node_modules\extsprintf
+890 info lifecycle extsprintf@1.0.2~preinstall: extsprintf@1.0.2
+891 silly lifecycle extsprintf@1.0.2~preinstall: no script for preinstall, continuing
+892 info linkStuff extsprintf@1.0.2
+893 silly linkStuff extsprintf@1.0.2 has C:\elearning\node_modules as its parent node_modules
+894 verbose linkBins extsprintf@1.0.2
+895 verbose linkMans extsprintf@1.0.2
+896 verbose rebuildBundles extsprintf@1.0.2
+897 info lifecycle extsprintf@1.0.2~install: extsprintf@1.0.2
+898 silly lifecycle extsprintf@1.0.2~install: no script for install, continuing
+899 info lifecycle extsprintf@1.0.2~postinstall: extsprintf@1.0.2
+900 silly lifecycle extsprintf@1.0.2~postinstall: no script for postinstall, continuing
+901 verbose rebuild bundle C:\elearning\node_modules\find-java-home
+902 info build C:\elearning\node_modules\find-java-home
+903 info lifecycle find-java-home@0.1.2~preinstall: find-java-home@0.1.2
+904 silly lifecycle find-java-home@0.1.2~preinstall: no script for preinstall, continuing
+905 info linkStuff find-java-home@0.1.2
+906 silly linkStuff find-java-home@0.1.2 has C:\elearning\node_modules as its parent node_modules
+907 verbose linkBins find-java-home@0.1.2
+908 verbose linkMans find-java-home@0.1.2
+909 verbose rebuildBundles find-java-home@0.1.2
+910 info lifecycle find-java-home@0.1.2~install: find-java-home@0.1.2
+911 silly lifecycle find-java-home@0.1.2~install: no script for install, continuing
+912 info lifecycle find-java-home@0.1.2~postinstall: find-java-home@0.1.2
+913 silly lifecycle find-java-home@0.1.2~postinstall: no script for postinstall, continuing
+914 verbose rebuild bundle C:\elearning\node_modules\forever-agent
+915 info build C:\elearning\node_modules\forever-agent
+916 info lifecycle forever-agent@0.6.1~preinstall: forever-agent@0.6.1
+917 silly lifecycle forever-agent@0.6.1~preinstall: no script for preinstall, continuing
+918 info linkStuff forever-agent@0.6.1
+919 silly linkStuff forever-agent@0.6.1 has C:\elearning\node_modules as its parent node_modules
+920 verbose linkBins forever-agent@0.6.1
+921 verbose linkMans forever-agent@0.6.1
+922 verbose rebuildBundles forever-agent@0.6.1
+923 info lifecycle forever-agent@0.6.1~install: forever-agent@0.6.1
+924 silly lifecycle forever-agent@0.6.1~install: no script for install, continuing
+925 info lifecycle forever-agent@0.6.1~postinstall: forever-agent@0.6.1
+926 silly lifecycle forever-agent@0.6.1~postinstall: no script for postinstall, continuing
+927 verbose rebuild bundle C:\elearning\node_modules\form-data
+928 info build C:\elearning\node_modules\form-data
+929 info lifecycle form-data@1.0.0-rc3~preinstall: form-data@1.0.0-rc3
+930 silly lifecycle form-data@1.0.0-rc3~preinstall: no script for preinstall, continuing
+931 info linkStuff form-data@1.0.0-rc3
+932 silly linkStuff form-data@1.0.0-rc3 has C:\elearning\node_modules as its parent node_modules
+933 verbose linkBins form-data@1.0.0-rc3
+934 verbose linkMans form-data@1.0.0-rc3
+935 verbose rebuildBundles form-data@1.0.0-rc3
+936 info lifecycle form-data@1.0.0-rc3~install: form-data@1.0.0-rc3
+937 silly lifecycle form-data@1.0.0-rc3~install: no script for install, continuing
+938 info lifecycle form-data@1.0.0-rc3~postinstall: form-data@1.0.0-rc3
+939 silly lifecycle form-data@1.0.0-rc3~postinstall: no script for postinstall, continuing
+940 verbose rebuild bundle C:\elearning\node_modules\fresh
+941 info build C:\elearning\node_modules\fresh
+942 info lifecycle fresh@0.2.2~preinstall: fresh@0.2.2
+943 silly lifecycle fresh@0.2.2~preinstall: no script for preinstall, continuing
+944 info linkStuff fresh@0.2.2
+945 silly linkStuff fresh@0.2.2 has C:\elearning\node_modules as its parent node_modules
+946 verbose linkBins fresh@0.2.2
+947 verbose linkMans fresh@0.2.2
+948 verbose rebuildBundles fresh@0.2.2
+949 info lifecycle fresh@0.2.2~install: fresh@0.2.2
+950 silly lifecycle fresh@0.2.2~install: no script for install, continuing
+951 info lifecycle fresh@0.2.2~postinstall: fresh@0.2.2
+952 silly lifecycle fresh@0.2.2~postinstall: no script for postinstall, continuing
+953 verbose rebuild bundle C:\elearning\node_modules\generate-function
+954 info build C:\elearning\node_modules\generate-function
+955 info lifecycle generate-function@2.0.0~preinstall: generate-function@2.0.0
+956 silly lifecycle generate-function@2.0.0~preinstall: no script for preinstall, continuing
+957 info linkStuff generate-function@2.0.0
+958 silly linkStuff generate-function@2.0.0 has C:\elearning\node_modules as its parent node_modules
+959 verbose linkBins generate-function@2.0.0
+960 verbose linkMans generate-function@2.0.0
+961 verbose rebuildBundles generate-function@2.0.0
+962 info lifecycle generate-function@2.0.0~install: generate-function@2.0.0
+963 silly lifecycle generate-function@2.0.0~install: no script for install, continuing
+964 info lifecycle generate-function@2.0.0~postinstall: generate-function@2.0.0
+965 silly lifecycle generate-function@2.0.0~postinstall: no script for postinstall, continuing
+966 verbose rebuild bundle C:\elearning\node_modules\generate-object-property
+967 info build C:\elearning\node_modules\generate-object-property
+968 info lifecycle generate-object-property@1.2.0~preinstall: generate-object-property@1.2.0
+969 silly lifecycle generate-object-property@1.2.0~preinstall: no script for preinstall, continuing
+970 info linkStuff generate-object-property@1.2.0
+971 silly linkStuff generate-object-property@1.2.0 has C:\elearning\node_modules as its parent node_modules
+972 verbose linkBins generate-object-property@1.2.0
+973 verbose linkMans generate-object-property@1.2.0
+974 verbose rebuildBundles generate-object-property@1.2.0
+975 info lifecycle generate-object-property@1.2.0~install: generate-object-property@1.2.0
+976 silly lifecycle generate-object-property@1.2.0~install: no script for install, continuing
+977 info lifecycle generate-object-property@1.2.0~postinstall: generate-object-property@1.2.0
+978 silly lifecycle generate-object-property@1.2.0~postinstall: no script for postinstall, continuing
+979 verbose rebuild bundle C:\elearning\node_modules\glob
+980 info build C:\elearning\node_modules\glob
+981 info lifecycle glob@5.0.5~preinstall: glob@5.0.5
+982 silly lifecycle glob@5.0.5~preinstall: no script for preinstall, continuing
+983 info linkStuff glob@5.0.5
+984 silly linkStuff glob@5.0.5 has C:\elearning\node_modules as its parent node_modules
+985 verbose linkBins glob@5.0.5
+986 verbose linkMans glob@5.0.5
+987 verbose rebuildBundles glob@5.0.5
+988 verbose rebuildBundles [ 'minimatch' ]
+989 info lifecycle glob@5.0.5~install: glob@5.0.5
+990 silly lifecycle glob@5.0.5~install: no script for install, continuing
+991 info lifecycle glob@5.0.5~postinstall: glob@5.0.5
+992 silly lifecycle glob@5.0.5~postinstall: no script for postinstall, continuing
+993 verbose rebuild bundle C:\elearning\node_modules\graceful-readlink
+994 info build C:\elearning\node_modules\graceful-readlink
+995 info lifecycle graceful-readlink@1.0.1~preinstall: graceful-readlink@1.0.1
+996 silly lifecycle graceful-readlink@1.0.1~preinstall: no script for preinstall, continuing
+997 info linkStuff graceful-readlink@1.0.1
+998 silly linkStuff graceful-readlink@1.0.1 has C:\elearning\node_modules as its parent node_modules
+999 verbose linkBins graceful-readlink@1.0.1
+1000 verbose linkMans graceful-readlink@1.0.1
+1001 verbose rebuildBundles graceful-readlink@1.0.1
+1002 info lifecycle graceful-readlink@1.0.1~install: graceful-readlink@1.0.1
+1003 silly lifecycle graceful-readlink@1.0.1~install: no script for install, continuing
+1004 info lifecycle graceful-readlink@1.0.1~postinstall: graceful-readlink@1.0.1
+1005 silly lifecycle graceful-readlink@1.0.1~postinstall: no script for postinstall, continuing
+1006 verbose rebuild bundle C:\elearning\node_modules\har-validator
+1007 info build C:\elearning\node_modules\har-validator
+1008 info lifecycle har-validator@2.0.3~preinstall: har-validator@2.0.3
+1009 silly lifecycle har-validator@2.0.3~preinstall: no script for preinstall, continuing
+1010 info linkStuff har-validator@2.0.3
+1011 silly linkStuff har-validator@2.0.3 has C:\elearning\node_modules as its parent node_modules
+1012 verbose linkBins har-validator@2.0.3
+1013 verbose link bins [ { 'har-validator': 'bin/har-validator' },
+1013 verbose link bins   'C:\\elearning\\node_modules\\.bin',
+1013 verbose link bins   false ]
+1014 verbose linkMans har-validator@2.0.3
+1015 verbose rebuildBundles har-validator@2.0.3
+1016 info lifecycle har-validator@2.0.3~install: har-validator@2.0.3
+1017 silly lifecycle har-validator@2.0.3~install: no script for install, continuing
+1018 info lifecycle har-validator@2.0.3~postinstall: har-validator@2.0.3
+1019 silly lifecycle har-validator@2.0.3~postinstall: no script for postinstall, continuing
+1020 verbose rebuild bundle C:\elearning\node_modules\has-ansi
+1021 info build C:\elearning\node_modules\has-ansi
+1022 info lifecycle has-ansi@2.0.0~preinstall: has-ansi@2.0.0
+1023 silly lifecycle has-ansi@2.0.0~preinstall: no script for preinstall, continuing
+1024 info linkStuff has-ansi@2.0.0
+1025 silly linkStuff has-ansi@2.0.0 has C:\elearning\node_modules as its parent node_modules
+1026 verbose linkBins has-ansi@2.0.0
+1027 verbose linkMans has-ansi@2.0.0
+1028 verbose rebuildBundles has-ansi@2.0.0
+1029 info lifecycle has-ansi@2.0.0~install: has-ansi@2.0.0
+1030 silly lifecycle has-ansi@2.0.0~install: no script for install, continuing
+1031 info lifecycle has-ansi@2.0.0~postinstall: has-ansi@2.0.0
+1032 silly lifecycle has-ansi@2.0.0~postinstall: no script for postinstall, continuing
+1033 verbose rebuild bundle C:\elearning\node_modules\hawk
+1034 info build C:\elearning\node_modules\hawk
+1035 info lifecycle hawk@3.1.2~preinstall: hawk@3.1.2
+1036 silly lifecycle hawk@3.1.2~preinstall: no script for preinstall, continuing
+1037 info linkStuff hawk@3.1.2
+1038 silly linkStuff hawk@3.1.2 has C:\elearning\node_modules as its parent node_modules
+1039 verbose linkBins hawk@3.1.2
+1040 verbose linkMans hawk@3.1.2
+1041 verbose rebuildBundles hawk@3.1.2
+1042 info lifecycle hawk@3.1.2~install: hawk@3.1.2
+1043 silly lifecycle hawk@3.1.2~install: no script for install, continuing
+1044 info lifecycle hawk@3.1.2~postinstall: hawk@3.1.2
+1045 silly lifecycle hawk@3.1.2~postinstall: no script for postinstall, continuing
+1046 verbose rebuild bundle C:\elearning\node_modules\hoek
+1047 info build C:\elearning\node_modules\hoek
+1048 info lifecycle hoek@2.16.3~preinstall: hoek@2.16.3
+1049 silly lifecycle hoek@2.16.3~preinstall: no script for preinstall, continuing
+1050 info linkStuff hoek@2.16.3
+1051 silly linkStuff hoek@2.16.3 has C:\elearning\node_modules as its parent node_modules
+1052 verbose linkBins hoek@2.16.3
+1053 verbose linkMans hoek@2.16.3
+1054 verbose rebuildBundles hoek@2.16.3
+1055 info lifecycle hoek@2.16.3~install: hoek@2.16.3
+1056 silly lifecycle hoek@2.16.3~install: no script for install, continuing
+1057 info lifecycle hoek@2.16.3~postinstall: hoek@2.16.3
+1058 silly lifecycle hoek@2.16.3~postinstall: no script for postinstall, continuing
+1059 verbose rebuild bundle C:\elearning\node_modules\http-signature
+1060 info build C:\elearning\node_modules\http-signature
+1061 info lifecycle http-signature@1.1.0~preinstall: http-signature@1.1.0
+1062 silly lifecycle http-signature@1.1.0~preinstall: no script for preinstall, continuing
+1063 info linkStuff http-signature@1.1.0
+1064 silly linkStuff http-signature@1.1.0 has C:\elearning\node_modules as its parent node_modules
+1065 verbose linkBins http-signature@1.1.0
+1066 verbose linkMans http-signature@1.1.0
+1067 verbose rebuildBundles http-signature@1.1.0
+1068 info lifecycle http-signature@1.1.0~install: http-signature@1.1.0
+1069 silly lifecycle http-signature@1.1.0~install: no script for install, continuing
+1070 info lifecycle http-signature@1.1.0~postinstall: http-signature@1.1.0
+1071 silly lifecycle http-signature@1.1.0~postinstall: no script for postinstall, continuing
+1072 verbose rebuild bundle C:\elearning\node_modules\inflight
+1073 info build C:\elearning\node_modules\inflight
+1074 info lifecycle inflight@1.0.4~preinstall: inflight@1.0.4
+1075 silly lifecycle inflight@1.0.4~preinstall: no script for preinstall, continuing
+1076 info linkStuff inflight@1.0.4
+1077 silly linkStuff inflight@1.0.4 has C:\elearning\node_modules as its parent node_modules
+1078 verbose linkBins inflight@1.0.4
+1079 verbose linkMans inflight@1.0.4
+1080 verbose rebuildBundles inflight@1.0.4
+1081 info lifecycle inflight@1.0.4~install: inflight@1.0.4
+1082 silly lifecycle inflight@1.0.4~install: no script for install, continuing
+1083 info lifecycle inflight@1.0.4~postinstall: inflight@1.0.4
+1084 silly lifecycle inflight@1.0.4~postinstall: no script for postinstall, continuing
+1085 verbose rebuild bundle C:\elearning\node_modules\inherits
+1086 info build C:\elearning\node_modules\inherits
+1087 info lifecycle inherits@2.0.1~preinstall: inherits@2.0.1
+1088 silly lifecycle inherits@2.0.1~preinstall: no script for preinstall, continuing
+1089 info linkStuff inherits@2.0.1
+1090 silly linkStuff inherits@2.0.1 has C:\elearning\node_modules as its parent node_modules
+1091 verbose linkBins inherits@2.0.1
+1092 verbose linkMans inherits@2.0.1
+1093 verbose rebuildBundles inherits@2.0.1
+1094 info lifecycle inherits@2.0.1~install: inherits@2.0.1
+1095 silly lifecycle inherits@2.0.1~install: no script for install, continuing
+1096 info lifecycle inherits@2.0.1~postinstall: inherits@2.0.1
+1097 silly lifecycle inherits@2.0.1~postinstall: no script for postinstall, continuing
+1098 verbose rebuild bundle C:\elearning\node_modules\is-buffer
+1099 info build C:\elearning\node_modules\is-buffer
+1100 info lifecycle is-buffer@1.1.0~preinstall: is-buffer@1.1.0
+1101 silly lifecycle is-buffer@1.1.0~preinstall: no script for preinstall, continuing
+1102 info linkStuff is-buffer@1.1.0
+1103 silly linkStuff is-buffer@1.1.0 has C:\elearning\node_modules as its parent node_modules
+1104 verbose linkBins is-buffer@1.1.0
+1105 verbose linkMans is-buffer@1.1.0
+1106 verbose rebuildBundles is-buffer@1.1.0
+1107 info lifecycle is-buffer@1.1.0~install: is-buffer@1.1.0
+1108 silly lifecycle is-buffer@1.1.0~install: no script for install, continuing
+1109 info lifecycle is-buffer@1.1.0~postinstall: is-buffer@1.1.0
+1110 silly lifecycle is-buffer@1.1.0~postinstall: no script for postinstall, continuing
+1111 verbose rebuild bundle C:\elearning\node_modules\is-my-json-valid
+1112 info build C:\elearning\node_modules\is-my-json-valid
+1113 info lifecycle is-my-json-valid@2.12.3~preinstall: is-my-json-valid@2.12.3
+1114 silly lifecycle is-my-json-valid@2.12.3~preinstall: no script for preinstall, continuing
+1115 info linkStuff is-my-json-valid@2.12.3
+1116 silly linkStuff is-my-json-valid@2.12.3 has C:\elearning\node_modules as its parent node_modules
+1117 verbose linkBins is-my-json-valid@2.12.3
+1118 verbose linkMans is-my-json-valid@2.12.3
+1119 verbose rebuildBundles is-my-json-valid@2.12.3
+1120 info lifecycle is-my-json-valid@2.12.3~install: is-my-json-valid@2.12.3
+1121 silly lifecycle is-my-json-valid@2.12.3~install: no script for install, continuing
+1122 info lifecycle is-my-json-valid@2.12.3~postinstall: is-my-json-valid@2.12.3
+1123 silly lifecycle is-my-json-valid@2.12.3~postinstall: no script for postinstall, continuing
+1124 verbose rebuild bundle C:\elearning\node_modules\is-promise
+1125 info build C:\elearning\node_modules\is-promise
+1126 info lifecycle is-promise@1.0.1~preinstall: is-promise@1.0.1
+1127 silly lifecycle is-promise@1.0.1~preinstall: no script for preinstall, continuing
+1128 info linkStuff is-promise@1.0.1
+1129 silly linkStuff is-promise@1.0.1 has C:\elearning\node_modules as its parent node_modules
+1130 verbose linkBins is-promise@1.0.1
+1131 verbose linkMans is-promise@1.0.1
+1132 verbose rebuildBundles is-promise@1.0.1
+1133 info lifecycle is-promise@1.0.1~install: is-promise@1.0.1
+1134 silly lifecycle is-promise@1.0.1~install: no script for install, continuing
+1135 info lifecycle is-promise@1.0.1~postinstall: is-promise@1.0.1
+1136 silly lifecycle is-promise@1.0.1~postinstall: no script for postinstall, continuing
+1137 verbose rebuild bundle C:\elearning\node_modules\is-property
+1138 info build C:\elearning\node_modules\is-property
+1139 info lifecycle is-property@1.0.2~preinstall: is-property@1.0.2
+1140 silly lifecycle is-property@1.0.2~preinstall: no script for preinstall, continuing
+1141 info linkStuff is-property@1.0.2
+1142 silly linkStuff is-property@1.0.2 has C:\elearning\node_modules as its parent node_modules
+1143 verbose linkBins is-property@1.0.2
+1144 verbose linkMans is-property@1.0.2
+1145 verbose rebuildBundles is-property@1.0.2
+1146 info lifecycle is-property@1.0.2~install: is-property@1.0.2
+1147 silly lifecycle is-property@1.0.2~install: no script for install, continuing
+1148 info lifecycle is-property@1.0.2~postinstall: is-property@1.0.2
+1149 silly lifecycle is-property@1.0.2~postinstall: no script for postinstall, continuing
+1150 verbose rebuild bundle C:\elearning\node_modules\is-typedarray
+1151 info build C:\elearning\node_modules\is-typedarray
+1152 info lifecycle is-typedarray@1.0.0~preinstall: is-typedarray@1.0.0
+1153 silly lifecycle is-typedarray@1.0.0~preinstall: no script for preinstall, continuing
+1154 info linkStuff is-typedarray@1.0.0
+1155 silly linkStuff is-typedarray@1.0.0 has C:\elearning\node_modules as its parent node_modules
+1156 verbose linkBins is-typedarray@1.0.0
+1157 verbose linkMans is-typedarray@1.0.0
+1158 verbose rebuildBundles is-typedarray@1.0.0
+1159 info lifecycle is-typedarray@1.0.0~install: is-typedarray@1.0.0
+1160 silly lifecycle is-typedarray@1.0.0~install: no script for install, continuing
+1161 info lifecycle is-typedarray@1.0.0~postinstall: is-typedarray@1.0.0
+1162 silly lifecycle is-typedarray@1.0.0~postinstall: no script for postinstall, continuing
+1163 verbose rebuild bundle C:\elearning\node_modules\isarray
+1164 info build C:\elearning\node_modules\isarray
+1165 info lifecycle isarray@0.0.1~preinstall: isarray@0.0.1
+1166 silly lifecycle isarray@0.0.1~preinstall: no script for preinstall, continuing
+1167 info linkStuff isarray@0.0.1
+1168 silly linkStuff isarray@0.0.1 has C:\elearning\node_modules as its parent node_modules
+1169 verbose linkBins isarray@0.0.1
+1170 verbose linkMans isarray@0.0.1
+1171 verbose rebuildBundles isarray@0.0.1
+1172 info lifecycle isarray@0.0.1~install: isarray@0.0.1
+1173 silly lifecycle isarray@0.0.1~install: no script for install, continuing
+1174 info lifecycle isarray@0.0.1~postinstall: isarray@0.0.1
+1175 silly lifecycle isarray@0.0.1~postinstall: no script for postinstall, continuing
+1176 verbose rebuild bundle C:\elearning\node_modules\isstream
+1177 info build C:\elearning\node_modules\isstream
+1178 info lifecycle isstream@0.1.2~preinstall: isstream@0.1.2
+1179 silly lifecycle isstream@0.1.2~preinstall: no script for preinstall, continuing
+1180 info linkStuff isstream@0.1.2
+1181 silly linkStuff isstream@0.1.2 has C:\elearning\node_modules as its parent node_modules
+1182 verbose linkBins isstream@0.1.2
+1183 verbose linkMans isstream@0.1.2
+1184 verbose rebuildBundles isstream@0.1.2
+1185 info lifecycle isstream@0.1.2~install: isstream@0.1.2
+1186 silly lifecycle isstream@0.1.2~install: no script for install, continuing
+1187 info lifecycle isstream@0.1.2~postinstall: isstream@0.1.2
+1188 silly lifecycle isstream@0.1.2~postinstall: no script for postinstall, continuing
+1189 verbose rebuild bundle C:\elearning\node_modules\java
+1190 info build C:\elearning\node_modules\java
+1191 info lifecycle java@0.5.5~preinstall: java@0.5.5
+1192 silly lifecycle java@0.5.5~preinstall: no script for preinstall, continuing
+1193 info linkStuff java@0.5.5
+1194 silly linkStuff java@0.5.5 has C:\elearning\node_modules as its parent node_modules
+1195 verbose linkBins java@0.5.5
+1196 verbose linkMans java@0.5.5
+1197 verbose rebuildBundles java@0.5.5
+1198 verbose rebuildBundles [ 'async', 'lodash' ]
+1199 info lifecycle java@0.5.5~install: java@0.5.5
+1200 verbose lifecycle java@0.5.5~install: unsafe-perm in lifecycle true
+1201 verbose lifecycle java@0.5.5~install: PATH: C:\Program Files (x86)\Zusatzprogramme\nodejs\node_modules\npm\bin\node-gyp-bin;C:\elearning\node_modules\java\node_modules\.bin;C:\elearning\node_modules\.bin;C:\Users\Stephan\bin;C:\Users\Stephan\AppData\Local\Programs\Git\mingw64\bin;C:\Users\Stephan\AppData\Local\Programs\Git\usr\local\bin;C:\Users\Stephan\AppData\Local\Programs\Git\usr\bin;C:\Users\Stephan\AppData\Local\Programs\Git\usr\bin;C:\Users\Stephan\AppData\Local\Programs\Git\mingw64\bin;C:\Users\Stephan\AppData\Local\Programs\Git\usr\bin;C:\Users\Stephan\bin;C:\Program Files\Haskell\bin;C:\Program Files (x86)\Zusatzprogramme\Haskell7.10.2-a\lib\extralibs\bin;C:\Program Files (x86)\Zusatzprogramme\Haskell7.10.2-a\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files (x86)\Zusatzprogramme\nodejs;C:\HashiCorp\Vagrant\bin;C:\Program Files (x86)\Zusatzprogramme\Haskell7.10.2-a\mingw\bin;C:\Program Files (x86)\Skype\Phone;C:\Users\Stephan\AppData\Roaming\cabal\bin;C:\Ruby22-x64\bin;C:\Users\Stephan\Anaconda3;C:\Users\Stephan\Anaconda3\Scripts;C:\Users\Stephan\Anaconda3\Library\bin;C:\phantomjs-2.0.0-windows\bin;C:\Users\Stephan\AppData\Roaming\npm;C:\Users\Stephan\AppData\Local\Programs\Git\cmd;C:\Users\Stephan\AppData\Local\Programs\Git\usr\bin;C:\Users\Stephan\AppData\Local\Programs\Git\usr\bin\vendor_perl;C:\Users\Stephan\AppData\Local\Programs\Git\usr\bin\core_perl
+1202 verbose lifecycle java@0.5.5~install: CWD: C:\elearning\node_modules\java
+1203 silly lifecycle java@0.5.5~install: Args: [ '/d /s /c', 'node-gyp rebuild' ]
+1204 silly lifecycle java@0.5.5~install: Returned: code: 1  signal: null
+1205 info lifecycle java@0.5.5~install: Failed to exec install script
+1206 verbose stack Error: java@0.5.5 install: `node-gyp rebuild`
+1206 verbose stack Exit status 1
+1206 verbose stack     at EventEmitter.<anonymous> (C:\Program Files (x86)\Zusatzprogramme\nodejs\node_modules\npm\lib\utils\lifecycle.js:233:16)
+1206 verbose stack     at emitTwo (events.js:87:13)
+1206 verbose stack     at EventEmitter.emit (events.js:172:7)
+1206 verbose stack     at ChildProcess.<anonymous> (C:\Program Files (x86)\Zusatzprogramme\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+1206 verbose stack     at emitTwo (events.js:87:13)
+1206 verbose stack     at ChildProcess.emit (events.js:172:7)
+1206 verbose stack     at maybeClose (internal/child_process.js:818:16)
+1206 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+1207 verbose pkgid java@0.5.5
+1208 verbose cwd C:\elearning
+1209 error Windows_NT 10.0.10240
+1210 error argv "C:\\Program Files (x86)\\Zusatzprogramme\\nodejs\\node.exe" "C:\\Program Files (x86)\\Zusatzprogramme\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+1211 error node v5.0.0
+1212 error npm  v3.3.6
+1213 error code ELIFECYCLE
+1214 error java@0.5.5 install: `node-gyp rebuild`
+1214 error Exit status 1
+1215 error Failed at the java@0.5.5 install script 'node-gyp rebuild'.
+1215 error This is most likely a problem with the java package,
+1215 error not with npm itself.
+1215 error Tell the author that this fails on your system:
+1215 error     node-gyp rebuild
+1215 error You can get their info via:
+1215 error     npm owner ls java
+1215 error There is likely additional logging output above.
+1216 verbose exit [ 1, true ]
