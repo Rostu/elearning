@@ -1,0 +1,28 @@
+extends layout
+block content
+	#content_background
+		link(rel='stylesheet', href='stylesheets/glueck_audio_zuordnen.css')
+		script( src='javascripts/glueck_audio_zuordnen.js')
+		#Aufgabenbox
+			p Hier kommt der Aufgabentext hin
+		#wrapper
+			#Vorgabe
+			#Audioplayer
+
+			#Loesung
+				#Vergangenheit.Antwort(int="1")
+					h3 Vergangenheit
+					.Antwortform
+						input.textbox#0(type="text")
+						button.testbutton(type="button") testen
+
+				#Gegenwart.Antwort(int="2")
+					h3 Gegenwart
+					.Antwortform
+						input.textbox#1(type="text")
+						button.testbutton(type="button") testen
+				#Zukunft.Antwort(int="3")
+					h3 Zukunft
+					.Antwortform
+						input.textbox#2(type="text")
+						button.testbutton(type="button") testen

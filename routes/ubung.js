@@ -35,6 +35,10 @@ exports.get_glueck_memory = function(req, res){
     res.render('glueck_Memory');
 };
 
+exports.get_glueck_audio_zuordnen = function(req, res){
+    res.render('glueck_audio_zuordnen');
+};
+
 exports.get_glueck_Textverstehen_Wortspirale = function(req, res){
     res.render('glueck_Textverstehen_Wortspirale');
 };

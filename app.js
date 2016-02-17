@@ -93,6 +93,7 @@ app.get('/generationen_Textverstehen_Komposita', ubung.get_generationen_Textvers
 app.get('/generationen_Wortschatz_ordnen', ubung.get_generationen_Wortschatz_ordnen);
 app.get('/generationen_Textverstehen_Bedeutungserschliessung', ubung.get_generationen_Textverstehen_Bedeutungserschliessung);
 app.get('/glueck_start', ubung.get_glueck_start);
+app.get('/glueck_audio_zuordnen', ubung.get_glueck_audio_zuordnen);
 app.get('/glueck_Textproduktion_Antonyme_A', ubung.get_glueck_Textproduktion_Antonyme_A);
 app.get('/glueck_Textproduktion_Antonyme_B', ubung.get_glueck_Textproduktion_Antonyme_B);
 app.get('/glueck_Kreuzwortraetsel', ubung.get_glueck_Kreuzwortraetsel);
