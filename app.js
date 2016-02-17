@@ -63,6 +63,8 @@ app.use(function(req, res, next){
 });
 app.use('/', index.get_session);
 app.get('/', routes.index);
+app.get('/apitest', start.get_apitest);
+app.get('/get_wiktionary',start.get_wiktionary);
 app.get('/china_start', ubung.get_china_start);
 app.get('/china_Textverstehen_Wortfeld_Studium', ubung.get_china_Textverstehen_Wortfeld_Studium);
 app.get('/china_Wortschatz_ordnen', ubung.get_china_Wortschatz_ordnen);

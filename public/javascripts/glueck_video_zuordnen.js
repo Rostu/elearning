@@ -33,19 +33,19 @@ function init() {
         });
         $("#Vorgabe").append(div);
     });
-        var wi = $("#Aufgabenbox").width();
-        var svgWidth = wi/3;
-        var svgHeight = 240;
-        var svg1 = d3.select("#Familie").append("svg").attr("width", svgWidth).attr("height", svgHeight);
-        var svg2 = d3.select("#Leben").append("svg").attr("width", svgWidth).attr("height", svgHeight);
-        var svg3 = d3.select("#Geld").append("svg").attr("width", svgWidth).attr("height", svgHeight);
-        svg1.append("circle").attr("id","c1").attr("cx", svgWidth / 2).attr("cy", svgHeight / 2).attr("r", svgHeight / 2 ).attr("style","fill: rgba(243, 18, 0, 0.19)");
-        svg2.append("circle").attr("id","c2").attr("cx", svgWidth / 2).attr("cy", svgHeight / 2).attr("r", svgHeight / 2 ).attr("style","fill: rgba(79, 226, 122, 0.44)");
-        svg3.append("circle").attr("id","c3").attr("cx", svgWidth / 2).attr("cy", svgHeight / 2).attr("r", svgHeight / 2 ).attr("style","fill: rgba(250, 234, 122, 0.34)");
-        svg1.append("circle").attr("id","r1").attr("cx", svgWidth / 2).attr("cy", svgHeight / 2).attr("r", 0 ).attr("style","fill: rgba(243, 18, 0, 0.30)");
-        svg2.append("circle").attr("id","r2").attr("cx", svgWidth / 2).attr("cy", svgHeight / 2).attr("r", 0 ).attr("style","fill: rgba(79, 226, 122, 0.70)");
-        svg3.append("circle").attr("id","r3").attr("cx", svgWidth / 2).attr("cy", svgHeight / 2).attr("r", 0 ).attr("style","fill: rgba(250, 234, 122, 0.70)");
-        var circle = d3.selectAll("circle");
+    var wi = $("#Aufgabenbox").width();
+    var svgWidth = wi/3;
+    var svgHeight = 240;
+    var svg1 = d3.select("#Familie").append("svg").attr("width", svgWidth).attr("height", svgHeight);
+    var svg2 = d3.select("#Leben").append("svg").attr("width", svgWidth).attr("height", svgHeight);
+    var svg3 = d3.select("#Geld").append("svg").attr("width", svgWidth).attr("height", svgHeight);
+    svg1.append("circle").attr("id","c1").attr("cx", svgWidth / 2).attr("cy", svgHeight / 2).attr("r", svgHeight / 2 ).attr("style","fill: rgba(243, 18, 0, 0.19)");
+    svg2.append("circle").attr("id","c2").attr("cx", svgWidth / 2).attr("cy", svgHeight / 2).attr("r", svgHeight / 2 ).attr("style","fill: rgba(79, 226, 122, 0.44)");
+    svg3.append("circle").attr("id","c3").attr("cx", svgWidth / 2).attr("cy", svgHeight / 2).attr("r", svgHeight / 2 ).attr("style","fill: rgba(250, 234, 122, 0.34)");
+    svg1.append("circle").attr("id","r1").attr("cx", svgWidth / 2).attr("cy", svgHeight / 2).attr("r", 0 ).attr("style","fill: rgba(243, 18, 0, 0.30)");
+    svg2.append("circle").attr("id","r2").attr("cx", svgWidth / 2).attr("cy", svgHeight / 2).attr("r", 0 ).attr("style","fill: rgba(79, 226, 122, 0.70)");
+    svg3.append("circle").attr("id","r3").attr("cx", svgWidth / 2).attr("cy", svgHeight / 2).attr("r", 0 ).attr("style","fill: rgba(250, 234, 122, 0.70)");
+    var circle = d3.selectAll("circle");
 
     $(".Antwort").droppable({
         hoverClass: "ui-state-hover",
@@ -88,7 +88,7 @@ function init() {
             ui.draggable.draggable( 'disable' );
             //raise points
             raisepoints();
-        //if not correct
+            //if not correct
         }else{
             //raise faults change color of token to red
             raisefaults();
