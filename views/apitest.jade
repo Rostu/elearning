@@ -1,0 +1,13 @@
+extends layout
+block content
+	#content_background
+		link(rel='stylesheet', href='stylesheets/apitest.css')
+		script( src='javascripts/apitest.js')
+		#Aufgabenbox
+			p Hier kommt der Aufgabentext hin
+		#wrapper
+			#Formbox
+				form(action='#')
+					input.textbox(type="text", name="testquery")
+					button#testbutton(type="button") testen
+			#Outputbox
