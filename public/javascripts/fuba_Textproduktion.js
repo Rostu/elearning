@@ -129,3 +129,9 @@ function init() {
 
     };
 };
+
+function showTicker(bild) {
+    var element = jQuery('<div>', { html: "<img src='"+bild+"'></div>"});
+    $('#overlaycontentbox').html(element);
+    toggleStartOverlay();
+};
