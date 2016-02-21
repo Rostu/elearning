@@ -1,11 +1,43 @@
 #Vorgabe{
 
-    min-height: 300px;
+    min-height: 150px;
     min-width: 300px;
     width: 30%;
     margin: 0 auto;
-    margin-top:10px;
+    margin-top: 10px;
     /*background-color: lightgray;*/
+}
+#Audioplayer{
+    margin: auto;
+    display: block;
+    width: 300px;
+}
+.token{
+    background-color: #0b97c4;
+    color:white;
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    cursor: help;
+}
+.antwort{
+    background-color: #7fd795;
+    color:white;
+    font-size: 2em;
+    font-weight: bold;
+    display: block;
+    margin: 10px;
+    padding: 5px;
+    cursor: none;
+}
+.selected{
+    background-color: #0bc0f4;
+}
+.token:hover{
+    background-color: #0bc0f4;
 }
 
 #Loesung{
@@ -39,7 +71,7 @@
 }
 .testbutton:hover {
     background-color: rgba(82, 205, 86, 0.77); /* Green */
-    background-color: rgba(82, 205, 86, 0.77); /* Green */
+
 }
 .Antwortform{
     height:40px;

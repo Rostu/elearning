@@ -19,6 +19,7 @@ var dbhandler = require('./shared/routes/dbhandler');
 var pointshandler = require('./routes/pointshandler');
 var points = require('./public/javascripts/points.json');
 var nav = require('./routes/navbar.js');
+var languageapi = require('./routes/languageapi');
 //lockit vars
 var config = require('./config.js');
 var Lockit = require('lockit');
@@ -63,8 +64,25 @@ app.use(function(req, res, next){
 });
 app.use('/', index.get_session);
 app.get('/', routes.index);
-app.get('/apitest', start.get_apitest);
-app.get('/get_wiktionary',start.get_wiktionary);
+//following the routes for the language api requests
+//for more information on how to uses these, look into the wiki point language_api
+app.get('/apitest', languageapi.get_apitest);
+app.get('/get_wiktionary',languageapi.get_wiktionary);
+app.get('/wl_baseform',languageapi.get_baseform);
+app.get('/wl_frequencies',languageapi.get_frequencies);
+app.get('/wl_domain',languageapi.get_domain);
+app.get('/wl_wordforms',languageapi.get_wordforms);
+app.get('/wl_thesaurus',languageapi.get_thesaurus);
+app.get('/wl_synonyms',languageapi.get_synonyms);
+app.get('/wl_sentences',languageapi.get_sentences);
+app.get('/wl_left_neighbours',languageapi.get_left_neighbours);
+app.get('/wl_right_neighbours',languageapi.get_right_neighbours);
+//Note that due to the huge amount of data any query to this services may take a long time.
+app.get('/wl_similarity',languageapi.get_similarity);
+app.get('/wl_right_collocation',languageapi.get_right_collocation);
+app.get('/wl_left_collocation',languageapi.get_left_collocation);
+app.get('/wl_cooccurrences',languageapi.get_cooccurrences);
+//end of language api requests--------------------------------------------------------
 app.get('/china_start', ubung.get_china_start);
 app.get('/china_Textverstehen_Wortfeld_Studium', ubung.get_china_Textverstehen_Wortfeld_Studium);
 app.get('/china_Wortschatz_ordnen', ubung.get_china_Wortschatz_ordnen);

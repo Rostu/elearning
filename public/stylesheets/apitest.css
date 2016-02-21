@@ -1,1 +1,30 @@
+.testbox{
+    display:block;
+    width: 90%;
+    background-color: rgba(0, 131, 203, 0.38);
+    margin: 10px auto;
+    color: white;
+    text-align: center;
+}
+.testbox h2{
+   padding:5px;
+   margin: 5px;
 
+}
+.Antwortbox{
+    display: inline-block;
+    width: 70%;
+    background-color: rgb(222, 241, 255);
+    min-height: 100px;
+    margin-bottom:5px;
+    color: black;
+}
+.Formbox{
+    display: inline-block;
+    width: 25%;
+    margin: 10px;
+}
+#ajaxloader{
+
+    margin-top: 40px;
+}

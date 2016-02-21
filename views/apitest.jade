@@ -6,8 +6,56 @@ block content
 		#Aufgabenbox
 			p Hier kommt der Aufgabentext hin
 		#wrapper
-			#Formbox
-				form(action='#')
-					input.textbox(type="text", name="testquery")
-					button#testbutton(type="button") testen
-			#Outputbox
+			#wiktionary.testbox
+				h2 Wiktionary Anfrage
+				.Formbox
+					form(action='#')
+						input.textbox#wikiinput(type="text", name="testquery")
+						button#wiktionary_button(type="button") testen
+						//img(id='ajaxloader', src='./images/ajax-loader.gif')
+				.Antwortbox#wiki
+			#wl_baseform.testbox
+				h2 Wortschatz Leipzig: baseform
+				.Formbox
+					form(action='#')
+						input.textbox(type="text", name="baseform")
+						button#baseformbutton(type="button") testen
+				.Antwortbox#baseformoutput
+			#wl_frequency.testbox
+				h2 Wortschatz Leipzig: frequency
+				.Formbox
+					form(action='#')
+						input.textbox(type="text", name="frequency")
+						button#frequencybutton(type="button") testen
+				.Antwortbox#frequencyoutput
+			#wl_domain.testbox
+				h2 Wortschatz Leipzig: Kategorie
+				.Formbox
+					form(action='#')
+						input.textbox(type="text", name="domain")
+						button#domainbutton(type="button") testen
+				.Antwortbox#domainoutput
+			#wl_wordforms.testbox
+				h2 Wortschatz Leipzig: wordforms
+				.Formbox
+					form(action='#')
+						input.textbox(type="text", name="wordforms")
+						select(name="wordforms")
+							option( value="5") 5
+							option( value="10") 10
+							option( value="15") 20
+							option( value="50") 50
+						button#wordformsbutton(type="button") testen
+				.Antwortbox#wordformsoutput
+			#wl_thesaurus.testbox
+				h2 Wortschatz Leipzig: thesaurus
+				.Formbox
+					form(action='#')
+						input.textbox(type="text", name="thesaurus")
+						select(name="thesaurus")
+							option( value="5") 5
+							option( value="10") 10
+							option( value="15") 20
+							option( value="50") 50
+						button#thesaurusbutton(type="button") testen
+				.Antwortbox#thesaurusoutput
