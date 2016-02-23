@@ -1063,11 +1063,25 @@ img.uniLogo {
     line-height: 40px;
     font-weight: bold;
     margin-right: 5px;
-    background: url("../images/Icon_Text_Audio.png");
+    background: url("../images/Icon_Audio.png");
     background-repeat: no-repeat;
 }
+.audio_media{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    margin-right: 5px;
+    background: url("../images/Icon_Audio.png");
+    background-repeat: no-repeat;
+}
+.audio_media:hover{
+    background: url("../images/Icon_Audio_hover.png");
+    background-repeat: no-repeat;
+}
+
 .text_audio_media:hover{
-    background: url("../images/Icon_Text_Audio_hover.png");
+    background: url("");
     background-repeat: no-repeat;
 }
 

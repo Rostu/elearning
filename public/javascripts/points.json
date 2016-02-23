@@ -6,6 +6,9 @@
         "name":"energie_Wortfeld_Solarantrieb", "maxpoints":0, "maxfaults":0
     },
     {
+        "name":"glueck_audio_zuordnen", "maxpoints": 11, "maxfaults": 20
+    },
+    {
         "name":"glueck_start", "maxpoints": 0, "maxfaults": 0
     },
     {

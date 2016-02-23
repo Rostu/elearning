@@ -19,11 +19,6 @@ $(document).ready(function() {
 	audiodaten = shuffle(audiodaten);
 	$("#wrapper").append('<audio id="errorsound" controls="controls"><source src="audio/resonant-error.mp3" type="audio/mpeg">none</source> </audio>');
 
-	/*
-	var svgWidth = $("#Vorgabe").width();
-	var svg = d3.select('#Vorgabe').append('svg').attr('width', svgWidth).attr('height', svgWidth);
-	var bubble = d3.layout.pack().size([svgWidth, svgWidth]).padding(3);
-	*/
 	audiodaten.forEach(function(elem) {
 		var div = jQuery('<div/>', {
 			class: 'token',
@@ -35,10 +30,6 @@ $(document).ready(function() {
 		$("#Vorgabe").append(div);
 	});
 
-/*
-	var svg1 = d3.select("#Vorgabe").append("svg").attr("width", svgWidth).attr("height", svgWidth);
-	svg1.append("circle").attr("id","c1").attr("cx", svgWidth / 2).attr("cy", svgWidth / 2).attr("r",svgWidth / 2 ).attr("style","fill: rgba(243, 18, 0, 0.19)");
-*/
 	$(".token").click(function(){
 		console.log($(this));
 		$(".selected").toggleClass("selected");
@@ -67,6 +58,7 @@ $(document).ready(function() {
 			if(levenshtein&&(input_id === token_id) ){
 				errorcount = 0;
 				if($("#info3").is(":visible") == true){$('#info3').toggle();}
+				raisepoints();
 				switch (input_id) {
 					case "0":
 						if(varianz) {
@@ -93,6 +85,7 @@ $(document).ready(function() {
 				$(".selected").remove();
 				$("#Audioplayer").empty();
 			}else {
+				raisefaults();
 				console.log(errorcount);
 				if($("#info3").is(":visible") == false){
 					$('#info3').show();
@@ -109,7 +102,6 @@ $(document).ready(function() {
 					$('#info3').append("<p id='infotext2'>Das Wort ist falsch geschrieben. Höre dir die Audiodatei nochmal an.</p>");
 					errorcount++;
 				}
-
 			}
 			$(this).val("");
 		}
