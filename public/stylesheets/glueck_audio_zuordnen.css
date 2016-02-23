@@ -1,17 +1,5 @@
-#Vorgabe{
-
-    min-height: 150px;
-    min-width: 300px;
-    width: 30%;
-    margin: 0 auto;
-    margin-top: 10px;
-    /*background-color: lightgray;*/
-}
-#Audioplayer{
-    margin: auto;
-    display: block;
-    width: 300px;
-}
+#Vorgabe{    min-height: 150px;    min-width: 300px;    width: 30%;    margin: 0 auto;    margin-top: 10px;}
+#Audioplayer{    margin: auto;    display: block;    width: 300px;}
 .token{
     background-color: #0b97c4;
     color:white;
@@ -20,8 +8,11 @@
     border-radius: 50%;
     display: inline-block;
     margin: 5px;
-    padding: 5px;
+    padding: 9px;
     cursor: help;
+}
+audio#errorsound{
+    display:none;
 }
 .antwort{
     background-color: #7fd795;
@@ -31,7 +22,17 @@
     display: block;
     margin: 10px;
     padding: 5px;
-    cursor: none;
+}
+.dudenlink{
+    margin:10px;
+    font-weight: normal;
+    font-size: 0.5em;
+    color: darkgreen;
+}
+.dudenlink2{
+    margin:5px;
+    font-weight: bold;
+    color: white
 }
 .selected{
     background-color: #0bc0f4;
@@ -39,27 +40,24 @@
 .token:hover{
     background-color: #0bc0f4;
 }
-
 #Loesung{
     height: 400px;
     display: table;
     width: 100%;
 }
-
 .Antwort{
     display: table-cell;
     width: 30%;
     height: 500px;
     text-align: center;
 }
-
 .textbox{
     height: 100%;
     padding:0;
     font-size: large;
 }
 .testbutton {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border: none;
     color: white;
     height: 100%;
@@ -70,8 +68,7 @@
     margin-left:10px;
 }
 .testbutton:hover {
-    background-color: rgba(82, 205, 86, 0.77); /* Green */
-
+    background-color: rgba(82, 205, 86, 0.77);
 }
 .Antwortform{
     height:40px;

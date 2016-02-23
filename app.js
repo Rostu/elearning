@@ -36,6 +36,7 @@ app.use(express.urlencoded());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 //lockit------------------------------------------
 app.use(express.cookieParser('The greatest Secret of Mankind'));

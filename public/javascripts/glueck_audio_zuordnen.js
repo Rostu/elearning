@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	$('#info1').show();
-	$('#info1').append("<a id='infolink1' class='redlink' href='#'>Das ist ein Info-Link</a>");
+
+	var errorcount = 0;
 
 	var audiodaten = [
 		{token:"gestern",link:'https://upload.wikimedia.org/wikipedia/commons/a/ac/De-gestern.ogg',info:'https://commons.wikimedia.org/wiki/File:De-gestern.ogg?uselang=de',time:"0"},
@@ -15,7 +15,10 @@ $(document).ready(function() {
 		{token:'jetzt',link:'https://upload.wikimedia.org/wikipedia/commons/5/5a/De-jetzt.ogg',info:'https://de.wiktionary.org/wiki/Datei:De-jetzt.ogg',time:"1"},
 		{token:'später',link:'https://upload.wikimedia.org/wikipedia/commons/f/f6/De-sp%C3%A4ter.ogg',info:'https://de.wiktionary.org/wiki/Datei:De-sp%C3%A4ter.ogg',time:"2"}
 	];
+	var ausnahme = ["später","übermorgen","zukünftig","gerade","früher","aktuell" ];
 	audiodaten = shuffle(audiodaten);
+	$("#wrapper").append('<audio id="errorsound" controls="controls"><source src="audio/resonant-error.mp3" type="audio/mpeg">none</source> </audio>');
+
 	/*
 	var svgWidth = $("#Vorgabe").width();
 	var svg = d3.select('#Vorgabe').append('svg').attr('width', svgWidth).attr('height', svgWidth);
@@ -31,7 +34,6 @@ $(document).ready(function() {
 		});
 		$("#Vorgabe").append(div);
 	});
-
 
 /*
 	var svg1 = d3.select("#Vorgabe").append("svg").attr("width", svgWidth).attr("height", svgWidth);
@@ -57,38 +59,64 @@ $(document).ready(function() {
 			var input_id = this.id;
 			var token_id = $("audio#player").data("time").toString();
 			var token = $("audio#player").data("token");
-			if((input === token)&&(input_id === token_id) ){
-				console.log($("#Zukunft .outputbox"));
+			var levenshtein = false;
+			var varianz = true;
+			if(ausnahme.indexOf(token) > -1) {	varianz = false	}
+			if(getEditDistance(token,input) <2 ){levenshtein = true}
+
+			if(levenshtein&&(input_id === token_id) ){
+				errorcount = 0;
+				if($("#info3").is(":visible") == true){$('#info3').toggle();}
 				switch (input_id) {
 					case "0":
-						console.log("0");
-						$("#Vergangenheit .outputbox").append("<div class='antwort'>"+token+"</div>");
+						if(varianz) {
+							$("#Vergangenheit > .outputbox").append("<div class='antwort'>" + token + " / " + token.capitalize() + "<a class='dudenlink' target='_blank' href='http://www.duden.de/suchen/dudenonline/" + token + "'>DUDEN</a></div>");
+						}else{
+							$("#Vergangenheit > .outputbox").append("<div class='antwort'>" + token +"<a class='dudenlink' target='_blank' href='http://www.duden.de/suchen/dudenonline/" + token + "'>DUDEN</a></div>");
+						}
 						break;
 					case "1":
-						console.log("1");
-						$("#Gegenwart .outputbox").append("<div class='antwort'>"+token+"</div>");
+						if(varianz) {
+							$("#Gegenwart > .outputbox").append("<div class='antwort'>"+token+" / "+token.capitalize()+"<a class='dudenlink' target='_blank' href='http://www.duden.de/suchen/dudenonline/"+token+"'>DUDEN</a></div>");
+						}else{
+							$("#Gegenwart > .outputbox").append("<div class='antwort'>"+token+"<a class='dudenlink' target='_blank' href='http://www.duden.de/suchen/dudenonline/"+token+"'>DUDEN</a></div>");
+						}
 						break;
 					case "2":
-						console.log("2");
-						$("#Zukunft .outputbox").append("<div class='antwort'>"+token+"</div>");
+						if(varianz) {
+							$("#Zukunft > .outputbox").append("<div class='antwort'>" + token + " / " + token.capitalize() + "<a class='dudenlink' target='_blank' href='http://www.duden.de/suchen/dudenonline/" + token + "'>DUDEN</a></div>");
+						}else{
+							$("#Zukunft > .outputbox").append("<div class='antwort'>" + token +"<a class='dudenlink' target='_blank' href='http://www.duden.de/suchen/dudenonline/" + token + "'>DUDEN</a></div>");
+						}
 						break;
 				}
 				$(".selected").remove();
 				$("#Audioplayer").empty();
+			}else {
+				console.log(errorcount);
+				if($("#info3").is(":visible") == false){
+					$('#info3').show();
+				}
+				$('#info3 > p').remove();
+				$("#errorsound")[0].play();
+				if (input_id != token_id) {
+					$('#info3').append("<p id='infotext1'>Das ist nicht die Richtige Zeit</p>");
+				}
+				if (getEditDistance(token, input) > 1 && errorcount == 1) {
+					$('#info3').append("<p id='infotext2'>Das Wort ist falsch geschrieben. Schau dir die richtige Schreibweise hier an:<a class='dudenlink2' target='_blank' href='http://www.duden.de/suchen/dudenonline/" + token + "'>DUDEN</a></p>");
+				}
+				if (getEditDistance(token, input) > 1 && errorcount < 1) {
+					$('#info3').append("<p id='infotext2'>Das Wort ist falsch geschrieben. Höre dir die Audiodatei nochmal an.</p>");
+					errorcount++;
+				}
 
 			}
 			$(this).val("");
 		}
 	});
-
-	$(window).resize(function() {
-		updateContainer();
-	});
-	function updateContainer(){
-		var wi = $("#Aufgabenbox").width()+20;
-		$('svg').width(wi/3);
-		circle.transition().attr("cx",  $('svg').width()/2);
-	};
+	String.prototype.capitalize = function() {
+		return this.charAt(0).toUpperCase() + this.slice(1);
+	}
 });
 
 
