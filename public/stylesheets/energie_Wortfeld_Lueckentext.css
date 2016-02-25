@@ -1,0 +1,27 @@
+#wrapper{
+    display: block;
+    width: 70%;
+    min-width: 600px;
+    margin: 0 auto;
+    min-height: 400px;
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+.textwrap1{
+    float: left;
+    margin: 10px;
+}
+.textwrap2{
+    float: right;
+    margin: 0 0 20px 20px;
+    padding: 2px;
+}
+.luecke{
+    resize  : none;
+    overflow: auto;
+    margin: 0 3px 0 3px;
+    border: none;
+    border-bottom: 1px solid;
+    background-color: rgba(229,239,245, 0.8);
+}

@@ -7,7 +7,7 @@ var sites = [
     ['generationen_start','generationen_text','generationen_Textverstehen_Komposita','generationen_Wortschatz_ordnen','generationen_Textverstehen_Bedeutungserschliessung'],
     ['zukunft_start','zukunft_Textverstehen_Wortfeld_Technik','zukunft_Wortschatz_ordnen','zukunft_Wortschatzerweiterung_fest_Wortverbindungen','zukunft_Textproduktion','zukunft_Kreuzwortraetsel'],
     ['china_start', 'china_Textverstehen_Wortfeld_Studium','china_Wortschatz_ordnen','china_Textverstehen_Redewiedergabe'],
-    ['energie_start','energie_Wortfeld_Solarantrieb','energie_Wortfeld_Solarantrieb_A','energie_Wortfeld_Solarantrieb_B']
+    ['energie_start','energie_Wortfeld_Solarantrieb','energie_Wortfeld_Solarantrieb_A','energie_Wortfeld_Solarantrieb_B','energie_Wortfeld_Lueckentext']
 ];
 
 var ausnahmen =["anleitung","feedback","showfeedback","impressum","index","start","signup"];
