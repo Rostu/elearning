@@ -18,10 +18,22 @@
     padding: 2px;
 }
 .luecke{
+    font-size: large;
     resize  : none;
     overflow: auto;
     margin: 0 3px 0 3px;
     border: none;
     border-bottom: 1px solid;
     background-color: rgba(229,239,245, 0.8);
+}
+.done{
+    background-color: rgba(2, 214, 74, 0.7);
+    color: whitesmoke;
+    text-align: center;
+}
+
+.wrong{
+    background-color: rgba(169, 18, 17, 0.73);
+    color: whitesmoke;
+    text-align: center;
 }

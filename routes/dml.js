@@ -4,11 +4,18 @@
 var dbh = require('./../shared/routes/dbhandler');
 var io = require('socket.io')();
 var f;
-function wordinfo (a, cb) {
-    dbh.finddml(a, function(data) {
-        cb(data);
+
+exports.wordinfo = function(req, res){
+    var query = req.query.query;
+    console.log(limit);
+    dbh.finddml(query,function(err,data){
+        if(err){
+            console.log(err);
+        }else{
+            res.send(data);
+        }
     });
-}
+};
 
 var gold = {
     // misc
@@ -251,8 +258,8 @@ var gold = {
 };
 function validate(query, io) {
     var w = query.word;
-    console.log(query.word);
-    console.log(query.field);
+    //console.log(query.word);
+    //console.log(query.field);
     var fi = query.field;
     var iGold = gold[fi];
     var loesung = iGold['answers'];

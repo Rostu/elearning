@@ -70,6 +70,7 @@ app.get('/', routes.index);
 app.get('/apitest', languageapi.get_apitest);
 app.get('/get_wiktionary',languageapi.get_wiktionary);
 app.get('/wl_baseform',languageapi.get_baseform);
+
 app.get('/wl_frequencies',languageapi.get_frequencies);
 app.get('/wl_domain',languageapi.get_domain);
 app.get('/wl_wordforms',languageapi.get_wordforms);
@@ -83,6 +84,7 @@ app.get('/wl_similarity',languageapi.get_similarity);
 app.get('/wl_right_collocation',languageapi.get_right_collocation);
 app.get('/wl_left_collocation',languageapi.get_left_collocation);
 app.get('/wl_cooccurrences',languageapi.get_cooccurrences);
+app.get('/dml_get', languageapi.wordinfo);
 //end of language api requests--------------------------------------------------------
 app.get('/china_start', ubung.get_china_start);
 app.get('/china_Textverstehen_Wortfeld_Studium', ubung.get_china_Textverstehen_Wortfeld_Studium);
@@ -146,6 +148,7 @@ app.get('/points:last?', function(req, res){
     });
     res.json(site);
 });
+
 app.get('/signup', signup.get_signup);
 app.get('/anleitung', ubung.get_anleitung);
 app.get('/users', user.list);
