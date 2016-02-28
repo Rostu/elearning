@@ -6,9 +6,9 @@ $(document).ready(function() {
 		{token:"Solarautos",tag: "noun",number:"PLU",gold:["Fahrzeuge","Autos","Wagen","Solarautos","Solarfahrzeuge"]},
 		{token:"flach",tag:"adjective",number:"null",gold:["flach","dünn","platt","schmal"]},
 		{token:"Elektromotoren",tag:"noun",number:"PLU",gold:["Elektromotoren","Motoren","Antriebe"]},
-		{token:"flott",tag:"adjective",number:"null",gold:["flott","schnell","rasant","zügig"]},
+		{token:"rasant",tag:"adjective",number:"null",gold:["schnell","zügig"]},
 		{token:"Batterie",tag:"noun",number:"SIN",gold:["Batterie","Energiespeicher","Speicher"]},
-		{token:"prima",tag:"adjective",number:"null",gold:["prima","gut","hervorragend","ausgezeichnet"]},
+		{token:"super",tag:"adjective",number:"null",gold:["prima","gut"]},
 		{token:"schwer",tag:"adjective",number:"null",gold:["schwer","gewichtig"]}
 	];
 
@@ -56,7 +56,6 @@ $(document).ready(function() {
 						if(gold.tag === "noun"){
 							var domain = $.get('/wl_domain', {query:baseformResponse[0][0],limit:20});
 							$.when(DML_check, domain).done(function (dmlResponse,domainResponse ) {
-								console.log()
 								if(domainResponse[0] != "") {
 									if (false){
 										$(inputfield).removeClass("checking");
@@ -66,8 +65,24 @@ $(document).ready(function() {
 										if(dmlResponse[0] != ""){
 											var infos = dmlResponse[0].morphology;
 											$.each(infos, function (a, b) {
-												if (b.indexOf("wordclass:"+gold.tag) > -1 && b.indexOf("number:"+gold.number))
-													console.log("wordclass und numerus correct");
+												if (b.indexOf("wordclass:"+gold.tag) > -1 && b.indexOf("number:"+gold.number)) {
+													$(inputfield).removeClass("checking");
+													$(inputfield).addClass("wrong");
+													error_message = "Dieses Wort passt hier nicht hin";
+													console.log(error_message);
+												}
+												if (b.indexOf("wordclass:"+gold.tag) === -1) {
+													$(inputfield).removeClass("checking");
+													$(inputfield).addClass("wrong");
+													error_message += "Das ist die Falsche Wortart, in diese Lücke gehört ein: "+gold.tag+"\n";
+													console.log(error_message);
+												}
+												if (b.indexOf("wordclass:"+gold.tag) === -1) {
+													$(inputfield).removeClass("checking");
+													$(inputfield).addClass("wrong");
+													error_message += "Das ist der falsche Numerus";
+													console.log(error_message);
+												}
 											});
 										}
 									}
@@ -87,8 +102,24 @@ $(document).ready(function() {
 										if(dmlResponse[0] != ""){
 											var infos = dmlResponse[0].morphology;
 											$.each(infos, function (a, b) {
-												if (b.indexOf("wordclass:"+gold.tag) > -1 && b.indexOf("number:"+gold.number))
-													console.log("wordclass und numerus correct");
+												if (b.indexOf("wordclass:"+gold.tag) > -1 && b.indexOf("number:"+gold.number)) {
+													$(inputfield).removeClass("checking");
+													$(inputfield).addClass("wrong");
+													error_message = "Dieses Wort passt hier nicht hin";
+													console.log(error_message);
+												}
+												if (b.indexOf("wordclass:"+gold.tag) === -1) {
+													$(inputfield).removeClass("checking");
+													$(inputfield).addClass("wrong");
+													error_message += "Das ist die Falsche Wortart, in diese Lücke gehört ein: "+gold.tag+"\n";
+													console.log(error_message);
+												}
+												if (b.indexOf("wordclass:"+gold.tag) === -1) {
+													$(inputfield).removeClass("checking");
+													$(inputfield).addClass("wrong");
+													error_message += "Das ist der falsche Numerus";
+													console.log(error_message);
+												}
 											});
 										}
 									}
@@ -97,9 +128,9 @@ $(document).ready(function() {
 						}
 
 					}else{
-						$(this).removeClass("checking");
-						$(this).addClass("wrong");
-						error_message = "Dieses Wort kann ich leider nicht finden"
+						$(inputfield).removeClass("checking");
+						$(inputfield).addClass("wrong");
+						error_message = "Dieses Wort kann ich leider nicht finden";
 						console.log(error_message);
 					}
 				});

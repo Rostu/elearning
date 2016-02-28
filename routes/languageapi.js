@@ -12,8 +12,6 @@ exports.get_wiktionary = function(req, res){
     wiki.get_infos(query, function(err,data){
         res.send(data);
     });
-    //console.log(query.query);
-    //res.send('apitest');
 };
 
 exports.get_baseform = function(req, res){
@@ -24,10 +22,8 @@ exports.get_baseform = function(req, res){
         }else{
             res.send(data);
         }
-    }
-    );
+    });
 };
-
 
 exports.get_frequencies = function(req, res){
     var query = req.query.query;

@@ -109,3 +109,14 @@ function toggleKorrekt(){
 function toggleFalsch(){
     $("#vifeedbackFalsch").fadeToggle(500,function(){ $("#vifeedbackFalsch").hide();});
 }
+
+function nice_wiki(query){
+    if(query){
+        var infos = $.get('/get_wiktionary', {query:query});
+        infos.done(function(wikiResponse){
+            console.log(wikiResponse);
+        });
+    }else{
+        console.log("This function needs a searchterm")
+    }
+}

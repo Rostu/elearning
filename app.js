@@ -70,7 +70,6 @@ app.get('/', routes.index);
 app.get('/apitest', languageapi.get_apitest);
 app.get('/get_wiktionary',languageapi.get_wiktionary);
 app.get('/wl_baseform',languageapi.get_baseform);
-
 app.get('/wl_frequencies',languageapi.get_frequencies);
 app.get('/wl_domain',languageapi.get_domain);
 app.get('/wl_wordforms',languageapi.get_wordforms);

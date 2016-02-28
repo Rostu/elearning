@@ -157,7 +157,7 @@ $(document).ready(function() {
     $('#startoverlaycloseicon').click(function() {
         toggleStartOverlay();
         //if there is a video embedded in the overlay we have to pause it when closing the overlay
-        if($(".video-js")){
+        if($(".video-js").length>0){
             $(".video-js")[0].player.pause();
         }
     });

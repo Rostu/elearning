@@ -206,7 +206,6 @@ body {
 #vifeedbackKorrekt{
     background-image:url("../images/korrekt.png");
 }
-
 .redcontainer p{
     color: white;
     margin: 10px;
@@ -219,7 +218,6 @@ body {
     color: white;
     padding-left: 10px;
 }
-
 .redstripe {
     margin-top: 15px;
     width: 0;
@@ -235,12 +233,10 @@ body {
     overflow: hidden;
     display: none;
 }
-
 .redtext {
     text-align: center;
     padding:2px;
 }
-
 .redlink {
     text-align: center;
     vertical-align: middle;
@@ -248,7 +244,6 @@ body {
     font-weight: bold;
     color: #A91211;
 }
-
 #specialtest {
     margin: 0px;
     height: 220px;
@@ -256,7 +251,6 @@ body {
     background: green;
     float: right;
 }
-
 #special_bar {
     margin: 0px;
     /*background-color:#A91211;*/
@@ -264,13 +258,11 @@ body {
     z-index: 1;
     float: right;
 }
-
 #point_bars_div, #point_bars {
     margin: auto;
     height: 115px;
     width: 100px;
 }
-
 .special_nav{
     margin: 0px auto;
     padding: 0px;
@@ -278,7 +270,6 @@ body {
     width: 100px;
     text-align: center;
 }
-
 .special_nav a#ind{background-image: url("../images/button1.png");width: 44px;height: 44px;display: inline-block;background-size: 44px; margin: 0px auto;}
 .special_nav a#ind:hover{background-image: url("../images/button1hover.png");}
 .special_nav a#las{background-image: url("../images/button2.png");width: 44px;height: 44px;display: inline-block;background-size: 44px;margin: 0px auto;}
@@ -301,7 +292,6 @@ body {
     font-weight: bold;
     color: #A91211;
 }
-
 .logo{
      margin:2px auto;
      padding: 2px;
@@ -385,7 +375,6 @@ img.uniLogo {
     overflow: hidden;
     float: left;
 }
-
 #maincontent {
     margin-top: 10px;
     width: 100%;
@@ -410,12 +399,10 @@ img.uniLogo {
 #endfloat {
     clear: both;
 }
-
 #navigation {
     margin-left: -20px;
     padding-left: 24%;
 }
-
 #navigation ul {
     padding: 0;
     margin: 0;
@@ -428,27 +415,22 @@ img.uniLogo {
     height: 0;
     visibility: hidden;
 }
-
 #navigation ul li{
     background-color: #005E9C;
 }
-
 #navigation ul li {
     list-style: none;
     float:left;
 }
-
 #navigation ul li a {
     text-decoration: none;
     display: block;
     color: #ffffff;
     padding: 9px 18px 8px 18px;
 }
-
 #navigation ul li:hover > ul {
     visibility: visible;
 }
-
 #navigation ul li ul{
     margin-left: -1px;
     display: inline;
@@ -456,20 +438,16 @@ img.uniLogo {
     position: absolute;
     padding:0;
 }
-
 #navigation ul li ul li{
     float: none;
 }
-
 #navigation ul li ul li a:hover{
     color: #333;
 }
-
 #navigation ul {
     padding: 0;
     margin-bottom: -1px;
 }
-
 #navigation ul li {
     margin-top: 1px;
     margin-bottom: 0;
@@ -477,7 +455,6 @@ img.uniLogo {
     float:left;
     border-left: 1px solid #D5EBFD;
 }
-
 #navigation ul li a {
     text-decoration: none;
     display: block;
@@ -487,41 +464,22 @@ img.uniLogo {
     -o-transition: background 0.3s ease-out 0s;
     transition: background 0.3s ease-out 0s;
 }
-
 #navigation ul li.cat1:hover a, nav ul li.cat1:hover > ul li a  {
     background-color: #A91211;
     box-shadow: 2px 2px 6px #4D4D4F;
 }
-
 #navigation ul li:hover > a {
     color: #FAFAFA;
 }
-
 #navigation ul li ul li a {
     color: #FAFAFA;
 }
-
 #navigation ul li ul li a:hover{
     color: #333;
     background-color: #FAFAFA !important;
 }
-
 #Aufgabenbox {
-    /*text-align: center;
-    color: #000000;
-    background: #E5EFF5;
-    position: relative;
-    border: 5px solid #005E9C;
-
-    background: rgba(99, 168, 255, 0.93);
     padding: 5px;
-    display: block;
-    margin-bottom: 20px;
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-    -moz-box-shadow: 0px 2px 5px darkgrey;
-    box-shadow: 0px 2px 5px darkgrey;*/
-    padding: 5px;
-    /*background: #A6D1F5|#D5EBFD|#005E9C;*/
     background: #A6D1F5;
     color: black;
     position: relative;
@@ -529,23 +487,7 @@ img.uniLogo {
     text-align: center;
     font-size: 1.3em;
 }
-
-
-/*Layout-Alternative*/
-/*
-#Aufgabenbox:before {
-    content: " ";
-    position: absolute;
-    z-index: -1;
-    top: 1px;
-    left: 1px;
-    right: 1px;
-    bottom: 1px;
-    border-top: 4px solid #005E9C;
-    border-bottom: 4px solid #005E9C;
-}*/
-
-  body #page {
+ body #page {
     margin: auto;
     display: block;
     padding: 20px;
@@ -614,7 +556,6 @@ img.uniLogo {
 #loginbox input[type="submit"]:hover{
     background:#0083cb;
 }
-
 #wrapper {
     width: 100%;
     display: table; }
@@ -695,13 +636,10 @@ img.uniLogo {
     width: 100%;
     display: table;
 }
-
 #Field span:hover {
     cursor: pointer;
     background: rgba(101, 70, 229, 0.82);
 }
-
-
 #Field a{
     color: white;
     text-decoration: none;
@@ -716,17 +654,14 @@ img.uniLogo {
     margin: 0;
     padding:0;
 }
-
 #Field span {
     width: 25%;
     text-align: center;
     display: table-cell;
 }
-
 #Field #help:hover > #inner {
     display: block;
 }
-
 #Field span #inner {
     display: none;
     float: none;
@@ -735,11 +670,9 @@ img.uniLogo {
     background-color: rgba(101, 70, 229, 0.78);
     left: 25%;
 }
-
 #Field span #inner:hover {
     background-color: rgba(143, 139, 229, 0.67);
 }
-
 #jqDialog_box {
     background: rgba(101, 70, 229, 0.90);
     position: absolute;
@@ -756,7 +689,6 @@ img.uniLogo {
     -moz-box-shadow: 0 0 30px #e6e6e6;
     color: white;
 }
-
 #jqDialog_content {
     margin: 10px;
     font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
@@ -765,12 +697,10 @@ img.uniLogo {
     overflow: hidden;
     text-shadow: 0 0 5px black;
 }
-
 #jqDialog_options {
     margin: 10px;
     text-align: center;
 }
-
 #jqDialog_options button {
     font-family: Arial;
     margin-right: 5px;
@@ -785,12 +715,10 @@ img.uniLogo {
     -khtml-border-radius: 3px;
     border-radius: 3px;
 }
-
 #jqDialog_input {
     padding: 4px;
     width: 250px;
 }
-
 #jqDialog_close {
     background: none;
     border: none;
@@ -800,11 +728,9 @@ img.uniLogo {
     color: #ff0000;
     cursor: pointer;
 }
-
 #Field span .help {
     display: none;
 }
-
 .helpmenu {
     position: fixed;
     top: 75%;
@@ -815,13 +741,11 @@ img.uniLogo {
     color: white;
     z-index: 80;
 }
-
 .helpmenu span {
     width:25%;
     height:100%;
     display: table-cell;
 }
-
 .helpmenu .menuitem {
     width: 100%;
     text-align: center;
@@ -831,14 +755,12 @@ img.uniLogo {
     padding: 10px 0;
     z-index: 99;
 }
-
 .helpmenu .menuribbon #menutitle {
     text-align: center;
     /*display: inline-block;*/
     font-family: 'Dosis', monospace;
     font-size: 25px;
 }
-
 .helpmenu .menuribbon i {
     position: absolute;
     left: 48%;
@@ -848,31 +770,25 @@ img.uniLogo {
 .helpmenu .menuribbon i:hover {
     color: #ffffff;
 }
-
 .helpmenu .menuitem:hover {
     background-color: #5642f5;
 }
-
 .helpmenu .menuitem a {
     display: block;
     text-decoration: none;
     color: #e1a500;
 }
-
 .helpmenu .menuitem a:hover {
     color: white;
 }
-
 .menuhidden {
     color: rgba(255, 255, 255, 0);
     background-color: rgba(255, 255, 255, 0);
 }
-
 .menuribbon {
     background: rgba(101, 70, 229, 0.60);
     /*background: rgba(101, 70, 229, 0.90);*/
 }
-
 #balken_aussen {
     display: inline-block;
     width: 216px;
@@ -882,7 +798,6 @@ img.uniLogo {
     margin:0 auto;
     float: left;
 }
-
 #balken_innen1 {
     background: lawngreen;
     display: inline-block;
@@ -890,7 +805,6 @@ img.uniLogo {
     height: 15px;
     float: left;
 }
-
 #balken_innen2 {
     background: red;
     display: inline-block;
@@ -898,14 +812,12 @@ img.uniLogo {
     width: 0;
     float: left;
 }
-
 #content_background {
     padding-bottom: 10px;
     width: 100%;
     position: relative;
     background-color: #E5EFF5;
 }
-
 #subjecttitle {
     padding: 5px;
     text-align: center;
@@ -914,26 +826,12 @@ img.uniLogo {
     color: black;
     background: #A6D1F5;
 }
-
-#text {
-
-}
-
-#media {
-
-}
-
-#tasks {
-
-}
-
 .startpanel {
     margin: 10px 10px auto;
     background: #D5EBFD;
     padding-bottom: 1px;
     min-height: 600px;
 }
-
 .panelheader {
     padding: 5px 5px 5px 55px;
     text-align: center;
@@ -942,7 +840,6 @@ img.uniLogo {
     color: white;
     background: #7AB3E3;
 }
-
 .panelarrow {
     margin: 1px;
     width: 50px;
@@ -955,29 +852,22 @@ img.uniLogo {
     float: right;
     border-radius: 25px;
 }
-
-
 #subjecttext {
     padding: 0 10px;
 }
-
 #mediashow {
     margin: 0 50px;
     overflow: auto;
     text-align: center;
     padding: 5px 5px;
  }
-
-
 .mediaimage {
     height: 100px;
 }
-
 .task {
     margin: 10px 10px;
     text-align: center;
 }
-
 .taskmedia {
     margin: 0 60px;
     padding: 5px;
@@ -985,7 +875,6 @@ img.uniLogo {
     background: #E5EFF5;
     display: none;
 }
-
 .taskicon {
     width: 50px;
     height: 50px;
@@ -996,7 +885,6 @@ img.uniLogo {
     float: left;
     border-radius: 25px;
 }
-
 .taskpoints {
     width: 50px;
     height: 50px;
@@ -1007,7 +895,6 @@ img.uniLogo {
     float: right;
     border-radius: 25px;
 }
-
 .tasktitle {
     display: flex;
     padding: 5px;
@@ -1084,7 +971,6 @@ img.uniLogo {
     background: url("");
     background-repeat: no-repeat;
 }
-
 .t_title{
     line-height: 40px;
 
@@ -1116,7 +1002,6 @@ img.uniLogo {
     color: black;
     line-height: 30px;
 }
-
 #content{
     width: 100%;
     min-height: 650px;
@@ -1133,14 +1018,16 @@ img.uniLogo {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-
 }
 #content_image img{
     margin: 10px auto;
-
 }
 #content_content{
     display: flex;
     flex-direction: column;
     padding-top: 40px;
 }
+.wiktionary_response{display:block;width: 70%; min-width:600px;margin:0 auto;}
+.wiktionary_response p{margin:5px 0 5px 0}
+.wiktionary_response b{margin:8px 0 8px 0}
+.wiktionary_response img{float:right; margin: 10px;}
