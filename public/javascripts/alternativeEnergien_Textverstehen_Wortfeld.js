@@ -1,11 +1,12 @@
 $( init );
 function init() {
     var id=0;
-    var zuFinden = 35;
+    var zuFinden = 35; //Zählt die noch zu findenden Antworten
+    //Array mit den erlaubten Antworten
     var testarray = ["alternativen Energien","Bedarf","Energieressourcen","Ressourcen","Alternative Energien","Energiequellen","unerschöpflich","Solarenergie","Wasserkraft","Windkraft","Photovoltaik","Sonnenenergie","Sonneneinstrahlung","elektrische Energie","Sonnenenergie", "herkömmlichen Energieerzeugung","umweltfreundlicher","staatlich gefördert","Investition","Energiegewinnung","wetter- tages- und jahreszeitenabhängig","Turbinen","umweltschonend","Strom erzeugt","elektrische Energie","umgewandelt","Strömungsenergie","Windströmung","Rotationsenergie","Generator","Umwandlung","energieerzeugender Betriebe","Laufwasserkraftwerke","teuer", "lange Nutzungsphase", "Niederdruckanlagen", "umweltfreundlich", "Speicherkraftwerke", "gespeichert", "Reserve", "Spitzenlastzeiten"];
     var i = 0;
 
-
+    //Definiert die draggable-Eigenschaft der inline-spans
     $(".inline").each(function() {
         $(this).draggable({
             containment: '#page',
@@ -13,24 +14,28 @@ function init() {
             helper: myHelper});
     });
 
+    //Definiert, was beim Klick auf den Button der Klasse "help" geschehen soll
     $(".help").click(function () {
         showMessage("Im Text gibt es noch "+ zuFinden+" weitere Wörter. Versuche sie auch noch zu finden! ");
     });
 
+    //weist der Antwortbox eine Funktion zu, die beim Ablegen eines draggables aufgerufen wird
     $('#Antwortbox').droppable( {
         drop: handleDropEvent
     });
 
+    //Funktion, die beim "Drop" auf Antwortbox ausgeführt werden soll
     function handleDropEvent( event, ui ) {
+        //Textinhalt wird gesetzt auf den Inhalt des draggables und wird von SOnderzeichen bereinigt
         var textinhalt = ui.draggable.context.textContent;
-        var textinfos ="Mehr Info's hier: ";
         textinhalt = textinhalt.replace(',','');
         textinhalt = textinhalt.replace('.','');
         textinhalt = textinhalt.replace('"','');
+
+        var textinfos ="Mehr Info's hier: ";
         if($.inArray(textinhalt,testarray) < 0){
             textinfos="Das ist leider nicht richtig. Wenn du nicht weißt, was dieses Wort bedeutet, schau doch mal hier nach:";
         }
-
         var div = jQuery('<div/>', {
             class: 'token',
             id: ui.draggable.attr('id'),
@@ -56,7 +61,7 @@ function init() {
         //$(":button[id="+ui.draggable.attr('id') +"]").click(clear);
         $(".hide[id=" +ui.draggable.attr('id')+"]").toggle();
         $(".inline.ui-draggable[id="+ui.draggable.attr('id')+"]").draggable("disable").css('color','green');
-    };
+    }
 
     function myHelper( event ) {
         var textinhalt = $(this).context.innerHTML;
