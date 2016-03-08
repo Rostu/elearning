@@ -112,6 +112,7 @@ app.get('/NeueEnergien_Semantisierung', ubung.get_Semantisierung);
 app.get('/NeueEnergien_Aufgabe_3', ubung.get_NeueEnergien_Aufgabe_3);
 app.get('/NeueEnergien_Aufgabe_4', ubung.get_NeueEnergien_Aufgabe_4);
 app.get('/NeueEnergien_Aufgabe_5', ubung.get_NeueEnergien_Aufgabe_5);
+app.get('/NeueEnergien_Aufgabe_6', ubung.get_NeueEnergien_Aufgabe_6);
 app.get('/home', start.start);
 app.get('/testy', ubung.get_testy);
 app.get('/impressum', impressum.get_imp);

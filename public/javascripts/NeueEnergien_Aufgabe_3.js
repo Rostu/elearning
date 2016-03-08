@@ -1,6 +1,7 @@
 $( init );
 function init() {
-    $('#info3').show();
+    $('#info1').show();
+    $('#info1').append("<a id='infolink1' class='redlink' href='#'>Das ist ein Info-Link</a>");
 
     var arr = [["alternative Energie(n)",1], ["Bedarf",3], ["herkömmliche Energie(n)",1], ["Ressourcen",1], ["Solarenergie",1], ["Wasserkraft",1],["Strömungsenergie",1], ["Windkraft",1], ["umweltschonend",3], ["Photovoltaik",1], ["energieerzeugende Betriebe",0], ["Sonnenenergie",1],
         ["Investition",0], ["umgewandelt",2], ["Sonneneinstrahlung",2], ["elektrische Energie",2], ["Energie gewinnen",0], ["Energieerzeugung",0] ,["Rotationsenergie",2], ["Laufwasserkraftwerke",0], ["Speicherkraftwerke",0],  ["unerschöpflich",3], ["staatlich gefördert",3],

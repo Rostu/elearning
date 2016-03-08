@@ -5,33 +5,42 @@ block content
         script( src='javascripts/NeueEnergien_Aufgabe_5.js')
 
         #Aufgabenbox
-            h3 I.	Finde im Text Antonyme zu den unterstrichenen Begriffen und notiere sie. Wenn du auf das unterstrichene Wort klickst, bekommst du einen Tipp.
-
+            h3 Finde Antonyme zu den unterstrichenen Begriffen und notiere sie.
+            p Wenn du auf das unterstrichene Wort klickst, bekommst du einen Tipp.
         #wrapper
+            #Container
+                #Text
 
-            #Text
-                p 1.    Manche Energiequellen sind erschöpfbar.
-                input(type=text)________________________
-                p 2.    Herkömmliche Energien werden heute noch viel genutzt.	 	________________________
-                p 3.    In manchen Ländern sind alternative Energien eher unbekannt.	________________________
-                p 4.    Auch alternative Energien haben Nachteile.					________________________
-                p 5.    Es gibt verschiedene umweltfeindliche Energiequellen.			________________________
-                p 6.    Die Energiegewinnung ist oft umweltbelastend.				________________________
-                p 7.    Die Nutzung von alternativen Energien ist nicht immer billig.		________________________
+                    p 1. Manche Energiequellen sind
+                        span.Zahl#1 erschöpfbar.
 
+                    p 2.
+                        span.Zahl#2 Herkömmliche
+                        | Energien werden heute noch viel genutzt.
 
-        #Aufgabenbox
-            h3 II.  Lies die folgenden Sätze und entscheide ob die Aussage richtig ist. Klicke die richtige Antwort an. Auch hier bekommst du einen Tipp, wenn du auf die Satznummer klickst.
+                    p 3. In manchen Ländern sind alternative Energien eher
+                        span.Zahl#3 unbekannt.
 
-        #wrapper
+                    p 4. Auch alternative Energien haben
+                        span.Zahl#4 Nachteile.
 
-            #Text
-                p 1.    Die Nutzung von Wasserkraftwerken ist teuer.				□ Ja 	□ Nein
-                p 2.    Die Atomenergie gehört zu den alternativen Energien.			□ Ja 	□ Nein
-                p 3.    Sonnenenergie ist unerschöpflich.						□ Ja 	□ Nein
-                p 4.    Rotationsenergie ist auch unter dem Namen Photovoltaik bekannt.	□ Ja 	□ Nein
-                p 5.    Die Nutzung von alternativen Energien ist umweltschonend.		□ Ja 	□ Nein
-                p 6.    Ein Vorteil von alternativen Energien ist deren staatliche Förderung.	□ Ja 	□ Nein
+                    p 5. Es gibt verschiedene
+                        span.Zahl#5 umweltfeindliche
+                        |Energiequellen.
+
+                    p 6. Die Energiegewinnung ist oft
+                        span.Zahl#6 umweltbelastend.
+
+                    p 7. Die Nutzung von alternativen Energien ist nicht immer
+                        span.Zahl#7 billig.
+                #Elemente
+                    input#0.slot(type='text')
+                    input#1.slot(type='text')
+                    input#2.slot(type='text')
+                    input#3.slot(type='text')
+                    input#4.slot(type='text')
+                    input#5.slot(type='text')
+                    input#6.slot(type='text')
 
 
 

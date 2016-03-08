@@ -1,6 +1,8 @@
 $( init );
 function init() {
     $('#info1').show();
+    $('#info1').append("<a id='infolink1' class='redlink' href='#'>Das ist ein Info-Link</a>");
+
     var r_length = 0;
     var arr = $(".receiveToken");
     arr = shuffle(arr);
@@ -41,8 +43,9 @@ function init() {
             $(this).text(ui.draggable.context.textContent);
             r_length++;
 
-            $(this).css("color", "green");
+            $(this).css("color", "#02D64A");
             $(this).css("background-color", "transparent");
+            $(this).css("font-weight", "bold");
 
             ui.helper.fadeOut();
             ui.draggable.remove();
