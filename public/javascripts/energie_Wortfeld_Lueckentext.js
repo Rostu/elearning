@@ -7,7 +7,7 @@ $(document).ready(function() {
 		{token:"V-Motoren",tag:"noun",number:"PLU",gold:["Elektromotoren","Antriebe", "Elektroantriebe"]},
 		{token:"rasant",tag:"adjective",number:"null",gold:["schnell","zügig"]},
 		{token:"Batterie",tag:"noun",number:"SIN",gold:["Batterie","Energiespeicher","Speicher"]},
-		{token:"super",tag:"adjective",number:"null",gold:["prima","gut"]},
+		{token:"super",tag:"adjective",number:"null",gold:["super","prima","gut"]},
 		{token:"schwer",tag:"adjective",number:"null",gold:["schwer","gewichtig"]}
 	];
 
@@ -36,7 +36,6 @@ $(document).ready(function() {
 				$(this).addClass("done");
 				$(this).prop('disabled', true);
 				if($("#info3").is(':visible')){$("#info3").toggle();}
-				console.log("in list, therefor correct");
 			}else if(Levenshtein_inArray(query, gold.gold)){
 				$(this).removeClass("checking");
 				$(this).removeClass("wrong");
@@ -44,7 +43,10 @@ $(document).ready(function() {
 				if($("#info3").is(':visible')){$("#info3").toggle();}
 				$(this).val(get_Levenshtein_correct(query, gold.gold));
 				error_message = "Da hattest du dich verschrieben, schau dir die richtige Schreibweise nochmal an!";
-				console.log(error_message);
+				$("#info3").show();
+				$("#info3").empty();
+				$("#info3").append("<p>"+$(this).attr("errMSG")+"</p>");
+				//console.log(error_message);
 
 			}else{
 				//The second ajax call uses the Wortschatz Leipzig baseform function to get a lemmatized form of the input
@@ -57,12 +59,12 @@ $(document).ready(function() {
 						//this ajax call gets a corresponding entry from the morphology lexicon in the database
 						//the results can be used to check if the wordform and numerus match the gold standard
 						var DML_check = $.get('/dml_get', {query:query});
-						console.log("Gold Wortart: "+gold.tag);
+						//console.log("Gold Wortart: "+gold.tag);
 						if(gold.tag === "noun"){
 							var domain = $.get('/wl_domain', {query:baseformResponse[0][0],limit:20});
 							$.when(DML_check, domain).done(function (dmlResponse,domainResponse ) {
 								if(domainResponse[0] != "") {
-									console.log(domainResponse[0]);
+									//console.log(domainResponse[0]);
 									if ($.inArray(gold.token, domainResponse[0]) > -1){
 										$(inputfield).removeClass("checking");
 										$(inputfield).removeClass("wrong");
@@ -71,7 +73,7 @@ $(document).ready(function() {
 										if(dmlResponse[0] != ""){
 											var infos = dmlResponse[0].morphology;
 											var test = true;
-											console.log(infos);
+											//console.log(infos);
 											$.each(infos, function (index, b) {
 												if (b.indexOf("number:"+gold.number) > -1) {
 													test = false;
@@ -110,6 +112,11 @@ $(document).ready(function() {
 												}
 												if(test){$(inputfield).attr("errMSG",error_message);return false}
 											});
+										}else{
+											$(inputfield).removeClass("checking");
+											$(inputfield).addClass("wrong");
+											error_message = "Dieses Wort kann ich leider nicht finden";
+											$(inputfield).attr("errMSG",error_message);
 										}
 									}
 								}
@@ -119,7 +126,7 @@ $(document).ready(function() {
 							var synonyms = $.get('/wl_synonyms', {query:baseformResponse[0][0],limit:20});
 							$.when(DML_check, synonyms).done(function (dmlResponse,synonymResponse ) {
 								if(synonymResponse[0] != "") {
-									console.log(synonymResponse[0]);
+									//console.log(synonymResponse[0]);
 									if ($.inArray(gold.token, synonymResponse[0]) > -1){
 										$(inputfield).removeClass("checking");
 										$(inputfield).removeClass("wrong");
@@ -133,7 +140,7 @@ $(document).ready(function() {
 													$(inputfield).removeClass("checking");
 													$(inputfield).addClass("wrong");
 													error_message = "Dieses Wort passt hier nicht hin";
-													console.log(error_message);
+													//console.log(error_message);
 													$(inputfield).attr("errMSG",error_message);
 													return false;
 												}
@@ -141,12 +148,17 @@ $(document).ready(function() {
 													$(inputfield).removeClass("checking");
 													$(inputfield).addClass("wrong");
 													error_message += "Das ist die falsche Wortart, in diese Lücke gehört ein: Adjektiv";
-													console.log(error_message);
+													//console.log(error_message);
 													$(inputfield).attr("errMSG",error_message);
 													return false;
 												}
 											});
-										}
+										}else{
+										$(inputfield).removeClass("checking");
+										$(inputfield).addClass("wrong");
+										error_message = "Dieses Wort kann ich leider nicht finden";
+										$(inputfield).attr("errMSG",error_message);
+									}
 									}
 								}
 							});

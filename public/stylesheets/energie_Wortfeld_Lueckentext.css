@@ -27,7 +27,7 @@
     background-color: rgb(229, 239, 245);
 }
 .done{
-    background-color: rgb(140, 229, 7);
+    background-color: rgb(156, 239, 0);
     color: whitesmoke;
     text-align: center;
     font-weight: bold;
@@ -51,4 +51,7 @@
 }
 .info3 p{
     font-size: 1.2em;
+}
+#Aufgabenbox p{
+    font-size: 1.3em;
 }

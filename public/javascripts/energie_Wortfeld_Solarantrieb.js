@@ -1,19 +1,23 @@
 $(document).ready(function() {
 
-    //on click event for underlined text. As wished just a link to the corresponding duden.de page
+    //on click event for underlined text.
     $('span.underline').click(function () {
+        //show the overlay Div; clear and show the Div Box for the information; also automatically scroll up
         toggleStartOverlay();
         $(".bold_info").css("display","none");
         $(".bold_info#Allgemein").toggle();
         $(".bold_info#Allgemein").empty();
         $("html, body").animate({ scrollTop: 0 }, "slow");
         var referer = $(this).attr("inhalt");
+        //ajax request(http get) to get informations abaout the clicked word
         var infos = $.get('/get_wiktionary', {query:referer});
+        //show throbber as long as there is no response from the request
         $(".bold_info#Allgemein").append("<div id='wiki_throbber'><img src='./images/ajax-loader.gif'></div>");
+        //when the request is done and therefore the promise object done, start populating the Ifo div with informations from the request
         infos.done(function(wikiResponse){
             $(".bold_info#Allgemein").empty();
             console.log("Antwort da");
-            if(wikiResponse){
+            if(wikiResponse.valid){
                 console.log(wikiResponse);
                 var div = jQuery('<div/>', {
                     class: 'wiktionary_response',
@@ -40,14 +44,19 @@ $(document).ready(function() {
                 if(wikiResponse.hyperonym.length>0){
                     $(div).append("<b>Überbegriff: </b><p>"+wikiResponse.hyperonym.join()+"</p>");
                 }
-
-
                 $(div).appendTo(".bold_info#Allgemein" );
 
+            }else{
+                var div = jQuery('<div/>', {
+                    class: 'wiktionary_response',
+                    id: "wiktionary1",
+                    html: "<h2>"+referer+"</h2>"
+                });
+                $(div).append("<p>Dazu haben wir leider keinen Eintrag gefunden. Schau doch mal hier: </p>");
+                $(div).append("<a href='http://dwds.de/?view=10&qu="+referer+"' target='_blanc'>Suche im DWDS nach: "+referer+"</a>");
+                $(div).appendTo(".bold_info#Allgemein" );
             }
-
         });
-
         //window.open('http://www.duden.de/suchen/dudenonline/'+$(this).attr("inhalt"),'_blank');
     });
 
@@ -87,9 +96,6 @@ $(document).ready(function() {
                 break;
             case "11":
                 $(".bold_info#Solarzellen").toggle();
-                break;
-            case "12":
-                $(".bold_info#flott").toggle();
                 break;
             case "13":
                 $(".bold_info#Batteriebetrieb").toggle();
