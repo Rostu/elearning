@@ -4,6 +4,12 @@
 }
 
 #Text {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#Text p {
+    line-height: 3pt;
 }
 
 .Wortbox {

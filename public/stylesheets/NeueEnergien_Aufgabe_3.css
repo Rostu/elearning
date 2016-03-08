@@ -96,7 +96,7 @@
 .Frage {
     padding: 5px 10px;
     margin-left: 5px;
-    background-color: rgba(154, 205, 50, 0.53);
+    background-color: rgba(71, 205, 188, 0.53);
     color: #0d3349;
     text-decoration: none;
     display: inline-block;
@@ -104,9 +104,10 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    border-radius: 20%;
 
 }
 
 .Frage:hover {
-    background-color: rgba(199, 250, 50, 0.53);
+    background-color: rgba(86, 255, 238, 0.53);
 }
