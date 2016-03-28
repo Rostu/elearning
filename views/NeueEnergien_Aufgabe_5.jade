@@ -1,0 +1,46 @@
+extends layout
+block content
+    #content_background
+        link(rel='stylesheet', href='stylesheets/NeueEnergien_Aufgabe_5.css')
+        script( src='javascripts/NeueEnergien_Aufgabe_5.js')
+
+        #Aufgabenbox
+            h3 Finde Antonyme zu den unterstrichenen Begriffen und notiere sie.
+            p Wenn du auf das unterstrichene Wort klickst, bekommst du einen Tipp.
+        #wrapper
+            #Container
+                #Text
+
+                    p 1. Manche Energiequellen sind
+                        span.Zahl#1 erschöpfbar.
+
+                    p 2.
+                        span.Zahl#2 Herkömmliche
+                        | Energien werden heute noch viel genutzt.
+
+                    p 3. In manchen Ländern sind alternative Energien eher
+                        span.Zahl#3 unbekannt.
+
+                    p 4. Auch alternative Energien haben
+                        span.Zahl#4 Nachteile.
+
+                    p 5. Es gibt verschiedene
+                        span.Zahl#5 umweltfeindliche
+                        |Energiequellen.
+
+                    p 6. Die Energiegewinnung ist oft
+                        span.Zahl#6 umweltbelastend.
+
+                    p 7. Die Nutzung von alternativen Energien ist nicht immer
+                        span.Zahl#7 billig.
+                #Elemente
+                    input#0.slot(type='text')
+                    input#1.slot(type='text')
+                    input#2.slot(type='text')
+                    input#3.slot(type='text')
+                    input#4.slot(type='text')
+                    input#5.slot(type='text')
+                    input#6.slot(type='text')
+
+
+

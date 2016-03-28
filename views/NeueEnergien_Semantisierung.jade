@@ -1,0 +1,58 @@
+extends layout
+block content
+	#content_background
+		link(rel='stylesheet', href='stylesheets/NeueEnergien_Semantisierung.css')
+		script( src='javascripts/NeueEnergien_Semantisierung.js')
+		#Aufgabenbox
+			h3 Welche alternativen Energien gibt es?
+			p Ordne den Bildern das richtige Wort aus dem rechten Kasten zu.
+
+		#wrapper.textContainer
+
+			#Bild.Bilderbox
+				#1.Bild
+					img( src="images/neueEnergienBildSemantisierungKohle.jpg", height="100", width="150",align="left",onouseover="https://upload.wikimedia.org/wikipedia/commons/5/52/Coal_lump.jpg")
+					#1.zuordnungsBox
+							p 1. Ziehe hierhin.
+				#3.Bild
+					img( src="images/neueEnergienBildSemantisierungPhotovoltaik.jpg", height="100", width="150", align="left", onmouseover="https://upload.wikimedia.org/wikipedia/commons/f/f1/Photovoltaik_adlershof.jpg")
+					#3.zuordnungsBox
+							p 2. Ziehe hierhin.
+				#2.Bild
+					img( src="images/neueEnergienBildSemantisierungTurbine.jpg", height="100", width="150", align="left",onmouseover="https://upload.wikimedia.org/wikipedia/commons/7/79/Dampfturbine_Montage01.jpg")
+					#2.zuordnungsBox
+							p 3. Ziehe hierhin.
+				#4.Bild
+					img( src="images/neueEnergienBildSemantisierungRotorblatt.jpg", height="100", width="150", align="left",onmouseover="https://upload.wikimedia.org/wikipedia/commons/c/ce/Windpark_Berching01_verkleinert.jpg")
+					#4.zuordnungsBox
+							p 4. Ziehe hierhin.
+
+
+
+			#Text.Textbox
+				#2.textToken Die Turbine
+				#2.subTextBox
+					p Kraftmaschine, die die Energie strömenden Gases, Dampfes oder Wassers mithilfe eines Schaufelrades in eine Rotationsbewegung umsetzt.
+					br
+					br
+				#1.textToken  Die Kohle
+				#1.subTextBox
+					p Im Bergbau gewonnener brauner bis schwarz glänzender fester Brennstoff (Braun-, Steinkohle u. a.)
+					br
+					br
+				#4.textToken Das Rotorblatt
+				#4.subTextBox
+					p Blatt eines Rotors.
+					br
+					br
+				#3.textToken Die Photovoltaik
+				#3.subTextBox
+					p Zweig der Energietechnik, der sich mit der Gewinnung von elektrischer Energie besonders aus Sonnenenergie befasst.
+					br
+
+
+
+
+
+
+

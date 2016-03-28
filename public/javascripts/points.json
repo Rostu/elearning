@@ -174,6 +174,18 @@
         "name":"china_Textverstehen_Redewiedergabe", "maxpoints":6, "maxfaults":5
     },
     {
-        "name":"glueck_Textverstehen_Wortspirale", "maxpoints":23, "maxfaults":10
+        "name":"NeueEnergien_Semantisierung", "maxpoints":4, "maxfaults":2
+    },
+    {
+        "name":"NeueEnergien_Aufgabe_3", "maxpoints":27, "maxfaults":15
+    },
+    {
+        "name":"NeueEnergien_Aufgabe_4", "maxpoints":12, "maxfaults":6
+    },
+    {
+        "name":"NeueEnergien_Aufgabe_5", "maxpoints":7, "maxfaults":4
+    },
+    {
+        "name":"NeueEnergien_Aufgabe_6", "maxpoints":6, "maxfaults":3
     }
 ]}

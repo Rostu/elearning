@@ -35,6 +35,25 @@ exports.get_glueck_memory = function(req, res){
     res.render('glueck_Memory');
 };
 
+exports.get_Semantisierung = function(req, res){
+    res.render('NeueEnergien_Semantisierung');
+};
+
+exports.get_NeueEnergien_Aufgabe_3 = function(req, res){
+    res.render('NeueEnergien_Aufgabe_3');
+};
+
+exports.get_NeueEnergien_Aufgabe_4 = function(req, res){
+    res.render('NeueEnergien_Aufgabe_4');
+};
+
+exports.get_NeueEnergien_Aufgabe_5 = function(req, res){
+    res.render('NeueEnergien_Aufgabe_5');
+};
+exports.get_NeueEnergien_Aufgabe_6 = function(req, res){
+    res.render('NeueEnergien_Aufgabe_6');
+};
+
 exports.get_glueck_Textverstehen_Wortspirale = function(req, res){
     res.render('glueck_Textverstehen_Wortspirale');
 };
