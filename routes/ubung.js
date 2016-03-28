@@ -13,7 +13,7 @@ exports.neu = function(req, res){
 
 exports.get_Begriffe_aus_Text = function(req, res) {
     res.render('Begriffe_aus_Text');
-}
+};
 
 exports.createUebung = function(req, res){
     var satz = req.body.inhalt.split("|");
@@ -39,21 +39,60 @@ exports.get_glueck_memory = function(req, res){
     res.render('glueck_Memory');
 };
 
+exports.get_Semantisierung = function(req, res){
+    res.render('NeueEnergien_Semantisierung');
+};
+
+exports.get_NeueEnergien_Aufgabe_3 = function(req, res){
+    res.render('NeueEnergien_Aufgabe_3');
+};
+
+exports.get_NeueEnergien_Aufgabe_4 = function(req, res){
+    res.render('NeueEnergien_Aufgabe_4');
+};
+
+exports.get_NeueEnergien_Aufgabe_5 = function(req, res){
+    res.render('NeueEnergien_Aufgabe_5');
+};
+exports.get_NeueEnergien_Aufgabe_6 = function(req, res){
+    res.render('NeueEnergien_Aufgabe_6');
+};
+
 exports.get_glueck_Textverstehen_Wortspirale = function(req, res){
     res.render('glueck_Textverstehen_Wortspirale');
 };
 
 exports.get_Textverstehen_Fussball = function(req, res){
     res.render('Textverstehen_Fussball');
-}
+};
 
 exports.get_fuba_Polyseme = function(req, res){
     res.render('fuba_Polyseme');
-}
+};
 
 exports.get_fuba_Komposita = function(req, res){
     res.render('fuba_Komposita');
-}
+};
+
+exports.get_AlernativeEnergien_Wortfeld = function(req, res){
+    res.render('Alternative_Energien_Wortfeld');
+};
+
+exports.get_AlernativeEnergien_Wortschatz = function(req, res){
+    res.render('Alternative_Energien_Wortschatz');
+};
+
+exports.get_AlernativeEnergien_Textstruktur = function(req, res){
+    res.render('Alternative_Energien_Textstruktur');
+};
+
+exports.get_AlernativeEnergien_Wortbildung = function(req, res){
+    res.render('Alternative_Energien_Wortbildung');
+};
+
+exports.get_AlernativeEnergien_Komposita = function(req, res){
+    res.render('Alternative_Energien_Komposita');
+};
 
 exports.get_china_Textverstehen_Wortfeld_Studium = function(req, res){
     res.render('china_Textverstehen_Wortfeld_Studium');
@@ -119,11 +158,11 @@ exports.get_glueck_video_zuordnen = function(req, res){
 
 exports.get_glueck_video_kleeblatt = function(req, res){
     res.render('glueck_video_kleeblatt.jade');
-}
+};
 
 exports.get_glueck_video_paraphrase = function(req, res){
     res.render('glueck_video_paraphrase.jade');
-}
+};
 
 exports.get_glueck_Textverstehen_Redensarten = function(req, res){
     res.render('glueck_Textverstehen_Redensarten');
@@ -270,15 +309,15 @@ exports.get_Textverstehen_FuBa = function(req, res){
 
 exports.get_BaBa_Textproduktion = function(req, res){
     res.render('BaBa_Textproduktion');
-}
+};
 
 exports.get_liveticker_basketball_synonyme = function(req, res){
     res.render('liveticker_basketball_synonyme');
-}
+};
 
 exports.get_BaBa_Komposita_a = function(req, res){
     res.render('BaBa_Komposita_a');
-}
+};
 
 
 exports.get_next = function(req, res){

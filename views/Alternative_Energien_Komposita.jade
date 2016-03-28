@@ -1,0 +1,280 @@
+extends layout
+block overlay
+    #overlaycontentbox
+        p Test
+block content
+    link(rel='stylesheet', href='stylesheets/alternativeEnergien_Komposita.css')
+    script(src='javascripts/alternativeEnergien_Komposita.js')
+    #Aufgabenbox
+        b Aufgabe 1:
+        p Im Deutschen erfolgt die Wortbildung häufig durch das Aneinanderreihen mehrerer Wörter. Aus welchen Wörtern sind die folgenden Wörter zusammengesetzt. Setzte nach jedem Bestandteil einen Strich. Wenn du auf eines der blauen Fragezeichen neben den Wörtern klickst, wird dir angezeigt, in wie viele Bestandteile das Wort zerlegt werden kann.
+
+    #mybox
+        .Zeitung
+            p
+
+                |1)    U
+                span.falsch &nbsp;
+                |m
+                span.richtig &nbsp;
+                |w
+                span.falsch &nbsp;
+                |e
+                span.falsch &nbsp;
+                |l
+                span.falsch &nbsp;
+                |t
+                span.richtig &nbsp;
+                |f
+                span.falsch &nbsp;
+                |r
+                span.falsch &nbsp;
+                |e
+                span.falsch &nbsp;
+                |u
+                span.falsch &nbsp;
+                |n
+                span.falsch &nbsp;
+                |d
+                span.falsch &nbsp;
+                |l
+                span.falsch &nbsp;
+                |i
+                span.falsch &nbsp;
+                |c
+                span.falsch &nbsp;
+                |h
+                span.help.a1 &nbsp;&nbsp;&nbsp;(?)
+                br
+                br
+                |2)    J
+                span.falsch &nbsp;
+                |a
+                span.falsch &nbsp;
+                |h
+                span.falsch &nbsp;
+                |r
+                span.falsch &nbsp;
+                |e
+                span.falsch &nbsp;
+                |s
+                span.richtig &nbsp;
+                |z
+                span.falsch &nbsp;
+                |e
+                span.falsch &nbsp;
+                |i
+                span.falsch &nbsp;
+                |t
+                span.falsch &nbsp;
+                |e
+                span.falsch &nbsp;
+                |n
+                span.richtig &nbsp;
+                |a
+                span.falsch &nbsp;
+                |b
+                span.richtig &nbsp;
+                |h
+                span.falsch &nbsp;
+                |ä
+                span.falsch &nbsp;
+                |n
+                span.falsch &nbsp;
+                |g
+                span.falsch &nbsp;
+                |i
+                span.falsch &nbsp;
+                |g
+                span.help.a2 &nbsp;&nbsp;&nbsp;(?)
+                br
+                br
+                |3)     L
+                span.falsch &nbsp;
+                | a
+                span.falsch &nbsp;
+                | u
+                span.falsch &nbsp;
+                | f
+                span.richtig &nbsp;
+                | w
+                span.falsch &nbsp;
+                | a
+                span.falsch &nbsp;
+                | s
+                span.falsch &nbsp;
+                | s
+                span.falsch &nbsp;
+                | e
+                span.falsch &nbsp;
+                | r
+                span.richtig &nbsp;
+                | k
+                span.falsch &nbsp;
+                | r
+                span.falsch &nbsp;
+                | a
+                span.falsch &nbsp;
+                | f
+                span.falsch &nbsp;
+                | t
+                span.richtig &nbsp;
+                | w
+                span.falsch &nbsp;
+                | e
+                span.falsch &nbsp;
+                | r
+                span.falsch &nbsp;
+                | k
+                span.help.a3 &nbsp;&nbsp;&nbsp;(?)
+                br
+                br
+                |4)    S
+                span.falsch &nbsp;
+                | p
+                span.falsch &nbsp;
+                | e
+                span.falsch &nbsp;
+                | i
+                span.falsch &nbsp;
+                | c
+                span.falsch &nbsp;
+                | h
+                span.falsch &nbsp;
+                | e
+                span.falsch &nbsp;
+                | r
+                span.richtig &nbsp;
+                | k
+                span.falsch &nbsp;
+                | r
+                span.falsch &nbsp;
+                | a
+                span.falsch &nbsp;
+                | f
+                span.falsch &nbsp;
+                | t
+                span.richtig &nbsp;
+                | w
+                span.falsch &nbsp;
+                | e
+                span.falsch &nbsp;
+                | r
+                span.falsch &nbsp;
+                | k
+                span.help.a4 &nbsp;&nbsp;&nbsp;(?)
+                br
+                br
+                |5)    N
+                span.falsch &nbsp;
+                | i
+                span.falsch &nbsp;
+                | e
+                span.falsch &nbsp;
+                | d
+                span.falsch &nbsp;
+                | e
+                span.falsch &nbsp;
+                | r
+                span.richtig &nbsp;
+                | d
+                span.falsch &nbsp;
+                | r
+                span.falsch &nbsp;
+                | u
+                span.falsch &nbsp;
+                | c
+                span.falsch &nbsp;
+                | k
+                span.richtig &nbsp;
+                | a
+                span.falsch &nbsp;
+                | n
+                span.richtig &nbsp;
+                | l
+                span.falsch &nbsp;
+                | a
+                span.falsch &nbsp;
+                | g
+                span.falsch &nbsp;
+                | e
+                span.help.a5 &nbsp;&nbsp;&nbsp;(?)
+
+    .hidden1
+        #Aufgabenbox
+            b Aufgabe 2:
+            p Zu welcher Wortart gehören die einzelnen Bestandteile? Trage sie in die Tabelle ein! (Hinweis: Bei "Jahres" und "Zeiten" bitte den Nominativ Singular (Jahr, Zeit) angeben.)
+    .hidden1
+        #cont
+            table
+                tr
+                    td Substantiv
+                        span.help.b1 &nbsp;&nbsp;&nbsp;(?)
+                    td Adjektiv
+                        span.help.b2 &nbsp;&nbsp;&nbsp;(?)
+                    td Adverb
+                        span.help.b3 &nbsp;&nbsp;&nbsp;(?)
+                    td Präposition
+                        span.help.b4 &nbsp;&nbsp;&nbsp;(?)
+                tr
+                    td
+                        input(type='text',id=0, name='Artikel')
+                    td
+                        input(type='text',id=1, name='Artikel')
+                    td
+                        input(type='text',id=2, name='Artikel')
+                    td
+                        input(type='text',id=3, name='Artikel')
+                tr
+                    td
+                        .Antwortbox(id="Antwortbox1")
+                    td
+                        .Antwortbox(id="Antwortbox2")
+                    td
+                        .Antwortbox(id="Antwortbox3")
+                    td
+                        .Antwortbox(id="Antwortbox4")
+
+    .hidden2
+        #Aufgabenbox
+            b Aufgabe 3:
+            p Setze nun die folgenden Komposita richtig zusammen und tippe sie mit dem richtigen Artikel in das blaue Feld ein.
+    .hidden2
+        #cont
+            table
+                tr
+                    td die Energie
+                    td die Ressource
+                    td
+                        input(type='text',id=4)
+                    td
+                        .ampel(id=14,style={color: '#02D64A;'}) &bull;
+                        .ampel(id=24,style={color: '#FFD700'}) &bull;
+                        .ampel(id=34,style={color: '#A91211;'}) &bull;
+                tr
+                    td der Wind
+                    td die Kraft
+                    td
+                        input(type='text',id=5)
+                    td
+                        .ampel(id=15,style={color: '#02D64A;'}) &bull;
+                        .ampel(id=25,style={color: '#FFD700'}) &bull;
+                        .ampel(id=35,style={color: '#A91211;'}) &bull;
+                tr
+                    td der Rotor
+                    td das Blatt
+                    td
+                        input(type='text',id=6)
+                    td
+                        .ampel(id=16,style={color: '#02D64A;'}) &bull;
+                        .ampel(id=26,style={color: '#FFD700'}) &bull;
+                        .ampel(id=36,style={color: '#A91211;'}) &bull;
+                tr
+                    td die Sonnen
+                    td die Einstrahlung
+                    td
+                        input(type='text',id=7)
+                    td
+                        .ampel(id=17,style={color: '#02D64A;'}) &bull;
+                        .ampel(id=27,style={color: '#FFD700'}) &bull;
+                        .ampel(id=37,style={color: '#A91211;'}) &bull;

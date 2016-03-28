@@ -1,0 +1,171 @@
+#mybox{ width: 90%; height:300px; margin: 0 auto; }
+.Zeitung {
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    width: 60%;
+    height: 90%;
+    padding: 5px;
+    margin:5px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.7em;
+    text-align: center;
+    color: #000000;
+}
+table{
+
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 2em;
+    text-align: center;
+}
+
+
+.ampel{
+    font-size: 2em;
+    display: inline;
+    visibility: hidden;
+
+}
+
+.textwrap1{
+    float: left;
+    margin: 10px;
+}
+.textwrap2{
+    float: right;
+    margin: 10px;
+}
+.info_image{
+    margin: 10px;
+}
+
+.underline{
+    display: inline-block;
+    text-decoration: underline;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.bold{
+    font-weight: bold;
+}
+.bold:hover{
+    cursor:pointer;
+}
+
+.underline:hover{
+    cursor:pointer;
+}
+p {
+    -moz-hyphens: auto;
+    -o-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.candidate:hover{
+    cursor:pointer;
+}
+.correct{
+    color: #02D64A;
+}
+.false{
+    color: #A91211;
+    font-size: 1em;
+}
+.bold_info{
+    font-size: 1.3em;
+    width: 80%;
+    margin: auto;
+    display: none;
+}
+.bold_info h1{
+    text-align: center;
+}
+.bold_info span{
+    font-size: 5em;
+}
+
+#Loesung{
+    height: 400px;
+    display: table;
+    width: 100%;
+
+}
+
+.Vorgabe{
+    font-size: 1.1em;
+    display: table;
+    width: 90%;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+#Vorgabe1,#Vorgabe2{
+    display: table-row;
+    width: 50%;
+}
+
+.token {
+    background: rgba(239, 239, 239, 0.59);
+    color: white;
+    font-weight: bold;
+    display: block;
+    }
+
+.korrekt{
+    background-color: #02D64A;
+}
+
+.Vorgabe h2{
+    color: #0083cb;
+
+}
+#Platzhalter {
+    padding: 10px;
+    display: table-cell;
+    width: 2%; }
+#cont{
+    display: table;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Antwortbox {
+    height: 200px;
+    -webkit-box-shadow: 0px 2px 5px darkgrey;
+    -moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    background-color: rgba(0, 131, 198, 0.39);
+    display: table-cell;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 1.3em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hidden1 {
+    display: none;
+}
+.hidden2 {
+    display: none;
+}
+
+.help {
+    font-size: 0.7em;
+    color: #00B7FF;
+}
+#overlaycontentbox {
+    text-align: center;
+    font-size: 2em;
+}
