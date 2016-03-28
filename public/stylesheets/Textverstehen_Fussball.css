@@ -31,13 +31,12 @@ form{
     background-color: rgba(0, 131, 198, 0.39);
     display: table-cell;
     width: 35%;
- }
+}
 
 #Platzhalter {
     padding: 10px;
     display: table-cell;
-    width: 2%;
-}
+    width: 2%; }
 
 .draggie.ui-draggable-dragging {
     color: #000000;

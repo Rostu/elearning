@@ -63,6 +63,12 @@ app.use(function(req, res, next){
 });
 app.use('/', index.get_session);
 app.get('/', routes.index);
+app.get('/Begriffe_aus_Text', ubung.get_Begriffe_aus_Text);
+app.get('/fuba_Textproduktion', ubung.get_fuba_Textproduktion);
+app.get('/liveticker_fussball_redewendungen', ubung.get_liveticker_fussball_redewendungen);
+app.get('/Textverstehen_Fussball', ubung.get_Textverstehen_Fussball);
+app.get('/fuba_Polyseme', ubung.get_fuba_Polyseme);
+app.get('/fuba_Komposita', ubung.get_fuba_Komposita);
 app.get('/Alternative_Energien_Wortfeld', ubung.get_AlernativeEnergien_Wortfeld);
 app.get('/Alternative_Energien_Wortschatz', ubung.get_AlernativeEnergien_Wortschatz);
 app.get('/Alternative_Energien_Textstruktur', ubung.get_AlernativeEnergien_Textstruktur);
@@ -119,11 +125,18 @@ app.get('/NeueEnergien_Aufgabe_4', ubung.get_NeueEnergien_Aufgabe_4);
 app.get('/NeueEnergien_Aufgabe_5', ubung.get_NeueEnergien_Aufgabe_5);
 app.get('/NeueEnergien_Aufgabe_6', ubung.get_NeueEnergien_Aufgabe_6);
 app.get('/home', start.start);
+app.get('/liveticker_fussball_redewendungen', ubung.get_liveticker_fussball_redewendungen);
 app.get('/testy', ubung.get_testy);
 app.get('/impressum', impressum.get_imp);
 app.get('/glueck_Memory', ubung.get_glueck_memory);
 app.get('/glueck_Textverstehen_Wortspirale', ubung.get_glueck_Textverstehen_Wortspirale);
 app.get('/neuanlegen', ubung.neu);
+app.get('/Begriffe_aus_Text', ubung.get_Begriffe_aus_Text);
+app.get('/Textverstehen_FuBa', ubung.get_Textverstehen_FuBa);
+app.get('/BaBa_Textproduktion', ubung.get_BaBa_Textproduktion);
+app.get('/liveticker_basketball_synonyme', ubung.get_liveticker_basketball_synonyme);
+app.get('/BaBa_Komposita_a', ubung.get_BaBa_Komposita_a);
+
 //app.get('/points', pointshandler.get_points);
 
 app.get('/points:last?', function(req, res){
