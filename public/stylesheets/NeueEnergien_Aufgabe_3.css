@@ -1,0 +1,113 @@
+.draggie.ui-draggable-dragging {
+
+    font-size: 1em;
+    padding: 3px;
+    margin: 3px;
+    background: lightgoldenrodyellow;
+    color: black;
+    -webkit-box-shadow: 0 2px 5px darkgray;
+    -moz-box-shadow: 0 2px 5px darkgray;
+    box-shadow: 0 2px 5px darkgray;
+    cursor:pointer;
+}
+
+
+.token {
+    color: #0083cb;
+    font-weight: bold;
+    padding: 5px;
+    float: left;
+    /*display: inline-flex;*/
+    flex-direction: column;
+    margin: 2px;
+    border: 1px solid #0083cb;
+}
+
+#Vorgabe{
+    width: 100%;
+    display: inline-block;
+    padding: 5px;
+}
+#Loesung{
+    height: 400px;
+    display: table;
+    width: 100%;
+}
+#label{
+    width: 100%;
+    height: 50px;
+    display: table;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Antwort.ui-droppable{
+    display: table-cell;
+    width: 30%;
+    height: 500px;
+    text-align: center;
+}
+.Antwort.ui-droppable.ui-state-hover{
+    background-color: rgba(0, 131, 203, 0.34);
+}
+
+.ui-draggable:hover{
+    cursor:pointer;
+}
+
+.Box{
+    display: inline-block;
+    width: 30%;
+}
+
+.circ{
+    width: 100%;
+    height:300px;
+    background-color: #0040D0;
+    border-radius: 50%;
+}
+
+#Energiequelle, #Energieform, #Eigenschaften {
+    webkit-box-shadow: 0px 2px 5px darkgrey;
+    moz-box-shadow: 0px 2px 5px darkgrey;
+    box-shadow: 0px 2px 5px darkgrey;
+    display: table-cell;
+    padding: 10px;
+    width: 30%;
+    background-color: rgba(22, 86, 211, 0.17);
+    margin-left: 15px;
+    min-height: 400px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.answerToken {
+    webkit-box-shadow: 0 2px 5px darkgray;
+    moz-box-shadow: 0 2px 5px darkgray;
+    box-shadow: 0 2px 5px darkgray;
+    background: #0083cb;
+    color: white;
+    font-weight: bold;
+    padding-top:40px;
+    padding: 5px;
+    margin: 10px;
+    display: block;
+}
+
+.Frage {
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: rgba(71, 205, 188, 0.53);
+    color: #0d3349;
+    text-decoration: none;
+    display: inline-block;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    border-radius: 20%;
+
+}
+
+.Frage:hover {
+    background-color: rgba(86, 255, 238, 0.53);
+}
