@@ -269,6 +269,13 @@ body {
     margin: auto;
     height: 115px;
     width: 100px;
+    display: table;
+    text-align: center;
+}
+
+.pointstext {
+    font-size: x-large;
+    fill: #005E9C;
 }
 
 .special_nav{

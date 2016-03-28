@@ -3,18 +3,25 @@
     display: table;
 }
 #Textbox {
-  -webkit-box-shadow: 0 2px 5px darkgrey;
-  -moz-box-shadow: 0 2px 5px darkgrey;
-  box-shadow: 0 2px 5px darkgrey;
-  width: 60%;
-  display: table-cell;
-  padding: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: rgba(239, 239, 239, 0.59);
-  margin: 10px;
-  color: black;
-  text-align: justify;
+    -webkit-box-shadow: 0 2px 5px darkgrey;
+    -moz-box-shadow: 0 2px 5px darkgrey;
+    box-shadow: 0 2px 5px darkgrey;
+    width: 70%;
+    display: table-cell;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(239, 239, 239, 0.59);
+    margin: 10px;
+    color: black;
+
 }
+
+p.inline {
+    display: inline-block;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
 #Textbox p{
     margin: 5px;
 }
@@ -37,14 +44,14 @@
 
 .token {
     -webkit-box-shadow: 0 2px 5px darkgrey;
-     box-shadow: 0 2px 5px darkgrey;
-     background: rgba(239, 239, 239, 0.59);
-     color: darkblue;
-     font-weight: bold;
-     padding: 5px;
-     display: inline-flex;
-     flex-direction: column;
-     margin: 10px;
+    box-shadow: 0 2px 5px darkgrey;
+    background: rgba(239, 239, 239, 0.59);
+    color: darkblue;
+    font-weight: bold;
+    padding: 5px;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 10px;
 }
 
 .button:hover {
@@ -54,12 +61,6 @@
     color: red;
 }
 
-img {
-      margin: 10px;
-      border: solid;
-      border-color: gainsboro;
-      border-width: 1px;
-}
 
 .inline {
     display: inline;
@@ -79,42 +80,17 @@ img {
     display: table;
     width: 100%;
 }
-#Antwortbox1, #Antwortbox2, #Antwortbox3, #Antwortbox4 {
-    -webkit-box-shadow: 0 2px 5px darkgrey;
-    -moz-box-shadow: 0 2px 5px darkgrey;
-    box-shadow: 0 2px 5px darkgrey;
-    display: table-cell;
-    padding: 10px;
-    width: 20%;
-    margin: 0 30px 0;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgba(0, 131, 198, 0.39);
-    min-height: 500px;
-    align-items: center;
-}
 
-#Antwortbox {
-  -webkit-box-shadow: 0 2px 5px darkgrey;
-  -moz-box-shadow: 0 2px 5px darkgrey;
-  box-shadow: 0 2px 5px darkgrey;
-  background-color: rgba(0, 131, 198, 0.39);
-  display: table-cell;
-  padding: 10px;
-  width: 40%;
-  margin-left: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-#Antwortbox_ww_1, #Antwortbox_ww_2 {
+#Antwortbox_ww_1, #Antwortbox_ww_2,#Antwortbox_ww_3, #Antwortbox_ww_4,#Antwortbox_ww_5, #Antwortbox_ww_6,#Antwortbox_ww_7, #Antwortbox_ww_8,#Antwortbox_ww_9 {
     -webkit-box-shadow: 0 2px 5px darkgrey;
     -moz-box-shadow: 0 2px 5px darkgrey;
     box-shadow: 0 2px 5px darkgrey;
     background-color: rgba(0, 131, 198, 0.39);
     display: block;
     padding: 10px;
-    width: 350px;
-    height: 100px;
+    width: 450px;
+    height: 75px;
     margin: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -169,7 +145,7 @@ dfn{
     width: 100%;
     height: 50px;
     margin: 15px;
-    font-family: Arial, Helvetica, sans-serif;   
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #place1, #place2, #place3, #place4, #place5, #place6, #place7, #place8 {
@@ -217,15 +193,10 @@ dfn{
     color: black;
 }
 
-.Zeitung {
-    -webkit-box-shadow: 0px 2px 5px darkgrey;
-    -moz-box-shadow: 0px 2px 5px darkgrey;
-    box-shadow: 0px 2px 5px darkgrey;
-    width: 95%;
-    padding: 10px;
-    margin:10px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url("../images/newspaper2.jpg");
-    color: #000000;
+.correct{
+    color: #02D64A;
 }
-
+#overlaycontentbox {
+    text-align: center;
+    font-size: 2em;
+}

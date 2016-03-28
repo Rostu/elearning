@@ -1,5 +1,20 @@
 {"sites":[
     {
+        "name":"Alternative_Energien_Komposita", "maxpoints":30, "maxfaults":60
+    },
+    {
+        "name":"Alternative_Energien_Wortbildung", "maxpoints":15, "maxfaults":20
+    },
+    {
+        "name":"Alternative_Energien_Textstruktur", "maxpoints":9, "maxfaults":18
+    },
+    {
+        "name":"Alternative_Energien_Wortschatz", "maxpoints":10, "maxfaults":5
+    },
+    {
+        "name":"Alternative_Energien_Wortfeld", "maxpoints":35, "maxfaults":10
+    },
+    {
         "name":"energie_start", "maxpoints": 0, "maxfaults": 0
     },
     {
