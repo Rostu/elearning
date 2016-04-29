@@ -52,8 +52,9 @@ $(document).ready(function() {
 			var token = $("audio#player").data("token");
 			var levenshtein = false;
 			var varianz = true;
+			var small_error = false;
 			if(ausnahme.indexOf(token) > -1) {	varianz = false	}
-			if(getEditDistance(token,input) <2 ){levenshtein = true}
+			if(getEditDistance(token,input) <2 ){levenshtein = true;}
 
 			if(levenshtein&&(input_id === token_id) ){
 				errorcount = 0;
@@ -92,14 +93,14 @@ $(document).ready(function() {
 				}
 				$('#info3 > p').remove();
 				$("#errorsound")[0].play();
-				if (input_id != token_id) {
-					$('#info3').append("<p id='infotext1'>Das ist nicht die Richtige Zeit</p>");
+				if (input_id != token_id && levenshtein) {
+					$('#info3').append("<p id='infotext1'>Das Wort ("+input+") ist richtig geschrieben, aber das ist nicht die Richtige Zeit</p>");
 				}
 				if (getEditDistance(token, input) > 1 && errorcount == 1) {
-					$('#info3').append("<p id='infotext2'>Das Wort ist falsch geschrieben. Schau dir die richtige Schreibweise hier an:<a class='dudenlink2' target='_blank' href='http://www.duden.de/suchen/dudenonline/" + token + "'>DUDEN</a></p>");
+					$('#info3').append("<p id='infotext2'>Das Wort ("+input+") ist falsch geschrieben. Schau dir die richtige Schreibweise hier an:<a class='dudenlink2' target='_blank' href='http://www.duden.de/suchen/dudenonline/" + token + "'>DUDEN</a></p>");
 				}
 				if (getEditDistance(token, input) > 1 && errorcount < 1) {
-					$('#info3').append("<p id='infotext2'>Das Wort ist falsch geschrieben. Höre dir die Audiodatei nochmal an.</p>");
+					$('#info3').append("<p id='infotext2'>Das Wort ("+input+") ist falsch geschrieben. Höre dir die Audiodatei nochmal an.</p>");
 					errorcount++;
 				}
 			}
