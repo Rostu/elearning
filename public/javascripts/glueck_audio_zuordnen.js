@@ -31,14 +31,13 @@ $(document).ready(function() {
 	});
 
 	$(".token").click(function(){
-		console.log($(this));
 		$(".selected").toggleClass("selected");
 		$(this).toggleClass("selected");
 		var data = $(this).data("token");
 		var time = $(this).data("time");
 		var href = $(this).attr("href");
 		$("#Audioplayer").empty();
-		$("#Audioplayer").append('<audio id="player" data-time="'+time+'" data-token="'+data+'" controls="controls"><source src="'+href+'" type="audio/ogg"><p>Your Browser is not able to play this Audio File</p></source><a href="http://creativecommons.org/licenses/by-sa/3.0">©</a> </audio>').hide().fadeIn('slow');;
+		$("#Audioplayer").append('<audio id="player" data-time="'+time+'" data-token="'+data+'" controls="controls"><source src="'+href+'" type="audio/ogg"><p>Your Browser is not able to play this Audio File</p></source><a href="http://creativecommons.org/licenses/by-sa/3.0">©</a> </audio>').hide().fadeIn('slow');
 		$("#player")[0].play();
 	});
 

@@ -9,40 +9,56 @@ $(document).ready(function() {
         $(".bold_info#Allgemein").empty();
         $("html, body").animate({ scrollTop: 0 }, "slow");
         var referer = $(this).attr("inhalt");
-        //ajax request(http get) to get informations abaout the clicked word
+        //ajax request(http get) to get informations about the clicked word
         var infos = $.get('/get_wiktionary', {query:referer});
         //show throbber as long as there is no response from the request
         $(".bold_info#Allgemein").append("<div id='wiki_throbber'><img src='./images/ajax-loader.gif'></div>");
-        //when the request is done and therefore the promise object done, start populating the Ifo div with informations from the request
+        //when the request is done and therefore the promise object done, start populating the Info div with informations from the request
         infos.done(function(wikiResponse){
+            //clear the Info div from previous informations
             $(".bold_info#Allgemein").empty();
-            console.log("Antwort da");
+            //console.log("Antwort da");
+            //if a corresponding wiktionary entry is found
             if(wikiResponse.valid){
                 console.log(wikiResponse);
+                //create a new container div for the information's
                 var div = jQuery('<div/>', {
                     class: 'wiktionary_response',
                     id: "wiktionary1",
                     html: "<h2>"+referer+"</h2>"
                 });
+                //append the different information's to the container div
                 if(wikiResponse.imgname){
                     $(div).append("<img src='"+wikiResponse.imgname[0].thumburl+"'>");
                 }
+                if(wikiResponse.audio){
+                    var ref= wikiResponse.audio[0].link;
+                    var info = wikiResponse.audio[0].info;
+                    $(div).append('<div id="audioplayer"><audio id="player" controls="controls"><source src="'+ ref+'" type="audio/ogg"><p>Your Browser is not able to play this Audio File</p></source> </audio><a href="'+ info+'">©</a></div>');
+                    $(div).append("</br>");
+                }
                 $(div).append("<b>Wortart:</b> <p>"+wikiResponse.wordclass+"</p>");
+                $(div).append("</br>");
                 var exp = wikiResponse.explanations.join("</br>");
                 $(div).append("<b>Definiton: </b><p>"+exp+"</p>");
+                $(div).append("</br>");
                 $(div).append("<b>Beispiele: </b>");
-                if(wikiResponse.etymologie.length >0){
-                    $(div).append("<b>Hekunft: </b><p>"+wikiResponse.etymologie.join()+"</p>");
-                }
                 jQuery.each(wikiResponse.examples, function(i, val) {
                     $(div).append("<p>"+JSON.stringify(val.text)+"</p>");
                 });
+                $(div).append("</br>");
+                if(wikiResponse.etymologie.length >0){
+                    $(div).append("<b>Hekunft: </b><p>"+wikiResponse.etymologie.join()+"</p>");
+                    $(div).append("</br>");
+                }
 
                 if(wikiResponse.synonym.length >0){
                     $(div).append("<b>Synonyme: </b><p>"+wikiResponse.synonym.join()+"</p>");
+                    $(div).append("</br>");
                 }
                 if(wikiResponse.hyperonym.length>0){
                     $(div).append("<b>Überbegriff: </b><p>"+wikiResponse.hyperonym.join()+"</p>");
+                    $(div).append("</br>");
                 }
                 $(div).appendTo(".bold_info#Allgemein" );
 
