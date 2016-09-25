@@ -48,7 +48,10 @@ html
                             .special_nav
                                 a#las(href="last?last="+ last)
                                 a#nex(href="next?last="+ last)
+                            .special_nav
                                 a#fee(href="feedback?feed="+ last)
+                            .special_nav
+                                a#lva(href="lernen_von_anderen", target="_blank")
 
             #redstripes
                 .redstripe#info1
@@ -80,6 +83,8 @@ html
                                             a(href = 'zukunft_start') Zukunft
                                         li
                                             a(href = 'china_start') China
+                        li.cat1
+                            a(href = 'lernen_von_anderen') Lernen von Anderen
                         li.cat1
                             if (session)
                                 if (session.name)

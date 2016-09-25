@@ -319,6 +319,10 @@ exports.get_BaBa_Komposita_a = function(req, res){
     res.render('BaBa_Komposita_a');
 };
 
+exports.get_lernen_Von_Anderen = function(req, res){
+    res.render('lernen_Von_Anderen');
+};
+
 
 exports.get_next = function(req, res){
     var lastsite = req.param("last");

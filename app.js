@@ -171,6 +171,7 @@ app.get('/zukunft_Wortschatz_ordnen', ubung.get_zukunft_Wortschatz_ordnen);
 app.get('/zukunft_Wortschatzerweiterung_fest_Wortverbindungen', ubung.get_zukunft_Wortschatzerweiterung_fest_Wortverbindungen);
 app.get('/zukunft_Textproduktion', ubung.get_zukunft_Textproduktion);
 app.get('/zukunft_Kreuzwortraetsel', ubung.get_zukunft_Kreuzwortraetsel);
+app.get('/lernen_von_anderen', ubung.get_lernen_Von_Anderen);
 app.get('/next:last?', ubung.get_next);
 app.get('/last:last?', ubung.get_last);
 app.get('/uindex', ubung.get_uindex);
